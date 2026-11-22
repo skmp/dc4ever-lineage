@@ -616,6 +616,16 @@ function updateDisplay() {
     }
     const o = 4 * f; wallArr[o] = x; wallArr[o + 1] = 1; wallArr[o + 2] = 1;
     live.push({ lane: ln.li, f, x, morph });
+    // reading the live wall up close: the lane's other walls behind it (ghosts, releases) shine through its transparent
+    // background as a second, offset layer of text. Fade them out as the camera comes within reading range.
+    const cp = V.cam.p, dx = cp[0] - x;
+    if (cp[2] > ln.z0 - 512 && cp[2] < ln.z0 + ln.cols * 128 + 512 && Math.abs(dx) < 3200) {
+      const fade = Math.max(0, Math.min(1, (Math.abs(dx) - 500) / 2700));
+      for (const g of ln.frames) {
+        const o = 4 * g; if (g === f || (morph && g === morph.a) || wallArr[o + 1] <= 0 || (wallArr[o] - x) * dx >= 0) continue;
+        wallArr[o + 1] *= fade; if (wallArr[o + 1] < 0.01) wallArr[o + 1] = 0;
+      }
+    }
     if (morph && (!V.morph || Math.abs(W[morph.b].z0 + W[morph.b].cols * 64 - V.cam.p[2]) < Math.abs(W[V.morph.b].z0 + W[V.morph.b].cols * 64 - V.cam.p[2]))) V.morph = morph;
   }
   dispList = WALLS.filter(w => wallArr[4 * w.i + 1] > 0);
@@ -699,7 +709,7 @@ function setupLineProg(prog) {
   gl.uniform1i(prog.u.uMode, V.mode); gl.uniform1i(prog.u.uHideInc, V.hideInc ? 1 : 0);
   gl.uniform1f(prog.u.uT0, V.quality.t0); gl.uniform1f(prog.u.uT1, V.quality.t1);
   gl.uniform1i(prog.u.uBake, 0); gl.uniform1f(prog.u.uAlpha, 1);
-  if (prog.u.uMorphGlyph) gl.uniform1i(prog.u.uMorphGlyph, SOFT ? 0 : 1);
+  if (prog.u.uMorphGlyph) gl.uniform1i(prog.u.uMorphGlyph, SOFT && !Q.has('morphglyph') ? 0 : 1);
 }
 function wallUniforms(prog, w, x) {
   gl.uniform1i(prog.u.uBase, w.base || 0); gl.uniform1f(prog.u.uWallX, x); gl.uniform1f(prog.u.uZ0, w.z0);

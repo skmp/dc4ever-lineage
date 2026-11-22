@@ -1,0 +1,175 @@
+{
+ "date": "2026-11-22T21:24:13.471Z",
+ "size": [
+  1280,
+  720
+ ],
+ "paths": {
+  "D": {
+   "path": "D",
+   "name": "close reading",
+   "dur": 8,
+   "frames": 453,
+   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)",
+   "soft": true,
+   "viewport": [
+    1280,
+    720
+   ],
+   "dpr": 1,
+   "canvas": [
+    640,
+    360
+   ],
+   "fps_mean": 56.4,
+   "fps_1pct_low": 13,
+   "frame_ms": {
+    "p50": 19.4,
+    "p95": 36.8,
+    "p99": 39.2,
+    "max": 177.3
+   },
+   "cpu_ms": {
+    "p50": 0.5,
+    "p95": 0.9,
+    "p99": 3
+   },
+   "gpu_ms": {
+    "p50": 9.39,
+    "p95": 11.61,
+    "p99": 15.18
+   },
+   "draws_p95": 8,
+   "lines_p95": 5610,
+   "quality_steps": [
+    2,
+    3,
+    1,
+    0
+   ],
+   "frames_over_100ms": 1,
+   "ready_ms": 11758,
+   "skipped_rafs": 403,
+   "slowest_frames_cpu_sections": [
+    [
+     31.8,
+     [
+      [
+       "pre",
+       31
+      ]
+     ]
+    ]
+   ]
+  },
+  "E": {
+   "path": "E",
+   "name": "live playback",
+   "dur": 8,
+   "frames": 256,
+   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)",
+   "soft": true,
+   "viewport": [
+    1280,
+    720
+   ],
+   "dpr": 1,
+   "canvas": [
+    422,
+    238
+   ],
+   "fps_mean": 36.4,
+   "fps_1pct_low": 3.1,
+   "frame_ms": {
+    "p50": 19.7,
+    "p95": 60.4,
+    "p99": 165.7,
+    "max": 621
+   },
+   "cpu_ms": {
+    "p50": 0.7,
+    "p95": 3.3,
+    "p99": 33.4
+   },
+   "gpu_ms": {
+    "p50": 8.23,
+    "p95": 20.12,
+    "p99": 43.72
+   },
+   "draws_p95": 49,
+   "lines_p95": 0,
+   "quality_steps": [
+    3,
+    2,
+    1,
+    0
+   ],
+   "frames_over_100ms": 9,
+   "ready_ms": 1110,
+   "skipped_rafs": 338,
+   "slowest_frames_cpu_sections": [
+    [
+     2365.1,
+     [
+      [
+       "pre",
+       2344.3
+      ],
+      [
+       "lod",
+       4.4
+      ],
+      [
+       "plates",
+       4.6
+      ],
+      [
+       "labels",
+       9
+      ]
+     ]
+    ],
+    [
+     92.1,
+     [
+      [
+       "pre",
+       65.4
+      ],
+      [
+       "lod",
+       7.8
+      ],
+      [
+       "plates",
+       11.6
+      ],
+      [
+       "labels",
+       4.5
+      ]
+     ]
+    ],
+    [
+     89.6,
+     [
+      [
+       "pre",
+       89
+      ]
+     ]
+    ],
+    [
+     33.4,
+     [
+      [
+       "pre",
+       32.5
+      ]
+     ]
+    ]
+   ]
+  }
+ },
+ "logs": []
+}

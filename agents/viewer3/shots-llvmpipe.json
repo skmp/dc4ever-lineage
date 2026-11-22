@@ -1,0 +1,39 @@
+{
+ "size": [
+  2560,
+  1440
+ ],
+ "views": {
+  "far": {
+   "file": "agents/viewer3/shots/far-llvmpipe-2560x1440.png",
+   "ready_ms": 1004,
+   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)"
+  },
+  "read": {
+   "file": "agents/viewer3/shots/read-llvmpipe-2560x1440.png",
+   "ready_ms": 910,
+   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)"
+  },
+  "read-mid": {
+   "file": "agents/viewer3/shots/read-mid-llvmpipe-2560x1440.png",
+   "ready_ms": 305,
+   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)"
+  },
+  "read-far": {
+   "file": "agents/viewer3/shots/read-far-llvmpipe-2560x1440.png",
+   "ready_ms": 201,
+   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)"
+  },
+  "morph": {
+   "file": "agents/viewer3/shots/morph-llvmpipe-2560x1440.png",
+   "ready_ms": 301,
+   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)"
+  },
+  "attract": {
+   "file": "agents/viewer3/shots/attract-llvmpipe-2560x1440.png",
+   "ready_ms": 606,
+   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)"
+  }
+ },
+ "logs": []
+}

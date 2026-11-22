@@ -44,6 +44,7 @@ export function initBench(V) {
       const it = V.attract.items.find(i => i.curated) || V.attract.items[0], st = it.stops[Math.min(1, it.stops.length - 1)], w = W[st[0]];
       V.setX(w.x + 1); await V.ensureWall(w.i); V.setMarks([it.id]);
       const v = V.slotView(w, V.slotOf(w, st[1]), st[2] + 1, 22); V.cam.p = v.p; V.setLook(v.dir); V.attract.caption(it, st);
+      document.body.classList.add('attract');   // as in a real tour: panels faded, the caption alone
     } else if (name === 'rec') { await V.gotoBookmark('nullDC rec_v1 driver', { instant: true }); }
     const ms = await V.whenReady({ timeout: 90000, ...opts });
     await wait(500);

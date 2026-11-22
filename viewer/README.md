@@ -61,6 +61,10 @@ The URL hash keeps the camera, clock, mode and presentation.
 - Far: impostors baked from the same shader (low resolution for every loaded wall in view, 16 px per column x 2048
   rows for the nearest ones, re-baked as the camera approaches), then per-file quads, then per-column strips.
 
+Up close, the lane's other walls behind the wall being read (ghosts, releases) fade out, so their text does not show
+through as a second layer. On llvmpipe the canvas renders at half scale and lines in motion during a morph are bars;
+`?scale=1` and `?morphglyph=1` turn both off (used for the screenshots in `agents/viewer3/shots/`).
+
 ## Attract mode
 
 `data/attract.json` (`node tools/attract_prep.mjs`, 3 s): the curated lines (the dc4ever 2005 to-do, "and here are the
