@@ -1,0 +1,20 @@
+flycast: shared history with reicast ends at 239e17822 2018-09-03
+nulldc3: shared history with reicast ends at 95b673698 2021-12-22
+nullDCe          chain     8 months    3 candidates    4 frames    3 fork - 0.1s
+dc4ever          chain   138 months   15 candidates   15 frames   13 fork - 0.1s
+nulldc-360       chain   122 months    9 candidates   10 frames   10 fork - 0.2s
+NotDC-PS3        chain   106 months    3 candidates    7 frames    7 fork - 0.2s
+polly2-r8        chain    16 months    1 candidates    1 frames    1 fork - 0.0s
+devtools         chain    56 months    5 candidates    5 frames    3 fork - 0.1s
+minicast         chain    34 months    4 candidates    9 frames    9 fork - 0.2s
+polly2           chain   189 months    4 candidates   11 frames   11 fork - 0.2s
+wren7            chain     4 months    2 candidates    2 frames    2 fork - 0.0s
+dreamcast-tests  chain   124 months    1 candidates    1 frames    1 fork - 0.2s
+nullDC           chain   148 months   20 candidates   21 frames   20 fork - 0.4s
+shrike4          chain    12 months    2 candidates    2 frames    2 fork - 0.2s
+caique           chain    13 months    2 candidates    3 frames    3 fork - 0.2s
+nulldc3          chain   109 months   14 candidates   14 frames   14 fork 95b673698 0.6s
+nullDC4Wii       chain   994 months   11 candidates   98 frames   97 fork - 1.8s
+reicast          chain   875 months   63 candidates   90 frames   84 fork - 2.5s
+flycast          chain  2035 months   92 candidates  105 frames  100 fork 239e17822 5.7s
+frames per lane: {'dc4ever': 13, 'nullDC': 20, 'nulldc-360': 10, 'nullDCe': 3, 'nullDC4Wii': 97, 'NotDC-PS3': 7, 'reicast': 84, 'flycast': 100, 'nulldc3': 14, 'minicast': 9, 'polly2': 11, 'polly2-r8': 1, 'devtools': 3, 'dreamcast-tests': 1, 'shrike4': 2, 'caique': 3, 'wren7': 2} total 380

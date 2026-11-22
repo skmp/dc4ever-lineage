@@ -1,0 +1,50 @@
+OK  nulldc3 @ 2026-11-20 libswirl/hw/sh4/interpr/sh4_opcodes.cpp:189
+    {//ToDo : Check This [26/4/05]
+    origin dc4ever 2005-06-26 320615460 (approx)  keep 26 of 27
+    present at origin commit: True; absent at previous lane frame 06f3c91d7: True
+    git log -S oldest: 7057e62 2005-06-14 Modified disasm.cs (DC4Ever_meh)  (month match or inside (prev, origin]: True)
+OK  flycast @ 2026-11-22 core/hw/sh4/sh4_opcode_list.cpp:308
+    //and here are the new ones :D
+    origin nullDC-pre2008 (virtual)  keep 344 of 348
+    in nullDCe 2009 tree 39c055006: True; in 20 nullDC frames from 2010-05-09
+    nullDC git log -S oldest: 1fe9c6d 2010-05-09 --Initial commit --Most of the source is still missing, will be added l
+OK  reicast @ 2023-07-10 libswirl/hw/pvr/spg.cpp:17
+    //Time to emulate that stuff correctly ;)
+    origin nullDC 2010-05-09 761dc87db  keep 147 of 240
+    present at origin commit: True; absent at previous lane frame -: None
+    git log -S oldest: 398dab4 2010-05-09 --rest of the code-- drkpvr: 3d rendering plugin (aka nullPVR, nullDC P  (month match or inside (prev, origin]: True)
+OK  flycast @ 2026-11-22 core/rend/vulkan/desc_set.h:17
+    along with Flycast.  If not, see <https://www.gnu.org/licenses/>.
+    origin flycast 2020-01-31 b79c07444  keep 90 of 90
+    present at origin commit: True; absent at previous lane frame 8f86be37f: True
+    git log -S oldest: b1defae3f 2019-10-05 vulkan renderer - WIP  (month match or inside (prev, origin]: True)
+OK  reicast @ 2018-09-03 shell/android-studio/reicast/src/main/java/com/reicast/emulator/config/OptionsFragment.java:274
+    public void onCheckedChanged(CompoundButton buttonView,
+    origin reicast 2013-12-31 1a4801b56  keep 48 of 209
+    present at origin commit: True; absent at previous lane frame 1c16baeb0: True
+    git log -S oldest: acef71f18 2013-12-26 Add a configuration option for emulator specific GUI config  (month match or inside (prev, origin]: True)
+OK  nulldc3 @ 2026-11-20 refsw3/refcore/pvr_softfp.h:36
+    // negation, products (the low 128 bits), masks, comparisons, and the low 64 bits.
+    origin nulldc3 2026-11-20 4f3efe15f  keep 0 of 1
+    present at origin commit: True; absent at previous lane frame 4e773df24: True
+    git log -S oldest: 39936acd 2026-11-18 refsw3-core builds with MSVC: 128 bit integers without __int128, no lo  (month match or inside (prev, origin]: True)
+OK  nullDC4Wii @ 2026-11-19 dc/sh4/rec_v2/driver.cpp:14
+    a single hard threshold, reducing thrashing
+    origin nullDC4Wii 2026-02-28 7ae82b6c3  keep 91 of 96
+    present at origin commit: True; absent at previous lane frame 8c74682a6: True
+    git log -S oldest: f07e14d 2026-02-26 dynarec/driver: fix deferred boot cache clear, Wii perf + code quality   (month match or inside (prev, origin]: True)
+OK  polly2 @ 2026-10-24 polly2-de10nano/rtl/spg.sv:510
+    // Display read path (3-stage: address, RAM read, byte funnel + depth
+    origin polly2 2026-07-30 a37f92cb9 [DreamSTer r6]  keep 5 of 5
+    present at origin commit: True; absent at previous lane frame c22506c4e: True
+    git log -S oldest: 8c5c4f6 2026-07-25 SPG: more video formats  (month match or inside (prev, origin]: True)
+OK  nullDC @ 2023-07-10 nulldc/plugins/gpARM/cpu.c:498
+    pc += val;                                                                  \
+    origin nullDC 2010-05-31 c87acf943  keep 18 of 239
+    present at origin commit: True; absent at previous lane frame 761dc87db: True
+    git log -S oldest: fed35c8 2010-05-13 Made gpARM project.  (month match or inside (prev, origin]: True)
+OK  minicast @ 2026-10-24 libswirl/hw/sh4/modules/wince.h:10
+    #define	SYSHANDLE_OFFSET	0x004
+    origin reicast 2019-03-30 26f02e22d  keep 157 of 161
+    present at origin commit: True; absent at previous lane frame 2b3a052ac: True
+    git log -S oldest: 9e2938dff 2019-03-17 mmu: state change wasn't detected. WinCE syscalls tracing  (month match or inside (prev, origin]: True)

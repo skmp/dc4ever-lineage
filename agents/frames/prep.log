@@ -1,0 +1,46 @@
+layout: 17 lanes, 6881 slots, 1270 columns, 380 walls, X extent 930710, Z extent 199560, 28 edges, 158 marks; 33 bookmarks; 5.4s
+  dc4ever          z0=      0 cols=  20 slots=   29 frames=13
+  nullDC           z0=   4560 cols=  69 slots=  337 frames=20
+  nulldc-360       z0=  15392 cols=  55 slots=  293 frames=10
+  nullDCe          z0=  24432 cols=  54 slots=  240 frames=3
+  nullDC4Wii       z0=  33344 cols=  94 slots=  355 frames=97
+  NotDC-PS3        z0=  47376 cols=  99 slots=  423 frames=7
+  reicast          z0=  62048 cols= 122 slots=  560 frames=84
+  flycast          z0=  79664 cols= 234 slots=  863 frames=100
+  nulldc3          z0= 111616 cols= 178 slots=  699 frames=14
+  minicast         z0= 139400 cols=  71 slots=  312 frames=9
+  polly2           z0= 150488 cols=  23 slots=  207 frames=11
+  polly2-r8        z0= 155432 cols=  17 slots=  162 frames=1
+  devtools         z0= 159608 cols=  49 slots=  217 frames=3
+  dreamcast-tests  z0= 167880 cols=  50 slots=  423 frames=1
+  shrike4          z0= 176280 cols= 108 slots= 1482 frames=2
+  caique           z0= 192104 cols=  20 slots=  232 frames=3
+  wren7            z0= 196664 cols=   7 slots=   47 frames=2
+  edge concept dc4ever -> nullDC: partial derivation (C# to C++): 1,179 lines of nullDC 2023-07 first seen in dc4ever (1.6 %)
+  edge import nullDC trunk c563e07 -> nulldc-360: imported snapshot: 42,697 lines of nulldc-360 2022-02 first seen in nullDC (71.0 %)
+  edge concept dc4ever -> nullDCe: 446 lines of nullDCe 2024-09 first seen in dc4ever (1.0 %)
+  edge import nullDCe bad8d6a -> nullDC4Wii: imported verbatim: 23,291 lines of nullDC4Wii 2026-11 first seen in nullDCe (29.3 %)
+  edge import nullDC4Wii ~9659506 -> NotDC-PS3: imported snapshot: 21,555 lines of NotDC-PS3 2026-11 first seen in nullDC4Wii (26.3 %)
+  edge copy caique-rtl 5aa2376 -> NotDC-PS3 plugs/caiqueAICA (ported model): 634 lines of NotDC-PS3 2026-11 first seen in caique
+  edge import nullDC c563e07 -> reicast project import 1c16baeb (2012-2013 newdc rewrite): 30,486 lines of reicast 2023-07 first seen in nullDC (30.3 %)
+  edge import nullDCe -> reicast project import 1c16baeb: 22,889 lines of reicast 2023-07 first seen in nullDCe (22.8 %)
+  edge concept dc4ever -> reicast: 648 lines of reicast 2023-07 first seen in dc4ever (0.6 %)
+  edge git-fork reicast -> flycast: git fork (last shared commit 2018-09-03): 25,996 lines of flycast 2026-11 first seen in reicast (16.2 %)
+  edge git-merge flycast merged reicast until 2019-05-17 (a6b773a23): 25,996 lines of flycast 2026-11 first seen in reicast (16.2 %)
+  edge git-fork reicast 95b673698 (2021-12-22) -> nullDC 3: git ancestry: 53,589 lines of nulldc3 2026-11 first seen in reicast (31.9 %)
+  edge import nullDC 3 fpgadc commits (d5d4eae1, 2024-07) -> minicast: imported snapshot: 76 lines of minicast 2026-10 first seen in nulldc3 (0.1 %)
+  edge concept nullDC 3 dumps + refsw-offline -> polly2-rtl: concept / dump format: 0 lines of polly2 2026-10 first seen in nulldc3 (0.0 %)
+  edge copy refsw3 refcore -> polly2-rtl r8 tb/ (ref_copies*.h): 1,303 lines of polly2-r8 2026-11 first seen in nulldc3
+  edge concept polly2-rtl main -> r8/develop: same repo, unrelated history (no merge-base): 156 lines of polly2-r8 2026-11 first seen in polly2 (0.6 %)
+  edge concept nullDC 3 -> dreamcast-devtools (TS): 0 lines of devtools 2026-10 first seen in nulldc3 (0.0 %)
+  edge copy nullDC 2010 DSP -> devtools aica_dsp_playground: 308 lines of devtools 2026-10 first seen in nullDC
+  edge copy reicast DSP -> devtools aica_dsp_playground: 192 lines of devtools 2026-10 first seen in reicast
+  edge concept nullDC 3 refsw -> dreamcast-tests: 975 lines of dreamcast-tests 2026-11 first seen in nulldc3 (1.9 %)
+  edge concept polly2-rtl -> dreamcast-tests: 168 lines of dreamcast-tests 2026-11 first seen in polly2 (0.3 %)
+  edge concept shrike4-rtl -> dreamcast-tests: 20 lines of dreamcast-tests 2026-11 first seen in shrike4 (0.0 %)
+  edge concept caique-rtl -> dreamcast-tests: 21 lines of dreamcast-tests 2026-11 first seen in caique (0.0 %)
+  edge concept nullDC 3 -> shrike4-rtl (SH4): new code: 1,334 lines of shrike4 2026-10 first seen in nulldc3 (0.8 %)
+  edge concept nullDC 3 -> caique-rtl (AICA): new code: 1 lines of caique 2026-11 first seen in nulldc3 (0.0 %)
+  edge concept shrike4-rtl -> caique-rtl: 21 lines of caique 2026-11 first seen in shrike4 (0.1 %)
+  edge concept caique-rtl -> wren7-rtl (ARM7): 255 lines of wren7 2026-11 first seen in caique (4.2 %)
+  edge concept nullDC 3 -> wren7-rtl (ARM7): new code: 3 lines of wren7 2026-11 first seen in nulldc3 (0.0 %)

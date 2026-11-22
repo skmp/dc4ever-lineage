@@ -1,42 +1,32 @@
 #!/usr/bin/env python3
-"""viewer_prep.py: per-file layout for the lineage viewer (DESIGN.md 1.6, 6.1).
+"""viewer_prep.py [DATA]: layout for the time-frame lineage viewer (FOLLOWUP item 0; DESIGN.md 1.6, 6.1).
 
-Writes data/layout.json.gz (lanes, slots, districts, walls, ruler, edges, colours),
-data/linemeta.bin.gz (u8 indent, u8 len|comment<<7 per distinct line, after folding)
-and data/story.json (chapters + bookmarks resolved to existing paths).
+Reads DATA/frames.json and the lane chunks (tools/provenance/frames). Writes
+  DATA/layout.json.gz  lanes (slots, districts), walls (one per frame), time axis (ruler, gaps, brackets), edges,
+                       releases / tags / pins (marks), origin colours (one per frame)
+  DATA/linemeta.bin.gz u8 indent, u8 len|comment<<7 per distinct raw line, after folding
+  DATA/story.json      chapters and bookmarks, resolved to frames and existing paths
 
-Folding (shared with viewer/src/fold.js, checked by tools/verify/check_data.mjs):
+Slots: every file identity a lane ever holds gets one slot, sized to its longest version, so a file stays in place
+in every frame of its lane (holes where it is absent). A child lane packs inherited identities in its parent's order.
+The 48-snapshot version of this script (data-v1/) is in git history (a5cc5f3).
+
+Folding (shared with viewer/src/core.js):
   tab -> spaces to the next multiple of 4; bytes < 0x20 -> space; every byte >= 0x80 that is not a
   UTF-8 continuation byte following a >= 0x80 byte -> 0x7F (one box per code point); continuation bytes dropped.
 """
-import os, sys, json, gzip, math, struct, collections, time
-
-ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
-D = os.path.join(ROOT, 'data')
+import os, sys, json, gzip, math, collections, time
+HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
+from frames_lib import Data, ROOT
 t0 = time.time()
-man = json.load(open(os.path.join(D, 'manifest.json')))
-S = man['snapshots']
-NS = len(S)
-snaps = [json.load(gzip.open(os.path.join(D, f'snap/{s["i"]:02d}.json.gz'))) for s in S]
+D = os.path.abspath(sys.argv[1] if len(sys.argv) > 1 else os.path.join(ROOT, 'data'))
+data = Data(D); man = data.man; FR = man['frames']; NF = len(FR); VIRT = man['virt']
+LANES = [L['name'] for L in man['lanes']]; LI = {n: i for i, n in enumerate(LANES)}
 
-H = 2048          # lines per column
-TEXT = 120
-PITCH = 128
-WALLGAP = 6000
-HDR = 2           # header rows above a file
-GAP = 2           # rows after a file
-DGAP = 6          # rows before a second-level district that stays in the column
-
-REPO_LANE = {
-    'skmp_dc4ever': 'dc4ever', 'skmp_nullDC': 'nullDC', 'gligli_nulldc-360': 'nulldc-360', 'skmp_nullDCe': 'nullDCe',
-    'BenoitAdam_nullDC4Wii': 'nullDC4Wii', 'Mayo1970_NotDC-PS3': 'NotDC-PS3', 'skmp_reicast-emulator': 'reicast',
-    'flyinghead_flycast': 'flycast', 'skmp_nulldc3': 'nulldc3', 'skmp_minicast': 'minicast', 'skmp_polly2-rtl': 'polly2',
-    'skmp_dreamcast-devtools': 'devtools', 'fpgadc_dreamcast-tests': 'dreamcast-tests', 'skmp_shrike4-rtl': 'shrike4',
-    'skmp_caique-rtl': 'caique', 'skmp_wren7-rtl': 'wren7'}
-SNAP_LANE = {'polly2-r8-develop': 'polly2-r8'}   # r8/develop has its own root commit (no merge-base with main): own lane
-LANES = ['dc4ever', 'nullDC', 'nulldc-360', 'nullDCe', 'nullDC4Wii', 'NotDC-PS3', 'reicast', 'flycast', 'nulldc3',
-         'minicast', 'polly2', 'polly2-r8', 'devtools', 'dreamcast-tests', 'shrike4', 'caique', 'wren7']
-FPGA = set(LANES[9:])
+H = 2048; TEXT = 120; PITCH = 128; HDR = 2; GAP = 2; DGAP = 6
+MONTH = 4000          # world units per month on the time axis
+GAPMAX = 6            # a stretch of more than this many months without frames is drawn as GAPMAX months
+FPGA_FIRST = 'minicast'
 LANE_INFO = {  # hue (OKLCH degrees), chroma, title, github repo, slot-order parent lane
     'dc4ever': (300, 0.13, 'dc4ever (C#)', 'skmp/dc4ever', None),
     'nullDC': (75, 0.14, 'nullDC', 'skmp/nullDC', None),
@@ -56,222 +46,210 @@ LANE_INFO = {  # hue (OKLCH degrees), chroma, title, github repo, slot-order par
     'caique': (262, 0.13, 'caique-rtl (AICA)', 'skmp/caique-rtl', None),
     'wren7': (280, 0.13, 'wren7-rtl (ARM7)', 'skmp/wren7-rtl', None),
 }
+assert set(LANE_INFO) == set(LANES), set(LANE_INFO) ^ set(LANES)
+for ln in LANES: assert LANE_INFO[ln][4] is None or LANES.index(LANE_INFO[ln][4]) < LANES.index(ln)
 
-# ---------- OKLCH -> sRGB ----------
 def oklch(L, C, h):
     a, b = C * math.cos(math.radians(h)), C * math.sin(math.radians(h))
-    l_ = L + 0.3963377774 * a + 0.2158037573 * b
-    m_ = L - 0.1055613458 * a - 0.0638541728 * b
-    s_ = L - 0.0894841775 * a - 1.2914855480 * b
+    l_ = L + 0.3963377774 * a + 0.2158037573 * b; m_ = L - 0.1055613458 * a - 0.0638541728 * b; s_ = L - 0.0894841775 * a - 1.2914855480 * b
     l, m, s = l_ ** 3, m_ ** 3, s_ ** 3
-    r = 4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s
-    g = -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s
+    r = 4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s; g = -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s
     bb = -0.0041960863 * l - 0.7034186147 * m + 1.7076147010 * s
     def enc(x):
-        x = min(1, max(0, x))
-        return round(255 * (12.92 * x if x <= 0.0031308 else 1.055 * x ** (1 / 2.4) - 0.055))
+        x = min(1, max(0, x)); return round(255 * (12.92 * x if x <= 0.0031308 else 1.055 * x ** (1 / 2.4) - 0.055))
     return [enc(r), enc(g), enc(bb)]
 
-lane_of = [SNAP_LANE.get(s['id'], REPO_LANE[s['repo']]) for s in S]
-lane_snaps = {ln: [s['i'] for s in sorted(S, key=lambda s: (s['order_date'], s['i'])) if lane_of[s['i']] == ln] for ln in LANES}
+# ---------- lane states, decoded once (keyed by global frame) ----------
+STATES = {}
+for ln in LANES:
+    for g, st in data.lane_states(ln): STATES[g] = {k: (v[0], v[1]) for k, v in st.items()}
 
-# origin colours: lane hue, lightness stepped per snapshot within lane
-orig_rgb = [None] * (NS + 1)
-for ln, ss in lane_snaps.items():
-    h, c = LANE_INFO[ln][0], LANE_INFO[ln][1]
-    for k, si in enumerate(ss):
-        L = 0.62 + (0.86 - 0.62) * (k / max(1, len(ss) - 1)) if len(ss) > 1 else 0.74
-        orig_rgb[si] = oklch(L, c, h)
-orig_rgb[NS] = oklch(0.70, 0.05, 75)  # nullDC-pre2008: desaturated amber
+# ---------- per-lane file history: longest version and latest path of every identity ----------
+cap = collections.defaultdict(dict); latest = collections.defaultdict(dict)
+for ln in LANES:
+    for g in man['lanes'][LI[ln]]['frames']:
+        for ident, (path, lines) in STATES[g].items():
+            k = (ident, 0); cap[ln][k] = max(cap[ln].get(k, 0), len(lines)); latest[ln][k] = path
+
+# ---------- origin colours: lane hue, lightness stepped by the frame's place in its lane ----------
+orig_rgb = [None] * NF
+for L in man['lanes']:
+    h, c = LANE_INFO[L['name']][0], LANE_INFO[L['name']][1]; n = len(L['frames'])
+    for k, g in enumerate(L['frames']):
+        orig_rgb[g] = oklch(0.58 + (0.86 - 0.58) * (k / max(1, n - 1)) if n > 1 else 0.74, c, h)
+orig_rgb[VIRT] = oklch(0.70, 0.05, 75)   # nullDC-pre2008: desaturated amber
 lane_rgb = {ln: oklch(0.74, LANE_INFO[ln][1], LANE_INFO[ln][0]) for ln in LANES}
 
-# ---------- time axis ----------
-# rank key (date, k): k counts earlier same-date snapshots of the same lane, so same-day releases (DreamSTer r1..r3 all
-# 2026-07-17) stand one rank apart instead of on top of each other
-_seen = collections.Counter(); rkey = [None] * NS
-for s in sorted(S, key=lambda s: (s['order_date'], s['i'])):
-    ln = SNAP_LANE.get(s['id'], REPO_LANE[s['repo']]); rkey[s['i']] = (s['order_date'], _seen[(ln, s['order_date'])]); _seen[(ln, s['order_date'])] += 1
-keys_sorted = sorted(set(rkey))
-rank = {k: i for i, k in enumerate(keys_sorted)}
-wall_x = [WALLGAP * (rank[rkey[s['i']]] + 1) for s in S]
-dates = sorted({s['order_date'] for s in S})
-first_rank = {}
-for k in keys_sorted: first_rank.setdefault(k[0], rank[k])
-def dnum(d):
-    y, m, dd = map(int, d.split('-')); return y + (m - 1) / 12 + (dd - 1) / 365
-def x_of_date(v):
-    pts = [(dnum(d), WALLGAP * (first_rank[d] + 1)) for d in dates]
-    if v <= pts[0][0]: return pts[0][1] - (pts[0][0] - v) * WALLGAP / 2
-    for (a, xa), (b, xb) in zip(pts, pts[1:]):
-        if a <= v <= b: return xa + (xb - xa) * (v - a) / (b - a) if b > a else xa
-    return pts[-1][1] + (v - pts[-1][0]) * WALLGAP * 4
+# ---------- time axis: months, long empty stretches compressed ----------
+def mnum(d):   # months since 2000-01 as a float (day resolution)
+    y, m, dd = map(int, d.split('-')); return (y - 2000) * 12 + (m - 1) + (dd - 1) / 31
+fmonths = sorted({int(mnum(f['date'])) for f in FR})
+knots = []; gaps = []; x = 0.0; prev = None
+for m in fmonths:
+    if prev is None: knots.append((m, 0.0))
+    elif m - prev > GAPMAX + 1:
+        x += MONTH; gx = x + (GAPMAX / 2) * MONTH; gaps.append((prev + 1, m, gx)); x += GAPMAX * MONTH; knots.append((m, x))
+    else: x += (m - prev) * MONTH; knots.append((m, x))
+    prev = m
+def x_of(d):
+    v = mnum(d) if isinstance(d, str) else d; mi = int(math.floor(v))
+    for g0, g1, gx in gaps:
+        if g0 <= v < g1: return gx - (GAPMAX / 2) * MONTH + (v - g0) / (g1 - g0) * GAPMAX * MONTH
+    best = None
+    for m, xx in knots:
+        if m <= mi: best = (m, xx)
+    if best is None: return knots[0][1] - (knots[0][0] - v) * MONTH
+    return best[1] + (v - best[0]) * MONTH
+# walls: same-day frames of a lane step 1/8 month apart so they do not coincide
+walls = []; seen = collections.Counter()
+for f in FR:
+    if f.get('virtual'): continue
+    key = (f['lane'], f['date']); xx = x_of(f['date']) + seen[key] * MONTH / 8; seen[key] += 1
+    walls.append({'frame': f['i'], 'lane': LI[f['lane']], 'x': round(xx)})
 ruler = []
-for y in range(2003, 2027):
-    ruler.append({'x': round(x_of_date(y)), 'year': y})
-for (a, b) in zip(dates, dates[1:]):
-    gap = dnum(b) - dnum(a)
-    if gap >= 1.5:
-        ruler.append({'x': round((x_of_date(dnum(a)) + x_of_date(dnum(b))) / 2), 'gap': f'{gap:.0f} years'})
+for y in range(2002, 2027):
+    m = (y - 2000) * 12
+    if any(g0 <= m < g1 for g0, g1, gx in gaps) or m < fmonths[0] - 12 or m > fmonths[-1] + 1: continue
+    ruler.append({'x': round(x_of(f'{y}-01-01')), 'year': y})
+for g0, g1, gx in gaps:
+    ruler.append({'x': round(gx), 'gap': f'{(g1 - g0) / 12:.1f} years without frames', 'from': f'{2000 + g0 // 12}-{g0 % 12 + 1:02d}', 'to': f'{2000 + g1 // 12}-{g1 % 12 + 1:02d}'})
 brackets = []
-for s in S:
-    if s.get('date_range'):
-        y0, y1 = map(int, s['date_range'].split('-'))
-        brackets.append({'snap': s['i'], 'range': s['date_range'], 'note': s.get('date_note', ''),
-                         'x0': round(min(x_of_date(y0), wall_x[s['i']] - 2500)), 'x1': round(wall_x[s['i']] + 600)})
-brackets.append({'snap': next(s['i'] for s in S if s['id'] == 'nulldc-last'), 'range': '2005-2010 closed', 'note': 'nullDC was closed source 2005-2010; public svn starts 2010-05.',
-                 'x0': round(x_of_date(2005.0)), 'x1': wall_x[2]})
+for f in FR:
+    if f.get('date_range') and not f.get('virtual'):
+        y0, y1 = map(int, f['date_range'].split('-'))
+        brackets.append({'frame': f['i'], 'lane': LI[f['lane']], 'range': f['date_range'], 'note': f.get('date_note', ''),
+                         'x0': round(x_of(f'{y0}-01-01')), 'x1': round(x_of(f['date']))})
+dc4 = man['lanes'][LI['dc4ever']]['frames']
+brackets.append({'lane': LI['dc4ever'], 'range': '2002-2005 (file mtimes)', 'approx': True,
+                 'note': 'dc4ever history was rebuilt in 2019 from backups, one commit per file at its file mtime: frame dates are approximate',
+                 'x0': round(x_of(FR[dc4[0]]['date'])), 'x1': round(x_of(FR[dc4[-1]]['date']))})
+nd0 = man['lanes'][LI['nullDC']]['frames'][0]
+brackets.append({'lane': LI['nullDC'], 'range': '2005-2010 closed', 'note': 'nullDC was closed source 2005-2010; public svn starts 2010-05.',
+                 'x0': round(x_of('2005-01-01')), 'x1': round(x_of(FR[nd0]['date']))})
 
 # ---------- lane packing (streets) ----------
 def dir_parts(p):
     parts = p.split('/')[:-1]
     return (parts[0] if parts else ''), ('/'.join(parts[:2]) if len(parts) > 1 else (parts[0] if parts else ''))
-
-lanes_out = []
-slotpos = {}  # lane -> {(identity, ordinal): linear position}
-z = 0
-for li, ln in enumerate(LANES):
-    if ln == 'minicast': z += 3000  # fpgadc moat
-    ss = lane_snaps[ln]
-    cap = {}; latest = {}
-    for si in ss:
-        ordc = collections.Counter()
-        for f in snaps[si]['files']:
-            k = (f['id'], ordc[f['id']]); ordc[f['id']] += 1
-            cap[k] = max(cap.get(k, 0), f['n']); latest[k] = f['p']
-    parent = LANE_INFO[ln][4]
-    ppos = slotpos.get(parent, {})
-    keys = sorted(cap, key=lambda k: (latest[k].lower(), k))
-    # inherited keys keep the parent's order; new keys ride behind their path-predecessor
+lanes_out = []; slotpos = {}; z = 0
+for ln in LANES:
+    c = cap[ln]; lt = latest[ln]
+    parent = LANE_INFO[ln][4]; ppos = slotpos.get(parent, {})
+    keys = sorted(c, key=lambda k: (lt[k].lower(), k))
     top_rank = {}
     for k in keys:
-        t = dir_parts(latest[k])[0]
+        t = dir_parts(lt[k])[0]
         if k in ppos: top_rank[t] = min(top_rank.get(t, 1e18), ppos[k])
-    tops = sorted({dir_parts(latest[k])[0] for k in keys}, key=lambda t: (top_rank.get(t, 1e18), t.lower()))
+    tops = sorted({dir_parts(lt[k])[0] for k in keys}, key=lambda t: (top_rank.get(t, 1e18), t.lower()))
     trk = {t: i for i, t in enumerate(tops)}
-    sk = {}; prev = -1.0; prevtop = None
+    sk = {}; prevv = -1.0; prevtop = None
     for k in keys:
-        t = dir_parts(latest[k])[0]
-        if t != prevtop: prev = -1.0; prevtop = t
-        if k in ppos: sk[k] = ppos[k]; prev = ppos[k]
-        else: prev = prev + 1e-3; sk[k] = prev
-    keys.sort(key=lambda k: (trk[dir_parts(latest[k])[0]], sk[k], latest[k].lower()))
-    # pack
+        t = dir_parts(lt[k])[0]
+        if t != prevtop: prevv = -1.0; prevtop = t
+        if k in ppos: sk[k] = ppos[k]; prevv = ppos[k]
+        else: prevv = prevv + 1e-3; sk[k] = prevv
+    keys.sort(key=lambda k: (trk[dir_parts(lt[k])[0]], sk[k], lt[k].lower()))
     col, row = 0, 0; slots = []; pos = {}; districts = []; cur_top = cur_sub = None
     for k in keys:
-        top, sub = dir_parts(latest[k])
-        need = HDR + cap[k] + GAP
+        top, sub = dir_parts(lt[k]); need = HDR + c[k] + GAP
         if cur_top is not None and top != cur_top:
             if row > 0: col += 1; row = 0
         elif cur_sub is not None and sub != cur_sub:
-            if row > H // 2:
-                col += 1; row = 0
-            elif row > 0:
-                row += DGAP
+            if row > H // 2: col += 1; row = 0
+            elif row > 0: row += DGAP
         if row > 0 and row + need > H: col += 1; row = 0
-        if top != cur_top or sub != cur_sub:
-            if districts and districts[-1]['path'] == (sub or top):
-                pass
-            else:
-                districts.append({'path': sub or top or '(root)', 'top': top or '(root)', 'col0': col, 'row0': row})
+        if (top != cur_top or sub != cur_sub) and not (districts and districts[-1]['path'] == (sub or top)):
+            districts.append({'path': sub or top or '(root)', 'top': top or '(root)', 'col0': col, 'row0': row})
         cur_top, cur_sub = top, sub
-        L = col * H + row
-        slots.append([k[0], k[1], col, row, cap[k]]); pos[k] = L
-        L2 = L + need
-        col, row = divmod(L2, H)
+        Lpos = col * H + row
+        slots.append([k[0], k[1], col, row, c[k]]); pos[k] = Lpos
+        col, row = divmod(Lpos + need, H)
     ncols = col + (1 if row > 0 else 0)
     for d, nx in zip(districts, districts[1:] + [None]):
-        d['col1'] = (nx['col0'] if nx and nx['row0'] == 0 else (nx['col0'] + 1 if nx else ncols)) if nx else ncols
+        d['col1'] = (nx['col0'] if nx['row0'] == 0 else nx['col0'] + 1) if nx else ncols
     slotpos[ln] = pos
+    if ln == FPGA_FIRST: z += 3000   # fpgadc moat
     width = ncols * PITCH
-    h, c = LANE_INFO[ln][0], LANE_INFO[ln][1]
-    lanes_out.append({'name': ln, 'title': LANE_INFO[ln][2], 'github': LANE_INFO[ln][3], 'group': 'fpgadc' if ln in FPGA else 'emu',
-                      'parent': parent, 'z0': z, 'width': width, 'cols': ncols, 'snaps': ss, 'rgb': lane_rgb[ln],
-                      'slots': slots, 'districts': districts})
+    lanes_out.append({'name': ln, 'title': LANE_INFO[ln][2], 'github': LANE_INFO[ln][3],
+                      'group': 'fpgadc' if LANES.index(ln) >= LANES.index(FPGA_FIRST) else 'emu',
+                      'parent': parent, 'z0': z, 'width': width, 'cols': ncols, 'frames': man['lanes'][LI[ln]]['frames'],
+                      'rgb': lane_rgb[ln], 'approx': ln == 'dc4ever', 'slots': slots, 'districts': districts})
     z += width + 2000
 
-walls = [{'snap': s['i'], 'lane': LANES.index(lane_of[s['i']]), 'x': wall_x[s['i']]} for s in S]
+# ---------- lineage edges (lane graph of tools/frames.py), labels with counts from the frame data ----------
+def frame_at(ln, g):   # the lane's latest frame at or before global frame g
+    fs = [x for x in man['lanes'][LI[ln]]['frames'] if x <= g]; return fs[-1] if fs else None
+def by_origin_lane(g):
+    c = collections.Counter(); tot = 0
+    for path, lines in STATES[g].values():
+        for r, o, k in lines:
+            if k == 0xFFFF: continue
+            tot += 1; c['nullDC-pre2008' if o == VIRT else FR[o]['lane']] += 1
+    return c, tot
+KIND = {'code': 'import', 'merge': 'git-merge', 'copy': 'copy', 'related': 'concept'}
+GITFORK = {'flycast', 'nulldc3'}   # lanes sharing git history with their code parent
+EDGE_TEXT = {
+    ('nullDC', 'nulldc-360'): 'nullDC trunk c563e07 -> nulldc-360: imported snapshot',
+    ('nullDC', 'reicast'): 'nullDC c563e07 -> reicast project import 1c16baeb (2012-2013 newdc rewrite)',
+    ('nullDCe', 'reicast'): 'nullDCe -> reicast project import 1c16baeb',
+    ('reicast', 'flycast'): 'reicast -> flycast: git fork (last shared commit 2018-09-03)',
+    ('reicast', 'nulldc3'): 'reicast 95b673698 (2021-12-22) -> nullDC 3: git ancestry',
+    ('nulldc3', 'minicast'): 'nullDC 3 fpgadc commits (d5d4eae1, 2024-07) -> minicast: imported snapshot',
+    ('nullDCe', 'nullDC4Wii'): 'nullDCe bad8d6a -> nullDC4Wii: imported verbatim',
+    ('nullDC4Wii', 'NotDC-PS3'): 'nullDC4Wii ~9659506 -> NotDC-PS3: imported snapshot',
+    ('dc4ever', 'nullDC'): 'dc4ever -> nullDC: partial derivation (C# to C++)',
+    ('dc4ever', 'nullDCe'): 'dc4ever -> nullDCe', ('dc4ever', 'reicast'): 'dc4ever -> reicast',
+    ('nulldc3', 'polly2'): 'nullDC 3 dumps + refsw-offline -> polly2-rtl: concept / dump format',
+    ('polly2', 'polly2-r8'): 'polly2-rtl main -> r8/develop: same repo, unrelated history (no merge-base)',
+    ('nulldc3', 'polly2-r8'): 'refsw3 refcore -> polly2-rtl r8 tb/ (ref_copies*.h)',
+    ('caique', 'NotDC-PS3'): 'caique-rtl 5aa2376 -> NotDC-PS3 plugs/caiqueAICA (ported model)',
+    ('nullDC', 'devtools'): 'nullDC 2010 DSP -> devtools aica_dsp_playground',
+    ('reicast', 'devtools'): 'reicast DSP -> devtools aica_dsp_playground',
+    ('nulldc3', 'devtools'): 'nullDC 3 -> dreamcast-devtools (TS)',
+    ('nulldc3', 'shrike4'): 'nullDC 3 -> shrike4-rtl (SH4): new code', ('nulldc3', 'caique'): 'nullDC 3 -> caique-rtl (AICA): new code',
+    ('shrike4', 'caique'): 'shrike4-rtl -> caique-rtl', ('caique', 'wren7'): 'caique-rtl -> wren7-rtl (ARM7)',
+    ('nulldc3', 'wren7'): 'nullDC 3 -> wren7-rtl (ARM7): new code', ('nulldc3', 'dreamcast-tests'): 'nullDC 3 refsw -> dreamcast-tests',
+    ('polly2', 'dreamcast-tests'): 'polly2-rtl -> dreamcast-tests', ('shrike4', 'dreamcast-tests'): 'shrike4-rtl -> dreamcast-tests',
+    ('caique', 'dreamcast-tests'): 'caique-rtl -> dreamcast-tests',
+}
+edges = []
+for L in man['lanes']:
+    ch = L['name']; first = L['frames'][0]; last = L['frames'][-1]
+    for e in L['parents']:
+        pl = e['lane']; kind = 'git-fork' if (e['kind'] == 'code' and ch in GITFORK) else KIND[e['kind']]
+        to = first; fr_ = e.get('frame')
+        if e['kind'] in ('related', 'copy'):
+            # the first child frame holding lines first seen in the parent lane, from the parent's frame just before it
+            to = next((g for g in L['frames'] if by_origin_lane(g)[0][pl]), first)
+            fr_ = frame_at(pl, to)
+            if fr_ is None: continue
+        c, tot = by_origin_lane(last)
+        n = c[pl] + (c['nullDC-pre2008'] if pl in ('nullDC', 'nullDCe') else 0)
+        label = EDGE_TEXT.get((pl, ch), f'{pl} -> {ch}')
+        if e['kind'] == 'merge': label = 'flycast merged reicast until 2019-05-17 (a6b773a23)'
+        label += f": {n:,} lines of {ch} {FR[last]['date'][:7]} first seen in {pl}" + (f' ({100 * n / max(1, tot):.1f} %)' if kind != 'copy' else '')
+        edges.append({'from': fr_, 'to': to, 'from_lane': LI[pl], 'to_lane': LI[ch], 'kind': kind, 'label': label, 'lines': n})
 
-# lineage edges (collect REPORT.md "Lineage graph"), by snapshot id
-SID = {s['id']: s['i'] for s in S}
-def lines_by_origin(snap, prefix):
-    """non-blank lines of `snap` under path prefix, counted by origin label"""
-    i = SID[snap]; j = snaps[i]; b = gzip.open(os.path.join(D, f'snap/{i:02d}.bin.gz')).read()
-    n = sum(f['n'] for f in j['files']); og, kp = b[4 * n:5 * n], b[5 * n:6 * n]; c = collections.Counter(); off = 0
-    for f in j['files']:
-        if f['p'].startswith(prefix):
-            for l in range(f['n']):
-                if kp[off + l] != 255: c[man['origins'][og[off + l]]] += 1
-        off += f['n']
-    return c
-def copied(snap, prefix, origins):
-    c = lines_by_origin(snap, prefix); return sum(c[o] for o in origins)
-def E(a, b, kind, label, **kw):
-    return {'from': SID[a], 'to': SID[b], 'kind': kind, 'label': label, **kw}
-lane_ids = lambda ln: [S[i]['id'] for i in lane_snaps[ln]]
-n_dsp_nd = copied('devtools-v3.0.0-pre', 'experiments/aica_dsp_playground', ['nulldc-2010-05', 'nulldc-2010-12', 'nullDC-pre2008'])
-n_dsp_rc = copied('devtools-v3.0.0-pre', 'experiments/aica_dsp_playground', lane_ids('reicast'))
-n_caique = copied('NotDC-PS3-0.8.3', 'plugs/caiqueAICA', lane_ids('caique'))
-n_refsw3 = copied('polly2-r8-develop', 'tb/', lane_ids('nulldc3'))
-edges = [
-    E('dc4ever-2005', 'nulldc-2010-05', 'concept', 'dc4ever -> nullDC: partial derivation, 0.6 % shared lines'),
-    E('nulldc-2010-05', 'nullDCe-2009', 'fork-recovered', 'nullDC mainline -> nullDCe: late-2008 fork, recovered snapshot (49 % of lines)'),
-    E('nulldc-2011-09', 'nulldc-360-2011', 'import', 'nullDC trunk c563e07 -> nulldc-360: imported snapshot (93/203 files identical)'),
-    E('nulldc-2011-09', 'reicast-2013-import', 'import', 'nullDC c563e07 -> reicast import 1c16baeb (39.6 % of lines)'),
-    E('nullDCe-2009', 'reicast-2013-import', 'import', 'nullDCe -> reicast import 1c16baeb (30.3 % of lines)'),
-    E('reicast-r19.07', 'flycast-v1.0', 'git-fork', 'reicast -> flycast: git fork 2018-10 (merged until 2019-05-17)'),
-    E('reicast-last', 'nulldc3-fpgadc-2023', 'git-fork', 'reicast 95b673698 (2021-12-22) -> nullDC 3: git ancestry'),
-    E('nullDCe-ps2-2024', 'nullDC4Wii-first', 'import', 'nullDCe bad8d6a -> nullDC4Wii: imported verbatim (203/203 files)'),
-    E('nullDC4Wii-a0.50', 'NotDC-PS3-first', 'import', 'nullDC4Wii ~9659506 -> NotDC-PS3: imported snapshot (229/272 files)'),
-    E('nulldc3-fpgadc-2023', 'minicast-import', 'import', 'nullDC 3 fpgadc commits -> minicast: imported snapshot (513/533 files)'),
-    E('nulldc3-fpgadc-2023', 'polly2-r1', 'concept', 'nullDC 3 dumps + refsw-offline -> polly2-rtl: concept / dump format, no shared code'),
-    E('polly2-r6b', 'polly2-r8-develop', 'concept', 'polly2-rtl main -> r8/develop: same repo, unrelated history (no merge-base); restarted as a bit-exact model'),
-    E('nulldc3-refsw3', 'polly2-r8-develop', 'copy', f'refsw3 refcore -> polly2-rtl r8 tb/ (ref_copies*.h): {n_refsw3:,} lines first seen in nullDC 3', arch=1),
-    E('caique-head', 'NotDC-PS3-0.8.3', 'copy', f'caique-rtl -> NotDC-PS3 plugs/caiqueAICA: {n_caique:,} lines first seen in caique-head (ported from caique-rtl 5aa2376, 2026-09-24, no snapshot of its own)', arch=1),
-    E('nulldc-2010-05', 'devtools-v3.0.0-pre', 'copy', f'nullDC 2010 DSP -> devtools aica_dsp_playground: {n_dsp_nd:,} lines first seen in nullDC', arch=2),
-    E('reicast-r20.04', 'devtools-v3.0.0-pre', 'copy', f'reicast DSP -> devtools aica_dsp_playground: {n_dsp_rc:,} more lines first seen in reicast r6..r20.04', arch=1),
-    E('nulldc3-v3.0.0-pre', 'shrike4-head', 'concept', 'nullDC 3 -> shrike4-rtl (SH4): new code, 0.8 % shared lines'),
-    E('nulldc3-v3.0.0-pre', 'caique-head', 'concept', 'nullDC 3 -> caique-rtl (AICA): new code, 1.0 % shared lines'),
-    E('nulldc3-v3.0.0-pre', 'wren7-head', 'concept', 'nullDC 3 -> wren7-rtl (ARM7): new code'),
-    E('nulldc3-v3.0.0-pre', 'dreamcast-tests-head', 'concept', 'nullDC 3 refsw -> dreamcast-tests'),
-    E('nulldc3-fpgadc-2023', 'devtools-v3.0.0-pre', 'concept', 'nullDC 3 -> dreamcast-devtools (TS)'),
-]
-# DreamSTer releases (skmp/DreamSTer tags): the polly2-rtl and minicast submodule pins of each release
-RELEASES = [  # tag, date, DreamSTer commit, polly2-rtl pin, minicast pin
-    ('r1', '2026-07-17', 'd87e716', 'be391db', '697f565'), ('r2', '2026-07-17', 'fa11f4b', '7a70d24', '6fcc0e1'),
-    ('r2b', '2026-07-17', '8a6e2c3', '635ec79', '6fcc0e1'), ('r3', '2026-07-17', '8f0a7ff', '436372f', '585205b'),
-    ('r4', '2026-07-18', '034573c', 'c22506c', '0998288'), ('r5', '2026-07-18', '034573c', 'c22506c', '0998288'),
-    ('r6', '2026-07-30', 'f31c158', 'a37f92c', '450eb49'), ('r6b', '2026-10-24', '2a3c169', '95fc3ba', '9185ab8')]
-pins = []
-for repo, ci in (('skmp_polly2-rtl', 3), ('skmp_minicast', 4)):
-    for s in S:
-        if s['repo'] != repo: continue
-        tags = [r for r in RELEASES if s['commit'].startswith(r[ci])]
-        if tags:
-            pins.append({'snap': s['i'], 'label': 'DreamSTer ' + ' / '.join(r[0] for r in tags),
-                         'releases': [{'tag': r[0], 'date': r[1], 'dreamster': r[2], 'polly2': r[3], 'minicast': r[4]} for r in tags]})
-pinned = {r[0] for p in pins for r in [(x['tag'],) for x in p['releases']]}
-assert pinned == {r[0] for r in RELEASES}, pinned
-releases = [{'tag': r[0], 'date': r[1], 'dreamster': r[2], 'polly2': r[3], 'minicast': r[4],
-             'snaps': [p['snap'] for p in pins if any(x['tag'] == r[0] for x in p['releases'])]} for r in RELEASES]
-
-# survival denominators: possible[o][w] = later snapshots (order) in lanes descending from o's repo or w's repo
-order = sorted(range(NS), key=lambda i: (S[i]['order_date'], i))
-pos_in_order = {si: k for k, si in enumerate(order)}
-desc = [int(s['desc']) for s in S]
-possible = []
-for o in range(NS + 1):
-    osn = 2 if o == NS else o
-    row = []
-    for w in range(NS):
-        m = desc[osn] | desc[w]
-        row.append(sum(1 for t in range(NS) if (m >> t) & 1 and pos_in_order[t] > pos_in_order[osn]))
-    possible.append(row)
+# ---------- releases, tags, pins, forks, imports ----------
+marks = []
+for f in FR:
+    if f.get('virtual'): continue
+    ks = set(f['kinds'])
+    if ks & {'tag', 'pin', 'import', 'fork'}:
+        marks.append({'frame': f['i'], 'lane': LI[f['lane']], 'kinds': [k for k in f['kinds'] if k != 'month'],
+                      'tags': f.get('tags', []), 'labels': f.get('labels', []), 'release': bool(ks & {'tag', 'pin'})})
+releases = [{**r, 'frames': [f['i'] for f in FR if ('DreamSTer ' + r['tag']) in f.get('tags', [])]} for r in man['releases']]
+assert all(r['frames'] for r in releases), [r['tag'] for r in releases if not r['frames']]
 
 layout = {
-    'unit': {'char': 1, 'line': 2, 'colPitch': PITCH, 'textCols': TEXT, 'H': H, 'wallGap': WALLGAP, 'hdr': HDR, 'gap': GAP},
-    'lanes': lanes_out, 'walls': walls, 'ruler': ruler, 'brackets': brackets, 'edges': edges, 'pins': pins, 'releases': releases,
-    'origin_rgb': orig_rgb, 'event_order': order, 'possible': possible,
-    'fpgadc': {'z0': lanes_out[LANES.index('minicast')]['z0'], 'title': 'fpgadc: hardware re-creation, 2026'},
+    'format': 2,
+    'unit': {'char': 1, 'line': 2, 'colPitch': PITCH, 'textCols': TEXT, 'H': H, 'month': MONTH, 'hdr': HDR, 'gap': GAP},
+    'lanes': lanes_out, 'walls': walls, 'ruler': ruler, 'brackets': brackets, 'edges': edges, 'marks': marks,
+    'releases': releases, 'origin_rgb': orig_rgb,
+    'time': {'month0': '2000-01', 'knots': [[m, round(xx)] for m, xx in knots], 'gaps': [[g0, g1, round(gx)] for g0, g1, gx in gaps],
+             'note': f'x(date): months since 2000-01 (day resolution), piecewise linear through knots [month, x]; a gap [m0, m1, x] '
+                     f'stands for months m0..m1 drawn as {GAPMAX} months centred on x; same-day walls of a lane step month/8'},
+    'fpgadc': {'z0': lanes_out[LI[FPGA_FIRST]]['z0'], 'title': 'fpgadc: hardware re-creation, 2023-2026'},
 }
 with gzip.open(os.path.join(D, 'layout.json.gz'), 'wt', compresslevel=9) as f:
     json.dump(layout, f, separators=(',', ':'))
@@ -280,102 +258,104 @@ with gzip.open(os.path.join(D, 'layout.json.gz'), 'wt', compresslevel=9) as f:
 def fold(b):
     out = bytearray(); prevhi = False
     for x in b:
-        if x == 9:
-            out.extend(b' ' * (4 - len(out) % 4)); prevhi = False
-        elif x < 0x20:
-            out.append(32); prevhi = False
-        elif x < 0x80:
-            out.append(x); prevhi = False
+        if x == 9: out.extend(b' ' * (4 - len(out) % 4)); prevhi = False
+        elif x < 0x20: out.append(32); prevhi = False
+        elif x < 0x80: out.append(x); prevhi = False
         else:
-            if 0x80 <= x <= 0xBF and prevhi: pass
-            else: out.append(0x7F)
+            if not (0x80 <= x <= 0xBF and prevhi): out.append(0x7F)
             prevhi = True
     return bytes(out)
 COMMENT = (b'//', b'/*', b'* ', b'*/', b'--', b'# ', b';')
-meta = bytearray(2 * man['raw_lines']); folded_bytes = 0; n = 0
-for c in range(man['text_chunks']):
-    lines = gzip.open(os.path.join(D, f'text/lines-{c:03d}.txt.gz')).read().split(b'\n')
-    cnt = min(man['chunk_lines'], man['raw_lines'] - c * man['chunk_lines'])
-    for i in range(cnt):
-        fl = fold(lines[i])
-        ln = len(fl); st = fl.lstrip(b' ')
-        ind = min(255, ln - len(st))
-        com = 1 if (st.startswith(COMMENT) or st == b'*') else 0
-        meta[2 * n] = ind; meta[2 * n + 1] = min(127, ln) | (com << 7)
-        folded_bytes += min(ln, 124); n += 1
-assert n == man['raw_lines'], (n, man['raw_lines'])
+text = data.text; meta = bytearray(2 * len(text))
+for n, ln in enumerate(text):
+    fl = fold(ln); st = fl.lstrip(b' ')
+    meta[2 * n] = min(255, len(fl) - len(st)); meta[2 * n + 1] = min(127, len(fl)) | ((1 if (st.startswith(COMMENT) or st == b'*') else 0) << 7)
 with gzip.open(os.path.join(D, 'linemeta.bin.gz'), 'wb', compresslevel=9) as f: f.write(bytes(meta))
 
-# ---------- story + bookmarks ----------
-sid = {s['id']: s['i'] for s in S}
-def has(snap, path):
-    return any(f['p'] == path for f in snaps[sid[snap]]['files'])
-BM = [
-    ('SH4 interpreter', 'sh4_opcodes 2005 line (dc4ever)', 'dc4ever-2005', 'DC/SH4.7091/sh4_opcodes_test.cs', 0, 'ToDo : Check This [26/4/05]'),
-    ('SH4 interpreter', 'sh4_opcodes.cpp in reicast 2013', 'reicast-2013-import', 'newdc/hw/sh4/interpr/sh4_opcodes.cpp', 0, None),
-    ('SH4 interpreter', 'sh4_opcodes.cpp in nullDC 3 refsw3', 'nulldc3-refsw3', 'libswirl/hw/sh4/interpr/sh4_opcodes.cpp', 189, None),
-    ('SH4 interpreter', 'sh4_opcodes.cpp in flycast', 'flycast-head', 'core/hw/sh4/interpr/sh4_opcodes.cpp', 0, None),
-    ('SH4 recompiler', 'nullDC rec_v1 driver', 'nulldc-2011-09', 'nulldc/nullDC/dc/sh4/rec_v1/driver.cpp', 0, None),
-    ('SH4 recompiler', 'nullDC rec_v1 driver (2010-05)', 'nulldc-2010-05', 'nulldc/nullDC/dc/sh4/rec_v1/driver.cpp', 0, None),
-    ('SH4 recompiler', 'nullDCe rec_v2 driver', 'nullDCe-2009', 'dc/sh4/rec_v2/driver.cpp', 0, None),
-    ('SH4 recompiler', 'nullDCe rec_v2 shil', 'nullDCe-2009', 'dc/sh4/rec_v2/shil.cpp', 0, None),
-    ('SH4 recompiler', 'reicast ARM dynarec', 'reicast-2013-import', 'newdc/rec-ARM/arm_dyna.cpp', 0, None),
-    ('SH4 recompiler', 'reicast-last rec_arm (arm32)', 'reicast-last', 'libswirl/jit/backend/arm32/rec_arm.cpp', 0, None),
-    ('SH4 recompiler', 'nullDC 3 rec_x64', 'nulldc3-refsw3', 'libswirl/jit/backend/x64/rec_x64.cpp', 0, None),
-    ('SH4 recompiler', 'reicast rec_x64', 'reicast-last', 'libswirl/jit/backend/x64/rec_x64.cpp', 0, None),
-    ('SH4 recompiler', 'flycast rec_x64', 'flycast-head', 'core/rec-x64/rec_x64.cpp', 0, None),
-    ('PowerVR', 'dc4ever powervr.cs', 'dc4ever-2005', 'DC/PowerVR2DC/powervr.cs', 0, None),
-    ('PowerVR', 'nullDC drkPvr d3dRend', 'nulldc-2011-09', 'nulldc/plugins/drkPvr/d3dRend.cpp', 0, None),
-    ('PowerVR', 'nullDCe drkPvr glesRend', 'nullDCe-2009', 'plugs/drkPvr/glesRend.cpp', 0, None),
-    ('PowerVR', 'nulldc-360 xenosRend', 'nulldc-360-last', 'plugins/drkPvr/xenosRend.cpp', 0, None),
-    ('PowerVR', 'reicast gles.cpp', 'reicast-2013-import', 'newdc/rend/gles/gles.cpp', 0, None),
-    ('PowerVR', 'refsw (nullDC 3 2023)', 'nulldc3-fpgadc-2023', 'libswirl/rend/soft/refsw.cpp', 0, None),
-    ('PowerVR', 'refsw2 tile', 'nulldc3-v3.0.0-pre', 'libswirl/rend/refsw2/refsw_tile.cpp', 0, None),
-    ('PowerVR', 'refsw3 refcore tile', 'nulldc3-refsw3', 'refsw3/refcore/refsw_tile.cpp', 0, None),
-    ('FPGA', 'polly2 r6b peel_core', 'polly2-r6b', 'polly2-core/rtl/peel_core.sv', 0, None),
-    ('FPGA', 'polly2 r8 ref_copies.h (refsw3 C++ copy)', 'polly2-r8-develop', 'tb/ref/ref_copies.h', 0, None),
-    ('FPGA', 'shrike4 v1_core', 'shrike4-head', 'rtl/v1/v1_core.sv', 0, None),
-    ('FPGA', 'caique aica_core', 'caique-head', 'rtl/v1/aica_core.sv', 0, None),
-    ('FPGA', 'wren7 core', 'wren7-head', 'rtl/v1/wren7_core.sv', 0, None),
-    ('Cross-lane copies', 'NotDC-PS3 caiqueAICA', 'NotDC-PS3-0.8.3', 'plugs/caiqueAICA/aica_model.cpp', 0, None),
-    ('Cross-lane copies', 'devtools aica_dsp_playground dsp.h', 'devtools-v3.0.0-pre', 'experiments/aica_dsp_playground/dsp/dsp.h', 0, None),
-    ('Oddities', 'fsca-table.h (4096 rows)', 'nulldc3-refsw3', 'libswirl/hw/sh4/fsca-table.h', 0, None),
-    ('Oddities', 'naomi_roms.cpp (longest file)', 'flycast-head', 'core/hw/naomi/naomi_roms.cpp', 0, None),
-]
-def resolve(snap, path):
-    if has(snap, path): return path
-    base = path.rsplit('/', 1)[-1]
-    c = [f['p'] for f in snaps[sid[snap]]['files'] if f['p'].endswith('/' + base) or f['p'] == base]
+# ---------- story + bookmarks (frames) ----------
+def pick(ln, sel):
+    """frame of lane ln: 'first', 'last', a tag ('tag:v2.4'), a commit prefix ('c:761dc87') or a date ('<=2011-09-14')"""
+    fs = man['lanes'][LI[ln]]['frames']
+    if sel == 'first': return fs[0]
+    if sel == 'last': return fs[-1]
+    if sel.startswith('tag:'): return next(g for g in fs if sel[4:] in FR[g].get('tags', []))
+    if sel.startswith('c:'): return next(g for g in fs if FR[g]['commit'].startswith(sel[2:]))
+    if sel.startswith('<='): return [g for g in fs if FR[g]['date'] <= sel[2:]][-1]
+    raise ValueError(sel)
+def resolve(g, path, grep):
+    ps = [v[0] for v in STATES[g].values()]
+    if path in ps: return path
+    b = path.rsplit('/', 1)[-1]; c = [p for p in ps if p.endswith('/' + b) or p == b]
+    if grep:   # prefer a file that holds the grep text
+        tx = data.text; hold = {v[0] for v in STATES[g].values() if any(grep.encode() in tx[r] for r, o, k in v[1])}
+        c = [p for p in c if p in hold] or sorted(hold)[:1]
     if not c: return None
-    # prefer the candidate sharing the most trailing path components
     def score(p):
-        a, b = p.split('/')[::-1], path.split('/')[::-1]; n = 0
-        for x, y in zip(a, b):
+        n = 0
+        for x, y in zip(p.split('/')[::-1], path.split('/')[::-1]):
             if x != y: break
             n += 1
         return n
     return max(c, key=score)
-bookmarks = []; missing = []
-for g, title, snap, path, line, grep in BM:
-    p = resolve(snap, path)
-    if p is None: missing.append((snap, path)); continue
-    bookmarks.append({'group': g, 'title': title, 'snap': snap, 'path': p, 'line': line, 'grep': grep})
-chapters = [
-    {'title': 'dc4ever, C#, 2003-2005', 'snaps': ['dc4ever-2005'], 'text': 'The second Dreamcast emulator by drk||Raziel (said "D R K Raziel"), written in C#. Its git dates are a 2019 reconstruction from backups (one commit per file at its mtime); the real work is 2003-2005. nullDC was partly derived from it in concept: 0.6 % of nullDC 2010 lines are shared, yet the 2005 line "{//ToDo : Check This [26/4/05]" still lives in nullDC 3.', 'bookmarks': ['sh4_opcodes 2005 line (dc4ever)', 'dc4ever powervr.cs']},
-    {'title': 'nullDC, 2005-2013', 'snaps': ['nulldc-2010-05', 'nulldc-2010-12', 'nulldc-2011-09', 'nulldc-last'], 'text': 'nullDC was developed closed-source from 2005; the source went public on Google Code in 2010-05 (nullDC 1.0.x). The plugin architecture (drkPvr, nullAICA, ImgReader) and the rec_v1 SH4 recompiler are here.', 'bookmarks': ['nullDC rec_v1 driver', 'nullDC drkPvr d3dRend']},
-    {'title': 'nullDCe, the late-2008 fork', 'snaps': ['nullDCe-2009', 'nullDCe-ps2-2024'], 'text': 'nullDCe forked from nullDC mainline in late 2008 for PSP / Wii / PS3 (and later PS2). The repo is a 2017 commit of a recovered archive; the latest in-source date is 2009-10. Lines present in both nullDCe 2009 and nullDC 2010 are coloured as nullDC-pre2008.', 'bookmarks': ['nullDCe rec_v2 driver', 'nullDCe rec_v2 shil', 'nullDCe drkPvr glesRend']},
-    {'title': 'nulldc-360, 2011', 'snaps': ['nulldc-360-2011', 'nulldc-360-last'], 'text': 'gligli\'s Xbox 360 port, imported from nullDC svn trunk of 2011-09 (93 of 203 files identical) plus a Xenos renderer and a PPC dynarec.', 'bookmarks': ['nulldc-360 xenosRend']},
-    {'title': 'reicast, 2013', 'snaps': ['reicast-2013-import', 'reicast-r6', 'reicast-r7-rc1', 'reicast-r8', 'reicast-r19.07', 'reicast-r20.04', 'reicast-last'], 'text': 'The newdc / nullDC-Android rewrite of 2012-2013, imported as one commit (1c16baeb). 39.6 % of its lines come from nullDC and 30.3 % from nullDCe. The ARM dynarec and the GLES renderer start here.', 'bookmarks': ['reicast ARM dynarec', 'reicast gles.cpp', 'sh4_opcodes.cpp in reicast 2013']},
-    {'title': 'flycast, 2018-', 'snaps': ['flycast-v1.0', 'flycast-v2.0', 'flycast-v2.4', 'flycast-head'], 'text': 'flyinghead\'s git fork of reicast (2018-10; merged until 2019-05-17), the most active descendant today.', 'bookmarks': ['flycast rec_x64', 'naomi_roms.cpp (longest file)']},
-    {'title': 'nullDC 3, 2023-', 'snaps': ['nulldc3-fpgadc-2023', 'nulldc3-v3.0.0-pre', 'nulldc3-refsw3'], 'text': 'nullDC 3 (devcast) is built on reicast 2021-12 and starts with the fpgadc refsw-offline work in 2023-07. refsw grows into refsw2 and the refsw3 refcore, the bit-exact reference for the PowerVR2 hardware work.', 'bookmarks': ['refsw (nullDC 3 2023)', 'refsw2 tile', 'refsw3 refcore tile', 'sh4_opcodes.cpp in nullDC 3 refsw3']},
-    {'title': 'nullDC4Wii and NotDC-PS3, 2026', 'snaps': ['nullDC4Wii-first', 'nullDC4Wii-a0.50', 'nullDC4Wii-head', 'NotDC-PS3-first', 'NotDC-PS3-0.8.3'], 'text': 'nullDC4Wii imports nullDCe verbatim (2026-01); NotDC-PS3 imports nullDC4Wii (2026-09) and later carries plugs/caiqueAICA, a port of the caique-rtl AICA model.', 'bookmarks': ['NotDC-PS3 caiqueAICA']},
-    {'title': 'fpgadc, 2026: the hardware re-creation', 'snaps': ['minicast-import', 'minicast-r1', 'minicast-r2', 'minicast-r3', 'minicast-r4', 'minicast-r6', 'minicast-r6b', 'polly2-r1', 'polly2-r2', 'polly2-r2b', 'polly2-r3', 'polly2-r4', 'polly2-r6', 'polly2-r6b', 'polly2-r8-develop', 'shrike4-head', 'caique-head', 'wren7-head', 'dreamcast-tests-head', 'devtools-v3.0.0-pre'], 'text': 'The FPGA branch of the lineage. Every DreamSTer release pins a polly2-rtl commit (PowerVR2 in SystemVerilog) and a minicast commit (the reicast-derived ARM side); each pinned commit is a wall with a gold pin: r1, r2, r2b and r3 on 2026-07-17, r4 = r5 on 2026-07-18 (r5 repins nothing), r6 on 2026-07-30 and r6b on 2026-10-24. polly2-rtl r8/develop is its own lane: the new bit-exact model has its own root commit (no merge-base with main) and carries verbatim refsw3 C++ in tb/ ref_copies*.h. shrike4 (SH4), caique (AICA), wren7 (ARM7), dreamcast-tests and dreamcast-devtools are new code.', 'bookmarks': ['polly2 r6b peel_core', 'polly2 r8 ref_copies.h (refsw3 C++ copy)', 'shrike4 v1_core', 'caique aica_core', 'wren7 core']},
+BM = [  # group, title, lane, frame selector, path, line, grep
+    ('SH4 interpreter', 'sh4_opcodes 2005 line (dc4ever)', 'dc4ever', 'last', 'DC/SH4.7091/sh4_opcodes_test.cs', 0, 'ToDo : Check This [26/4/05]'),
+    ('SH4 interpreter', 'sh4_opcodes.cpp in reicast 2013', 'reicast', 'c:1c16baeb0', 'newdc/hw/sh4/interpr/sh4_opcodes.cpp', 0, None),
+    ('SH4 interpreter', 'sh4_opcodes.cpp in nullDC 3 refsw3', 'nulldc3', 'last', 'libswirl/hw/sh4/interpr/sh4_opcodes.cpp', 189, None),
+    ('SH4 interpreter', 'sh4_opcodes.cpp in flycast', 'flycast', 'last', 'core/hw/sh4/interpr/sh4_opcodes.cpp', 0, None),
+    ('SH4 recompiler', 'nullDC rec_v1 driver', 'nullDC', 'c:c563e07', 'nulldc/nullDC/dc/sh4/rec_v1/driver.cpp', 0, None),
+    ('SH4 recompiler', 'nullDC rec_v1 driver (2010-05)', 'nullDC', 'c:761dc87', 'nulldc/nullDC/dc/sh4/rec_v1/driver.cpp', 0, None),
+    ('SH4 recompiler', 'nullDCe rec_v2 driver', 'nullDCe', 'first', 'dc/sh4/rec_v2/driver.cpp', 0, None),
+    ('SH4 recompiler', 'nullDCe rec_v2 shil', 'nullDCe', 'first', 'dc/sh4/rec_v2/shil.cpp', 0, None),
+    ('SH4 recompiler', 'reicast ARM dynarec', 'reicast', 'c:1c16baeb0', 'newdc/rec-ARM/arm_dyna.cpp', 0, None),
+    ('SH4 recompiler', 'reicast-last rec_arm (arm32)', 'reicast', 'last', 'libswirl/jit/backend/arm32/rec_arm.cpp', 0, None),
+    ('SH4 recompiler', 'nullDC 3 rec_x64', 'nulldc3', 'last', 'libswirl/jit/backend/x64/rec_x64.cpp', 0, None),
+    ('SH4 recompiler', 'reicast rec_x64', 'reicast', 'last', 'libswirl/jit/backend/x64/rec_x64.cpp', 0, None),
+    ('SH4 recompiler', 'flycast rec_x64', 'flycast', 'last', 'core/rec-x64/rec_x64.cpp', 0, None),
+    ('PowerVR', 'dc4ever powervr.cs', 'dc4ever', 'last', 'DC/PowerVR2DC/powervr.cs', 0, None),
+    ('PowerVR', 'nullDC drkPvr d3dRend', 'nullDC', 'c:c563e07', 'nulldc/plugins/drkPvr/d3dRend.cpp', 0, None),
+    ('PowerVR', 'spg.cpp (Time to emulate that stuff correctly)', 'nullDC', 'c:761dc87', 'nulldc/plugins/drkPvr/spg.cpp', 0, 'Time to emulate that stuff correctly'),
+    ('PowerVR', 'nullDCe drkPvr glesRend', 'nullDCe', 'first', 'plugs/drkPvr/glesRend.cpp', 0, None),
+    ('PowerVR', 'nulldc-360 xenosRend', 'nulldc-360', 'last', 'plugins/drkPvr/xenosRend.cpp', 0, None),
+    ('PowerVR', 'reicast gles.cpp', 'reicast', 'c:1c16baeb0', 'newdc/rend/gles/gles.cpp', 0, None),
+    ('PowerVR', 'refsw (nullDC 3 2023)', 'nulldc3', 'first', 'libswirl/rend/soft/refsw.cpp', 0, None),
+    ('PowerVR', 'refsw2 tile', 'nulldc3', 'tag:v3.0.0-pre', 'libswirl/rend/refsw2/refsw_tile.cpp', 0, None),
+    ('PowerVR', 'refsw3 refcore tile', 'nulldc3', 'last', 'refsw3/refcore/refsw_tile.cpp', 0, None),
+    ('FPGA', 'polly2 r6b peel_core', 'polly2', 'tag:DreamSTer r6b', 'polly2-core/rtl/peel_core.sv', 0, None),
+    ('FPGA', 'polly2 r8 ref_copies.h (refsw3 C++ copy)', 'polly2-r8', 'last', 'tb/ref/ref_copies.h', 0, None),
+    ('FPGA', 'polly2 r8 ref_copies_setup.h (refsw3 C++ copy)', 'polly2-r8', 'last', 'tb/isp_setup/ref_copies_setup.h', 0, None),
+    ('FPGA', 'shrike4 v1_core', 'shrike4', 'last', 'rtl/v1/v1_core.sv', 0, None),
+    ('FPGA', 'caique aica_core', 'caique', 'last', 'rtl/v1/aica_core.sv', 0, None),
+    ('FPGA', 'wren7 core', 'wren7', 'last', 'rtl/v1/wren7_core.sv', 0, None),
+    ('Cross-lane copies', 'NotDC-PS3 caiqueAICA', 'NotDC-PS3', 'last', 'plugs/caiqueAICA/aica_model.cpp', 0, None),
+    ('Cross-lane copies', 'devtools aica_dsp_playground dsp.h', 'devtools', 'last', 'experiments/aica_dsp_playground/dsp/dsp.h', 0, None),
+    ('Oddities', 'fsca-table.h (4096 rows)', 'nulldc3', 'last', 'libswirl/hw/sh4/fsca-table.h', 0, None),
+    ('Oddities', 'naomi_roms.cpp (longest file)', 'flycast', 'last', 'core/hw/naomi/naomi_roms.cpp', 0, None),
+    ('Oddities', 'and here are the new ones :D', 'flycast', 'last', 'core/hw/sh4/sh4_opcode_list.cpp', 0, 'and here are the new ones :D'),
 ]
+bookmarks = []; missing = []
+for gname, title, ln, sel, path, line, grep in BM:
+    g = pick(ln, sel); p = resolve(g, path, grep)
+    if p is None: missing.append((ln, sel, path)); continue
+    bookmarks.append({'group': gname, 'title': title, 'lane': ln, 'frame': g, 'date': FR[g]['date'], 'path': p, 'line': line, 'grep': grep})
+def span(ln): fs = man['lanes'][LI[ln]]['frames']; return [fs[0], fs[-1]]
+chapters = [
+    {'title': 'dc4ever, C#, 2002-2005', 'lanes': ['dc4ever'], 'text': 'The second Dreamcast emulator by drk||Raziel (said "D R K Raziel"), written in C#. Its git history is a 2019 reconstruction from backups (one commit per file at its file mtime), so its frames are approximate; the real work is 2003-2005. nullDC was partly derived from it in concept, yet the 2005 line "{//ToDo : Check This [26/4/05]" still lives in nullDC 3.', 'bookmarks': ['sh4_opcodes 2005 line (dc4ever)', 'dc4ever powervr.cs']},
+    {'title': 'nullDC, 2005-2013', 'lanes': ['nullDC'], 'text': 'nullDC was developed closed-source from 2005; the source went public on Google Code in 2010-05 (nullDC 1.0.x). The plugin architecture (drkPvr, nullAICA, ImgReader) and the rec_v1 SH4 recompiler are here.', 'bookmarks': ['nullDC rec_v1 driver', 'nullDC drkPvr d3dRend', 'spg.cpp (Time to emulate that stuff correctly)']},
+    {'title': 'nullDCe, the late-2008 fork', 'lanes': ['nullDCe'], 'text': 'nullDCe forked from nullDC mainline in late 2008 for PSP / Wii / PS3 (and later PS2). The repo is a 2017 commit of a recovered archive; the latest in-source date is 2009-10, so its first frame is dated 2009-10 (range 2008-2010). Lines present in both nullDCe 2009 and nullDC are coloured as nullDC-pre2008.', 'bookmarks': ['nullDCe rec_v2 driver', 'nullDCe rec_v2 shil', 'nullDCe drkPvr glesRend']},
+    {'title': 'nulldc-360, 2011-2012', 'lanes': ['nulldc-360'], 'text': 'gligli\'s Xbox 360 port, imported from nullDC svn trunk of 2011-09 plus a Xenos renderer and a PPC dynarec.', 'bookmarks': ['nulldc-360 xenosRend']},
+    {'title': 'reicast, 2013-2021', 'lanes': ['reicast'], 'text': 'The newdc / nullDC-Android rewrite of 2012-2013, imported as one commit (1c16baeb), then developed in the open with releases r6 .. r20.04. The ARM dynarec and the GLES renderer start here.', 'bookmarks': ['reicast ARM dynarec', 'reicast gles.cpp', 'sh4_opcodes.cpp in reicast 2013']},
+    {'title': 'flycast, 2018-', 'lanes': ['flycast'], 'text': 'flyinghead\'s git fork of reicast (last shared commit 2018-09-03; merged reicast until 2019-05-17), the most active descendant today, with releases v1.0 .. v2.7.', 'bookmarks': ['flycast rec_x64', 'naomi_roms.cpp (longest file)', 'and here are the new ones :D']},
+    {'title': 'nullDC 3, 2023-', 'lanes': ['nulldc3'], 'text': 'nullDC 3 (devcast) is built on reicast 2021-12 and starts with the fpgadc refsw-offline work in 2023-07. refsw grows into refsw2 and the refsw3 refcore, the bit-exact reference for the PowerVR2 hardware work.', 'bookmarks': ['refsw (nullDC 3 2023)', 'refsw2 tile', 'refsw3 refcore tile', 'sh4_opcodes.cpp in nullDC 3 refsw3']},
+    {'title': 'nullDC4Wii and NotDC-PS3, 2026', 'lanes': ['nullDC4Wii', 'NotDC-PS3'], 'text': 'nullDC4Wii imports nullDCe verbatim (2026-01) and ships about 90 tagged alphas; NotDC-PS3 imports nullDC4Wii (2026-09) and later carries plugs/caiqueAICA, a port of the caique-rtl AICA model.', 'bookmarks': ['NotDC-PS3 caiqueAICA']},
+    {'title': 'fpgadc: the hardware re-creation', 'lanes': ['minicast', 'polly2', 'polly2-r8', 'devtools', 'dreamcast-tests', 'shrike4', 'caique', 'wren7'], 'text': 'The FPGA branch of the lineage. Every DreamSTer release pins a polly2-rtl commit (PowerVR2 in SystemVerilog) and a minicast commit (the nullDC-3-derived ARM side); each pin is a release frame: r1, r2, r2b and r3 on 2026-07-17, r4 = r5 on 2026-07-18 (r5 repins nothing), r6 on 2026-07-30 and r6b on 2026-10-24. polly2-rtl r8/develop is its own lane: the new bit-exact model has its own root commit (no merge-base with main) and carries verbatim refsw3 C++ in tb/ ref_copies*.h. shrike4 (SH4), caique (AICA), wren7 (ARM7), dreamcast-tests and dreamcast-devtools are new code.', 'bookmarks': ['polly2 r6b peel_core', 'polly2 r8 ref_copies.h (refsw3 C++ copy)', 'shrike4 v1_core', 'caique aica_core', 'wren7 core']},
+]
+for c in chapters: c['frames'] = {ln: span(ln) for ln in c['lanes']}
 story = {'author': {'handle': 'drk||Raziel', 'said': 'D R K Raziel', 'github': 'skmp'}, 'chapters': chapters, 'bookmarks': bookmarks}
 json.dump(story, open(os.path.join(D, 'story.json'), 'w'), indent=1)
 
-tot_slots = sum(len(l['slots']) for l in lanes_out)
-print(f'layout: {len(lanes_out)} lanes, {tot_slots} slots, {sum(l["cols"] for l in lanes_out)} lane columns, '
-      f'X extent {max(wall_x)}, Z extent {z}; folded text {folded_bytes/1e6:.1f} MB; {time.time()-t0:.1f}s')
-for l in lanes_out: print(f'  {l["name"]:16s} z0={l["z0"]:7d} cols={l["cols"]:4d} snaps={l["snaps"]}')
-if missing: print('MISSING bookmarks:', missing)
+print(f'layout: {len(lanes_out)} lanes, {sum(len(l["slots"]) for l in lanes_out)} slots, {sum(l["cols"] for l in lanes_out)} columns, '
+      f'{len(walls)} walls, X extent {max(w["x"] for w in walls)}, Z extent {z}, {len(edges)} edges, {len(marks)} marks; '
+      f'{len(bookmarks)} bookmarks; {time.time() - t0:.1f}s')
+for l in lanes_out: print(f'  {l["name"]:16s} z0={l["z0"]:7d} cols={l["cols"]:4d} slots={len(l["slots"]):5d} frames={len(l["frames"])}')
+for e in edges: print('  edge', e['kind'], e['label'])
+if missing: print('MISSING bookmarks:', missing); sys.exit(1)
