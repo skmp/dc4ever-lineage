@@ -1,5 +1,5 @@
 {
- "date": "2026-11-22T17:14:35.524Z",
+ "date": "2026-11-22T18:52:05.667Z",
  "size": [
   1280,
   720
@@ -8,7 +8,7 @@
   "A": {
    "path": "A",
    "dur": 20,
-   "frames": 691,
+   "frames": 591,
    "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)",
    "soft": true,
    "viewport": [
@@ -21,50 +21,92 @@
     360
    ],
    "frame_ms": {
-    "p50": 23.7,
-    "p95": 43.5,
-    "p99": 53.3,
-    "max": 71
+    "p50": 37.1,
+    "p95": 56.4,
+    "p99": 74.8,
+    "max": 126.6
    },
    "cpu_ms": {
-    "p50": 22.5,
-    "p95": 39.1,
-    "p99": 49
+    "p50": 0.7,
+    "p95": 1,
+    "p99": 1.4
    },
    "gpu_ms": {
-    "p50": 14.94,
-    "p95": 19.11,
-    "p99": 22.99
+    "p50": 20.02,
+    "p95": 29.4,
+    "p99": 38.11
    },
-   "fps_mean": 38.9,
-   "draws_p95": 34,
-   "lines_p95": 8806,
-   "lines_max": 13640,
+   "fps_mean": 29.6,
+   "draws_p95": 52,
+   "lines_p95": 9083,
+   "lines_max": 13241,
    "quality_steps": [
+    4,
+    3,
     2,
     1,
     0
    ],
-   "frames_over_100ms": 0,
-   "ready_ms": 7581,
+   "frames_over_100ms": 3,
+   "ready_ms": 15788,
+   "slowest_frames_cpu_sections": [
+    [
+     57.9,
+     [
+      [
+       "lod0",
+       57.3
+      ]
+     ]
+    ],
+    [
+     39.3,
+     [
+      [
+       "lod0",
+       38.7
+      ]
+     ]
+    ],
+    [
+     38.2,
+     [
+      [
+       "lod0",
+       37.3
+      ]
+     ]
+    ],
+    [
+     35,
+     [
+      [
+       "lod0",
+       34.5
+      ]
+     ]
+    ]
+   ],
    "load": {
-    "boot": 136.20000000298023,
-    "firstFrame": 529.5,
-    "walls": 40,
+    "boot": 219.70000000298023,
+    "firstFrame": 1004.7000000029802,
+    "walls": 48,
     "text": 12,
     "textDone": 0,
-    "allText": 3107.6000000089407,
+    "allText": 4120.70000000298,
     "bytesBoot": 0,
-    "meta": 558.2999999970198,
-    "allWalls": 1196.5
+    "warmupMs": 226.3999999910593,
+    "meta": 1130.7999999970198,
+    "blame": 48,
+    "allWalls": 2503.6000000089407
    },
-   "gpu_bytes_est": 128965970.55999996,
-   "js_heap_mb": 81
+   "gpu_bytes_est": 144341960.95999995,
+   "js_heap_mb": 101
   },
   "B": {
    "path": "B",
    "dur": 20,
-   "frames": 628,
+   "frames": 741,
    "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)",
    "soft": true,
    "viewport": [
@@ -77,50 +119,83 @@
     360
    ],
    "frame_ms": {
-    "p50": 25.7,
-    "p95": 44.6,
-    "p99": 51.1,
-    "max": 66.8
+    "p50": 20.6,
+    "p95": 40.1,
+    "p99": 55.7,
+    "max": 72.6
    },
    "cpu_ms": {
-    "p50": 24.7,
-    "p95": 40.1,
-    "p99": 48.1
+    "p50": 0.7,
+    "p95": 1.1,
+    "p99": 1.6
    },
    "gpu_ms": {
-    "p50": 17.34,
-    "p95": 19.51,
-    "p99": 23.85
+    "p50": 16.55,
+    "p95": 22.32,
+    "p99": 26.75
    },
-   "fps_mean": 35.6,
-   "draws_p95": 45,
+   "fps_mean": 37.1,
+   "draws_p95": 53,
    "lines_p95": 0,
    "lines_max": 0,
    "quality_steps": [
+    4,
+    3,
     2,
     1,
     0
    ],
    "frames_over_100ms": 0,
-   "ready_ms": 7508,
+   "ready_ms": 14333,
+   "slowest_frames_cpu_sections": [
+    [
+     42.5,
+     [
+      [
+       "lod0",
+       41.8
+      ]
+     ]
+    ],
+    [
+     31.6,
+     [
+      [
+       "lod0",
+       31
+      ]
+     ]
+    ],
+    [
+     30.7,
+     [
+      [
+       "lod0",
+       30.2
+      ]
+     ]
+    ]
+   ],
    "load": {
-    "boot": 113.1000000089407,
-    "firstFrame": 294.40000000596046,
-    "walls": 40,
+    "boot": 200.8999999910593,
+    "firstFrame": 609.0999999940395,
+    "walls": 48,
     "text": 12,
     "textDone": 0,
-    "allText": 2208.7000000029802,
+    "allText": 3705.0999999940395,
     "bytesBoot": 0,
-    "meta": 316.40000000596046,
-    "allWalls": 1618.300000011921
+    "warmupMs": 149.20000000298023,
+    "meta": 650.0999999940395,
+    "blame": 48,
+    "allWalls": 2055.7999999970198
    },
-   "gpu_bytes_est": 128965970.55999996,
-   "js_heap_mb": 75
+   "gpu_bytes_est": 144341960.95999992,
+   "js_heap_mb": 102
   },
   "C": {
    "path": "C",
    "dur": 20,
-   "frames": 800,
+   "frames": 737,
    "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)",
    "soft": true,
    "viewport": [
@@ -133,50 +208,65 @@
     360
    ],
    "frame_ms": {
-    "p50": 21,
-    "p95": 39,
-    "p99": 50.9,
-    "max": 70.2
+    "p50": 20.8,
+    "p95": 54.1,
+    "p99": 56.5,
+    "max": 73.2
    },
    "cpu_ms": {
-    "p50": 19.8,
-    "p95": 36.6,
-    "p99": 48
+    "p50": 0.7,
+    "p95": 1,
+    "p99": 1.5
    },
    "gpu_ms": {
-    "p50": 13.12,
-    "p95": 17.06,
-    "p99": 20.32
+    "p50": 16.01,
+    "p95": 22.49,
+    "p99": 29.39
    },
-   "fps_mean": 44.6,
-   "draws_p95": 39,
+   "fps_mean": 36.9,
+   "draws_p95": 52,
    "lines_p95": 0,
-   "lines_max": 11461,
+   "lines_max": 10315,
    "quality_steps": [
+    4,
+    3,
     2,
     1,
     0
    ],
    "frames_over_100ms": 0,
-   "ready_ms": 8171,
+   "ready_ms": 13182,
+   "slowest_frames_cpu_sections": [
+    [
+     31.7,
+     [
+      [
+       "lod0",
+       31.2
+      ]
+     ]
+    ]
+   ],
    "load": {
-    "boot": 138.09999999403954,
-    "firstFrame": 306.5,
-    "walls": 40,
+    "boot": 182.70000000298023,
+    "firstFrame": 541.8000000119209,
+    "walls": 48,
     "text": 12,
     "textDone": 0,
-    "allText": 2175.5,
+    "allText": 3240.4000000059605,
     "bytesBoot": 0,
-    "meta": 327.59999999403954,
-    "allWalls": 2065.5
+    "warmupMs": 137.70000000298023,
+    "meta": 576.7000000029802,
+    "blame": 48,
+    "allWalls": 1776.6000000089407
    },
-   "gpu_bytes_est": 128965970.55999996,
-   "js_heap_mb": 114
+   "gpu_bytes_est": 144341960.95999992,
+   "js_heap_mb": 108
   },
   "D": {
    "path": "D",
    "dur": 20,
-   "frames": 771,
+   "frames": 749,
    "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)",
    "soft": true,
    "viewport": [
@@ -189,50 +279,65 @@
     360
    ],
    "frame_ms": {
-    "p50": 21.3,
-    "p95": 37.1,
-    "p99": 52.4,
-    "max": 69.1
+    "p50": 20.6,
+    "p95": 46.6,
+    "p99": 55.6,
+    "max": 58.3
    },
    "cpu_ms": {
-    "p50": 19.9,
-    "p95": 35,
-    "p99": 39.8
+    "p50": 0.7,
+    "p95": 1.1,
+    "p99": 1.4
    },
    "gpu_ms": {
-    "p50": 13.97,
-    "p95": 15.58,
-    "p99": 17.18
+    "p50": 16.08,
+    "p95": 22.35,
+    "p99": 26.34
    },
-   "fps_mean": 43.4,
-   "draws_p95": 10,
-   "lines_p95": 3944,
+   "fps_mean": 37.5,
+   "draws_p95": 11,
+   "lines_p95": 3983,
    "lines_max": 4096,
    "quality_steps": [
+    4,
+    3,
     2,
     1,
     0
    ],
    "frames_over_100ms": 0,
-   "ready_ms": 6869,
+   "ready_ms": 13374,
+   "slowest_frames_cpu_sections": [
+    [
+     49,
+     [
+      [
+       "lod0",
+       48.2
+      ]
+     ]
+    ]
+   ],
    "load": {
-    "boot": 126.5,
-    "firstFrame": 281.69999998807907,
-    "walls": 40,
+    "boot": 187.20000000298023,
+    "firstFrame": 590.2000000029802,
+    "walls": 48,
     "text": 12,
     "textDone": 0,
-    "allText": 3032.5,
+    "allText": 3537.9000000059605,
     "bytesBoot": 0,
-    "meta": 303.59999999403954,
-    "allWalls": 1342.7999999970198
+    "warmupMs": 129.5,
+    "meta": 633.5,
+    "blame": 48,
+    "allWalls": 1964.5
    },
-   "gpu_bytes_est": 128965970.55999996,
-   "js_heap_mb": 75
+   "gpu_bytes_est": 144341960.95999992,
+   "js_heap_mb": 102
   },
   "E": {
    "path": "E",
    "dur": 20,
-   "frames": 756,
+   "frames": 732,
    "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)",
    "soft": true,
    "viewport": [
@@ -245,45 +350,60 @@
     360
    ],
    "frame_ms": {
-    "p50": 21.4,
-    "p95": 37.3,
-    "p99": 52.2,
-    "max": 53.4
+    "p50": 21.1,
+    "p95": 54.5,
+    "p99": 56.8,
+    "max": 72
    },
    "cpu_ms": {
-    "p50": 20,
-    "p95": 34.7,
-    "p99": 38.3
+    "p50": 0.7,
+    "p95": 0.9,
+    "p99": 1.3
    },
    "gpu_ms": {
-    "p50": 13.55,
-    "p95": 14.79,
-    "p99": 17.53
+    "p50": 16.42,
+    "p95": 22.96,
+    "p99": 29.02
    },
-   "fps_mean": 42.2,
+   "fps_mean": 36.6,
    "draws_p95": 16,
    "lines_p95": 0,
    "lines_max": 0,
    "quality_steps": [
+    4,
+    3,
     2,
     1,
     0
    ],
    "frames_over_100ms": 0,
-   "ready_ms": 6926,
+   "ready_ms": 12617,
+   "slowest_frames_cpu_sections": [
+    [
+     31.2,
+     [
+      [
+       "lod0",
+       30.9
+      ]
+     ]
+    ]
+   ],
    "load": {
-    "boot": 119.20000000298023,
-    "firstFrame": 288.59999999403954,
-    "walls": 40,
+    "boot": 180.19999998807907,
+    "firstFrame": 558,
+    "walls": 48,
     "text": 12,
     "textDone": 0,
-    "allText": 2887.0999999940395,
+    "allText": 3348.2999999970198,
     "bytesBoot": 0,
-    "meta": 310.3999999910593,
-    "allWalls": 1434
+    "warmupMs": 117.09999999403954,
+    "meta": 595.3999999910593,
+    "blame": 48,
+    "allWalls": 1882
    },
-   "gpu_bytes_est": 128965970.55999996,
-   "js_heap_mb": 121
+   "gpu_bytes_est": 144341960.95999992,
+   "js_heap_mb": 139
   }
  },
  "logs": []

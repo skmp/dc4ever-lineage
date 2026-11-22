@@ -1,0 +1,15 @@
+nullDC lineage viewer on 0.0.0.0:8798
+open from Windows:  http://172.22.167.46:8798/
+file:///home/skmp/projects/nulldc-lineage/tools/serve.mjs:19
+  const p = decodeURIComponent(urlPath.split('?')[0]);
+            ^
+
+URIError: URI malformed
+    at decodeURIComponent (<anonymous>)
+    at resolve (file:///home/skmp/projects/nulldc-lineage/tools/serve.mjs:19:13)
+    at Server.<anonymous> (file:///home/skmp/projects/nulldc-lineage/tools/serve.mjs:39:13)
+    at Server.emit (node:events:519:28)
+    at parserOnIncoming (node:_http_server:1186:12)
+    at HTTPParser.parserOnHeadersComplete (node:_http_common:125:17)
+
+Node.js v22.22.1

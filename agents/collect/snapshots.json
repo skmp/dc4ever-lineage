@@ -2371,6 +2371,198 @@
    "binary_source_ext_files": 0
   },
   {
+   "id": "minicast-r2",
+   "repo": "skmp_minicast",
+   "ref": "6fcc0e1",
+   "commit": "6fcc0e1d3ec7b85960c0806b45945b2a2219ca3b",
+   "date": "2026-07-17",
+   "commit_date": "2026-07-17",
+   "lane": "fpgadc",
+   "why": "minicast pinned by DreamSTer r2 and r2b",
+   "files": 301,
+   "lines": 102973,
+   "by_lang": {
+    "C++": {
+     "files": 135,
+     "lines": 61283
+    },
+    "C/C++ header": {
+     "files": 163,
+     "lines": 41208
+    },
+    "Assembly": {
+     "files": 1,
+     "lines": 331
+    },
+    "C": {
+     "files": 2,
+     "lines": 151
+    }
+   },
+   "vendored": {
+    "files": 260,
+    "lines": 354470,
+    "dirs": {
+     "libswirl/deps/vixl": {
+      "files": 55,
+      "lines": 179430
+     },
+     "libswirl/deps/libpng": {
+      "files": 29,
+      "lines": 39173
+     },
+     "libswirl/deps/khronos": {
+      "files": 20,
+      "lines": 38164
+     },
+     "libswirl/deps/imgui": {
+      "files": 11,
+      "lines": 36664
+     },
+     "libswirl/deps/flac": {
+      "files": 51,
+      "lines": 28145
+     },
+     "libswirl/deps/lzma": {
+      "files": 42,
+      "lines": 12560
+     },
+     "libswirl/deps/zlib": {
+      "files": 22,
+      "lines": 11022
+     },
+     "libswirl/deps/chdr": {
+      "files": 11,
+      "lines": 4643
+     },
+     "libswirl/deps/libelf": {
+      "files": 7,
+      "lines": 1990
+     },
+     "libswirl/deps/xxhash": {
+      "files": 2,
+      "lines": 1358
+     },
+     "libswirl/deps/crypto": {
+      "files": 6,
+      "lines": 929
+     },
+     "libswirl/deps/cdipsr": {
+      "files": 2,
+      "lines": 204
+     },
+     "libswirl/deps/coreio": {
+      "files": 2,
+      "lines": 188
+     }
+    }
+   },
+   "generated": {
+    "files": 1,
+    "lines": 18,
+    "top": {
+     "libswirl/hw/pvr/config.h": 18
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "minicast-r3",
+   "repo": "skmp_minicast",
+   "ref": "585205b",
+   "commit": "585205bc5aac79f918365d7ef6a28636318c211e",
+   "date": "2026-07-17",
+   "commit_date": "2026-07-17",
+   "lane": "fpgadc",
+   "why": "minicast pinned by DreamSTer r3",
+   "files": 301,
+   "lines": 102977,
+   "by_lang": {
+    "C++": {
+     "files": 135,
+     "lines": 61285
+    },
+    "C/C++ header": {
+     "files": 163,
+     "lines": 41210
+    },
+    "Assembly": {
+     "files": 1,
+     "lines": 331
+    },
+    "C": {
+     "files": 2,
+     "lines": 151
+    }
+   },
+   "vendored": {
+    "files": 260,
+    "lines": 354470,
+    "dirs": {
+     "libswirl/deps/vixl": {
+      "files": 55,
+      "lines": 179430
+     },
+     "libswirl/deps/libpng": {
+      "files": 29,
+      "lines": 39173
+     },
+     "libswirl/deps/khronos": {
+      "files": 20,
+      "lines": 38164
+     },
+     "libswirl/deps/imgui": {
+      "files": 11,
+      "lines": 36664
+     },
+     "libswirl/deps/flac": {
+      "files": 51,
+      "lines": 28145
+     },
+     "libswirl/deps/lzma": {
+      "files": 42,
+      "lines": 12560
+     },
+     "libswirl/deps/zlib": {
+      "files": 22,
+      "lines": 11022
+     },
+     "libswirl/deps/chdr": {
+      "files": 11,
+      "lines": 4643
+     },
+     "libswirl/deps/libelf": {
+      "files": 7,
+      "lines": 1990
+     },
+     "libswirl/deps/xxhash": {
+      "files": 2,
+      "lines": 1358
+     },
+     "libswirl/deps/crypto": {
+      "files": 6,
+      "lines": 929
+     },
+     "libswirl/deps/cdipsr": {
+      "files": 2,
+      "lines": 204
+     },
+     "libswirl/deps/coreio": {
+      "files": 2,
+      "lines": 188
+     }
+    }
+   },
+   "generated": {
+    "files": 1,
+    "lines": 18,
+    "top": {
+     "libswirl/hw/pvr/config.h": 18
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
    "id": "polly2-r1",
    "repo": "skmp_polly2-rtl",
    "ref": "be391db",
@@ -2419,6 +2611,414 @@
      "polly2-de10nano/plls/pll.v": 263,
      "polly2-de10nano/plls/pll_hdmi.v": 256,
      "polly2-de10nano/plls/pll_audio.v": 252
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "polly2-r2",
+   "repo": "skmp_polly2-rtl",
+   "ref": "7a70d24",
+   "commit": "7a70d245542d86d33389062dc63b4be71905d5cb",
+   "date": "2026-07-17",
+   "commit_date": "2026-07-17",
+   "lane": "fpgadc",
+   "why": "polly2-rtl pinned by DreamSTer r2",
+   "files": 150,
+   "lines": 23583,
+   "by_lang": {
+    "SystemVerilog": {
+     "files": 112,
+     "lines": 18308
+    },
+    "C++": {
+     "files": 24,
+     "lines": 2705
+    },
+    "Verilog": {
+     "files": 4,
+     "lines": 1196
+    },
+    "Python": {
+     "files": 7,
+     "lines": 916
+    },
+    "C": {
+     "files": 1,
+     "lines": 314
+    },
+    "C/C++ header": {
+     "files": 2,
+     "lines": 144
+    }
+   },
+   "vendored": {
+    "files": 0,
+    "lines": 0,
+    "dirs": {}
+   },
+   "generated": {
+    "files": 3,
+    "lines": 771,
+    "top": {
+     "polly2-de10nano/plls/pll.v": 263,
+     "polly2-de10nano/plls/pll_hdmi.v": 256,
+     "polly2-de10nano/plls/pll_audio.v": 252
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "polly2-r2b",
+   "repo": "skmp_polly2-rtl",
+   "ref": "635ec79",
+   "commit": "635ec791ce139a17797370377bc421bdff36f35e",
+   "date": "2026-07-17",
+   "commit_date": "2026-07-17",
+   "lane": "fpgadc",
+   "why": "polly2-rtl pinned by DreamSTer r2b",
+   "files": 152,
+   "lines": 23880,
+   "by_lang": {
+    "SystemVerilog": {
+     "files": 113,
+     "lines": 18436
+    },
+    "C++": {
+     "files": 25,
+     "lines": 2874
+    },
+    "Verilog": {
+     "files": 4,
+     "lines": 1196
+    },
+    "Python": {
+     "files": 7,
+     "lines": 916
+    },
+    "C": {
+     "files": 1,
+     "lines": 314
+    },
+    "C/C++ header": {
+     "files": 2,
+     "lines": 144
+    }
+   },
+   "vendored": {
+    "files": 0,
+    "lines": 0,
+    "dirs": {}
+   },
+   "generated": {
+    "files": 3,
+    "lines": 771,
+    "top": {
+     "polly2-de10nano/plls/pll.v": 263,
+     "polly2-de10nano/plls/pll_hdmi.v": 256,
+     "polly2-de10nano/plls/pll_audio.v": 252
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "polly2-r3",
+   "repo": "skmp_polly2-rtl",
+   "ref": "436372f",
+   "commit": "436372f4bc2145c849e04cc3bf5d2c3542ee181b",
+   "date": "2026-07-17",
+   "commit_date": "2026-07-17",
+   "lane": "fpgadc",
+   "why": "polly2-rtl pinned by DreamSTer r3",
+   "files": 154,
+   "lines": 24210,
+   "by_lang": {
+    "SystemVerilog": {
+     "files": 114,
+     "lines": 18595
+    },
+    "C++": {
+     "files": 26,
+     "lines": 3045
+    },
+    "Verilog": {
+     "files": 4,
+     "lines": 1196
+    },
+    "Python": {
+     "files": 7,
+     "lines": 916
+    },
+    "C": {
+     "files": 1,
+     "lines": 314
+    },
+    "C/C++ header": {
+     "files": 2,
+     "lines": 144
+    }
+   },
+   "vendored": {
+    "files": 0,
+    "lines": 0,
+    "dirs": {}
+   },
+   "generated": {
+    "files": 3,
+    "lines": 771,
+    "top": {
+     "polly2-de10nano/plls/pll.v": 263,
+     "polly2-de10nano/plls/pll_hdmi.v": 256,
+     "polly2-de10nano/plls/pll_audio.v": 252
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "minicast-r4",
+   "repo": "skmp_minicast",
+   "ref": "0998288",
+   "commit": "0998288eba46408a0f85e6876feac99e01ee1e0f",
+   "date": "2026-07-18",
+   "commit_date": "2026-07-18",
+   "lane": "fpgadc",
+   "why": "minicast pinned by DreamSTer r4 and r5",
+   "files": 303,
+   "lines": 103264,
+   "by_lang": {
+    "C++": {
+     "files": 136,
+     "lines": 61544
+    },
+    "C/C++ header": {
+     "files": 164,
+     "lines": 41238
+    },
+    "Assembly": {
+     "files": 1,
+     "lines": 331
+    },
+    "C": {
+     "files": 2,
+     "lines": 151
+    }
+   },
+   "vendored": {
+    "files": 260,
+    "lines": 354470,
+    "dirs": {
+     "libswirl/deps/vixl": {
+      "files": 55,
+      "lines": 179430
+     },
+     "libswirl/deps/libpng": {
+      "files": 29,
+      "lines": 39173
+     },
+     "libswirl/deps/khronos": {
+      "files": 20,
+      "lines": 38164
+     },
+     "libswirl/deps/imgui": {
+      "files": 11,
+      "lines": 36664
+     },
+     "libswirl/deps/flac": {
+      "files": 51,
+      "lines": 28145
+     },
+     "libswirl/deps/lzma": {
+      "files": 42,
+      "lines": 12560
+     },
+     "libswirl/deps/zlib": {
+      "files": 22,
+      "lines": 11022
+     },
+     "libswirl/deps/chdr": {
+      "files": 11,
+      "lines": 4643
+     },
+     "libswirl/deps/libelf": {
+      "files": 7,
+      "lines": 1990
+     },
+     "libswirl/deps/xxhash": {
+      "files": 2,
+      "lines": 1358
+     },
+     "libswirl/deps/crypto": {
+      "files": 6,
+      "lines": 929
+     },
+     "libswirl/deps/cdipsr": {
+      "files": 2,
+      "lines": 204
+     },
+     "libswirl/deps/coreio": {
+      "files": 2,
+      "lines": 188
+     }
+    }
+   },
+   "generated": {
+    "files": 1,
+    "lines": 18,
+    "top": {
+     "libswirl/hw/pvr/config.h": 18
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "polly2-r4",
+   "repo": "skmp_polly2-rtl",
+   "ref": "c22506c",
+   "commit": "c22506c4eb5816dd8eee6e7469b54de5853fb274",
+   "date": "2026-07-18",
+   "commit_date": "2026-07-18",
+   "lane": "fpgadc",
+   "why": "polly2-rtl pinned by DreamSTer r4 and r5 (r5 repins nothing: same polly2-rtl and minicast commits as r4)",
+   "files": 158,
+   "lines": 25052,
+   "by_lang": {
+    "SystemVerilog": {
+     "files": 116,
+     "lines": 18940
+    },
+    "C++": {
+     "files": 28,
+     "lines": 3421
+    },
+    "Verilog": {
+     "files": 4,
+     "lines": 1229
+    },
+    "Python": {
+     "files": 7,
+     "lines": 916
+    },
+    "C": {
+     "files": 1,
+     "lines": 314
+    },
+    "C/C++ header": {
+     "files": 2,
+     "lines": 232
+    }
+   },
+   "vendored": {
+    "files": 0,
+    "lines": 0,
+    "dirs": {}
+   },
+   "generated": {
+    "files": 3,
+    "lines": 771,
+    "top": {
+     "polly2-de10nano/plls/pll.v": 263,
+     "polly2-de10nano/plls/pll_hdmi.v": 256,
+     "polly2-de10nano/plls/pll_audio.v": 252
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "minicast-r6",
+   "repo": "skmp_minicast",
+   "ref": "450eb49",
+   "commit": "450eb4913576ef9710048b68489965171b6d5e40",
+   "date": "2026-07-30",
+   "commit_date": "2026-07-30",
+   "lane": "fpgadc",
+   "why": "minicast pinned by DreamSTer r6",
+   "files": 310,
+   "lines": 107802,
+   "by_lang": {
+    "C++": {
+     "files": 139,
+     "lines": 65129
+    },
+    "C/C++ header": {
+     "files": 167,
+     "lines": 41968
+    },
+    "Assembly": {
+     "files": 1,
+     "lines": 331
+    },
+    "Python": {
+     "files": 1,
+     "lines": 223
+    },
+    "C": {
+     "files": 2,
+     "lines": 151
+    }
+   },
+   "vendored": {
+    "files": 260,
+    "lines": 354470,
+    "dirs": {
+     "libswirl/deps/vixl": {
+      "files": 55,
+      "lines": 179430
+     },
+     "libswirl/deps/libpng": {
+      "files": 29,
+      "lines": 39173
+     },
+     "libswirl/deps/khronos": {
+      "files": 20,
+      "lines": 38164
+     },
+     "libswirl/deps/imgui": {
+      "files": 11,
+      "lines": 36664
+     },
+     "libswirl/deps/flac": {
+      "files": 51,
+      "lines": 28145
+     },
+     "libswirl/deps/lzma": {
+      "files": 42,
+      "lines": 12560
+     },
+     "libswirl/deps/zlib": {
+      "files": 22,
+      "lines": 11022
+     },
+     "libswirl/deps/chdr": {
+      "files": 11,
+      "lines": 4643
+     },
+     "libswirl/deps/libelf": {
+      "files": 7,
+      "lines": 1990
+     },
+     "libswirl/deps/xxhash": {
+      "files": 2,
+      "lines": 1358
+     },
+     "libswirl/deps/crypto": {
+      "files": 6,
+      "lines": 929
+     },
+     "libswirl/deps/cdipsr": {
+      "files": 2,
+      "lines": 204
+     },
+     "libswirl/deps/coreio": {
+      "files": 2,
+      "lines": 188
+     }
+    }
+   },
+   "generated": {
+    "files": 1,
+    "lines": 18,
+    "top": {
+     "libswirl/hw/pvr/config.h": 18
     }
    },
    "binary_source_ext_files": 0
@@ -3388,7 +3988,7 @@
    "date": "2026-11-21",
    "commit_date": "2026-11-21",
    "lane": "fpgadc",
-   "why": "polly2-rtl r8/develop: the new bit-exact cycle-accurate PVR2 CORE model (branches from main 2806e9f 2026-10-24; tree rewritten)",
+   "why": "polly2-rtl r8/develop: the new bit-exact cycle-accurate PVR2 CORE model. Unrelated history: its root 4ca41fb (2026-11-20) has no merge-base with main, so it is its own lane, not a continuation of r6b",
    "files": 159,
    "lines": 29241,
    "by_lang": {
@@ -3582,8 +4182,8 @@
    "binary_source_ext_files": 0
   }
  ],
- "total_lines": 4092201,
- "total_files": 13566,
- "total_lines_with_vendored": 11180895,
+ "total_lines": 4605942,
+ "total_files": 15395,
+ "total_lines_with_vendored": 13112516,
  "largest": "nulldc3-refsw3"
 }

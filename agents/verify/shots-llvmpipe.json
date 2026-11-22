@@ -1,47 +1,12 @@
 {
  "size": [
-  1600,
-  900
+  1280,
+  720
  ],
  "views": {
   "far": {
-   "file": "agents/verify/shots/far-llvmpipe-1600x900.png",
-   "ready_ms": 6711,
-   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)"
-  },
-  "rec": {
-   "file": "agents/verify/shots/rec-llvmpipe-1600x900.png",
-   "ready_ms": 0,
-   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)"
-  },
-  "rec-mid": {
-   "file": "agents/verify/shots/rec-mid-llvmpipe-1600x900.png",
-   "ready_ms": 0,
-   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)"
-  },
-  "morph": {
-   "file": "agents/verify/shots/morph-llvmpipe-1600x900.png",
-   "ready_ms": 100,
-   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)"
-  },
-  "morph-wide": {
-   "file": "agents/verify/shots/morph-wide-llvmpipe-1600x900.png",
-   "ready_ms": 0,
-   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)"
-  },
-  "fork": {
-   "file": "agents/verify/shots/fork-llvmpipe-1600x900.png",
-   "ready_ms": 0,
-   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)"
-  },
-  "fork2": {
-   "file": "agents/verify/shots/fork2-llvmpipe-1600x900.png",
-   "ready_ms": 0,
-   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)"
-  },
-  "fpgadc": {
-   "file": "agents/verify/shots/fpgadc-llvmpipe-1600x900.png",
-   "ready_ms": 0,
+   "file": "agents/verify/shots/far-llvmpipe-1280x720.png",
+   "ready_ms": 10085,
    "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)"
   }
  },

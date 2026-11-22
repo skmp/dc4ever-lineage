@@ -120,8 +120,16 @@
    "snaps": [
     "minicast-import",
     "minicast-r1",
+    "minicast-r2",
+    "minicast-r3",
+    "minicast-r4",
+    "minicast-r6",
     "minicast-r6b",
     "polly2-r1",
+    "polly2-r2",
+    "polly2-r2b",
+    "polly2-r3",
+    "polly2-r4",
     "polly2-r6",
     "polly2-r6b",
     "polly2-r8-develop",
@@ -131,7 +139,7 @@
     "dreamcast-tests-head",
     "devtools-v3.0.0-pre"
    ],
-   "text": "The FPGA branch of the lineage: DreamSTer releases r1..r6b pin polly2-rtl (PowerVR2 in SystemVerilog) and minicast (the reicast-derived ARM side). polly2-rtl r8/develop is the new bit-exact model and carries verbatim refsw3 C++ in ref_copies*.h. shrike4 (SH4), caique (AICA), wren7 (ARM7), dreamcast-tests and dreamcast-devtools are new code.",
+   "text": "The FPGA branch of the lineage. Every DreamSTer release pins a polly2-rtl commit (PowerVR2 in SystemVerilog) and a minicast commit (the reicast-derived ARM side); each pinned commit is a wall with a gold pin: r1, r2, r2b and r3 on 2026-07-17, r4 = r5 on 2026-07-18 (r5 repins nothing), r6 on 2026-07-30 and r6b on 2026-10-24. polly2-rtl r8/develop is its own lane: the new bit-exact model has its own root commit (no merge-base with main) and carries verbatim refsw3 C++ in tb/ ref_copies*.h. shrike4 (SH4), caique (AICA), wren7 (ARM7), dreamcast-tests and dreamcast-devtools are new code.",
    "bookmarks": [
     "polly2 r6b peel_core",
     "polly2 r8 ref_copies.h (refsw3 C++ copy)",

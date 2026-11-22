@@ -1,0 +1,13 @@
+9819 distinct (repo, path, blob) of 15395 files; 24 jobs
+  0/9819  0s
+  1000/9819  1s
+  2000/9819  2s
+  3000/9819  4s
+  4000/9819  5s
+  5000/9819  7s
+  6000/9819  8s
+  7000/9819  8s
+  8000/9819  9s
+  9000/9819  10s
+151 handles, 9099 commits, 4605942 lines, 0 unmatched (0.00 %), 14s
+top handles by commits: [('Flyinghead', 3361), ('skmp', 2991), ('BenoitAdam', 351), ('TwistedUmbrella', 325), ('Jan Holthuis', 191), ('flyinghead', 191), ('BenoitAdam94', 182), ('scribam', 147), ("Ender's Games", 144), ('GliGli', 112), ('Christoph "baka0815" Schwerdtfeger', 112), ('Mayo1970', 100)]

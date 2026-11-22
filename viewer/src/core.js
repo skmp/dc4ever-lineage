@@ -50,7 +50,14 @@ export function laneSlotMap(lane) {
 // per wall: file -> slot, instances sorted by linear position P (=> by (col,row))
 // returns { inst: Uint32Array(2n) [w0,w1], P: Uint32Array(n), fileOrder, fileStart (instance index per file),
 //           fileSlot, fileL, ids/og/kp in instance order, lineOf (file-local line per instance), fileOfInst }
-export function buildWall(json, dec, lane, slotMap, anc, wallSnap, hideRunMin = 3) {
+// fam: { virt: virtual nullDC-pre2008 origin id (= number of snapshots), dc4ever: its snapshot id, nulldc: snapshot ids of
+//        nullDC and nullDCe up to 2011 }: a wall descending from those counts dc4ever and nullDC-pre2008 as related
+export function familyOf(man) {
+  const id = x => man.snapshots.findIndex(s => s.id === x);
+  return { virt: man.virt_origin, dc4ever: id('dc4ever-2005'),
+    nulldc: ['nullDCe-2009', 'nulldc-2010-05', 'nulldc-2010-12', 'nulldc-2011-09', 'nulldc-last'].map(id).filter(i => i >= 0) };
+}
+export function buildWall(json, dec, lane, slotMap, anc, wallSnap, fam, hideRunMin = 3) {
   const nf = json.files.length;
   const ordc = new Map(), fileSlot = new Int32Array(nf), fileL = new Uint32Array(nf), srcOff = new Uint32Array(nf);
   let off = 0;
@@ -67,11 +74,11 @@ export function buildWall(json, dec, lane, slotMap, anc, wallSnap, hideRunMin = 
   let j = 0;
   const ancBig = BigInt(anc);
   const related = new Uint8Array(64);
-  for (let o = 0; o < 41; o++) related[o] = (o === wallSnap || ((ancBig >> BigInt(o)) & 1n) === 1n) ? 1 : 0;
+  for (let o = 0; o < fam.virt; o++) related[o] = (o === wallSnap || ((ancBig >> BigInt(o)) & 1n) === 1n) ? 1 : 0;
   // dc4ever (concept parent of nullDC) and nullDC-pre2008 count as related for every wall that descends from nullDC / nullDCe
-  const nulldcFamily = [1, 2, 3, 4, 7].some(b => b === wallSnap || ((ancBig >> BigInt(b)) & 1n) === 1n);
-  related[40] = nulldcFamily ? 1 : 0;
-  if (nulldcFamily) related[0] = 1;
+  const nulldcFamily = fam.nulldc.some(b => b === wallSnap || ((ancBig >> BigInt(b)) & 1n) === 1n);
+  related[fam.virt] = nulldcFamily ? 1 : 0;
+  if (nulldcFamily) related[fam.dc4ever] = 1;
   for (const k of order) {
     const f = json.files[k]; fileStart[k] = j;
     const base = fileL[k] + HDR, s0 = srcOff[k];
@@ -169,4 +176,21 @@ function ensurePosBySrc(w) {
     p[W.srcOff[k] + l] = (W.inst[2 * j + 1] & 0x7FFFFF);
   }
   W.posBySrc = p;
+}
+
+// morph instances grouped for column culling: kept + added by B column (wall b), then removed by A column (wall a).
+// Returns { inst, colB: Uint32Array(colsB + 1) instance starts, colA: Uint32Array(colsA + 1) starts (offset by nKA), nKA }
+export function sortMorphByColumn(inst, colsB, colsA) {
+  const m = inst.length / 4, cntB = new Uint32Array(colsB + 1), cntA = new Uint32Array(colsA + 1);
+  let nKA = 0;
+  for (let i = 0; i < m; i++) { const kind = (inst[4 * i] >>> 26) & 3;
+    if (kind === M_REMOVED) cntA[(inst[4 * i + 2] & 4095) + 1]++; else { cntB[(inst[4 * i + 1] & 4095) + 1]++; nKA++; } }
+  for (let c = 0; c < colsB; c++) cntB[c + 1] += cntB[c];
+  for (let c = 0; c < colsA; c++) cntA[c + 1] += cntA[c];
+  const colB = cntB.slice(), colA = cntA.map(v => v + nKA), out = new Uint32Array(inst.length);
+  const pB = cntB.slice(), pA = cntA.slice();
+  for (let i = 0; i < m; i++) { const kind = (inst[4 * i] >>> 26) & 3;
+    const d = kind === M_REMOVED ? nKA + pA[inst[4 * i + 2] & 4095]++ : pB[inst[4 * i + 1] & 4095]++;
+    out.set(inst.subarray(4 * i, 4 * i + 4), 4 * d); }
+  return { inst: out, colB, colA, nKA };
 }

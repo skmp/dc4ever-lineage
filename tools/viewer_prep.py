@@ -33,8 +33,9 @@ REPO_LANE = {
     'flyinghead_flycast': 'flycast', 'skmp_nulldc3': 'nulldc3', 'skmp_minicast': 'minicast', 'skmp_polly2-rtl': 'polly2',
     'skmp_dreamcast-devtools': 'devtools', 'fpgadc_dreamcast-tests': 'dreamcast-tests', 'skmp_shrike4-rtl': 'shrike4',
     'skmp_caique-rtl': 'caique', 'skmp_wren7-rtl': 'wren7'}
+SNAP_LANE = {'polly2-r8-develop': 'polly2-r8'}   # r8/develop has its own root commit (no merge-base with main): own lane
 LANES = ['dc4ever', 'nullDC', 'nulldc-360', 'nullDCe', 'nullDC4Wii', 'NotDC-PS3', 'reicast', 'flycast', 'nulldc3',
-         'minicast', 'polly2', 'devtools', 'dreamcast-tests', 'shrike4', 'caique', 'wren7']
+         'minicast', 'polly2', 'polly2-r8', 'devtools', 'dreamcast-tests', 'shrike4', 'caique', 'wren7']
 FPGA = set(LANES[9:])
 LANE_INFO = {  # hue (OKLCH degrees), chroma, title, github repo, slot-order parent lane
     'dc4ever': (300, 0.13, 'dc4ever (C#)', 'skmp/dc4ever', None),
@@ -47,7 +48,8 @@ LANE_INFO = {  # hue (OKLCH degrees), chroma, title, github repo, slot-order par
     'flycast': (215, 0.12, 'flycast', 'flyinghead/flycast', 'reicast'),
     'nulldc3': (145, 0.15, 'nullDC 3 (devcast)', 'skmp/nulldc3', 'reicast'),
     'minicast': (178, 0.11, 'minicast (DreamSTer ARM side)', 'skmp/minicast', 'nulldc3'),
-    'polly2': (192, 0.12, 'polly2-rtl (PowerVR2, SV)', 'skmp/polly2-rtl', None),
+    'polly2': (192, 0.12, 'polly2-rtl main (PowerVR2 FPGA core, r1..r6b)', 'skmp/polly2-rtl', None),
+    'polly2-r8': (165, 0.12, 'polly2-rtl r8/develop (new bit-exact model, own history)', 'skmp/polly2-rtl', None),
     'devtools': (205, 0.11, 'dreamcast-devtools (TS)', 'skmp/dreamcast-devtools', None),
     'dreamcast-tests': (225, 0.12, 'dreamcast-tests', 'fpgadc/dreamcast-tests', None),
     'shrike4': (240, 0.13, 'shrike4-rtl (SH4)', 'skmp/shrike4-rtl', None),
@@ -70,7 +72,7 @@ def oklch(L, C, h):
         return round(255 * (12.92 * x if x <= 0.0031308 else 1.055 * x ** (1 / 2.4) - 0.055))
     return [enc(r), enc(g), enc(bb)]
 
-lane_of = [REPO_LANE[s['repo']] for s in S]
+lane_of = [SNAP_LANE.get(s['id'], REPO_LANE[s['repo']]) for s in S]
 lane_snaps = {ln: [s['i'] for s in sorted(S, key=lambda s: (s['order_date'], s['i'])) if lane_of[s['i']] == ln] for ln in LANES}
 
 # origin colours: lane hue, lightness stepped per snapshot within lane
@@ -84,13 +86,21 @@ orig_rgb[NS] = oklch(0.70, 0.05, 75)  # nullDC-pre2008: desaturated amber
 lane_rgb = {ln: oklch(0.74, LANE_INFO[ln][1], LANE_INFO[ln][0]) for ln in LANES}
 
 # ---------- time axis ----------
+# rank key (date, k): k counts earlier same-date snapshots of the same lane, so same-day releases (DreamSTer r1..r3 all
+# 2026-07-17) stand one rank apart instead of on top of each other
+_seen = collections.Counter(); rkey = [None] * NS
+for s in sorted(S, key=lambda s: (s['order_date'], s['i'])):
+    ln = SNAP_LANE.get(s['id'], REPO_LANE[s['repo']]); rkey[s['i']] = (s['order_date'], _seen[(ln, s['order_date'])]); _seen[(ln, s['order_date'])] += 1
+keys_sorted = sorted(set(rkey))
+rank = {k: i for i, k in enumerate(keys_sorted)}
+wall_x = [WALLGAP * (rank[rkey[s['i']]] + 1) for s in S]
 dates = sorted({s['order_date'] for s in S})
-rank = {d: i for i, d in enumerate(dates)}
-wall_x = [WALLGAP * (rank[s['order_date']] + 1) for s in S]
+first_rank = {}
+for k in keys_sorted: first_rank.setdefault(k[0], rank[k])
 def dnum(d):
     y, m, dd = map(int, d.split('-')); return y + (m - 1) / 12 + (dd - 1) / 365
 def x_of_date(v):
-    pts = [(dnum(d), WALLGAP * (rank[d] + 1)) for d in dates]
+    pts = [(dnum(d), WALLGAP * (first_rank[d] + 1)) for d in dates]
     if v <= pts[0][0]: return pts[0][1] - (pts[0][0] - v) * WALLGAP / 2
     for (a, xa), (b, xb) in zip(pts, pts[1:]):
         if a <= v <= b: return xa + (xb - xa) * (v - a) / (b - a) if b > a else xa
@@ -108,7 +118,7 @@ for s in S:
         y0, y1 = map(int, s['date_range'].split('-'))
         brackets.append({'snap': s['i'], 'range': s['date_range'], 'note': s.get('date_note', ''),
                          'x0': round(min(x_of_date(y0), wall_x[s['i']] - 2500)), 'x1': round(wall_x[s['i']] + 600)})
-brackets.append({'snap': 7, 'range': '2005-2010 closed', 'note': 'nullDC was closed source 2005-2010; public svn starts 2010-05.',
+brackets.append({'snap': next(s['i'] for s in S if s['id'] == 'nulldc-last'), 'range': '2005-2010 closed', 'note': 'nullDC was closed source 2005-2010; public svn starts 2010-05.',
                  'x0': round(x_of_date(2005.0)), 'x1': wall_x[2]})
 
 # ---------- lane packing (streets) ----------
@@ -181,32 +191,68 @@ for li, ln in enumerate(LANES):
 
 walls = [{'snap': s['i'], 'lane': LANES.index(lane_of[s['i']]), 'x': wall_x[s['i']]} for s in S]
 
-# lineage edges (collect REPORT.md "Lineage graph")
-E = lambda a, b, kind, label: {'from': a, 'to': b, 'kind': kind, 'label': label}
+# lineage edges (collect REPORT.md "Lineage graph"), by snapshot id
+SID = {s['id']: s['i'] for s in S}
+def lines_by_origin(snap, prefix):
+    """non-blank lines of `snap` under path prefix, counted by origin label"""
+    i = SID[snap]; j = snaps[i]; b = gzip.open(os.path.join(D, f'snap/{i:02d}.bin.gz')).read()
+    n = sum(f['n'] for f in j['files']); og, kp = b[4 * n:5 * n], b[5 * n:6 * n]; c = collections.Counter(); off = 0
+    for f in j['files']:
+        if f['p'].startswith(prefix):
+            for l in range(f['n']):
+                if kp[off + l] != 255: c[man['origins'][og[off + l]]] += 1
+        off += f['n']
+    return c
+def copied(snap, prefix, origins):
+    c = lines_by_origin(snap, prefix); return sum(c[o] for o in origins)
+def E(a, b, kind, label, **kw):
+    return {'from': SID[a], 'to': SID[b], 'kind': kind, 'label': label, **kw}
+lane_ids = lambda ln: [S[i]['id'] for i in lane_snaps[ln]]
+n_dsp_nd = copied('devtools-v3.0.0-pre', 'experiments/aica_dsp_playground', ['nulldc-2010-05', 'nulldc-2010-12', 'nullDC-pre2008'])
+n_dsp_rc = copied('devtools-v3.0.0-pre', 'experiments/aica_dsp_playground', lane_ids('reicast'))
+n_caique = copied('NotDC-PS3-0.8.3', 'plugs/caiqueAICA', lane_ids('caique'))
+n_refsw3 = copied('polly2-r8-develop', 'tb/', lane_ids('nulldc3'))
 edges = [
-    E(0, 2, 'concept', 'dc4ever -> nullDC: partial derivation, 0.6 % shared lines'),
-    E(2, 1, 'fork-recovered', 'nullDC mainline -> nullDCe: late-2008 fork, recovered snapshot (49 % of lines)'),
-    E(4, 5, 'import', 'nullDC trunk c563e07 -> nulldc-360: imported snapshot (93/203 files identical)'),
-    E(4, 8, 'import', 'nullDC c563e07 -> reicast import 1c16baeb (39.6 % of lines)'),
-    E(1, 8, 'import', 'nullDCe -> reicast import 1c16baeb (30.3 % of lines)'),
-    E(12, 14, 'git-fork', 'reicast -> flycast: git fork 2018-10 (merged until 2019-05-17)'),
-    E(15, 17, 'git-fork', 'reicast 95b673698 (2021-12-22) -> nullDC 3: git ancestry'),
-    E(18, 21, 'import', 'nullDCe bad8d6a -> nullDC4Wii: imported verbatim (203/203 files)'),
-    E(22, 26, 'import', 'nullDC4Wii ~9659506 -> NotDC-PS3: imported snapshot (229/272 files)'),
-    E(17, 20, 'import', 'nullDC 3 fpgadc commits -> minicast: imported snapshot (513/533 files)'),
-    E(17, 24, 'concept', 'nullDC 3 dumps + refsw-offline -> polly2-rtl: concept / dump format, no shared code'),
-    E(37, 38, 'copy', 'refsw3 refcore -> polly2-rtl r8 tb/*/ref_copies*.h (~900 verbatim C++ lines)'),
-    E(32, 33, 'copy', 'caique-rtl 5aa2376 -> NotDC-PS3 plugs/caiqueAICA (622 lines)'),
-    E(3, 27, 'copy', 'nullDC 2010 DSP -> devtools aica_dsp_playground (322 lines)'),
-    E(15, 27, 'copy', 'reicast DSP -> devtools aica_dsp_playground (371 lines)'),
-    E(30, 31, 'concept', 'nullDC 3 -> shrike4-rtl (SH4): new code, 0.8 % shared lines'),
-    E(30, 32, 'concept', 'nullDC 3 -> caique-rtl (AICA): new code, 1.0 % shared lines'),
-    E(30, 34, 'concept', 'nullDC 3 -> wren7-rtl (ARM7): new code'),
-    E(30, 36, 'concept', 'nullDC 3 refsw -> dreamcast-tests'),
-    E(17, 27, 'concept', 'nullDC 3 -> dreamcast-devtools (TS)'),
+    E('dc4ever-2005', 'nulldc-2010-05', 'concept', 'dc4ever -> nullDC: partial derivation, 0.6 % shared lines'),
+    E('nulldc-2010-05', 'nullDCe-2009', 'fork-recovered', 'nullDC mainline -> nullDCe: late-2008 fork, recovered snapshot (49 % of lines)'),
+    E('nulldc-2011-09', 'nulldc-360-2011', 'import', 'nullDC trunk c563e07 -> nulldc-360: imported snapshot (93/203 files identical)'),
+    E('nulldc-2011-09', 'reicast-2013-import', 'import', 'nullDC c563e07 -> reicast import 1c16baeb (39.6 % of lines)'),
+    E('nullDCe-2009', 'reicast-2013-import', 'import', 'nullDCe -> reicast import 1c16baeb (30.3 % of lines)'),
+    E('reicast-r19.07', 'flycast-v1.0', 'git-fork', 'reicast -> flycast: git fork 2018-10 (merged until 2019-05-17)'),
+    E('reicast-last', 'nulldc3-fpgadc-2023', 'git-fork', 'reicast 95b673698 (2021-12-22) -> nullDC 3: git ancestry'),
+    E('nullDCe-ps2-2024', 'nullDC4Wii-first', 'import', 'nullDCe bad8d6a -> nullDC4Wii: imported verbatim (203/203 files)'),
+    E('nullDC4Wii-a0.50', 'NotDC-PS3-first', 'import', 'nullDC4Wii ~9659506 -> NotDC-PS3: imported snapshot (229/272 files)'),
+    E('nulldc3-fpgadc-2023', 'minicast-import', 'import', 'nullDC 3 fpgadc commits -> minicast: imported snapshot (513/533 files)'),
+    E('nulldc3-fpgadc-2023', 'polly2-r1', 'concept', 'nullDC 3 dumps + refsw-offline -> polly2-rtl: concept / dump format, no shared code'),
+    E('polly2-r6b', 'polly2-r8-develop', 'concept', 'polly2-rtl main -> r8/develop: same repo, unrelated history (no merge-base); restarted as a bit-exact model'),
+    E('nulldc3-refsw3', 'polly2-r8-develop', 'copy', f'refsw3 refcore -> polly2-rtl r8 tb/ (ref_copies*.h): {n_refsw3:,} lines first seen in nullDC 3', arch=1),
+    E('caique-head', 'NotDC-PS3-0.8.3', 'copy', f'caique-rtl -> NotDC-PS3 plugs/caiqueAICA: {n_caique:,} lines first seen in caique-head (ported from caique-rtl 5aa2376, 2026-09-24, no snapshot of its own)', arch=1),
+    E('nulldc-2010-05', 'devtools-v3.0.0-pre', 'copy', f'nullDC 2010 DSP -> devtools aica_dsp_playground: {n_dsp_nd:,} lines first seen in nullDC', arch=2),
+    E('reicast-r20.04', 'devtools-v3.0.0-pre', 'copy', f'reicast DSP -> devtools aica_dsp_playground: {n_dsp_rc:,} more lines first seen in reicast r6..r20.04', arch=1),
+    E('nulldc3-v3.0.0-pre', 'shrike4-head', 'concept', 'nullDC 3 -> shrike4-rtl (SH4): new code, 0.8 % shared lines'),
+    E('nulldc3-v3.0.0-pre', 'caique-head', 'concept', 'nullDC 3 -> caique-rtl (AICA): new code, 1.0 % shared lines'),
+    E('nulldc3-v3.0.0-pre', 'wren7-head', 'concept', 'nullDC 3 -> wren7-rtl (ARM7): new code'),
+    E('nulldc3-v3.0.0-pre', 'dreamcast-tests-head', 'concept', 'nullDC 3 refsw -> dreamcast-tests'),
+    E('nulldc3-fpgadc-2023', 'devtools-v3.0.0-pre', 'concept', 'nullDC 3 -> dreamcast-devtools (TS)'),
 ]
-pins = [{'snap': 23, 'label': 'DreamSTer r1'}, {'snap': 24, 'label': 'DreamSTer r1'}, {'snap': 25, 'label': 'DreamSTer r6'},
-        {'snap': 28, 'label': 'DreamSTer r6b'}, {'snap': 29, 'label': 'DreamSTer r6b'}]
+# DreamSTer releases (skmp/DreamSTer tags): the polly2-rtl and minicast submodule pins of each release
+RELEASES = [  # tag, date, DreamSTer commit, polly2-rtl pin, minicast pin
+    ('r1', '2026-07-17', 'd87e716', 'be391db', '697f565'), ('r2', '2026-07-17', 'fa11f4b', '7a70d24', '6fcc0e1'),
+    ('r2b', '2026-07-17', '8a6e2c3', '635ec79', '6fcc0e1'), ('r3', '2026-07-17', '8f0a7ff', '436372f', '585205b'),
+    ('r4', '2026-07-18', '034573c', 'c22506c', '0998288'), ('r5', '2026-07-18', '034573c', 'c22506c', '0998288'),
+    ('r6', '2026-07-30', 'f31c158', 'a37f92c', '450eb49'), ('r6b', '2026-10-24', '2a3c169', '95fc3ba', '9185ab8')]
+pins = []
+for repo, ci in (('skmp_polly2-rtl', 3), ('skmp_minicast', 4)):
+    for s in S:
+        if s['repo'] != repo: continue
+        tags = [r for r in RELEASES if s['commit'].startswith(r[ci])]
+        if tags:
+            pins.append({'snap': s['i'], 'label': 'DreamSTer ' + ' / '.join(r[0] for r in tags),
+                         'releases': [{'tag': r[0], 'date': r[1], 'dreamster': r[2], 'polly2': r[3], 'minicast': r[4]} for r in tags]})
+pinned = {r[0] for p in pins for r in [(x['tag'],) for x in p['releases']]}
+assert pinned == {r[0] for r in RELEASES}, pinned
+releases = [{'tag': r[0], 'date': r[1], 'dreamster': r[2], 'polly2': r[3], 'minicast': r[4],
+             'snaps': [p['snap'] for p in pins if any(x['tag'] == r[0] for x in p['releases'])]} for r in RELEASES]
 
 # survival denominators: possible[o][w] = later snapshots (order) in lanes descending from o's repo or w's repo
 order = sorted(range(NS), key=lambda i: (S[i]['order_date'], i))
@@ -223,7 +269,7 @@ for o in range(NS + 1):
 
 layout = {
     'unit': {'char': 1, 'line': 2, 'colPitch': PITCH, 'textCols': TEXT, 'H': H, 'wallGap': WALLGAP, 'hdr': HDR, 'gap': GAP},
-    'lanes': lanes_out, 'walls': walls, 'ruler': ruler, 'brackets': brackets, 'edges': edges, 'pins': pins,
+    'lanes': lanes_out, 'walls': walls, 'ruler': ruler, 'brackets': brackets, 'edges': edges, 'pins': pins, 'releases': releases,
     'origin_rgb': orig_rgb, 'event_order': order, 'possible': possible,
     'fpgadc': {'z0': lanes_out[LANES.index('minicast')]['z0'], 'title': 'fpgadc: hardware re-creation, 2026'},
 }
@@ -323,7 +369,7 @@ chapters = [
     {'title': 'flycast, 2018-', 'snaps': ['flycast-v1.0', 'flycast-v2.0', 'flycast-v2.4', 'flycast-head'], 'text': 'flyinghead\'s git fork of reicast (2018-10; merged until 2019-05-17), the most active descendant today.', 'bookmarks': ['flycast rec_x64', 'naomi_roms.cpp (longest file)']},
     {'title': 'nullDC 3, 2023-', 'snaps': ['nulldc3-fpgadc-2023', 'nulldc3-v3.0.0-pre', 'nulldc3-refsw3'], 'text': 'nullDC 3 (devcast) is built on reicast 2021-12 and starts with the fpgadc refsw-offline work in 2023-07. refsw grows into refsw2 and the refsw3 refcore, the bit-exact reference for the PowerVR2 hardware work.', 'bookmarks': ['refsw (nullDC 3 2023)', 'refsw2 tile', 'refsw3 refcore tile', 'sh4_opcodes.cpp in nullDC 3 refsw3']},
     {'title': 'nullDC4Wii and NotDC-PS3, 2026', 'snaps': ['nullDC4Wii-first', 'nullDC4Wii-a0.50', 'nullDC4Wii-head', 'NotDC-PS3-first', 'NotDC-PS3-0.8.3'], 'text': 'nullDC4Wii imports nullDCe verbatim (2026-01); NotDC-PS3 imports nullDC4Wii (2026-09) and later carries plugs/caiqueAICA, a port of the caique-rtl AICA model.', 'bookmarks': ['NotDC-PS3 caiqueAICA']},
-    {'title': 'fpgadc, 2026: the hardware re-creation', 'snaps': ['minicast-import', 'minicast-r1', 'minicast-r6b', 'polly2-r1', 'polly2-r6', 'polly2-r6b', 'polly2-r8-develop', 'shrike4-head', 'caique-head', 'wren7-head', 'dreamcast-tests-head', 'devtools-v3.0.0-pre'], 'text': 'The FPGA branch of the lineage: DreamSTer releases r1..r6b pin polly2-rtl (PowerVR2 in SystemVerilog) and minicast (the reicast-derived ARM side). polly2-rtl r8/develop is the new bit-exact model and carries verbatim refsw3 C++ in ref_copies*.h. shrike4 (SH4), caique (AICA), wren7 (ARM7), dreamcast-tests and dreamcast-devtools are new code.', 'bookmarks': ['polly2 r6b peel_core', 'polly2 r8 ref_copies.h (refsw3 C++ copy)', 'shrike4 v1_core', 'caique aica_core', 'wren7 core']},
+    {'title': 'fpgadc, 2026: the hardware re-creation', 'snaps': ['minicast-import', 'minicast-r1', 'minicast-r2', 'minicast-r3', 'minicast-r4', 'minicast-r6', 'minicast-r6b', 'polly2-r1', 'polly2-r2', 'polly2-r2b', 'polly2-r3', 'polly2-r4', 'polly2-r6', 'polly2-r6b', 'polly2-r8-develop', 'shrike4-head', 'caique-head', 'wren7-head', 'dreamcast-tests-head', 'devtools-v3.0.0-pre'], 'text': 'The FPGA branch of the lineage. Every DreamSTer release pins a polly2-rtl commit (PowerVR2 in SystemVerilog) and a minicast commit (the reicast-derived ARM side); each pinned commit is a wall with a gold pin: r1, r2, r2b and r3 on 2026-07-17, r4 = r5 on 2026-07-18 (r5 repins nothing), r6 on 2026-07-30 and r6b on 2026-10-24. polly2-rtl r8/develop is its own lane: the new bit-exact model has its own root commit (no merge-base with main) and carries verbatim refsw3 C++ in tb/ ref_copies*.h. shrike4 (SH4), caique (AICA), wren7 (ARM7), dreamcast-tests and dreamcast-devtools are new code.', 'bookmarks': ['polly2 r6b peel_core', 'polly2 r8 ref_copies.h (refsw3 C++ copy)', 'shrike4 v1_core', 'caique aica_core', 'wren7 core']},
 ]
 story = {'author': {'handle': 'drk||Raziel', 'said': 'D R K Raziel', 'github': 'skmp'}, 'chapters': chapters, 'bookmarks': bookmarks}
 json.dump(story, open(os.path.join(D, 'story.json'), 'w'), indent=1)

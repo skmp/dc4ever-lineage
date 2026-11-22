@@ -5,3 +5,8 @@ tools/provenance/provenance
 agents/viewer/.chrome-*
 agents/verify/.chrome-*
 agents/viewer/mkatlas
+agents/tools/xvfb/deb/
+agents/tools/xvfb/root/
+agents/tools/xvfb/Xvfb
+agents/tools/xvfb/bin/
+agents/tools/xvfb/xvfb.log

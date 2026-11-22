@@ -1,0 +1,12 @@
+import { spawn } from 'node:child_process'; import fs from 'node:fs'; import os from 'node:os';
+const C = os.homedir()+'/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome';
+const flags = process.argv.slice(2);
+const udd = fs.mkdtempSync('/home/skmp/projects/nulldc-lineage/agents/verify/adv/.c-');
+const p = spawn(C, ['--headless=new','--user-data-dir='+udd,'--remote-debugging-port=0','--no-first-run','--ignore-gpu-blocklist','--enable-gpu',...flags,'about:blank'], {env:{...process.env,GALLIUM_DRIVER:process.env.GD||'d3d12'},stdio:['ignore','ignore','pipe']});
+let e=''; const ws_url = await new Promise((res,rej)=>{setTimeout(()=>rej('nostart'),15000);p.stderr.on('data',d=>{e+=d;const m=e.match(/DevTools listening on (ws:\S+)/);if(m)res(m[1]);});});
+const port=new URL(ws_url).port; const t=(await (await fetch(`http://127.0.0.1:${port}/json/list`)).json()).find(t=>t.type==='page');
+const ws=new WebSocket(t.webSocketDebuggerUrl); await new Promise(r=>ws.addEventListener('open',r,{once:true}));
+let id=0;const pend=new Map();ws.addEventListener('message',ev=>{const m=JSON.parse(ev.data);if(m.id&&pend.has(m.id)){pend.get(m.id)(m.result);pend.delete(m.id);}});
+const send=(method,params={})=>new Promise(r=>{const i=++id;pend.set(i,r);ws.send(JSON.stringify({id:i,method,params}));});
+const r=await send('Runtime.evaluate',{expression:`(()=>{const g=document.createElement('canvas').getContext('webgl2');if(!g)return 'no webgl2';const x=g.getExtension('WEBGL_debug_renderer_info');return x?g.getParameter(x.UNMASKED_RENDERER_WEBGL):g.getParameter(g.RENDERER)})()`,returnByValue:true});
+console.log(flags.join(' '),'=>',r.result.value); p.kill('SIGKILL'); setTimeout(()=>{fs.rmSync(udd,{recursive:true,force:true});process.exit(0)},500);

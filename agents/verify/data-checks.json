@@ -1,12 +1,12 @@
 {
- "date": "2026-11-22T17:12:20.078Z",
- "seconds": 5.438,
+ "date": "2026-11-22T18:43:03.166Z",
+ "seconds": 6.441,
  "results": [
   {
    "name": "norm line count equals manifest",
    "pass": true,
-   "norm": 668660,
-   "manifest": 668660
+   "norm": 668891,
+   "manifest": 668891
   },
   {
    "name": "fold length equals linemeta (10k random lines)",
@@ -19,9 +19,9 @@
    "mismatches": 0
   },
   {
-   "name": "every line placed once (sum = 4,092,201)",
+   "name": "every line placed once (sum = 4,605,942, the manifest total)",
    "pass": true,
-   "placed": 4092201
+   "placed": 4605942
   },
   {
    "name": "no two lines of a wall share a cell",
@@ -42,7 +42,7 @@
   {
    "name": "streets: same slot for an identity in every wall of its lane",
    "pass": true,
-   "files": 13566,
+   "files": 15395,
    "moved": 0
   },
   {
@@ -62,12 +62,56 @@
    "mismatches": 0
   },
   {
-   "name": "morph kept/added/removed equal diffs.json (49 pairs)",
+   "name": "morph kept/added/removed equal diffs.json (57 pairs)",
    "pass": true,
-   "pairs": 49,
+   "pairs": 57,
    "mismatches": 0,
    "ms_per_pair": 24,
    "bads": []
+  },
+  {
+   "name": "morph instances grouped by column for culling: same multiset, consistent run starts",
+   "pass": true,
+   "mismatches": 0
+  },
+  {
+   "name": "polly2 main and r8/develop are separate lanes (no merge-base)",
+   "pass": true,
+   "r6b": "polly2",
+   "r8": "polly2-r8"
+  },
+  {
+   "name": "every DreamSTer release r1..r6b has a pin on a snapshot of its polly2-rtl and minicast commits",
+   "pass": true,
+   "tags": [
+    "r1",
+    "r2",
+    "r2b",
+    "r3",
+    "r4",
+    "r5",
+    "r6",
+    "r6b"
+   ]
+  },
+  {
+   "name": "no two walls of a lane at the same X",
+   "pass": true,
+   "collisions": []
+  },
+  {
+   "name": "copy edge labels name the snapshot they are drawn from",
+   "pass": true,
+   "label": "caique-rtl -> NotDC-PS3 plugs/caiqueAICA: 608 lines first seen in caique-head (ported from caique-rtl 5aa2376, 2026-09-24, no snapshot of its own)"
+  },
+  {
+   "name": "blame: a commit for every line, no addresses stored",
+   "pass": true,
+   "lines": 4605942,
+   "unmatched": 0,
+   "handles": 147,
+   "commits": 9099,
+   "emails": []
   }
  ]
 }

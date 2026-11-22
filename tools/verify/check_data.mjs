@@ -14,6 +14,7 @@ const gz = f => zlib.gunzipSync(fs.readFileSync(path.join(D, f)));
 const man = JSON.parse(fs.readFileSync(path.join(D, 'manifest.json')));
 const layout = JSON.parse(gz('layout.json.gz'));
 const diffs = JSON.parse(fs.readFileSync(path.join(D, 'diffs.json')));
+const fam = core.familyOf(man);
 const NS = man.snapshots.length, CH = man.chunk_lines;
 const results = []; const t0 = Date.now();
 const check = (name, pass, numbers) => { results.push({ name, pass, ...numbers }); console.log(`${pass ? 'PASS' : 'FAIL'} ${name} ${JSON.stringify(numbers)}`); };
@@ -58,13 +59,14 @@ for (let s = 0; s < NS; s++) {
   const j = JSON.parse(gz(`snap/${String(s).padStart(2, '0')}.json.gz`));
   const d = core.decodeSnapBin(gz(`snap/${String(s).padStart(2, '0')}.bin.gz`), j);
   const lw = layout.walls[s], lane = layout.lanes[lw.lane];
-  const w = core.buildWall(j, d, lane, slotMaps[lw.lane], man.snapshots[s].anc, s);
+  const w = core.buildWall(j, d, lane, slotMaps[lw.lane], man.snapshots[s].anc, s, fam);
   snapJ.push(j); dec.push(d); walls.push(w);
   placed += d.n;
   for (let i = 1; i < d.n; i++) if (w.P[i] <= w.P[i - 1]) overlaps++;
   if (d.n && w.P[d.n - 1] >= lane.cols * core.H) outOfLane++;
 }
-check('every line placed once (sum = 4,092,201)', placed === 4092201, { placed });
+const want = man.snapshots.reduce((a, x) => a + x.lines, 0);
+check(`every line placed once (sum = ${want.toLocaleString('en')}, the manifest total)`, placed === want, { placed });
 check('no two lines of a wall share a cell', overlaps === 0, { overlaps });
 check('all lines inside their lane columns', outOfLane === 0, { walls_out: outOfLane });
 { let bad = 0, slotsN = 0;
@@ -136,7 +138,7 @@ check('all lines inside their lane columns', outOfLane === 0, { walls_out: outOf
 // morph accounting vs diffs.json
 { const pairs = [];
   for (let s = 0; s < NS; s++) for (const p of man.snapshots[s].parents.slice(0, 1)) pairs.push([p, s]);
-  const rnd = mulberry(9); while (pairs.length < 39 + 10) { const a = Math.floor(rnd() * NS), b = Math.floor(rnd() * NS); if (a !== b) pairs.push([a, b]); }
+  const rnd = mulberry(9); while (pairs.length < NS - 1 + 10) { const a = Math.floor(rnd() * NS), b = Math.floor(rnd() * NS); if (a !== b) pairs.push([a, b]); }
   let bad = 0; const bads = []; const tm = Date.now();
   for (const [a, b] of pairs) {
     const r = core.buildMorph({ json: snapJ[a], dec: dec[a], wall: walls[a] }, { json: snapJ[b], dec: dec[b], wall: walls[b] }, norm, blankNorm);
@@ -144,6 +146,38 @@ check('all lines inside their lane columns', outOfLane === 0, { walls_out: outOf
     if (r.kept !== K || r.added !== A || r.removed !== R) { bad++; bads.push({ a, b, got: [r.kept, r.added, r.removed], want: [K, A, R] }); }
   }
   check(`morph kept/added/removed equal diffs.json (${pairs.length} pairs)`, bad === 0, { pairs: pairs.length, mismatches: bad, ms_per_pair: Math.round((Date.now() - tm) / pairs.length), bads: bads.slice(0, 5) });
+}
+
+// morph column grouping (viewer culling) keeps every instance
+{ let bad = 0;
+  for (const [a, b] of [[8, 9], [9, 10], [37, 46]].filter(([a, b]) => a < NS && b < NS)) {
+    const r = core.buildMorph({ json: snapJ[a], dec: dec[a], wall: walls[a] }, { json: snapJ[b], dec: dec[b], wall: walls[b] }, norm, blankNorm);
+    const so = core.sortMorphByColumn(r.inst, layout.lanes[layout.walls[b].lane].cols, layout.lanes[layout.walls[a].lane].cols);
+    const key = arr => { const k = []; for (let i = 0; i < arr.length; i += 4) k.push(arr.slice(i, i + 4).join(',')); return k.sort().join(';'); };
+    if (key(r.inst) !== key(so.inst) || so.colB.at(-1) !== so.nKA || so.colA.at(-1) !== r.inst.length / 4) bad++;
+  }
+  check('morph instances grouped by column for culling: same multiset, consistent run starts', bad === 0, { mismatches: bad });
+}
+// lineage layout facts the viewer draws
+{ const lanes = layout.lanes.map(l => l.name), laneOf = id => lanes[layout.walls[man.snapshots.findIndex(s => s.id === id)].lane];
+  check('polly2 main and r8/develop are separate lanes (no merge-base)', laneOf('polly2-r6b') === 'polly2' && laneOf('polly2-r8-develop') === 'polly2-r8', { r6b: laneOf('polly2-r6b'), r8: laneOf('polly2-r8-develop') });
+  const tags = new Set(layout.pins.flatMap(p => p.releases.map(r => r.tag)));
+  check('every DreamSTer release r1..r6b has a pin on a snapshot of its polly2-rtl and minicast commits', ['r1', 'r2', 'r2b', 'r3', 'r4', 'r5', 'r6', 'r6b'].every(t => tags.has(t)) &&
+    layout.releases.every(r => r.snaps.length === 2 && r.snaps.every(s => man.snapshots[s].commit.startsWith(r.polly2) || man.snapshots[s].commit.startsWith(r.minicast))), { tags: [...tags] });
+  const sameX = []; const seen = new Map();
+  for (const w of layout.walls) { const k = w.lane + ':' + w.x; if (seen.has(k)) sameX.push([seen.get(k), w.snap]); seen.set(k, w.snap); }
+  check('no two walls of a lane at the same X', sameX.length === 0, { collisions: sameX });
+  const caique = layout.edges.find(e => e.kind === 'copy' && man.snapshots[e.to].id === 'NotDC-PS3-0.8.3');
+  check('copy edge labels name the snapshot they are drawn from', !!caique && caique.label.includes(man.snapshots[caique.from].id), { label: caique?.label });
+}
+// blame (optional data): one commit per line, handles only
+if (fs.existsSync(path.join(D, 'blame/commits.json.gz'))) {
+  const B = JSON.parse(gz('blame/commits.json.gz')); let lines = 0, unmatched = 0, badRef = 0;
+  for (let s = 0; s < NS; s++) { const b = gz(`blame/${String(s).padStart(2, '0')}.bin.gz`), u = new Uint32Array(b.buffer, b.byteOffset, b.length >> 2);
+    if (u.length !== dec[s].n) badRef++;
+    for (const c of u) { lines++; if (c === 0xFFFFFFFF) unmatched++; else if (c >= B.commits.length) badRef++; } }
+  const emails = B.authors.filter(a => /@|<|>/.test(a));
+  check('blame: a commit for every line, no addresses stored', badRef === 0 && emails.length === 0, { lines, unmatched, handles: B.authors.length, commits: B.commits.length, emails });
 }
 
 fs.mkdirSync(path.join(ROOT, 'agents/verify'), { recursive: true });

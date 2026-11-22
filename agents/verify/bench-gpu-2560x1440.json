@@ -1,0 +1,571 @@
+{
+ "date": "2026-11-22T18:46:16.644Z",
+ "size": [
+  2560,
+  1440
+ ],
+ "paths": {
+  "A": {
+   "path": "A",
+   "dur": 20,
+   "frames": 1984,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "frame_ms": {
+    "p50": 4.4,
+    "p95": 19.2,
+    "p99": 19.9,
+    "max": 38
+   },
+   "cpu_ms": {
+    "p50": 0.5,
+    "p95": 0.8,
+    "p99": 1
+   },
+   "gpu_ms": {
+    "p50": 0.17,
+    "p95": 0.42,
+    "p99": 0.57
+   },
+   "fps_mean": 99.1,
+   "draws_p95": 59,
+   "lines_p95": 114493,
+   "lines_max": 127554,
+   "quality_steps": [
+    0
+   ],
+   "frames_over_100ms": 0,
+   "ready_ms": 2137,
+   "slowest_frames_cpu_sections": [],
+   "load": {
+    "boot": 145.29999999701977,
+    "firstFrame": 559.3999999910593,
+    "walls": 48,
+    "text": 12,
+    "textDone": 0,
+    "allText": 2691.3999999910593,
+    "bytesBoot": 0,
+    "warmupMs": 56.70000000298023,
+    "meta": 595,
+    "blame": 48,
+    "allWalls": 1488.5999999940395
+   },
+   "gpu_bytes_est": 209201219.8399998,
+   "js_heap_mb": 147
+  },
+  "B": {
+   "path": "B",
+   "dur": 20,
+   "frames": 1014,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "frame_ms": {
+    "p50": 3.9,
+    "p95": 20.4,
+    "p99": 368.4,
+    "max": 588.5
+   },
+   "cpu_ms": {
+    "p50": 0.6,
+    "p95": 1.2,
+    "p99": 18
+   },
+   "gpu_ms": {
+    "p50": 0.08,
+    "p95": 0.26,
+    "p99": 0.29
+   },
+   "fps_mean": 50.7,
+   "draws_p95": 54,
+   "lines_p95": 0,
+   "lines_max": 0,
+   "quality_steps": [
+    0,
+    1
+   ],
+   "frames_over_100ms": 35,
+   "ready_ms": 13049,
+   "slowest_frames_cpu_sections": [
+    [
+     68.5,
+     [
+      [
+       "lod0",
+       5.1
+      ],
+      [
+       "lod",
+       3.4
+      ],
+      [
+       "plates+deco",
+       9.3
+      ],
+      [
+       "segs",
+       17.3
+      ],
+      [
+       "labels",
+       29.6
+      ],
+      [
+       "fence",
+       2.8
+      ]
+     ]
+    ],
+    [
+     41.7,
+     [
+      [
+       "lod0",
+       8.4
+      ],
+      [
+       "lod",
+       4.1
+      ],
+      [
+       "segs",
+       5.6
+      ],
+      [
+       "labels",
+       19.8
+      ]
+     ]
+    ]
+   ],
+   "load": {
+    "boot": 132.6000000089407,
+    "firstFrame": 440.30000001192093,
+    "walls": 48,
+    "text": 12,
+    "textDone": 0,
+    "allText": 13500,
+    "bytesBoot": 0,
+    "warmupMs": 49.29999999701977,
+    "meta": 472.1000000089407,
+    "blame": 48,
+    "allWalls": 12341.800000011921
+   },
+   "gpu_bytes_est": 209201219.8399998,
+   "js_heap_mb": 281
+  },
+  "C": {
+   "path": "C",
+   "dur": 20,
+   "frames": 2111,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "frame_ms": {
+    "p50": 2.4,
+    "p95": 19.3,
+    "p99": 19.9,
+    "max": 22.8
+   },
+   "cpu_ms": {
+    "p50": 0.5,
+    "p95": 0.8,
+    "p99": 1
+   },
+   "gpu_ms": {
+    "p50": 0.09,
+    "p95": 0.25,
+    "p99": 0.37
+   },
+   "fps_mean": 105.5,
+   "draws_p95": 57,
+   "lines_p95": 58734,
+   "lines_max": 129147,
+   "quality_steps": [
+    0
+   ],
+   "frames_over_100ms": 0,
+   "ready_ms": 13316,
+   "slowest_frames_cpu_sections": [],
+   "load": {
+    "boot": 139.29999999701977,
+    "firstFrame": 462.20000000298023,
+    "walls": 48,
+    "text": 12,
+    "textDone": 0,
+    "allText": 13706.59999999404,
+    "bytesBoot": 0,
+    "warmupMs": 48.70000000298023,
+    "meta": 504.59999999403954,
+    "blame": 48,
+    "allWalls": 12329.90000000596
+   },
+   "gpu_bytes_est": 209201219.8399998,
+   "js_heap_mb": 118
+  },
+  "D": {
+   "path": "D",
+   "dur": 20,
+   "frames": 961,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "frame_ms": {
+    "p50": 18,
+    "p95": 20.2,
+    "p99": 416.8,
+    "max": 1454.8
+   },
+   "cpu_ms": {
+    "p50": 0.5,
+    "p95": 1.1,
+    "p99": 15.5
+   },
+   "gpu_ms": {
+    "p50": 0.16,
+    "p95": 0.38,
+    "p99": 0.54
+   },
+   "fps_mean": 48,
+   "draws_p95": 12,
+   "lines_p95": 8714,
+   "lines_max": 9391,
+   "quality_steps": [
+    0,
+    1
+   ],
+   "frames_over_100ms": 20,
+   "ready_ms": 13013,
+   "slowest_frames_cpu_sections": [],
+   "load": {
+    "boot": 149.79999999701977,
+    "firstFrame": 477.29999999701977,
+    "walls": 48,
+    "text": 12,
+    "textDone": 0,
+    "allText": 13475.29999999702,
+    "bytesBoot": 0,
+    "warmupMs": 51.5,
+    "meta": 528,
+    "blame": 48,
+    "allWalls": 12365.79999999702
+   },
+   "gpu_bytes_est": 209201219.8399998,
+   "js_heap_mb": 114
+  },
+  "E": {
+   "path": "E",
+   "dur": 20,
+   "frames": 311,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "frame_ms": {
+    "p50": 18.4,
+    "p95": 423.2,
+    "p99": 737.4,
+    "max": 1791.8
+   },
+   "cpu_ms": {
+    "p50": 0.6,
+    "p95": 25.3,
+    "p99": 43.9
+   },
+   "gpu_ms": {
+    "p50": 0.11,
+    "p95": 0.37,
+    "p99": 30.1
+   },
+   "fps_mean": 15.5,
+   "draws_p95": 13,
+   "lines_p95": 0,
+   "lines_max": 0,
+   "quality_steps": [
+    0
+   ],
+   "frames_over_100ms": 37,
+   "ready_ms": 2513,
+   "slowest_frames_cpu_sections": [
+    [
+     76.9,
+     [
+      [
+       "lod0",
+       19.1
+      ],
+      [
+       "plates+deco",
+       7.6
+      ],
+      [
+       "segs",
+       2.4
+      ],
+      [
+       "labels",
+       36.1
+      ],
+      [
+       "fence",
+       7.6
+      ]
+     ]
+    ],
+    [
+     70,
+     [
+      [
+       "lod0",
+       8.8
+      ],
+      [
+       "plates+deco",
+       3.9
+      ],
+      [
+       "labels",
+       50.7
+      ],
+      [
+       "fence",
+       2.3
+      ]
+     ]
+    ],
+    [
+     52,
+     [
+      [
+       "lod0",
+       15
+      ],
+      [
+       "plates+deco",
+       14.7
+      ],
+      [
+       "imp",
+       5.2
+      ],
+      [
+       "segs",
+       3.9
+      ],
+      [
+       "labels",
+       9.9
+      ]
+     ]
+    ],
+    [
+     43.9,
+     [
+      [
+       "lod0",
+       17.5
+      ],
+      [
+       "plates+deco",
+       4.3
+      ],
+      [
+       "imp",
+       3
+      ],
+      [
+       "labels",
+       12.1
+      ],
+      [
+       "fence",
+       2.9
+      ]
+     ]
+    ],
+    [
+     43.5,
+     [
+      [
+       "lod0",
+       2.1
+      ],
+      [
+       "plates+deco",
+       2.1
+      ],
+      [
+       "labels",
+       32.3
+      ]
+     ]
+    ],
+    [
+     38.1,
+     [
+      [
+       "lod0",
+       4.7
+      ],
+      [
+       "imp",
+       9.8
+      ],
+      [
+       "labels",
+       17.2
+      ],
+      [
+       "fence",
+       2.3
+      ]
+     ]
+    ],
+    [
+     33.5,
+     [
+      [
+       "lod0",
+       6.1
+      ],
+      [
+       "plates+deco",
+       7.8
+      ],
+      [
+       "labels",
+       12.4
+      ],
+      [
+       "fence",
+       2.5
+      ]
+     ]
+    ],
+    [
+     31.6,
+     [
+      [
+       "lod0",
+       3.2
+      ],
+      [
+       "plates+deco",
+       2.5
+      ],
+      [
+       "labels",
+       22.5
+      ]
+     ]
+    ],
+    [
+     31.1,
+     [
+      [
+       "lod0",
+       7.5
+      ],
+      [
+       "plates+deco",
+       4.2
+      ],
+      [
+       "labels",
+       12.2
+      ],
+      [
+       "fence",
+       3
+      ]
+     ]
+    ],
+    [
+     30.5,
+     [
+      [
+       "lod0",
+       3.3
+      ],
+      [
+       "plates+deco",
+       6
+      ],
+      [
+       "imp",
+       2.3
+      ],
+      [
+       "segs",
+       2.1
+      ],
+      [
+       "labels",
+       10.9
+      ],
+      [
+       "fence",
+       3.2
+      ]
+     ]
+    ]
+   ],
+   "load": {
+    "boot": 125.09999999403954,
+    "firstFrame": 433.5,
+    "walls": 48,
+    "text": 12,
+    "textDone": 0,
+    "allText": 2930.4000000059605,
+    "bytesBoot": 0,
+    "warmupMs": 52.30000001192093,
+    "meta": 460.20000000298023,
+    "blame": 48,
+    "allWalls": 1512
+   },
+   "gpu_bytes_est": 209201219.8399998,
+   "js_heap_mb": 155
+  }
+ },
+ "logs": []
+}

@@ -1,0 +1,6 @@
+Warning: Detected unsettled top-level await at file:///home/skmp/projects/nulldc-lineage/tools/verify/morphstall.mjs:26
+  await new Promise(r => xv.stdout.once('data', r)); xv.disp = disp;
+  ^
+
+
+

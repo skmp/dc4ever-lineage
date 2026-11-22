@@ -10,6 +10,14 @@ const canvas = document.getElementById('gl');
 if (Q.has('clean')) document.body.classList.add('shots');
 const gl = canvas.getContext('webgl2', { antialias: false, alpha: false, depth: true, powerPreference: 'high-performance', preserveDrawingBuffer: Q.has('shots') });
 if (!gl) { document.getElementById('loading').textContent = 'WebGL2 is not available in this browser.'; throw new Error('no webgl2'); }
+if (Q.has('glprof')) {   // debug: record GL calls that block the main thread (sync points) with their caller
+  window.__glSlow = [];
+  for (const k of Object.getOwnPropertyNames(WebGL2RenderingContext.prototype)) {
+    const d = Object.getOwnPropertyDescriptor(WebGL2RenderingContext.prototype, k); if (!d || typeof d.value !== 'function') continue;
+    const f = d.value; gl[k] = function (...a) { const t = performance.now(); const r = f.apply(gl, a); const dt = performance.now() - t;
+      if (dt > 30) window.__glSlow.push([k, Math.round(dt), new Error().stack.split('\n').slice(2, 5).join(' | ')]); return r; };
+  }
+}
 const dbg = gl.getExtension('WEBGL_debug_renderer_info');
 const RENDERER = dbg ? gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER);
 const SOFT = Q.get('soft') === '1' || (Q.get('soft') !== '0' && /llvmpipe|swiftshader|softpipe|software/i.test(RENDERER));
@@ -86,6 +94,7 @@ const metaTex = G.tex2D(gl, LW, LH, gl.RG8UI, gl.RG_INTEGER, gl.UNSIGNED_BYTE, n
 const presTex = G.tex2D(gl, LW, LH, gl.RG32UI, gl.RG_INTEGER, gl.UNSIGNED_INT, new Uint32Array(LW * LH * 2));
 const markArr = new Uint8Array(LW * LH);
 const markTex = G.tex2D(gl, LW, LH, gl.R8UI, gl.RED_INTEGER, gl.UNSIGNED_BYTE, markArr);
+const authTex = G.tex2D(gl, INSTW, INSTH, gl.R16UI, gl.RED_INTEGER, gl.UNSIGNED_SHORT, new Uint16Array(INSTW * INSTH).fill(0xFFFF));   // blame author per instance
 const textTex = gl.createTexture(); gl.bindTexture(gl.TEXTURE_2D_ARRAY, textTex);
 gl.texStorage3D(gl.TEXTURE_2D_ARRAY, 1, gl.R8UI, 4096, 4096, 3);
 gl.texParameteri(gl.TEXTURE_2D_ARRAY, gl.TEXTURE_MIN_FILTER, gl.NEAREST); gl.texParameteri(gl.TEXTURE_2D_ARRAY, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
@@ -93,7 +102,7 @@ gl.pixelStorei(gl.UNPACK_ALIGNMENT, 1);
 const atlasTex = G.tex2D(gl, metrics.width, metrics.height, gl.R8, gl.RED, gl.UNSIGNED_BYTE, sdf, gl.LINEAR);
 const MORPHW = 4096, MORPHH = 160;
 const morphTex = G.tex2D(gl, MORPHW, MORPHH, gl.RGBA32UI, gl.RGBA_INTEGER, gl.UNSIGNED_INT);
-let gpuBytes = INSTW * INSTH * 8 + LW * LH * (4 + 2 + 8 + 1) + 4096 * 4096 * 3 + metrics.width * metrics.height + MORPHW * MORPHH * 16;
+let gpuBytes = INSTW * INSTH * 10 + LW * LH * (4 + 2 + 8 + 1) + 4096 * 4096 * 3 + metrics.width * metrics.height + MORPHW * MORPHH * 16;
 
 // palette: rows 0 origin, 1 age, 2 repo of origin, 3 survival ramp
 function srgb(c) { return c.map(v => Math.round(Math.max(0, Math.min(1, v)) * 255)); }
@@ -118,6 +127,26 @@ const possArr = new Uint8Array(64 * 64);
 for (let o = 0; o <= NS; o++) for (let w = 0; w < NS; w++) possArr[w * 64 + o] = layout.possible[o][w];
 const possTex = G.tex2D(gl, 64, 64, gl.R8UI, gl.RED_INTEGER, gl.UNSIGNED_BYTE, possArr);
 V.palette = { origin: o => hex(layout.origin_rgb[o]), age: o => hex([...palArr.slice((64 + o) * 4, (64 + o) * 4 + 3)]), lane: l => hex(layout.lanes[l].rgb), originDate, laneOfOrigin };
+
+// blame (optional, tools/blame.py): handles and dates only. Author palette rows 4-7 (256 entries): top handles by lines
+V.blame = null;
+function authorPalette() {
+  const B = V.blame; if (!B) return;
+  const rank = B.authors.map((_, i) => i).sort((a, b) => B.total[b] - B.total[a]); B.rank = rank;
+  const hsl = (h, s, l) => { const a = s * Math.min(l, 1 - l), f = n => { const k = (n + h / 30) % 12; return l - a * Math.max(-1, Math.min(k - 3, 9 - k, 1)); }; return [f(0), f(8), f(4)].map(v => Math.round(v * 255)); };
+  B.rgb = new Array(B.authors.length);
+  rank.forEach((a, r) => { B.rgb[a] = B.authors[a] === 'skmp' ? [240, 181, 74] : r < 28 ? hsl((r * 137.508 + 200) % 360, 0.62, r < 14 ? 0.62 : 0.5) : [86, 94, 110]; });
+  for (let a = 0; a < Math.min(256, B.authors.length); a++) setPal(4 + (a >> 6), a & 63, B.rgb[a]);
+  gl.bindTexture(gl.TEXTURE_2D, palTex); gl.texSubImage2D(gl.TEXTURE_2D, 0, 0, 0, 64, 8, gl.RGBA, gl.UNSIGNED_BYTE, palArr);
+}
+V.authorPalette = authorPalette;
+const loadBlame = () => gz('data/blame/commits.json.gz').then(b => {   // after the first frame: not needed to start
+  const j = JSON.parse(new TextDecoder().decode(b));
+  V.blame = { ...j, commitAuthor: Uint16Array.from(j.commits.map(c => c[1])), total: new Float64Array(j.authors.length) };
+  authorPalette();
+  for (const w of W) if (w.loaded) dw.postMessage({ type: 'blame', snap: w.s, commitAuthor: V.blame.commitAuthor });
+  emit('blame');
+}).catch(() => { V.blame = null; });
 
 // programs
 const P = {
@@ -155,12 +184,13 @@ const plates = new RectBuf(), deco = new RectBuf(), t3 = new RectBuf(), floor = 
 const decoRange = [], holeRange = [];
 const PLATE_PUSH = 3 << 2, T3_PUSH = 2 << 2, HDR_PUSH = 1 << 2;
 // labels
-const labStore = []; let labLen = 0; const labels = [];
+const labStore = []; let labLen = 0; const labels = [], dlabels = [];   // dlabels: decluttered per frame (DESIGN 4.7)
 function labText(s) { const o = labLen; for (let i = 0; i < s.length; i++) { const c = s.charCodeAt(i); labStore.push(c >= 32 && c < 127 ? c : 0x7F); } labLen += s.length; return o; }
-function addLabel(s, z, y, dx, wall, U, Vv, rgba, billboard = 0, maxPx = 0) {
-  if (!s.length) return; labels.push([z, y, dx, wall, ...U, ...Vv, labText(s), s.length, rgba, billboard, maxPx]);
+// prio > 0: the label takes part in screen-space decluttering (higher wins; a loser is moved up / down by a line, else hidden)
+function addLabel(s, z, y, dx, wall, U, Vv, rgba, billboard = 0, maxPx = 0, prio = 0) {
+  if (!s.length) return; (prio > 0 ? dlabels : labels).push([z, y, dx, wall, ...U, ...Vv, labText(s), s.length, rgba, billboard, maxPx, prio]);
 }
-const segs = [], holeSegs = [], streetSegs = []; // [z, y, s, xabs, wA, wB, rgba]
+const segs = [], holeSegs = [], streetSegs = [], streetRange = [];   // streetRange: [wallA, wallB, first, count] // [z, y, s, xabs, wA, wB, rgba]
 function seg(a, b) { segs.push(a, b); }
 const trunc = (s, n) => s.length <= n ? s : '…' + s.slice(s.length - n + 1);
 
@@ -190,40 +220,41 @@ for (const w of W) {
   decoRange.push([deco0, deco.f.length - deco0]); holeRange.push([hole0, holeSegs.length - hole0]);
   // wall title + districts
   const sn = man.snapshots[w.s];
-  addLabel(`${lane.title}  |  ${sn.id}  |  ${sn.date_range ? sn.date_range + ' (git ' + sn.date + ')' : sn.order_date}  |  ${sn.files} files, ${sn.lines.toLocaleString('en')} lines`, w.z0, 4096 + 200, 0, wall, [0, 0, 40], [0, 50, 0], [...rgb, 255], 0, 0);
-  if (sn.date_note) addLabel(trunc(sn.date_note, 160), w.z0, 4096 + 80, 0, wall, [0, 0, 14], [0, 18, 0], [220, 190, 120, 255]);
+  addLabel(`${lane.title}  |  ${sn.id}  |  ${sn.date_range ? sn.date_range + ' (git ' + sn.date + ')' : sn.order_date}  |  ${sn.files} files, ${sn.lines.toLocaleString('en')} lines`, w.z0, 4096 + 200, 0, wall, [0, 0, 40], [0, 50, 0], [...rgb, 255], 0, 0, 70);
+  if (sn.date_note) addLabel(trunc(sn.date_note, 160), w.z0, 4096 + 80, 0, wall, [0, 0, 14], [0, 18, 0], [220, 190, 120, 255], 0, 0, 35);
   for (const d of L.districts) {
     const zc = w.z0 + d.col0 * 128;
-    addLabel(d.path, zc, 4096 + 26, 0, wall, [0, 0, 6], [0, 9, 0], [200, 210, 225, 255]);
+    addLabel(d.path, zc, 4096 + 26, 0, wall, [0, 0, 6], [0, 9, 0], [200, 210, 225, 255], 0, 0, 10);
     floor.add(zc, w.z0 + d.col1 * 128 - 8, -2, -2, -160, 160, [...mixc([20, 24, 32], rgb, 0.35), 255], wall, 1);
   }
 }
 // pins: DreamSTer release markers
 for (const p of layout.pins) { const w = W[p.snap];
   pinsR.add(w.z0 - 260, w.z0 - 60, -6, 4500, 0, 0, [255, 210, 90, 220], p.snap, HDR_PUSH);
-  addLabel(p.label, w.z0 - 60, 4096 + 420, 0, p.snap, [0, 0, 60], [0, 70, 0], [255, 210, 90, 255]); }
+  addLabel(p.label, w.z0 - 60, 4096 + 420, 0, p.snap, [0, 0, 60], [0, 70, 0], [255, 210, 90, 255], 12, 0, 80); }
 // lanes: titles, floor bands
 const Xmax = Math.max(...W.map(w => w.x)) + 8000;
 for (const [li, L] of layout.lanes.entries()) {
   const first = Math.min(...L.snaps.map(s => W[s].x));
   floor.add(L.z0, L.z0 + L.width, -8, -8, first - 3000, Xmax, [...mixc([12, 14, 19], L.rgb, 0.12), 255], 255, 1);
-  addLabel(L.title, L.z0, 4096 + 1800, first - 3500, 255, [0, 0, 160], [0, 180, 0], [...L.rgb, 255], 15, 0);
-  addLabel(L.name, L.z0, -10, first - 3200, 255, [0, 0, 260], [260, 0, 0], [...L.rgb, 200]);
+  addLabel(L.title, L.z0, 4096 + 1800, first - 3500, 255, [0, 0, 160], [0, 180, 0], [...L.rgb, 255], 15, 0, 90);
+  addLabel(L.name, L.z0, -10, first - 3200, 255, [0, 0, 260], [260, 0, 0], [...L.rgb, 200], 0, 0, 20);
   // street ribbons between consecutive walls of the lane (per shared slot)
   const ss = laneSnapsByEvent[li];
   for (let q = 1; q < ss.length; q++) {
-    const a = W[ss[q - 1]], b = W[ss[q]];
+    const a = W[ss[q - 1]], b = W[ss[q]]; streetRange.push([a.s, b.s, streetSegs.length]);
     for (const [slot, kb] of b.slotToFile) {
       if (!a.slotToFile.has(slot)) continue;
       const f = snapJ[b.s].files[kb], L0 = b.fileL[kb], z = b.z0 + Math.floor(L0 / H) * 128 + 60;
       const c = [...(ST_RGB[f.st] || [120, 120, 120]), f.st === 'same' ? 60 : 150];
       streetSegs.push([z, -30, 0, 0, a.s, b.s, c], [z, -30, 1, 0, a.s, b.s, c]);
     }
+    streetRange.at(-1).push(streetSegs.length - streetRange.at(-1)[2]);
   }
 }
 // fpgadc group banner + moat
 { const fz = layout.fpgadc.z0, fx = Math.min(...W.filter(w => layout.lanes[w.lane].group === 'fpgadc').map(w => w.x));
-  addLabel(layout.fpgadc.title, fz, 4096 + 4200, fx - 6000, 255, [0, 0, 300], [0, 340, 0], [120, 230, 220, 255], 18, 0);
+  addLabel(layout.fpgadc.title, fz, 4096 + 4200, fx - 6000, 255, [0, 0, 300], [0, 340, 0], [120, 230, 220, 255], 18, 0, 100);
   floor.add(fz - 2900, fz - 100, -12, -12, fx - 8000, Xmax, [30, 60, 64, 255], 255, 1); }
 // ruler: years, gaps, brackets
 const zR0 = -6000, zR1 = -1500;
@@ -232,33 +263,34 @@ let lastYearX = -1e9;
 for (const r of layout.ruler) {
   if (r.year) {
     if (r.x - lastYearX < 2600) continue; lastYearX = r.x; floor.add(zR0, zR1, -6, -6, r.x - 25, r.x + 25, [120, 130, 150, 255], 255, 1);
-    addLabel(String(r.year), zR0 + 300, 1500, r.x - 1, 255, [0, 0, 380], [0, 420, 0], [190, 200, 220, 255], 13, 0);
-    seg([zR1, -6, 0, r.x, 255, 255, [120, 130, 150, 90]], [layout.lanes.at(-1).z0 + layout.lanes.at(-1).width, -6, 0, r.x, 255, 255, [120, 130, 150, 40]]); }
-  else addLabel(`... ${r.gap} ...`, zR0 + 300, 400, r.x, 255, [0, 0, 160], [0, 200, 0], [150, 160, 180, 255]);
+    addLabel(String(r.year), zR0 + 300, 1500, r.x - 1, 255, [0, 0, 380], [0, 420, 0], [190, 200, 220, 255], 13, 0, 60);
+    const zEnd = Math.max(zR1 + 2000, ...layout.lanes.filter(L => Math.min(...L.snaps.map(s => W[s].x)) - 3000 <= r.x).map(L => L.z0 + L.width));   // lanes that exist by then
+    seg([zR1, -6, 0, r.x, 255, 255, [120, 130, 150, 90]], [zEnd, -6, 0, r.x, 255, 255, [120, 130, 150, 40]]); }
+  else addLabel(`... ${r.gap} ...`, zR0 + 300, 400, r.x, 255, [0, 0, 160], [0, 200, 0], [150, 160, 180, 255], 0, 0, 40);
 }
 for (const b of layout.brackets) {
   const L = layout.lanes[W[b.snap].lane];
   for (let x = b.x0; x < b.x1; x += 600) floor.add(L.z0 - 1400, L.z0 - 200, -4, -4, x, Math.min(b.x1, x + 300), [200, 150, 60, 200], 255, 1);
-  addLabel(`real dates ${b.range}: ${trunc(b.note, 110)}`, L.z0 - 1350, 2, b.x0, 255, [0, 0, 22], [40, 0, 0], [230, 190, 120, 255]);
+  addLabel(`real dates ${b.range}: ${trunc(b.note, 110)}`, L.z0 - 1350, 2, b.x0, 255, [0, 0, 22], [40, 0, 0], [230, 190, 120, 255], 0, 0, 30);
 }
 // lineage edges
 const EDGE_RGB = { 'git-fork': [120, 200, 255], import: [240, 200, 110], 'fork-recovered': [240, 160, 90], concept: [150, 150, 165], copy: [255, 120, 200] };
 V.edgeStyle = EDGE_RGB;
 for (const e of layout.edges) {
   const a = W[e.from], b = W[e.to], za = a.z0 + a.cols * 64, zb = b.z0 + b.cols * 64, c = EDGE_RGB[e.kind];
-  const N = 64, arch = e.kind === 'copy';
+  const N = 64, arch = !!e.arch, top = 4200 + 3500 * (e.arch || 1);
   for (let i = 0; i < N; i++) {
     const s0 = i / N, s1 = (i + 1) / N;
     if (e.kind === 'concept' && (i & 1)) continue;
     if (e.kind === 'fork-recovered' && (i % 4 === 3)) continue;
     if (e.kind === 'import' && (i < 6 || i > N - 7) && (i & 1)) continue;
-    const pt = s => { const sm = s * s * (3 - 2 * s); return [za + (zb - za) * sm, arch ? 4200 + Math.sin(Math.PI * s) * 3500 : -150 + Math.sin(Math.PI * s) * 60, s, 0, a.s, b.s, [...c, 230]]; };
+    const pt = s => { const sm = s * s * (3 - 2 * s); return [za + (zb - za) * sm, arch ? 4200 + Math.sin(Math.PI * s) * (top - 4200) : -150 + Math.sin(Math.PI * s) * 60, s, 0, a.s, b.s, [...c, 230]]; };
     seg(pt(s0), pt(s1));
     if (!arch) { const q = s => { const p = pt(s); p[0] += 40; return p; }; seg(q(s0), q(s1)); }
   }
   const mid = (za + zb) / 2;
-  // label at the middle (attached to wall a's x, offset half way along x in gallery)
-  addLabel(e.label, mid, arch ? 7900 : 900, (b.x - a.x) / 2, e.from, [0, 0, 40], [0, 50, 0], [...c, 255], 11, 0);
+  // label at the middle of the arc (x half way between the walls in the gallery); decluttered against the others
+  addLabel(e.label, mid, arch ? top + 400 : 900, (b.x - a.x) / 2, e.from, [0, 0, 40], [0, 50, 0], [...c, 255], 11, 0, e.kind === 'copy' ? 55 : 50);
 }
 plates.build(); deco.build(); t3.build(); floor.build(); pinsR.build();
 // per-wall T3 ranges (t3 rects were added in wall order)
@@ -278,19 +310,95 @@ function makeSegBuf(segs) {
   gl.bindVertexArray(null); gpuBytes += n * 24; return { vao, n };
 }
 const segBuf = makeSegBuf(segs), holeBuf = makeSegBuf(holeSegs), streetBuf = makeSegBuf(streetSegs);
-// labels buffer: aP(4f) aU(3f) aV(3f) aT(2u32) aC(4u8n) aK(2f) -> 64 bytes
-const labBuf = (() => {
-  const n = labels.length, ab = new ArrayBuffer(n * 64), f32 = new Float32Array(ab), u32 = new Uint32Array(ab), u8 = new Uint8Array(ab);
-  labels.forEach((l, i) => { f32.set(l.slice(0, 10), i * 16); u32[i * 16 + 10] = l[10]; u32[i * 16 + 11] = l[11]; u8.set(l[12], i * 64 + 48); f32[i * 16 + 13] = l[13]; f32[i * 16 + 14] = l[14]; });
+// labels buffer: aP(4f) aU(3f) aV(3f) aT(2u32) aC(4u8n) aK(2f) -> 64 bytes; decluttered labels add aD (alpha, shift) at location 6
+const labTex = (() => { const rows = Math.ceil(labLen / 4096) + 1, arr = new Uint8Array(rows * 4096); arr.set(labStore);
+  gpuBytes += rows * 4096; return G.tex2D(gl, 4096, rows, gl.R8UI, gl.RED_INTEGER, gl.UNSIGNED_BYTE, arr); })();
+function makeLabBuf(list, dynamic) {
+  const n = list.length, ab = new ArrayBuffer(n * 64), f32 = new Float32Array(ab), u32 = new Uint32Array(ab), u8 = new Uint8Array(ab);
+  list.forEach((l, i) => { f32.set(l.slice(0, 10), i * 16); u32[i * 16 + 10] = l[10]; u32[i * 16 + 11] = l[11]; u8.set(l[12], i * 64 + 48); f32[i * 16 + 13] = l[13]; f32[i * 16 + 14] = l[14]; });
   const vao = gl.createVertexArray(); gl.bindVertexArray(vao);
   const vbo = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, vbo); gl.bufferData(gl.ARRAY_BUFFER, ab, gl.STATIC_DRAW);
   const A = (loc, n, type, off, norm = false, int = false) => { gl.enableVertexAttribArray(loc); if (int) gl.vertexAttribIPointer(loc, n, type, 64, off); else gl.vertexAttribPointer(loc, n, type, norm, 64, off); gl.vertexAttribDivisor(loc, 1); };
   A(0, 4, gl.FLOAT, 0); A(1, 3, gl.FLOAT, 16); A(2, 3, gl.FLOAT, 28); A(3, 2, gl.UNSIGNED_INT, 40, false, true); A(4, 4, gl.UNSIGNED_BYTE, 48, true); A(5, 2, gl.FLOAT, 52);
+  let dyn = null;
+  if (dynamic) { dyn = { buf: gl.createBuffer(), data: new Float32Array(2 * n) };
+    gl.bindBuffer(gl.ARRAY_BUFFER, dyn.buf); gl.bufferData(gl.ARRAY_BUFFER, dyn.data, gl.DYNAMIC_DRAW);
+    gl.enableVertexAttribArray(6); gl.vertexAttribPointer(6, 2, gl.FLOAT, false, 8, 0); gl.vertexAttribDivisor(6, 1); }
   gl.bindVertexArray(null);
-  const rows = Math.ceil(labLen / 4096) + 1, arr = new Uint8Array(rows * 4096); arr.set(labStore);
-  const tex = G.tex2D(gl, 4096, rows, gl.R8UI, gl.RED_INTEGER, gl.UNSIGNED_BYTE, arr);
-  gpuBytes += n * 64 + rows * 4096; return { vao, n, tex };
-})();
+  gpuBytes += n * 64; return { vao, n, dyn };
+}
+const labBuf = makeLabBuf(labels, false), dlabBuf = makeLabBuf(dlabels, true);
+// ---- declutter (CPU, per frame): the same size rules as labelVS, greedy by priority with a grid of placed screen boxes
+const DL = { cur: new Float32Array(dlabels.length), shift: new Int8Array(dlabels.length), shown: 0, hidden: 0, moved: 0 };
+V.declutter = DL;
+// static per-label numbers, so the per-frame pass allocates nothing: base point, |U|, |V|, U, V, kind
+const DLS = dlabels.map(l => ({ w: l[3], z: l[0], y: l[1], dx: l[2], lu: Math.hypot(l[4], l[5], l[6]), lv: Math.hypot(l[7], l[8], l[9]),
+  U: [l[4], l[5], l[6]], Vv: [l[7], l[8], l[9]], L: l[11], bb: l[13], maxPx: l[14], prio: l[15], wallPlane: l[13] < 0.5 && l[4] === 0 && l[7] === 0 }));
+function declutter(dt, rgt, up, minPx) {
+  const fp = focalPx(), cw = canvas.width, ch = canvas.height, cam = V.cam.p, M = VP;
+  let ox = 0, oy = 0, ok = false;
+  const proj = (x, y, z) => { const w = M[3] * x + M[7] * y + M[11] * z + M[15]; if (w <= 1) { ok = false; return; }
+    ox = ((M[0] * x + M[4] * y + M[8] * z + M[12]) / w + 1) * 0.5 * cw; oy = (1 - (M[1] * x + M[5] * y + M[9] * z + M[13]) / w) * 0.5 * ch; ok = true; };
+  const cand = DL.cand || (DL.cand = []); cand.length = 0;
+  const occW = W.filter(ww => V.WA[ww.s]);
+  for (let i = 0; i < DLS.length; i++) {
+    const l = DLS[i], w = l.w, wa = w < 64 ? V.WA[w] : 1; if (wa <= 0) continue;
+    const o0 = (w < 64 ? V.WX[w] : 0) + l.dx, o1 = l.y, o2 = l.z;
+    if (l.wallPlane && cam[0] > o0) continue;
+    const d = Math.hypot(o0 - cam[0], o1 - cam[1], o2 - cam[2]); let px = l.lv * 2 * fp / Math.max(d, 1), k = 1;
+    if (l.bb > 1.5 && px < l.bb) { k = l.bb / px; px = l.bb; }
+    if (px < minPx || (l.maxPx > 0 && px > l.maxPx)) continue;
+    let U0, U1, U2, V0, V1, V2;
+    if (l.bb > 0.5) { U0 = rgt[0] * l.lu * k; U1 = rgt[1] * l.lu * k; U2 = rgt[2] * l.lu * k; V0 = up[0] * l.lv * k; V1 = up[1] * l.lv * k; V2 = up[2] * l.lv * k; }
+    else { U0 = l.U[0]; U1 = l.U[1]; U2 = l.U[2]; V0 = l.Vv[0]; V1 = l.Vv[1]; V2 = l.Vv[2]; }
+    // drawn without depth test, so hide a label whose centre is behind a wall (analytic, like picking)
+    const c0 = o0 + U0 * l.L / 2 - V0, c1 = o1 + U1 * l.L / 2 - V1, c2 = o2 + U2 * l.L / 2 - V2, dx = c0 - cam[0];
+    let occluded = false;
+    if (Math.abs(dx) > 1e-6) for (const ww of occW) {
+      if (ww.s === w) continue;
+      const t = (V.WX[ww.s] - cam[0]) / dx; if (t <= 0 || t >= 0.999) continue;
+      const y = cam[1] + t * (c1 - cam[1]); if (y <= -6 || y >= 4102) continue;
+      const z = cam[2] + t * (c2 - cam[2]); if (z > ww.z0 && z < ww.z0 + ww.cols * 128 - 4) { occluded = true; break; }
+    }
+    if (occluded) continue;
+    cand.push({ i, o0, o1, o2, U0, U1, U2, V0, V1, V2, L: l.L, bb: l.bb > 0.5, pr: l.prio + (DL.cur[i] > 0.5 ? 0.5 : 0) });
+  }
+  cand.sort((a, b) => b.pr - a.pr);
+  const grid = new Map(), G0 = 96;
+  // visible UI panels count as occupied, so labels do not hide under the legend or the timeline
+  if (!DL.panels || performance.now() - DL.panelsT > 500) { DL.panelsT = performance.now(); const k = cw / Math.max(1, canvas.clientWidth);
+    DL.panels = [...document.querySelectorAll('.panel')].filter(e => e.getClientRects().length && e.id !== 'tip' && e.id !== 'loading').map(e => { const b = e.getBoundingClientRect(); return [b.left * k, b.top * k, b.right * k, b.bottom * k]; }); }
+  const hit = (r) => { for (let gx = Math.floor(r[0] / G0); gx <= Math.floor(r[2] / G0); gx++) for (let gy = Math.floor(r[1] / G0); gy <= Math.floor(r[3] / G0); gy++) {
+    const c = grid.get(gx * 65536 + gy); if (c) for (const q of c) if (q[0] < r[2] && r[0] < q[2] && q[1] < r[3] && r[1] < q[3]) return true; } return false; };
+  const put = (r) => { for (let gx = Math.floor(r[0] / G0); gx <= Math.floor(r[2] / G0); gx++) for (let gy = Math.floor(r[1] / G0); gy <= Math.floor(r[3] / G0); gy++) {
+    const k = gx * 65536 + gy; let c = grid.get(k); if (!c) grid.set(k, c = []); c.push(r); } };
+  for (const r of DL.panels) put(r);
+  const target = DL.target || (DL.target = new Uint8Array(dlabels.length)); target.fill(0); let moved = 0, placed = 0;
+  const SH = [0, 0, 1, -1, 2, -2];
+  for (const c of cand) {
+    const nsh = c.bb ? 6 : 1; SH[0] = DL.shift[c.i];
+    for (let q = 0; q < nsh; q++) {
+      const sh = c.bb ? SH[q] : 0, b0 = c.o0 - 2 * c.V0 * sh, b1 = c.o1 - 2 * c.V1 * sh, b2 = c.o2 - 2 * c.V2 * sh;
+      let x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9, bad = false;
+      for (let e = 0; e < 4 && !bad; e++) { const a = (e & 1) ? c.L : 0, v = (e & 2) ? 2 : 0;
+        proj(b0 + c.U0 * a - c.V0 * v, b1 + c.U1 * a - c.V1 * v, b2 + c.U2 * a - c.V2 * v); if (!ok) { bad = true; break; }
+        if (ox < x0) x0 = ox; if (ox > x1) x1 = ox; if (oy < y0) y0 = oy; if (oy > y1) y1 = oy; }
+      if (bad) break;
+      const r = [x0 - 3, y0 - 2, x1 + 3, y1 + 2];
+      if (r[2] < 0 || r[0] > cw || r[3] < 0 || r[1] > ch) { target[c.i] = 1; DL.shift[c.i] = sh; break; }   // off screen: nothing to collide with
+      if (r[2] - r[0] > cw * 1.5) break;
+      if (!hit(r)) { put(r); placed++; target[c.i] = 1; if (sh) moved++; DL.shift[c.i] = sh; break; }
+    }
+  }
+  const k = Math.min(1, dt * 10); let shown = 0; const data = dlabBuf.dyn.data;
+  for (let i = 0; i < dlabels.length; i++) {
+    let cv = DL.cur[i] + (target[i] - DL.cur[i]) * k; if (!target[i] && cv < 0.02) cv = 0; DL.cur[i] = cv;
+    if (target[i]) shown++;
+    data[2 * i] = cv; data[2 * i + 1] = DL.shift[i];
+  }
+  Object.assign(DL, { shown, hidden: cand.length - shown, moved, placed, candidates: cand.length });
+  gl.bindBuffer(gl.ARRAY_BUFFER, dlabBuf.dyn.buf); gl.bufferSubData(gl.ARRAY_BUFFER, 0, data);
+}
 const emptyVAO = gl.createVertexArray();
 
 // ------------------------------------------------------------------ workers
@@ -307,8 +415,17 @@ dw.onmessage = (e) => {
     Object.assign(w, { inst: m.inst, P: m.P, fileStart: m.fileStart, fileOfInst: m.fileOfInst, colStart: m.colStart, loaded: true });
     G.uploadLinear(gl, instTex, INSTW, w.base, m.inst, 2, gl.RG_INTEGER, gl.UNSIGNED_INT);
     V.load.walls++; w.impKey = '';
+    if (V.blame) dw.postMessage({ type: 'blame', snap: w.s, commitAuthor: V.blame.commitAuthor });
     if (V.load.walls === NS) V.load.allWalls = performance.now() - t0Boot;
     emit('wall', w);
+  } else if (m.type === 'blame') {
+    const w = W[m.snap]; if (m.missing) return;
+    G.uploadLinear(gl, authTex, INSTW, w.base, m.auth, 1, gl.RED_INTEGER, gl.UNSIGNED_SHORT);
+    w.commit = m.commit; w.authHist = new Map(m.hist);
+    for (const [a, n] of m.hist) if (a !== 0xFFFF) V.blame.total[a] += n;
+    V.load.blame = (V.load.blame || 0) + 1; authorPalette();
+    if (V.mode === 4) invalidateImpostors();
+    emit('blame', w);
   } else if (m.type === 'morph') {
     morphCache.set(m.key, m); if (morphCache.size > 8) morphCache.delete(morphCache.keys().next().value);
     emit('morph', m);
@@ -380,8 +497,33 @@ V.fitWall = (s) => {
   const d = Math.max(wid / 2 / (Math.tan(FOV / 2) * aspect), 2300 / Math.tan(FOV / 2)) * 1.08;
   return { p: [V.WX[s] - d, 2048, w.z0 + wid / 2], dir: [1, 0, 0] };
 };
-V.overview = () => { const cz = (layout.lanes.at(-1).z0 + layout.lanes.at(-1).width) / 2, cx = Xmax / 2;
-  return { p: [cx - 85000, 62000, cz + 100000], dir: [95000, -62000, -112000] }; };
+// fit an axis-aligned box [[x0,y0,z0],[x1,y1,z1]] into the part of the screen the panels leave free, looking along f
+V.fitBox = (bb, f, pts = null) => {   // pts: fit these points instead of the box corners (the box still gives the start)
+  const aspect = canvas.clientWidth / canvas.clientHeight, [a, b] = bb;
+  const box = pts || []; if (!pts) for (const x of [a[0], b[0]]) for (const y of [a[1], b[1]]) for (const z of [a[2], b[2]]) box.push([x, y, z]);
+  const free = (() => { const W0 = innerWidth, H0 = innerHeight, r = id => { const e = document.getElementById(id); return e && e.getClientRects().length ? e.getBoundingClientRect() : null; };
+    const lg = r('legend'), tl = r('timeline'), hud = r('hud');
+    return [-0.96, lg ? 2 * (lg.left - 12) / W0 - 1 : 0.96, tl ? 1 - 2 * (tl.top - 8) / H0 : -0.96, hud ? 1 - 2 * (hud.bottom + 8) / H0 : 0.92]; })();
+  f = G.norm(f); const rgt = G.norm(G.cross(f, [0, 1, 0])), up = G.cross(rgt, f), th = Math.tan(FOV / 2);
+  let tgt = [0, 1, 2].map(i => (a[i] + b[i]) / 2), d = Math.hypot(b[0] - a[0], b[1] - a[1], b[2] - a[2]);
+  for (let it = 0; it < 40; it++) {
+    const eye = tgt.map((v, i) => v - f[i] * d); let x0 = 1e9, x1 = -1e9, y0 = 1e9, y1 = -1e9;
+    for (const c of box) { const v = c.map((q, i) => q - eye[i]), z = Math.max(1, G.dot(v, f)); const nx = G.dot(v, rgt) / (z * th * aspect), ny = G.dot(v, up) / (z * th);
+      x0 = Math.min(x0, nx); x1 = Math.max(x1, nx); y0 = Math.min(y0, ny); y1 = Math.max(y1, ny); }
+    const sc = Math.max((x1 - x0) / (free[1] - free[0]), (y1 - y0) / (free[3] - free[2]));
+    const cx = (x0 + x1) / 2 - (free[0] + free[1]) / 2, cy = (y0 + y1) / 2 - (free[2] + free[3]) / 2;
+    tgt = tgt.map((v, i) => v + rgt[i] * cx * d * th * aspect * 0.8 + up[i] * cy * d * th * 0.8);
+    d *= 1 + (sc - 1) * 0.8;
+  }
+  return { p: tgt.map((v, i) => v - f[i] * d), dir: f };
+};
+V.wallsBox = (ss) => { const ws = ss.map(s => W[s]); return [[Math.min(...ws.map(w => V.WX[w.s])) - 2000, 0, Math.min(...ws.map(w => w.z0))], [Math.max(...ws.map(w => V.WX[w.s])), 4600, Math.max(...ws.map(w => w.z0 + w.cols * 128))]]; };
+// overview: the whole scene (all walls, the ruler, the fpgadc banner)
+V.overview = () => {   // fit the walls and the ruler: the lanes start later the further out they are, so the full box is half empty
+  const zMax = layout.lanes.at(-1).z0 + layout.lanes.at(-1).width, pts = [];
+  for (const w of W) for (const y of [0, 4600]) pts.push([V.WX[w.s], y, w.z0], [V.WX[w.s], y, w.z0 + w.cols * 128]);
+  pts.push([-6000, 0, -6000], [Xmax, 0, -6000]);
+  return V.fitBox([[-9000, 0, -6000], [Xmax, 4600, zMax]], V.Q.get('ovdir') ? V.Q.get('ovdir').split(',').map(Number) : [0.5, -0.62, -0.6], pts); };
 V.fileView = (s, k, line = 0) => {
   const w = W[s], L0 = w.fileL[k] + (line > 0 ? core.HDR + line - 1 : 0), col = Math.floor(L0 / H), row = L0 % H;
   const dist = 2 * focalPx() / (V.quality.t0 + 5);
@@ -511,9 +653,11 @@ function setupLineProg(prog) {
   bindTex(3, gl.TEXTURE_2D_ARRAY, textTex, prog, 'uText'); bindTex(4, gl.TEXTURE_2D, atlasTex, prog, 'uAtlas');
   bindTex(5, gl.TEXTURE_2D, palTex, prog, 'uPal'); bindTex(6, gl.TEXTURE_2D, presTex, prog, 'uPres');
   bindTex(7, gl.TEXTURE_2D, markTex, prog, 'uMark'); bindTex(8, gl.TEXTURE_2D, possTex, prog, 'uPoss');
+  bindTex(10, gl.TEXTURE_2D, authTex, prog, 'uAuth');
   gl.uniform1i(prog.u.uMode, V.mode); gl.uniform1i(prog.u.uHideInc, V.hideInc ? 1 : 0); gl.uniform1f(prog.u.uT0, V.quality.t0);
   gl.uniform1i(prog.u.uBake, 0); gl.uniform1i(prog.u.uPresReady, presReady);
-  if (prog.u.uDenseMorph) gl.uniform1i(prog.u.uDenseMorph, SOFT ? 0 : 1);
+  if (prog.u.uDenseMorph) gl.uniform1i(prog.u.uDenseMorph, 1);
+  if (prog.u.uMorphGlyph) gl.uniform1i(prog.u.uMorphGlyph, 1);
 }
 function useLine(prog, w) {
   setupLineProg(prog);
@@ -527,16 +671,63 @@ function wallUniforms(prog, w) {
   gl.uniform2i(prog.u.uHi, h ? w.base + h.a : -1, h ? w.base + h.b : -1);
 }
 
+// ------------------------------------------------------------------ pipeline warm-up
+// ANGLE builds a pipeline per (program, blend / depth state, vertex layout, topology, target) the first time a draw needs
+// it; on llvmpipe (lavapipe) each build of the line shader takes up to seconds. Issue every combination the frame uses once,
+// with all vertices collapsed to one point (no fragments), while the loading banner is up.
+function warmup() {
+  const t0 = performance.now(), zero = new Float32Array(16);
+  VP = zero; camP = new Float32Array(3); camF = new Float32Array([1, 0, 0]); planes = [];
+  const run = (target) => {
+    if (target === 'bake') { if (!warmup.fbo) { const t = G.tex2D(gl, 4, 4, gl.RGBA8, gl.RGBA, gl.UNSIGNED_BYTE, null, gl.LINEAR_MIPMAP_LINEAR); warmup.fbo = gl.createFramebuffer();
+        gl.bindFramebuffer(gl.FRAMEBUFFER, warmup.fbo); gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, t, 0); }
+      gl.bindFramebuffer(gl.FRAMEBUFFER, warmup.fbo); gl.viewport(0, 0, 4, 4); gl.disable(gl.DEPTH_TEST); gl.enable(gl.SCISSOR_TEST); gl.scissor(0, 0, 4, 4);
+      gl.enable(gl.BLEND); gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA); useLine(P.line, W[0]); gl.uniform1i(P.line.u.uBake, 1);
+      gl.bindVertexArray(emptyVAO); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, 1); gl.uniform1i(P.line.u.uBake, 0); gl.disable(gl.SCISSOR_TEST);
+      gl.bindFramebuffer(gl.FRAMEBUFFER, null); return; }
+    gl.bindFramebuffer(gl.FRAMEBUFFER, null); gl.viewport(0, 0, canvas.width, canvas.height);
+    gl.enable(gl.DEPTH_TEST); gl.depthFunc(gl.LEQUAL); gl.disable(gl.BLEND); gl.depthMask(true);
+    common(P.rect); bindTex(5, gl.TEXTURE_2D, palTex, P.rect, 'uPal');
+    gl.bindVertexArray(plates.vao); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, 1);
+    gl.enable(gl.BLEND); gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+    gl.bindVertexArray(deco.vao); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, 1);
+    gl.depthMask(false);
+    common(P.imp); gl.bindVertexArray(emptyVAO); gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    setupLineProg(P.line); wallUniforms(P.line, W[0]); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, 1);
+    setupLineProg(P.morph); gl.uniform1i(P.morph.u.uStride, 1); gl.uniform1i(P.morph.u.uBase, 0); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, 1);
+    common(P.seg); gl.bindVertexArray(segBuf.vao); gl.drawArrays(gl.LINES, 0, 2);
+    common(P.label); gl.bindVertexArray(labBuf.vao); gl.vertexAttrib2f(6, 1, 0); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, 1);
+    gl.disable(gl.DEPTH_TEST); gl.bindVertexArray(dlabBuf.vao); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, 1); gl.enable(gl.DEPTH_TEST);
+    gl.bindVertexArray(null); gl.depthMask(true);
+  };
+  run('main'); run('bake');
+  const px = new Uint8Array(4); gl.readPixels(0, 0, 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, px);   // wait for the builds here, not mid-flight
+  V.load.warmupMs = performance.now() - t0;
+}
+
 // ------------------------------------------------------------------ frame
 const syncPx = new Uint8Array(4);
 const tqRing = []; let lastT = performance.now(), hudT = 0, frameN = 0, lastPresent = 0;
 const frameTimes = [];
+// frame pacing: at most two frames in flight. Without this, a browser running without vsync (and llvmpipe at any rate) lets
+// the page queue seconds of GPU work; the next synchronous GL call (a texture allocation, a canvas resize) then waits for
+// all of it, which is what produced the 1-3 s stalls during Now-mode morphs on llvmpipe.
+const fences = []; V.stats.skipped = 0;
+function gpuBusy() {
+  while (fences.length && gl.getSyncParameter(fences[0], gl.SYNC_STATUS) === gl.SIGNALED) gl.deleteSync(fences.shift());
+  return fences.length >= 2;
+}
+// per-section CPU times of the slowest frames (bench output), so spikes can be attributed
+const PROF = { t: 0, cur: [], worst: [] };
+function PM(name) { const t = performance.now(); PROF.cur.push([name, +(t - PROF.t).toFixed(2)]); PROF.t = t; }
+V.prof = PROF;
 function frame(now) {
   requestAnimationFrame(frame);
+  if (gpuBusy()) { V.stats.skipped++; return; }
   if (SOFT && !V.bench && now - lastPresent < 30) return;   // llvmpipe: cap ~30 fps
   lastPresent = now;
   const rawDt = now - lastT, dt = Math.min(0.1, rawDt / 1000); lastT = now; frameN++;
-  const c0 = performance.now();
+  const c0 = performance.now(); PROF.t = c0; PROF.cur = [];
   V.stats.dt.push(rawDt); V.lastRawDt = rawDt; if (V.stats.dt.length > 240) V.stats.dt.shift();
   emit('tick', dt);
   if (V.playing) { V.t = Math.min(NS - 1, V.t + dt * V.playSpeed / 2.5); if (V.t >= NS - 1) V.playing = false; emit('time'); }
@@ -562,6 +753,7 @@ function frame(now) {
   let q = null;
   if (tq) { q = gl.createQuery(); gl.beginQuery(tq.TIME_ELAPSED_EXT, q); }
 
+  PM('lod0');
   // ---- LOD selection
   const fp = focalPx(); const T1 = V.quality.t1min;
   if (V.morph) { // far morphs are sub-pixel: show the arriving wall (impostor) instead
@@ -597,6 +789,7 @@ function frame(now) {
   const drawRuns = [];
   for (const rr of lineRuns) { const w = rr[0], n = w.colStart[rr[2]] - w.colStart[rr[1]]; if (n === 0) continue;
     if (inst + n > budget && drawRuns.length) { impRuns.push([w, rr[1], rr[2]]); continue; } inst += n; drawRuns.push(rr); }
+  PM('lod');
   // bake budget
   bakeCand.sort((a, b) => a[0] - b[0]);
   let bakeBudget = SOFT ? 40000 : 1500000; const nb = bakeCand.length;
@@ -606,6 +799,7 @@ function frame(now) {
   for (const w of W) if (w.loaded && w.impKey !== impKey(w)) { unbaked++; if (bakeBudget > 0 && !bakeCand.some(b => b[1] === w)) bakeBudget -= Math.max(1, bake(w, bakeBudget)); }
   V.stats.unbaked = unbaked;
 
+  PM('bake');
   // ---- draw
   gl.bindFramebuffer(gl.FRAMEBUFFER, null); gl.viewport(0, 0, cw, ch);
   gl.clearColor(0.043, 0.051, 0.071, 1); gl.clearDepth(1); gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
@@ -623,6 +817,7 @@ function frame(now) {
   if (t3Walls.length) { gl.bindVertexArray(t3.vao);
     for (const w of t3Walls) { const [a, n] = t3Range[w.s]; t3.bind(a); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, n); draws++; } }
   gl.depthMask(false);
+  PM('plates+deco');
   // T2 impostors
   if (impRuns.length && !V.skip.has('imp')) { common(P.imp); gl.bindVertexArray(emptyVAO); gl.uniform1f(P.imp.u.uFade, 1);
     for (const [w, c0, c1] of impRuns) {
@@ -630,6 +825,7 @@ function frame(now) {
       bindTex(0, gl.TEXTURE_2D, w.imp.tex, P.imp, 'uImp');
       gl.uniform1f(P.imp.u.uWallX, V.WX[w.s]); gl.uniform1f(P.imp.u.uZ0, w.z0); gl.uniform1f(P.imp.u.uC0, c0); gl.uniform1f(P.imp.u.uC1, c1); gl.uniform1f(P.imp.u.uCols, w.cols);
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); draws++; } }
+  PM('imp');
   // T0/T1 lines
   if (drawRuns.length) { setupLineProg(P.line); gl.bindVertexArray(emptyVAO);
     let cur = null;
@@ -639,48 +835,86 @@ function frame(now) {
       gl.uniform1i(P.line.u.uBase, w.base + a);
       // uHi is in absolute instance index; the shader adds uBase to gl_InstanceID
       gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, n); draws++; } }
-  // morph
-  if (V.morph) {
+  PM('lines');
+  // morph: column runs of the arriving wall (kept + added by B column, removed by A column), frustum-culled like the walls
+  if (V.morph && V.morph.m.colB) {
     const M = V.morph, m = M.m, key = m.key;
     if (morphOnGPU !== key) { G.uploadLinear(gl, morphTex, MORPHW, 0, m.inst, 4, gl.RGBA_INTEGER, gl.UNSIGNED_INT); morphOnGPU = key; }
     setupLineProg(P.morph); gl.bindVertexArray(emptyVAO);
-    const wb = W[M.b], wa = W[M.a];
-    gl.uniform1i(P.morph.u.uBase, 0); gl.uniform1f(P.morph.u.uWallX, V.WX[M.b]); gl.uniform1f(P.morph.u.uZ0, wb.z0); gl.uniform1f(P.morph.u.uZ0A, wa.z0);
+    const wb = W[M.b], wa = W[M.a], x = V.WX[M.b];
+    gl.uniform1f(P.morph.u.uWallX, x); gl.uniform1f(P.morph.u.uZ0, wb.z0); gl.uniform1f(P.morph.u.uZ0A, wa.z0);
     gl.uniform1i(P.morph.u.uWall, M.b); gl.uniform1i(P.morph.u.uParent, M.a); gl.uniform1f(P.morph.u.uMorphT, M.u); gl.uniform2i(P.morph.u.uHi, -1, -1);
-    const stride = SOFT ? 2 : 1, n = Math.floor(m.inst.length / 4 / stride); gl.uniform1i(P.morph.u.uStride, stride);
-    gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, n); draws++; inst += n;
+    const stride = V.morphStride; gl.uniform1i(P.morph.u.uStride, stride); gl.uniform1i(P.morph.u.uMorphGlyph, SOFT ? 0 : 1);
+    const draw = (z0, cols, starts) => {
+      let run = -1;
+      const flush = (c1) => { const a = starts[run], n = Math.floor((starts[c1] - a) / stride); if (n > 0) { gl.uniform1i(P.morph.u.uBase, a); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, n); draws++; inst += n; } run = -1; };
+      for (let c = 0; c < cols; c++) {
+        const za = z0 + (c - 1) * 128, zb = z0 + (c + 2) * 128;   // one column of slack for lines in flight
+        const vis = G.boxVisible(planes, x - 1, -10, za, x + 1, 4400, zb);
+        if (vis && run < 0) run = c; else if (!vis && run >= 0) flush(c);
+      }
+      if (run >= 0) flush(cols);
+    };
+    draw(wb.z0, wb.cols, m.colB); if (SOFT ? V.morphRemoved : true) draw(wa.z0, wa.cols, m.colA);
   }
+  PM('morph');
   // segments
   if (!V.skip.has('segs')) { common(P.seg); gl.uniform2f(P.seg.u.uFadeFar, 0, 0); gl.bindVertexArray(segBuf.vao); gl.drawArrays(gl.LINES, 0, segBuf.n); draws++;
-    gl.uniform2f(P.seg.u.uFadeFar, 12000, 40000); gl.bindVertexArray(streetBuf.vao); gl.drawArrays(gl.LINES, 0, streetBuf.n); draws++; gl.uniform2f(P.seg.u.uFadeFar, 0, 0);
+    // street ribbons fade out by 40000 units: draw only the wall pairs that come that close
+    gl.uniform2f(P.seg.u.uFadeFar, 12000, 40000); gl.bindVertexArray(streetBuf.vao);
+    for (const [sa, sb, first, n] of streetRange) { if (!n || !V.WA[sa] || !V.WA[sb]) continue; const a = W[sa], b = W[sb];
+      const x0 = Math.min(V.WX[sa], V.WX[sb]), x1 = Math.max(V.WX[sa], V.WX[sb]), z0 = Math.min(a.z0, b.z0), z1 = Math.max(a.z0 + a.cols * 128, b.z0 + b.cols * 128);
+      if (G.boxDist(V.cam.p, x0, -40, z0, x1, -20, z1) > 40000 || !G.boxVisible(planes, x0, -40, z0, x1, -20, z1)) continue;
+      gl.drawArrays(gl.LINES, first, n); draws++; }
+    gl.uniform2f(P.seg.u.uFadeFar, 0, 0);
     gl.bindVertexArray(holeBuf.vao); for (const w of nearWalls) { const [a, n] = holeRange[w.s]; if (n && drawRuns.some(r => r[0] === w)) { gl.drawArrays(gl.LINES, a, n); draws++; } } }
+  PM('segs');
   // labels
-  common(P.label); bindTex(4, gl.TEXTURE_2D, atlasTex, P.label, 'uAtlas'); bindTex(9, gl.TEXTURE_2D, labBuf.tex, P.label, 'uLab');
+  common(P.label); bindTex(4, gl.TEXTURE_2D, atlasTex, P.label, 'uAtlas'); bindTex(9, gl.TEXTURE_2D, labTex, P.label, 'uLab');
   gl.uniform1f(P.label.u.uMinPx, SOFT ? 8 : 4); gl.uniform3fv(P.label.u.uRight, r); gl.uniform3fv(P.label.u.uUp, u);
-  if (!V.skip.has('labels')) { gl.bindVertexArray(labBuf.vao); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, labBuf.n); draws++; }
+  if (!V.skip.has('labels')) {
+    gl.bindVertexArray(labBuf.vao); gl.vertexAttrib2f(6, 1, 0); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, labBuf.n); draws++;
+    if (!V.skip.has('declutter')) declutter(dt, r, u, SOFT ? 8 : 4); else { dlabBuf.dyn.data.fill(0); for (let i = 0; i < dlabels.length; i++) dlabBuf.dyn.data[2 * i] = 1; gl.bindBuffer(gl.ARRAY_BUFFER, dlabBuf.dyn.buf); gl.bufferSubData(gl.ARRAY_BUFFER, 0, dlabBuf.dyn.data); }
+    // map labels (lane / wall titles, edges, years, pins) are drawn on top: decluttering keeps them apart, and a label
+    // half hidden behind a wall reads as garbage
+    gl.disable(gl.DEPTH_TEST); gl.bindVertexArray(dlabBuf.vao); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, dlabBuf.n); draws++; gl.enable(gl.DEPTH_TEST); }
   gl.bindVertexArray(null); gl.depthMask(true);
+  PM('labels');
   if (q) { gl.endQuery(tq.TIME_ELAPSED_EXT); tqRing.push(q); }
+  fences.push(gl.fenceSync(gl.SYNC_GPU_COMMANDS_COMPLETE, 0)); gl.flush();
+  PM('fence');
   if (V.syncFrames) gl.readPixels(0, 0, 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, syncPx);   // bench: wait for the GPU so frame times are real
   while (tqRing.length && gl.getQueryParameter(tqRing[0], gl.QUERY_RESULT_AVAILABLE)) {
     const qq = tqRing.shift(); if (!gl.getParameter(tq.GPU_DISJOINT_EXT)) { V.stats.gpu.push(gl.getQueryParameter(qq, gl.QUERY_RESULT) / 1e6); V.stats.gpuN = (V.stats.gpuN || 0) + 1; if (V.stats.gpu.length > 240) V.stats.gpu.shift(); } gl.deleteQuery(qq); }
   if (tqRing.length > 8) gl.deleteQuery(tqRing.shift());
-  const cpu = performance.now() - c0; V.lastGpu = V.stats.gpu.length ? V.stats.gpu.at(-1) : null;
+  PM('sync');
+  const cpu = performance.now() - c0;
+  if (cpu > 30) { PROF.worst.push([+cpu.toFixed(1), PROF.cur.filter(x => x[1] > 2)]); PROF.worst.sort((a, b) => b[0] - a[0]); PROF.worst.length = Math.min(PROF.worst.length, 12); }
+  V.lastGpu = V.stats.gpu.length ? V.stats.gpu.at(-1) : null;
   V.stats.cpu.push(cpu); if (V.stats.cpu.length > 240) V.stats.cpu.shift();
   Object.assign(V.stats, { draws, inst, imp: impRuns.length, t3: t3Walls.length, lineRuns: drawRuns.length, gpuBytes, pendingBake: bakeCand.length, visibleWalls: drawRuns.length + impRuns.length + t3Walls.length });
-  if (!V.load.firstFrame) { V.load.firstFrame = performance.now() - t0Boot; setLoading(''); }
+  if (!V.load.firstFrame) { V.load.firstFrame = performance.now() - t0Boot; setLoading(''); loadBlame(); }
   adapt();
   emit('frame', { dt, cpu });
-  if (now - hudT > 100) { hudT = now; emit('hud'); }
+  if (now - hudT > 250) { hudT = now; emit('hud'); }   // DOM text re-raster is not free on software / emulated compositors
 }
 // adaptive quality (DESIGN 4.6)
-const STEPS = SOFT ? [{ t0: 10, scale: 0.5 }, { t0: 12, scale: 0.45 }, { t0: 14, scale: 0.4 }] :
+const STEPS = SOFT ? [{ t0: 10, scale: 0.5 }, { t0: 12, scale: 0.45 }, { t0: 14, scale: 0.4 }, { t0: 16, scale: 0.33 }, { t0: 18, scale: 0.25 }] :
   [{ t0: 6, scale: 1 }, { t0: 8, scale: 1 }, { t0: 10, scale: 1 }, { t0: 10, scale: 0.85 }, { t0: 10, scale: 0.7 }];
 function p90(a) { if (!a.length) return 0; const s = a.slice(-30).sort((x, y) => x - y); return s[Math.floor(s.length * 0.9)]; }
 let adaptN = 0;
+V.morphStride = SOFT ? 2 : 1; V.morphRemoved = true;
 function adapt() {
-  if (V.fixedQuality || ++adaptN % 30) return;
+  if (V.fixedQuality || ++adaptN % (SOFT ? 8 : 30)) return;
+  if (V.morph) {   // morph frames: thin the moving lines first (every 2nd, 4th, 8th line), then hide the red ghosts
+    const d = !SOFT && V.stats.gpu.length ? p90(V.stats.gpu) : p90(V.stats.dt), base = SOFT ? 2 : 1;   // GPU: GPU time (presentation is not ours to fix); llvmpipe: frame time
+    if (d > (SOFT ? 70 : 12) && V.morphStride < 8) V.morphStride *= 2;
+    else if (d > (SOFT ? 70 : 12)) V.morphRemoved = false;
+    else if (d < (SOFT ? 40 : 6) && (V.morphStride > base || !V.morphRemoved)) { if (!V.morphRemoved) V.morphRemoved = true; else V.morphStride /= 2; }
+  }
   const g = V.stats.gpu.length ? p90(V.stats.gpu) : p90(V.stats.dt) * 0.8;
-  const hi = SOFT ? 60 : 7, lo = SOFT ? 30 : 4; let s = V.quality.step;
+  // llvmpipe is capped at ~30 fps (33 ms), so it steps back up below 40 ms
+  const hi = SOFT ? 60 : 7, lo = SOFT ? 40 : 4; let s = V.quality.step;
   if (g > hi && s < STEPS.length - 1) s++; else if (g < lo && s > 0) s--;
   if (s !== V.quality.step) { V.quality.step = s; Object.assign(V.quality, STEPS[s]); }
 }
@@ -714,7 +948,8 @@ V.pick = (mx, my) => {
   const l = Pp - slot.L - core.HDR; if (l >= f0.n) return { ...res, kind: 'filegap' };
   res.line = l + 1; res.kind = 'line';
   if (w.loaded) { const j = w.fileStart[k] + l; res.j = j; const w0 = w.inst[2 * j], w1 = w.inst[2 * j + 1];
-    res.id = w0 & 0xFFFFF; res.origin = (w0 >>> 20) & 63; res.flags = w0 >>> 26; res.keep = (w1 >>> 23) & 63; }
+    res.id = w0 & 0xFFFFF; res.origin = (w0 >>> 20) & 63; res.flags = w0 >>> 26; res.keep = (w1 >>> 23) & 63;
+    if (w.commit && w.commit[j] !== 0xFFFFFFFF) res.commit = w.commit[j]; }
   return res;
 };
 V.findLine = (s, k, grep) => new Promise(async res => {
@@ -730,6 +965,7 @@ function prioritySnaps() { // walls nearest the camera first
 V.prioritySnaps = prioritySnaps;
 V.loadAll = () => dw.postMessage({ type: 'load', snaps: prioritySnaps(), front: true });
 updateWalls();
+setLoading('preparing shaders…'); warmup();
 initUI(V);
 // start view: URL hash, bench, or the nullDC 3 street overview
 if (!V.restoreHash || !V.restoreHash()) {

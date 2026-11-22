@@ -1,0 +1,315 @@
++ uptime
+ 20:42:56 up 1 day, 12:40,  1 user,  load average: 5.42, 7.38, 9.29
++ node tools/verify/check_data.mjs
+PASS norm line count equals manifest {"norm":668891,"manifest":668891}
+PASS fold length equals linemeta (10k random lines) {"mismatches":0}
+PASS 0x7F boxes equal non-ASCII code points (valid UTF-8 lines) {"mismatches":0}
+PASS every line placed once (sum = 4,605,942, the manifest total) {"placed":4605942}
+PASS no two lines of a wall share a cell {"overlaps":0}
+PASS all lines inside their lane columns {"walls_out":0}
+PASS slots do not overlap and stay inside the lane {"slots":6685,"bad":0}
+PASS streets: same slot for an identity in every wall of its lane {"files":15395,"moved":0}
+INFO fork ribbons shifted > 2 columns: 1434
+PASS decoder parity with prov_query.py (500 lines, stratified by origin) {"mismatches":0}
+PASS spot-check lines give the same origins {"checked":20,"mismatches":0}
+PASS morph kept/added/removed equal diffs.json (57 pairs) {"pairs":57,"mismatches":0,"ms_per_pair":24,"bads":[]}
+PASS morph instances grouped by column for culling: same multiset, consistent run starts {"mismatches":0}
+PASS polly2 main and r8/develop are separate lanes (no merge-base) {"r6b":"polly2","r8":"polly2-r8"}
+PASS every DreamSTer release r1..r6b has a pin on a snapshot of its polly2-rtl and minicast commits {"tags":["r1","r2","r2b","r3","r4","r5","r6","r6b"]}
+PASS no two walls of a lane at the same X {"collisions":[]}
+PASS copy edge labels name the snapshot they are drawn from {"label":"caique-rtl -> NotDC-PS3 plugs/caiqueAICA: 608 lines first seen in caique-head (ported from caique-rtl 5aa2376, 2026-09-24, no snapshot of its own)"}
+PASS blame: a commit for every line, no addresses stored {"lines":4605942,"unmatched":0,"handles":147,"commits":9099,"emails":[]}
+done in 6.4 s
++ node tools/verify/serve_check.mjs
+PASS GET / works 200
+PASS malformed escape /%E0%A4%A HTTP/1.1 400 Bad Request
+PASS malformed escape in /data/ HTTP/1.1 400 Bad Request
+PASS NUL byte HTTP/1.1 400 Bad Request
+PASS traversal %2e%2e HTTP/1.1 403 Forbidden
+PASS traversal into data sibling HTTP/1.1 403 Forbidden
+PASS directory without slash 404
+PASS garbage request line HTTP/1.1 400 Bad Request
+PASS PUT refused 405
+PASS report name .. 400
+PASS report name = directory 400
+PASS report name with slash 400
+PASS report not JSON 400
+PASS report too large (5 MB) 413
+PASS report malformed url HTTP/1.1 400 Bad Request
+PASS report ok 200
+PASS still serving after all of it 200
+PASS server process alive alive
++ node tools/verify/run.mjs probe --size 2560x1440
+{
+ "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+ "soft": false,
+ "crossOriginIsolated": false,
+ "sab": "undefined",
+ "load": {
+  "boot": 162.5,
+  "firstFrame": 566.7000000029802,
+  "walls": 48,
+  "text": 12,
+  "textDone": 0,
+  "allText": 2722.6000000089407,
+  "bytesBoot": 0,
+  "warmupMs": 59.099999994039536,
+  "meta": 604.6000000089407,
+  "blame": 48,
+  "allWalls": 1523
+ },
+ "readyMs": 2184.7999999970198,
+ "gpuMB": 199.50983032226543,
+ "heapMB": 150.84839057922363,
+ "bytes": 1947850,
+ "url": "http://172.22.167.46:8742/",
+ "navMs": 762,
+ "coop": "same-origin",
+ "coep": "require-corp",
+ "bytesBeforeFirstFrame": 785504,
+ "pick": {
+  "rec": {
+   "projected_lines": {
+    "tried": 0,
+    "ok": 0,
+    "bad": []
+   },
+   "screen_samples": {
+    "tried": 200,
+    "ok": 200,
+    "bad": []
+   }
+  },
+  "rec-mid": {
+   "projected_lines": {
+    "tried": 2,
+    "ok": 2,
+    "bad": []
+   },
+   "screen_samples": {
+    "tried": 200,
+    "ok": 200,
+    "bad": []
+   }
+  },
+  "fork": {
+   "projected_lines": {
+    "tried": 200,
+    "ok": 200,
+    "bad": []
+   },
+   "screen_samples": {
+    "tried": 121,
+    "ok": 121,
+    "bad": []
+   }
+  },
+  "far": {
+   "projected_lines": {
+    "tried": 200,
+    "ok": 200,
+    "bad": []
+   },
+   "screen_samples": {
+    "tried": 23,
+    "ok": 23,
+    "bad": []
+   }
+  }
+ },
+ "logs": []
+}
+5.5s closed
++ node tools/verify/run.mjs probe --soft --size 1280x720
+{
+ "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)",
+ "soft": true,
+ "crossOriginIsolated": false,
+ "sab": "undefined",
+ "load": {
+  "boot": 155.20000000298023,
+  "firstFrame": 702.5,
+  "walls": 48,
+  "text": 12,
+  "textDone": 0,
+  "allText": 3036.9000000059605,
+  "bytesBoot": 0,
+  "warmupMs": 174.20000000298023,
+  "meta": 806.5,
+  "blame": 48,
+  "allWalls": 1768.7000000029802
+ },
+ "readyMs": 8555.59999999404,
+ "gpuMB": 132.69303344726563,
+ "heapMB": 151.73544216156006,
+ "bytes": 1947850,
+ "url": "http://172.22.167.46:8742/",
+ "navMs": 1208,
+ "coop": "same-origin",
+ "coep": "require-corp",
+ "bytesBeforeFirstFrame": 785504,
+ "pick": {
+  "rec": {
+   "projected_lines": {
+    "tried": 0,
+    "ok": 0,
+    "bad": []
+   },
+   "screen_samples": {
+    "tried": 200,
+    "ok": 200,
+    "bad": []
+   }
+  },
+  "rec-mid": {
+   "projected_lines": {
+    "tried": 0,
+    "ok": 0,
+    "bad": []
+   },
+   "screen_samples": {
+    "tried": 200,
+    "ok": 200,
+    "bad": []
+   }
+  },
+  "fork": {
+   "projected_lines": {
+    "tried": 200,
+    "ok": 200,
+    "bad": []
+   },
+   "screen_samples": {
+    "tried": 89,
+    "ok": 89,
+    "bad": []
+   }
+  },
+  "far": {
+   "projected_lines": {
+    "tried": 200,
+    "ok": 200,
+    "bad": []
+   },
+   "screen_samples": {
+    "tried": 10,
+    "ok": 10,
+    "bad": []
+   }
+  }
+ },
+ "logs": []
+}
+11.4s closed
++ node tools/verify/run.mjs shots --size 2560x1440 --views far,rec,rec-mid,morph,morph-wide,fork,fork2,fpgadc
+0.8s open
+8.2s opened
+8.3s view far
+14.7s ready
+14.9s shot
+far -> agents/verify/shots/far-gpu-2560x1440.png 5730 ms
+14.9s view rec
+15.3s ready
+15.5s shot
+rec -> agents/verify/shots/rec-gpu-2560x1440.png 0 ms
+15.5s view rec-mid
+15.9s ready
+16.2s shot
+rec-mid -> agents/verify/shots/rec-mid-gpu-2560x1440.png 0 ms
+16.2s view morph
+16.9s ready
+17.1s shot
+morph -> agents/verify/shots/morph-gpu-2560x1440.png 0 ms
+17.1s view morph-wide
+17.8s ready
+18.1s shot
+morph-wide -> agents/verify/shots/morph-wide-gpu-2560x1440.png 0 ms
+18.1s view fork
+18.5s ready
+18.7s shot
+fork -> agents/verify/shots/fork-gpu-2560x1440.png 0 ms
+18.7s view fork2
+19.1s ready
+19.6s shot
+fork2 -> agents/verify/shots/fork2-gpu-2560x1440.png 0 ms
+19.6s view fpgadc
+20.0s ready
+20.2s shot
+fpgadc -> agents/verify/shots/fpgadc-gpu-2560x1440.png 0 ms
+20.2s closed
++ node tools/verify/run.mjs shots --soft --size 1280x720 --views far,rec,morph,fork,fpgadc
+0.5s open
+1.7s opened
+1.7s view far
+12.8s ready
+12.9s shot
+far -> agents/verify/shots/far-llvmpipe-1280x720.png 10624 ms
+13.0s view rec
+13.4s ready
+13.5s shot
+rec -> agents/verify/shots/rec-llvmpipe-1280x720.png 0 ms
+13.5s view morph
+14.2s ready
+14.4s shot
+morph -> agents/verify/shots/morph-llvmpipe-1280x720.png 0 ms
+14.4s view fork
+14.8s ready
+14.9s shot
+fork -> agents/verify/shots/fork-llvmpipe-1280x720.png 0 ms
+14.9s view fpgadc
+15.3s ready
+15.5s shot
+fpgadc -> agents/verify/shots/fpgadc-llvmpipe-1280x720.png 0 ms
+15.5s closed
++ uptime
+ 20:43:57 up 1 day, 12:41,  1 user,  load average: 5.35, 6.90, 8.99
++ node tools/verify/run.mjs bench --size 2560x1440 --paths A,B,C,D,E
+A {"frame":{"p50":4.4,"p95":19.2,"p99":19.9,"max":38},"cpu":{"p50":0.5,"p95":0.8,"p99":1},"gpu":{"p50":0.17,"p95":0.42,"p99":0.57},"fps":99.1,"steps":[0],"lines_p95":114493,"over100":0}
+B {"frame":{"p50":3.9,"p95":20.4,"p99":368.4,"max":588.5},"cpu":{"p50":0.6,"p95":1.2,"p99":18},"gpu":{"p50":0.08,"p95":0.26,"p99":0.29},"fps":50.7,"steps":[0,1],"lines_p95":0,"over100":35}
+C {"frame":{"p50":2.4,"p95":19.3,"p99":19.9,"max":22.8},"cpu":{"p50":0.5,"p95":0.8,"p99":1},"gpu":{"p50":0.09,"p95":0.25,"p99":0.37},"fps":105.5,"steps":[0],"lines_p95":58734,"over100":0}
+D {"frame":{"p50":18,"p95":20.2,"p99":416.8,"max":1454.8},"cpu":{"p50":0.5,"p95":1.1,"p99":15.5},"gpu":{"p50":0.16,"p95":0.38,"p99":0.54},"fps":48,"steps":[0,1],"lines_p95":8714,"over100":20}
+E {"frame":{"p50":18.4,"p95":423.2,"p99":737.4,"max":1791.8},"cpu":{"p50":0.6,"p95":25.3,"p99":43.9},"gpu":{"p50":0.11,"p95":0.37,"p99":30.1},"fps":15.5,"steps":[0],"lines_p95":0,"over100":37}
+139.3s closed
++ EXTRA=&clean=1 node tools/verify/run.mjs bench --size 2560x1440 --paths A,B,C,D,E --tag gpu-clean
+A {"frame":{"p50":19.7,"p95":40.2,"p99":60.7,"max":104.8},"cpu":{"p50":0.9,"p95":3.7,"p99":7.6},"gpu":{"p50":0.28,"p95":0.73,"p99":1.78},"fps":57.2,"steps":[0],"lines_p95":113456,"over100":1}
+B {"frame":{"p50":19.2,"p95":22.3,"p99":37.7,"max":55.4},"cpu":{"p50":0.9,"p95":1.3,"p99":1.9},"gpu":{"p50":0.14,"p95":0.19,"p99":0.23},"fps":79.1,"steps":[0],"lines_p95":0,"over100":0}
+C {"frame":{"p50":19.3,"p95":21.7,"p99":36.9,"max":89.3},"cpu":{"p50":0.8,"p95":1.3,"p99":1.9},"gpu":{"p50":0.21,"p95":0.57,"p99":0.81},"fps":79.2,"steps":[0],"lines_p95":66101,"over100":0}
+D {"frame":{"p50":18.8,"p95":21,"p99":25.8,"max":55.4},"cpu":{"p50":0.8,"p95":1.2,"p99":1.5},"gpu":{"p50":0.32,"p95":0.38,"p99":0.42},"fps":84.7,"steps":[0],"lines_p95":8694,"over100":0}
+E {"frame":{"p50":18.6,"p95":20.5,"p99":22.1,"max":55.3},"cpu":{"p50":0.7,"p95":1,"p99":1.3},"gpu":{"p50":0.22,"p95":0.33,"p99":0.46},"fps":87.6,"steps":[0],"lines_p95":18223,"over100":0}
+176.0s closed
++ node tools/verify/run.mjs bench --soft --size 1280x720 --paths A,B,C,D,E
+A {"frame":{"p50":37.1,"p95":56.4,"p99":74.8,"max":126.6},"cpu":{"p50":0.7,"p95":1,"p99":1.4},"gpu":{"p50":20.02,"p95":29.4,"p99":38.11},"fps":29.6,"steps":[4,3,2,1,0],"lines_p95":9083,"over100":3}
+B {"frame":{"p50":20.6,"p95":40.1,"p99":55.7,"max":72.6},"cpu":{"p50":0.7,"p95":1.1,"p99":1.6},"gpu":{"p50":16.55,"p95":22.32,"p99":26.75},"fps":37.1,"steps":[4,3,2,1,0],"lines_p95":0,"over100":0}
+C {"frame":{"p50":20.8,"p95":54.1,"p99":56.5,"max":73.2},"cpu":{"p50":0.7,"p95":1,"p99":1.5},"gpu":{"p50":16.01,"p95":22.49,"p99":29.39},"fps":36.9,"steps":[4,3,2,1,0],"lines_p95":0,"over100":0}
+D {"frame":{"p50":20.6,"p95":46.6,"p99":55.6,"max":58.3},"cpu":{"p50":0.7,"p95":1.1,"p99":1.4},"gpu":{"p50":16.08,"p95":22.35,"p99":26.34},"fps":37.5,"steps":[4,3,2,1,0],"lines_p95":3983,"over100":0}
+E {"frame":{"p50":21.1,"p95":54.5,"p99":56.8,"max":72},"cpu":{"p50":0.7,"p95":0.9,"p99":1.3},"gpu":{"p50":16.42,"p95":22.96,"p99":29.02},"fps":36.6,"steps":[4,3,2,1,0],"lines_p95":0,"over100":0}
+164.9s closed
++ node tools/verify/run.mjs bench --soft --size 2560x1440 --paths A,B,C,D,E
+A {"frame":{"p50":38.2,"p95":72.8,"p99":87.5,"max":227.3},"cpu":{"p50":0.8,"p95":1.2,"p99":2},"gpu":{"p50":20.96,"p95":30.94,"p99":36.75},"fps":24.9,"steps":[4,3,2,1,0],"lines_p95":15093,"over100":2}
+B {"frame":{"p50":37.9,"p95":58.9,"p99":74.3,"max":107.2},"cpu":{"p50":0.8,"p95":1.2,"p99":2.4},"gpu":{"p50":18.83,"p95":24.8,"p99":31.87},"fps":26.9,"steps":[4,3,2,1,0],"lines_p95":0,"over100":1}
+C {"frame":{"p50":25.3,"p95":57.5,"p99":73,"max":76.8},"cpu":{"p50":0.6,"p95":1,"p99":1.2},"gpu":{"p50":15.2,"p95":25.05,"p99":29.56},"fps":32.8,"steps":[4,3,2,1,0],"lines_p95":0,"over100":0}
+D {"frame":{"p50":37.7,"p95":58.7,"p99":73.2,"max":77},"cpu":{"p50":0.7,"p95":1,"p99":2.1},"gpu":{"p50":17.44,"p95":24.04,"p99":29.11},"fps":28.2,"steps":[4,3,2,1,0],"lines_p95":5617,"over100":0}
+E {"frame":{"p50":37.2,"p95":56.1,"p99":72.2,"max":75.3},"cpu":{"p50":0.6,"p95":0.9,"p99":1.6},"gpu":{"p50":15.11,"p95":20.94,"p99":23.77},"fps":30.6,"steps":[4,3,2,1,0],"lines_p95":0,"over100":0}
+163.1s closed
++ uptime
+ 20:54:50 up 1 day, 12:53,  1 user,  load average: 18.46, 19.41, 15.38
++ node tools/verify/morphstall.mjs --soft --size 2560x1440 --secs 10
+reicast close {"wall":"reicast-r7-rc1","n":224,"p50":40,"p95":58.7,"p99":75.6,"max":127.6,"over100":2,"steps":[2,1,0],"morphFrames":147,"worst_i_dt_cpu_morph_lines_step_stride":[[51,127.6,1,1,3889,0,8],[49,109.5,1.2,1,3889,0,8],[52,75.6,1.3,1,3889,0,8],[3,75.2,1.1,1,3889,2,8],[66,73.5,0.9,1,3889,0,8]]}
+reicast near {"wall":"reicast-r7-rc1","n":221,"p50":40.4,"p95":59.4,"p99":77.3,"max":79,"over100":0,"steps":[0],"morphFrames":145,"worst_i_dt_cpu_morph_lines_step_stride":[[181,79,1.2,1,8402,0,8],[14,77.5,1.3,1,7288,0,8],[101,77.3,1.3,1,7288,0,8],[84,75.8,1.2,1,7288,0,8],[138,61.5,1,0,0,0,8]]}
+nulldc3 close {"wall":"nulldc3-refsw3","n":219,"p50":40.2,"p95":60.9,"p99":77.1,"max":78.1,"over100":0,"steps":[0],"morphFrames":147,"worst_i_dt_cpu_morph_lines_step_stride":[[188,78.1,1.1,1,14004,0,8],[31,77.7,1.1,1,5796,0,8],[111,77.1,1.2,0,14004,0,8],[105,76.2,1.2,1,5796,0,8],[14,75.4,1.3,1,5796,0,8]]}
+nulldc3 near {"wall":"nulldc3-refsw3","n":203,"p50":41.6,"p95":75.9,"p99":81.4,"max":94.7,"over100":0,"steps":[0],"morphFrames":129,"worst_i_dt_cpu_morph_lines_step_stride":[[21,94.7,1.2,1,13012,0,8],[24,92.5,1.2,1,13012,0,8],[27,81.4,1.2,1,13012,0,8],[66,76.8,1.2,1,13012,0,8],[29,76.7,1,1,13012,0,8]]}
+flycast close {"wall":"flycast-v2.4","n":213,"p50":40.7,"p95":73.1,"p99":77.8,"max":78.4,"over100":0,"steps":[0],"morphFrames":106,"worst_i_dt_cpu_morph_lines_step_stride":[[165,78.4,1.4,0,7750,0,8],[87,78.1,1,1,5097,0,8],[150,77.8,1.9,0,7750,0,8],[128,77,1.1,0,7750,0,8],[161,75.1,1.7,0,7750,0,8]]}
+flycast near {"wall":"flycast-v2.4","n":199,"p50":41,"p95":77.5,"p99":96.1,"max":108.9,"over100":1,"steps":[0],"morphFrames":82,"worst_i_dt_cpu_morph_lines_step_stride":[[69,108.9,1,1,11808,0,8],[16,96.1,1.1,1,11808,0,8],[10,95.1,1,1,11808,0,8],[79,94.1,1,1,11808,0,8],[34,93.4,0.9,1,11808,0,8]]}
+polly2 close {"wall":"polly2-r2b","n":233,"p50":39.9,"p95":57.5,"p99":61.3,"max":76.2,"over100":0,"steps":[0],"morphFrames":156,"worst_i_dt_cpu_morph_lines_step_stride":[[218,76.2,1.2,1,270,0,8],[12,61.5,1.1,1,270,0,8],[222,61.3,1.3,1,270,0,8],[125,60.1,1,0,941,0,8],[55,60.1,1.1,1,270,0,8]]}
+polly2 near {"wall":"polly2-r2b","n":229,"p50":40,"p95":58.3,"p99":74.5,"max":76.1,"over100":0,"steps":[0],"morphFrames":153,"worst_i_dt_cpu_morph_lines_step_stride":[[189,76.1,1,1,720,0,8],[107,75.7,1.1,1,679,0,8],[195,74.5,0.9,1,720,0,8],[144,74.3,1,0,0,0,8],[200,59.7,1.2,1,720,0,8]]}
++ node tools/verify/morphstall.mjs --gpu --size 2560x1440 --secs 10
+reicast close {"wall":"reicast-r7-rc1","n":798,"p50":10.2,"p95":22.1,"p99":23.5,"max":39.5,"over100":0,"steps":[0],"morphFrames":530,"worst_i_dt_cpu_morph_lines_step_stride":[[668,39.5,1.4,1,4537,0,8],[0,38.5,1.6,1,3896,0,8],[404,37.5,1,0,30084,0,8],[338,37.2,1.1,1,3896,0,8],[662,25.8,1.2,1,4537,0,8]]}
+reicast near {"wall":"reicast-r7-rc1","n":689,"p50":20.6,"p95":23.3,"p99":40.3,"max":332.4,"over100":1,"steps":[0],"morphFrames":459,"worst_i_dt_cpu_morph_lines_step_stride":[[10,332.4,1.3,1,7351,0,8],[595,76.6,1.5,1,8523,0,8],[594,51.5,1.3,1,8523,0,8],[360,42.3,2,0,55637,0,8],[643,40.8,1.5,1,8523,0,8]]}
+nulldc3 close {"wall":"nulldc3-refsw3","n":627,"p50":20.7,"p95":38.5,"p99":41.4,"max":51,"over100":0,"steps":[0],"morphFrames":421,"worst_i_dt_cpu_morph_lines_step_stride":[[249,51,2.2,1,5915,0,8],[123,45.2,1.5,1,5915,0,8],[253,44.8,1.4,1,5915,0,8],[95,43.7,1.2,1,5915,0,8],[508,43.4,1.7,0,43461,0,8]]}
+nulldc3 near {"wall":"nulldc3-refsw3","n":761,"p50":19.6,"p95":22.9,"p99":38.1,"max":40.8,"over100":0,"steps":[0],"morphFrames":500,"worst_i_dt_cpu_morph_lines_step_stride":[[9,40.8,1.8,1,13136,0,8],[160,39.9,1.3,1,13136,0,8],[194,39.4,1.7,1,13136,0,8],[186,38.9,1.3,1,13136,0,8],[73,38.9,1.8,1,13136,0,8]]}
+flycast close {"wall":"flycast-v2.4","n":809,"p50":5.7,"p95":22.1,"p99":23.2,"max":40.9,"over100":0,"steps":[0],"morphFrames":545,"worst_i_dt_cpu_morph_lines_step_stride":[[507,40.9,1.4,0,32970,0,8],[683,38.7,1.3,1,32970,0,8],[505,24.7,1.1,0,32970,0,8],[119,23.8,1.1,1,5097,0,8],[419,23.5,1.3,0,32970,0,8]]}
+flycast near {"wall":"flycast-v2.4","n":825,"p50":5,"p95":21.9,"p99":22.7,"max":38.5,"over100":0,"steps":[0],"morphFrames":552,"worst_i_dt_cpu_morph_lines_step_stride":[[747,38.5,1.2,1,86184,0,8],[0,37.5,1.2,1,13327,0,8],[18,23.5,1.2,1,13327,0,8],[707,23.4,1.3,1,86184,0,8],[276,22.9,0.9,1,13327,0,8]]}
+polly2 close {"wall":"polly2-r2b","n":824,"p50":5.1,"p95":21.9,"p99":22.9,"max":38.6,"over100":0,"steps":[0],"morphFrames":551,"worst_i_dt_cpu_morph_lines_step_stride":[[786,38.6,1.3,1,270,0,8],[686,36.6,0.9,1,270,0,8],[433,23.9,0.8,0,941,0,8],[184,23.4,1.1,1,270,0,8],[58,23.2,1.1,1,270,0,8]]}
+polly2 near {"wall":"polly2-r2b","n":814,"p50":5.4,"p95":22.1,"p99":22.8,"max":43,"over100":0,"steps":[0],"morphFrames":542,"worst_i_dt_cpu_morph_lines_step_stride":[[674,43,1.1,1,721,0,8],[16,38.7,1.1,1,679,0,8],[0,38.3,1,1,679,0,8],[379,23.2,0.9,1,679,0,8],[70,22.9,1.2,1,679,0,8]]}
++ uptime
+ 20:58:11 up 1 day, 12:57,  1 user,  load average: 21.84, 20.62, 16.68

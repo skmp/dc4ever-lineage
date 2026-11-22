@@ -32,20 +32,27 @@ export function initBench(V) {
     } else if (name === 'rec-mid') {
       const r = await V.gotoBookmark('nullDC rec_v1 driver', { instant: true });
       const v = V.fileView(r.s, r.k, 1); const d = 2 * V.focalPx() / 8.5; V.cam.p = [V.WX[r.s] - d, v.p[1] - d * 0.5, v.p[2] + d * 0.55]; V.setLook([1, -0.04, 0.12]);
-    } else if (name === 'morph' || name === 'morph-wide') {
-      const b = sid('reicast-r7-rc1'); V.setPres('now'); V.setTime(V.eventOf[b] - 1 + 0.30);
+    } else if (name === 'morph' || name === 'morph-wide') {   // Now mode, reicast r6 -> r7-rc1 in flight
+      const b = sid('reicast-r7-rc1'); V.setPres('now'); V.setTime(V.eventOf[b] - 1 + (name === 'morph' ? 0.8 * 0.6 : 0.30));
+      await new Promise(r => setTimeout(r, 300));    // let the camera-follow see the jump before placing the camera
       const w = W[b], x = V.eventX(V.t);
-      if (name === 'morph') lookAt([x - 2600, 2900, w.z0 + 3400], [x, 2300, w.z0 + 5200]);
-      else lookAt([x - 9000, 5200, w.z0 - 2500], [x, 2000, w.z0 + w.cols * 64]);
-    } else if (name === 'fork') { // reicast born from nullDC + nullDCe (2013 import), flycast and nullDC 3 forking later
-      const r = W[sid('reicast-2013-import')], n = W[sid('nulldc-2011-09')];
-      lookAt([n.x - 16000, 52000, (n.z0 + r.z0) / 2 - 8000], [r.x + 4000, 0, r.z0 - 4000]);
-    } else if (name === 'fork2') {
-      const a = W[sid('reicast-r19.07')], b = W[sid('nulldc3-fpgadc-2023')];
-      lookAt([a.x - 30000, 45000, a.z0 - 15000], [b.x - 6000, 0, (a.z0 + b.z0) / 2 + 8000]);
-    } else if (name === 'fpgadc') {
-      const z = layout.fpgadc.z0, x = W[sid('polly2-r1')].x;
-      lookAt([x - 30000, 30000, z + 4000], [x + 20000, 0, z + 25000]);
+      if (name === 'morph') {   // frontal, glyphs readable, where the most lines are added (green, growing) and moving
+        { const d = 2 * V.focalPx() / 10; V.cam.p = [x - d, 2048, w.z0 + 600]; V.setLook([1, 0, 0]); }   // near enough that the morph is drawn
+        for (let i = 0; i < 400 && !(V.morph && V.morph.m.colB); i++) await new Promise(r => setTimeout(r, 50));
+        const m = V.morph.m, cnt = new Map();
+        for (let i = 0; i < m.nKA; i++) if (((m.inst[4 * i] >>> 26) & 3) === 1) { const p = m.inst[4 * i + 1], key = (p & 4095) * 64 + (((p >>> 12) & 2047) >> 5); cnt.set(key, (cnt.get(key) || 0) + 1); }
+        const best = [...cnt].sort((a, b) => b[1] - a[1])[0][0], col = best >> 6, row = (best & 63) * 32 + 16;
+        const d = 2 * V.focalPx() / 10; V.cam.p = [x - d, 4096 - row * 2, w.z0 + col * 128 + 60]; V.setLook([1, 0, 0]);
+      } else lookAt([x - 9000, 5200, w.z0 - 2500], [x, 2000, w.z0 + w.cols * 64]);
+    } else if (name === 'fork') { // the reicast fork point: nullDC 2011 + nullDCe 2009 imported into reicast 2013, r6 after it
+      const v = V.fitBox(V.wallsBox(['nulldc-2011-09', 'nullDCe-2009', 'reicast-2013-import', 'reicast-r6', 'nulldc-360-2011'].map(sid)), [0.88, -0.42, 0.12]);
+      V.cam.p = v.p; V.setLook(v.dir);
+    } else if (name === 'fork2') { // reicast -> flycast and reicast -> nullDC 3
+      const v = V.fitBox(V.wallsBox(['reicast-r19.07', 'flycast-v1.0', 'reicast-last', 'nulldc3-fpgadc-2023'].map(sid)), [0.7, -0.45, 0.55]);
+      V.cam.p = v.p; V.setLook(v.dir);
+    } else if (name === 'fpgadc') { // the hardware lanes: DreamSTer releases r1..r6b on minicast / polly2, r8, shrike4, caique, wren7, tests, devtools
+      const ids = V.man.snapshots.filter(s => V.layout.lanes[V.layout.walls[s.i].lane].group === 'fpgadc').map(s => s.i);
+      const v = V.fitBox(V.wallsBox(ids), [0.62, -0.5, 0.6]); V.cam.p = v.p; V.setLook(v.dir);
     } else if (name === 'refsw3') {
       const r = await V.gotoBookmark('refsw3 refcore tile', { instant: true }); void r;
     }
@@ -109,7 +116,7 @@ export function initBench(V) {
     const mk = { A: pathA, B: pathB, C: pathC, D: pathD, E: pathE }[name];
     const step = await mk();
     step(0); const readyMs = await V.whenReady({ timeout: 120000, allBaked: true });
-    const rec = []; let t0 = null; V.bench = true; V.syncFrames = Q.get('sync') !== '0'; let lastGpuN = V.stats.gpuN || 0;
+    const rec = []; let t0 = null; V.prof.worst.length = 0; V.bench = true; V.syncFrames = Q.get('sync') === '1'; let lastGpuN = V.stats.gpuN || 0;   // default: frame pacing by fences (main.js): dt is the real interval between rendered frames
     await new Promise(res => {
       const steps = new Set();
       const tick = () => {
@@ -121,7 +128,7 @@ export function initBench(V) {
       V.on('frame', ({ dt, cpu }) => { if (t0 === null || V.bench === false) return; const gNew = (V.stats.gpuN || 0) !== lastGpuN ? V.stats.gpu.at(-1) : null; lastGpuN = V.stats.gpuN || 0;
         rec.push([V.lastRawDt, cpu, gNew, V.stats.draws, V.stats.inst, V.quality.step]); steps.add(V.quality.step); });
     });
-    V.bench = false; V.syncFrames = false;
+    V.bench = false; V.syncFrames = false; const worst = V.prof.worst.slice(); V.prof.worst.length = 0;
     const col = i => rec.map(r => r[i]).filter(v => v != null).slice(2);
     const pc = (a, p) => { if (!a.length) return null; const s = a.slice().sort((x, y) => x - y); return +s[Math.min(s.length - 1, Math.floor(s.length * p))].toFixed(2); };
     const dt = col(0), cpu = col(1), gpu = col(2);
@@ -130,7 +137,7 @@ export function initBench(V) {
       gpu_ms: gpu.length ? { p50: pc(gpu, .5), p95: pc(gpu, .95), p99: pc(gpu, .99) } : null,
       fps_mean: +(1000 * rec.length / dt.reduce((a, b) => a + b, 0)).toFixed(1),
       draws_p95: pc(col(3), .95), lines_p95: pc(col(4), .95), lines_max: pc(col(4), 1), quality_steps: [...new Set(col(5))],
-      frames_over_100ms: dt.filter(v => v > 100).length, ready_ms: Math.round(readyMs),
+      frames_over_100ms: dt.filter(v => v > 100).length, ready_ms: Math.round(readyMs), slowest_frames_cpu_sections: worst,
       load: V.load, gpu_bytes_est: V.stats.gpuBytes, js_heap_mb: performance.memory ? +(performance.memory.usedJSHeapSize / 1048576).toFixed(0) : null,
       frames_csv: rec.map(r => r.map(v => v == null ? '' : +(+v).toFixed(3)).join(',')).join('\n') };
     window.__bench = out;

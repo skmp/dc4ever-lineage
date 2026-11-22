@@ -1,0 +1,16 @@
+const li = V.layout.lanes.findIndex(l => l.name === 'reicast');
+const ss = V.layout.lanes[li].snaps.slice().sort((a, b) => V.eventOf[a] - V.eventOf[b]); const b = ss[2];
+V.fixedQuality = true; V.setQualityStep(2); V.setPres('now'); V.setTime(V.eventOf[b] - 1 + 0.25); V.follow = true;
+await new Promise(r => setTimeout(r, 300));
+const w = V.W[b], x = V.eventX(V.t); V.cam.p = [x - 900, 2900, w.z0 + 3400]; V.setLook([1, -0.1, 0.5]);
+await new Promise(r => setTimeout(r, 2000));
+const out = [];
+const rec = async (label) => { await new Promise(r => setTimeout(r, 600)); const d = []; const h = ({cpu}) => d.push(+V.lastRawDt.toFixed(1)); V.on('frame', h); await new Promise(r => setTimeout(r, 2000)); V.listeners.frame.splice(V.listeners.frame.indexOf(h), 1); d.sort((a,b)=>a-b); out.push([label, d.length, d[d.length>>1], V.stats.inst, V.stats.draws]); };
+await rec('step2 morph');
+V.skip.add('labels'); await rec('-labels');
+V.skip.add('segs'); await rec('-segs');
+V.morphStride = 64; await rec('stride64');
+V.quality.scale = 0.2; await rec('scale0.2');
+V.quality.scale = 0.1; await rec('scale0.1');
+document.body.classList.add('shots'); await rec('panels hidden');
+return out;

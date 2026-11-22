@@ -25,6 +25,14 @@ nullDCe-ps2-2024|skmp_nullDCe|c3e0c9b|2024-09-27|nullDCe|nullDCe 2024 PS2 port w
 nullDC4Wii-a0.50|BenoitAdam_nullDC4Wii|alpha0.50|2026-07-13|nullDC4Wii|Mid-life tag alpha0.50
 polly2-r1|skmp_polly2-rtl|be391db|2026-07-17|fpgadc|polly2-rtl pinned by DreamSTer r1 (first FPGA Dreamcast core release)
 minicast-r1|skmp_minicast|697f565|2026-07-17|fpgadc|minicast pinned by DreamSTer r1
+polly2-r2|skmp_polly2-rtl|7a70d24|2026-07-17|fpgadc|polly2-rtl pinned by DreamSTer r2
+polly2-r2b|skmp_polly2-rtl|635ec79|2026-07-17|fpgadc|polly2-rtl pinned by DreamSTer r2b
+polly2-r3|skmp_polly2-rtl|436372f|2026-07-17|fpgadc|polly2-rtl pinned by DreamSTer r3
+polly2-r4|skmp_polly2-rtl|c22506c|2026-07-18|fpgadc|polly2-rtl pinned by DreamSTer r4 and r5 (r5 repins nothing: same polly2-rtl and minicast commits as r4)
+minicast-r2|skmp_minicast|6fcc0e1|2026-07-17|fpgadc|minicast pinned by DreamSTer r2 and r2b
+minicast-r3|skmp_minicast|585205b|2026-07-17|fpgadc|minicast pinned by DreamSTer r3
+minicast-r4|skmp_minicast|0998288|2026-07-18|fpgadc|minicast pinned by DreamSTer r4 and r5
+minicast-r6|skmp_minicast|450eb49|2026-07-30|fpgadc|minicast pinned by DreamSTer r6
 polly2-r6|skmp_polly2-rtl|a37f92c|2026-07-30|fpgadc|polly2-rtl pinned by DreamSTer r6
 NotDC-PS3-first|Mayo1970_NotDC-PS3|5a32b94|2026-09-19|NotDC-PS3|NotDC-PS3 initial repo: nullDC4Wii ~2026-09-18 (9659506, alpha0.76 era; 229/272 source files identical)
 polly2-r6b|skmp_polly2-rtl|95fc3ba|2026-10-24|fpgadc|polly2-rtl pinned by DreamSTer r6b (last release; = polly2-rtl-lite r6b FPGA core)
@@ -38,4 +46,4 @@ NotDC-PS3-0.8.3|Mayo1970_NotDC-PS3|0.8.3|2026-11-01|NotDC-PS3|NotDC-PS3 0.8.3 (=
 nullDC4Wii-head|BenoitAdam_nullDC4Wii|ad015e2|2026-11-19|nullDC4Wii|nullDC4Wii main HEAD (alpha0.805 + Wii U port)
 nulldc3-refsw3|skmp_nulldc3|4f3efe15|2026-11-20|nulldc3|nullDC 3 skmp/refsw3 branch tip (29 commits past main: refsw3 bit-exact PVR renderer work)
 dreamcast-tests-head|fpgadc_dreamcast-tests|a932980|2026-11-20|fpgadc|dreamcast-tests (console test suite) HEAD
-polly2-r8-develop|skmp_polly2-rtl|3800f9f|2026-11-21|fpgadc|polly2-rtl r8/develop: the new bit-exact cycle-accurate PVR2 CORE model (branches from main 2806e9f 2026-10-24; tree rewritten)
+polly2-r8-develop|skmp_polly2-rtl|3800f9f|2026-11-21|fpgadc|polly2-rtl r8/develop: the new bit-exact cycle-accurate PVR2 CORE model. Unrelated history: its root 4ca41fb (2026-11-20) has no merge-base with main, so it is its own lane, not a continuation of r6b

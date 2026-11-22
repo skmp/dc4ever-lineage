@@ -47,7 +47,7 @@ typedef uint64_t u64; typedef uint32_t u32; typedef uint8_t u8;
 static const int MINSHARE = 5;      // significant lines shared with a related-parent file to count it
 static const int SIGLEN = 10;       // min norm length of a "significant" line (identity / related matching)
 static const int DFMAX = 40;        // skip lines present in more files than this when matching files
-static const u8 VIRT = 40;          // output origin id of the virtual nullDC <=2008 origin
+static u8 VIRT = 40;                // output origin id of the virtual nullDC <=2008 origin (= NS, set after reading the snapshots)
 
 struct Snap { int idx; string id, repo, lane, odate, date; u64 anc, rel, desc; vector<int> parents; };
 struct File {
@@ -143,7 +143,7 @@ int main(int argc, char** argv) {
         Snap s; s.idx = stoi(c[0]); s.id = c[1]; s.repo = c[2]; s.lane = c[3]; s.odate = c[4]; s.date = c[5];
         s.anc = stoull(c[6]); s.rel = stoull(c[7]); if (c[8] != "-") for (auto& p : split(c[8], ',')) s.parents.push_back(stoi(p));
         s.desc = stoull(c[9]); S.push_back(s); } fclose(f); }
-    NS = S.size(); F.resize(NS);
+    NS = S.size(); F.resize(NS); if (NS > 62) die("at most 62 snapshots (6-bit origin ids)"); VIRT = (u8)NS;
     { FILE* f = fopen((work + "/files.tsv").c_str(), "r"); if (!f) die("files.tsv"); static char b[1 << 16];
       while (fgets(b, sizeof b, f)) { string l(b); if (l.back() == '\n') l.pop_back(); auto c = split(l, '\t');
         File x; x.snap = stoi(c[0]); x.sha = c[1]; x.path = c[2]; F[x.snap].push_back(move(x)); } fclose(f); }
@@ -319,12 +319,12 @@ int main(int argc, char** argv) {
     // origin labels
     auto olabel = [&](int o) { return o == VIRT ? string("nullDC-pre2008") : S[o].id; };
     // per snapshot files + dirs
-    vector<vector<u64>> lines_by_origin(NS, vector<u64>(41, 0)), lines_by_origin_dom(NS, vector<u64>(41, 0));
+    vector<vector<u64>> lines_by_origin(NS, vector<u64>(NS + 1, 0)), lines_by_origin_dom(NS, vector<u64>(NS + 1, 0));
     vector<string> stats_foreign(NS);
     #pragma omp parallel for schedule(dynamic, 1)
     for (int s = 0; s < NS; s++) {
         auto& fs = F[s]; vector<u32> ids; vector<u8> og, kp;
-        map<string, array<u64, 43>> dirs;   // [0]=files [1]=lines [2..42]=origin hist
+        map<string, array<u64, 66>> dirs;   // [0]=files [1]=lines [2..2+NS]=origin hist
         string j = "{\"snap\":" + to_string(s) + ",\"id\":"; jstr(j, S[s].id); j += ",\"files\":[";
         vector<pair<int,int>> foreign;   // (foreign non-trivial lines, file)
         for (size_t i = 0; i < fs.size(); i++) { auto& f = fs[i];
@@ -344,7 +344,7 @@ int main(int argc, char** argv) {
         j += "],\"dirs\":[";
         bool first = true;
         for (auto& kv : dirs) { if (!first) j += ','; first = false; j += '['; jstr(j, kv.first); j += ',' + to_string(kv.second[0]) + ',' + to_string(kv.second[1]) + ",{";
-            bool f2 = true; for (int o = 0; o < 41; o++) if (kv.second[2 + o]) { if (!f2) j += ','; f2 = false; j += '"' + to_string(o) + "\":" + to_string(kv.second[2 + o]); }
+            bool f2 = true; for (int o = 0; o <= NS; o++) if (kv.second[2 + o]) { if (!f2) j += ','; f2 = false; j += '"' + to_string(o) + "\":" + to_string(kv.second[2 + o]); }
             j += "}]"; }
         j += "]}";
         char nm[64]; snprintf(nm, 64, "/snap/%02d.json.gz", s); wgz(out + nm, j.data(), j.size());
@@ -377,22 +377,22 @@ int main(int argc, char** argv) {
       for (int a = 0; a < NS; a++) { if (a) j += ','; j += '['; for (int b = 0; b < NS; b++) { if (b) j += ','; j += to_string(kept[a * NS + b]); } j += ']'; }
       j += "]}"; wfile(out + "/diffs.json", j); }
     // stats + manifest
-    { string j = "{\"origins\":["; for (int o = 0; o < 41; o++) { if (o) j += ','; jstr(j, olabel(o)); } j += "],\"snapshots\":[";
+    { string j = "{\"origins\":["; for (int o = 0; o <= NS; o++) { if (o) j += ','; jstr(j, olabel(o)); } j += "],\"snapshots\":[";
       for (int s = 0; s < NS; s++) { if (s) j += ','; map<string,int> st; for (auto& f : F[s]) st[f.status]++;
         j += "{\"id\":"; jstr(j, S[s].id); j += ",\"lines_by_origin\":{"; bool f1 = true;
-        for (int o = 0; o < 41; o++) if (lines_by_origin[s][o]) { if (!f1) j += ','; f1 = false; j += '"' + olabel(o) + "\":" + to_string(lines_by_origin[s][o]); }
+        for (int o = 0; o <= NS; o++) if (lines_by_origin[s][o]) { if (!f1) j += ','; f1 = false; j += '"' + olabel(o) + "\":" + to_string(lines_by_origin[s][o]); }
         j += "},\"file_status\":{"; f1 = true; for (auto& kv : st) { if (!f1) j += ','; f1 = false; j += '"' + kv.first + "\":" + to_string(kv.second); }
         j += "},\"top_foreign_files\":" + stats_foreign[s] + "}"; }
       j += "]}"; wfile(out + "/stats.json", j); }
     { string j = "{\"format\":1,\"chunk_lines\":" + to_string(CH) + ",\"raw_lines\":" + to_string(rawtxt.size()) + ",\"norm_lines\":" + to_string(normtxt.size()) +
-        ",\"text_chunks\":" + to_string(nch) + ",\"identities\":" + to_string(nident) + ",\"virt_origin\":40,\"snapshots\":[";
+        ",\"text_chunks\":" + to_string(nch) + ",\"identities\":" + to_string(nident) + ",\"virt_origin\":" + to_string(NS) + ",\"snapshots\":[";
       for (int s = 0; s < NS; s++) { if (s) j += ','; u64 ln = 0; for (auto& f : F[s]) ln += f.raw.size();
         j += "{\"i\":" + to_string(s) + ",\"id\":"; jstr(j, S[s].id); j += ",\"repo\":"; jstr(j, S[s].repo); j += ",\"lane\":"; jstr(j, S[s].lane);
         j += ",\"date\":"; jstr(j, S[s].date); j += ",\"order_date\":"; jstr(j, S[s].odate);
         j += ",\"files\":" + to_string(F[s].size()) + ",\"lines\":" + to_string(ln) + ",\"parents\":[";
         for (size_t k = 0; k < S[s].parents.size(); k++) { if (k) j += ','; j += to_string(S[s].parents[k]); }
         j += "],\"anc\":\"" + to_string(S[s].anc) + "\",\"rel\":\"" + to_string(S[s].rel) + "\",\"desc\":\"" + to_string(S[s].desc) + "\"}"; }
-      j += "],\"origins\":["; for (int o = 0; o < 41; o++) { if (o) j += ','; jstr(j, olabel(o)); } j += "]}";
+      j += "],\"origins\":["; for (int o = 0; o <= NS; o++) { if (o) j += ','; jstr(j, olabel(o)); } j += "]}";
       wfile(out + "/manifest.core.json", j); }
     fprintf(stderr, "done in %.1fs\n", omp_get_wtime() - t0);
 }

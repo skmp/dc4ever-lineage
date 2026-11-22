@@ -1,0 +1,15 @@
+const li = V.layout.lanes.findIndex(l => l.name === 'reicast');
+const ss = V.layout.lanes[li].snaps.slice().sort((a, b) => V.eventOf[a] - V.eventOf[b]); const b = ss[2];
+V.fixedQuality = true; V.setQualityStep(2); V.setPres('now'); V.setTime(V.eventOf[b] - 1 + 0.02); V.follow = true;
+await new Promise(r => setTimeout(r, 300));
+const w = V.W[b], x = V.eventX(V.t); V.cam.p = [x - 900, 2900, w.z0 + 3400]; V.setLook([1, -0.1, 0.5]);
+await new Promise(r => setTimeout(r, 2000));
+const out = [];
+const rec = async (label, play) => { V.setTime(V.eventOf[b] - 1 + 0.02); await new Promise(r => setTimeout(r, 400)); V.playSpeed = 0.3; V.playing = play; const d = []; const h = ({cpu}) => d.push(+V.lastRawDt.toFixed(1)); V.on('frame', h); await new Promise(r => setTimeout(r, 2500)); V.listeners.frame.splice(V.listeners.frame.indexOf(h), 1); V.playing = false; d.sort((a,b)=>a-b); out.push([label, d.length, d[d.length>>1], d[Math.floor(d.length*0.95)], V.stats.inst, V.stats.draws, !!V.morph]); };
+await rec('static', false);
+await rec('play', true);
+V.skip.add('segs'); await rec('play-segs', true);
+V.skip.add('labels'); await rec('play-labels', true);
+V.skip.add('imp'); await rec('play-imp', true);
+document.getElementById('timeline').classList.add('hidden'); await rec('play-timeline-dom', true);
+return out;

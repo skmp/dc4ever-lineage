@@ -1,0 +1,126 @@
+{
+ "date": "2026-11-22T18:43:03.576Z",
+ "results": [
+  {
+   "name": "GET / works",
+   "got": 200,
+   "want": 200,
+   "pass": true
+  },
+  {
+   "name": "malformed escape /%E0%A4%A",
+   "got": "HTTP/1.1 400 Bad Request",
+   "want": "HTTP/1.1 400 Bad Request",
+   "pass": true
+  },
+  {
+   "name": "malformed escape in /data/",
+   "got": "HTTP/1.1 400 Bad Request",
+   "want": "HTTP/1.1 400 Bad Request",
+   "pass": true
+  },
+  {
+   "name": "NUL byte",
+   "got": "HTTP/1.1 400 Bad Request",
+   "want": "HTTP/1.1 400 Bad Request",
+   "pass": true
+  },
+  {
+   "name": "traversal %2e%2e",
+   "got": "HTTP/1.1 403 Forbidden",
+   "want": [
+    "HTTP/1.1 403",
+    "HTTP/1.1 404"
+   ],
+   "pass": true
+  },
+  {
+   "name": "traversal into data sibling",
+   "got": "HTTP/1.1 403 Forbidden",
+   "want": [
+    "HTTP/1.1 403",
+    "HTTP/1.1 404"
+   ],
+   "pass": true
+  },
+  {
+   "name": "directory without slash",
+   "got": 404,
+   "want": 404,
+   "pass": true
+  },
+  {
+   "name": "garbage request line",
+   "got": "HTTP/1.1 400 Bad Request",
+   "want": [
+    "HTTP/1.1 400",
+    ""
+   ],
+   "pass": true
+  },
+  {
+   "name": "PUT refused",
+   "got": 405,
+   "want": 405,
+   "pass": true
+  },
+  {
+   "name": "report name ..",
+   "got": 400,
+   "want": 400,
+   "pass": true
+  },
+  {
+   "name": "report name = directory",
+   "got": 400,
+   "want": 400,
+   "pass": true
+  },
+  {
+   "name": "report name with slash",
+   "got": 400,
+   "want": 400,
+   "pass": true
+  },
+  {
+   "name": "report not JSON",
+   "got": 400,
+   "want": 400,
+   "pass": true
+  },
+  {
+   "name": "report too large (5 MB)",
+   "got": 413,
+   "want": [
+    413,
+    "ERR"
+   ],
+   "pass": true
+  },
+  {
+   "name": "report malformed url",
+   "got": "HTTP/1.1 400 Bad Request",
+   "want": "HTTP/1.1 400 Bad Request",
+   "pass": true
+  },
+  {
+   "name": "report ok",
+   "got": 200,
+   "want": 200,
+   "pass": true
+  },
+  {
+   "name": "still serving after all of it",
+   "got": 200,
+   "want": 200,
+   "pass": true
+  },
+  {
+   "name": "server process alive",
+   "got": "alive",
+   "want": "alive",
+   "pass": true
+  }
+ ],
+ "stderr": ""
+}

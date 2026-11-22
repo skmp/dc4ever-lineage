@@ -27,10 +27,11 @@ export function lineVS(morph) {
   return HEAD + (morph ? '#define MORPH 1\n' : '') + COMMON + `
 uniform usampler2D uInst; uniform usampler2D uMeta; uniform usampler2D uOffs;
 uniform int uBase; uniform float uWallX; uniform float uZ0; uniform float uZ0A; uniform int uBake; uniform float uBakeW;
-uniform ivec2 uHi; uniform float uMorphT; uniform int uDenseMorph; uniform int uStride;
+uniform ivec2 uHi; uniform float uMorphT; uniform int uDenseMorph; uniform int uStride; uniform int uMorphGlyph;
+uniform usampler2D uAuth;
 out vec2 vL; out float vDist;
 flat out uvec4 vInfo;  // id, origin, flags, keep
-flat out uint vOff; flat out float vLen; flat out vec4 vTint; flat out float vAlpha; flat out float vHi;
+flat out uint vOff; flat out float vLen; flat out vec4 vTint; flat out float vAlpha; flat out float vHi; flat out float vNoGlyph; flat out uint vAuthor;
 void main() {
 #ifdef MORPH
   int idx = uBase + gl_InstanceID * uStride;
@@ -54,7 +55,7 @@ void main() {
   if (len <= ind) { gl_Position = vec4(2., 2., 2., 1.); return; }
   vec2 cr = vec2(float(gl_VertexID & 1), float(gl_VertexID >> 1));
   float xe = min(len, 124.);
-  vec4 tint = vec4(0.); float alpha = 1.; float lift = 0.;
+  vec4 tint = vec4(0.); float alpha = 1.; float lift = 0.; float noGlyph = 0.;
   float zCol = uZ0 + float(pos & 4095u) * 128., rowF = float((pos >> 12) & 2047u);
 #ifdef MORPH
   float t = uMorphT;
@@ -63,16 +64,19 @@ void main() {
     float s0 = 0.2 + 0.15 * seed; float u = clamp((t - s0) / 0.45, 0., 1.); u = u * u * (3. - 2. * u);
     zCol = mix(uZ0A + a.x * 128., uZ0 + b.x * 128., u); rowF = mix(a.y, b.y, u);
     lift = sin(3.14159 * u) * (a.x != b.x || uZ0A != uZ0 ? 260. : 12.);
+    if (uMorphGlyph == 0 && u > 0. && u < 1.) noGlyph = 1.;
   } else if (kind == 2u) {   // removed: tint red, fade, collapse right to left
     zCol = uZ0A + float(w.z & 4095u) * 128.;
     float r = clamp((t - 0.05 * seed) / 0.3, 0., 1.);
     tint = vec4(1., 0.25, 0.2, 0.8); alpha = 1. - smoothstep(0.55, 1., r);
     xe = mix(xe, ind + 0.5, smoothstep(0.3, 1., r));
     if (uDenseMorph == 0) alpha = 0.;
+    if (uMorphGlyph == 0) noGlyph = 1.;
   } else {                   // added: grow left to right in green, then settle
     float s = clamp((t - 0.6 - 0.1 * seed) / 0.28, 0., 1.);
     xe = mix(ind + 0.01, xe, s); alpha = s > 0. ? 1. : 0.;
     tint = vec4(0.35, 1., 0.45, 0.85 * (1. - smoothstep(0.85, 1., t)));
+    if (uMorphGlyph == 0 && s < 1.) noGlyph = 1.;
   }
 #endif
   float zl = mix(ind, xe, cr.x);
@@ -85,6 +89,12 @@ void main() {
   vOff = texelFetch(uOffs, lc, 0).x; vLen = len;
   vTint = tint; vAlpha = alpha * (m.y >= 128u ? 0.75 : 1.);
   vHi = (idx >= uHi.x && idx < uHi.y) ? 1. : 0.;
+  vNoGlyph = noGlyph;
+#ifdef MORPH
+  vAuthor = 0xFFFFu;
+#else
+  vAuthor = texelFetch(uAuth, tc, 0).r;
+#endif
 }`;
 }
 export function lineFS() {
@@ -92,7 +102,7 @@ export function lineFS() {
 uniform usampler2DArray uText; uniform sampler2D uPal; uniform usampler2D uPres; uniform usampler2D uMark; uniform usampler2D uPoss;
 uniform int uMode; uniform int uWall; uniform int uParent; uniform int uHideInc; uniform float uT0; uniform int uBake; uniform int uPresReady;
 in vec2 vL; in float vDist;
-flat in uvec4 vInfo; flat in uint vOff; flat in float vLen; flat in vec4 vTint; flat in float vAlpha; flat in float vHi;
+flat in uvec4 vInfo; flat in uint vOff; flat in float vLen; flat in vec4 vTint; flat in float vAlpha; flat in float vHi; flat in float vNoGlyph; flat in uint vAuthor;
 out vec4 oC;
 vec3 pal(int row, uint i) { return texelFetch(uPal, ivec2(int(i), row), 0).rgb; }
 void main() {
@@ -111,7 +121,7 @@ void main() {
     else { uvec2 pr = texelFetch(uPres, ivec2(int(id & 2047u), int(id >> 11)), 0).xy;
       uint bit = uParent < 32 ? (pr.x >> uint(uParent)) & 1u : (pr.y >> uint(uParent - 32)) & 1u;
       c = bit == 1u ? vec3(0.42, 0.44, 0.48) : vec3(0.3, 0.95, 0.4); }
-  } else if (uMode == 4) c = vec3(0.5);
+  } else if (uMode == 4) c = vAuthor == 0xFFFFu ? vec3(0.32) : texelFetch(uPal, ivec2(int(vAuthor & 63u), 4 + int(vAuthor >> 6)), 0).rgb;
   else c = pal(2, origin);
   c = mix(c, vTint.rgb, vTint.a);
   float ppl = 2. * uFocal / max(vDist, 1e-3);
@@ -120,6 +130,7 @@ void main() {
   float bar = uBake == 1 ? 0.8 : mix(sharp, 0.55, smoothstep(0.5, 1.5, fw)) * 0.9;
   float tb = uBake == 1 ? 0. : smoothstep(uT0 - 2., uT0, ppl);
   float g = 0.;
+  if (vNoGlyph > 0.) tb = 0.;
   if (tb > 0. && vOff != 0xFFFFFFFFu) {
     float cell = floor(vL.x);
     if (cell < min(vLen, 124.)) {
@@ -184,7 +195,7 @@ export const lineSegFS = HEAD + `in vec4 vC; out vec4 oC; void main() { oC = vC;
 
 // ---- labels: SDF text quads; aP = (z, y, dx, wall) aU advance/char  aV up/char-height  aT = (offset, len)  aK kind ----
 export const labelVS = HEAD + COMMON + `
-layout(location=0) in vec4 aP; layout(location=1) in vec3 aU; layout(location=2) in vec3 aV; layout(location=3) in uvec2 aT; layout(location=4) in vec4 aC; layout(location=5) in vec2 aK;
+layout(location=0) in vec4 aP; layout(location=1) in vec3 aU; layout(location=2) in vec3 aV; layout(location=3) in uvec2 aT; layout(location=4) in vec4 aC; layout(location=5) in vec2 aK; layout(location=6) in vec2 aD;
 uniform float uMinPx; uniform vec3 uRight; uniform vec3 uUp;
 out vec2 vL; flat out uint vOff; flat out float vLen; flat out vec4 vC;
 void main() {
@@ -198,13 +209,13 @@ void main() {
   float d = length(o - uCam);
   float px = length(V) * 2. * uFocal / max(d, 1.);   // char cell height in px
   if (aK.x > 1.5 && px < aK.x) { float k = aK.x / px; U *= k; V *= k; px = aK.x; }   // billboard with a minimum screen size
-  if (wa <= 0. || px < uMinPx || (wallPlane && uCam.x > o.x) || (aK.y > 0. && px > aK.y)) { gl_Position = vec4(2., 2., 2., 1.); return; }
+  if (wa <= 0. || aD.x < 0.01 || px < uMinPx || (wallPlane && uCam.x > o.x) || (aK.y > 0. && px > aK.y)) { gl_Position = vec4(2., 2., 2., 1.); return; }
   float L = float(aT.y);
-  vec3 p = o + U * (cr.x * L) - V * (cr.y * 2.);
+  vec3 p = o + U * (cr.x * L) - V * (cr.y * 2. + 2. * aD.y);
   p = pushK(p, 0.9995);
   gl_Position = uVP * vec4(p, 1.);
   vL = vec2(cr.x * L, cr.y * 2.); vOff = aT.x; vLen = L;
-  vC = vec4(aC.rgb, aC.a * wa * smoothstep(uMinPx, uMinPx * 1.6, px));
+  vC = vec4(aC.rgb, aC.a * wa * aD.x * smoothstep(uMinPx, uMinPx * 1.6, px));
 }`;
 export const labelFS = HEAD + GLYPH + `
 uniform usampler2D uLab;

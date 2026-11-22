@@ -2,7 +2,6 @@
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const MODES = ['origin', 'age', 'survival', 'diff vs previous', 'author', 'repo of origin'];
-const IMPORT_ROOTS = { 'skmp_dc4ever': '2019 reconstruction', 'skmp_nullDCe': '2017 recovered archive', 'skmp_reicast-emulator': '1c16baeb', 'gligli_nulldc-360': '0330292', 'BenoitAdam_nullDC4Wii': 'e812c58', 'Mayo1970_NotDC-PS3': '5a32b94', 'skmp_minicast': '580d7b8' };
 
 export function initUI(V) {
   const { man, layout, story, snapJ, W, NS } = V;
@@ -13,13 +12,15 @@ export function initUI(V) {
   const modesEl = $('modes');
   MODES.forEach((m, i) => { const b = document.createElement('button'); b.textContent = `${i + 1} ${m}`; b.onclick = () => setMode(i); modesEl.appendChild(b); });
   function setMode(i) {
-    if (i === 4) { V.toast?.('author mode needs tools/blame.py (optional step, not built): lines show grey'); }
+    if (i === 4 && !V.blame) { V.toast?.('author mode: data/blame/ is missing (run tools/blame.py): lines show grey'); }
     V.mode = i; V.invalidateImpostors(); [...modesEl.children].forEach((b, k) => b.classList.toggle('on', k === i)); legend(); saveHash();
   }
   V.setMode = setMode;
   $('hideinc').onchange = e => { V.hideInc = e.target.checked; V.invalidateImpostors(); };
+  let legendKey = '';
   function legend() {
     const el = $('legendbody'); const cur = nearestWall();
+    legendKey = `${V.mode}|${cur}|${V.load.blame || 0}`;
     const st = cur != null ? man.snapshots[cur] : null;
     let h = '';
     if (V.mode === 0 || V.mode === 5) {
@@ -42,7 +43,17 @@ export function initUI(V) {
     } else if (V.mode === 3) {
       h += `<div class="lrow"><span class="sw" style="background:#6b7079"></span> kept (present in the previous snapshot = parents[0])</div><div class="lrow"><span class="sw" style="background:#4cf266"></span> added</div><div class="small">removed lines show as red ghosts during a Now-mode morph</div>`;
       if (st) h += `<div class="small">wall ${esc(st.id)} vs ${st.parents.length ? esc(man.snapshots[st.parents[0]].id) : '(no parent)'}</div>`;
-    } else h += `<div class="small">Needs the optional blame step (tools/blame.py, handles and dates only). Not built in this run.</div>`;
+    } else if (V.blame) {
+      const w = cur != null ? W[cur] : null, B = V.blame;
+      const hist = w && w.authHist ? [...w.authHist].filter(([a]) => a !== 0xFFFF).sort((a, b) => b[1] - a[1]) : [];
+      const tot = hist.reduce((a, x) => a + x[1], 0);
+      h += `<div class="small">last changed by (git blame at each snapshot; handles only). Gold = skmp (drk||Raziel). Grey = handles outside the top 28 of the whole corpus.</div>`;
+      if (w && !w.authHist) h += `<div class="small">blame for this wall is loading…</div>`;
+      for (const [a, n] of hist.slice(0, 14)) h += `<div class="lrow"><span class="sw" style="background:rgb(${B.rgb[a].join(',')})"></span><span class="lname" title="${esc(B.authors[a])}">${esc(B.authors[a])}</span><span class="small">${(100 * n / tot).toFixed(1)} % · ${n.toLocaleString('en')}</span></div>`;
+      if (hist.length > 14) h += `<div class="small">+ ${hist.length - 14} more handles in this wall</div>`;
+      const imp = Object.entries(B.imports).find(([k]) => w && (k === 'repo:' + w.snap.repo || B.commits.some(c => c[0] === k && c[3] === w.snap.repo)));
+      if (imp) h += `<div class="small" style="color:#e6be78">This repo starts from an import: lines blamed to the import commit were written earlier, by other hands (${esc(imp[1])}).</div>`;
+    } else h += `<div class="small">Needs data/blame/ (tools/blame.py, about 15 s; handles and dates only).</div>`;
     if (st) h += `<div class="small" style="margin-top:4px">nearest wall: <b>${esc(st.id)}</b> (${esc(st.order_date)})</div>`;
     el.innerHTML = h;
     el.querySelectorAll('[data-lane]').forEach(r => r.onclick = () => { const L = lanes[+r.dataset.lane]; const s = L.snaps[L.snaps.length - 1]; const v = V.fitWall(s); V.flyTo(v.p, v.dir); });
@@ -69,11 +80,17 @@ export function initUI(V) {
   const evNum = evDate.map(dnum), cal0 = 2003, cal1 = evNum.at(-1);
   const calToT = c => { if (c <= evNum[0]) return 0; for (let k = 1; k < NS; k++) if (c <= evNum[k]) return k - 1 + (c - evNum[k - 1]) / Math.max(1e-6, evNum[k] - evNum[k - 1]); return NS - 1; };
   const tToCal = t => { const k = Math.floor(t), f = t - k; return k >= NS - 1 ? evNum[NS - 1] : evNum[k] + (evNum[k + 1] - evNum[k]) * f; };
-  function drawTicks() {
-    const el = $('ticks'); el.innerHTML = '';
-    if (V.scale === 'event') { let last = ''; for (let k = 0; k < NS; k++) { const y = evDate[k].slice(0, 4); if (y === last) continue; last = y; const s = document.createElement('span'); s.style.left = (k / (NS - 1) * 100) + '%'; s.textContent = k > 0 && +y - +evDate[k-1].slice(0,4) > 1 ? '…' + y : y; s.style.fontSize = y === '2026' ? '11px' : ''; el.appendChild(s); } }
-    else for (let y = 2004; y <= 2026; y += 2) { const s = document.createElement('span'); s.style.left = ((y - cal0) / (cal1 - cal0) * 100) + '%'; s.textContent = y; el.appendChild(s); }
+  function drawTicks() {   // labels at least 36 px apart (measured on the slider), first / last / 2026 placed first, then the rest
+    const el = $('ticks'); el.innerHTML = ''; const wpx = Math.max(200, sl.getBoundingClientRect().width || 900); const cand = [];
+    if (V.scale === 'event') { let last = ''; for (let k = 0; k < NS; k++) { const y = evDate[k].slice(0, 4); if (y === last) continue; last = y;
+      cand.push([k / (NS - 1), k > 0 && +y - +evDate[k - 1].slice(0, 4) > 1 ? '…' + y : y, y === '2026']); } }
+    else for (let y = 2004; y <= 2026; y += 2) cand.push([(y - cal0) / (cal1 - cal0), String(y), false]);
+    const order = cand.map((c, i) => [c[2] || i === 0 || i === cand.length - 1 ? 0 : 1, i, c]).sort((a, b) => a[0] - b[0] || a[1] - b[1]).map(x => x[2]);
+    const at = [];
+    for (const [frac, text, big] of order) { const px = frac * wpx; if (at.some(q => Math.abs(q - px) < 36)) continue; at.push(px);
+      const s = document.createElement('span'); s.style.left = (frac * 100) + '%'; s.textContent = text; if (big) s.style.fontSize = '11px'; el.appendChild(s); }
   }
+  addEventListener('resize', () => drawTicks());
   function syncSlider() {
     if (V.scale === 'event') { sl.min = 0; sl.max = NS - 1; sl.value = V.t; }
     else { sl.min = cal0; sl.max = cal1; sl.value = tToCal(V.t); }
@@ -102,21 +119,30 @@ export function initUI(V) {
   $('tscale').onclick = () => { V.scale = V.scale === 'event' ? 'calendar' : 'event'; $('tscale').textContent = V.scale; drawTicks(); syncSlider(); };
   drawTicks(); syncSlider();
 
-  // ---------------- minimap: X = time, rows = lanes (Z)
-  const mm = $('mm'), mx = mm.getContext('2d'); const MW = mm.width, MH = mm.height;
-  const zMax = lanes.at(-1).z0 + lanes.at(-1).width, xMax = Math.max(...W.map(w => w.x)) + 8000, xMin = -6000;
-  const toM = (x, z) => [8 + (x - xMin) / (xMax - xMin) * (MW - 16), 16 + z / zMax * (MH - 24)];
-  const fromM = (px, py) => [xMin + (px - 8) / (MW - 16) * (xMax - xMin), (py - 16) / (MH - 24) * zMax];
-  let mmDirty = true; V.on('frame', () => { mmDirty = true; });
+  // ---------------- minimap: X = time, one row per lane (Z is piecewise per lane, so thin fpgadc lanes stay readable)
+  const mm = $('mm'), mx = mm.getContext('2d');
+  const ROWH = 10, TOP = 16, LEFT = 62; mm.height = TOP + lanes.length * ROWH + 6; const MW = mm.width, MH = mm.height;
+  const xMax = Math.max(...W.map(w => w.x)) + 8000, xMin = -6000;
+  const zb = lanes.map(L => L.z0).concat([lanes.at(-1).z0 + lanes.at(-1).width + 2000]);
+  const zToRow = z => { if (z <= zb[0]) return (z - zb[0]) / (zb[1] - zb[0]); for (let i = 0; i < lanes.length; i++) if (z < zb[i + 1]) return i + (z - zb[i]) / (zb[i + 1] - zb[i]); return lanes.length + (z - zb.at(-1)) / (zb.at(-1) - zb.at(-2)); };
+  const rowToZ = r => { const i = Math.max(0, Math.min(lanes.length - 1, Math.floor(r))); return zb[i] + (r - i) * (zb[i + 1] - zb[i]); };
+  const toM = (x, z) => [LEFT + (x - xMin) / (xMax - xMin) * (MW - LEFT - 6), TOP + zToRow(z) * ROWH];
+  const fromM = (px, py) => [xMin + (px - LEFT) / (MW - LEFT - 6) * (xMax - xMin), rowToZ((py - TOP) / ROWH)];
+  // year ticks: keep a tick only when it is at least 22 px from the last one drawn (the time axis is rank-spaced, so the
+  // early years crowd), label as '04 .. '26
+  const yearTicks = []; { let last = -1e9; for (const r of layout.ruler) if (r.year) { const [x] = toM(r.x, 0); if (x - last >= 22) { yearTicks.push([x, r.year]); last = x; } } }
+  let mmDirty = true, mmKey = ''; V.on('frame', () => { const k = V.cam.p.map(v => Math.round(v / 200)).join() + V.camBasis().f.map(v => v.toFixed(2)).join() + V.t.toFixed(2) + V.pres; if (k !== mmKey) { mmKey = k; mmDirty = true; } });
   function drawMinimap() {
     mx.fillStyle = '#0b0d12'; mx.fillRect(0, 0, MW, MH);
-    mx.font = '9px system-ui'; mx.fillStyle = '#6b7488';
-    for (const r of layout.ruler) if (r.year && r.year % 2 === 0) { const [x] = toM(r.x, 0); mx.fillRect(x, 10, 1, MH - 12); mx.fillText(String(r.year).slice(2), x - 5, 9); }
+    mx.font = '9px system-ui'; mx.textAlign = 'center';
+    for (const [x, y] of yearTicks) { mx.fillStyle = '#2a3040'; mx.fillRect(x, TOP - 3, 1, MH - TOP); mx.fillStyle = '#7d869a'; mx.fillText("'" + String(y).slice(2), x, 10); }
+    mx.textAlign = 'left';
     for (const [li, L] of lanes.entries()) {
-      const [, y0] = toM(0, L.z0), [, y1] = toM(0, L.z0 + L.width - 2000);
-      mx.fillStyle = V.palette.lane(li) + '30'; mx.fillRect(8, y0, MW - 16, Math.max(2, y1 - y0));
-      mx.fillStyle = V.palette.lane(li); mx.fillText(L.name, 2, (y0 + y1) / 2 + 3);
+      const y0 = TOP + li * ROWH, x0 = toM(Math.min(...L.snaps.map(s => W[s].x)) - 3000, 0)[0];
+      mx.fillStyle = V.palette.lane(li) + '26'; mx.fillRect(x0, y0 + 1, MW - 6 - x0, ROWH - 2);
+      mx.fillStyle = V.palette.lane(li); mx.fillText(L.name, 2, y0 + ROWH - 2);
     }
+    { const [, fy] = toM(0, layout.fpgadc.z0); mx.fillStyle = '#78e6dc'; mx.fillRect(0, fy - 1, MW, 1); }
     for (const e of layout.edges) {
       const a = W[e.from], b = W[e.to], [x0, y0] = toM(V.WX[a.s], a.z0 + a.cols * 64), [x1, y1] = toM(V.WX[b.s], b.z0 + b.cols * 64);
       const c = V.edgeStyle[e.kind]; mx.strokeStyle = `rgba(${c.join(',')},0.75)`; mx.setLineDash(e.kind === 'concept' ? [2, 3] : e.kind === 'import' ? [5, 2] : e.kind === 'fork-recovered' ? [1, 2] : []);
@@ -125,17 +151,18 @@ export function initUI(V) {
     mx.setLineDash([]);
     for (const w of W) {
       if (!V.WA[w.s]) continue;
-      const [x, y0] = toM(V.WX[w.s], w.z0), [, y1] = toM(V.WX[w.s], w.z0 + w.cols * 128);
-      mx.fillStyle = V.palette.origin(w.s); mx.fillRect(x - 1, y0, Math.max(2, Math.sqrt(w.n) / 160), Math.max(2, y1 - y0));
+      const [x, y] = toM(V.WX[w.s], w.z0);
+      mx.fillStyle = V.palette.origin(w.s); mx.fillRect(x - 1, y + 1, Math.max(2, Math.sqrt(w.n) / 160), ROWH - 2);
     }
-    for (const p of layout.pins) { const w = W[p.snap]; const [x, y] = toM(V.WX[w.s], w.z0); mx.fillStyle = '#ffd25a'; mx.fillRect(x - 2, y - 4, 4, 3); }
+    for (const p of layout.pins) { const w = W[p.snap]; const [x, y] = toM(V.WX[w.s], w.z0); mx.fillStyle = '#ffd25a'; mx.fillRect(x - 1.5, y - 1, 3, 2); }
     // camera + frustum wedge
     const { f } = V.camBasis(); const [cx, cy] = toM(V.cam.p[0], V.cam.p[2]);
-    const yaw = Math.atan2(f[2] * (MH - 24) / zMax, f[0] * (MW - 16) / (xMax - xMin));
+    const yaw = Math.atan2(f[2] * ROWH / ((zb.at(-1) - zb[0]) / lanes.length), f[0] * (MW - LEFT - 6) / (xMax - xMin));
     mx.fillStyle = 'rgba(124,196,255,0.25)'; mx.beginPath(); mx.moveTo(cx, cy); mx.arc(cx, cy, 40, yaw - 0.5, yaw + 0.5); mx.closePath(); mx.fill();
     mx.fillStyle = '#7cc4ff'; mx.beginPath(); mx.arc(cx, cy, 3, 0, 7); mx.fill();
   }
-  setInterval(() => { if (mmDirty && !$('minimap').classList.contains('hidden')) { drawMinimap(); mmDirty = false; } }, 100);
+  V.drawMinimap = drawMinimap;
+  setInterval(() => { if (mmDirty && !$('minimap').classList.contains('hidden')) { drawMinimap(); mmDirty = false; } }, 200);
   let mmDrag = false;
   mm.onmousedown = e => { mmDrag = true; mmMove(e); };
   addEventListener('mouseup', () => mmDrag = false);
@@ -155,7 +182,7 @@ quality step ${V.quality.step} (glyphs at ≥${V.quality.t0} px/line, scale ${V.
 speed ${V.cam.speed.toFixed(0)} u/s   pos ${c.map(v => v.toFixed(0)).join(', ')}
 ${V.pres === 'now' ? 'NOW' : 'gallery'}  t=${V.t.toFixed(2)}  ${nw != null ? 'wall ' + man.snapshots[nw].id : ''}
 data: walls ${Lo.walls}/${NS}  text ${Lo.text}/${man.text_chunks}${V.normLines ? '' : ' (norm pending)'}  GPU ~${(S.gpuBytes / 1048576).toFixed(0)} MB${performance.memory ? '  JS ' + (performance.memory.usedJSHeapSize / 1048576).toFixed(0) + ' MB' : ''}${V.morph ? `\nmorph ${man.snapshots[V.morph.a].id} → ${man.snapshots[V.morph.b].id}: kept ${V.morph.m.kept} added ${V.morph.m.added} removed ${V.morph.m.removed}${V.morph.m.exact ? '' : ' (raw ids, approx)'}` : ''}`;
-    if (Math.random() < 0.1) legend();
+    if (legendKey !== `${V.mode}|${nw}|${V.load.blame || 0}`) legend();
   });
 
   // ---------------- tooltip + hover
@@ -172,13 +199,15 @@ data: walls ${Lo.walls}/${NS}  text ${Lo.text}/${man.text_chunks}${V.normLines ?
     const sn = man.snapshots[p.s], f = p.file;
     let h = `<div><b>${esc(sn.id)}</b> <span class="small">${esc(sn.order_date)}${sn.date_range ? ' · real ' + esc(sn.date_range) : ''} · ${esc(gh(sn))} ${esc(sn.ref)}</span></div>`;
     if (p.kind === 'hole') h += `<div class="small">slot of a file that is not in this snapshot (street hole)</div>`;
+    const pin = layout.pins.find(q => q.snap === p.s);
+    if (pin) h += `<div class="small" style="color:#ffd25a">${pin.releases.map(r => `DreamSTer ${esc(r.tag)} (${esc(r.date)}, DreamSTer ${esc(r.dreamster)}: polly2-rtl ${esc(r.polly2)}, minicast ${esc(r.minicast)})`).join('; ')}</div>`;
     if (f) {
       h += `<div><code>${esc(f.p)}</code>${p.line ? ' : <b>' + p.line + '</b>' : ''} <span class="small">${f.n} lines · ${esc(f.st)}${f.sim != null ? ' · sim ' + f.sim.toFixed(2) : ''}${f.pred ? ' · from ' + esc(man.snapshots[f.pred[0]].id) : ''}</span></div>`;
     }
     if (p.kind === 'line' && p.id !== undefined) {
       const o = p.origin, os = o < NS ? man.snapshots[o] : null;
       h += `<pre id="tiptext">…</pre>`;
-      h += `<div>origin <span class="sw" style="background:${V.palette.origin(o)}"></span><b>${esc(man.origins[o])}</b> <span class="small">${os ? esc(os.order_date) + ' · lane ' + esc(os.lane) : 'nullDC up to the late-2008 fork (in both nullDCe 2009 and nullDC 2010)'}</span></div>`;
+      h += `<div>origin <span class="sw" style="background:${V.palette.origin(o)}"></span><b>${esc(man.origins[o])}</b> <span class="small">${os ? esc(os.order_date) + ' · lane ' + esc(lanes[W[o].lane].name) : 'nullDC up to the late-2008 fork (in both nullDCe 2009 and nullDC 2010)'}</span></div>`;
       if (os && os.date_note) h += `<div class="small">${esc(os.date_note)}</div>`;
       if (p.flags & 2) h += `<div class="small">incidental match: unrelated-lane origin in a run of fewer than 3 lines${V.hideInc ? ' (drawn in the wall\'s own colour)' : ''}</div>`;
       const poss = layout.possible[o][p.s];
@@ -189,9 +218,12 @@ data: walls ${Lo.walls}/${NS}  text ${Lo.text}/${man.text_chunks}${V.normLines ?
         for (const s of V.events) { const on = s < 32 ? (pl >>> s) & 1 : (ph >>> (s - 32)) & 1; h += `<span title="${esc(man.snapshots[s].id)}" style="background:${on ? V.palette.lane(W[s].lane) : '#262b36'}"></span>`; }
         h += '</div>';
       }
-      const rr = IMPORT_ROOTS[sn.repo];
-      h += `<div class="small">author: blame step not built (optional). ${rr && o === p.s ? 'This wall is an imported snapshot (' + esc(rr) + '): authorship predates the import.' : ''}</div>`;
-      h += `<div class="small">handle of the nullDC / reicast / nullDC 3 author: drk||Raziel (said "D R K Raziel")</div>`;
+      const B = V.blame, c = B && p.commit !== undefined ? B.commits[p.commit] : null;
+      if (c) {
+        const d = String(c[2]), imp = B.imports[c[0]] || (c[3] === 'skmp_dc4ever' || c[3] === 'skmp_nullDCe' ? B.imports['repo:' + c[3]] : null);
+        h += `<div>last changed by <b>${esc(B.authors[c[1]])}</b> <span class="small">${d.slice(0, 4)}-${d.slice(4, 6)}-${d.slice(6)} · ${esc(c[0])} (git blame at this snapshot)</span></div>`;
+        if (imp) h += `<div class="small" style="color:#e6be78">${esc(c[0])} is an import: ${esc(imp)}. The line was written before the import, so this is the importer, not the author; see the origin above.</div>`;
+      } else h += `<div class="small">last changed by: ${B ? 'blame for this wall is loading' : 'no data/blame/ (tools/blame.py)'}</div>`;
     }
     if (pinned && f) h += `<div style="margin-top:4px"><a style="color:#7cc4ff" target="_blank" rel="noopener" href="https://github.com/${esc(gh(sn))}/blob/${sn.commit}/${esc(f.p)}${p.line ? '#L' + p.line : ''}">open on GitHub</a> · <a href="#" id="tipfollow" style="color:#7cc4ff">follow this file</a> · <a href="#" id="tipclose" style="color:#7cc4ff">close</a></div>`;
     tip.innerHTML = h; tip.classList.remove('hidden');

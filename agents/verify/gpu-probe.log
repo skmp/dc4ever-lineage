@@ -1,0 +1,120 @@
+{
+ "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+ "soft": false,
+ "crossOriginIsolated": false,
+ "sab": "undefined",
+ "load": {
+  "boot": 178.30000001192093,
+  "firstFrame": 1370.4000000059605,
+  "walls": 40,
+  "text": 12,
+  "textDone": 0,
+  "allText": 4213.9000000059605,
+  "bytesBoot": 0,
+  "meta": 1649.9000000059605,
+  "allWalls": 2537.300000011921
+ },
+ "readyMs": 2678.2999999970198,
+ "gpuMB": 179.9781744384765,
+ "heapMB": 114.74709510803223,
+ "bytes": 1763697,
+ "url": "http://172.22.167.46:8742/",
+ "navMs": 1999,
+ "coop": "same-origin",
+ "coep": "require-corp",
+ "bytesBeforeFirstFrame": 632170,
+ "pick": {
+  "rec": {
+   "projected_lines": {
+    "tried": 0,
+    "ok": 0,
+    "bad": []
+   },
+   "screen_samples": {
+    "tried": 200,
+    "ok": 200,
+    "bad": []
+   }
+  },
+  "rec-mid": {
+   "projected_lines": {
+    "tried": 1,
+    "ok": 1,
+    "bad": []
+   },
+   "screen_samples": {
+    "tried": 200,
+    "ok": 200,
+    "bad": []
+   }
+  },
+  "fork": {
+   "projected_lines": {
+    "tried": 200,
+    "ok": 200,
+    "bad": []
+   },
+   "screen_samples": {
+    "tried": 105,
+    "ok": 105,
+    "bad": []
+   }
+  },
+  "far": {
+   "projected_lines": {
+    "tried": 200,
+    "ok": 184,
+    "bad": [
+     {
+      "want": [
+       0,
+       15,
+       2481
+      ],
+      "got": null
+     },
+     {
+      "want": [
+       1,
+       15,
+       11
+      ],
+      "got": null
+     },
+     {
+      "want": [
+       2,
+       85,
+       493
+      ],
+      "got": null
+     },
+     {
+      "want": [
+       1,
+       160,
+       567
+      ],
+      "got": null
+     },
+     {
+      "want": [
+       0,
+       26,
+       9
+      ],
+      "got": null
+     }
+    ]
+   },
+   "screen_samples": {
+    "tried": 45,
+    "ok": 45,
+    "bad": []
+   }
+  }
+ },
+ "logs": []
+}
+5.7s closed
+exit 0
