@@ -1,0 +1,29 @@
+{
+ "file": "agents/viewer2/score/score-seed2026-60s.wav",
+ "seconds": 60,
+ "seed": 2026,
+ "render_s": 48.187,
+ "events": 254,
+ "peak": 0.3461,
+ "peak_dbfs": -9.22,
+ "rms_dbfs": -26.3,
+ "clipped_samples": 0,
+ "click_windows": 0,
+ "worst_d2_over_rms": 0.49,
+ "key_signature": "one flat (D aeolian / F ionian pitch set)",
+ "in_key_energy": 0.984,
+ "chroma": {
+  "C": 0.118,
+  "C#": 0.003,
+  "D": 0.078,
+  "Eb": 0.003,
+  "E": 0.024,
+  "F": 0.252,
+  "F#": 0.005,
+  "G": 0.345,
+  "Ab": 0.002,
+  "A": 0.075,
+  "Bb": 0.093,
+  "B": 0.004
+ }
+}

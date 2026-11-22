@@ -1,5 +1,6 @@
 // mkatlas: single-channel SDF atlas of DejaVu Sans Mono, ASCII 0x20..0x7E plus a 0x7F hollow box.
-// Cells 48x96 px (1 x 2 world units), 16 x 6 grid -> 768 x 576 R8, written raw (sdf.r8) + metrics.json.
+// Cells CWxCH px (1 x 2 world units, default 64x128, spread 12 px), 16 x 6 grid -> 1024 x 768 R8, written raw (sdf.r8) + metrics.json.
+// The viewer mipmaps it and filters it anisotropically (FOLLOWUP item 5: high-res SDF). Args: [font] [outdir] [CW] [spread].
 // Exact Euclidean distance transform (Felzenszwalb-Huttenlocher) on a 4x supersampled bitmap.
 // build: g++ -O2 -fopenmp mkatlas.cpp $(pkg-config --cflags --libs freetype2) -o mkatlas
 #include <ft2build.h>
@@ -11,7 +12,8 @@
 #include <string>
 #include <algorithm>
 
-static const int CW = 48, CH = 96, GX = 16, GY = 6, SS = 4, SPREAD = 8;
+static int CW = 64, CH = 128, SPREAD = 12;
+static const int GX = 16, GY = 6, SS = 4;
 static const double INF = 1e20;
 
 static void edt1(const double* f, double* d, int n, int* v, double* z) {
@@ -50,6 +52,8 @@ static std::vector<double> edt(const std::vector<unsigned char>& on, int w, int 
 int main(int argc, char** argv) {
     const char* font = argc > 1 ? argv[1] : "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf";
     std::string out = argc > 2 ? argv[2] : "data/font";
+    if (argc > 3) { CW = atoi(argv[3]); CH = 2 * CW; }
+    if (argc > 4) SPREAD = atoi(argv[4]);
     FT_Library lib; FT_Face face;
     if (FT_Init_FreeType(&lib) || FT_New_Face(lib, font, 0, &face)) { fprintf(stderr, "freetype init failed\n"); return 1; }
     // advance = CW px at 1x  ->  pixel size such that advance(units)/upem * px = CW
@@ -67,7 +71,7 @@ int main(int argc, char** argv) {
         std::vector<unsigned char> bm(hw * hh, 0);
         if (c == 0x7F) { // hollow box: the fold of every non-ASCII code point
             int x0 = (int)(0.14 * hw), x1 = (int)(0.86 * hw), y0 = (int)((baseline - asc * 0.78) * SS), y1 = (int)((baseline) * SS);
-            int t = 3 * SS;
+            int t = (CW / 16) * SS;
             for (int y = y0; y < y1; y++) for (int x = x0; x < x1; x++)
                 if (x < x0 + t || x >= x1 - t || y < y0 + t || y >= y1 - t) bm[y * hw + x] = 1;
         } else if (c != 0x20) {

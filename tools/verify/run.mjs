@@ -11,9 +11,9 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
-const OUT = path.join(ROOT, 'agents', 'verify');
 const args = process.argv.slice(2), cmd = args[0] || 'probe';
 const opt = (k, d) => { const i = args.indexOf('--' + k); return i < 0 ? d : (args[i + 1] && !args[i + 1].startsWith('--') ? args[i + 1] : true); };
+const OUT = typeof opt('out', false) === 'string' ? path.resolve(ROOT, opt('out')) : path.join(ROOT, 'agents', 'verify');
 const soft = !!opt('soft', false);
 const [VW, VH] = String(opt('size', '1280x720')).split('x').map(Number);
 const PORT = +opt('port', 8742);
@@ -101,7 +101,7 @@ try {
     fs.writeFileSync(path.join(OUT, `probe-${tag}.json`), JSON.stringify(r, null, 1));
   } else if (cmd === 'shots') {
     ts('open'); await open(b, '?shots=1' + (process.env.EXTRA || '')); ts('opened');
-    const views = String(opt('views', 'far,rec,rec-mid,morph,morph-wide,fork,fork2,fpgadc')).split(',');
+    const views = String(opt('views', 'far,read,read-mid,read-far,morph,attract,now,fork,fpgadc')).split(',');
     const res = {};
     for (const v of views) {
       ts('view ' + v); const info = await b.evalJS(`window.viewer.view(${JSON.stringify(v)})`); ts('ready');

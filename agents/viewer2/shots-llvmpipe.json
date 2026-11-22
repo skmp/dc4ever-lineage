@@ -1,0 +1,14 @@
+{
+ "size": [
+  1280,
+  720
+ ],
+ "views": {
+  "far": {
+   "file": "agents/viewer2/shots/far-llvmpipe-1280x720.png",
+   "ready_ms": 5139,
+   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)"
+  }
+ },
+ "logs": []
+}

@@ -1,24 +1,34 @@
 # nullDC lineage viewer
 
-A WebGL2 fly-through of 48 snapshots (4,605,942 lines) of the nullDC family, from dc4ever to nullDC 3,
-the ports, and the fpgadc hardware re-creation (every DreamSTer release r1..r6b pins a polly2-rtl and a
-minicast wall; polly2-rtl r8/develop has its own lane because it shares no history with main). Each snapshot is a wall of readable code. X is time,
-lanes are repos, and a file keeps the same place in every wall of its lane. See `../DESIGN.md`.
+A WebGL2 fly-through of the nullDC family through time: 380 frames in 17 lanes, from dc4ever (2004) to nullDC 3, the
+ports and the fpgadc hardware re-creation (2026). A frame is the last commit of a month with commits, or a release,
+tag, DreamSTer pin, fork or import point (`agents/frames/FORMAT.md`). Each frame is a wall of readable code; X is
+time (4000 units per month), lanes are repos, and a file keeps the same place in every frame of its lane.
 
 ## Run
 
 ```
-node tools/serve.mjs            # from the repo root; Node 22, no dependencies
+node tools/serve.mjs [port]        # dev server, from the repo root (Node 22, no dependencies): viewer/ at /, data/ at /data/
+node tools/build_static.mjs        # the public build -> dist/ (relative paths, no server needed; dev-only code removed)
 ```
 
-The server binds 0.0.0.0:8742 and prints the URL to open from Windows, for example
-`http://172.22.167.46:8742/`. WSL2 NAT does not forward `localhost`. It answers malformed or hostile
-requests with 4xx and keeps running (`node tools/verify/serve_check.mjs`). The only write endpoint is
-`POST /__report?name=bench-<tag>-<A..E>.json` (bench results from `?bench=all`, at most 4 MB of JSON,
-200 files); start with `--no-report` to turn it off.
+The dev server binds 0.0.0.0 and prints the URL to open from Windows (WSL2 NAT does not forward `localhost`).
+`dist/` is a plain static site: any file server works (`cd dist && python3 -m http.server`), under any path.
 
-Use a desktop Chrome or Edge on Windows for the GPU path. In WSL Chromium the GPU path needs
-`GALLIUM_DRIVER=d3d12`, and it works only in a headed browser (see Limits).
+## The clock
+
+One shared clock (the slider, the blue gate across every lane) drives all lanes.
+
+| presentation | what shows |
+|---|---|
+| Clock (paused, default) | each lane's frame at the clock, solid at its own X; the lane's frames within 6 months as ghosts; releases solid |
+| Now (playing, or N) | each lane's frame rides on the clock plane and morphs into the next one (kept lines slide, removed fade red, added grow green) |
+| Gallery (N) | every frame solid at its X: the streets through time |
+
+Release marks (yellow: DreamSTer pins; blue: tags) sit on the time axis under the slider: click one, or PageUp /
+PageDown, to jump. Frames stream in around the camera and the clock: a worker fetches a lane chunk (keyframe + up to
+24 deltas), applies the edit scripts and builds the wall; the GPU keeps a pool of walls and evicts the least recently
+used ones.
 
 ## Controls
 
@@ -27,70 +37,79 @@ Use a desktop Chrome or Edge on Windows for the GPU path. In WSL Chromium the GP
 | W A S D, Q / E | fly (Shift 4x, Ctrl 1/4x); the scroll wheel sets the speed |
 | drag | look around |
 | click / double-click / F | pin the tooltip / fly to the file under the cursor |
-| click a file header bar | file panel: follow the file through every repo that has it, or "ride the street" |
-| `[` `]` | same place in the lane's previous / next wall (the street through time) |
-| `{` `}` | previous / next lane |
+| click a file header bar | file panel: the file in every lane that holds it |
+| P , . | play / pause, one month back / forward |
+| PageUp / PageDown | previous / next release |
+| N | Clock / Now / Gallery |
+| `[` `]`, `{` `}` | same place in the lane's previous / next frame; previous / next lane |
 | G | overview |
-| 1-6 | colour mode: origin, age, survival, diff vs previous, author (git blame: last changed by), repo of origin |
-| P `,` `.` N | play / step / toggle Gallery and Now (live walls morphing on a moving plane) |
-| `/` B M L H | search (path, text or regex), bookmarks, minimap, lineage story with tours, help |
+| 1-5 | colour: origin, age, survival, diff vs previous frame, repo of origin |
+| T | attract mode (also after 2 minutes idle, `?idle=` seconds, 0 = never); any input exits |
+| ♪ button, volume, M | the generative score (off by default), its volume, mute |
+| bench button, `?bench` | the benchmark: five 15 s paths, then a score card; nothing is recorded |
+| / B I L H | search (text, regex, path), bookmarks, minimap, lineage story, help |
 
-The URL hash keeps the camera, mode and time, so you can share a view as a link.
+The URL hash keeps the camera, clock, mode and presentation.
+
+## Text rendering (three tiers per line, chosen per pixel)
+
+- Near (>= 4.5 px per line on a GPU): glyphs from a 1024 x 768 SDF atlas of DejaVu Sans Mono (64 x 128 px cells,
+  spread 12 px, `tools/font/mkatlas.cpp`), mipmapped (3 levels), anisotropic, sampled with explicit gradients from the
+  continuous cell coordinate, anti-aliased by the screen-space derivative, 4-tap supersampled when small.
+- Middle (>= 1.3 px per line): SDF token shapes: each run of non-space characters is a crisp word bar (x-height band),
+  edges anti-aliased against the neighbouring cells.
+- Far: impostors baked from the same shader (low resolution for every loaded wall in view, 16 px per column x 2048
+  rows for the nearest ones, re-baked as the camera approaches), then per-file quads, then per-column strips.
+
+## Attract mode
+
+`data/attract.json` (`node tools/attract_prep.mjs`, 3 s): the curated lines (the dc4ever 2005 to-do, "and here are the
+new ones :D", spg.cpp's "Time to emulate that stuff correctly ;)"), the computed longest-surviving / widest-spread
+distinctive lines (comments and strings held by the most frames across the most lanes, licence boilerplate and
+register tables excluded, one per file), and famous files (SH4 dynarecs, interpreter, spg.cpp, PowerVR renderer
+interface, refsw). Each item visits the frames that hold it, forward and back in time and across lanes at fork points,
+with smooth camera moves to reading range and a caption: the line, where it first appeared, how far it spread.
+
+## Score
+
+`viewer/src/score.js`: original, synthesised in Web Audio (additive piano, detuned-saw strings, drawbar organ,
+formant choir, convolution reverb from a generated impulse). Stylistic inspiration only (Satie's sparse modal piano,
+Richter's late-resolving string suspensions, Glass's additive organ arpeggios over pedal tones); every line is a
+seeded random walk over the scale. It stays in one key signature (one flat) and only moves the modal centre (D aeolian,
+F ionian, G dorian, B-flat lydian), so section crossfades stay in key. Era (the year at the clock), fork / import
+points passed, code density on screen and the attract arc set the voice levels (crossfaded) and the density.
+
+```
+node tools/render_score.mjs --dur 180 --seed 2026 --out agents/score   # offline render to WAV + level / clip / click / key report
+```
+
+## Benchmark
+
+The bench button (or `?bench`, `?bench=A,E`, `&dur=`) runs five scripted paths: A file street (sh4 interpreter
+through its frames), B orbit (Gallery), C lane flights (Gallery), D close reading (nullDC 3), E live playback (Now,
+2010 to 2026). The score card shows the GPU, canvas resolution, fps mean and 1 % low (mean of the slowest 1 % of
+frames) per path and an overall score (10 x geometric mean of the fps means). Dev only: `?bench&dev=1` on the dev server
+also posts the results to `agents/verify/` (removed from `dist/`). `tools/verify/run.mjs bench|shots|eval` drives
+headless Chromium (`--soft` = llvmpipe).
+
+## Frame pacing
+
+On a GPU the page draws on every requestAnimationFrame and skips one only if 4 frames are still queued. The old
+scheme (skip while 2 fences are pending) dropped every other vsync because WebGL fence status only updates between
+tasks: that was the ~20 ms frames at < 1.1 ms of GPU time on the Radeon. llvmpipe keeps 2 frames in flight and ~30 fps.
 
 ## Rebuild derived data
 
 ```
-python3 tools/snapshot.py agents/collect/snapshots.spec agents/collect/snapshots.json   # count the 48 snapshots (1 s)
-make -C tools/provenance run                       # origins, identities, diffs -> data/ (about 6 s)
-python3 tools/viewer_prep.py                       # data/layout.json.gz, linemeta.bin.gz, story.json (about 4 s)
-python3 tools/blame.py                             # data/blame/: last changed by, handles and dates only (about 15 s)
-g++ -O2 -std=c++17 tools/font/mkatlas.cpp $(pkg-config --cflags --libs freetype2) -o mkatlas
-./mkatlas && gzip -9 -c data/font/sdf.r8 > data/font/sdf.r8.gz && rm data/font/sdf.r8
+make -C tools/provenance run-frames      # frames, provenance, layout -> data/ (about 40 s)
+node tools/attract_prep.mjs              # data/attract.json (3 s)
+g++ -O2 -fopenmp -std=c++17 tools/font/mkatlas.cpp $(pkg-config --cflags --libs freetype2) -o mkatlas
+./mkatlas /usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf data/font 64 12 && gzip -9 -f data/font/sdf.r8
 ```
-
-## Verify and measure
-
-```
-node tools/verify/check_data.mjs          # placement, streets, decoder parity, morph = diffs.json, lanes, release pins, blame (20 s)
-node tools/verify/serve_check.mjs         # hostile requests against a throwaway server; it must answer and stay up (2 s)
-tools/verify/all.sh                       # everything below in sequence, about 20 minutes, log in agents/verify/all.log
-node tools/verify/run.mjs probe [--soft] --size 2560x1440      # load time, memory, picking, WSL-address access, COOP/COEP
-node tools/verify/run.mjs shots [--soft] --size 2560x1440 --views far,rec,morph,fork,fpgadc
-node tools/verify/run.mjs bench [--soft] --size 2560x1440 --paths A,B,C,D,E [--trace]
-node tools/verify/morphstall.mjs [--gpu] --size 2560x1440      # Now-mode morph playback at close / near range
-```
-
-`--soft` runs headless Chromium on llvmpipe (ANGLE Vulkan on lavapipe). Without it the tools run the GPU
-path: Chromium headed on a private Xvfb (`agents/tools/xvfb/fetch.sh` downloads and extracts it once, no
-install) with Mesa d3d12 on the real GPU (`GALLIUM_DRIVER=d3d12`), so nothing appears on the desktop.
-That display presents every frame with a software copy (XPutImage of 2560x1440), so frame intervals there
-are bounded by the copy, not by the GPU; the GPU timer queries give the GPU's own time per frame.
-
-For native numbers, open `http://<WSL address>:8742/?bench=all` in Windows Chrome. The page runs the five
-20 s camera paths and posts `bench-gpu-<path>.json` to `agents/verify/` through the server. Add `&fixed=1`
-to stay at quality step 0, `&clean=1` to hide the panels.
-
-Debug URL parameters: `soft=0|1`, `scale=`, `t0=` (glyph threshold in px per line), `skip=labels,declutter,segs,…`,
-`clean=1` (hide panels), `glprof=1` (log blocking GL calls), `ovdir=x,y,z` (overview direction).
-
-## Performance notes
-
-- Frame pacing: at most two frames in flight (fence per frame). Without it a browser without vsync, and
-  llvmpipe at any rate, queues seconds of GPU work, and the next synchronous GL call waits for all of it.
-  That was the cause of the 1-3 s stalls during Now-mode morphs on llvmpipe.
-- Pipeline warm-up at load: every program and state combination is drawn once with no fragments, so
-  lavapipe does not build pipelines (up to seconds each) mid-flight.
-- Morphs are drawn by column runs (frustum-culled like the walls) and thin out adaptively (every 2nd, 4th,
-  8th moving line, then no red ghosts); on llvmpipe lines in flight are bars, not glyphs.
-- Map labels (lanes, walls, years, edges, pins) are decluttered on the CPU every frame (priority, then a
-  line up or down, else hidden), drawn on top, and hidden when a wall stands between them and the camera.
 
 ## Limits
 
-- The page is served over plain http at the WSL address, which is not a secure context. Because of
-  that, `crossOriginIsolated` is false even though COOP and COEP are sent. Search does not need
-  SharedArrayBuffer: the text worker keeps its own copy of the text.
-- Author mode is "last changed by" (git blame at each snapshot), not "originally written by"; the origin
-  colours answer the second. Lines blamed to an import commit (reicast 1c16bae, nulldc-360 0330292,
-  nullDC4Wii e812c58, NotDC-PS3 5a32b94, minicast 580d7b8, the 2017 nullDCe archive, the 2019 dc4ever
-  rebuild) say so in the tooltip: their authorship predates the import.
+- Author mode (git blame) is gone: the blame data was made for the 48 old snapshots and is not rebuilt for frames.
+  The colours say where a line first appeared, never who wrote it.
+- Only the nearest lane's morph is drawn line by line in Now mode; the other lanes show their arriving frame.
+- `tools/verify/check_data.mjs` still checks the old format 1 data in `data-v1/`.

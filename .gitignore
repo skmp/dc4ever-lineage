@@ -12,3 +12,8 @@ agents/tools/xvfb/bin/
 agents/tools/xvfb/xvfb.log
 agents/frames/work/
 tools/provenance/frames
+dist/
+agents/viewer2/.chrome-*
+agents/viewer2/mkatlas
+agents/viewer2/*.wav
+agents/viewer2/score/*.wav

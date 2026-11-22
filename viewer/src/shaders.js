@@ -1,37 +1,51 @@
-// shaders.js: GLSL ES 3.0 sources
+// shaders.js: GLSL ES 3.0 sources (format 2 data: walls are frames, displayed X / alpha per wall come from uWallTex)
 const HEAD = `#version 300 es
 precision highp float; precision highp int;
 precision highp usampler2D; precision highp usampler2DArray; precision highp sampler2D;
 `;
+// uWallTex: RGBA32F, texel w = (display x, alpha, solid, 0) of wall w (frame index; 1021 = static, 1022 = clock)
 const COMMON = `
-uniform mat4 uVP; uniform vec3 uCam; uniform vec3 uFwd; uniform float uFocal;
-uniform float uWX[64]; uniform float uWA[64];
+uniform mat4 uVP; uniform vec3 uCam; uniform vec3 uFwd; uniform float uFocal; uniform sampler2D uWallTex;
+vec4 wallOf(uint w) { return texelFetch(uWallTex, ivec2(int(w & 1023u), 0), 0); }
 vec3 pushK(vec3 p, float k) { return uCam + (p - uCam) * k; }
 `;
-// ---- glyph lookup shared by lines and labels ----
+// ---- glyphs: high-res SDF atlas (64x128 cells, spread 12 px), mipmapped + anisotropic; explicit gradients from the
+// continuous cell coordinate (fract() would break the implicit ones at cell borders); 4-tap supersampling when small
 const GLYPH = `
-uniform sampler2D uAtlas;
-float glyphCov(uint ch, vec2 l) {   // l: x in cells (fract = within cell), y 0..2 top->bottom
+uniform sampler2D uAtlas; uniform vec4 uAtlasM;   // cellW / W, cellH / H, spread px, cellW px
+float sdfAt(vec2 uv, vec2 gx, vec2 gy) { return textureGrad(uAtlas, uv, gx, gy).r; }
+float glyphCov(uint ch, vec2 l) {   // l: x in cells (fract = within cell), y 0..2 top -> bottom
   if (ch <= 32u) return 0.;
   float gi = float(ch - 32u);
-  vec2 uv = (vec2(mod(gi, 16.), floor(gi / 16.)) + vec2(fract(l.x), l.y * 0.5)) * vec2(48. / 768., 96. / 576.);
-  float sd = texture(uAtlas, uv).r;
-  float apx = 48. * max(length(vec2(dFdx(l.x), dFdy(l.x))), 0.5 * length(vec2(dFdx(l.y), dFdy(l.y))));
-  float w = clamp(0.55 * apx * (127. / 8.) / 255., 0.004, 0.5);
-  return smoothstep(0.5 - w, 0.5 + w, sd);
+  vec2 cell = vec2(mod(gi, 16.), floor(gi / 16.)), sc = uAtlasM.xy;
+  vec2 lx = dFdx(l), ly = dFdy(l);
+  vec2 gx = vec2(lx.x, lx.y * 0.5) * sc, gy = vec2(ly.x, ly.y * 0.5) * sc;
+  vec2 uv = (cell + vec2(fract(l.x), l.y * 0.5)) * sc;
+  // screen px per atlas px (along the more minified axis) -> width of the AA ramp in SDF units
+  float apx = uAtlasM.w * max(length(vec2(lx.x, ly.x)), 0.5 * length(vec2(lx.y, ly.y)));
+  float w = clamp(0.5 * apx * (127. / uAtlasM.z) / 255., 0.003, 0.5);
+  vec2 lo = (cell + vec2(0.02, 0.)) * sc, hi = (cell + vec2(0.98, 1.)) * sc;
+  if (apx < 3.) return smoothstep(0.5 - w, 0.5 + w, sdfAt(clamp(uv, lo, hi), gx, gy));
+  // small on screen: 4 taps at +-1/4 px (rotated grid), each with half the ramp
+  vec2 dx = (gx * 0.25 + gy * 0.125), dy = (gy * 0.25 - gx * 0.125);
+  float c = 0.;
+  c += smoothstep(0.5 - w, 0.5 + w, sdfAt(clamp(uv + dx, lo, hi), gx * 0.5, gy * 0.5));
+  c += smoothstep(0.5 - w, 0.5 + w, sdfAt(clamp(uv - dx, lo, hi), gx * 0.5, gy * 0.5));
+  c += smoothstep(0.5 - w, 0.5 + w, sdfAt(clamp(uv + dy, lo, hi), gx * 0.5, gy * 0.5));
+  c += smoothstep(0.5 - w, 0.5 + w, sdfAt(clamp(uv - dy, lo, hi), gx * 0.5, gy * 0.5));
+  return c * 0.25;
 }
 `;
 
-// ---- code lines (T0 glyphs + T1 bars in one program); MORPH variant reads 16-byte morph instances ----
+// ---- code lines: one quad per line; per pixel: SDF glyphs (near), SDF token / word shapes (middle), bar (far) ----
 export function lineVS(morph) {
   return HEAD + (morph ? '#define MORPH 1\n' : '') + COMMON + `
 uniform usampler2D uInst; uniform usampler2D uMeta; uniform usampler2D uOffs;
-uniform int uBase; uniform float uWallX; uniform float uZ0; uniform float uZ0A; uniform int uBake; uniform float uBakeW;
-uniform ivec2 uHi; uniform float uMorphT; uniform int uDenseMorph; uniform int uStride; uniform int uMorphGlyph;
-uniform usampler2D uAuth;
+uniform int uBase; uniform float uWallX; uniform float uZ0; uniform int uBake; uniform float uBakeW; uniform float uAlpha;
+uniform ivec2 uHi; uniform float uMorphT; uniform int uStride; uniform int uMorphGlyph;
 out vec2 vL; out float vDist;
 flat out uvec4 vInfo;  // id, origin, flags, keep
-flat out uint vOff; flat out float vLen; flat out vec4 vTint; flat out float vAlpha; flat out float vHi; flat out float vNoGlyph; flat out uint vAuthor;
+flat out uint vOff; flat out float vLen; flat out vec4 vTint; flat out float vAlpha; flat out float vHi; flat out float vNoGlyph; flat out float vInd;
 void main() {
 #ifdef MORPH
   int idx = uBase + gl_InstanceID * uStride;
@@ -41,12 +55,12 @@ void main() {
   ivec2 tc = ivec2(idx & 4095, idx >> 12);
 #ifdef MORPH
   uvec4 w = texelFetch(uInst, tc, 0);
-  uint kind = (w.x >> 26) & 3u, keep = w.w & 63u, flags = 0u;
-  float seed = float((w.w >> 8) & 255u) / 255.;
-  uint pos = kind == 2u ? w.z : w.y;
+  uint kind = (w.y >> 20) & 3u, keep = w.w, flags = 0u;
+  float seed = float((w.y >> 22) & 255u) / 255.;
+  uint pos = kind == 2u ? w.z : (w.y & 0xFFFFFu);
 #else
   uvec2 w = texelFetch(uInst, tc, 0).xy;
-  uint pos = w.y & 0x7FFFFFu, keep = w.y >> 23, flags = w.x >> 26;
+  uint pos = w.y & 0xFFFFFu, keep = (w.y >> 20) & 511u, flags = w.x >> 29;
 #endif
   uint id = w.x & 0xFFFFFu;
   ivec2 lc = ivec2(int(id & 2047u), int(id >> 11));
@@ -56,21 +70,19 @@ void main() {
   vec2 cr = vec2(float(gl_VertexID & 1), float(gl_VertexID >> 1));
   float xe = min(len, 124.);
   vec4 tint = vec4(0.); float alpha = 1.; float lift = 0.; float noGlyph = 0.;
-  float zCol = uZ0 + float(pos & 4095u) * 128., rowF = float((pos >> 12) & 2047u);
+  float zCol = uZ0 + float(pos & 511u) * 128., rowF = float((pos >> 9) & 2047u);
 #ifdef MORPH
   float t = uMorphT;
-  if (kind == 0u) {          // kept / moved: arc from A to B
-    vec2 a = vec2(float(w.z & 4095u), float((w.z >> 12) & 2047u)), b = vec2(float(w.y & 4095u), float((w.y >> 12) & 2047u));
+  if (kind == 0u) {          // kept: slide from A to B (rows within the file's slot)
+    vec2 a = vec2(float(w.z & 511u), float((w.z >> 9) & 2047u)), b = vec2(float(pos & 511u), float((pos >> 9) & 2047u));
     float s0 = 0.2 + 0.15 * seed; float u = clamp((t - s0) / 0.45, 0., 1.); u = u * u * (3. - 2. * u);
-    zCol = mix(uZ0A + a.x * 128., uZ0 + b.x * 128., u); rowF = mix(a.y, b.y, u);
-    lift = sin(3.14159 * u) * (a.x != b.x || uZ0A != uZ0 ? 260. : 12.);
-    if (uMorphGlyph == 0 && u > 0. && u < 1.) noGlyph = 1.;
+    zCol = mix(uZ0 + a.x * 128., uZ0 + b.x * 128., u); rowF = mix(a.y, b.y, u);
+    lift = sin(3.14159 * u) * (a.x != b.x ? 260. : 0.);
+    if (uMorphGlyph == 0 && u > 0. && u < 1. && a != b) noGlyph = 1.;
   } else if (kind == 2u) {   // removed: tint red, fade, collapse right to left
-    zCol = uZ0A + float(w.z & 4095u) * 128.;
     float r = clamp((t - 0.05 * seed) / 0.3, 0., 1.);
     tint = vec4(1., 0.25, 0.2, 0.8); alpha = 1. - smoothstep(0.55, 1., r);
     xe = mix(xe, ind + 0.5, smoothstep(0.3, 1., r));
-    if (uDenseMorph == 0) alpha = 0.;
     if (uMorphGlyph == 0) noGlyph = 1.;
   } else {                   // added: grow left to right in green, then settle
     float s = clamp((t - 0.6 - 0.1 * seed) / 0.28, 0., 1.);
@@ -84,62 +96,64 @@ void main() {
   if (uBake == 1) gl_Position = vec4((p.z - uZ0) / uBakeW * 2. - 1., p.y / 4096. * 2. - 1., 0., 1.);
   else gl_Position = uVP * vec4(p, 1.);
   vL = vec2(zl, cr.y * 2.);
-  vDist = max(dot(p - uCam, uFwd), 0.5);   // view depth: projected size is uniform across a frontal wall
-  vInfo = uvec4(id, (w.x >> 20) & 63u, flags, keep);
-  vOff = texelFetch(uOffs, lc, 0).x; vLen = len;
-  vTint = tint; vAlpha = alpha * (m.y >= 128u ? 0.75 : 1.);
+  vDist = max(dot(p - uCam, uFwd), 0.5);
+  vInfo = uvec4(id, (w.x >> 20) & 511u, flags, keep);
+  vOff = texelFetch(uOffs, lc, 0).x; vLen = len; vInd = ind;
+  vTint = tint; vAlpha = alpha * uAlpha * (m.y >= 128u ? 0.78 : 1.);
   vHi = (idx >= uHi.x && idx < uHi.y) ? 1. : 0.;
   vNoGlyph = noGlyph;
-#ifdef MORPH
-  vAuthor = 0xFFFFu;
-#else
-  vAuthor = texelFetch(uAuth, tc, 0).r;
-#endif
 }`;
 }
 export function lineFS() {
   return HEAD + COMMON + GLYPH + `
-uniform usampler2DArray uText; uniform sampler2D uPal; uniform usampler2D uPres; uniform usampler2D uMark; uniform usampler2D uPoss;
-uniform int uMode; uniform int uWall; uniform int uParent; uniform int uHideInc; uniform float uT0; uniform int uBake; uniform int uPresReady;
+uniform usampler2DArray uText; uniform sampler2D uPal; uniform usampler2D uMark; uniform usampler2D uPoss;
+uniform int uMode; uniform int uLane; uniform int uHideInc; uniform float uT0; uniform float uT1; uniform int uBake; uniform int uDom;
 in vec2 vL; in float vDist;
-flat in uvec4 vInfo; flat in uint vOff; flat in float vLen; flat in vec4 vTint; flat in float vAlpha; flat in float vHi; flat in float vNoGlyph; flat in uint vAuthor;
+flat in uvec4 vInfo; flat in uint vOff; flat in float vLen; flat in vec4 vTint; flat in float vAlpha; flat in float vHi; flat in float vNoGlyph; flat in float vInd;
 out vec4 oC;
 vec3 pal(int row, uint i) { return texelFetch(uPal, ivec2(int(i), row), 0).rgb; }
+uint charAt(float cell) {
+  if (cell < 0. || cell >= min(vLen, 124.) || vOff == 0xFFFFFFFFu) return 32u;
+  uint o = vOff + uint(cell);
+  return texelFetch(uText, ivec3(int(o & 4095u), int((o >> 12) & 4095u), int(o >> 24)), 0).r;
+}
 void main() {
   uint id = vInfo.x, origin = vInfo.y, flags = vInfo.z, keep = vInfo.w;
-  if (uHideInc == 1 && (flags & 2u) != 0u) origin = uint(uWall);
+  if (uHideInc == 1 && (flags & 1u) != 0u) origin = uint(uDom);
   vec3 c;
   if (uMode == 0) c = pal(0, origin);
   else if (uMode == 1) c = pal(1, origin);
   else if (uMode == 2) {
-    if (keep == 63u) c = pal(0, origin) * 0.4;
-    else { float poss = float(texelFetch(uPoss, ivec2(int(origin), uWall), 0).r);
+    if (keep == 511u) c = pal(0, origin) * 0.4;
+    else { float poss = float(texelFetch(uPoss, ivec2(int(origin), uLane), 0).r);
       float r = poss > 0. ? clamp(float(keep) / poss, 0., 1.) : 1.; c = pal(3, uint(r * 63. + 0.5)); }
-  } else if (uMode == 3) {
-    if (uParent < 0) c = vec3(0.3, 0.95, 0.4);
-    else if (uPresReady == 0) c = vec3(0.45);
-    else { uvec2 pr = texelFetch(uPres, ivec2(int(id & 2047u), int(id >> 11)), 0).xy;
-      uint bit = uParent < 32 ? (pr.x >> uint(uParent)) & 1u : (pr.y >> uint(uParent - 32)) & 1u;
-      c = bit == 1u ? vec3(0.42, 0.44, 0.48) : vec3(0.3, 0.95, 0.4); }
-  } else if (uMode == 4) c = vAuthor == 0xFFFFu ? vec3(0.32) : texelFetch(uPal, ivec2(int(vAuthor & 63u), 4 + int(vAuthor >> 6)), 0).rgb;
+  } else if (uMode == 3) c = (flags & 2u) != 0u ? vec3(0.3, 0.95, 0.4) : vec3(0.40, 0.42, 0.47);
   else c = pal(2, origin);
   c = mix(c, vTint.rgb, vTint.a);
-  float ppl = 2. * uFocal / max(vDist, 1e-3);
-  float fw = max(fwidth(vL.y), 1e-4);
-  float sharp = clamp((0.55 - abs(vL.y - 1.0)) / fw + 0.5, 0., 1.);
-  float bar = uBake == 1 ? 0.8 : mix(sharp, 0.55, smoothstep(0.5, 1.5, fw)) * 0.9;
-  float tb = uBake == 1 ? 0. : smoothstep(uT0 - 2., uT0, ppl);
-  float g = 0.;
-  if (vNoGlyph > 0.) tb = 0.;
-  if (tb > 0. && vOff != 0xFFFFFFFFu) {
-    float cell = floor(vL.x);
-    if (cell < min(vLen, 124.)) {
-      uint o = vOff + uint(cell);
-      uint ch = texelFetch(uText, ivec3(int(o & 4095u), int((o >> 12) & 4095u), int(o >> 24)), 0).r;
-      g = glyphCov(ch, vL);
-    }
-  } else tb = 0.;
-  float cov = mix(bar, g, tb) * (1. - smoothstep(116., 120., vL.x)) * vAlpha;
+  float ppl = 2. * uFocal / max(vDist, 1e-3);           // px per line (2 world units)
+  float fwy = max(fwidth(vL.y), 1e-4), fwx = max(fwidth(vL.x), 1e-4);
+  // bar: the line's extent (far)
+  float bar = clamp((0.6 - abs(vL.y - 1.0)) / fwy + 0.5, 0., 1.);
+  bar = uBake == 1 ? 0.8 : mix(bar, 0.6, smoothstep(0.5, 1.5, fwy)) * 0.9;
+  float tg = uBake == 1 ? 0. : smoothstep(uT0 * 0.8, uT0, ppl);       // glyph weight
+  float tt = uBake == 1 ? 0. : smoothstep(uT1 * 0.7, uT1, ppl);       // token weight
+  if (vNoGlyph > 0.) { tg = 0.; tt = 0.; }
+  float cov = bar;
+  if (tt > 0.) {
+    float cell = floor(vL.x), fx = vL.x - cell;
+    uint ch = charAt(cell);
+    float g = 0.;
+    if (tg > 0.) g = glyphCov(ch, vL);
+    // token shape: non-space cells joined into word bars (x-height band), edges anti-aliased against the neighbours
+    float on = ch > 32u ? 1. : 0., onL = charAt(cell - 1.) > 32u ? 1. : 0., onR = charAt(cell + 1.) > 32u ? 1. : 0.;
+    float ex = on;
+    if (fx < fwx) ex = mix(mix(onL, on, 0.5), on, clamp(fx / fwx, 0., 1.));
+    else if (fx > 1. - fwx) ex = mix(mix(onR, on, 0.5), on, clamp((1. - fx) / fwx, 0., 1.));
+    float band = clamp((0.42 - abs(vL.y - 1.12)) / fwy + 0.5, 0., 1.);
+    float tok = ex * band * 0.85;
+    cov = mix(mix(bar, tok, tt), g, tg);
+  }
+  cov *= (1. - smoothstep(116., 120., vL.x)) * vAlpha;
   uint mk = texelFetch(uMark, ivec2(int(id & 2047u), int(id >> 11)), 0).r;
   vec4 res = vec4(c * cov, cov);
   if (vHi > 0.) res = vec4(res.rgb * 1.25, res.a) + vec4(0.10, 0.12, 0.16, 0.2) * (1. - res.a);
@@ -149,26 +163,30 @@ void main() {
 }`;
 }
 
-// ---- rects: wall plates, T3 file quads, header bars, holes, floor strips ----
-// aR = (z0, z1, y0, y1)  aX = (x0, x1)  aC = rgba8  aW = (wall | 255, kind)
-// kind bits: 0-1 type (0 wall-plane, 1 floor, 2 wall-plane palette colour [origin in aC.r]), 2-3 push level, 4 outline
+// ---- rects: plates, T3 file quads, header bars, holes, floor strips, pins, clock ----
+// aR = (z0, z1, y0, y1)  aX = (x0, x1)  aC = rgba8  aW = (wall u16, kind u16)
+// kind bits: 0-1 type (0 wall-plane, 1 floor, 2 wall-plane palette colour [origin = aC.r | aC.g << 8, brightness aC.b]),
+//            2-3 push level, 4 outline, 5 solid-only (hidden on ghost walls), 6 ghost-only
 export const rectVS = HEAD + COMMON + `
 layout(location=0) in vec4 aR; layout(location=1) in vec2 aX; layout(location=2) in vec4 aC; layout(location=3) in uvec2 aW;
-uniform sampler2D uPal; uniform int uMode;
+uniform sampler2D uPal; uniform int uMode; uniform float uMul;
 out vec4 vC; out vec2 vUV; flat out float vOutline;
 void main() {
   vec2 cr = vec2(float(gl_VertexID & 1), float(gl_VertexID >> 1));
-  uint w = aW.x, k = aW.y & 3u, push = (aW.y >> 2) & 3u;
-  float wa = w < 64u ? uWA[w] : 1.;
+  uint k = aW.y & 3u, push = (aW.y >> 2) & 3u;
+  vec4 W = wallOf(aW.x);
+  float wa = W.y * uMul;
+  if ((aW.y & 32u) != 0u && W.z < 0.5) wa = 0.;
+  if (k == 2u) wa *= (aW.y & 128u) != 0u ? float(W.w == 3.) : (aW.y & 64u) != 0u ? float(W.w == 2.) : float(W.w == 1.);   // T3 file quads / T4 column strips: only on walls drawn that way
   if (wa <= 0.) { gl_Position = vec4(2., 2., 2., 1.); return; }
-  float bx = w < 64u ? uWX[w] : 0.;
   vec3 p;
-  if (k == 1u) p = vec3(bx + mix(aX.x, aX.y, cr.x), aR.z, mix(aR.x, aR.y, cr.y));
-  else p = vec3(bx + aX.x, mix(aR.z, aR.w, cr.y), mix(aR.x, aR.y, cr.x));
+  if (k == 1u) p = vec3(W.x + mix(aX.x, aX.y, cr.x), aR.z, mix(aR.x, aR.y, cr.y));
+  else p = vec3(W.x + aX.x, mix(aR.z, aR.w, cr.y), mix(aR.x, aR.y, cr.x));
   p = pushK(p, push == 0u ? 1. : push == 1u ? 1.0012 : push == 2u ? 1.0025 : 1.004);
   gl_Position = uVP * vec4(p, 1.);
   vec4 c = aC;
-  if (k == 2u) { int row = uMode == 1 ? 1 : uMode == 5 ? 2 : 0; c = vec4(texelFetch(uPal, ivec2(int(aC.r * 255. + 0.5), row), 0).rgb * aC.g * 2., aC.a); }
+  if (k == 2u) { int row = uMode == 1 ? 1 : uMode == 4 ? 2 : 0; int o = int(aC.r * 255. + 0.5) + 256 * int(aC.g * 255. + 0.5);
+    c = vec4(texelFetch(uPal, ivec2(o, row), 0).rgb * aC.b * 2., aC.a); }
   vC = vec4(c.rgb * c.a, c.a) * wa; vUV = cr; vOutline = float((aW.y >> 4) & 1u);
 }`;
 export const rectFS = HEAD + `
@@ -178,44 +196,42 @@ void main() {
   oC = vC;
 }`;
 
-// ---- lines: ribbons, edges, ruler ----  aP = (z, y, s, xabs)  aW = (wallA, wallB)  aC
+// ---- segments: edges, ruler lines ----  aP = (z, y, s, xabs)  aW = (wallA, wallB) u16  aC
 export const lineSegVS = HEAD + COMMON + `
 layout(location=0) in vec4 aP; layout(location=1) in uvec2 aW; layout(location=2) in vec4 aC;
-uniform vec2 uFadeFar;
 out vec4 vC;
 void main() {
-  float a = 1., x = aP.w;
-  if (aW.x < 64u) { x = mix(uWX[aW.x], uWX[min(aW.y, 63u)], aP.z) + aP.w; a = min(uWA[aW.x], uWA[min(aW.y, 63u)]); }
+  vec4 A = wallOf(aW.x), B = wallOf(aW.y);
+  float a = min(A.y, B.y), x = mix(A.x, B.x, aP.z) + aP.w;
   if (a <= 0.) { gl_Position = vec4(2., 2., 2., 1.); return; }
   gl_Position = uVP * vec4(x, aP.y, aP.x, 1.);
-  if (uFadeFar.y > 0.) a *= 1. - smoothstep(uFadeFar.x, uFadeFar.y, length(vec3(x, aP.y, aP.x) - uCam));
-  vC = vec4(aC.rgb * aC.a, aC.a) * a;
+  vC = vec4(aC.rgb * aC.a, aC.a) * min(1., a * 1.5);
 }`;
 export const lineSegFS = HEAD + `in vec4 vC; out vec4 oC; void main() { oC = vC; }`;
 
-// ---- labels: SDF text quads; aP = (z, y, dx, wall) aU advance/char  aV up/char-height  aT = (offset, len)  aK kind ----
+// ---- labels: SDF text quads; aP = (z, y, dx, wall) aU advance/char  aV up/char-height  aT = (offset, len)  aK = (billboard / min px, max px)
+// aD (per frame, decluttered labels): (alpha, line shift)
 export const labelVS = HEAD + COMMON + `
 layout(location=0) in vec4 aP; layout(location=1) in vec3 aU; layout(location=2) in vec3 aV; layout(location=3) in uvec2 aT; layout(location=4) in vec4 aC; layout(location=5) in vec2 aK; layout(location=6) in vec2 aD;
 uniform float uMinPx; uniform vec3 uRight; uniform vec3 uUp;
 out vec2 vL; flat out uint vOff; flat out float vLen; flat out vec4 vC;
 void main() {
   vec2 cr = vec2(float(gl_VertexID & 1), float(gl_VertexID >> 1));
-  uint w = uint(aP.w);
-  float wa = w < 64u ? uWA[w] : 1.;
-  vec3 o = vec3((w < 64u ? uWX[w] : 0.) + aP.z, aP.y, aP.x);
+  vec4 W = wallOf(uint(aP.w));
+  vec3 o = vec3(W.x + aP.z, aP.y, aP.x);
   vec3 U = aU, V = aV;
   if (aK.x > 0.5) { U = uRight * length(aU); V = uUp * length(aV); }
   bool wallPlane = aK.x < 0.5 && aU.x == 0. && aV.x == 0.;
   float d = length(o - uCam);
-  float px = length(V) * 2. * uFocal / max(d, 1.);   // char cell height in px
-  if (aK.x > 1.5 && px < aK.x) { float k = aK.x / px; U *= k; V *= k; px = aK.x; }   // billboard with a minimum screen size
-  if (wa <= 0. || aD.x < 0.01 || px < uMinPx || (wallPlane && uCam.x > o.x) || (aK.y > 0. && px > aK.y)) { gl_Position = vec4(2., 2., 2., 1.); return; }
+  float px = length(V) * 2. * uFocal / max(d, 1.);
+  if (aK.x > 1.5 && px < aK.x) { float k = aK.x / px; U *= k; V *= k; px = aK.x; }
+  if (W.y <= 0. || aD.x < 0.01 || px < uMinPx || (wallPlane && uCam.x > o.x) || (aK.y > 0. && px > aK.y)) { gl_Position = vec4(2., 2., 2., 1.); return; }
   float L = float(aT.y);
   vec3 p = o + U * (cr.x * L) - V * (cr.y * 2. + 2. * aD.y);
   p = pushK(p, 0.9995);
   gl_Position = uVP * vec4(p, 1.);
   vL = vec2(cr.x * L, cr.y * 2.); vOff = aT.x; vLen = L;
-  vC = vec4(aC.rgb, aC.a * wa * aD.x * smoothstep(uMinPx, uMinPx * 1.6, px));
+  vC = vec4(aC.rgb, aC.a * min(1., W.y * 1.4) * aD.x * smoothstep(uMinPx, uMinPx * 1.6, px));
 }`;
 export const labelFS = HEAD + GLYPH + `
 uniform usampler2D uLab;
@@ -229,7 +245,7 @@ void main() {
   oC = vec4(vC.rgb * g, g);
 }`;
 
-// ---- T2 impostor quads ----
+// ---- impostor quads (baked walls) ----
 export const impVS = HEAD + COMMON + `
 uniform float uWallX, uZ0, uC0, uC1, uCols;
 out vec2 vUV;
