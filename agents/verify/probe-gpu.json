@@ -4,27 +4,27 @@
  "crossOriginIsolated": false,
  "sab": "undefined",
  "load": {
-  "boot": 162.5,
-  "firstFrame": 566.7000000029802,
+  "boot": 167.09999999403954,
+  "firstFrame": 638.5,
   "walls": 48,
   "text": 12,
   "textDone": 0,
-  "allText": 2722.6000000089407,
+  "allText": 3245.7999999970198,
   "bytesBoot": 0,
-  "warmupMs": 59.099999994039536,
-  "meta": 604.6000000089407,
+  "warmupMs": 65.59999999403954,
+  "meta": 708.5999999940395,
   "blame": 48,
-  "allWalls": 1523
+  "allWalls": 1842.5
  },
- "readyMs": 2184.7999999970198,
+ "readyMs": 2641.8999999910593,
  "gpuMB": 199.50983032226543,
- "heapMB": 150.84839057922363,
- "bytes": 1947850,
+ "heapMB": 151.36796188354492,
+ "bytes": 1950388,
  "url": "http://172.22.167.46:8742/",
- "navMs": 762,
+ "navMs": 1177,
  "coop": "same-origin",
  "coep": "require-corp",
- "bytesBeforeFirstFrame": 785504,
+ "bytesBeforeFirstFrame": 714292,
  "pick": {
   "rec": {
    "projected_lines": {
@@ -40,8 +40,8 @@
   },
   "rec-mid": {
    "projected_lines": {
-    "tried": 2,
-    "ok": 2,
+    "tried": 1,
+    "ok": 1,
     "bad": []
    },
    "screen_samples": {
@@ -57,20 +57,61 @@
     "bad": []
    },
    "screen_samples": {
-    "tried": 121,
-    "ok": 121,
+    "tried": 127,
+    "ok": 127,
     "bad": []
    }
   },
   "far": {
    "projected_lines": {
     "tried": 200,
-    "ok": 200,
-    "bad": []
+    "ok": 168,
+    "bad": [
+     {
+      "want": [
+       1,
+       170,
+       137
+      ],
+      "got": null
+     },
+     {
+      "want": [
+       5,
+       182,
+       301
+      ],
+      "got": null
+     },
+     {
+      "want": [
+       7,
+       82,
+       511
+      ],
+      "got": null
+     },
+     {
+      "want": [
+       0,
+       28,
+       1690
+      ],
+      "got": null
+     },
+     {
+      "want": [
+       4,
+       244,
+       2
+      ],
+      "got": null
+     }
+    ]
    },
    "screen_samples": {
-    "tried": 23,
-    "ok": 23,
+    "tried": 26,
+    "ok": 26,
     "bad": []
    }
   }

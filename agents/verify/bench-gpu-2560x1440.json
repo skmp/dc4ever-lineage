@@ -1,5 +1,5 @@
 {
- "date": "2026-11-22T18:46:16.644Z",
+ "date": "2026-11-22T19:04:48.322Z",
  "size": [
   2560,
   1440
@@ -8,7 +8,7 @@
   "A": {
    "path": "A",
    "dur": 20,
-   "frames": 1984,
+   "frames": 1864,
    "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
    "soft": false,
    "viewport": [
@@ -21,51 +21,51 @@
     1440
    ],
    "frame_ms": {
-    "p50": 4.4,
-    "p95": 19.2,
-    "p99": 19.9,
-    "max": 38
+    "p50": 7.2,
+    "p95": 20.1,
+    "p99": 20.7,
+    "max": 38.7
    },
    "cpu_ms": {
-    "p50": 0.5,
+    "p50": 0.6,
     "p95": 0.8,
     "p99": 1
    },
    "gpu_ms": {
-    "p50": 0.17,
-    "p95": 0.42,
-    "p99": 0.57
+    "p50": 0.44,
+    "p95": 0.83,
+    "p99": 0.89
    },
-   "fps_mean": 99.1,
+   "fps_mean": 93.2,
    "draws_p95": 59,
-   "lines_p95": 114493,
+   "lines_p95": 114122,
    "lines_max": 127554,
    "quality_steps": [
     0
    ],
    "frames_over_100ms": 0,
-   "ready_ms": 2137,
+   "ready_ms": 2636,
    "slowest_frames_cpu_sections": [],
    "load": {
-    "boot": 145.29999999701977,
-    "firstFrame": 559.3999999910593,
+    "boot": 159.79999999701977,
+    "firstFrame": 613.2000000029802,
     "walls": 48,
     "text": 12,
     "textDone": 0,
-    "allText": 2691.3999999910593,
+    "allText": 3250.5,
     "bytesBoot": 0,
-    "warmupMs": 56.70000000298023,
-    "meta": 595,
+    "warmupMs": 60.6000000089407,
+    "meta": 659.4000000059605,
     "blame": 48,
-    "allWalls": 1488.5999999940395
+    "allWalls": 1757.5
    },
-   "gpu_bytes_est": 209201219.8399998,
-   "js_heap_mb": 147
+   "gpu_bytes_est": 209201219.83999977,
+   "js_heap_mb": 150
   },
   "B": {
    "path": "B",
    "dur": 20,
-   "frames": 1014,
+   "frames": 1834,
    "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
    "soft": false,
    "viewport": [
@@ -78,103 +78,51 @@
     1440
    ],
    "frame_ms": {
-    "p50": 3.9,
+    "p50": 6.6,
     "p95": 20.4,
-    "p99": 368.4,
-    "max": 588.5
+    "p99": 20.9,
+    "max": 38.2
    },
    "cpu_ms": {
     "p50": 0.6,
-    "p95": 1.2,
-    "p99": 18
+    "p95": 0.9,
+    "p99": 1.1
    },
    "gpu_ms": {
-    "p50": 0.08,
-    "p95": 0.26,
-    "p99": 0.29
+    "p50": 0.21,
+    "p95": 0.24,
+    "p99": 0.24
    },
-   "fps_mean": 50.7,
-   "draws_p95": 54,
+   "fps_mean": 91.7,
+   "draws_p95": 53,
    "lines_p95": 0,
    "lines_max": 0,
    "quality_steps": [
-    0,
-    1
+    0
    ],
-   "frames_over_100ms": 35,
-   "ready_ms": 13049,
-   "slowest_frames_cpu_sections": [
-    [
-     68.5,
-     [
-      [
-       "lod0",
-       5.1
-      ],
-      [
-       "lod",
-       3.4
-      ],
-      [
-       "plates+deco",
-       9.3
-      ],
-      [
-       "segs",
-       17.3
-      ],
-      [
-       "labels",
-       29.6
-      ],
-      [
-       "fence",
-       2.8
-      ]
-     ]
-    ],
-    [
-     41.7,
-     [
-      [
-       "lod0",
-       8.4
-      ],
-      [
-       "lod",
-       4.1
-      ],
-      [
-       "segs",
-       5.6
-      ],
-      [
-       "labels",
-       19.8
-      ]
-     ]
-    ]
-   ],
+   "frames_over_100ms": 0,
+   "ready_ms": 2634,
+   "slowest_frames_cpu_sections": [],
    "load": {
-    "boot": 132.6000000089407,
-    "firstFrame": 440.30000001192093,
+    "boot": 148.09999999403954,
+    "firstFrame": 482.40000000596046,
     "walls": 48,
     "text": 12,
     "textDone": 0,
-    "allText": 13500,
+    "allText": 3038,
     "bytesBoot": 0,
-    "warmupMs": 49.29999999701977,
-    "meta": 472.1000000089407,
+    "warmupMs": 58.5,
+    "meta": 512.5999999940395,
     "blame": 48,
-    "allWalls": 12341.800000011921
+    "allWalls": 1702.7000000029802
    },
    "gpu_bytes_est": 209201219.8399998,
-   "js_heap_mb": 281
+   "js_heap_mb": 154
   },
   "C": {
    "path": "C",
    "dur": 20,
-   "frames": 2111,
+   "frames": 1844,
    "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
    "soft": false,
    "viewport": [
@@ -187,10 +135,10 @@
     1440
    ],
    "frame_ms": {
-    "p50": 2.4,
-    "p95": 19.3,
-    "p99": 19.9,
-    "max": 22.8
+    "p50": 7.1,
+    "p95": 20.2,
+    "p99": 20.8,
+    "max": 39.8
    },
    "cpu_ms": {
     "p50": 0.5,
@@ -198,40 +146,40 @@
     "p99": 1
    },
    "gpu_ms": {
-    "p50": 0.09,
-    "p95": 0.25,
-    "p99": 0.37
+    "p50": 0.23,
+    "p95": 0.59,
+    "p99": 0.8
    },
-   "fps_mean": 105.5,
+   "fps_mean": 92.1,
    "draws_p95": 57,
-   "lines_p95": 58734,
-   "lines_max": 129147,
+   "lines_p95": 60541,
+   "lines_max": 131790,
    "quality_steps": [
     0
    ],
    "frames_over_100ms": 0,
-   "ready_ms": 13316,
+   "ready_ms": 2543,
    "slowest_frames_cpu_sections": [],
    "load": {
-    "boot": 139.29999999701977,
-    "firstFrame": 462.20000000298023,
+    "boot": 159,
+    "firstFrame": 490.59999999403954,
     "walls": 48,
     "text": 12,
     "textDone": 0,
-    "allText": 13706.59999999404,
+    "allText": 3033,
     "bytesBoot": 0,
-    "warmupMs": 48.70000000298023,
-    "meta": 504.59999999403954,
+    "warmupMs": 53.5,
+    "meta": 521.6999999880791,
     "blame": 48,
-    "allWalls": 12329.90000000596
+    "allWalls": 1661
    },
    "gpu_bytes_est": 209201219.8399998,
-   "js_heap_mb": 118
+   "js_heap_mb": 140
   },
   "D": {
    "path": "D",
    "dur": 20,
-   "frames": 961,
+   "frames": 1873,
    "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
    "soft": false,
    "viewport": [
@@ -244,52 +192,51 @@
     1440
    ],
    "frame_ms": {
-    "p50": 18,
-    "p95": 20.2,
-    "p99": 416.8,
-    "max": 1454.8
+    "p50": 4.2,
+    "p95": 20,
+    "p99": 20.5,
+    "max": 37.6
    },
    "cpu_ms": {
     "p50": 0.5,
-    "p95": 1.1,
-    "p99": 15.5
+    "p95": 0.7,
+    "p99": 0.9
    },
    "gpu_ms": {
-    "p50": 0.16,
-    "p95": 0.38,
-    "p99": 0.54
+    "p50": 0.34,
+    "p95": 0.4,
+    "p99": 0.44
    },
-   "fps_mean": 48,
+   "fps_mean": 93.7,
    "draws_p95": 12,
-   "lines_p95": 8714,
+   "lines_p95": 8694,
    "lines_max": 9391,
    "quality_steps": [
-    0,
-    1
+    0
    ],
-   "frames_over_100ms": 20,
-   "ready_ms": 13013,
+   "frames_over_100ms": 0,
+   "ready_ms": 2842,
    "slowest_frames_cpu_sections": [],
    "load": {
-    "boot": 149.79999999701977,
-    "firstFrame": 477.29999999701977,
+    "boot": 173.09999999403954,
+    "firstFrame": 563.5999999940395,
     "walls": 48,
     "text": 12,
     "textDone": 0,
-    "allText": 13475.29999999702,
+    "allText": 3410.5999999940395,
     "bytesBoot": 0,
-    "warmupMs": 51.5,
-    "meta": 528,
+    "warmupMs": 58.79999999701977,
+    "meta": 597.2000000029802,
     "blame": 48,
-    "allWalls": 12365.79999999702
+    "allWalls": 1997.7999999970198
    },
    "gpu_bytes_est": 209201219.8399998,
-   "js_heap_mb": 114
+   "js_heap_mb": 149
   },
   "E": {
    "path": "E",
    "dur": 20,
-   "frames": 311,
+   "frames": 1867,
    "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
    "soft": false,
    "viewport": [
@@ -302,269 +249,46 @@
     1440
    ],
    "frame_ms": {
-    "p50": 18.4,
-    "p95": 423.2,
-    "p99": 737.4,
-    "max": 1791.8
+    "p50": 6.3,
+    "p95": 20.1,
+    "p99": 20.7,
+    "max": 37.7
    },
    "cpu_ms": {
-    "p50": 0.6,
-    "p95": 25.3,
-    "p99": 43.9
+    "p50": 0.5,
+    "p95": 0.7,
+    "p99": 0.9
    },
    "gpu_ms": {
-    "p50": 0.11,
-    "p95": 0.37,
-    "p99": 30.1
+    "p50": 0.24,
+    "p95": 1.1,
+    "p99": 1.85
    },
-   "fps_mean": 15.5,
-   "draws_p95": 13,
-   "lines_p95": 0,
-   "lines_max": 0,
+   "fps_mean": 93.4,
+   "draws_p95": 18,
+   "lines_p95": 24549,
+   "lines_max": 235887,
    "quality_steps": [
     0
    ],
-   "frames_over_100ms": 37,
-   "ready_ms": 2513,
-   "slowest_frames_cpu_sections": [
-    [
-     76.9,
-     [
-      [
-       "lod0",
-       19.1
-      ],
-      [
-       "plates+deco",
-       7.6
-      ],
-      [
-       "segs",
-       2.4
-      ],
-      [
-       "labels",
-       36.1
-      ],
-      [
-       "fence",
-       7.6
-      ]
-     ]
-    ],
-    [
-     70,
-     [
-      [
-       "lod0",
-       8.8
-      ],
-      [
-       "plates+deco",
-       3.9
-      ],
-      [
-       "labels",
-       50.7
-      ],
-      [
-       "fence",
-       2.3
-      ]
-     ]
-    ],
-    [
-     52,
-     [
-      [
-       "lod0",
-       15
-      ],
-      [
-       "plates+deco",
-       14.7
-      ],
-      [
-       "imp",
-       5.2
-      ],
-      [
-       "segs",
-       3.9
-      ],
-      [
-       "labels",
-       9.9
-      ]
-     ]
-    ],
-    [
-     43.9,
-     [
-      [
-       "lod0",
-       17.5
-      ],
-      [
-       "plates+deco",
-       4.3
-      ],
-      [
-       "imp",
-       3
-      ],
-      [
-       "labels",
-       12.1
-      ],
-      [
-       "fence",
-       2.9
-      ]
-     ]
-    ],
-    [
-     43.5,
-     [
-      [
-       "lod0",
-       2.1
-      ],
-      [
-       "plates+deco",
-       2.1
-      ],
-      [
-       "labels",
-       32.3
-      ]
-     ]
-    ],
-    [
-     38.1,
-     [
-      [
-       "lod0",
-       4.7
-      ],
-      [
-       "imp",
-       9.8
-      ],
-      [
-       "labels",
-       17.2
-      ],
-      [
-       "fence",
-       2.3
-      ]
-     ]
-    ],
-    [
-     33.5,
-     [
-      [
-       "lod0",
-       6.1
-      ],
-      [
-       "plates+deco",
-       7.8
-      ],
-      [
-       "labels",
-       12.4
-      ],
-      [
-       "fence",
-       2.5
-      ]
-     ]
-    ],
-    [
-     31.6,
-     [
-      [
-       "lod0",
-       3.2
-      ],
-      [
-       "plates+deco",
-       2.5
-      ],
-      [
-       "labels",
-       22.5
-      ]
-     ]
-    ],
-    [
-     31.1,
-     [
-      [
-       "lod0",
-       7.5
-      ],
-      [
-       "plates+deco",
-       4.2
-      ],
-      [
-       "labels",
-       12.2
-      ],
-      [
-       "fence",
-       3
-      ]
-     ]
-    ],
-    [
-     30.5,
-     [
-      [
-       "lod0",
-       3.3
-      ],
-      [
-       "plates+deco",
-       6
-      ],
-      [
-       "imp",
-       2.3
-      ],
-      [
-       "segs",
-       2.1
-      ],
-      [
-       "labels",
-       10.9
-      ],
-      [
-       "fence",
-       3.2
-      ]
-     ]
-    ]
-   ],
+   "frames_over_100ms": 0,
+   "ready_ms": 2628,
+   "slowest_frames_cpu_sections": [],
    "load": {
-    "boot": 125.09999999403954,
-    "firstFrame": 433.5,
+    "boot": 159.90000000596046,
+    "firstFrame": 516,
     "walls": 48,
     "text": 12,
     "textDone": 0,
-    "allText": 2930.4000000059605,
+    "allText": 3160.1000000089407,
     "bytesBoot": 0,
-    "warmupMs": 52.30000001192093,
-    "meta": 460.20000000298023,
+    "warmupMs": 60.8999999910593,
+    "meta": 550.9000000059605,
     "blame": 48,
-    "allWalls": 1512
+    "allWalls": 1764.2999999970198
    },
    "gpu_bytes_est": 209201219.8399998,
-   "js_heap_mb": 155
+   "js_heap_mb": 149
   }
  },
  "logs": []
