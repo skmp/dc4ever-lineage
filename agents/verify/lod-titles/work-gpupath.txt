@@ -1,0 +1,10 @@
+8751 A {'frames': 20, 'bakes': 11, 'inst_mean': 6892, 'inst_max': 34460, 'draws_mean': 117.1, 'impRuns_mean': 1.3, 'walls': 55, 'gpu_ms': {'p50': 184.26, 'p95': 999.81, 'p99': 999.81}}
+8751 B {'frames': 9, 'bakes': 48, 'inst_mean': 0, 'inst_max': 0, 'draws_mean': 95.1, 'impRuns_mean': 35.1, 'walls': 55, 'gpu_ms': None}
+8751 C {'frames': 45, 'bakes': 73, 'inst_mean': 338, 'inst_max': 15231, 'draws_mean': 167, 'impRuns_mean': 44.1, 'walls': 56, 'gpu_ms': {'p50': 290.62, 'p95': 1748.18, 'p99': 1748.18}}
+8751 D {'frames': 648, 'bakes': 0, 'inst_mean': 0, 'inst_max': 0, 'draws_mean': 9, 'impRuns_mean': 0, 'walls': 56, 'gpu_ms': {'p50': 20.94, 'p95': 40.3, 'p99': 379.57}}
+8751 E {'frames': 54, 'bakes': 1, 'inst_mean': 0, 'inst_max': 0, 'draws_mean': 41.8, 'impRuns_mean': 5, 'walls': 56, 'gpu_ms': {'p50': 36.52, 'p95': 117.97, 'p99': 503.04}}
+8752 A {'frames': 21, 'bakes': 10, 'inst_mean': 6174, 'inst_max': 21800, 'draws_mean': 43.2, 'impRuns_mean': 1.1, 'walls': 17, 'gpu_ms': {'p50': 125.37, 'p95': 1678.89, 'p99': 1678.89}}
+8752 B {'frames': 72, 'bakes': 7, 'inst_mean': 0, 'inst_max': 0, 'draws_mean': 100.6, 'impRuns_mean': 11.4, 'walls': 18, 'gpu_ms': {'p50': 42.53, 'p95': 158.85, 'p99': 297.45}}
+8752 C {'frames': 77, 'bakes': 10, 'inst_mean': 147, 'inst_max': 11346, 'draws_mean': 34.2, 'impRuns_mean': 8, 'walls': 38, 'gpu_ms': {'p50': 21.4, 'p95': 100.86, 'p99': 973.27}}
+8752 D {'frames': 70, 'bakes': 1, 'inst_mean': 3463, 'inst_max': 6142, 'draws_mean': 7.9, 'impRuns_mean': 0, 'walls': 39, 'gpu_ms': {'p50': 43.08, 'p95': 89.34, 'p99': 804.54}}
+8752 E {'frames': 61, 'bakes': 4, 'inst_mean': 0, 'inst_max': 0, 'draws_mean': 28.1, 'impRuns_mean': 2.2, 'walls': 39, 'gpu_ms': {'p50': 24.29, 'p95': 609.66, 'p99': 1128.08}}

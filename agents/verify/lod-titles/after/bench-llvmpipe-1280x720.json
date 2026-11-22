@@ -1,0 +1,819 @@
+{
+ "date": "2026-11-22T21:56:21.056Z",
+ "size": [
+  1280,
+  720
+ ],
+ "paths": {
+  "A": {
+   "path": "A",
+   "name": "file street",
+   "dur": 15,
+   "frames": 44,
+   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)",
+   "soft": true,
+   "viewport": [
+    1280,
+    720
+   ],
+   "dpr": 1,
+   "canvas": [
+    422,
+    238
+   ],
+   "fps_mean": 3,
+   "fps_1pct_low": 0.3,
+   "frame_ms": {
+    "p50": 128.4,
+    "p95": 1240.3,
+    "p99": 2974.7,
+    "max": 2974.7
+   },
+   "cpu_ms": {
+    "p50": 11.5,
+    "p95": 290.5,
+    "p99": 489.2
+   },
+   "gpu_ms": {
+    "p50": 82.88,
+    "p95": 791.56,
+    "p99": 1003.54
+   },
+   "draws_p95": 30,
+   "lines_p95": 0,
+   "quality_steps": [
+    2,
+    3,
+    4
+   ],
+   "frames_over_100ms": 25,
+   "ready_ms": 13318,
+   "skipped_rafs": 621,
+   "slowest_frames_cpu_sections": [
+    [
+     489.2,
+     [
+      [
+       "pre",
+       22.1
+      ],
+      [
+       "lod",
+       5.6
+      ],
+      [
+       "bake",
+       421
+      ],
+      [
+       "plates",
+       7.8
+      ],
+      [
+       "imp",
+       3.2
+      ],
+      [
+       "segs",
+       4.3
+      ],
+      [
+       "labels",
+       23.3
+      ]
+     ]
+    ],
+    [
+     325,
+     [
+      [
+       "pre",
+       310.4
+      ],
+      [
+       "bake",
+       10.1
+      ],
+      [
+       "labels",
+       3.3
+      ]
+     ]
+    ],
+    [
+     290.5,
+     [
+      [
+       "pre",
+       10.6
+      ],
+      [
+       "lod",
+       17
+      ],
+      [
+       "bake",
+       208.6
+      ],
+      [
+       "plates",
+       14.8
+      ],
+      [
+       "labels",
+       36.1
+      ]
+     ]
+    ],
+    [
+     257.2,
+     [
+      [
+       "pre",
+       7.4
+      ],
+      [
+       "lod",
+       9
+      ],
+      [
+       "bake",
+       200.5
+      ],
+      [
+       "plates",
+       12.7
+      ],
+      [
+       "labels",
+       21.2
+      ]
+     ]
+    ],
+    [
+     182.5,
+     [
+      [
+       "pre",
+       35.1
+      ],
+      [
+       "lod",
+       5
+      ],
+      [
+       "bake",
+       4.1
+      ],
+      [
+       "plates",
+       37.2
+      ],
+      [
+       "labels",
+       85.6
+      ]
+     ]
+    ],
+    [
+     157.4,
+     [
+      [
+       "pre",
+       144.3
+      ],
+      [
+       "bake",
+       5.4
+      ],
+      [
+       "labels",
+       4.3
+      ]
+     ]
+    ],
+    [
+     128.6,
+     [
+      [
+       "pre",
+       16.1
+      ],
+      [
+       "lod",
+       12.7
+      ],
+      [
+       "bake",
+       3.7
+      ],
+      [
+       "plates",
+       18.5
+      ],
+      [
+       "labels",
+       72.1
+      ]
+     ]
+    ],
+    [
+     84.6,
+     [
+      [
+       "pre",
+       76.5
+      ],
+      [
+       "bake",
+       3.6
+      ],
+      [
+       "labels",
+       3.3
+      ]
+     ]
+    ],
+    [
+     58.8,
+     [
+      [
+       "pre",
+       17.2
+      ],
+      [
+       "lod",
+       13.6
+      ],
+      [
+       "plates",
+       2.4
+      ],
+      [
+       "segs",
+       3.5
+      ],
+      [
+       "labels",
+       18.5
+      ]
+     ]
+    ],
+    [
+     42.3,
+     [
+      [
+       "lod",
+       2.7
+      ],
+      [
+       "bake",
+       20.8
+      ],
+      [
+       "plates",
+       2.2
+      ],
+      [
+       "labels",
+       14.2
+      ]
+     ]
+    ],
+    [
+     32,
+     [
+      [
+       "lod",
+       2.6
+      ],
+      [
+       "bake",
+       22.3
+      ],
+      [
+       "labels",
+       4.2
+      ]
+     ]
+    ],
+    [
+     31.5,
+     [
+      [
+       "lod",
+       2.4
+      ],
+      [
+       "bake",
+       18.8
+      ],
+      [
+       "labels",
+       6.9
+      ]
+     ]
+    ]
+   ]
+  },
+  "B": {
+   "path": "B",
+   "name": "orbit",
+   "dur": 15,
+   "frames": 69,
+   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)",
+   "soft": true,
+   "viewport": [
+    1280,
+    720
+   ],
+   "dpr": 1,
+   "canvas": [
+    422,
+    238
+   ],
+   "fps_mean": 5.7,
+   "fps_1pct_low": 0.3,
+   "frame_ms": {
+    "p50": 73.5,
+    "p95": 147.9,
+    "p99": 3325.4,
+    "max": 3325.4
+   },
+   "cpu_ms": {
+    "p50": 5.8,
+    "p95": 39.4,
+    "p99": 133.3
+   },
+   "gpu_ms": {
+    "p50": 37.5,
+    "p95": 103.88,
+    "p99": 1833.56
+   },
+   "draws_p95": 205,
+   "lines_p95": 0,
+   "quality_steps": [
+    4
+   ],
+   "frames_over_100ms": 14,
+   "ready_ms": 2907,
+   "skipped_rafs": 680,
+   "slowest_frames_cpu_sections": [
+    [
+     133.3,
+     [
+      [
+       "pre",
+       9.7
+      ],
+      [
+       "lod",
+       8.5
+      ],
+      [
+       "plates",
+       8.5
+      ],
+      [
+       "labels",
+       104.3
+      ]
+     ]
+    ],
+    [
+     77.5,
+     [
+      [
+       "pre",
+       11.8
+      ],
+      [
+       "lod",
+       12.8
+      ],
+      [
+       "plates",
+       34.3
+      ],
+      [
+       "labels",
+       14.9
+      ]
+     ]
+    ],
+    [
+     41.4,
+     [
+      [
+       "pre",
+       6.2
+      ],
+      [
+       "lod",
+       3.5
+      ],
+      [
+       "plates",
+       20.9
+      ],
+      [
+       "labels",
+       8.2
+      ]
+     ]
+    ],
+    [
+     39.4,
+     [
+      [
+       "labels",
+       37
+      ]
+     ]
+    ]
+   ]
+  },
+  "C": {
+   "path": "C",
+   "name": "lane flights",
+   "dur": 15,
+   "frames": 146,
+   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)",
+   "soft": true,
+   "viewport": [
+    1280,
+    720
+   ],
+   "dpr": 1,
+   "canvas": [
+    422,
+    238
+   ],
+   "fps_mean": 10.5,
+   "fps_1pct_low": 2.8,
+   "frame_ms": {
+    "p50": 78.9,
+    "p95": 226.6,
+    "p99": 341,
+    "max": 371.9
+   },
+   "cpu_ms": {
+    "p50": 5.8,
+    "p95": 21,
+    "p99": 62.3
+   },
+   "gpu_ms": {
+    "p50": 37.67,
+    "p95": 196.56,
+    "p99": 314.22
+   },
+   "draws_p95": 148,
+   "lines_p95": 0,
+   "quality_steps": [
+    2,
+    3,
+    4
+   ],
+   "frames_over_100ms": 44,
+   "ready_ms": 2854,
+   "skipped_rafs": 761,
+   "slowest_frames_cpu_sections": [
+    [
+     87.3,
+     [
+      [
+       "pre",
+       84.2
+      ]
+     ]
+    ],
+    [
+     62.6,
+     [
+      [
+       "pre",
+       20.2
+      ],
+      [
+       "lod",
+       9.2
+      ],
+      [
+       "bake",
+       9.3
+      ],
+      [
+       "plates",
+       3.2
+      ],
+      [
+       "labels",
+       15.3
+      ]
+     ]
+    ],
+    [
+     62.3,
+     [
+      [
+       "pre",
+       55
+      ],
+      [
+       "labels",
+       5.2
+      ]
+     ]
+    ],
+    [
+     33.1,
+     [
+      [
+       "bake",
+       25.6
+      ],
+      [
+       "labels",
+       2.6
+      ]
+     ]
+    ],
+    [
+     30.8,
+     [
+      [
+       "bake",
+       22.8
+      ],
+      [
+       "labels",
+       3.5
+      ]
+     ]
+    ]
+   ]
+  },
+  "D": {
+   "path": "D",
+   "name": "close reading",
+   "dur": 15,
+   "frames": 161,
+   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)",
+   "soft": true,
+   "viewport": [
+    1280,
+    720
+   ],
+   "dpr": 1,
+   "canvas": [
+    422,
+    238
+   ],
+   "fps_mean": 11,
+   "fps_1pct_low": 0.8,
+   "frame_ms": {
+    "p50": 73.9,
+    "p95": 116.8,
+    "p99": 762.2,
+    "max": 1722.7
+   },
+   "cpu_ms": {
+    "p50": 2.2,
+    "p95": 5.6,
+    "p99": 67
+   },
+   "gpu_ms": {
+    "p50": 39.22,
+    "p95": 87.09,
+    "p99": 303.79
+   },
+   "draws_p95": 9,
+   "lines_p95": 5628,
+   "quality_steps": [
+    2,
+    3,
+    4
+   ],
+   "frames_over_100ms": 30,
+   "ready_ms": 2279,
+   "skipped_rafs": 721,
+   "slowest_frames_cpu_sections": [
+    [
+     107.2,
+     [
+      [
+       "pre",
+       103.2
+      ],
+      [
+       "labels",
+       2.5
+      ]
+     ]
+    ],
+    [
+     73.8,
+     [
+      [
+       "pre",
+       70.5
+      ]
+     ]
+    ],
+    [
+     67,
+     [
+      [
+       "pre",
+       65.7
+      ]
+     ]
+    ],
+    [
+     55.6,
+     [
+      [
+       "pre",
+       12.5
+      ],
+      [
+       "lod",
+       8.1
+      ],
+      [
+       "plates",
+       9.4
+      ],
+      [
+       "labels",
+       16.6
+      ]
+     ]
+    ],
+    [
+     45.6,
+     [
+      [
+       "pre",
+       8.7
+      ],
+      [
+       "lod",
+       4.6
+      ],
+      [
+       "plates",
+       6.9
+      ],
+      [
+       "segs",
+       6.1
+      ],
+      [
+       "labels",
+       12.7
+      ]
+     ]
+    ],
+    [
+     41.4,
+     [
+      [
+       "pre",
+       11.8
+      ],
+      [
+       "lod",
+       5.3
+      ],
+      [
+       "plates",
+       2.1
+      ],
+      [
+       "imp",
+       2.8
+      ],
+      [
+       "labels",
+       12.9
+      ]
+     ]
+    ]
+   ]
+  },
+  "E": {
+   "path": "E",
+   "name": "live playback",
+   "dur": 15,
+   "frames": 52,
+   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)",
+   "soft": true,
+   "viewport": [
+    1280,
+    720
+   ],
+   "dpr": 1,
+   "canvas": [
+    422,
+    238
+   ],
+   "fps_mean": 3.7,
+   "fps_1pct_low": 0.2,
+   "frame_ms": {
+    "p50": 139.8,
+    "p95": 753.5,
+    "p99": 5997.3,
+    "max": 5997.3
+   },
+   "cpu_ms": {
+    "p50": 7.2,
+    "p95": 164,
+    "p99": 449
+   },
+   "gpu_ms": {
+    "p50": 26.54,
+    "p95": 481.59,
+    "p99": 614.6
+   },
+   "draws_p95": 37,
+   "lines_p95": 0,
+   "quality_steps": [
+    4
+   ],
+   "frames_over_100ms": 30,
+   "ready_ms": 13716,
+   "skipped_rafs": 545,
+   "slowest_frames_cpu_sections": [
+    [
+     449,
+     [
+      [
+       "pre",
+       232.5
+      ],
+      [
+       "lod",
+       26.3
+      ],
+      [
+       "bake",
+       4.5
+      ],
+      [
+       "plates",
+       34.8
+      ],
+      [
+       "labels",
+       128.3
+      ]
+     ]
+    ],
+    [
+     294.6,
+     [
+      [
+       "pre",
+       138.9
+      ],
+      [
+       "lod",
+       8.5
+      ],
+      [
+       "plates",
+       16
+      ],
+      [
+       "labels",
+       115.3
+      ]
+     ]
+    ],
+    [
+     164,
+     [
+      [
+       "pre",
+       113.2
+      ],
+      [
+       "lod",
+       14.6
+      ],
+      [
+       "plates",
+       6.2
+      ],
+      [
+       "labels",
+       14.1
+      ]
+     ]
+    ]
+   ]
+  }
+ },
+ "logs": []
+}

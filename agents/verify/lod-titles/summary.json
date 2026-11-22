@@ -1,0 +1,393 @@
+{
+ "note": "llvmpipe (headless Chromium, 1280x720 window, SOFT path = adaptive quality, canvas 0.5) on a box loaded by an unrelated 16-process job (load average 20-35): absolute fps are noisy; before = 62178a1 static build (port 8752), after = this commit. Interleaved runs.",
+ "runs": {
+  "before": {
+   "A": {
+    "fps_mean": 2,
+    "frame_p50": 185.8,
+    "frame_p95": 2440.3,
+    "cpu_p50": 5.4,
+    "steps": [
+     2,
+     3
+    ]
+   },
+   "B": {
+    "fps_mean": 5,
+    "frame_p50": 61.8,
+    "frame_p95": 153.2,
+    "cpu_p50": 2.6,
+    "steps": [
+     3
+    ]
+   },
+   "C": {
+    "fps_mean": 18.8,
+    "frame_p50": 40.7,
+    "frame_p95": 127.1,
+    "cpu_p50": 1.1,
+    "steps": [
+     3,
+     2,
+     1
+    ]
+   },
+   "D": {
+    "fps_mean": 49.1,
+    "frame_p50": 19.1,
+    "frame_p95": 22.1,
+    "cpu_p50": 0.5,
+    "steps": [
+     3,
+     2,
+     1,
+     0
+    ]
+   },
+   "E": {
+    "fps_mean": 49.2,
+    "frame_p50": 19,
+    "frame_p95": 39.3,
+    "cpu_p50": 0.5,
+    "steps": [
+     3,
+     2,
+     1,
+     0
+    ]
+   }
+  },
+  "before2": {
+   "A": {
+    "fps_mean": 3.1,
+    "frame_p50": 94.8,
+    "frame_p95": 997.9,
+    "cpu_p50": 2.5,
+    "steps": [
+     2,
+     3
+    ]
+   },
+   "B": {
+    "fps_mean": 11.2,
+    "frame_p50": 75.4,
+    "frame_p95": 210.2,
+    "cpu_p50": 3,
+    "steps": [
+     3
+    ]
+   },
+   "C": {
+    "fps_mean": 7.2,
+    "frame_p50": 64.2,
+    "frame_p95": 579.3,
+    "cpu_p50": 2.7,
+    "steps": [
+     2,
+     3
+    ]
+   },
+   "D": {
+    "fps_mean": 13.7,
+    "frame_p50": 63.8,
+    "frame_p95": 114.2,
+    "cpu_p50": 2,
+    "steps": [
+     2,
+     3
+    ]
+   },
+   "E": {
+    "fps_mean": 8.7,
+    "frame_p50": 91.6,
+    "frame_p95": 285.4,
+    "cpu_p50": 2.8,
+    "steps": [
+     3
+    ]
+   }
+  },
+  "before3": {
+   "A": {
+    "fps_mean": 1.5,
+    "frame_p50": 183.5,
+    "frame_p95": 3713.7,
+    "cpu_p50": 20.7,
+    "steps": [
+     2,
+     3
+    ]
+   },
+   "B": {
+    "fps_mean": 12.1,
+    "frame_p50": 68.9,
+    "frame_p95": 187.7,
+    "cpu_p50": 2.7,
+    "steps": [
+     3
+    ]
+   },
+   "C": {
+    "fps_mean": 1.6,
+    "frame_p50": 157.9,
+    "frame_p95": 2396.2,
+    "cpu_p50": 8.6,
+    "steps": [
+     3
+    ]
+   },
+   "D": {
+    "fps_mean": 17.4,
+    "frame_p50": 56.2,
+    "frame_p95": 102.8,
+    "cpu_p50": 1.3,
+    "steps": [
+     2,
+     3
+    ]
+   },
+   "E": {
+    "fps_mean": 6.8,
+    "frame_p50": 149.1,
+    "frame_p95": 291.7,
+    "cpu_p50": 2.9,
+    "steps": [
+     3
+    ]
+   }
+  },
+  "before4": {
+   "A": {
+    "fps_mean": 4.8,
+    "frame_p50": 73.3,
+    "frame_p95": 1027.2,
+    "cpu_p50": 3.9,
+    "steps": [
+     2,
+     3
+    ]
+   },
+   "B": {
+    "fps_mean": 5.6,
+    "frame_p50": 53.2,
+    "frame_p95": 730.8,
+    "cpu_p50": 2.9,
+    "steps": [
+     3
+    ]
+   },
+   "C": {
+    "fps_mean": 5.2,
+    "frame_p50": 76.5,
+    "frame_p95": 1239.2,
+    "cpu_p50": 4.5,
+    "steps": [
+     3
+    ]
+   },
+   "D": {
+    "fps_mean": 15.6,
+    "frame_p50": 60.8,
+    "frame_p95": 113.8,
+    "cpu_p50": 1.3,
+    "steps": [
+     2,
+     3
+    ]
+   },
+   "E": {
+    "fps_mean": 2.7,
+    "frame_p50": 111.6,
+    "frame_p95": 3077.9,
+    "cpu_p50": 5.1,
+    "steps": [
+     3,
+     2
+    ]
+   }
+  },
+  "after": {
+   "A": {
+    "fps_mean": 3,
+    "frame_p50": 128.4,
+    "frame_p95": 1240.3,
+    "cpu_p50": 11.5,
+    "steps": [
+     2,
+     3,
+     4
+    ]
+   },
+   "B": {
+    "fps_mean": 5.7,
+    "frame_p50": 73.5,
+    "frame_p95": 147.9,
+    "cpu_p50": 5.8,
+    "steps": [
+     4
+    ]
+   },
+   "C": {
+    "fps_mean": 10.5,
+    "frame_p50": 78.9,
+    "frame_p95": 226.6,
+    "cpu_p50": 5.8,
+    "steps": [
+     2,
+     3,
+     4
+    ]
+   },
+   "D": {
+    "fps_mean": 11,
+    "frame_p50": 73.9,
+    "frame_p95": 116.8,
+    "cpu_p50": 2.2,
+    "steps": [
+     2,
+     3,
+     4
+    ]
+   },
+   "E": {
+    "fps_mean": 3.7,
+    "frame_p50": 139.8,
+    "frame_p95": 753.5,
+    "cpu_p50": 7.2,
+    "steps": [
+     4
+    ]
+   },
+   "note": "before the title / card CPU fixes"
+  },
+  "after2": {
+   "A": {
+    "fps_mean": 5.9,
+    "frame_p50": 96.9,
+    "frame_p95": 604.7,
+    "cpu_p50": 6.6,
+    "steps": [
+     2,
+     3,
+     4
+    ]
+   },
+   "B": {
+    "fps_mean": 11.2,
+    "frame_p50": 67.9,
+    "frame_p95": 225.8,
+    "cpu_p50": 3.9,
+    "steps": [
+     4
+    ]
+   },
+   "C": {
+    "fps_mean": 7.8,
+    "frame_p50": 74,
+    "frame_p95": 378,
+    "cpu_p50": 4.8,
+    "steps": [
+     3,
+     4
+    ]
+   },
+   "D": {
+    "fps_mean": 8.9,
+    "frame_p50": 63.1,
+    "frame_p95": 131.4,
+    "cpu_p50": 2.1,
+    "steps": [
+     2,
+     3,
+     4
+    ]
+   },
+   "E": {
+    "fps_mean": 6.4,
+    "frame_p50": 136.3,
+    "frame_p95": 277,
+    "cpu_p50": 4,
+    "steps": [
+     4
+    ]
+   }
+  },
+  "after3": {
+   "A": {
+    "fps_mean": 4.7,
+    "frame_p50": 180.1,
+    "frame_p95": 451,
+    "cpu_p50": 11.8,
+    "steps": [
+     2,
+     3,
+     4
+    ]
+   },
+   "B": {
+    "fps_mean": 13,
+    "frame_p50": 58.1,
+    "frame_p95": 186.7,
+    "cpu_p50": 2.9,
+    "steps": [
+     4
+    ]
+   },
+   "C": {
+    "fps_mean": 8.6,
+    "frame_p50": 83.4,
+    "frame_p95": 274.4,
+    "cpu_p50": 5.3,
+    "steps": [
+     2,
+     3,
+     4
+    ]
+   },
+   "D": {
+    "fps_mean": 13.1,
+    "frame_p50": 76.8,
+    "frame_p95": 116.3,
+    "cpu_p50": 2.2,
+    "steps": [
+     2,
+     3,
+     4
+    ]
+   },
+   "E": {
+    "fps_mean": 3.7,
+    "frame_p50": 77.3,
+    "frame_p95": 1599.3,
+    "cpu_p50": 2.5,
+    "steps": [
+     4
+    ]
+   }
+  }
+ },
+ "gpu_path_work": {
+  "file": "work-gpupath*.txt (GPU LOD path, soft=0, fixed quality step 0, on llvmpipe)"
+ },
+ "approach": {
+  "note": "views/approach.js: fly at 5000 u/s at a reicast wall from 60000; distance at which it is ready (720p)",
+  "gpu_path": {
+   "before": {
+    "loaded": 6618,
+    "hi_impostor": 600
+   },
+   "after": {
+    "loaded": 38141,
+    "hi_impostor": 36946
+   }
+  },
+  "soft_path": {
+   "before": {
+    "loaded": "not before arrival"
+   },
+   "after": {
+    "loaded": 910
+   }
+  }
+ }
+}

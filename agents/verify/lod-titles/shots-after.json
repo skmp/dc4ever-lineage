@@ -1,0 +1,29 @@
+{
+ "size": [
+  1280,
+  720
+ ],
+ "views": {
+  "far": {
+   "file": "agents/verify/lod-titles/shots/far-after-1280x720.png",
+   "ready_ms": 1514,
+   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)"
+  },
+  "read-mid": {
+   "file": "agents/verify/lod-titles/shots/read-mid-after-1280x720.png",
+   "ready_ms": 2046,
+   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)"
+  },
+  "fork": {
+   "file": "agents/verify/lod-titles/shots/fork-after-1280x720.png",
+   "ready_ms": 809,
+   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)"
+  },
+  "now": {
+   "file": "agents/verify/lod-titles/shots/now-after-1280x720.png",
+   "ready_ms": 6326,
+   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)"
+  }
+ },
+ "logs": []
+}

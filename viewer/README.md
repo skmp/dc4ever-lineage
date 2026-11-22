@@ -44,28 +44,47 @@ used ones.
 | `[` `]`, `{` `}` | same place in the lane's previous / next frame; previous / next lane |
 | G | overview |
 | 1-5 | colour: origin, age, survival, diff vs previous frame, repo of origin |
-| T | attract mode (also after 2 minutes idle, `?idle=` seconds, 0 = never); any input exits |
-| ♪ button, volume, M | the generative score (off by default), its volume, mute |
+| T | the tour (attract mode): starts on page load (`?tour=0` = not), after 2 minutes idle (`?idle=` seconds, 0 = never) or on T; a drag, a key, the wheel or a click takes over |
+| ♪ button, volume, M | the generative score, its volume, mute; the first click / tap / key on the page turns it on (browsers allow audio only after a gesture) |
 | bench button, `?bench` | the benchmark: five 15 s paths, then a score card; nothing is recorded |
 | / B I L H | search (text, regex, path), bookmarks, minimap, lineage story, help |
 
 The URL hash keeps the camera, clock, mode and presentation.
 
+## Wall titles
+
+Every wall has a title: lane, month (or release tag / DreamSTer pin; `approx` for dc4ever, the date range for nullDCe),
+commit. Titles are drawn in screen space (one instanced draw, the SDF font) above the wall's top edge, or stuck to the
+top of the screen while the wall covers it, at 16 to 25 CSS px for the lane's frame at the clock, smaller and fainter for
+other solid walls and ghosts. They are placed greedily every frame (the frame at the clock first, then solid walls, then
+ghosts, nearer first), so none overlap; a title behind a solid wall is hidden.
+
 ## Text rendering (three tiers per line, chosen per pixel)
 
-- Near (>= 4.5 px per line on a GPU): glyphs from a 1024 x 768 SDF atlas of DejaVu Sans Mono (64 x 128 px cells,
+- Near (>= 3.8 px per line on a GPU, blending in from 2.4): glyphs from a 1024 x 768 SDF atlas of DejaVu Sans Mono (64 x 128 px cells,
   spread 12 px, `tools/font/mkatlas.cpp`), mipmapped (3 levels), anisotropic, sampled with explicit gradients from the
   continuous cell coordinate, anti-aliased by the screen-space derivative, 4-tap supersampled when small.
-- Middle (>= 1.3 px per line): SDF token shapes: each run of non-space characters is a crisp word bar (x-height band),
+- Middle (>= 1 px per line, from 0.55): SDF token shapes: each run of non-space characters is a crisp word bar (x-height band),
   edges anti-aliased against the neighbouring cells.
-- Far: impostors baked from the same shader (low resolution for every loaded wall in view, 16 px per column x 2048
-  rows for the nearest ones, re-baked as the camera approaches), then per-file quads, then per-column strips.
+- Lines are drawn down to 0.28 px per line (fully from 0.45, as bars); over that band they fade in per pixel while the
+  wall's impostor fades out under them, so nothing pops.
+- Far: impostors baked from the same shader (16 px per column x 2048 rows from 0.1 px per line at the wall, 4 px per
+  column below), then per-file quads (to 0.03 px per line), then per-column strips, then one quad per wall.
+- File cards: on the 12 nearest solid walls (from 0.12 px per line) every file has its header bar, a screen-space outline
+  and, where the path label would be smaller than 12 CSS px, its file name grown in the wall plane to fit the card.
+- Look-ahead: streaming (from 0.045 px per line), the sharp impostor bake and the file cards use the nearer of the
+  camera's distance and its distance 1.5 s ahead along its velocity, so walls ahead are ready before the camera arrives.
 
 Up close, the lane's other walls behind the wall being read (ghosts, releases) fade out, so their text does not show
 through as a second layer. On llvmpipe the canvas renders at half scale and lines in motion during a morph are bars;
 `?scale=1` and `?morphglyph=1` turn both off (used for the screenshots in `agents/viewer3/shots/`).
 
-## Attract mode
+## Attract mode (the tour)
+
+The tour starts as soon as the data is ready, with a small "click anywhere for sound" overlay. The first click, tap or key
+only turns the score on (it does not pin, drag or move), and the tour keeps running; after that a drag, a key, the wheel
+or a click hands control back, and the tour resumes after 2 minutes idle. With prefers-reduced-motion the camera never
+moves by itself: the overlay offers a "start tour" button instead.
 
 `data/attract.json` (`node tools/attract_prep.mjs`, 3 s): the curated lines (the dc4ever 2005 to-do, "and here are the
 new ones :D", spg.cpp's "Time to emulate that stuff correctly ;)"), the computed longest-surviving / widest-spread

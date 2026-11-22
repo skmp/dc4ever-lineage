@@ -136,6 +136,7 @@ const P = {
   seg: G.program(gl, SH.lineSegVS, SH.lineSegFS, 'seg'),
   label: G.program(gl, SH.labelVS, SH.labelFS, 'label'),
   imp: G.program(gl, SH.impVS, SH.impFS, 'imp'),
+  title: G.program(gl, SH.titleVS, SH.titleFS, 'title'),
 };
 
 // ------------------------------------------------------------------ geometry buffers
@@ -162,7 +163,7 @@ class RectBuf {
 const ST_RGB = [[90, 100, 125], [70, 200, 110], [230, 180, 60], [90, 160, 240], [180, 120, 240], [240, 110, 180], [240, 200, 110]];
 const mixc = (a, b, t) => a.map((v, i) => Math.round(v + (b[i] - v) * t));
 const K_FLOOR = 1, K_PAL = 2, PUSH1 = 1 << 2, PUSH2 = 2 << 2, PUSH3 = 3 << 2, K_OUTLINE = 16, K_SOLID = 32;
-const plates = new RectBuf(), floor = new RectBuf(), t3 = new RectBuf(), t4 = new RectBuf(), t5 = new RectBuf(), deco = new RectBuf(true), pinsR = new RectBuf();
+const plates = new RectBuf(), floor = new RectBuf(), t3 = new RectBuf(), t4 = new RectBuf(), t5 = new RectBuf(), pinsR = new RectBuf();
 const K_T4 = 64, K_T5 = 128;
 const plateRange = new Map();
 
@@ -170,24 +171,24 @@ const plateRange = new Map();
 class LabelSet {
   constructor(dynamic) { this.list = []; this.text = []; this.len = 0; this.dynamic = dynamic; }
   str(s) { const o = this.len; for (let i = 0; i < s.length; i++) { const c = s.charCodeAt(i); this.text.push(c >= 32 && c < 127 ? c : 0x7F); } this.len += s.length; return o; }
-  add(s, z, y, dx, wall, Uv, Vv, rgba, billboard = 0, maxPx = 0, prio = 0) { if (!s.length) return; this.list.push([z, y, dx, wall, ...Uv, ...Vv, this.str(s), s.length, rgba, billboard, maxPx, prio, s]); }
+  add(s, z, y, dx, wall, Uv, Vv, rgba, billboard = 0, maxPx = 0, prio = 0, bg = null) { if (!s.length) return; this.list.push([z, y, dx, wall, ...Uv, ...Vv, this.str(s), s.length, rgba, billboard, maxPx, prio, s, bg]); }
   build() {
     const rows = Math.ceil(this.len / 4096) + 1, arr = new Uint8Array(rows * 4096); arr.set(this.text);
     if (this.tex) gl.deleteTexture(this.tex);
     this.tex = G.tex2D(gl, 4096, rows, gl.R8UI, gl.RED_INTEGER, gl.UNSIGNED_BYTE, arr);
     const n = this.list.length, ab = new ArrayBuffer(Math.max(1, n) * 64), f32 = new Float32Array(ab), u32 = new Uint32Array(ab), u8 = new Uint8Array(ab);
-    this.list.forEach((l, i) => { for (let k = 0; k < 10; k++) f32[i * 16 + k] = l[k]; u32[i * 16 + 10] = l[10]; u32[i * 16 + 11] = l[11]; u8.set(l[12], i * 64 + 48); f32[i * 16 + 13] = l[13]; f32[i * 16 + 14] = l[14]; });
+    this.list.forEach((l, i) => { for (let k = 0; k < 10; k++) f32[i * 16 + k] = l[k]; u32[i * 16 + 10] = l[10]; u32[i * 16 + 11] = l[11]; u8.set(l[12], i * 64 + 48); f32[i * 16 + 13] = l[13]; f32[i * 16 + 14] = l[14]; if (l[17]) u8.set(l[17], i * 64 + 60); });
     if (!this.vao) { this.vao = gl.createVertexArray(); this.vbo = gl.createBuffer(); this.dbuf = gl.createBuffer(); }
     gl.bindVertexArray(this.vao); gl.bindBuffer(gl.ARRAY_BUFFER, this.vbo); gl.bufferData(gl.ARRAY_BUFFER, ab, this.dynamic ? gl.DYNAMIC_DRAW : gl.STATIC_DRAW);
     const A = (loc, k, type, off, norm = false, int = false) => { gl.enableVertexAttribArray(loc); if (int) gl.vertexAttribIPointer(loc, k, type, 64, off); else gl.vertexAttribPointer(loc, k, type, norm, 64, off); gl.vertexAttribDivisor(loc, 1); };
-    A(0, 4, gl.FLOAT, 0); A(1, 3, gl.FLOAT, 16); A(2, 3, gl.FLOAT, 28); A(3, 2, gl.UNSIGNED_INT, 40, false, true); A(4, 4, gl.UNSIGNED_BYTE, 48, true); A(5, 2, gl.FLOAT, 52);
+    A(0, 4, gl.FLOAT, 0); A(1, 3, gl.FLOAT, 16); A(2, 3, gl.FLOAT, 28); A(3, 2, gl.UNSIGNED_INT, 40, false, true); A(4, 4, gl.UNSIGNED_BYTE, 48, true); A(5, 2, gl.FLOAT, 52); A(7, 4, gl.UNSIGNED_BYTE, 60, true);
     this.dyn = new Float32Array(Math.max(1, n) * 2); for (let i = 0; i < n; i++) this.dyn[2 * i] = 1;
     gl.bindBuffer(gl.ARRAY_BUFFER, this.dbuf); gl.bufferData(gl.ARRAY_BUFFER, this.dyn, gl.DYNAMIC_DRAW);
     gl.enableVertexAttribArray(6); gl.vertexAttribPointer(6, 2, gl.FLOAT, false, 8, 0); gl.vertexAttribDivisor(6, 1);
     gl.bindVertexArray(null); this.n = n; return this;
   }
 }
-const labs = new LabelSet(false), hdrLabs = new LabelSet(true);
+const labs = new LabelSet(false);
 const segs = [];   // [z, y, s, xabs, wA, wB, rgba]
 const seg = (a, b) => segs.push(a, b);
 const trunc = (s, n) => s.length <= n ? s : '…' + s.slice(s.length - n + 1);
@@ -203,7 +204,6 @@ for (const w of WALLS) {
   const fr = w.fr, tags = (fr.tags || []).join(', '), what = tags || (fr.kinds || []).filter(k => k !== 'month').join(', ');
   const date = fr.date_range ? `${fr.date_range} (dated ${fr.date})` : fr.date + (fr.approx ? ' (approx.)' : '');
   w.title = `${ln.L.title} | ${date}${what ? ' | ' + what : ''} | ${fr.files} files, ${fr.lines.toLocaleString('en')} lines`;
-  labs.add(w.title, w.z0, 4096 + 200, 0, w.i, [0, 0, 40], [0, 50, 0], [...ln.rgb, 255], 0, 0, w.release ? 72 : 40);
   if (fr.date_note) labs.add(trunc(fr.date_note, 160), w.z0, 4096 + 80, 0, w.i, [0, 0, 14], [0, 18, 0], [220, 190, 120, 255], 0, 0, 30);
   if (w.mark && w.mark.labels && w.mark.labels.length) labs.add(trunc(w.mark.labels.join('; '), 140), w.z0, 4096 + 330, 0, w.i, [0, 0, 26], [0, 32, 0], [230, 220, 170, 255], 0, 0, 45);
 }
@@ -217,6 +217,35 @@ for (const w of WALLS) {
   labs.add(tags, w.z0 - 340 - 60 * tags.length, 4096 + 700, 0, w.i, [0, 0, 60], [0, 70, 0], [255, 210, 90, 255], 0, 0, 80);   // ends left of the pin bar
   w.releaseLabel = tags;
 }
+// wall titles: lane, month (release tag / pin, 'approx' for dc4ever, the date range for nullDCe), commit; drawn in screen
+// space by layoutTitles (one instanced draw), anchored to the wall's top edge
+const TT = (() => {
+  const text = [], st = new Uint8Array(WALLS.length * 16);
+  const str = WALLS.map(w => {
+    const fr = w.fr, tags = (fr.tags || []).slice(0, 2).join(' / ');
+    const when = fr.date_range ? fr.date_range : fr.date.slice(0, 7) + (fr.approx ? ' approx' : '');
+    return [LN[w.lane].name, tags, when, (fr.commit || '').slice(0, 7)].filter(Boolean).join('  ');
+  });
+  const u32 = new Uint32Array(st.buffer);
+  WALLS.forEach((w, j) => {
+    const t = str[j], o = text.length; for (let i = 0; i < t.length; i++) { const c = t.charCodeAt(i); text.push(c >= 32 && c < 127 ? c : 0x7F); }
+    w.shortTitle = t; w.tj = j; u32[4 * j] = o; u32[4 * j + 1] = t.length;
+    const rgb = LN[w.lane].rgb; st.set([...mixc([236, 240, 248], rgb, 0.22), 255], 16 * j + 8); st.set([...rgb, 255], 16 * j + 12);
+  });
+  const rows = Math.ceil(text.length / 4096) + 1, arr = new Uint8Array(rows * 4096); arr.set(text);
+  const tex = G.tex2D(gl, 4096, rows, gl.R8UI, gl.RED_INTEGER, gl.UNSIGNED_BYTE, arr);
+  const vao = gl.createVertexArray(), sbuf = gl.createBuffer(), dbuf = gl.createBuffer(), n = WALLS.length;
+  gl.bindVertexArray(vao);
+  const dyn = new Float32Array(n * 4);
+  gl.bindBuffer(gl.ARRAY_BUFFER, dbuf); gl.bufferData(gl.ARRAY_BUFFER, dyn, gl.DYNAMIC_DRAW);
+  gl.enableVertexAttribArray(0); gl.vertexAttribPointer(0, 4, gl.FLOAT, false, 16, 0); gl.vertexAttribDivisor(0, 1);
+  gl.bindBuffer(gl.ARRAY_BUFFER, sbuf); gl.bufferData(gl.ARRAY_BUFFER, st, gl.STATIC_DRAW);
+  gl.enableVertexAttribArray(1); gl.vertexAttribIPointer(1, 2, gl.UNSIGNED_INT, 16, 0); gl.vertexAttribDivisor(1, 1);
+  gl.enableVertexAttribArray(2); gl.vertexAttribPointer(2, 4, gl.UNSIGNED_BYTE, true, 16, 8); gl.vertexAttribDivisor(2, 1);
+  gl.enableVertexAttribArray(3); gl.vertexAttribPointer(3, 4, gl.UNSIGNED_BYTE, true, 16, 12); gl.vertexAttribDivisor(3, 1);
+  gl.bindVertexArray(null);
+  return { tex, vao, dbuf, dyn, n, len: WALLS.map(w => w.shortTitle.length), cur: new Float32Array(n), pos: new Float32Array(n * 4), rects: [], shown: 0 };
+})();
 // lanes: floor bands + titles
 const XMAX = xMax + 12000;
 for (const ln of LN) {
@@ -345,12 +374,14 @@ function declutter(dt, rgt, up, minPx) {
   cand.sort((a, b) => b.pr - a.pr);
   const grid = new Map(), G0 = 96;
   if (!DL.panels || performance.now() - DL.panelsT > 500) { DL.panelsT = performance.now(); const k = cw / Math.max(1, canvas.clientWidth);
-    DL.panels = [...document.querySelectorAll('.panel')].filter(e => e.getClientRects().length && e.id !== 'tip' && e.id !== 'loading').map(e => { const b = e.getBoundingClientRect(); return [b.left * k, b.top * k, b.right * k, b.bottom * k]; }); }
+    const att = document.body.classList.contains('attract');
+    DL.panels = [...document.querySelectorAll('.panel')].filter(e => e.getClientRects().length && e.id !== 'tip' && e.id !== 'loading' && (!att || e.id === 'caption' || e.id === 'audiogate')).map(e => { const b = e.getBoundingClientRect(); return [b.left * k, b.top * k, b.right * k, b.bottom * k]; }); }
   const hit = r => { for (let gx = Math.floor(r[0] / G0); gx <= Math.floor(r[2] / G0); gx++) for (let gy = Math.floor(r[1] / G0); gy <= Math.floor(r[3] / G0); gy++) {
     const c = grid.get(gx * 65536 + gy); if (c) for (const q of c) if (q[0] < r[2] && r[0] < q[2] && q[1] < r[3] && r[1] < q[3]) return true; } return false; };
   const put = r => { for (let gx = Math.floor(r[0] / G0); gx <= Math.floor(r[2] / G0); gx++) for (let gy = Math.floor(r[1] / G0); gy <= Math.floor(r[3] / G0); gy++) {
     const k = gx * 65536 + gy; let c = grid.get(k); if (!c) grid.set(k, c = []); c.push(r); } };
   for (const r of DL.panels) put(r);
+  for (const r of TT.rects) put(r);
   const target = DL.target || (DL.target = new Uint8Array(DLS.length)); target.fill(0);
   const SHF = [0, 0, 1, -1, 2, -2];
   for (const c of cand) {
@@ -378,6 +409,81 @@ function declutter(dt, rgt, up, minPx) {
 }
 V.visibleLabels = () => DLS.map((l, i) => DL.cur[i] > 0.5 ? l.s : null).filter(Boolean);
 
+// ---- wall titles (CPU, per frame): anchored above the wall's top edge (stuck to the screen top while the wall covers it),
+// size from the distance clamped to [min, max] px per tier; greedy placement, highest tier first (the frame at the clock of
+// each lane, then solid walls, then ghosts), nearer first, so nothing overlaps; faded in / out. One instanced draw.
+const TSZ = [[12, 15, 0.5, 9], [14, 20, 0.85, 10], [16, 25, 1, 11]];   // per tier: min / max CSS px (cell height), alpha, floor in canvas px
+function layoutTitles(dt) {
+  const cw = canvas.width, ch = canvas.height, k = cw / Math.max(1, canvas.clientWidth), M = VP, cam = V.cam.p, fp = focalPx();
+  const cur = TT.curSet || (TT.curSet = new Set()); cur.clear();
+  for (const L of live) cur.add(L.f);
+  if (V.pres() === 'gallery') for (let li = 0; li < LN.length; li++) { const f = V.laneFrameAt(li); if (f >= 0) cur.add(f); }
+  const clip = (x, y, z) => [M[0] * x + M[4] * y + M[8] * z + M[12], M[1] * x + M[5] * y + M[9] * z + M[13], M[3] * x + M[7] * y + M[11] * z + M[15], z];
+  const cut = (a, b) => { const t = (1 - a[2]) / (b[2] - a[2]); return a.map((v, i) => v + (b[i] - v) * t); };   // a: in front (w >= 1)
+  const cand = TT.cand || (TT.cand = []); cand.length = 0;
+  for (const w of visList) {
+    const j = w.tj, x = wallArr[4 * w.i]; if (wallArr[4 * w.i + 1] <= 0.02) continue;
+    const tier = cur.has(w.i) ? 2 : wallArr[4 * w.i + 2] > 0.5 ? 1 : 0, z1 = w.z0 + w.cols * 128;
+    let a = clip(x, 4096, w.z0), b = clip(x, 4096, z1);
+    if (a[2] < 1 && b[2] < 1) continue;
+    if (a[2] < 1) a = cut(b, a); else if (b[2] < 1) b = cut(a, b);
+    let ax = (a[0] / a[2] + 1) * 0.5 * cw, ay = (1 - a[1] / a[2]) * 0.5 * ch, bx = (b[0] / b[2] + 1) * 0.5 * cw, by = (1 - b[1] / b[2]) * 0.5 * ch, za = a[3], zb = b[3];
+    if (ax > bx) { [ax, bx] = [bx, ax]; [ay, by] = [by, ay]; [za, zb] = [zb, za]; }
+    if (bx < 8 || ax > cw - 8) continue;
+    const d = G.boxDist(cam, x, 4096, w.z0, x, 4096, z1), [mn, mx, al, fl] = TSZ[tier];
+    const size = Math.min(mx * k, Math.max(mn * k, fl, 160 * fp / Math.max(d, 1)));
+    const bw = (TT.len[j] + 1.2) * size * 0.5, bh = size * 1.2;
+    let tx = Math.max(ax, 6); if (tx + bw > bx) tx = Math.max(ax, bx - bw);
+    tx = Math.min(Math.max(tx, 6), cw - bw - 6);
+    const s = bx - ax > 1 ? Math.min(1, Math.max(0, (tx - ax) / (bx - ax))) : 0, zw = za + (zb - za) * s;
+    let ty = ay + (by - ay) * s - bh - 3 * k, sticky = false;
+    if (ty > ch - bh - 4) continue;                                   // the top edge is below the screen
+    if (ty < 6) {                                                     // above the screen: stick to the top while the wall covers it
+      const q = clip(x, 0, zw), qy = q[2] >= 1 ? (1 - q[1] / q[2]) * 0.5 * ch : ch;
+      if (qy < bh + 20) continue; ty = 6; sticky = true;
+    }
+    cand.push({ w, j, tx, ty, size, bw, bh, al, sticky, x, zw, xmax: Math.min(bx, cw - 6), slope: bx - ax > 1 ? (by - ay) / (bx - ax) : 0, pr: tier * 1e9 - d * (TT.cur[j] > 0.5 ? 0.8 : 1) });
+  }
+  cand.sort((p, q) => q.pr - p.pr);
+  // drawn without depth test: hide a title whose anchor is behind a solid wall (tested only for titles that would fit)
+  const occluded = c => {
+    if (c.sticky) return false;
+    const dx = c.x - cam[0], dy = 4100 - cam[1], dz = c.zw - cam[2];
+    if (Math.abs(dx) < 1e-6) return false;
+    for (const ww of occList) {
+      if (ww === c.w) continue; const t = (wallArr[4 * ww.i] - cam[0]) / dx; if (t <= 0 || t >= 0.999) continue;
+      const y = cam[1] + t * dy, z = cam[2] + t * dz; if (y > -6 && y < 4102 && z > ww.z0 && z < ww.z0 + ww.cols * 128 - 4) return true;
+    }
+    return false;
+  };
+  const rects = TT.rects; rects.length = 0;
+  const obst = DL.panels || [];
+  const hitR = r => { for (const q of obst) if (q[0] < r[2] && r[0] < q[2] && q[1] < r[3] && r[1] < q[3]) return q;
+    for (const q of rects) if (q[0] < r[2] && r[0] < q[2] && q[1] < r[3] && r[1] < q[3]) return q; return null; };
+  const target = TT.target || (TT.target = new Uint8Array(TT.n)); target.fill(0);
+  for (const c of cand) {
+    // blocked (a panel, a placed title): slide right along the top edge, past the blocker, at most 3 times
+    let r = null;
+    for (let q = 0; q < 4; q++) {
+      const rr = [c.tx - 3, c.ty - 3, c.tx + c.bw + 3, c.ty + c.bh + 3], b = hitR(rr);
+      if (!b) { r = rr; break; }
+      const nx = b[2] + 4; if (nx + c.bw > c.xmax) break;
+      if (!c.sticky) c.ty += (nx - c.tx) * c.slope; c.tx = nx;
+    }
+    if (!r || occluded(c)) continue;
+    rects.push(r); target[c.j] = 1; TT.pos[4 * c.j] = c.tx; TT.pos[4 * c.j + 1] = c.ty; TT.pos[4 * c.j + 2] = c.size; TT.pos[4 * c.j + 3] = c.al;
+  }
+  const kk = Math.min(1, dt * 12); let shown = 0;
+  for (let j = 0; j < TT.n; j++) {
+    let cv = TT.cur[j] + (target[j] - TT.cur[j]) * kk; if (!target[j] && cv < 0.03) cv = 0; TT.cur[j] = cv; if (target[j]) shown++;
+    TT.dyn[4 * j] = TT.pos[4 * j]; TT.dyn[4 * j + 1] = TT.pos[4 * j + 1]; TT.dyn[4 * j + 2] = TT.pos[4 * j + 2]; TT.dyn[4 * j + 3] = cv * TT.pos[4 * j + 3];
+  }
+  TT.shown = shown;
+  gl.bindBuffer(gl.ARRAY_BUFFER, TT.dbuf); gl.bufferData(gl.ARRAY_BUFFER, TT.dyn, gl.DYNAMIC_DRAW);   // orphan: no wait on queued frames
+}
+V.titles = TT;
+V.visibleTitles = () => WALLS.filter(w => TT.cur[w.tj] > 0.5).map(w => w.shortTitle);
+
 // ------------------------------------------------------------------ instance pool (rows of 4096 lines)
 const pool = { free: [[0, POOLH]] };
 function palloc(rows) {
@@ -396,8 +502,9 @@ function evict(w) {
 function upload(w, m) {
   const rows = Math.max(1, Math.ceil(m.n / POOLW));
   let r0 = palloc(rows);
-  while (r0 < 0) {   // evict the least recently used walls that are not wanted now
-    const cand = WALLS.filter(x => x.gpu && x.wanted !== wantEpoch).sort((a, b) => a.lastUse - b.lastUse);
+  while (r0 < 0) {   // evict the least recently used walls that are not wanted now, then wanted ones farther than this one
+    let cand = WALLS.filter(x => x.gpu && x.wanted !== wantEpoch).sort((a, b) => a.lastUse - b.lastUse);
+    if (!cand.length && w.wanted === wantEpoch) cand = WALLS.filter(x => x.gpu && x.wanted === wantEpoch && x.wantD > w.wantD * 1.25 + 500).sort((a, b) => b.wantD - a.wantD);
     if (!cand.length) return false;
     evict(cand[0]); r0 = palloc(rows);
   }
@@ -643,7 +750,28 @@ V.isSolid = w => wallArr[4 * w.i + 2] > 0.5 && wallArr[4 * w.i + 1] > 0;
 
 // ------------------------------------------------------------------ impostors (baked walls): low-res for every loaded wall in
 // view, high-res for the nearest ones (refreshed as the camera approaches)
-const IMP = SOFT ? { lo: [2, 512], hi: null, capLo: 40 * 1048576, capHi: 0 } : { lo: [4, 1024], hi: [16, 2048], capLo: 192 * 1048576, capHi: 160 * 1048576 };
+const IMP = SOFT ? { lo: [2, 512], hi: null, capLo: 40 * 1048576, capHi: 0 } : { lo: [4, 1024], hi: [16, 2048], capLo: 192 * 1048576, capHi: 288 * 1048576 };
+// LOD distances in px per line at the wall's nearest point (from the camera or from where it is heading): stream the wall's
+// lines (want), bake its sharp impostor (hi), show its file cards (card; the nearest `cards` walls), file quads below t3,
+// column strips below t4, one quad below t5. look: seconds of travel to look ahead.
+const LODP = SOFT ? { want: 0.1, hi: 1e9, hiN: 0, card: 0.3, cards: 4, t4: 0.07, t5: 0.02, look: 1.2 } : { want: 0.045, hi: 0.1, hiN: 6, card: 0.12, cards: 12, t4: 0.03, t5: 0.008, look: 1.5 };
+let hiSet = new Set();
+V.LODP = LODP;
+const NOFADE = new Float32Array([-1, 0]);
+const boxFar = (p, x0, y0, z0, x1, y1, z1) => Math.hypot(Math.max(Math.abs(p[0] - x0), Math.abs(p[0] - x1)), Math.max(Math.abs(p[1] - y0), Math.abs(p[1] - y1)), Math.max(Math.abs(p[2] - z0), Math.abs(p[2] - z1)));
+// camera velocity (from its motion, whatever moves it: keys, flights, the tour, the benchmark), smoothed; jumps reset it
+const vel = { v: [0, 0, 0], p: null };
+function aheadPoint(dt) {
+  const p = V.cam.p;
+  if (vel.p && dt > 0) {
+    const d = [0, 1, 2].map(i => (p[i] - vel.p[i]) / dt), sp = Math.hypot(...d);
+    if (sp > 300000) vel.v = [0, 0, 0]; else for (let i = 0; i < 3; i++) vel.v[i] += (d[i] - vel.v[i]) * Math.min(1, dt * 5);
+  }
+  vel.p = p.slice();
+  const L = Math.hypot(...vel.v) * LODP.look; if (L < 50) return null;
+  const k = Math.min(L, 30000) / L * LODP.look;
+  return [p[0] + vel.v[0] * k, p[1] + vel.v[1] * k, p[2] + vel.v[2] * k];
+}
 let impVersion = 0;
 function invalidateImpostors() { impVersion++; }
 V.invalidateImpostors = invalidateImpostors;
@@ -707,7 +835,7 @@ function setupLineProg(prog) {
   bindTex(3, gl.TEXTURE_2D_ARRAY, textTex, prog, 'uText'); bindTex(4, gl.TEXTURE_2D, atlasTex, prog, 'uAtlas');
   bindTex(5, gl.TEXTURE_2D, palTex, prog, 'uPal'); bindTex(7, gl.TEXTURE_2D, markTex, prog, 'uMark'); bindTex(8, gl.TEXTURE_2D, possTex, prog, 'uPoss');
   gl.uniform1i(prog.u.uMode, V.mode); gl.uniform1i(prog.u.uHideInc, V.hideInc ? 1 : 0);
-  gl.uniform1f(prog.u.uT0, V.quality.t0); gl.uniform1f(prog.u.uT1, V.quality.t1);
+  gl.uniform1f(prog.u.uT0, V.quality.t0); gl.uniform1f(prog.u.uT1, V.quality.t1); gl.uniform2fv(prog.u.uLF, V.quality.lf);
   gl.uniform1i(prog.u.uBake, 0); gl.uniform1f(prog.u.uAlpha, 1);
   if (prog.u.uMorphGlyph) gl.uniform1i(prog.u.uMorphGlyph, SOFT && !Q.has('morphglyph') ? 0 : 1);
 }
@@ -719,29 +847,57 @@ function wallUniforms(prog, w, x) {
 }
 const domOf = w => w._dom ?? (w._dom = (() => { const m = w.meta; if (!m) return w.i; const c = new Map(); m.dom.forEach((d, k) => c.set(d, (c.get(d) || 0) + m.n[k])); return [...c].sort((a, b) => b[1] - a[1])[0]?.[0] ?? w.i; })());
 
-// near-wall decoration (header bars + labels, holes), rebuilt when the set of walls drawn with lines changes
-let decoKey = '', decoRanges = new Map();
-function rebuildDeco(list) {
-  const key = list.map(w => w.i + (w.loaded ? 'l' : '')).join(',');
-  if (key === decoKey) return; decoKey = key;
-  hdrLabs.list = []; hdrLabs.text = []; hdrLabs.len = 0; decoRanges = new Map();
-  for (const w of list) {
-    if (!w.loaded) continue;
-    const a = deco.count, sl = laneSlotsSorted[w.lane];
-    for (let k = 0; k < w.fileSlot.length; k++) {
-      const L0 = sl.L[w.fileSlot[k]], col = Math.floor(L0 / H), row = L0 % H, z = w.z0 + col * 128, ytop = 4096 - row * 2, st = w.fst[k];
-      deco.add(z, z + 120, ytop - 3.6, ytop, 0, 0, mixc([20, 24, 32], ST_RGB[st] || [128, 128, 128], 0.45).concat(255), w.i, PUSH1);
-      const n = w.fileStart[k + 1] - w.fileStart[k], tag = `${n} lines | ${core.ST[st]}`;
-      hdrLabs.add(trunc(w.paths[k], Math.floor(118 / 1.25) - tag.length - 3) + '  ' + tag, z + 1, ytop - 0.3, 0, w.i, [0, 0, 1.25], [0, 1.5, 0], [235, 240, 250, 255]);
-    }
-    for (let s = 0; s < sl.L.length; s++) {   // holes: lane slots without a file in this frame
-      if (w.slotToFile.has(s)) continue;
-      const col = Math.floor(sl.L[s] / H), row = sl.L[s] % H, rows = Math.min(core.HDR + sl.cap[s], H - row);
-      deco.add(w.z0 + col * 128, w.z0 + col * 128 + 120, 4096 - (row + rows) * 2, 4096 - row * 2, 0, 0, [70, 76, 92, 120], w.i, PUSH1 | K_OUTLINE);
-    }
-    decoRanges.set(w.i, [a, deco.count - a]);
+// file cards (header bars, outlines, holes, path labels near, grown file-name labels further out) for the nearest solid
+// walls, from the frame's file list (chunk metadata, there for every frame from the start).
+// Built per wall into its own buffers (updateCards).
+const baseName = p => p.slice(p.lastIndexOf('/') + 1);
+function wallCards(w) {
+  const sl = laneSlotsSorted[w.lane], rects = [], labels = [], m = w.meta, have = new Set();
+  for (let k = 0; k < m.slot.length; k++) {
+    const slot = m.slot[k]; if (slot < 0) continue; have.add(slot);
+    const n = m.n[k], st = m.st[k], path = m.paths[k];
+    const L0 = sl.L[slot], col = Math.floor(L0 / H), row = L0 % H, z = w.z0 + col * 128, ytop = 4096 - row * 2, sc = ST_RGB[st] || [128, 128, 128];
+    const bar = mixc([20, 24, 32], sc, 0.45);
+    rects.push([z, z + 120, ytop - 3.6, ytop, 0, 0, bar.concat(255), w.i, PUSH1]);
+    // the card's outline (screen-space width): the file stays a recognisable tile when its lines are sub-pixel
+    let p = L0, e = L0 + core.HDR + n;
+    while (p < e) { const c = Math.floor(p / H), r0 = p % H, r1 = Math.min(H, r0 + (e - p));
+      rects.push([w.z0 + c * 128 - 0.5, w.z0 + c * 128 + 120.5, 4096 - r1 * 2 - 0.5, 4096 - r0 * 2, 0, 0, mixc([60, 66, 80], sc, 0.35).concat(115), w.i, PUSH1 | K_OUTLINE]); p += r1 - r0; }
+    const tag = `${n} lines | ${core.ST[st]}`;
+    labels.push([trunc(path, Math.floor(118 / 1.25) - tag.length - 3) + '  ' + tag, z + 1, ytop - 0.3, 0, w.i, [0, 0, 1.25], [0, 1.5, 0], [235, 240, 250, 255]]);
+    // grown name: as large as the card allows (width 118, height of the file's first column segment)
+    const nm = baseName(path), hseg = Math.min(core.HDR + n, H - row) * 2;
+    const kmax = Math.min(116 / (nm.length * 1.25), hseg / 3.4);
+    if (kmax > 1.3) labels.push([nm, z + 1, ytop - 0.3, 0, w.i, [0, 0, 1.25], [0, 1.5, 0], [240, 244, 252, 255], -1, kmax, 0, [...bar, 215]]);
   }
-  deco.build(); hdrLabs.build();
+  for (let s = 0; s < sl.L.length; s++) {   // holes: lane slots without a file in this frame
+    if (have.has(s)) continue;
+    const col = Math.floor(sl.L[s] / H), row = sl.L[s] % H, rows = Math.min(core.HDR + sl.cap[s], H - row);
+    rects.push([w.z0 + col * 128, w.z0 + col * 128 + 120, 4096 - (row + rows) * 2, 4096 - row * 2, 0, 0, [70, 76, 92, 120], w.i, PUSH1 | K_OUTLINE]);
+  }
+  return { rects, labels };
+}
+// per-wall card buffers (rects + labels), LRU-cached; at most CARD_BUILDS new walls per frame
+const cardCache = new Map(), CARD_BUILDS = SOFT ? 1 : 2, CARD_KEEP = SOFT ? 8 : 28;
+let cardList = [];
+function freeCards(c) {
+  for (const b of [c.deco, c.labs]) { if (b.vao) gl.deleteVertexArray(b.vao); if (b.vbo) gl.deleteBuffer(b.vbo); if (b.dbuf) gl.deleteBuffer(b.dbuf); if (b.tex) gl.deleteTexture(b.tex); }
+}
+function updateCards(list, now) {
+  let built = 0; cardList = [];
+  for (const w of list) {
+    let c = cardCache.get(w.i);
+    if (!c) {
+      if (built >= CARD_BUILDS) continue;
+      const C = wallCards(w), deco = new RectBuf(true), lab = new LabelSet(false);
+      for (const r of C.rects) deco.add(...r);
+      for (const l of C.labels) lab.add(...l);
+      deco.build(); lab.build(); built++;
+      c = { w, deco, labs: lab }; cardCache.set(w.i, c);
+    }
+    c.used = now; cardList.push(c);
+  }
+  if (cardCache.size > CARD_KEEP) for (const [k, c] of [...cardCache].sort((a, b) => a[1].used - b[1].used).slice(0, cardCache.size - CARD_KEEP)) { freeCards(c); cardCache.delete(k); }
 }
 
 // ------------------------------------------------------------------ pipeline warm-up (lavapipe builds pipelines on first use)
@@ -760,7 +916,8 @@ function warmup() {
   setupLineProg(P.morph); gl.uniform1i(P.morph.u.uStride, 1); gl.uniform1i(P.morph.u.uBase, 0); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, 1);
   common(P.seg); gl.bindVertexArray(segBuf.vao); gl.drawArrays(gl.LINES, 0, 2);
   common(P.label); gl.bindVertexArray(labs.vao); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, 1);
-  gl.disable(gl.DEPTH_TEST); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, 1); gl.enable(gl.DEPTH_TEST);
+  gl.disable(gl.DEPTH_TEST); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, 1);
+  gl.useProgram(P.title.p); gl.bindVertexArray(TT.vao); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, 1); gl.enable(gl.DEPTH_TEST);
   gl.bindVertexArray(null); gl.depthMask(true);
   const px = new Uint8Array(4); gl.readPixels(0, 0, 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, px);
   V.load.warmupMs = performance.now() - t0;
@@ -803,9 +960,12 @@ function frame(now) {
   let q = null;
   if (tq) { q = gl.createQuery(); gl.beginQuery(tq.TIME_ELAPSED_EXT, q); }
   PM('pre');
-  // ---- LOD
-  const fp = focalPx(), T1 = V.quality.t1, epoch = ++wantEpoch, want = [];
-  const lineRuns = [], impRuns = [], t3Walls = [], bakeCand = [], lineWalls = new Set();
+  // ---- LOD. The tier of a column comes from its real distance; streaming, impostor upgrades and file cards use the nearer of
+  // the real distance and the distance from where the camera will be in LODP.look s (its velocity), so the walls ahead
+  // are loaded, baked sharp and carded before the camera reaches them.
+  const fp = focalPx(), LF = V.quality.lf, epoch = ++wantEpoch, want = [], cards = [];
+  const ah = aheadPoint(dt);
+  const lineRuns = [], impRuns = [], t3Walls = [], bakeCand = [], lineWalls = new Set(), hiNext = [];
   let inst = 0;
   const morphB = V.morph ? V.morph.b : -1;
   occList = []; visList = [];
@@ -816,44 +976,55 @@ function frame(now) {
     if (V.cam.p[0] > x) continue;
     if (solid) occList.push(w);
     const dW = G.boxDist(V.cam.p, x, 0, w.z0, x, 4096, z1), pW = 2 * fp / Math.max(dW, 1);
-    if (solid && pW >= 0.1) want.push([dW, w]);
+    const dE = ah ? Math.min(dW, G.boxDist(ah, x, 0, w.z0, x, 4096, z1)) : dW, pE = 2 * fp / Math.max(dE, 1);
+    if (solid && pE >= LODP.want) want.push([dE, w]);
+    if (solid && pE >= LODP.card && w.meta) cards.push([dE, w]);
     if (w.loaded) w.lastUse = now;
-    const stale = w.loaded && (w.impKey !== impKey() || (IMP.hi && pW > 0.32 && (!w.imp || w.imp.tier !== 'hi')));
-    if (!solid) { if (w.imp && w.imp.ready) impRuns.push([w, 0, w.cols, A]); else t3Walls.push(w); continue; }
-    if (!w.loaded || pW < T1 * 0.5) { if (w.imp && w.imp.ready) impRuns.push([w, 0, w.cols, A]); else t3Walls.push(w); if (stale) bakeCand.push([dW, w, pW]); continue; }
+    if (IMP.hi && w.loaded && pE > LODP.hi) hiNext.push([dE, w.i]);
+    const stale = w.loaded && (w.impKey !== impKey() || (hiSet.has(w.i) && (!w.imp || w.imp.tier !== 'hi')));
+    if (!solid) { if (w.imp && w.imp.ready) impRuns.push([w, 0, w.cols, A, 0]); else t3Walls.push(w); continue; }
+    if (!w.loaded || pW < LF[0]) { if (w.imp && w.imp.ready) impRuns.push([w, 0, w.cols, A, 0]); else t3Walls.push(w); if (stale && pE >= LODP.t4) bakeCand.push([dE, w, pE]); continue; }
     if (w.i === morphB) continue;
     let run = null, irun = null;
     for (let c = 0; c < w.cols; c++) {
       const za = w.z0 + c * 128, zb = za + 124;
       if (!G.boxVisible(planes, x - 1, -10, za, x + 1, 4110, zb)) { run = irun = null; continue; }
       const d = G.boxDist(V.cam.p, x, 0, za, x, 4096, zb), ppl = 2 * fp / Math.max(d, 1);
-      if (ppl >= T1 * 0.5) { irun = null; if (run && run[2] === c) run[2] = c + 1; else { run = [w, c, c + 1, d]; lineRuns.push(run); } run[3] = Math.min(run[3], d); }
-      else { run = null; if (irun && irun[2] === c) irun[2] = c + 1; else { irun = [w, c, c + 1, 1]; impRuns.push(irun); } }
+      // lines fade in over the ppl band LF (per pixel); the impostor fades out under them over the same band
+      const lines = ppl >= LF[0], imp = !lines || 2 * fp / boxFar(V.cam.p, x, 0, za, x, 4096, zb) < LF[1];
+      if (lines) { if (run && run[2] === c) run[2] = c + 1; else { run = [w, c, c + 1, d]; lineRuns.push(run); } run[3] = Math.min(run[3], d); } else run = null;
+      if (imp) { if (irun && irun[2] === c) irun[2] = c + 1; else { irun = [w, c, c + 1, 1, 1]; impRuns.push(irun); } } else irun = null;
     }
-    if (stale) bakeCand.push([dW, w, pW]);
+    if (stale) bakeCand.push([dE, w, pE]);
   }
+  // sharp impostors for the nearest LODP.hiN walls in range (next frame): more would evict and re-bake each other
+  hiNext.sort((a, b) => a[0] - b[0]); hiSet = new Set(hiNext.slice(0, LODP.hiN).map(h => h[1]));
   // morph target lane: its next frames are wanted too
   for (const L of live) if (L.morph) { want.push([0, W[L.morph.a]], [0, W[L.morph.b]]); }
   lineRuns.sort((a, b) => a[3] - b[3]);
   const drawRuns = [];
   for (const rr of lineRuns) { const w = rr[0], n = w.colStart[rr[2]] - w.colStart[rr[1]]; if (n === 0) continue;
-    if (inst + n > V.quality.maxInst && drawRuns.length) { impRuns.push([w, rr[1], rr[2], 1]); continue; } inst += n; drawRuns.push(rr); lineWalls.add(w); }
+    if (inst + n > V.quality.maxInst && drawRuns.length) { impRuns.push([w, rr[1], rr[2], 1, 0]); continue; } inst += n; drawRuns.push(rr); lineWalls.add(w); }
   // streaming: the wanted walls, nearest first (sent a few times a second; the worker keeps only the newest list)
   want.sort((a, b) => a[0] - b[0]);
-  const wl = []; for (const [, w] of want) { w.wanted = epoch; if (!w.loaded && !wl.includes(w.i)) wl.push(w.i); }
+  // nearest first, as many as the instance pool holds (more would evict each other and be decoded again and again)
+  const wl = []; let poolRows = POOLH * 0.92;
+  for (const [d, w] of want) { if (w.wanted === epoch) continue; poolRows -= Math.max(1, Math.ceil(w.n / POOLW)); if (poolRows < 0 && d > 0) break;
+    w.wantD = d; w.wanted = epoch; if (!w.loaded) wl.push(w.i); }
   for (const w of WALLS) if (w.wanted === epoch - 1) w.wanted = epoch;   // keep last frame's set while it settles
   if (now - wantT > 200) { wantT = now; fw.postMessage({ type: 'want', frames: wl.slice(0, SOFT ? 12 : 40) }); }
   const t4Walls = [], t5Walls = [];
   for (let i = t3Walls.length - 1; i >= 0; i--) { const w = t3Walls[i], p = pWOf(w);
-    if (p < 0.02) { t5Walls.push(w); t3Walls.splice(i, 1); wallArr[4 * w.i + 3] = 3; }
-    else if (p < 0.07) { t4Walls.push(w); t3Walls.splice(i, 1); wallArr[4 * w.i + 3] = 2; } else wallArr[4 * w.i + 3] = 1; }
+    if (p < LODP.t5) { t5Walls.push(w); t3Walls.splice(i, 1); wallArr[4 * w.i + 3] = 3; }
+    else if (p < LODP.t4) { t4Walls.push(w); t3Walls.splice(i, 1); wallArr[4 * w.i + 3] = 2; } else wallArr[4 * w.i + 3] = 1; }
   uploadWallTex();
   PM('lod');
   bakeCand.sort((a, b) => a[0] - b[0]);
   let bakeBudget = SOFT ? 40000 : 1200000;
-  for (let i = 0; i < bakeCand.length && bakeBudget > 0; i++) { const [, w, pW] = bakeCand[i]; bakeBudget -= Math.max(1, bake(w, bakeBudget, IMP.hi && pW > 0.32 ? 'hi' : 'lo')); }
+  for (let i = 0; i < bakeCand.length && bakeBudget > 0; i++) { const [, w, pW] = bakeCand[i]; bakeBudget -= Math.max(1, bake(w, bakeBudget, hiSet.has(w.i) ? 'hi' : 'lo')); }
   V.stats.pendingBake = bakeCand.length;
-  rebuildDeco([...lineWalls].slice(0, 10));
+  cards.sort((a, b) => a[0] - b[0]);
+  updateCards(cards.slice(0, LODP.cards).map(c => c[1]), now);
   PM('bake');
   // ---- draw
   gl.bindFramebuffer(gl.FRAMEBUFFER, null); gl.viewport(0, 0, cw, ch);
@@ -874,9 +1045,9 @@ function frame(now) {
   if (!V.skip.has('t3')) { drawRanges(t3, t3Range, t3Walls, 300); drawRanges(t4, t4Range, t4Walls, 300); drawRanges(t5, t5Range, t5Walls, 120); }
   PM('plates');
   if (impRuns.length && !V.skip.has('imp')) { common(P.imp); gl.bindVertexArray(emptyVAO);
-    for (const [w, c0, c1, A] of impRuns) {
+    for (const [w, c0, c1, A, fl] of impRuns) {
       if (!w.imp || !w.imp.ready) continue; w.imp.used = now;
-      bindTex(0, gl.TEXTURE_2D, w.imp.tex, P.imp, 'uImp'); gl.uniform1f(P.imp.u.uFade, A);
+      bindTex(0, gl.TEXTURE_2D, w.imp.tex, P.imp, 'uImp'); gl.uniform1f(P.imp.u.uFade, A); gl.uniform2fv(P.imp.u.uLF, fl ? LF : NOFADE);
       gl.uniform1f(P.imp.u.uWallX, wallArr[4 * w.i]); gl.uniform1f(P.imp.u.uZ0, w.z0); gl.uniform1f(P.imp.u.uC0, c0); gl.uniform1f(P.imp.u.uC1, c1); gl.uniform1f(P.imp.u.uCols, w.cols);
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); draws++; } }
   PM('imp');
@@ -891,19 +1062,19 @@ function frame(now) {
   for (const M of V.morph ? [V.morph] : []) {
     const wb = W[M.b], x = wallArr[4 * M.b], pW = pWOf(wb);
     if (V.cam.p[0] > x || !G.boxVisible(planes, x - 1, -10, wb.z0, x + 1, 4400, wb.z0 + wb.cols * 128)) continue;
-    if (pW < T1 * 0.5) continue;   // far: the LOD pass drew the arriving frame's impostor / T3
+    if (pW < LF[0]) continue;   // far: the LOD pass drew the arriving frame's impostor / T3
     const m = M.m;
     if (m.inst.length / 4 > MORPHW * MORPHH) continue;
     if (morphOnGPU !== m.key) { G.uploadLinear(gl, morphTex, MORPHW, 0, m.inst, 4, gl.RGBA_INTEGER, gl.UNSIGNED_INT); morphOnGPU = m.key; }
     setupLineProg(P.morph); gl.bindVertexArray(emptyVAO);
-    wallUniforms(P.morph, wb, x); gl.uniform1f(P.morph.u.uMorphT, M.u); gl.uniform2i(P.morph.u.uHi, -1, -1);
+    wallUniforms(P.morph, wb, x); gl.uniform1f(P.morph.u.uMorphT, M.u); gl.uniform2i(P.morph.u.uHi, -1, -1); gl.uniform2fv(P.morph.u.uLF, NOFADE);
     const stride = V.morphStride; gl.uniform1i(P.morph.u.uStride, stride);
     const draw = (starts) => {
       let run = -1;
       const flush = c1 => { const a = starts[run], n = Math.floor((starts[c1] - a) / stride); if (n > 0) { gl.uniform1i(P.morph.u.uBase, a); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, n); draws++; inst += n; } run = -1; };
       for (let c = 0; c < wb.cols; c++) {
         const za = wb.z0 + (c - 1) * 128, zb = wb.z0 + (c + 2) * 128;
-        const vis = G.boxVisible(planes, x - 1, -10, za, x + 1, 4400, zb) && 2 * fp / Math.max(1, G.boxDist(V.cam.p, x, 0, za, x, 4096, zb)) >= T1 * 0.5;
+        const vis = G.boxVisible(planes, x - 1, -10, za, x + 1, 4400, zb) && 2 * fp / Math.max(1, G.boxDist(V.cam.p, x, 0, za, x, 4096, zb)) >= LF[0];
         if (vis && run < 0) run = c; else if (!vis && run >= 0) flush(c);
       }
       if (run >= 0) flush(wb.cols);
@@ -911,15 +1082,27 @@ function frame(now) {
     draw(m.colB); if (V.morphRemoved) draw(m.colA);
   }
   PM('morph');
-  if (deco.n && !V.skip.has('deco')) { common(P.rect); bindTex(5, gl.TEXTURE_2D, palTex, P.rect, 'uPal'); gl.uniform1f(P.rect.u.uMul, 1); gl.bindVertexArray(deco.vao); deco.bind(0); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, deco.n); draws++; }
+  if (cardList.length && !V.skip.has('deco')) { common(P.rect); bindTex(5, gl.TEXTURE_2D, palTex, P.rect, 'uPal'); gl.uniform1f(P.rect.u.uMul, 1);
+    for (const c of cardList) if (c.deco.n) { gl.bindVertexArray(c.deco.vao); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, c.deco.n); draws++; } }
   if (!V.skip.has('segs')) { common(P.seg); gl.bindVertexArray(segBuf.vao); gl.drawArrays(gl.LINES, 0, segBuf.n); draws++; }
   PM('segs');
   common(P.label); bindTex(4, gl.TEXTURE_2D, atlasTex, P.label, 'uAtlas');
-  gl.uniform1f(P.label.u.uMinPx, SOFT ? 8 : 5); gl.uniform3fv(P.label.u.uRight, r); gl.uniform3fv(P.label.u.uUp, u);
-  if (hdrLabs.n) { bindTex(9, gl.TEXTURE_2D, hdrLabs.tex, P.label, 'uLab'); gl.bindVertexArray(hdrLabs.vao); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, hdrLabs.n); draws++; }
+  gl.uniform3fv(P.label.u.uRight, r); gl.uniform3fv(P.label.u.uUp, u);
+  const kpx = cw / Math.max(1, canvas.clientWidth);
+  if (cardList.length && !V.skip.has('deco')) {   // file cards: path labels from 12 CSS px per line of text, grown names below that
+    gl.uniform1f(P.label.u.uMinPx, Math.max(SOFT ? 6 : 5, 7 * kpx)); gl.uniform1f(P.label.u.uMinFade, 1.3); gl.uniform1f(P.label.u.uCardPx, Math.max(SOFT ? 8 : 7, 12 * kpx));
+    for (const c of cardList) if (c.labs.n) { bindTex(9, gl.TEXTURE_2D, c.labs.tex, P.label, 'uLab'); gl.bindVertexArray(c.labs.vao); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, c.labs.n); draws++; } }
+  gl.uniform1f(P.label.u.uMinPx, SOFT ? 8 : 5); gl.uniform1f(P.label.u.uMinFade, 1.6); gl.uniform1f(P.label.u.uCardPx, 0);
+  PM('cards');
+  if (!V.skip.has('titles')) layoutTitles(dt);
+  PM('titles');
   if (!V.skip.has('labels')) {
     declutter(dt, r, u, SOFT ? 8 : 5);
     gl.disable(gl.DEPTH_TEST); bindTex(9, gl.TEXTURE_2D, labs.tex, P.label, 'uLab'); gl.bindVertexArray(labs.vao); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, labs.n); draws++; gl.enable(gl.DEPTH_TEST); }
+  if (!V.skip.has('titles') && TT.shown + TT.cur.some(v => v > 0)) {   // wall titles: one draw, screen space, over everything
+    gl.disable(gl.DEPTH_TEST); gl.useProgram(P.title.p); gl.uniform2f(P.title.u.uView, cw, ch); gl.uniform4fv(P.title.u.uAtlasM, ATLASM);
+    bindTex(4, gl.TEXTURE_2D, atlasTex, P.title, 'uAtlas'); bindTex(9, gl.TEXTURE_2D, TT.tex, P.title, 'uLab');
+    gl.bindVertexArray(TT.vao); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, TT.n); draws++; gl.enable(gl.DEPTH_TEST); }
   gl.bindVertexArray(null); gl.depthMask(true);
   PM('labels');
   if (q) { gl.endQuery(tq.TIME_ELAPSED_EXT); tqRing.push(q); }
@@ -938,8 +1121,11 @@ function frame(now) {
   if (now - hudT > 250) { hudT = now; emit('hud'); }
 }
 // adaptive quality: glyph / token thresholds (px per line) and canvas scale
-const STEPS = SOFT ? [{ t0: 9, t1: 2.4, scale: 0.5, maxInst: 220000 }, { t0: 11, t1: 3, scale: 0.45, maxInst: 160000 }, { t0: 13, t1: 3.5, scale: 0.4, maxInst: 120000 }, { t0: 16, t1: 4, scale: 0.33, maxInst: 90000 }] :
-  [{ t0: 4.5, t1: 1.3, scale: 1, maxInst: 3e6 }, { t0: 5.5, t1: 1.6, scale: 1, maxInst: 2e6 }, { t0: 7, t1: 2, scale: 1, maxInst: 1.5e6 }, { t0: 7, t1: 2, scale: 0.85, maxInst: 1.2e6 }, { t0: 8, t1: 2.4, scale: 0.7, maxInst: 1e6 }];
+// lf: the px-per-line band where a column's lines fade in over its impostor (lines are drawn from lf[0])
+const STEPS = SOFT ? [{ t0: 8, t1: 2.2, lf: [1, 1.4], scale: 0.5, maxInst: 220000 }, { t0: 9, t1: 2.4, lf: [1.1, 1.5], scale: 0.5, maxInst: 200000 }, { t0: 11, t1: 3, lf: [1.3, 1.8], scale: 0.45, maxInst: 160000 },
+  { t0: 13, t1: 3.5, lf: [1.6, 2.2], scale: 0.4, maxInst: 120000 }, { t0: 16, t1: 4, lf: [1.8, 2.5], scale: 0.33, maxInst: 90000 }] :
+  [{ t0: 3.8, t1: 1, lf: [0.28, 0.45], scale: 1, maxInst: 3e6 }, { t0: 4.5, t1: 1.3, lf: [0.4, 0.6], scale: 1, maxInst: 2.5e6 }, { t0: 5.5, t1: 1.6, lf: [0.5, 0.8], scale: 1, maxInst: 2e6 },
+   { t0: 7, t1: 2, lf: [0.65, 1], scale: 1, maxInst: 1.5e6 }, { t0: 7, t1: 2, lf: [0.65, 1], scale: 0.85, maxInst: 1.2e6 }, { t0: 8, t1: 2.4, lf: [0.8, 1.2], scale: 0.7, maxInst: 1e6 }];
 function p90(a) { if (!a.length) return 0; const s = a.slice(-30).sort((x, y) => x - y); return s[Math.floor(s.length * 0.9)]; }
 let adaptN = 0;
 V.morphStride = SOFT ? 2 : 1; V.morphRemoved = true;

@@ -1,7 +1,11 @@
-// attract.js: attract mode (FOLLOWUP item 2). After 2 minutes without input, or on T / the tour button: a fly-through of
-// important and recurring lines (data/attract.json: curated lines, the computed longest-surviving / widest-spread ones,
-// famous files). For each: smooth flights to reading range in the frames that hold it, back and forth in time and across
-// lanes at fork points, with a caption (the line, where it first appeared, how far it spread). Any input exits.
+// attract.js: attract mode (FOLLOWUP item 2). Starts on page load once the data is ready, after 2 minutes without input, or
+// on T / the tour button: a fly-through of important and recurring lines (data/attract.json: curated lines, the computed
+// longest-surviving / widest-spread ones, famous files). For each: smooth flights to reading range in the frames that hold
+// it, back and forth in time and across lanes at fork points, with a caption (the line, where it first appeared, how far
+// it spread). Dragging, keys, the wheel or a click exit (a mouse that only moves does not).
+// The audio gate: browsers start audio only from a user gesture, so a small overlay asks for a click; the first click /
+// tap / key only turns the score on (and closes the overlay): it does not reach the viewer, and the tour keeps running.
+// prefers-reduced-motion: no automatic camera movement (no tour on load or after idle); the overlay offers 'start tour'.
 export function initAttract(V) {
   const { F, W, attractList } = V;
   const items = (attractList.items || []).filter(it => it.stops && it.stops.length);
@@ -9,6 +13,8 @@ export function initAttract(V) {
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   let run = 0, startedAt = 0, lastInput = performance.now();
   const IDLE = +(V.Q.get('idle') || 120) * 1000;
+  const REDUCE = V.Q.has('reducedmotion') || (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+  const QUIET = V.Q.has('shots') || V.Q.has('bench');
   V.attractOn = false; V.attractArc = 0;
   const sleep = ms => new Promise(r => setTimeout(r, ms));
   // smooth camera: ease in-out position and direction, lifted when the move is long (crossing lanes / years)
@@ -75,7 +81,6 @@ export function initAttract(V) {
   }
   async function loop(token) {
     document.body.classList.add('attract'); V.attractOn = true;
-    V.toast('attract mode: any input exits', 2500);
     while (token === run) {
       for (const it of playlist()) {
         if (token !== run) break;
@@ -91,14 +96,42 @@ export function initAttract(V) {
   function start(why) {
     if (V.attractOn || V.bench) return;
     run++; startedAt = performance.now(); loop(run);
-    void why;
+    if (why !== 'auto') V.toast('tour: drag, a key or a click takes over', 2500);
   }
   function stop() {
     if (!V.attractOn) return;
     run++; V.attractOn = false; V.attractArc = 0; document.body.classList.remove('attract'); cap.classList.add('hidden'); V.setMarks(null);
   }
-  V.on('input', () => { lastInput = performance.now(); if (V.attractOn && performance.now() - startedAt > 400) stop(); });
-  setInterval(() => { if (!V.attractOn && !V.bench && !V.Q.has('shots') && !V.Q.has('bench') && IDLE > 0 && performance.now() - lastInput > IDLE) start('idle'); }, 1000);
-  V.attract = { start, stop, items, caption, route, get on() { return V.attractOn; } };
+  let acted = false;
+  V.on('input', (e) => { lastInput = performance.now(); if (e && e.type === 'mousemove') return; acted = true; if (V.attractOn && performance.now() - startedAt > 400) stop(); });
+  setInterval(() => { if (!REDUCE && !V.attractOn && !V.bench && !QUIET && IDLE > 0 && performance.now() - lastInput > IDLE) start('idle'); }, 1000);
+  V.attract = { start, stop, items, caption, route, get on() { return V.attractOn; }, reduce: REDUCE };
   if (V.Q.has('attract')) setTimeout(() => start('url'), 1500);
+
+  // ---- tour on load + the audio gate
+  const gate = document.getElementById('audiogate'), gateTour = document.getElementById('gatetour');
+  let gateOpen = !QUIET && !!gate, swallowT = 0;
+  const ready = f => { if (V.load.meta) f(); else V.on('meta', f); };
+  if (!QUIET && !REDUCE && V.Q.get('tour') !== '0') ready(() => setTimeout(() => { if (!acted) start('auto'); }, 200));   // not if the user already took the controls
+  if (gateOpen) {
+    if (REDUCE) gateTour.classList.remove('hidden');
+    ready(() => gate.classList.remove('hidden'));
+    const swallow = e => { if (performance.now() < swallowT) { e.stopImmediatePropagation(); e.preventDefault(); if (e.type === 'click') swallowT = 0; } };
+    const first = e => {
+      if (!gateOpen) return;
+      const t = e.target && e.target.closest ? e.target : null;
+      const onControl = t && t.closest('.panel') && !t.closest('#audiogate');   // a button / slider: let it work, still turn the sound on
+      if (e.type === 'keydown' && (e.ctrlKey || e.metaKey || e.altKey || /^F\d+$|^(Tab|Shift|Control|Alt|Meta)$/.test(e.key))) return;
+      gateOpen = false; gate.classList.add('hidden');
+      for (const k of ['pointerdown', 'keydown']) removeEventListener(k, first, true);
+      if (!(t && t.closest('#tmusic')) && V.score && !V.score.on) V.score.toggle();
+      if (t && t.closest('#gatetour')) start('button');
+      if (onControl) return;
+      // the gesture only enables audio: it does not reach the viewer (no pin, no drag, no key), so the tour keeps running
+      e.stopImmediatePropagation(); if (e.type !== 'keydown') e.preventDefault();
+      swallowT = performance.now() + (e.type === 'keydown' ? 0 : 1500);
+    };
+    addEventListener('pointerdown', first, true); addEventListener('keydown', first, true);
+    for (const k of ['mousedown', 'mouseup', 'click', 'touchstart', 'touchend', 'pointerup']) addEventListener(k, swallow, { capture: true, passive: false });
+  }
 }
