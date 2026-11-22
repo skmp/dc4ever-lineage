@@ -2,3 +2,6 @@ repos/
 __pycache__/
 agents/provenance/work/
 tools/provenance/provenance
+agents/viewer/.chrome-*
+agents/verify/.chrome-*
+agents/viewer/mkatlas

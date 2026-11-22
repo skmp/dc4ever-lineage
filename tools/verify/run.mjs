@@ -1,0 +1,107 @@
+#!/usr/bin/env node
+// run.mjs: headless Chromium driver over CDP (Node's built-in WebSocket), DESIGN 7.2 / 7.3 / 7.4.
+//   node tools/verify/run.mjs probe  [--gpu|--soft] [--size WxH]
+//   node tools/verify/run.mjs shots  [--gpu|--soft] [--size WxH] [--views far,rec,morph,fork]
+//   node tools/verify/run.mjs bench  [--gpu|--soft] [--size WxH] [--paths A,B,C,D,E] [--dur 20] [--fixed]
+// The server (tools/serve.mjs) must be running; the page is opened through the WSL address, not 127.0.0.1.
+import { spawn } from 'node:child_process';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
+const OUT = path.join(ROOT, 'agents', 'verify');
+const args = process.argv.slice(2), cmd = args[0] || 'probe';
+const opt = (k, d) => { const i = args.indexOf('--' + k); return i < 0 ? d : (args[i + 1] && !args[i + 1].startsWith('--') ? args[i + 1] : true); };
+const soft = !!opt('soft', false);
+const [VW, VH] = String(opt('size', '1280x720')).split('x').map(Number);
+const PORT = +opt('port', 8742);
+const CHROME = process.env.CHROME || path.join(os.homedir(), '.cache/ms-playwright/chromium-1243/chrome-linux64/chrome');
+const wsl = Object.values(os.networkInterfaces()).flat().find(a => a && a.family === 'IPv4' && !a.internal && !a.address.startsWith('172.17.'))?.address || '127.0.0.1';
+const BASE = `http://${wsl}:${PORT}/`;
+fs.mkdirSync(path.join(OUT, 'shots'), { recursive: true });
+
+async function launch() {
+  const udd = fs.mkdtempSync(path.join(OUT, '.chrome-'));
+  const env = { ...process.env, GALLIUM_DRIVER: soft ? 'llvmpipe' : 'd3d12' };
+  const flags = ['--headless=new', `--user-data-dir=${udd}`, '--remote-debugging-port=0', `--window-size=${VW},${VH}`, '--no-first-run', '--no-default-browser-check',
+    '--ignore-gpu-blocklist', '--enable-gpu', ...(soft ? ['--use-angle=vulkan'] : ['--use-gl=angle', '--use-angle=gl']), ...(cmd === 'bench' ? ['--disable-gpu-vsync', '--disable-frame-rate-limit'] : []),
+    '--enable-precise-memory-info', '--disable-background-timer-throttling', '--disable-renderer-backgrounding', '--disable-backgrounding-occluded-windows', 'about:blank'];
+  const proc = spawn(CHROME, flags, { env, stdio: ['ignore', 'ignore', 'pipe'] });
+  let errBuf = '';
+  const wsUrl = await new Promise((res, rej) => {
+    const to = setTimeout(() => rej(new Error('chrome did not start: ' + errBuf.slice(-2000))), 20000);
+    proc.stderr.on('data', d => { errBuf += d; const m = errBuf.match(/DevTools listening on (ws:\/\/\S+)/); if (m) { clearTimeout(to); res(m[1]); } });
+  });
+  const port = new URL(wsUrl).port;
+  const targets = await (await fetch(`http://127.0.0.1:${port}/json/list`)).json();
+  const page = targets.find(t => t.type === 'page');
+  const ws = new WebSocket(page.webSocketDebuggerUrl);
+  await new Promise(r => ws.addEventListener('open', r, { once: true }));
+  let id = 0; const pend = new Map(), logs = [];
+  ws.addEventListener('message', ev => { const m = JSON.parse(ev.data); if (m.id && pend.has(m.id)) { const p = pend.get(m.id); pend.delete(m.id); m.error ? p.rej(new Error(JSON.stringify(m.error))) : p.res(m.result); }
+    else if (m.method === 'Runtime.consoleAPICalled') logs.push(m.params.type + ': ' + m.params.args.map(a => a.value ?? a.description).join(' '));
+    else if (m.method === 'Runtime.exceptionThrown') logs.push('EXCEPTION: ' + (m.params.exceptionDetails.exception?.description || m.params.exceptionDetails.text)); });
+  const send = (method, params = {}) => new Promise((res, rej) => { const i = ++id; pend.set(i, { res, rej }); ws.send(JSON.stringify({ id: i, method, params })); });
+  await send('Runtime.enable'); await send('Page.enable');
+  await send('Emulation.setDeviceMetricsOverride', { width: VW, height: VH, deviceScaleFactor: 1, mobile: false });
+  const evalJS = async (expr, timeout = 180000) => {
+    const r = await Promise.race([send('Runtime.evaluate', { expression: expr, awaitPromise: true, returnByValue: true }), new Promise((_, rej) => setTimeout(() => rej(new Error('eval timeout: ' + expr)), timeout))]);
+    if (r.exceptionDetails) throw new Error(r.exceptionDetails.exception?.description || r.exceptionDetails.text); return r.result.value;
+  };
+  const close = () => { try { ws.close(); } catch { } proc.kill('SIGKILL'); setTimeout(() => fs.rmSync(udd, { recursive: true, force: true }), 500); };
+  return { send, evalJS, logs, close };
+}
+const T0 = Date.now(); const ts = (s) => console.log(((Date.now() - T0) / 1000).toFixed(1) + 's', s);
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+async function open(b, query = '') {
+  const t0 = Date.now();
+  await b.send('Page.navigate', { url: BASE + query });
+  for (let i = 0; i < 600; i++) { await sleep(100); try { if (await b.evalJS('!!(window.viewer && window.viewer.load.firstFrame)', 2000)) break; } catch { } }
+  return Date.now() - t0;
+}
+
+const tag = soft ? 'llvmpipe' : 'gpu';
+const b = await launch();
+try {
+  if (cmd === 'probe') {
+    const nav = await open(b, '?shots=1');
+    const r = await b.evalJS(`(async () => { const V = window.viewer; const ms = await V.whenReady({timeout: 90000});
+      return { renderer: V.RENDERER, soft: V.SOFT, crossOriginIsolated, sab: typeof SharedArrayBuffer, load: V.load, readyMs: ms, gpuMB: V.stats.gpuBytes/1048576,
+        heapMB: performance.memory ? performance.memory.usedJSHeapSize/1048576 : null, bytes: performance.getEntriesByType('resource').reduce((a, e) => a + (e.transferSize || 0), 0) }; })()`);
+    const head = await fetch(BASE);
+    r.url = BASE; r.navMs = nav; r.coop = head.headers.get('cross-origin-opener-policy'); r.coep = head.headers.get('cross-origin-embedder-policy');
+    // bytes before the first frame: resources that finished before firstFrame
+    r.bytesBeforeFirstFrame = await b.evalJS(`performance.getEntriesByType('resource').filter(e => e.responseEnd <= window.viewer.load.firstFrame + 50).reduce((a, e) => a + (e.transferSize || 0), 0)`);
+    r.logs = b.logs.slice(-20);
+    console.log(JSON.stringify(r, null, 1));
+    fs.writeFileSync(path.join(OUT, `probe-${tag}.json`), JSON.stringify(r, null, 1));
+  } else if (cmd === 'shots') {
+    ts('open'); await open(b, '?shots=1' + (process.env.EXTRA || '')); ts('opened');
+    const views = String(opt('views', 'far,rec,rec-mid,morph,morph-wide,fork,fork2,fpgadc')).split(',');
+    const res = {};
+    for (const v of views) {
+      ts('view ' + v); const info = await b.evalJS(`window.viewer.view(${JSON.stringify(v)})`); ts('ready');
+      const shot = await b.send('Page.captureScreenshot', { format: 'png' }); ts('shot');
+      const f = path.join(OUT, 'shots', `${v}-${tag}-${VW}x${VH}.png`);
+      fs.writeFileSync(f, Buffer.from(shot.data, 'base64'));
+      res[v] = { file: path.relative(ROOT, f), ready_ms: Math.round(info.ms), renderer: info.renderer };
+      console.log(v, '->', res[v].file, `${res[v].ready_ms} ms`);
+    }
+    fs.writeFileSync(path.join(OUT, `shots-${tag}.json`), JSON.stringify({ size: [VW, VH], views: res, logs: b.logs.slice(-30) }, null, 1));
+    if (b.logs.length) console.log(b.logs.slice(-10).join('\n'));
+  } else if (cmd === 'bench') {
+    const paths = String(opt('paths', 'A,B,C,D,E')).split(','), dur = +opt('dur', 20), fixed = opt('fixed', false) ? '&fixed=1' : '';
+    const all = {};
+    for (const p of paths) {
+      await open(b, `?shots=1&tag=${tag}-${VW}x${VH}${fixed}`);
+      const r = await b.evalJS(`window.viewer.runBench(${JSON.stringify(p)}, ${dur})`, (dur + 150) * 1000);
+      fs.writeFileSync(path.join(OUT, `frames-${tag}-${VW}x${VH}-${p}.csv`), 'frame_ms,cpu_ms,gpu_ms,draws,lines,quality_step\n' + r.frames_csv + '\n');
+      delete r.frames_csv; all[p] = r;
+      console.log(p, JSON.stringify({ frame: r.frame_ms, cpu: r.cpu_ms, gpu: r.gpu_ms, fps: r.fps_mean, steps: r.quality_steps, lines_p95: r.lines_p95, over100: r.frames_over_100ms }));
+    }
+    fs.writeFileSync(path.join(OUT, `bench-${tag}-${VW}x${VH}.json`), JSON.stringify({ date: new Date().toISOString(), size: [VW, VH], paths: all, logs: b.logs.slice(-20) }, null, 1));
+  }
+} catch (e) { console.error('ERROR', e.message); console.error(b.logs.slice(-30).join('\n')); process.exitCode = 1; }
+finally { b.close(); ts('closed'); setTimeout(() => process.exit(process.exitCode || 0), 800); }
