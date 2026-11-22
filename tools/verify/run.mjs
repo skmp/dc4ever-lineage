@@ -74,6 +74,8 @@ try {
     r.url = BASE; r.navMs = nav; r.coop = head.headers.get('cross-origin-opener-policy'); r.coep = head.headers.get('cross-origin-embedder-policy');
     // bytes before the first frame: resources that finished before firstFrame
     r.bytesBeforeFirstFrame = await b.evalJS(`performance.getEntriesByType('resource').filter(e => e.responseEnd <= window.viewer.load.firstFrame + 50).reduce((a, e) => a + (e.transferSize || 0), 0)`);
+    r.pick = {};
+    for (const v of ['rec', 'rec-mid', 'fork', 'far']) r.pick[v] = await b.evalJS(`window.viewer.view(${JSON.stringify(v)}).then(() => ({ projected_lines: window.viewer.pickTest(200), screen_samples: window.viewer.pickTest2(200) }))`);
     r.logs = b.logs.slice(-20);
     console.log(JSON.stringify(r, null, 1));
     fs.writeFileSync(path.join(OUT, `probe-${tag}.json`), JSON.stringify(r, null, 1));
@@ -95,7 +97,7 @@ try {
     const paths = String(opt('paths', 'A,B,C,D,E')).split(','), dur = +opt('dur', 20), fixed = opt('fixed', false) ? '&fixed=1' : '';
     const all = {};
     for (const p of paths) {
-      await open(b, `?shots=1&tag=${tag}-${VW}x${VH}${fixed}`);
+      await open(b, `?shots=1&tag=${tag}-${VW}x${VH}${fixed}` + (process.env.EXTRA || ""));
       const r = await b.evalJS(`window.viewer.runBench(${JSON.stringify(p)}, ${dur})`, (dur + 150) * 1000);
       fs.writeFileSync(path.join(OUT, `frames-${tag}-${VW}x${VH}-${p}.csv`), 'frame_ms,cpu_ms,gpu_ms,draws,lines,quality_step\n' + r.frames_csv + '\n');
       delete r.frames_csv; all[p] = r;

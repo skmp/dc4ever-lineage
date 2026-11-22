@@ -68,7 +68,10 @@ export function buildWall(json, dec, lane, slotMap, anc, wallSnap, hideRunMin = 
   const ancBig = BigInt(anc);
   const related = new Uint8Array(64);
   for (let o = 0; o < 41; o++) related[o] = (o === wallSnap || ((ancBig >> BigInt(o)) & 1n) === 1n) ? 1 : 0;
-  related[40] = (((ancBig >> 1n) & 1n) || ((ancBig >> 2n) & 1n) || wallSnap === 1 || wallSnap === 2 || wallSnap === 3 || wallSnap === 4 || wallSnap === 7) ? 1 : 0;
+  // dc4ever (concept parent of nullDC) and nullDC-pre2008 count as related for every wall that descends from nullDC / nullDCe
+  const nulldcFamily = [1, 2, 3, 4, 7].some(b => b === wallSnap || ((ancBig >> BigInt(b)) & 1n) === 1n);
+  related[40] = nulldcFamily ? 1 : 0;
+  if (nulldcFamily) related[0] = 1;
   for (const k of order) {
     const f = json.files[k]; fileStart[k] = j;
     const base = fileL[k] + HDR, s0 = srcOff[k];

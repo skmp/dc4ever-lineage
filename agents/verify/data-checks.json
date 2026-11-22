@@ -1,0 +1,73 @@
+{
+ "date": "2026-11-22T17:12:20.078Z",
+ "seconds": 5.438,
+ "results": [
+  {
+   "name": "norm line count equals manifest",
+   "pass": true,
+   "norm": 668660,
+   "manifest": 668660
+  },
+  {
+   "name": "fold length equals linemeta (10k random lines)",
+   "pass": true,
+   "mismatches": 0
+  },
+  {
+   "name": "0x7F boxes equal non-ASCII code points (valid UTF-8 lines)",
+   "pass": true,
+   "mismatches": 0
+  },
+  {
+   "name": "every line placed once (sum = 4,092,201)",
+   "pass": true,
+   "placed": 4092201
+  },
+  {
+   "name": "no two lines of a wall share a cell",
+   "pass": true,
+   "overlaps": 0
+  },
+  {
+   "name": "all lines inside their lane columns",
+   "pass": true,
+   "walls_out": 0
+  },
+  {
+   "name": "slots do not overlap and stay inside the lane",
+   "pass": true,
+   "slots": 6685,
+   "bad": 0
+  },
+  {
+   "name": "streets: same slot for an identity in every wall of its lane",
+   "pass": true,
+   "files": 13566,
+   "moved": 0
+  },
+  {
+   "name": "fork ribbons with lateral shift > 2 columns (info)",
+   "pass": true,
+   "shifted": 1434
+  },
+  {
+   "name": "decoder parity with prov_query.py (500 lines, stratified by origin)",
+   "pass": true,
+   "mismatches": 0
+  },
+  {
+   "name": "spot-check lines give the same origins",
+   "pass": true,
+   "checked": 20,
+   "mismatches": 0
+  },
+  {
+   "name": "morph kept/added/removed equal diffs.json (49 pairs)",
+   "pass": true,
+   "pairs": 49,
+   "mismatches": 0,
+   "ms_per_pair": 24,
+   "bads": []
+  }
+ ]
+}

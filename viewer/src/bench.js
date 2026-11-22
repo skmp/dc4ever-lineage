@@ -11,7 +11,7 @@ export function initBench(V) {
     const t0 = performance.now();
     const check = () => {
       const all = V.load.walls === V.NS && V.load.text === man.text_chunks && V.normLines;
-      const baked = !V.stats.pendingBake;
+      const baked = !V.stats.pendingBake && (!opts.allBaked || !V.stats.unbaked);
       const morphOk = !opts.morph || V.morph;
       if ((all && baked && morphOk && V.stats.frames > 2) || performance.now() - t0 > (opts.timeout || 60000)) res(performance.now() - t0);
       else setTimeout(check, 100);
@@ -31,7 +31,7 @@ export function initBench(V) {
       V.cam.p = [V.WX[r.s] - d, v.p[1] - d * 0.45, v.p[2] - 60 + hw - 2]; V.setLook([1, 0, 0]);
     } else if (name === 'rec-mid') {
       const r = await V.gotoBookmark('nullDC rec_v1 driver', { instant: true });
-      const v = V.fileView(r.s, r.k, 1); V.cam.p = [V.WX[r.s] - 1800, v.p[1] - 900, v.p[2] + 300]; V.setLook([1, -0.1, 0.15]);
+      const v = V.fileView(r.s, r.k, 1); const d = 2 * V.focalPx() / 8.5; V.cam.p = [V.WX[r.s] - d, v.p[1] - d * 0.5, v.p[2] + d * 0.55]; V.setLook([1, -0.04, 0.12]);
     } else if (name === 'morph' || name === 'morph-wide') {
       const b = sid('reicast-r7-rc1'); V.setPres('now'); V.setTime(V.eventOf[b] - 1 + 0.30);
       const w = W[b], x = V.eventX(V.t);
@@ -54,6 +54,42 @@ export function initBench(V) {
     return { ms, renderer: V.RENDERER, cam: V.cam.p, stats: { ...V.stats, dt: undefined, cpu: undefined, gpu: undefined } };
   };
 
+  // ---- pick check (DESIGN 7.2.4): project random visible line cells to the screen, pick them back
+  V.pickTest = (n = 200) => {
+    const VP = V.VP, res = { tried: 0, ok: 0, bad: [] }; let guard = 0;
+    while (res.tried < n && guard++ < n * 50) {
+      const w = W[Math.floor(Math.random() * W.length)]; if (!w.loaded || !V.WA[w.s]) continue;
+      const j = Math.floor(Math.random() * w.n), w1 = w.inst[2 * j + 1], col = w1 & 4095, row = (w1 >>> 12) & 2047;
+      const p = [V.WX[w.s], 4096 - row * 2 - 1, w.z0 + col * 128 + 3];
+      const c = [0, 1, 2, 3].map(i => VP[i] * p[0] + VP[4 + i] * p[1] + VP[8 + i] * p[2] + VP[12 + i]);
+      if (c[3] <= 0) continue; const nx = c[0] / c[3], ny = c[1] / c[3];
+      if (Math.abs(nx) > 0.95 || Math.abs(ny) > 0.95) continue;
+      const sx = (nx + 1) / 2 * innerWidth, sy = (1 - ny) / 2 * innerHeight;
+      const r = V.pick(sx, sy); if (r && r.s !== w.s) continue;   // occluded by a nearer wall
+      res.tried++;
+      const k = w.fileOfInst[j], line = j - w.fileStart[k] + 1;
+      if (r && r.s === w.s && r.k === k && r.line === line) res.ok++;
+      else if (res.bad.length < 5) res.bad.push({ want: [w.s, k, line], got: r && [r.s, r.k, r.line, r.kind] });
+    }
+    return res;
+  };
+
+  // screen-sample variant: random pixels -> pick -> the picked line's cell, projected with the GL matrix, contains the pixel
+  V.pickTest2 = (n = 200) => {
+    const VP = V.VP, res = { tried: 0, ok: 0, bad: [] };
+    const proj = p => { const c = [0, 1, 2, 3].map(i => VP[i] * p[0] + VP[4 + i] * p[1] + VP[8 + i] * p[2] + VP[12 + i]); return [(c[0] / c[3] + 1) / 2 * innerWidth, (1 - c[1] / c[3]) / 2 * innerHeight]; };
+    for (let g = 0; g < n * 20 && res.tried < n; g++) {
+      const sx = Math.random() * innerWidth, sy = Math.random() * innerHeight, r = V.pick(sx, sy);
+      if (!r || r.kind !== 'line') continue; res.tried++;
+      const x = V.WX[r.s], z0 = r.w.z0 + r.col * 128, yt = 4096 - r.row * 2;
+      const pts = [[x, yt, z0], [x, yt - 2, z0], [x, yt, z0 + 128], [x, yt - 2, z0 + 128]].map(proj);
+      const xs = pts.map(p => p[0]), ys = pts.map(p => p[1]), e = 0.75;
+      if (sx >= Math.min(...xs) - e && sx <= Math.max(...xs) + e && sy >= Math.min(...ys) - e && sy <= Math.max(...ys) + e) res.ok++;
+      else if (res.bad.length < 5) res.bad.push({ sx, sy, r: [r.s, r.col, r.row], box: [Math.min(...xs), Math.max(...xs), Math.min(...ys), Math.max(...ys)] });
+    }
+    return res;
+  };
+
   // ---- scripted paths, 20 s each
   async function pathA() { // sh4_opcodes street through every wall that holds it
     const s0 = sid('nulldc3-refsw3'), k0 = V.snapJ[s0].files.findIndex(f => f.p === 'libswirl/hw/sh4/interpr/sh4_opcodes.cpp');
@@ -72,8 +108,8 @@ export function initBench(V) {
     V.follow = false; V.fixedQuality = Q.get('fixed') === '1'; V.setPres('gallery');
     const mk = { A: pathA, B: pathB, C: pathC, D: pathD, E: pathE }[name];
     const step = await mk();
-    step(0); const readyMs = await V.whenReady({ timeout: 90000 });
-    const rec = []; let t0 = null; V.bench = true;
+    step(0); const readyMs = await V.whenReady({ timeout: 120000, allBaked: true });
+    const rec = []; let t0 = null; V.bench = true; V.syncFrames = Q.get('sync') !== '0'; let lastGpuN = V.stats.gpuN || 0;
     await new Promise(res => {
       const steps = new Set();
       const tick = () => {
@@ -82,9 +118,10 @@ export function initBench(V) {
         if (t >= 1) { V.listeners.tick.splice(V.listeners.tick.indexOf(tick), 1); res(); }
       };
       V.on('tick', tick);
-      V.on('frame', ({ dt, cpu }) => { if (t0 === null || V.bench === false) return; rec.push([dt * 1000, cpu, V.stats.gpu.at(-1) ?? null, V.stats.draws, V.stats.inst, V.quality.step]); steps.add(V.quality.step); });
+      V.on('frame', ({ dt, cpu }) => { if (t0 === null || V.bench === false) return; const gNew = (V.stats.gpuN || 0) !== lastGpuN ? V.stats.gpu.at(-1) : null; lastGpuN = V.stats.gpuN || 0;
+        rec.push([V.lastRawDt, cpu, gNew, V.stats.draws, V.stats.inst, V.quality.step]); steps.add(V.quality.step); });
     });
-    V.bench = false;
+    V.bench = false; V.syncFrames = false;
     const col = i => rec.map(r => r[i]).filter(v => v != null).slice(2);
     const pc = (a, p) => { if (!a.length) return null; const s = a.slice().sort((x, y) => x - y); return +s[Math.min(s.length - 1, Math.floor(s.length * p))].toFixed(2); };
     const dt = col(0), cpu = col(1), gpu = col(2);
@@ -101,5 +138,9 @@ export function initBench(V) {
     await fetch(`/__report?name=bench-${tag}-${name}.json`, { method: 'POST', body: JSON.stringify(out) }).catch(() => {});
     return out;
   };
-  if (Q.has('bench')) setTimeout(() => V.runBench(Q.get('bench'), +(Q.get('dur') || 20)), 50);
+  if (Q.has('bench')) setTimeout(async () => {
+    const list = Q.get('bench') === 'all' ? ['A', 'B', 'C', 'D', 'E'] : Q.get('bench').split(','), res = {};
+    for (const p of list) { res[p] = await V.runBench(p, +(Q.get('dur') || 20)); V.toast(`bench ${p}: p50 ${res[p].frame_ms.p50} ms, p95 ${res[p].frame_ms.p95} ms`); delete res[p].frames_csv; }
+    V.toast('bench done: results posted to agents/verify/ on the server'); console.log('BENCH', JSON.stringify(res));
+  }, 50);
 }

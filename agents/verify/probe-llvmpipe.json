@@ -1,0 +1,118 @@
+{
+ "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)",
+ "soft": true,
+ "crossOriginIsolated": false,
+ "sab": "undefined",
+ "load": {
+  "boot": 151.40000000596046,
+  "firstFrame": 500.1000000089407,
+  "walls": 40,
+  "text": 12,
+  "textDone": 0,
+  "allText": 2412.2000000029802,
+  "bytesBoot": 0,
+  "meta": 528,
+  "allWalls": 1262.2000000029802
+ },
+ "readyMs": 7101,
+ "gpuMB": 117.14473693847654,
+ "heapMB": 129.8904104232788,
+ "bytes": 1763697,
+ "url": "http://172.22.167.46:8742/",
+ "navMs": 1006,
+ "coop": "same-origin",
+ "coep": "require-corp",
+ "bytesBeforeFirstFrame": 327583,
+ "pick": {
+  "rec": {
+   "projected_lines": {
+    "tried": 0,
+    "ok": 0,
+    "bad": []
+   },
+   "screen_samples": {
+    "tried": 200,
+    "ok": 200,
+    "bad": []
+   }
+  },
+  "rec-mid": {
+   "projected_lines": {
+    "tried": 1,
+    "ok": 1,
+    "bad": []
+   },
+   "screen_samples": {
+    "tried": 200,
+    "ok": 200,
+    "bad": []
+   }
+  },
+  "fork": {
+   "projected_lines": {
+    "tried": 200,
+    "ok": 200,
+    "bad": []
+   },
+   "screen_samples": {
+    "tried": 111,
+    "ok": 111,
+    "bad": []
+   }
+  },
+  "far": {
+   "projected_lines": {
+    "tried": 200,
+    "ok": 189,
+    "bad": [
+     {
+      "want": [
+       2,
+       181,
+       363
+      ],
+      "got": null
+     },
+     {
+      "want": [
+       0,
+       10,
+       1724
+      ],
+      "got": null
+     },
+     {
+      "want": [
+       0,
+       14,
+       717
+      ],
+      "got": null
+     },
+     {
+      "want": [
+       2,
+       222,
+       8
+      ],
+      "got": null
+     },
+     {
+      "want": [
+       2,
+       36,
+       652
+      ],
+      "got": null
+     }
+    ]
+   },
+   "screen_samples": {
+    "tried": 39,
+    "ok": 39,
+    "bad": []
+   }
+  }
+ },
+ "logs": []
+}

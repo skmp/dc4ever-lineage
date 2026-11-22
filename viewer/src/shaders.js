@@ -27,12 +27,16 @@ export function lineVS(morph) {
   return HEAD + (morph ? '#define MORPH 1\n' : '') + COMMON + `
 uniform usampler2D uInst; uniform usampler2D uMeta; uniform usampler2D uOffs;
 uniform int uBase; uniform float uWallX; uniform float uZ0; uniform float uZ0A; uniform int uBake; uniform float uBakeW;
-uniform ivec2 uHi; uniform float uMorphT; uniform int uDenseMorph;
+uniform ivec2 uHi; uniform float uMorphT; uniform int uDenseMorph; uniform int uStride;
 out vec2 vL; out float vDist;
 flat out uvec4 vInfo;  // id, origin, flags, keep
 flat out uint vOff; flat out float vLen; flat out vec4 vTint; flat out float vAlpha; flat out float vHi;
 void main() {
+#ifdef MORPH
+  int idx = uBase + gl_InstanceID * uStride;
+#else
   int idx = uBase + gl_InstanceID;
+#endif
   ivec2 tc = ivec2(idx & 4095, idx >> 12);
 #ifdef MORPH
   uvec4 w = texelFetch(uInst, tc, 0);
@@ -166,12 +170,14 @@ void main() {
 // ---- lines: ribbons, edges, ruler ----  aP = (z, y, s, xabs)  aW = (wallA, wallB)  aC
 export const lineSegVS = HEAD + COMMON + `
 layout(location=0) in vec4 aP; layout(location=1) in uvec2 aW; layout(location=2) in vec4 aC;
+uniform vec2 uFadeFar;
 out vec4 vC;
 void main() {
   float a = 1., x = aP.w;
   if (aW.x < 64u) { x = mix(uWX[aW.x], uWX[min(aW.y, 63u)], aP.z) + aP.w; a = min(uWA[aW.x], uWA[min(aW.y, 63u)]); }
   if (a <= 0.) { gl_Position = vec4(2., 2., 2., 1.); return; }
   gl_Position = uVP * vec4(x, aP.y, aP.x, 1.);
+  if (uFadeFar.y > 0.) a *= 1. - smoothstep(uFadeFar.x, uFadeFar.y, length(vec3(x, aP.y, aP.x) - uCam));
   vC = vec4(aC.rgb * aC.a, aC.a) * a;
 }`;
 export const lineSegFS = HEAD + `in vec4 vC; out vec4 oC; void main() { oC = vC; }`;
@@ -191,6 +197,7 @@ void main() {
   bool wallPlane = aK.x < 0.5 && aU.x == 0. && aV.x == 0.;
   float d = length(o - uCam);
   float px = length(V) * 2. * uFocal / max(d, 1.);   // char cell height in px
+  if (aK.x > 1.5 && px < aK.x) { float k = aK.x / px; U *= k; V *= k; px = aK.x; }   // billboard with a minimum screen size
   if (wa <= 0. || px < uMinPx || (wallPlane && uCam.x > o.x) || (aK.y > 0. && px > aK.y)) { gl_Position = vec4(2., 2., 2., 1.); return; }
   float L = float(aT.y);
   vec3 p = o + U * (cr.x * L) - V * (cr.y * 2.);
@@ -224,4 +231,4 @@ void main() {
 }`;
 export const impFS = HEAD + `
 uniform sampler2D uImp; uniform float uFade; in vec2 vUV; out vec4 oC;
-void main() { vec4 c = texture(uImp, vUV); c.rgb *= 1.25; oC = c * uFade; if (oC.a < 0.003) discard; }`;
+void main() { vec4 c = texture(uImp, vUV); if (c.a < 0.003) discard; float a = sqrt(c.a) * 0.92; oC = vec4(c.rgb / c.a * 1.1 * a, a) * uFade; }`;

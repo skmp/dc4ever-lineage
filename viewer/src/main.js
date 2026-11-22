@@ -151,7 +151,8 @@ class RectBuf {
 }
 const ST_RGB = { new: [70, 200, 110], same: [90, 100, 125], edit: [230, 180, 60], move: [90, 160, 240], 'move+edit': [180, 120, 240], copy: [240, 110, 180] };
 const mixc = (a, b, t) => a.map((v, i) => Math.round(v + (b[i] - v) * t));
-const plates = new RectBuf(), deco = new RectBuf(), t3 = new RectBuf(), floor = new RectBuf();
+const plates = new RectBuf(), deco = new RectBuf(), t3 = new RectBuf(), floor = new RectBuf(), pinsR = new RectBuf();
+const decoRange = [], holeRange = [];
 const PLATE_PUSH = 3 << 2, T3_PUSH = 2 << 2, HDR_PUSH = 1 << 2;
 // labels
 const labStore = []; let labLen = 0; const labels = [];
@@ -159,13 +160,14 @@ function labText(s) { const o = labLen; for (let i = 0; i < s.length; i++) { con
 function addLabel(s, z, y, dx, wall, U, Vv, rgba, billboard = 0, maxPx = 0) {
   if (!s.length) return; labels.push([z, y, dx, wall, ...U, ...Vv, labText(s), s.length, rgba, billboard, maxPx]);
 }
-const segs = []; // [z, y, s, xabs, wA, wB, rgba]
+const segs = [], holeSegs = [], streetSegs = []; // [z, y, s, xabs, wA, wB, rgba]
 function seg(a, b) { segs.push(a, b); }
 const trunc = (s, n) => s.length <= n ? s : '…' + s.slice(s.length - n + 1);
 
 for (const w of W) {
   const L = w.L, j = snapJ[w.s], lane = L, rgb = L.rgb, wall = w.s;
   const plate = mixc([13, 15, 20], rgb, 0.06).concat(255);
+  const deco0 = deco.f.length, hole0 = holeSegs.length;
   for (let c = 0; c < w.cols; c++) plates.add(w.z0 + c * 128 - 4, w.z0 + c * 128 + 124, -6, 4102, 0, 0, plate, wall, PLATE_PUSH);
   // files: header bars + labels + T3 quads per column segment
   j.files.forEach((f, k) => {
@@ -183,8 +185,9 @@ for (const w of W) {
     const col = Math.floor(sl.L / H), row = sl.L % H, rows = Math.min(core.HDR + sl.cap, H - row);
     const za = w.z0 + col * 128, zb = za + 120, ya = 4096 - (row + rows) * 2, yb = 4096 - row * 2, hc = [70, 76, 92, 140];
     const P4 = [[za, ya], [zb, ya], [zb, yb], [za, yb]];
-    for (let q = 0; q < 4; q++) { const A = P4[q], B = P4[(q + 1) & 3]; seg([A[0], A[1], 0, -1, wall, wall, hc], [B[0], B[1], 0, -1, wall, wall, hc]); }
+    for (let q = 0; q < 4; q++) { const A = P4[q], B = P4[(q + 1) & 3]; holeSegs.push([A[0], A[1], 0, -1, wall, wall, hc], [B[0], B[1], 0, -1, wall, wall, hc]); }
   }
+  decoRange.push([deco0, deco.f.length - deco0]); holeRange.push([hole0, holeSegs.length - hole0]);
   // wall title + districts
   const sn = man.snapshots[w.s];
   addLabel(`${lane.title}  |  ${sn.id}  |  ${sn.date_range ? sn.date_range + ' (git ' + sn.date + ')' : sn.order_date}  |  ${sn.files} files, ${sn.lines.toLocaleString('en')} lines`, w.z0, 4096 + 200, 0, wall, [0, 0, 40], [0, 50, 0], [...rgb, 255], 0, 0);
@@ -197,14 +200,14 @@ for (const w of W) {
 }
 // pins: DreamSTer release markers
 for (const p of layout.pins) { const w = W[p.snap];
-  deco.add(w.z0 - 260, w.z0 - 60, -6, 4500, 0, 0, [255, 210, 90, 220], p.snap, HDR_PUSH);
+  pinsR.add(w.z0 - 260, w.z0 - 60, -6, 4500, 0, 0, [255, 210, 90, 220], p.snap, HDR_PUSH);
   addLabel(p.label, w.z0 - 60, 4096 + 420, 0, p.snap, [0, 0, 60], [0, 70, 0], [255, 210, 90, 255]); }
 // lanes: titles, floor bands
 const Xmax = Math.max(...W.map(w => w.x)) + 8000;
 for (const [li, L] of layout.lanes.entries()) {
   const first = Math.min(...L.snaps.map(s => W[s].x));
   floor.add(L.z0, L.z0 + L.width, -8, -8, first - 3000, Xmax, [...mixc([12, 14, 19], L.rgb, 0.12), 255], 255, 1);
-  addLabel(L.title, L.z0, 4096 + 1800, first - 3500, 255, [0, 0, 160], [0, 180, 0], [...L.rgb, 255], 0, 0);
+  addLabel(L.title, L.z0, 4096 + 1800, first - 3500, 255, [0, 0, 160], [0, 180, 0], [...L.rgb, 255], 15, 0);
   addLabel(L.name, L.z0, -10, first - 3200, 255, [0, 0, 260], [260, 0, 0], [...L.rgb, 200]);
   // street ribbons between consecutive walls of the lane (per shared slot)
   const ss = laneSnapsByEvent[li];
@@ -214,14 +217,14 @@ for (const [li, L] of layout.lanes.entries()) {
       if (!a.slotToFile.has(slot)) continue;
       const f = snapJ[b.s].files[kb], L0 = b.fileL[kb], z = b.z0 + Math.floor(L0 / H) * 128 + 60;
       const c = [...(ST_RGB[f.st] || [120, 120, 120]), f.st === 'same' ? 60 : 150];
-      seg([z, -30, 0, 0, a.s, b.s, c], [z, -30, 1, 0, a.s, b.s, c]);
+      streetSegs.push([z, -30, 0, 0, a.s, b.s, c], [z, -30, 1, 0, a.s, b.s, c]);
     }
   }
 }
 // fpgadc group banner + moat
 { const fz = layout.fpgadc.z0, fx = Math.min(...W.filter(w => layout.lanes[w.lane].group === 'fpgadc').map(w => w.x));
-  addLabel(layout.fpgadc.title, fz, 4096 + 4200, fx - 6000, 255, [0, 0, 300], [0, 340, 0], [120, 230, 220, 255]);
-  floor.add(fz - 2900, fz - 100, -12, -12, -8000, Xmax, [30, 60, 64, 255], 255, 1); }
+  addLabel(layout.fpgadc.title, fz, 4096 + 4200, fx - 6000, 255, [0, 0, 300], [0, 340, 0], [120, 230, 220, 255], 18, 0);
+  floor.add(fz - 2900, fz - 100, -12, -12, fx - 8000, Xmax, [30, 60, 64, 255], 255, 1); }
 // ruler: years, gaps, brackets
 const zR0 = -6000, zR1 = -1500;
 floor.add(zR0, zR1, -10, -10, 0, Xmax, [22, 26, 34, 255], 255, 1);
@@ -229,7 +232,7 @@ let lastYearX = -1e9;
 for (const r of layout.ruler) {
   if (r.year) {
     if (r.x - lastYearX < 2600) continue; lastYearX = r.x; floor.add(zR0, zR1, -6, -6, r.x - 25, r.x + 25, [120, 130, 150, 255], 255, 1);
-    addLabel(String(r.year), zR0 + 300, 1500, r.x - 1, 255, [0, 0, 380], [0, 420, 0], [190, 200, 220, 255]);
+    addLabel(String(r.year), zR0 + 300, 1500, r.x - 1, 255, [0, 0, 380], [0, 420, 0], [190, 200, 220, 255], 13, 0);
     seg([zR1, -6, 0, r.x, 255, 255, [120, 130, 150, 90]], [layout.lanes.at(-1).z0 + layout.lanes.at(-1).width, -6, 0, r.x, 255, 255, [120, 130, 150, 40]]); }
   else addLabel(`... ${r.gap} ...`, zR0 + 300, 400, r.x, 255, [0, 0, 160], [0, 200, 0], [150, 160, 180, 255]);
 }
@@ -255,16 +258,16 @@ for (const e of layout.edges) {
   }
   const mid = (za + zb) / 2;
   // label at the middle (attached to wall a's x, offset half way along x in gallery)
-  addLabel(e.label, mid, arch ? 7900 : 900, (b.x - a.x) / 2, e.from, [0, 0, 40], [0, 50, 0], [...c, 255]);
+  addLabel(e.label, mid, arch ? 7900 : 900, (b.x - a.x) / 2, e.from, [0, 0, 40], [0, 50, 0], [...c, 255], 11, 0);
 }
-plates.build(); deco.build(); t3.build(); floor.build();
+plates.build(); deco.build(); t3.build(); floor.build(); pinsR.build();
 // per-wall T3 ranges (t3 rects were added in wall order)
 const t3Range = (() => { // recount exactly as emitted
   const r = []; let first = 0;
   for (const w of W) { let n = 0; snapJ[w.s].files.forEach((f, k) => { let a = w.fileL[k] + core.HDR, e = a + f.n; while (a < e) { const r0 = a % H, r1 = Math.min(H, r0 + (e - a)); n++; a += r1 - r0; } }); r.push([first, n]); first += n; }
   return r; })();
 // segments buffer
-const segBuf = (() => {
+function makeSegBuf(segs) {
   const n = segs.length, ab = new ArrayBuffer(n * 24), f32 = new Float32Array(ab), u8 = new Uint8Array(ab);
   segs.forEach((v, i) => { f32.set(v.slice(0, 4), i * 6); u8[i * 24 + 16] = v[4]; u8[i * 24 + 17] = v[5]; u8.set(v[6], i * 24 + 20); });
   const vao = gl.createVertexArray(); gl.bindVertexArray(vao);
@@ -273,7 +276,8 @@ const segBuf = (() => {
   gl.enableVertexAttribArray(1); gl.vertexAttribIPointer(1, 2, gl.UNSIGNED_BYTE, 24, 16);
   gl.enableVertexAttribArray(2); gl.vertexAttribPointer(2, 4, gl.UNSIGNED_BYTE, true, 24, 20);
   gl.bindVertexArray(null); gpuBytes += n * 24; return { vao, n };
-})();
+}
+const segBuf = makeSegBuf(segs), holeBuf = makeSegBuf(holeSegs), streetBuf = makeSegBuf(streetSegs);
 // labels buffer: aP(4f) aU(3f) aV(3f) aT(2u32) aC(4u8n) aK(2f) -> 64 bytes
 const labBuf = (() => {
   const n = labels.length, ab = new ArrayBuffer(n * 64), f32 = new Float32Array(ab), u32 = new Uint32Array(ab), u8 = new Uint8Array(ab);
@@ -377,7 +381,7 @@ V.fitWall = (s) => {
   return { p: [V.WX[s] - d, 2048, w.z0 + wid / 2], dir: [1, 0, 0] };
 };
 V.overview = () => { const cz = (layout.lanes.at(-1).z0 + layout.lanes.at(-1).width) / 2, cx = Xmax / 2;
-  return { p: [-70000, 55000, cz], dir: [cx + 70000, -55000 - 6000, 0] }; };
+  return { p: [cx - 85000, 62000, cz + 100000], dir: [95000, -62000, -112000] }; };
 V.fileView = (s, k, line = 0) => {
   const w = W[s], L0 = w.fileL[k] + (line > 0 ? core.HDR + line - 1 : 0), col = Math.floor(L0 / H), row = L0 % H;
   const dist = 2 * focalPx() / (V.quality.t0 + 5);
@@ -455,23 +459,37 @@ let impVersion = 0;
 function invalidateImpostors() { impVersion++; }
 V.invalidateImpostors = invalidateImpostors;
 function impKey(w) { return `${V.mode}|${V.hideInc}|${impVersion}`; }
-function bake(w) {
+// incremental bake: a column range per call, scissor-cleared, so a rebake replaces columns in place
+function bake(w, budget) {
   if (!w.imp) {
     const tex = G.tex2D(gl, w.cols * IMPW, IMPH, gl.RGBA8, gl.RGBA, gl.UNSIGNED_BYTE, null, gl.LINEAR_MIPMAP_LINEAR);
     const fbo = gl.createFramebuffer(); gl.bindFramebuffer(gl.FRAMEBUFFER, fbo);
     gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, tex, 0);
-    w.imp = { tex, fbo }; gpuBytes += w.cols * IMPW * IMPH * 4 * 1.34;
+    w.imp = { tex, fbo, ready: false }; gpuBytes += w.cols * IMPW * IMPH * 4 * 1.34;
   }
+  const key = impKey(w);
+  if (!w.bk || w.bk.key !== key) w.bk = { key, c: 0 };
+  let c1 = w.bk.c; const a = w.colStart[w.bk.c];
+  while (c1 < w.cols && (c1 === w.bk.c || w.colStart[c1 + 1] - a <= budget)) c1++;
+  const n = w.colStart[c1] - a;
   gl.bindFramebuffer(gl.FRAMEBUFFER, w.imp.fbo); gl.viewport(0, 0, w.cols * IMPW, IMPH);
-  gl.disable(gl.DEPTH_TEST); gl.clearColor(0, 0, 0, 0); gl.clear(gl.COLOR_BUFFER_BIT);
-  gl.enable(gl.BLEND); gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
-  useLine(P.line, w); gl.uniform1i(P.line.u.uBake, 1); gl.uniform1f(P.line.u.uBakeW, w.cols * 128);
-  gl.uniform2i(P.line.u.uHi, -1, -1);
-  gl.bindVertexArray(emptyVAO); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, w.n);
-  gl.uniform1i(P.line.u.uBake, 0);
-  gl.bindTexture(gl.TEXTURE_2D, w.imp.tex); gl.generateMipmap(gl.TEXTURE_2D);
+  gl.disable(gl.DEPTH_TEST); gl.enable(gl.SCISSOR_TEST); gl.scissor(w.bk.c * IMPW, 0, (c1 - w.bk.c) * IMPW, IMPH);
+  gl.clearColor(0, 0, 0, 0); gl.clear(gl.COLOR_BUFFER_BIT);
+  if (n > 0) {
+    gl.enable(gl.BLEND); gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+    useLine(P.line, w); gl.uniform1i(P.line.u.uBake, 1); gl.uniform1f(P.line.u.uBakeW, w.cols * 128);
+    gl.uniform2i(P.line.u.uHi, -1, -1); gl.uniform1i(P.line.u.uBase, w.base + a);
+    gl.bindVertexArray(emptyVAO); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, n);
+    gl.uniform1i(P.line.u.uBake, 0);
+  }
+  gl.disable(gl.SCISSOR_TEST);
+  w.bk.c = c1;
+  if (c1 >= w.cols) {
+    gl.bindTexture(gl.TEXTURE_2D, w.imp.tex); gl.generateMipmap(gl.TEXTURE_2D);
+    w.impKey = key; w.imp.ready = true; w.bk = null; V.stats.baked++;
+  }
   gl.bindFramebuffer(gl.FRAMEBUFFER, null);
-  w.impKey = impKey(w); V.stats.baked++;
+  return n;
 }
 
 // ------------------------------------------------------------------ draw helpers
@@ -510,15 +528,16 @@ function wallUniforms(prog, w) {
 }
 
 // ------------------------------------------------------------------ frame
+const syncPx = new Uint8Array(4);
 const tqRing = []; let lastT = performance.now(), hudT = 0, frameN = 0, lastPresent = 0;
 const frameTimes = [];
 function frame(now) {
   requestAnimationFrame(frame);
   if (SOFT && !V.bench && now - lastPresent < 30) return;   // llvmpipe: cap ~30 fps
   lastPresent = now;
-  const dt = Math.min(0.1, (now - lastT) / 1000); lastT = now; frameN++;
+  const rawDt = now - lastT, dt = Math.min(0.1, rawDt / 1000); lastT = now; frameN++;
   const c0 = performance.now();
-  V.stats.dt.push(dt * 1000); if (V.stats.dt.length > 240) V.stats.dt.shift();
+  V.stats.dt.push(rawDt); V.lastRawDt = rawDt; if (V.stats.dt.length > 240) V.stats.dt.shift();
   emit('tick', dt);
   if (V.playing) { V.t = Math.min(NS - 1, V.t + dt * V.playSpeed / 2.5); if (V.t >= NS - 1) V.playing = false; emit('time'); }
   const prevPlane = V.pres === 'now' ? eventX(V._lastT ?? V.t) : 0;
@@ -545,7 +564,12 @@ function frame(now) {
 
   // ---- LOD selection
   const fp = focalPx(); const T1 = V.quality.t1min;
-  const lineRuns = [], impRuns = [], t3Walls = [], bakeCand = [];
+  if (V.morph) { // far morphs are sub-pixel: show the arriving wall (impostor) instead
+    const wb = W[V.morph.b], x = V.WX[wb.s];
+    const pp = 2 * fp / Math.max(1, G.boxDist(V.cam.p, x, 0, Math.min(wb.z0, W[V.morph.a].z0), x, 4096, Math.max(wb.z0 + wb.cols * 128, W[V.morph.a].z0 + W[V.morph.a].cols * 128)));
+    if (pp < T1 * 0.25) { V.noLines[wb.s] = 0; V.morph = null; }
+  }
+  const lineRuns = [], impRuns = [], t3Walls = [], bakeCand = [], nearWalls = [];
   let budget = V.quality.maxInst, inst = 0;
   for (const w of W) {
     if (!V.WA[w.s]) continue;
@@ -553,9 +577,10 @@ function frame(now) {
     if (!G.boxVisible(planes, x - 1, -10, w.z0, x + 1, 4110, z1)) continue;
     if (V.cam.p[0] > x) continue;                          // behind: plate only
     const dW = G.boxDist(V.cam.p, x, 0, w.z0, x, 4096, z1), pW = 2 * fp / Math.max(dW, 1);
+    if (pW >= (SOFT ? T1 : 0.08)) nearWalls.push(w);
     if (!w.loaded) { t3Walls.push(w); continue; }
     const stale = w.impKey !== impKey(w);
-    if (pW < T1) { if (w.imp) impRuns.push([w, 0, w.cols]); else t3Walls.push(w); if (stale) bakeCand.push([dW, w]); continue; }
+    if (pW < T1) { if (w.imp && w.imp.ready) impRuns.push([w, 0, w.cols]); else t3Walls.push(w); if (stale) bakeCand.push([dW, w]); continue; }
     if (V.noLines[w.s]) continue;
     let run = null, irun = null;
     for (let c = 0; c < w.cols; c++) {
@@ -574,8 +599,12 @@ function frame(now) {
     if (inst + n > budget && drawRuns.length) { impRuns.push([w, rr[1], rr[2]]); continue; } inst += n; drawRuns.push(rr); }
   // bake budget
   bakeCand.sort((a, b) => a[0] - b[0]);
-  const nb = V.quality.bake >= 1 ? V.quality.bake : (frameN % Math.round(1 / V.quality.bake) === 0 ? 1 : 0);
-  for (let i = 0; i < Math.min(nb, bakeCand.length); i++) bake(bakeCand[i][1]);
+  let bakeBudget = SOFT ? 40000 : 1500000; const nb = bakeCand.length;
+  for (let i = 0; i < bakeCand.length && bakeBudget > 0; i++) bakeBudget -= Math.max(1, bake(bakeCand[i][1], bakeBudget));
+  // background: pre-bake walls that are not visible yet, so later views do not stall
+  let unbaked = 0;
+  for (const w of W) if (w.loaded && w.impKey !== impKey(w)) { unbaked++; if (bakeBudget > 0 && !bakeCand.some(b => b[1] === w)) bakeBudget -= Math.max(1, bake(w, bakeBudget)); }
+  V.stats.unbaked = unbaked;
 
   // ---- draw
   gl.bindFramebuffer(gl.FRAMEBUFFER, null); gl.viewport(0, 0, cw, ch);
@@ -587,7 +616,9 @@ function frame(now) {
   if (!V.skip.has('plates')) gl.bindVertexArray(plates.vao); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, plates.n); draws++;
   if (!V.skip.has('floor')) gl.bindVertexArray(floor.vao); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, floor.n); draws++;
   gl.enable(gl.BLEND); gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
-  if (!V.skip.has('deco')) gl.bindVertexArray(deco.vao); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, deco.n); draws++;
+  if (!V.skip.has('deco')) { gl.bindVertexArray(deco.vao);
+    for (const w of nearWalls) { const [a, n] = decoRange[w.s]; if (!n) continue; deco.bind(a); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, n); draws++; }
+    gl.bindVertexArray(pinsR.vao); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, pinsR.n); draws++; }
   // T3 file quads for walls without data / impostor
   if (t3Walls.length) { gl.bindVertexArray(t3.vao);
     for (const w of t3Walls) { const [a, n] = t3Range[w.s]; t3.bind(a); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, n); draws++; } }
@@ -595,7 +626,7 @@ function frame(now) {
   // T2 impostors
   if (impRuns.length && !V.skip.has('imp')) { common(P.imp); gl.bindVertexArray(emptyVAO); gl.uniform1f(P.imp.u.uFade, 1);
     for (const [w, c0, c1] of impRuns) {
-      if (!w.imp) { continue; }
+      if (!w.imp || !w.imp.ready) continue;
       bindTex(0, gl.TEXTURE_2D, w.imp.tex, P.imp, 'uImp');
       gl.uniform1f(P.imp.u.uWallX, V.WX[w.s]); gl.uniform1f(P.imp.u.uZ0, w.z0); gl.uniform1f(P.imp.u.uC0, c0); gl.uniform1f(P.imp.u.uC1, c1); gl.uniform1f(P.imp.u.uCols, w.cols);
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); draws++; } }
@@ -616,22 +647,26 @@ function frame(now) {
     const wb = W[M.b], wa = W[M.a];
     gl.uniform1i(P.morph.u.uBase, 0); gl.uniform1f(P.morph.u.uWallX, V.WX[M.b]); gl.uniform1f(P.morph.u.uZ0, wb.z0); gl.uniform1f(P.morph.u.uZ0A, wa.z0);
     gl.uniform1i(P.morph.u.uWall, M.b); gl.uniform1i(P.morph.u.uParent, M.a); gl.uniform1f(P.morph.u.uMorphT, M.u); gl.uniform2i(P.morph.u.uHi, -1, -1);
-    const n = m.inst.length / 4; gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, n); draws++; inst += n;
+    const stride = SOFT ? 2 : 1, n = Math.floor(m.inst.length / 4 / stride); gl.uniform1i(P.morph.u.uStride, stride);
+    gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, n); draws++; inst += n;
   }
   // segments
-  if (!V.skip.has('segs')) { common(P.seg); gl.bindVertexArray(segBuf.vao); gl.drawArrays(gl.LINES, 0, segBuf.n); draws++; }
+  if (!V.skip.has('segs')) { common(P.seg); gl.uniform2f(P.seg.u.uFadeFar, 0, 0); gl.bindVertexArray(segBuf.vao); gl.drawArrays(gl.LINES, 0, segBuf.n); draws++;
+    gl.uniform2f(P.seg.u.uFadeFar, 12000, 40000); gl.bindVertexArray(streetBuf.vao); gl.drawArrays(gl.LINES, 0, streetBuf.n); draws++; gl.uniform2f(P.seg.u.uFadeFar, 0, 0);
+    gl.bindVertexArray(holeBuf.vao); for (const w of nearWalls) { const [a, n] = holeRange[w.s]; if (n && drawRuns.some(r => r[0] === w)) { gl.drawArrays(gl.LINES, a, n); draws++; } } }
   // labels
   common(P.label); bindTex(4, gl.TEXTURE_2D, atlasTex, P.label, 'uAtlas'); bindTex(9, gl.TEXTURE_2D, labBuf.tex, P.label, 'uLab');
   gl.uniform1f(P.label.u.uMinPx, SOFT ? 8 : 4); gl.uniform3fv(P.label.u.uRight, r); gl.uniform3fv(P.label.u.uUp, u);
   if (!V.skip.has('labels')) { gl.bindVertexArray(labBuf.vao); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, labBuf.n); draws++; }
   gl.bindVertexArray(null); gl.depthMask(true);
   if (q) { gl.endQuery(tq.TIME_ELAPSED_EXT); tqRing.push(q); }
+  if (V.syncFrames) gl.readPixels(0, 0, 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, syncPx);   // bench: wait for the GPU so frame times are real
   while (tqRing.length && gl.getQueryParameter(tqRing[0], gl.QUERY_RESULT_AVAILABLE)) {
-    const qq = tqRing.shift(); if (!gl.getParameter(tq.GPU_DISJOINT_EXT)) { V.stats.gpu.push(gl.getQueryParameter(qq, gl.QUERY_RESULT) / 1e6); if (V.stats.gpu.length > 240) V.stats.gpu.shift(); } gl.deleteQuery(qq); }
+    const qq = tqRing.shift(); if (!gl.getParameter(tq.GPU_DISJOINT_EXT)) { V.stats.gpu.push(gl.getQueryParameter(qq, gl.QUERY_RESULT) / 1e6); V.stats.gpuN = (V.stats.gpuN || 0) + 1; if (V.stats.gpu.length > 240) V.stats.gpu.shift(); } gl.deleteQuery(qq); }
   if (tqRing.length > 8) gl.deleteQuery(tqRing.shift());
-  const cpu = performance.now() - c0;
+  const cpu = performance.now() - c0; V.lastGpu = V.stats.gpu.length ? V.stats.gpu.at(-1) : null;
   V.stats.cpu.push(cpu); if (V.stats.cpu.length > 240) V.stats.cpu.shift();
-  Object.assign(V.stats, { draws, inst, imp: impRuns.length, t3: t3Walls.length, lineRuns: drawRuns.length, gpuBytes, pendingBake: Math.max(0, bakeCand.length - nb), visibleWalls: drawRuns.length + impRuns.length + t3Walls.length });
+  Object.assign(V.stats, { draws, inst, imp: impRuns.length, t3: t3Walls.length, lineRuns: drawRuns.length, gpuBytes, pendingBake: bakeCand.length, visibleWalls: drawRuns.length + impRuns.length + t3Walls.length });
   if (!V.load.firstFrame) { V.load.firstFrame = performance.now() - t0Boot; setLoading(''); }
   adapt();
   emit('frame', { dt, cpu });

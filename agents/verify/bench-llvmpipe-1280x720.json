@@ -1,0 +1,290 @@
+{
+ "date": "2026-11-22T17:14:35.524Z",
+ "size": [
+  1280,
+  720
+ ],
+ "paths": {
+  "A": {
+   "path": "A",
+   "dur": 20,
+   "frames": 691,
+   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)",
+   "soft": true,
+   "viewport": [
+    1280,
+    720
+   ],
+   "dpr": 1,
+   "canvas": [
+    640,
+    360
+   ],
+   "frame_ms": {
+    "p50": 23.7,
+    "p95": 43.5,
+    "p99": 53.3,
+    "max": 71
+   },
+   "cpu_ms": {
+    "p50": 22.5,
+    "p95": 39.1,
+    "p99": 49
+   },
+   "gpu_ms": {
+    "p50": 14.94,
+    "p95": 19.11,
+    "p99": 22.99
+   },
+   "fps_mean": 38.9,
+   "draws_p95": 34,
+   "lines_p95": 8806,
+   "lines_max": 13640,
+   "quality_steps": [
+    2,
+    1,
+    0
+   ],
+   "frames_over_100ms": 0,
+   "ready_ms": 7581,
+   "load": {
+    "boot": 136.20000000298023,
+    "firstFrame": 529.5,
+    "walls": 40,
+    "text": 12,
+    "textDone": 0,
+    "allText": 3107.6000000089407,
+    "bytesBoot": 0,
+    "meta": 558.2999999970198,
+    "allWalls": 1196.5
+   },
+   "gpu_bytes_est": 128965970.55999996,
+   "js_heap_mb": 81
+  },
+  "B": {
+   "path": "B",
+   "dur": 20,
+   "frames": 628,
+   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)",
+   "soft": true,
+   "viewport": [
+    1280,
+    720
+   ],
+   "dpr": 1,
+   "canvas": [
+    640,
+    360
+   ],
+   "frame_ms": {
+    "p50": 25.7,
+    "p95": 44.6,
+    "p99": 51.1,
+    "max": 66.8
+   },
+   "cpu_ms": {
+    "p50": 24.7,
+    "p95": 40.1,
+    "p99": 48.1
+   },
+   "gpu_ms": {
+    "p50": 17.34,
+    "p95": 19.51,
+    "p99": 23.85
+   },
+   "fps_mean": 35.6,
+   "draws_p95": 45,
+   "lines_p95": 0,
+   "lines_max": 0,
+   "quality_steps": [
+    2,
+    1,
+    0
+   ],
+   "frames_over_100ms": 0,
+   "ready_ms": 7508,
+   "load": {
+    "boot": 113.1000000089407,
+    "firstFrame": 294.40000000596046,
+    "walls": 40,
+    "text": 12,
+    "textDone": 0,
+    "allText": 2208.7000000029802,
+    "bytesBoot": 0,
+    "meta": 316.40000000596046,
+    "allWalls": 1618.300000011921
+   },
+   "gpu_bytes_est": 128965970.55999996,
+   "js_heap_mb": 75
+  },
+  "C": {
+   "path": "C",
+   "dur": 20,
+   "frames": 800,
+   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)",
+   "soft": true,
+   "viewport": [
+    1280,
+    720
+   ],
+   "dpr": 1,
+   "canvas": [
+    640,
+    360
+   ],
+   "frame_ms": {
+    "p50": 21,
+    "p95": 39,
+    "p99": 50.9,
+    "max": 70.2
+   },
+   "cpu_ms": {
+    "p50": 19.8,
+    "p95": 36.6,
+    "p99": 48
+   },
+   "gpu_ms": {
+    "p50": 13.12,
+    "p95": 17.06,
+    "p99": 20.32
+   },
+   "fps_mean": 44.6,
+   "draws_p95": 39,
+   "lines_p95": 0,
+   "lines_max": 11461,
+   "quality_steps": [
+    2,
+    1,
+    0
+   ],
+   "frames_over_100ms": 0,
+   "ready_ms": 8171,
+   "load": {
+    "boot": 138.09999999403954,
+    "firstFrame": 306.5,
+    "walls": 40,
+    "text": 12,
+    "textDone": 0,
+    "allText": 2175.5,
+    "bytesBoot": 0,
+    "meta": 327.59999999403954,
+    "allWalls": 2065.5
+   },
+   "gpu_bytes_est": 128965970.55999996,
+   "js_heap_mb": 114
+  },
+  "D": {
+   "path": "D",
+   "dur": 20,
+   "frames": 771,
+   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)",
+   "soft": true,
+   "viewport": [
+    1280,
+    720
+   ],
+   "dpr": 1,
+   "canvas": [
+    640,
+    360
+   ],
+   "frame_ms": {
+    "p50": 21.3,
+    "p95": 37.1,
+    "p99": 52.4,
+    "max": 69.1
+   },
+   "cpu_ms": {
+    "p50": 19.9,
+    "p95": 35,
+    "p99": 39.8
+   },
+   "gpu_ms": {
+    "p50": 13.97,
+    "p95": 15.58,
+    "p99": 17.18
+   },
+   "fps_mean": 43.4,
+   "draws_p95": 10,
+   "lines_p95": 3944,
+   "lines_max": 4096,
+   "quality_steps": [
+    2,
+    1,
+    0
+   ],
+   "frames_over_100ms": 0,
+   "ready_ms": 6869,
+   "load": {
+    "boot": 126.5,
+    "firstFrame": 281.69999998807907,
+    "walls": 40,
+    "text": 12,
+    "textDone": 0,
+    "allText": 3032.5,
+    "bytesBoot": 0,
+    "meta": 303.59999999403954,
+    "allWalls": 1342.7999999970198
+   },
+   "gpu_bytes_est": 128965970.55999996,
+   "js_heap_mb": 75
+  },
+  "E": {
+   "path": "E",
+   "dur": 20,
+   "frames": 756,
+   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)",
+   "soft": true,
+   "viewport": [
+    1280,
+    720
+   ],
+   "dpr": 1,
+   "canvas": [
+    640,
+    360
+   ],
+   "frame_ms": {
+    "p50": 21.4,
+    "p95": 37.3,
+    "p99": 52.2,
+    "max": 53.4
+   },
+   "cpu_ms": {
+    "p50": 20,
+    "p95": 34.7,
+    "p99": 38.3
+   },
+   "gpu_ms": {
+    "p50": 13.55,
+    "p95": 14.79,
+    "p99": 17.53
+   },
+   "fps_mean": 42.2,
+   "draws_p95": 16,
+   "lines_p95": 0,
+   "lines_max": 0,
+   "quality_steps": [
+    2,
+    1,
+    0
+   ],
+   "frames_over_100ms": 0,
+   "ready_ms": 6926,
+   "load": {
+    "boot": 119.20000000298023,
+    "firstFrame": 288.59999999403954,
+    "walls": 40,
+    "text": 12,
+    "textDone": 0,
+    "allText": 2887.0999999940395,
+    "bytesBoot": 0,
+    "meta": 310.3999999910593,
+    "allWalls": 1434
+   },
+   "gpu_bytes_est": 128965970.55999996,
+   "js_heap_mb": 121
+  }
+ },
+ "logs": []
+}

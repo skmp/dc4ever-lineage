@@ -1,0 +1,10 @@
+import { spawn } from 'node:child_process'; import fs from 'node:fs'; import os from 'node:os';
+const [drv, ...flags] = process.argv.slice(2);
+const udd = fs.mkdtempSync('/home/skmp/projects/nulldc-lineage/agents/viewer/.chrome-');
+const proc = spawn(os.homedir() + '/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome', ['--headless=new', `--user-data-dir=${udd}`, '--remote-debugging-port=0', '--ignore-gpu-blocklist', '--enable-gpu', ...flags, 'about:blank'], { env: { ...process.env, GALLIUM_DRIVER: drv }, stdio: ['ignore', 'ignore', 'pipe'] });
+let eb = ''; const url = await new Promise(r => proc.stderr.on('data', d => { eb += d; const m = eb.match(/DevTools listening on (ws:\S+)/); if (m) r(m[1]); }));
+const t = (await (await fetch(`http://127.0.0.1:${new URL(url).port}/json/list`)).json()).find(t => t.type === 'page');
+const ws = new WebSocket(t.webSocketDebuggerUrl); await new Promise(r => ws.onopen = r);
+const r = await new Promise(res => { ws.onmessage = ev => res(JSON.parse(ev.data)); ws.send(JSON.stringify({ id: 1, method: 'Runtime.evaluate', params: { returnByValue: true, expression: `(() => { const c = document.createElement('canvas'); const g = c.getContext('webgl2'); if (!g) return 'NO WEBGL2'; const d = g.getExtension('WEBGL_debug_renderer_info'); return g.getParameter(d.UNMASKED_RENDERER_WEBGL) + ' | timer:' + !!g.getExtension('EXT_disjoint_timer_query_webgl2'); })()` } })); });
+console.log(drv, flags.join(' '), '=>', r.result?.result?.value); if (process.env.ERR) console.log(eb.split('\n').filter(l => /gl|GL|EGL|gpu|GPU/.test(l)).slice(0, 25).join('\n'));
+proc.kill('SIGKILL'); fs.rmSync(udd, { recursive: true, force: true }); process.exit(0);
