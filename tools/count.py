@@ -28,7 +28,7 @@ def scan(repo, ref):
             binary = b'\0' in data[:8000]
             lines = 0 if binary else data.count(b'\n') + (1 if data and not data.endswith(b'\n') else 0)
             cls = 'binary' if binary else ('vendored' if is_vendored(repo,path) else ('generated' if is_generated(repo,path,sz,lines,data[:600]) else 'own'))
-            res.append(dict(path=path,lang=lang,lines=lines,bytes=sz,cls=cls))
+            res.append(dict(path=path,lang=lang,lines=lines,bytes=sz,cls=cls,sha=bid))
         p.wait()
     return res
 if __name__=='__main__':

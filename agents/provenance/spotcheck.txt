@@ -1,0 +1,128 @@
+### nulldc3-refsw3 libswirl/hw/sh4/interpr/sh4_opcodes.cpp:189
+text   : {//ToDo : Check This [26/4/05]
+tool   : origin=dc4ever-2005 keep=22
+         present in: dc4ever-2005 nullDCe-2009 nulldc-2010-05 nulldc-2010-12 nulldc-2011-09 nulldc-360-2011 nulldc-360-last nulldc-last reicast-2013-import reicast-r6 reicast-r7-rc1 reicast-r8 reicast-r19.07 reicast-r20.04 reicast-last nulldc3-fpgadc-2023 nullDCe-ps2-2024 minicast-import nullDC4Wii-first minicast-r1 minicast-r6b nulldc3-v3.0.0-pre nulldc3-refsw3
+  git log -S skmp_dc4ever master: first 7057e62 2005-06-14 Modified disasm.cs (DC4Ever_meh)  (3 commits touch it)
+  git log -S skmp_nullDC master: first 1fe9c6d 2010-05-09 --Initial commit --Most of the source is still missing, will be added later on (so yeah, this won't compile)  (1 commits touch it)
+  git log -S skmp_nulldc3 skmp/refsw3: first 1c16baeb 2013-12-19 project import  (1 commits touch it)
+
+### nulldc3-refsw3 libswirl/hw/sh4/sh4_opcode_list.cpp:353
+text   : //and here are the new ones :D
+tool   : origin=nullDC-pre2008 keep=30
+         present in: nullDCe-2009 nulldc-2010-05 nulldc-2010-12 nulldc-2011-09 nulldc-360-2011 nulldc-360-last nulldc-last reicast-2013-import reicast-r6 reicast-r7-rc1 reicast-r8 reicast-r19.07 reicast-r20.04 flycast-v1.0 reicast-last flycast-v2.0 nulldc3-fpgadc-2023 nullDCe-ps2-2024 flycast-v2.4 minicast-import nullDC4Wii-first nullDC4Wii-a0.50 minicast-r1 NotDC-PS3-first minicast-r6b nulldc3-v3.0.0-pre NotDC-PS3-0.8.3 nullDC4Wii-head nulldc3-refsw3 flycast-head
+  git log -S skmp_nullDC master: first 1fe9c6d 2010-05-09 --Initial commit --Most of the source is still missing, will be added later on (so yeah, this won't compile)  (1 commits touch it)
+  git log -S skmp_nulldc3 skmp/refsw3: first 1c16baeb 2013-12-19 project import  (1 commits touch it)
+
+### nulldc3-refsw3 libswirl/hw/pvr/spg.cpp:18
+text   : //Time to emulate that stuff correctly ;)
+tool   : origin=nulldc-2010-05 keep=18
+         present in: nulldc-2010-05 nulldc-2010-12 nulldc-2011-09 nulldc-360-2011 nulldc-360-last nulldc-last reicast-2013-import reicast-r6 reicast-r7-rc1 reicast-r8 reicast-r19.07 reicast-r20.04 reicast-last nulldc3-fpgadc-2023 minicast-import minicast-r1 minicast-r6b nulldc3-v3.0.0-pre nulldc3-refsw3
+  git log -S skmp_nullDC master: first 398dab4 2010-05-09 --rest of the code-- drkpvr: 3d rendering plugin (aka nullPVR, nullDC PVR, nullDC PowerVR) nullAICA: aica(+dsp) plugin (aka sdlaica, nullDC AICA) EmptyAICA: a set of hacks to make apps thinking theres an aica when there's none ;p nullDC_GUI: duh, the gui ... ImgReader: support for gdi, cdi (via pfctoc), and mds/nrg drkMapleDevices: the hacky implementation of maple devices. There are a few much nicer plugins around, i'l probably kill this one and commit one of the others later on ;p vbaARM: this is an arm core based on vba's arm. Its much more recent, and maintained than the older arm core (Altho considering when i ported it its probably old by now ...) emitter: the emitter that i developed for nullDC With this you can build a working nullDC executable ~  (1 commits touch it)
+  git log -S skmp_nulldc3 skmp/refsw3: first 1c16baeb 2013-12-19 project import  (1 commits touch it)
+
+### nulldc3-refsw3 libswirl/imgread/ioctl.cpp:299
+text   : void PhysicalTrack::Read(u32 FAD,u8* dst,SectorFormat* sector_type,u8* subcode,SubcodeFormat* subcode_type)
+tool   : origin=nulldc-2010-12 keep=13
+         present in: nulldc-2010-12 nulldc-2011-09 nulldc-last reicast-2013-import reicast-r6 reicast-r7-rc1 reicast-r8 reicast-r19.07 reicast-r20.04 flycast-v1.0 reicast-last nulldc3-fpgadc-2023 nulldc3-v3.0.0-pre nulldc3-refsw3
+  git log -S skmp_nullDC master: first 608af33 2010-09-29 Imgreader: --ioctl code, now should be able to read directly from discs. This hasn't been tested as i don't have a cd/dvd drive around ...  (1 commits touch it)
+
+### nulldc3-refsw3 libswirl/hw/sh4/fsca-table.h:3832
+text   : 0x3E53504A, 0x3E5337B3, 0x3E531F1B, 0x3E530683, 0x3E52EDEB, 0x3E52D553, 0x3E52BCBB, 0x3E52A423,
+tool   : origin=reicast-2013-import keep=16
+         present in: reicast-2013-import reicast-r6 reicast-r7-rc1 reicast-r8 reicast-r19.07 reicast-r20.04 flycast-v1.0 reicast-last flycast-v2.0 nulldc3-fpgadc-2023 flycast-v2.4 minicast-import minicast-r1 minicast-r6b nulldc3-v3.0.0-pre nulldc3-refsw3 flycast-head
+  git log -S skmp_nulldc3 skmp/refsw3: first 1c16baeb 2013-12-19 project import  (1 commits touch it)
+
+### nulldc3-refsw3 libswirl/stdclass.cpp:80
+text   : if(file_exists(user_filepath))
+tool   : origin=reicast-r8 keep=9
+         present in: reicast-r8 reicast-r19.07 reicast-r20.04 reicast-last nulldc3-fpgadc-2023 minicast-import minicast-r1 minicast-r6b nulldc3-v3.0.0-pre nulldc3-refsw3
+  git log -S skmp_reicast-emulator alpha: first 4267d51f9 2015-08-29 stdclass: Make path getter function names more verbose  (1 commits touch it)
+
+### nulldc3-refsw3 libswirl/reios/reios.cpp:406
+text   : debugf("reios: Patching syscall vector %08X, points to %08X\n", syscall_addr, hook_addr);
+tool   : origin=reicast-r8 keep=9
+         present in: reicast-r8 reicast-r19.07 reicast-r20.04 reicast-last nulldc3-fpgadc-2023 minicast-import minicast-r1 minicast-r6b nulldc3-v3.0.0-pre nulldc3-refsw3
+  git log -S skmp_reicast-emulator alpha: first 0285e2c5d 2015-02-26 reios: Fix unaligned reads (emscripten, arm), more logging, u32be for LBA/sizes  (1 commits touch it)
+
+### nulldc3-refsw3 libswirl/windows/win_common.cpp:281
+text   : ShellExecuteA((HWND)window_win, "open", url.c_str(), nullptr, nullptr, SW_SHOW);
+tool   : origin=reicast-r19.07 keep=5
+         present in: reicast-r19.07 reicast-r20.04 reicast-last nulldc3-fpgadc-2023 nulldc3-v3.0.0-pre nulldc3-refsw3
+  git log -S skmp_reicast-emulator alpha: first 180aeff44 2019-06-11 Change system() call to ShellExecuteA  (2 commits touch it)
+
+### nulldc3-refsw3 libswirl/debugger/dbg_emu.cpp:1178
+text   : u32& slot = eventBp[events[i]];
+tool   : origin=nulldc3-v3.0.0-pre keep=1
+         present in: nulldc3-v3.0.0-pre nulldc3-refsw3
+  git log -S skmp_nulldc3 skmp/refsw3: first 7afa4571 2026-10-05 debugger: dbg::emu, the debugger on the emulator thread  (1 commits touch it)
+
+### nulldc3-refsw3 libswirl/rend/refsw2/refsw2.cpp:215
+text   : u16 src = pvr_read_area1_16(vram, addr);
+tool   : origin=nulldc3-fpgadc-2023 keep=2
+         present in: nulldc3-fpgadc-2023 nulldc3-v3.0.0-pre nulldc3-refsw3
+  git log -S skmp_nulldc3 skmp/refsw3: first 038f7ef3 2023-07-07 fpgadc: Add refsw-offline command line refsw renderer for dumps  (4 commits touch it)
+
+### flycast-head core/cheats.cpp:238
+text   : { 0x43F00000, 0x3F400000, 0x3F400000 } },					// SGGG – Segagaga (JP)
+tool   : origin=flycast-v1.0 keep=3
+         present in: flycast-v1.0 flycast-v2.0 flycast-v2.4 flycast-head
+  git log -S flyinghead_flycast master: first 9b063644c 2019-09-24 Per-game widescreen cheats  (1 commits touch it)
+
+### flycast-head core/hw/sh4/dyna/blockmanager.cpp:223
+text   : FPCA(block->addr) = (DynarecCodeEntryPtr)CC_RW2RX(block->code);
+tool   : origin=flycast-v1.0 keep=3
+         present in: flycast-v1.0 flycast-v2.0 flycast-v2.4 flycast-head
+  git log -S flyinghead_flycast master: first 318852e26 2019-06-19 dynarec: use mprotect to protect code areas  (1 commits touch it)
+
+### polly2-r8-develop tb/ref/ref_copies.h:621
+text   : const pvrfp::Fp us = pp_Texture ? entry->ips.U[two_voume_index].Quot(p, ws) : pvrfp::Fp(), vs = pp_Texture ? entry->ips.V[two_voume_index].Quot(p, ws) : pvrfp::Fp();
+tool   : origin=nulldc3-refsw3 keep=1
+         present in: nulldc3-refsw3 polly2-r8-develop
+  git log -S skmp_nulldc3 skmp/refsw3: first aba63a98 2026-11-19 refsw3-core: soft float with the hardware's formats baked in, no float or double; rules from new console tests  (1 commits touch it)
+  git log -S skmp_polly2-rtl r8/develop: first 72ad5e2 2026-11-20 M5: tile-harness infrastructure at refsw3 4f3efe15: L2 glue, phase driver, captures, scenegen, liveness masks  (1 commits touch it)
+
+### NotDC-PS3-0.8.3 plugs/caiqueAICA/aica_model.cpp:1816
+text   : uint32_t AicaModel::read(uint32_t off) {
+tool   : origin=caique-head keep=1
+         present in: caique-head NotDC-PS3-0.8.3
+  git log -S skmp_caique-rtl main: first a07a62d 2026-09-23 initial slop  (3 commits touch it)
+  git log -S Mayo1970_NotDC-PS3 main: first 866a7f8 2026-10-03 More SPE work.  (1 commits touch it)
+
+### nullDC4Wii-head plugs/drkPvr/gxRend.cpp:633
+text   : #define VTX_ALPHA_HONOR() (get_vtx_alpha_preset() == 1)
+tool   : origin=NotDC-PS3-first keep=1
+         present in: NotDC-PS3-first nullDC4Wii-head
+  git log -S BenoitAdam_nullDC4Wii main: first 14b0828 2026-09-01 Honour PVR sprite BaseCol and vertex alpha (fixes FV2 SEGA screen)  (1 commits touch it)
+  git log -S Mayo1970_NotDC-PS3 main: first 5a32b94 2026-09-19 Initial repo  (2 commits touch it)
+
+### nulldc-360-last plugins/XMaple/StandardController.cpp:4
+text   : #include "XMaple.h" // for debug log crapro
+tool   : origin=nulldc-2010-12 keep=4
+         present in: nulldc-2010-12 nulldc-2011-09 nulldc-360-2011 nulldc-360-last nulldc-last
+  git log -S skmp_nullDC master: first 7828500 2010-05-09 --Removed some not working leftover TA code --XMaple: Input by shufflez !  (1 commits touch it)
+
+### nullDCe-2009 dc/maple/maple_devs.cpp:247
+text   : sprintf(temp,"vmu_save_%s.bin",logical_port);
+tool   : origin=nullDCe-2009 keep=4
+         present in: nullDCe-2009 nullDCe-ps2-2024 nullDC4Wii-first nullDC4Wii-a0.50 nullDC4Wii-head
+  git log -S skmp_nullDC --all: NO COMMIT ADDS IT
+
+### shrike4-head tb/v1_fetchx_mutants.py:155
+text   : ap = argparse.ArgumentParser()
+tool   : origin=nulldc3-v3.0.0-pre keep=4
+         present in: nulldc3-v3.0.0-pre shrike4-head dreamcast-tests-head nulldc3-refsw3 polly2-r8-develop
+  git log -S skmp_nulldc3 main: first 118e7396 2026-10-05 tests: SH4 disassembler against objdump and the opcode table  (3 commits touch it)
+
+### wren7-head model/tools/vendor_tests.cpp:25
+text   : if (DIR *d = opendir(dir.c_str())) {
+tool   : origin=caique-head keep=1
+         present in: caique-head wren7-head
+  git log -S skmp_caique-rtl main: first 5207a9f 2026-09-23 Settled every open envelope question the swarm listed, with new console captures, and found four rules nobody had asked about.  (1 commits touch it)
+  git log -S skmp_wren7-rtl main: first abca015 2026-09-23 initial model  (2 commits touch it)
+
+### minicast-r6b libswirl/linux-dist/x11.cpp:293
+text   : if (e.type == KeyRelease && e.xkey.keycode == KEY_F10) {
+tool   : origin=nulldc3-fpgadc-2023 keep=5
+         present in: nulldc3-fpgadc-2023 minicast-import minicast-r1 minicast-r6b nulldc3-v3.0.0-pre nulldc3-refsw3
+  git log -S skmp_nulldc3 main: first f2300244 2023-07-07 fpgadc: Add F10 to dump vram and pvr_regs, x11 input  (1 commits touch it)
+  git log -S skmp_minicast main: first 580d7b8 2025-01-20 Initial import  (1 commits touch it)
