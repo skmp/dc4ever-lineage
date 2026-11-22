@@ -1,0 +1,3589 @@
+{
+ "rules": "tools/rules.py",
+ "spec": "agents/collect/snapshots.spec",
+ "repos_dir": "repos/",
+ "counted_languages": [
+  "C",
+  "C++",
+  "C/C++ header",
+  "C#",
+  "Assembly",
+  "Shader",
+  "Java",
+  "Kotlin",
+  "Objective-C",
+  "SystemVerilog",
+  "Verilog",
+  "TypeScript",
+  "Python"
+ ],
+ "snapshots": [
+  {
+   "id": "dc4ever-2005",
+   "repo": "skmp_dc4ever",
+   "ref": "26403b8~2",
+   "commit": "d9a82c6e7d2e4267abe8add7ae8eb56d76c372ec",
+   "date": "2005-09-15",
+   "commit_date": "2005-09-15",
+   "lane": "dc4ever",
+   "why": "Final DC4Ever tree (C#). Real dates 2003-2005: history rebuilt in 2019 from backups, one commit per file at its mtime; README commits 2019 excluded",
+   "files": 29,
+   "lines": 25494,
+   "by_lang": {
+    "C#": {
+     "files": 28,
+     "lines": 25348
+    },
+    "Assembly": {
+     "files": 1,
+     "lines": 146
+    }
+   },
+   "vendored": {
+    "files": 0,
+    "lines": 0,
+    "dirs": {}
+   },
+   "generated": {
+    "files": 0,
+    "lines": 0,
+    "top": {}
+   },
+   "binary_source_ext_files": 1,
+   "date_range": "2003-2005",
+   "date_note": "Real development 2003-2005 (C#, .NET). The GitHub repo was created 2019-04-11; its history was rebuilt from backups as one commit per file stamped with the file mtime (2002-01-30 .. 2005-09-15). Commit dates are therefore approximate file dates, not real commits."
+  },
+  {
+   "id": "nullDCe-2009",
+   "repo": "skmp_nullDCe",
+   "ref": "39c0550",
+   "commit": "39c05500629116f0eb6bcb89a94027e1b987170c",
+   "date": "2009-10-16",
+   "commit_date": "2017-11-20",
+   "lane": "nullDCe",
+   "why": "Recovered nullDCe archive (fork of nullDC mainline late 2008; PSP/Wii/PS3/Xbox hackports). Committed 2017; latest in-source date 2009-10-16 (PPCEmit generated header), so dated 2009-10 (range 2008-2010)",
+   "files": 235,
+   "lines": 60606,
+   "by_lang": {
+    "C++": {
+     "files": 88,
+     "lines": 37177
+    },
+    "C/C++ header": {
+     "files": 103,
+     "lines": 21179
+    },
+    "Shader": {
+     "files": 36,
+     "lines": 1696
+    },
+    "Assembly": {
+     "files": 5,
+     "lines": 332
+    },
+    "C": {
+     "files": 2,
+     "lines": 159
+    },
+    "C#": {
+     "files": 1,
+     "lines": 63
+    }
+   },
+   "vendored": {
+    "files": 0,
+    "lines": 0,
+    "dirs": {}
+   },
+   "generated": {
+    "files": 5,
+    "lines": 4848,
+    "top": {
+     "rec-ARM/armwreck.h": 2291,
+     "emitter/PPCEmit/ppc_emit.h": 2251,
+     "plugs/ImgReader/pfctoc.h": 145,
+     "cdi_cvt/cdi_cvt/pfctoc.h": 144,
+     "plugs/drkPvr/config.h": 17
+    }
+   },
+   "binary_source_ext_files": 0,
+   "date_range": "2008-2010",
+   "date_note": "Forked from nullDC mainline late 2008 (README). Committed 2017-11-20 from a recovered archive; latest date found in the sources is 2009-10-16, so placed at 2009-10."
+  },
+  {
+   "id": "nulldc-2010-05",
+   "repo": "skmp_nullDC",
+   "ref": "761dc87",
+   "commit": "761dc87dbeda5c6657c678ce228211d86efa2dca",
+   "date": "2010-05-09",
+   "commit_date": "2010-05-09",
+   "lane": "nullDC",
+   "why": "nullDC 1.0.x open-sourced on Google Code: first complete tree (initial + rest of code + emitter + PuruPuru). nullDC itself was closed-source 2005-2010; no earlier history exists",
+   "files": 264,
+   "lines": 89587,
+   "by_lang": {
+    "C++": {
+     "files": 111,
+     "lines": 60470
+    },
+    "C/C++ header": {
+     "files": 150,
+     "lines": 28590
+    },
+    "Shader": {
+     "files": 3,
+     "lines": 527
+    }
+   },
+   "vendored": {
+    "files": 0,
+    "lines": 0,
+    "dirs": {}
+   },
+   "generated": {
+    "files": 2,
+    "lines": 168,
+    "top": {
+     "nulldc/plugins/ImgReader/pfctoc.h": 144,
+     "nulldc/plugins/drkPvr/config.h": 24
+    }
+   },
+   "binary_source_ext_files": 0,
+   "date_range": "2005-2010",
+   "date_note": "nullDC was developed closed-source from 2005; this is the first public source (Google Code svn, r1 2010-05-02)."
+  },
+  {
+   "id": "nulldc-2010-12",
+   "repo": "skmp_nullDC",
+   "ref": "7708112",
+   "commit": "7708112c8091ed8766be0b4388a166410a58d3de",
+   "date": "2010-12-29",
+   "commit_date": "2010-12-29",
+   "lane": "nullDC",
+   "why": "End of 2010, the busiest svn year (124 of 148 commits)",
+   "files": 322,
+   "lines": 104341,
+   "by_lang": {
+    "C++": {
+     "files": 138,
+     "lines": 64260
+    },
+    "C/C++ header": {
+     "files": 179,
+     "lines": 34742
+    },
+    "C": {
+     "files": 1,
+     "lines": 4320
+    },
+    "Shader": {
+     "files": 3,
+     "lines": 534
+    },
+    "Assembly": {
+     "files": 1,
+     "lines": 485
+    }
+   },
+   "vendored": {
+    "files": 31,
+    "lines": 14646,
+    "dirs": {
+     "nulldc/plugins/ImgReader/deps/zlib": {
+      "files": 24,
+      "lines": 11679
+     },
+     "nulldc/plugins/ImgReader/deps": {
+      "files": 7,
+      "lines": 2967
+     }
+    }
+   },
+   "generated": {
+    "files": 2,
+    "lines": 168,
+    "top": {
+     "nulldc/plugins/ImgReader/pfctoc.h": 144,
+     "nulldc/plugins/drkPvr/config.h": 24
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "nulldc-2011-09",
+   "repo": "skmp_nullDC",
+   "ref": "c563e07",
+   "commit": "c563e075c1fa5116dd9dc412c2cac594309ca288",
+   "date": "2011-09-14",
+   "commit_date": "2011-09-14",
+   "lane": "nullDC",
+   "why": "Last trunk revision before the nulldc-360 import (2011-10-15); nulldc-360 shares 93/203 source files verbatim with trunk of this era",
+   "files": 325,
+   "lines": 106127,
+   "by_lang": {
+    "C++": {
+     "files": 139,
+     "lines": 65953
+    },
+    "C/C++ header": {
+     "files": 180,
+     "lines": 34790
+    },
+    "C": {
+     "files": 1,
+     "lines": 4320
+    },
+    "Shader": {
+     "files": 4,
+     "lines": 579
+    },
+    "Assembly": {
+     "files": 1,
+     "lines": 485
+    }
+   },
+   "vendored": {
+    "files": 31,
+    "lines": 14646,
+    "dirs": {
+     "nulldc/plugins/ImgReader/deps/zlib": {
+      "files": 24,
+      "lines": 11679
+     },
+     "nulldc/plugins/ImgReader/deps": {
+      "files": 7,
+      "lines": 2967
+     }
+    }
+   },
+   "generated": {
+    "files": 2,
+    "lines": 169,
+    "top": {
+     "nulldc/plugins/ImgReader/pfctoc.h": 144,
+     "nulldc/plugins/drkPvr/config.h": 25
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "nulldc-360-2011",
+   "repo": "gligli_nulldc-360",
+   "ref": "0330292",
+   "commit": "03302923daf3839c2ae8750a9cce6a6d5f932771",
+   "date": "2011-10-15",
+   "commit_date": "2011-10-15",
+   "lane": "nulldc-360",
+   "why": "gligli Xbox 360 port, initial import (nullDC 1.0.x svn trunk 2010-2011 + Xenos renderer, PPC dynarec)",
+   "files": 195,
+   "lines": 53378,
+   "by_lang": {
+    "C++": {
+     "files": 86,
+     "lines": 31976
+    },
+    "C/C++ header": {
+     "files": 105,
+     "lines": 20889
+    },
+    "Shader": {
+     "files": 2,
+     "lines": 434
+    },
+    "C": {
+     "files": 1,
+     "lines": 64
+    },
+    "Assembly": {
+     "files": 1,
+     "lines": 15
+    }
+   },
+   "vendored": {
+    "files": 7,
+    "lines": 2970,
+    "dirs": {
+     "plugins/ImgReader/deps": {
+      "files": 7,
+      "lines": 2970
+     }
+    }
+   },
+   "generated": {
+    "files": 1,
+    "lines": 25,
+    "top": {
+     "plugins/drkPvr/config.h": 25
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "reicast-2013-import",
+   "repo": "skmp_reicast-emulator",
+   "ref": "1c16baeb0",
+   "commit": "1c16baeb0eae1bfc31d83ed78cb78d37f11184df",
+   "date": "2013-12-19",
+   "commit_date": "2013-12-19",
+   "lane": "reicast",
+   "why": "reicast 'project import': the private newdc/nullDC-Android rewrite (2012-2013) imported into git; root commit shared by reicast, flycast and nullDC 3",
+   "files": 200,
+   "lines": 72911,
+   "by_lang": {
+    "C++": {
+     "files": 85,
+     "lines": 37029
+    },
+    "C/C++ header": {
+     "files": 104,
+     "lines": 32030
+    },
+    "C#": {
+     "files": 5,
+     "lines": 2034
+    },
+    "Java": {
+     "files": 5,
+     "lines": 1584
+    },
+    "Assembly": {
+     "files": 1,
+     "lines": 234
+    }
+   },
+   "vendored": {
+    "files": 213,
+    "lines": 95472,
+    "dirs": {
+     "reicast/linux-deps/include": {
+      "files": 92,
+      "lines": 45141
+     },
+     "newdc/deps/libpng": {
+      "files": 19,
+      "lines": 25796
+     },
+     "newdc/deps/zlib": {
+      "files": 22,
+      "lines": 10088
+     },
+     "newdc/deps/libzip": {
+      "files": 57,
+      "lines": 6293
+     },
+     "newdc/deps/chdr": {
+      "files": 3,
+      "lines": 2242
+     },
+     "newdc/khronos/GLES2": {
+      "files": 3,
+      "lines": 1973
+     },
+     "newdc/deps/libelf": {
+      "files": 7,
+      "lines": 1972
+     },
+     "newdc/khronos/EGL": {
+      "files": 3,
+      "lines": 779
+     },
+     "newdc/deps/crypto": {
+      "files": 4,
+      "lines": 731
+     },
+     "newdc/khronos/KHR": {
+      "files": 1,
+      "lines": 269
+     },
+     "newdc/deps/chdpsr": {
+      "files": 2,
+      "lines": 188
+     }
+    }
+   },
+   "generated": {
+    "files": 1,
+    "lines": 12,
+    "top": {
+     "newdc/hw/pvr/config.h": 12
+    }
+   },
+   "binary_source_ext_files": 0,
+   "date_range": "2012-2013",
+   "date_note": "Private newdc / nullDC-Android rewrite of 2012-2013 imported as one commit."
+  },
+  {
+   "id": "reicast-r6",
+   "repo": "skmp_reicast-emulator",
+   "ref": "r6",
+   "commit": "382f2e5c19c85627f23bdc8e6cc2c59c97262bc3",
+   "date": "2014-01-27",
+   "commit_date": "2014-01-27",
+   "lane": "reicast",
+   "why": "First tagged release r6",
+   "files": 216,
+   "lines": 78783,
+   "by_lang": {
+    "C++": {
+     "files": 85,
+     "lines": 37655
+    },
+    "C/C++ header": {
+     "files": 104,
+     "lines": 32346
+    },
+    "Java": {
+     "files": 20,
+     "lines": 6501
+    },
+    "C#": {
+     "files": 5,
+     "lines": 2034
+    },
+    "Assembly": {
+     "files": 1,
+     "lines": 234
+    },
+    "C": {
+     "files": 1,
+     "lines": 13
+    }
+   },
+   "vendored": {
+    "files": 214,
+    "lines": 96063,
+    "dirs": {
+     "shell/linux-deps/include": {
+      "files": 92,
+      "lines": 45141
+     },
+     "core/deps/libpng": {
+      "files": 19,
+      "lines": 25796
+     },
+     "core/deps/zlib": {
+      "files": 22,
+      "lines": 10088
+     },
+     "core/deps/libzip": {
+      "files": 57,
+      "lines": 6293
+     },
+     "core/deps/chdr": {
+      "files": 3,
+      "lines": 2242
+     },
+     "core/khronos/GLES2": {
+      "files": 3,
+      "lines": 1973
+     },
+     "core/deps/libelf": {
+      "files": 7,
+      "lines": 1972
+     },
+     "core/khronos/EGL": {
+      "files": 3,
+      "lines": 779
+     },
+     "core/deps/crypto": {
+      "files": 4,
+      "lines": 731
+     },
+     "core/sdl": {
+      "files": 1,
+      "lines": 591
+     },
+     "core/khronos/KHR": {
+      "files": 1,
+      "lines": 269
+     },
+     "core/deps/chdpsr": {
+      "files": 2,
+      "lines": 188
+     }
+    }
+   },
+   "generated": {
+    "files": 1,
+    "lines": 12,
+    "top": {
+     "core/hw/pvr/config.h": 12
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "reicast-r7-rc1",
+   "repo": "skmp_reicast-emulator",
+   "ref": "r7-rc1",
+   "commit": "22e95de2d14842b0ec4f5f930aebea74f32d6da3",
+   "date": "2014-12-11",
+   "commit_date": "2014-12-11",
+   "lane": "reicast",
+   "why": "r7-rc1, end of the 2014 peak (985 commits that year)",
+   "files": 271,
+   "lines": 92405,
+   "by_lang": {
+    "C++": {
+     "files": 88,
+     "lines": 40595
+    },
+    "C/C++ header": {
+     "files": 117,
+     "lines": 32884
+    },
+    "Java": {
+     "files": 45,
+     "lines": 13958
+    },
+    "Objective-C": {
+     "files": 11,
+     "lines": 2313
+    },
+    "C#": {
+     "files": 5,
+     "lines": 2034
+    },
+    "C": {
+     "files": 2,
+     "lines": 326
+    },
+    "Assembly": {
+     "files": 1,
+     "lines": 253
+    },
+    "Shader": {
+     "files": 2,
+     "lines": 42
+    }
+   },
+   "vendored": {
+    "files": 255,
+    "lines": 119115,
+    "dirs": {
+     "shell/linux-deps/include": {
+      "files": 92,
+      "lines": 45141
+     },
+     "core/deps/libpng": {
+      "files": 19,
+      "lines": 25796
+     },
+     "core/deps/libwebsocket": {
+      "files": 26,
+      "lines": 10957
+     },
+     "core/deps/zlib": {
+      "files": 22,
+      "lines": 10088
+     },
+     "core/khronos/GL3": {
+      "files": 3,
+      "lines": 7117
+     },
+     "core/deps/libzip": {
+      "files": 57,
+      "lines": 6293
+     },
+     "core/khronos/GLES3": {
+      "files": 3,
+      "lines": 2595
+     },
+     "core/deps/chdr": {
+      "files": 3,
+      "lines": 2225
+     },
+     "core/khronos/GLES2": {
+      "files": 3,
+      "lines": 2181
+     },
+     "core/deps/libelf": {
+      "files": 7,
+      "lines": 1972
+     },
+     "core/khronos/EGL": {
+      "files": 3,
+      "lines": 1111
+     },
+     "core/deps/crypto": {
+      "files": 6,
+      "lines": 929
+     },
+     "core/khronos/APPLE": {
+      "files": 3,
+      "lines": 722
+     },
+     "core/deps/ifaddrs": {
+      "files": 2,
+      "lines": 712
+     },
+     "core/sdl": {
+      "files": 1,
+      "lines": 529
+     },
+     "core/khronos/KHR": {
+      "files": 1,
+      "lines": 282
+     },
+     "core/deps/coreio": {
+      "files": 2,
+      "lines": 277
+     },
+     "core/deps/chdpsr": {
+      "files": 2,
+      "lines": 188
+     }
+    }
+   },
+   "generated": {
+    "files": 1,
+    "lines": 12,
+    "top": {
+     "core/hw/pvr/config.h": 12
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "reicast-r8",
+   "repo": "skmp_reicast-emulator",
+   "ref": "r8",
+   "commit": "00ecf2f1cecc022fae693032f8dd382ea719d8e3",
+   "date": "2018-09-04",
+   "commit_date": "2018-09-04",
+   "lane": "reicast",
+   "why": "r8, 2018 revival (1104 commits); flycast diverges right after (first flycast-only commit 2018-10-20)",
+   "files": 312,
+   "lines": 101239,
+   "by_lang": {
+    "C++": {
+     "files": 109,
+     "lines": 51582
+    },
+    "C/C++ header": {
+     "files": 146,
+     "lines": 34062
+    },
+    "Java": {
+     "files": 28,
+     "lines": 9101
+    },
+    "Objective-C": {
+     "files": 17,
+     "lines": 3317
+    },
+    "C#": {
+     "files": 5,
+     "lines": 2034
+    },
+    "Assembly": {
+     "files": 2,
+     "lines": 473
+    },
+    "C": {
+     "files": 2,
+     "lines": 323
+    },
+    "Python": {
+     "files": 1,
+     "lines": 305
+    },
+    "Shader": {
+     "files": 2,
+     "lines": 42
+    }
+   },
+   "vendored": {
+    "files": 274,
+    "lines": 140724,
+    "dirs": {
+     "shell/linux-deps/include": {
+      "files": 92,
+      "lines": 45141
+     },
+     "core/deps/libpng": {
+      "files": 29,
+      "lines": 39173
+     },
+     "core/deps/zlib": {
+      "files": 26,
+      "lines": 12833
+     },
+     "core/deps/libwebsocket": {
+      "files": 26,
+      "lines": 10961
+     },
+     "core/khronos/GL3": {
+      "files": 3,
+      "lines": 7137
+     },
+     "core/deps/libzip": {
+      "files": 57,
+      "lines": 6293
+     },
+     "core/deps/xbyak": {
+      "files": 4,
+      "lines": 5428
+     },
+     "core/khronos/GLES3": {
+      "files": 3,
+      "lines": 2595
+     },
+     "core/deps/chdr": {
+      "files": 3,
+      "lines": 2225
+     },
+     "core/khronos/GLES2": {
+      "files": 3,
+      "lines": 2181
+     },
+     "core/deps/libelf": {
+      "files": 7,
+      "lines": 1990
+     },
+     "core/khronos/EGL": {
+      "files": 3,
+      "lines": 1111
+     },
+     "core/deps/crypto": {
+      "files": 6,
+      "lines": 929
+     },
+     "core/khronos/APPLE": {
+      "files": 3,
+      "lines": 722
+     },
+     "core/deps/ifaddrs": {
+      "files": 2,
+      "lines": 714
+     },
+     "core/sdl": {
+      "files": 2,
+      "lines": 498
+     },
+     "core/deps/coreio": {
+      "files": 2,
+      "lines": 320
+     },
+     "core/khronos/KHR": {
+      "files": 1,
+      "lines": 282
+     },
+     "core/deps/chdpsr": {
+      "files": 2,
+      "lines": 191
+     }
+    }
+   },
+   "generated": {
+    "files": 1,
+    "lines": 12,
+    "top": {
+     "core/hw/pvr/config.h": 12
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "reicast-r19.07",
+   "repo": "skmp_reicast-emulator",
+   "ref": "r19.07",
+   "commit": "154e22448a0836ec386dd5ff7475ced8513d0da2",
+   "date": "2019-07-14",
+   "commit_date": "2019-07-14",
+   "lane": "reicast",
+   "why": "r19.07 (after the libswirl restructure); flycast's last merge from reicast is 2019-05-17",
+   "files": 379,
+   "lines": 131409,
+   "by_lang": {
+    "C++": {
+     "files": 146,
+     "lines": 72612
+    },
+    "C/C++ header": {
+     "files": 185,
+     "lines": 49145
+    },
+    "Java": {
+     "files": 20,
+     "lines": 3524
+    },
+    "Objective-C": {
+     "files": 17,
+     "lines": 3250
+    },
+    "C#": {
+     "files": 5,
+     "lines": 2034
+    },
+    "Assembly": {
+     "files": 2,
+     "lines": 484
+    },
+    "Python": {
+     "files": 1,
+     "lines": 305
+    },
+    "Shader": {
+     "files": 2,
+     "lines": 42
+    },
+    "C": {
+     "files": 1,
+     "lines": 13
+    }
+   },
+   "vendored": {
+    "files": 510,
+    "lines": 439786,
+    "dirs": {
+     "libswirl/deps/vixl": {
+      "files": 55,
+      "lines": 179410
+     },
+     "reicast/linux-deps/include": {
+      "files": 92,
+      "lines": 45141
+     },
+     "libswirl/deps/libpng": {
+      "files": 29,
+      "lines": 39173
+     },
+     "libswirl/deps/khronos": {
+      "files": 20,
+      "lines": 38172
+     },
+     "libswirl/deps/imgui": {
+      "files": 11,
+      "lines": 36664
+     },
+     "libswirl/deps/flac": {
+      "files": 51,
+      "lines": 28137
+     },
+     "libswirl/deps/picotcp": {
+      "files": 83,
+      "lines": 24307
+     },
+     "libswirl/deps/zlib": {
+      "files": 26,
+      "lines": 12833
+     },
+     "libswirl/deps/lzma": {
+      "files": 42,
+      "lines": 12559
+     },
+     "libswirl/deps/libzip": {
+      "files": 57,
+      "lines": 6295
+     },
+     "libswirl/deps/xbyak": {
+      "files": 4,
+      "lines": 5428
+     },
+     "libswirl/deps/chdr": {
+      "files": 11,
+      "lines": 4599
+     },
+     "libswirl/deps/libelf": {
+      "files": 7,
+      "lines": 1990
+     },
+     "libswirl/deps/xbrz": {
+      "files": 4,
+      "lines": 1388
+     },
+     "libswirl/deps/xxhash": {
+      "files": 2,
+      "lines": 1358
+     },
+     "libswirl/deps/crypto": {
+      "files": 6,
+      "lines": 929
+     },
+     "libswirl/sdl": {
+      "files": 4,
+      "lines": 682
+     },
+     "libswirl/deps/coreio": {
+      "files": 2,
+      "lines": 321
+     },
+     "libswirl/deps/cdipsr": {
+      "files": 2,
+      "lines": 202
+     },
+     "libswirl/deps/dirent": {
+      "files": 2,
+      "lines": 198
+     }
+    }
+   },
+   "generated": {
+    "files": 3,
+    "lines": 2256,
+    "top": {
+     "libswirl/glwrap/gl3w.h": 1385,
+     "libswirl/glwrap/gl3w.cpp": 859,
+     "libswirl/hw/pvr/config.h": 12
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "reicast-r20.04",
+   "repo": "skmp_reicast-emulator",
+   "ref": "r20.04",
+   "commit": "046d94d4bf7b51418a82bdc90e25206c0a62fc25",
+   "date": "2020-04-02",
+   "commit_date": "2020-04-02",
+   "lane": "reicast",
+   "why": "r20.04, last tagged release",
+   "files": 437,
+   "lines": 139129,
+   "by_lang": {
+    "C++": {
+     "files": 173,
+     "lines": 78596
+    },
+    "C/C++ header": {
+     "files": 211,
+     "lines": 49410
+    },
+    "C#": {
+     "files": 11,
+     "lines": 4187
+    },
+    "Objective-C": {
+     "files": 23,
+     "lines": 3948
+    },
+    "Java": {
+     "files": 14,
+     "lines": 2139
+    },
+    "Assembly": {
+     "files": 2,
+     "lines": 502
+    },
+    "Python": {
+     "files": 1,
+     "lines": 305
+    },
+    "Shader": {
+     "files": 2,
+     "lines": 42
+    }
+   },
+   "vendored": {
+    "files": 478,
+    "lines": 418608,
+    "dirs": {
+     "libswirl/deps/vixl": {
+      "files": 55,
+      "lines": 179430
+     },
+     "libswirl/deps/libpng": {
+      "files": 29,
+      "lines": 39173
+     },
+     "libswirl/deps/khronos": {
+      "files": 20,
+      "lines": 38164
+     },
+     "libswirl/deps/imgui": {
+      "files": 11,
+      "lines": 36664
+     },
+     "libswirl/deps/flac": {
+      "files": 51,
+      "lines": 28145
+     },
+     "libswirl/gpl/deps/picotcp": {
+      "files": 83,
+      "lines": 24340
+     },
+     "libswirl/deps/lua": {
+      "files": 59,
+      "lines": 23127
+     },
+     "libswirl/deps/lzma": {
+      "files": 42,
+      "lines": 12560
+     },
+     "libswirl/deps/zlib": {
+      "files": 22,
+      "lines": 11022
+     },
+     "libswirl/deps/libzip": {
+      "files": 57,
+      "lines": 6302
+     },
+     "libswirl/deps/xbyak": {
+      "files": 4,
+      "lines": 5428
+     },
+     "libswirl/deps/chdr": {
+      "files": 11,
+      "lines": 4656
+     },
+     "reicast/apple/emulator-osx/deps/libomp": {
+      "files": 3,
+      "lines": 2535
+     },
+     "libswirl/deps/libelf": {
+      "files": 7,
+      "lines": 1990
+     },
+     "libswirl/gpl/deps/xbrz": {
+      "files": 4,
+      "lines": 1401
+     },
+     "libswirl/deps/xxhash": {
+      "files": 2,
+      "lines": 1358
+     },
+     "libswirl/deps/crypto": {
+      "files": 6,
+      "lines": 929
+     },
+     "libswirl/sdl": {
+      "files": 4,
+      "lines": 674
+     },
+     "libswirl/deps/cdipsr": {
+      "files": 2,
+      "lines": 204
+     },
+     "libswirl/deps/dirent": {
+      "files": 2,
+      "lines": 198
+     },
+     "libswirl/deps/coreio": {
+      "files": 2,
+      "lines": 194
+     },
+     "libswirl/utils/glinit/sdl": {
+      "files": 2,
+      "lines": 114
+     }
+    }
+   },
+   "generated": {
+    "files": 3,
+    "lines": 2279,
+    "top": {
+     "libswirl/utils/glwrap/gl3w.h": 1399,
+     "libswirl/utils/glwrap/gl3w.cpp": 862,
+     "libswirl/hw/pvr/config.h": 18
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "flycast-v1.0",
+   "repo": "flyinghead_flycast",
+   "ref": "v1.0",
+   "commit": "d6e15544bcdb99112f72f0a08acf38268c21a5ae",
+   "date": "2021-05-27",
+   "commit_date": "2021-05-27",
+   "lane": "flycast",
+   "why": "flycast v1.0 (reicast descendant: shares root and 3279 commits with reicast, forked 2018)",
+   "files": 424,
+   "lines": 162080,
+   "by_lang": {
+    "C++": {
+     "files": 191,
+     "lines": 92503
+    },
+    "C/C++ header": {
+     "files": 199,
+     "lines": 62787
+    },
+    "Objective-C": {
+     "files": 17,
+     "lines": 3322
+    },
+    "Java": {
+     "files": 13,
+     "lines": 1951
+    },
+    "C": {
+     "files": 2,
+     "lines": 1475
+    },
+    "Shader": {
+     "files": 2,
+     "lines": 42
+    }
+   },
+   "vendored": {
+    "files": 2257,
+    "lines": 748377,
+    "dirs": {
+     "core/deps/vixl": {
+      "files": 55,
+      "lines": 179411
+     },
+     "core/deps/glslang": {
+      "files": 1111,
+      "lines": 170203
+     },
+     "core/deps/glm": {
+      "files": 553,
+      "lines": 86653
+     },
+     "core/khronos/vulkan": {
+      "files": 19,
+      "lines": 82909
+     },
+     "core/deps/imgui": {
+      "files": 11,
+      "lines": 42835
+     },
+     "core/deps/picotcp": {
+      "files": 87,
+      "lines": 25460
+     },
+     "core/deps/gtest": {
+      "files": 33,
+      "lines": 23657
+     },
+     "core/khronos/GL4": {
+      "files": 4,
+      "lines": 20852
+     },
+     "core/deps/xbyak": {
+      "files": 42,
+      "lines": 20818
+     },
+     "core/deps/libzip": {
+      "files": 147,
+      "lines": 20390
+     },
+     "core/deps/lzma": {
+      "files": 42,
+      "lines": 12559
+     },
+     "core/deps/miniupnpc": {
+      "files": 52,
+      "lines": 9975
+     },
+     "core/deps/xxHash": {
+      "files": 26,
+      "lines": 9972
+     },
+     "core/deps/stb": {
+      "files": 2,
+      "lines": 9322
+     },
+     "core/khronos/GL3": {
+      "files": 3,
+      "lines": 7153
+     },
+     "core/khronos/GLES32": {
+      "files": 2,
+      "lines": 5520
+     },
+     "core/deps/volk": {
+      "files": 7,
+      "lines": 3250
+     },
+     "core/deps/nowide": {
+      "files": 24,
+      "lines": 3155
+     },
+     "core/khronos/GLES3": {
+      "files": 3,
+      "lines": 2595
+     },
+     "core/khronos/GLES2": {
+      "files": 3,
+      "lines": 2181
+     },
+     "core/deps/libelf": {
+      "files": 7,
+      "lines": 1990
+     },
+     "core/khronos/EGL": {
+      "files": 3,
+      "lines": 1930
+     },
+     "core/deps/xbrz": {
+      "files": 4,
+      "lines": 1386
+     },
+     "core/deps/dirent": {
+      "files": 1,
+      "lines": 1160
+     },
+     "core/deps/crypto": {
+      "files": 6,
+      "lines": 929
+     },
+     "core/sdl": {
+      "files": 4,
+      "lines": 913
+     },
+     "core/khronos/APPLE": {
+      "files": 3,
+      "lines": 722
+     },
+     "core/khronos/KHR": {
+      "files": 1,
+      "lines": 282
+     },
+     "core/deps/chdpsr": {
+      "files": 2,
+      "lines": 195
+     }
+    }
+   },
+   "generated": {
+    "files": 2,
+    "lines": 102,
+    "top": {
+     "shell/linux/include/mingw/zipconf.h": 52,
+     "shell/apple/emulator-osx/emulator-osx/include/zipconf.h": 50
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "nulldc-360-last",
+   "repo": "gligli_nulldc-360",
+   "ref": "7b0bd50",
+   "commit": "7b0bd50aa4a69e4f19306c9225146106f4387750",
+   "date": "2022-02-11",
+   "commit_date": "2022-02-11",
+   "lane": "nulldc-360",
+   "why": "Last commit (activity 2011-2012, GCC 9.4 rebuild 2022)",
+   "files": 292,
+   "lines": 85988,
+   "by_lang": {
+    "C++": {
+     "files": 122,
+     "lines": 55598
+    },
+    "C/C++ header": {
+     "files": 158,
+     "lines": 27584
+    },
+    "C": {
+     "files": 9,
+     "lines": 2151
+    },
+    "Shader": {
+     "files": 2,
+     "lines": 445
+    },
+    "Python": {
+     "files": 1,
+     "lines": 210
+    }
+   },
+   "vendored": {
+    "files": 210,
+    "lines": 46576,
+    "dirs": {
+     "gui/shaders": {
+      "files": 170,
+      "lines": 22078
+     },
+     "nullDC/emitter/disasm": {
+      "files": 7,
+      "lines": 11651
+     },
+     "gui/gui": {
+      "files": 13,
+      "lines": 5161
+     },
+     "gui/utils/smb": {
+      "files": 13,
+      "lines": 4718
+     },
+     "plugins/ImgReader/deps": {
+      "files": 7,
+      "lines": 2968
+     }
+    }
+   },
+   "generated": {
+    "files": 2,
+    "lines": 9758,
+    "top": {
+     "plugins/drkPvr/shaders.S": 9733,
+     "plugins/drkPvr/config.h": 25
+    }
+   },
+   "binary_source_ext_files": 0,
+   "date_range": "2011-2012",
+   "date_note": "Code activity is 2011-2012 (118 of 123 commits); the 2021-2022 commits are toolchain rebuilds."
+  },
+  {
+   "id": "flycast-v2.0",
+   "repo": "flyinghead_flycast",
+   "ref": "v2.0",
+   "commit": "aa97a6d64fb47d3ce0febaa575b26d975dd916e4",
+   "date": "2022-08-25",
+   "commit_date": "2022-08-25",
+   "lane": "flycast",
+   "why": "flycast v2.0",
+   "files": 512,
+   "lines": 196715,
+   "by_lang": {
+    "C++": {
+     "files": 232,
+     "lines": 116669
+    },
+    "C/C++ header": {
+     "files": 241,
+     "lines": 72619
+    },
+    "Objective-C": {
+     "files": 10,
+     "lines": 2142
+    },
+    "Java": {
+     "files": 13,
+     "lines": 2052
+    },
+    "Python": {
+     "files": 12,
+     "lines": 1702
+    },
+    "C": {
+     "files": 3,
+     "lines": 1484
+    },
+    "Assembly": {
+     "files": 1,
+     "lines": 47
+    }
+   },
+   "vendored": {
+    "files": 2388,
+    "lines": 790257,
+    "dirs": {
+     "core/deps/vixl": {
+      "files": 55,
+      "lines": 179411
+     },
+     "core/deps/glslang": {
+      "files": 1111,
+      "lines": 170203
+     },
+     "core/deps/glm": {
+      "files": 553,
+      "lines": 86653
+     },
+     "core/khronos/vulkan": {
+      "files": 19,
+      "lines": 82909
+     },
+     "core/deps/imgui": {
+      "files": 11,
+      "lines": 42868
+     },
+     "core/deps/libretro-common": {
+      "files": 87,
+      "lines": 33519
+     },
+     "core/deps/picotcp": {
+      "files": 87,
+      "lines": 25491
+     },
+     "core/deps/gtest": {
+      "files": 33,
+      "lines": 23657
+     },
+     "core/khronos/GL4": {
+      "files": 4,
+      "lines": 20854
+     },
+     "core/deps/xbyak": {
+      "files": 42,
+      "lines": 20818
+     },
+     "core/deps/libzip": {
+      "files": 147,
+      "lines": 20390
+     },
+     "core/deps/lzma": {
+      "files": 42,
+      "lines": 12560
+     },
+     "core/deps/miniupnpc": {
+      "files": 52,
+      "lines": 10063
+     },
+     "core/deps/xxHash": {
+      "files": 26,
+      "lines": 9972
+     },
+     "core/deps/stb": {
+      "files": 2,
+      "lines": 9322
+     },
+     "core/khronos/GL3": {
+      "files": 3,
+      "lines": 7153
+     },
+     "core/khronos/GLES32": {
+      "files": 2,
+      "lines": 5520
+     },
+     "core/deps/ggpo": {
+      "files": 35,
+      "lines": 5295
+     },
+     "core/deps/volk": {
+      "files": 7,
+      "lines": 3250
+     },
+     "core/deps/nowide": {
+      "files": 24,
+      "lines": 3155
+     },
+     "core/deps/oboe": {
+      "files": 11,
+      "lines": 2614
+     },
+     "core/khronos/GLES3": {
+      "files": 3,
+      "lines": 2595
+     },
+     "core/khronos/GLES2": {
+      "files": 3,
+      "lines": 2181
+     },
+     "core/deps/libelf": {
+      "files": 7,
+      "lines": 1990
+     },
+     "core/khronos/EGL": {
+      "files": 3,
+      "lines": 1930
+     },
+     "core/deps/xbrz": {
+      "files": 4,
+      "lines": 1386
+     },
+     "core/sdl": {
+      "files": 4,
+      "lines": 1211
+     },
+     "core/deps/dirent": {
+      "files": 1,
+      "lines": 1166
+     },
+     "core/khronos/APPLE": {
+      "files": 3,
+      "lines": 722
+     },
+     "core/lua": {
+      "files": 2,
+      "lines": 686
+     },
+     "core/khronos/KHR": {
+      "files": 1,
+      "lines": 282
+     },
+     "core/deps/md5": {
+      "files": 2,
+      "lines": 236
+     },
+     "core/deps/chdpsr": {
+      "files": 2,
+      "lines": 195
+     }
+    }
+   },
+   "generated": {
+    "files": 1,
+    "lines": 59928,
+    "top": {
+     "shell/libretro/libretro_core_options_intl.h": 59928
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "nulldc3-fpgadc-2023",
+   "repo": "skmp_nulldc3",
+   "ref": "038f7ef3",
+   "commit": "038f7ef37463cfb7128794b06eb00294eb58e409",
+   "date": "2023-07-07",
+   "commit_date": "2023-07-07",
+   "lane": "nulldc3",
+   "why": "First nullDC 3 commits on top of reicast 2021-12-22: 'fpgadc: Add refsw-offline' (VRAM/PVR dumps + offline refsw renderer): root of the fpgadc lane",
+   "files": 453,
+   "lines": 145787,
+   "by_lang": {
+    "C++": {
+     "files": 181,
+     "lines": 84393
+    },
+    "C/C++ header": {
+     "files": 219,
+     "lines": 50091
+    },
+    "C#": {
+     "files": 11,
+     "lines": 4187
+    },
+    "Objective-C": {
+     "files": 23,
+     "lines": 4128
+    },
+    "Java": {
+     "files": 14,
+     "lines": 2139
+    },
+    "Assembly": {
+     "files": 2,
+     "lines": 502
+    },
+    "Python": {
+     "files": 1,
+     "lines": 305
+    },
+    "Shader": {
+     "files": 2,
+     "lines": 42
+    }
+   },
+   "vendored": {
+    "files": 479,
+    "lines": 421469,
+    "dirs": {
+     "libswirl/deps/vixl": {
+      "files": 55,
+      "lines": 179430
+     },
+     "libswirl/deps/libpng": {
+      "files": 29,
+      "lines": 39173
+     },
+     "libswirl/deps/khronos": {
+      "files": 20,
+      "lines": 38164
+     },
+     "libswirl/deps/imgui": {
+      "files": 11,
+      "lines": 36664
+     },
+     "libswirl/deps/flac": {
+      "files": 51,
+      "lines": 28145
+     },
+     "libswirl/gpl/deps/picotcp": {
+      "files": 83,
+      "lines": 24340
+     },
+     "libswirl/deps/lua": {
+      "files": 59,
+      "lines": 23127
+     },
+     "libswirl/deps/lzma": {
+      "files": 42,
+      "lines": 12560
+     },
+     "libswirl/deps/zlib": {
+      "files": 22,
+      "lines": 11022
+     },
+     "libswirl/deps/libzip": {
+      "files": 57,
+      "lines": 6302
+     },
+     "libswirl/deps/xbyak": {
+      "files": 4,
+      "lines": 5428
+     },
+     "libswirl/deps/chdr": {
+      "files": 11,
+      "lines": 4643
+     },
+     "libswirl/libretro-common/include": {
+      "files": 1,
+      "lines": 2880
+     },
+     "reicast/apple/emulator-osx/deps/libomp": {
+      "files": 3,
+      "lines": 2535
+     },
+     "libswirl/deps/libelf": {
+      "files": 7,
+      "lines": 1990
+     },
+     "libswirl/gpl/deps/xbrz": {
+      "files": 4,
+      "lines": 1401
+     },
+     "libswirl/deps/xxhash": {
+      "files": 2,
+      "lines": 1358
+     },
+     "libswirl/deps/crypto": {
+      "files": 6,
+      "lines": 929
+     },
+     "libswirl/sdl": {
+      "files": 4,
+      "lines": 674
+     },
+     "libswirl/deps/cdipsr": {
+      "files": 2,
+      "lines": 204
+     },
+     "libswirl/deps/dirent": {
+      "files": 2,
+      "lines": 198
+     },
+     "libswirl/deps/coreio": {
+      "files": 2,
+      "lines": 188
+     },
+     "libswirl/utils/glinit/sdl": {
+      "files": 2,
+      "lines": 114
+     }
+    }
+   },
+   "generated": {
+    "files": 3,
+    "lines": 2279,
+    "top": {
+     "libswirl/utils/glwrap/gl3w.h": 1399,
+     "libswirl/utils/glwrap/gl3w.cpp": 862,
+     "libswirl/hw/pvr/config.h": 18
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "nulldc-last",
+   "repo": "skmp_nullDC",
+   "ref": "1611c3c",
+   "commit": "1611c3cf0aa2755611455aa7a02b4f62babee7bd",
+   "date": "2023-07-10",
+   "commit_date": "2023-07-10",
+   "lane": "nullDC",
+   "why": "Last commit (svn r150 2013-03 + GitHub README/nullRend edits 2015, 2023); archived",
+   "files": 333,
+   "lines": 107503,
+   "by_lang": {
+    "C++": {
+     "files": 140,
+     "lines": 66346
+    },
+    "C/C++ header": {
+     "files": 185,
+     "lines": 35336
+    },
+    "C": {
+     "files": 1,
+     "lines": 4320
+    },
+    "Shader": {
+     "files": 6,
+     "lines": 1016
+    },
+    "Assembly": {
+     "files": 1,
+     "lines": 485
+    }
+   },
+   "vendored": {
+    "files": 31,
+    "lines": 14646,
+    "dirs": {
+     "nulldc/plugins/ImgReader/deps/zlib": {
+      "files": 24,
+      "lines": 11679
+     },
+     "nulldc/plugins/ImgReader/deps": {
+      "files": 7,
+      "lines": 2967
+     }
+    }
+   },
+   "generated": {
+    "files": 2,
+    "lines": 169,
+    "top": {
+     "nulldc/plugins/ImgReader/pfctoc.h": 144,
+     "nulldc/plugins/drkPvr/config.h": 25
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "nullDCe-ps2-2024",
+   "repo": "skmp_nullDCe",
+   "ref": "c3e0c9b",
+   "commit": "c3e0c9bf0c40171615508fff7e40373a1db01beb",
+   "date": "2024-09-27",
+   "commit_date": "2024-09-27",
+   "lane": "nullDCe",
+   "why": "nullDCe 2024 PS2 port work (skmp/ps2 branch tip; main bad8d6a is the nullDC4Wii base)",
+   "files": 239,
+   "lines": 65679,
+   "by_lang": {
+    "C++": {
+     "files": 90,
+     "lines": 41216
+    },
+    "C/C++ header": {
+     "files": 105,
+     "lines": 22213
+    },
+    "Shader": {
+     "files": 36,
+     "lines": 1696
+    },
+    "Assembly": {
+     "files": 5,
+     "lines": 332
+    },
+    "C": {
+     "files": 2,
+     "lines": 159
+    },
+    "C#": {
+     "files": 1,
+     "lines": 63
+    }
+   },
+   "vendored": {
+    "files": 0,
+    "lines": 0,
+    "dirs": {}
+   },
+   "generated": {
+    "files": 5,
+    "lines": 4848,
+    "top": {
+     "rec-ARM/armwreck.h": 2291,
+     "emitter/PPCEmit/ppc_emit.h": 2251,
+     "plugs/ImgReader/pfctoc.h": 145,
+     "cdi_cvt/cdi_cvt/pfctoc.h": 144,
+     "plugs/drkPvr/config.h": 17
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "flycast-v2.4",
+   "repo": "flyinghead_flycast",
+   "ref": "v2.4",
+   "commit": "8108e63907fc676f898522d20c762a4de3cd2a21",
+   "date": "2024-10-21",
+   "commit_date": "2024-10-21",
+   "lane": "flycast",
+   "why": "flycast v2.4",
+   "files": 570,
+   "lines": 200020,
+   "by_lang": {
+    "C++": {
+     "files": 259,
+     "lines": 133897
+    },
+    "C/C++ header": {
+     "files": 264,
+     "lines": 57197
+    },
+    "Java": {
+     "files": 18,
+     "lines": 3603
+    },
+    "Objective-C": {
+     "files": 13,
+     "lines": 2556
+    },
+    "Python": {
+     "files": 12,
+     "lines": 1722
+    },
+    "C": {
+     "files": 3,
+     "lines": 999
+    },
+    "Assembly": {
+     "files": 1,
+     "lines": 46
+    }
+   },
+   "vendored": {
+    "files": 1302,
+    "lines": 637740,
+    "dirs": {
+     "core/deps/vixl": {
+      "files": 57,
+      "lines": 230788
+     },
+     "core/deps/glm": {
+      "files": 553,
+      "lines": 86653
+     },
+     "core/deps/imgui": {
+      "files": 21,
+      "lines": 60776
+     },
+     "core/deps/libretro-common": {
+      "files": 87,
+      "lines": 34337
+     },
+     "core/deps/glad": {
+      "files": 6,
+      "lines": 30025
+     },
+     "core/deps/libzip": {
+      "files": 168,
+      "lines": 26806
+     },
+     "core/deps/picotcp": {
+      "files": 87,
+      "lines": 25714
+     },
+     "core/deps/json": {
+      "files": 1,
+      "lines": 23746
+     },
+     "core/deps/libunwind": {
+      "files": 46,
+      "lines": 22342
+     },
+     "core/deps/xbyak": {
+      "files": 42,
+      "lines": 20818
+     },
+     "core/deps/lzma": {
+      "files": 42,
+      "lines": 12560
+     },
+     "core/deps/implot": {
+      "files": 4,
+      "lines": 11659
+     },
+     "core/deps/miniupnpc": {
+      "files": 52,
+      "lines": 10089
+     },
+     "core/deps/xxHash": {
+      "files": 26,
+      "lines": 9972
+     },
+     "core/deps/stb": {
+      "files": 2,
+      "lines": 9322
+     },
+     "core/deps/nowide": {
+      "files": 52,
+      "lines": 9007
+     },
+     "core/deps/ggpo": {
+      "files": 33,
+      "lines": 5109
+     },
+     "core/deps/libelf": {
+      "files": 7,
+      "lines": 2185
+     },
+     "core/sdl": {
+      "files": 5,
+      "lines": 2148
+     },
+     "core/deps/xbrz": {
+      "files": 4,
+      "lines": 1386
+     },
+     "core/deps/dirent": {
+      "files": 1,
+      "lines": 1166
+     },
+     "core/lua": {
+      "files": 2,
+      "lines": 689
+     },
+     "core/deps/md5": {
+      "files": 2,
+      "lines": 236
+     },
+     "core/deps/chdpsr": {
+      "files": 2,
+      "lines": 207
+     }
+    }
+   },
+   "generated": {
+    "files": 2,
+    "lines": 84002,
+    "top": {
+     "shell/libretro/libretro_core_options_intl.h": 82596,
+     "core/ui/IconsFontAwesome6.h": 1406
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "minicast-import",
+   "repo": "skmp_minicast",
+   "ref": "580d7b8",
+   "commit": "580d7b86a14223136ae1a81fe280428a90c0e247",
+   "date": "2025-01-20",
+   "commit_date": "2025-01-20",
+   "lane": "fpgadc",
+   "why": "minicast initial import: reicast/nullDC-3-pre fork for the DE10-nano ARM feeding polly2-rtl (513/533 source files identical to nulldc3 2023-08..2024-07)",
+   "files": 273,
+   "lines": 94780,
+   "by_lang": {
+    "C++": {
+     "files": 124,
+     "lines": 56029
+    },
+    "C/C++ header": {
+     "files": 149,
+     "lines": 38751
+    }
+   },
+   "vendored": {
+    "files": 260,
+    "lines": 354470,
+    "dirs": {
+     "libswirl/deps/vixl": {
+      "files": 55,
+      "lines": 179430
+     },
+     "libswirl/deps/libpng": {
+      "files": 29,
+      "lines": 39173
+     },
+     "libswirl/deps/khronos": {
+      "files": 20,
+      "lines": 38164
+     },
+     "libswirl/deps/imgui": {
+      "files": 11,
+      "lines": 36664
+     },
+     "libswirl/deps/flac": {
+      "files": 51,
+      "lines": 28145
+     },
+     "libswirl/deps/lzma": {
+      "files": 42,
+      "lines": 12560
+     },
+     "libswirl/deps/zlib": {
+      "files": 22,
+      "lines": 11022
+     },
+     "libswirl/deps/chdr": {
+      "files": 11,
+      "lines": 4643
+     },
+     "libswirl/deps/libelf": {
+      "files": 7,
+      "lines": 1990
+     },
+     "libswirl/deps/xxhash": {
+      "files": 2,
+      "lines": 1358
+     },
+     "libswirl/deps/crypto": {
+      "files": 6,
+      "lines": 929
+     },
+     "libswirl/deps/cdipsr": {
+      "files": 2,
+      "lines": 204
+     },
+     "libswirl/deps/coreio": {
+      "files": 2,
+      "lines": 188
+     }
+    }
+   },
+   "generated": {
+    "files": 1,
+    "lines": 18,
+    "top": {
+     "libswirl/hw/pvr/config.h": 18
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "reicast-last",
+   "repo": "skmp_reicast-emulator",
+   "ref": "2e32999c4",
+   "commit": "2e32999c422f997a791c64cbe3720c8e9333bec0",
+   "date": "2025-09-30",
+   "commit_date": "2025-09-30",
+   "lane": "reicast",
+   "why": "Last commit of alpha (code state = 2021-12-22 plus README/notice edits); archived 2025. nullDC 3 branches from 95b673698 (2021-12-22)",
+   "files": 452,
+   "lines": 145474,
+   "by_lang": {
+    "C++": {
+     "files": 180,
+     "lines": 84105
+    },
+    "C/C++ header": {
+     "files": 219,
+     "lines": 50066
+    },
+    "C#": {
+     "files": 11,
+     "lines": 4187
+    },
+    "Objective-C": {
+     "files": 23,
+     "lines": 4128
+    },
+    "Java": {
+     "files": 14,
+     "lines": 2139
+    },
+    "Assembly": {
+     "files": 2,
+     "lines": 502
+    },
+    "Python": {
+     "files": 1,
+     "lines": 305
+    },
+    "Shader": {
+     "files": 2,
+     "lines": 42
+    }
+   },
+   "vendored": {
+    "files": 479,
+    "lines": 421469,
+    "dirs": {
+     "libswirl/deps/vixl": {
+      "files": 55,
+      "lines": 179430
+     },
+     "libswirl/deps/libpng": {
+      "files": 29,
+      "lines": 39173
+     },
+     "libswirl/deps/khronos": {
+      "files": 20,
+      "lines": 38164
+     },
+     "libswirl/deps/imgui": {
+      "files": 11,
+      "lines": 36664
+     },
+     "libswirl/deps/flac": {
+      "files": 51,
+      "lines": 28145
+     },
+     "libswirl/gpl/deps/picotcp": {
+      "files": 83,
+      "lines": 24340
+     },
+     "libswirl/deps/lua": {
+      "files": 59,
+      "lines": 23127
+     },
+     "libswirl/deps/lzma": {
+      "files": 42,
+      "lines": 12560
+     },
+     "libswirl/deps/zlib": {
+      "files": 22,
+      "lines": 11022
+     },
+     "libswirl/deps/libzip": {
+      "files": 57,
+      "lines": 6302
+     },
+     "libswirl/deps/xbyak": {
+      "files": 4,
+      "lines": 5428
+     },
+     "libswirl/deps/chdr": {
+      "files": 11,
+      "lines": 4643
+     },
+     "libswirl/libretro-common/include": {
+      "files": 1,
+      "lines": 2880
+     },
+     "reicast/apple/emulator-osx/deps/libomp": {
+      "files": 3,
+      "lines": 2535
+     },
+     "libswirl/deps/libelf": {
+      "files": 7,
+      "lines": 1990
+     },
+     "libswirl/gpl/deps/xbrz": {
+      "files": 4,
+      "lines": 1401
+     },
+     "libswirl/deps/xxhash": {
+      "files": 2,
+      "lines": 1358
+     },
+     "libswirl/deps/crypto": {
+      "files": 6,
+      "lines": 929
+     },
+     "libswirl/sdl": {
+      "files": 4,
+      "lines": 674
+     },
+     "libswirl/deps/cdipsr": {
+      "files": 2,
+      "lines": 204
+     },
+     "libswirl/deps/dirent": {
+      "files": 2,
+      "lines": 198
+     },
+     "libswirl/deps/coreio": {
+      "files": 2,
+      "lines": 188
+     },
+     "libswirl/utils/glinit/sdl": {
+      "files": 2,
+      "lines": 114
+     }
+    }
+   },
+   "generated": {
+    "files": 3,
+    "lines": 2279,
+    "top": {
+     "libswirl/utils/glwrap/gl3w.h": 1399,
+     "libswirl/utils/glwrap/gl3w.cpp": 862,
+     "libswirl/hw/pvr/config.h": 18
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "nullDC4Wii-first",
+   "repo": "BenoitAdam_nullDC4Wii",
+   "ref": "e812c58",
+   "commit": "e812c5828334b6309776da6f25f695051c1be093",
+   "date": "2026-01-21",
+   "commit_date": "2026-01-21",
+   "lane": "nullDC4Wii",
+   "why": "nullDC4Wii first import = nullDCe main bad8d6a (2024-09-26) verbatim modulo CRLF (203/203 source files)",
+   "files": 237,
+   "lines": 62499,
+   "by_lang": {
+    "C++": {
+     "files": 89,
+     "lines": 39013
+    },
+    "C/C++ header": {
+     "files": 104,
+     "lines": 21236
+    },
+    "Shader": {
+     "files": 36,
+     "lines": 1696
+    },
+    "Assembly": {
+     "files": 5,
+     "lines": 332
+    },
+    "C": {
+     "files": 2,
+     "lines": 159
+    },
+    "C#": {
+     "files": 1,
+     "lines": 63
+    }
+   },
+   "vendored": {
+    "files": 0,
+    "lines": 0,
+    "dirs": {}
+   },
+   "generated": {
+    "files": 5,
+    "lines": 4848,
+    "top": {
+     "rec-ARM/armwreck.h": 2291,
+     "emitter/PPCEmit/ppc_emit.h": 2251,
+     "plugs/ImgReader/pfctoc.h": 145,
+     "cdi_cvt/cdi_cvt/pfctoc.h": 144,
+     "plugs/drkPvr/config.h": 17
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "nullDC4Wii-a0.50",
+   "repo": "BenoitAdam_nullDC4Wii",
+   "ref": "alpha0.50",
+   "commit": "ec3c34d3926ce452a05dd4de03552d9c0ec92715",
+   "date": "2026-07-13",
+   "commit_date": "2026-07-13",
+   "lane": "nullDC4Wii",
+   "why": "Mid-life tag alpha0.50",
+   "files": 222,
+   "lines": 71506,
+   "by_lang": {
+    "C++": {
+     "files": 103,
+     "lines": 38984
+    },
+    "C/C++ header": {
+     "files": 116,
+     "lines": 26385
+    },
+    "Shader": {
+     "files": 1,
+     "lines": 5425
+    },
+    "Python": {
+     "files": 1,
+     "lines": 536
+    },
+    "C": {
+     "files": 1,
+     "lines": 176
+    }
+   },
+   "vendored": {
+    "files": 0,
+    "lines": 0,
+    "dirs": {}
+   },
+   "generated": {
+    "files": 4,
+    "lines": 2513,
+    "top": {
+     "emitter/PPCEmit/ppc_emit.h": 2251,
+     "plugs/ImgReader/pfctoc.h": 145,
+     "plugs/vbaARM/arm7_selftest_data.h": 100,
+     "plugs/drkPvr/config.h": 17
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "minicast-r1",
+   "repo": "skmp_minicast",
+   "ref": "697f565",
+   "commit": "697f565869f60088879fcdd795abbf836a865028",
+   "date": "2026-07-17",
+   "commit_date": "2026-07-17",
+   "lane": "fpgadc",
+   "why": "minicast pinned by DreamSTer r1",
+   "files": 301,
+   "lines": 102999,
+   "by_lang": {
+    "C++": {
+     "files": 135,
+     "lines": 61309
+    },
+    "C/C++ header": {
+     "files": 163,
+     "lines": 41208
+    },
+    "Assembly": {
+     "files": 1,
+     "lines": 331
+    },
+    "C": {
+     "files": 2,
+     "lines": 151
+    }
+   },
+   "vendored": {
+    "files": 260,
+    "lines": 354470,
+    "dirs": {
+     "libswirl/deps/vixl": {
+      "files": 55,
+      "lines": 179430
+     },
+     "libswirl/deps/libpng": {
+      "files": 29,
+      "lines": 39173
+     },
+     "libswirl/deps/khronos": {
+      "files": 20,
+      "lines": 38164
+     },
+     "libswirl/deps/imgui": {
+      "files": 11,
+      "lines": 36664
+     },
+     "libswirl/deps/flac": {
+      "files": 51,
+      "lines": 28145
+     },
+     "libswirl/deps/lzma": {
+      "files": 42,
+      "lines": 12560
+     },
+     "libswirl/deps/zlib": {
+      "files": 22,
+      "lines": 11022
+     },
+     "libswirl/deps/chdr": {
+      "files": 11,
+      "lines": 4643
+     },
+     "libswirl/deps/libelf": {
+      "files": 7,
+      "lines": 1990
+     },
+     "libswirl/deps/xxhash": {
+      "files": 2,
+      "lines": 1358
+     },
+     "libswirl/deps/crypto": {
+      "files": 6,
+      "lines": 929
+     },
+     "libswirl/deps/cdipsr": {
+      "files": 2,
+      "lines": 204
+     },
+     "libswirl/deps/coreio": {
+      "files": 2,
+      "lines": 188
+     }
+    }
+   },
+   "generated": {
+    "files": 1,
+    "lines": 18,
+    "top": {
+     "libswirl/hw/pvr/config.h": 18
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "polly2-r1",
+   "repo": "skmp_polly2-rtl",
+   "ref": "be391db",
+   "commit": "be391dbb1d80708e2d92a59fd974cfd77faf666d",
+   "date": "2026-07-17",
+   "commit_date": "2026-07-17",
+   "lane": "fpgadc",
+   "why": "polly2-rtl pinned by DreamSTer r1 (first FPGA Dreamcast core release)",
+   "files": 149,
+   "lines": 23497,
+   "by_lang": {
+    "SystemVerilog": {
+     "files": 112,
+     "lines": 18302
+    },
+    "C++": {
+     "files": 23,
+     "lines": 2625
+    },
+    "Verilog": {
+     "files": 4,
+     "lines": 1196
+    },
+    "Python": {
+     "files": 7,
+     "lines": 916
+    },
+    "C": {
+     "files": 1,
+     "lines": 314
+    },
+    "C/C++ header": {
+     "files": 2,
+     "lines": 144
+    }
+   },
+   "vendored": {
+    "files": 0,
+    "lines": 0,
+    "dirs": {}
+   },
+   "generated": {
+    "files": 3,
+    "lines": 771,
+    "top": {
+     "polly2-de10nano/plls/pll.v": 263,
+     "polly2-de10nano/plls/pll_hdmi.v": 256,
+     "polly2-de10nano/plls/pll_audio.v": 252
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "polly2-r6",
+   "repo": "skmp_polly2-rtl",
+   "ref": "a37f92c",
+   "commit": "a37f92cb9095745bc567838def4910b603820d3d",
+   "date": "2026-07-30",
+   "commit_date": "2026-07-30",
+   "lane": "fpgadc",
+   "why": "polly2-rtl pinned by DreamSTer r6",
+   "files": 183,
+   "lines": 30754,
+   "by_lang": {
+    "SystemVerilog": {
+     "files": 130,
+     "lines": 22611
+    },
+    "C++": {
+     "files": 36,
+     "lines": 4911
+    },
+    "Verilog": {
+     "files": 4,
+     "lines": 1271
+    },
+    "Python": {
+     "files": 7,
+     "lines": 916
+    },
+    "C": {
+     "files": 4,
+     "lines": 798
+    },
+    "C/C++ header": {
+     "files": 2,
+     "lines": 247
+    }
+   },
+   "vendored": {
+    "files": 0,
+    "lines": 0,
+    "dirs": {}
+   },
+   "generated": {
+    "files": 3,
+    "lines": 771,
+    "top": {
+     "polly2-de10nano/plls/pll.v": 263,
+     "polly2-de10nano/plls/pll_hdmi.v": 256,
+     "polly2-de10nano/plls/pll_audio.v": 252
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "NotDC-PS3-first",
+   "repo": "Mayo1970_NotDC-PS3",
+   "ref": "5a32b94",
+   "commit": "5a32b94bee23f45e3c1517ea5aa515f0a5041300",
+   "date": "2026-09-19",
+   "commit_date": "2026-09-19",
+   "lane": "NotDC-PS3",
+   "why": "NotDC-PS3 initial repo: nullDC4Wii ~2026-09-18 (9659506, alpha0.76 era; 229/272 source files identical)",
+   "files": 266,
+   "lines": 100497,
+   "by_lang": {
+    "C++": {
+     "files": 116,
+     "lines": 59793
+    },
+    "C/C++ header": {
+     "files": 133,
+     "lines": 28716
+    },
+    "C": {
+     "files": 14,
+     "lines": 5835
+    },
+    "Shader": {
+     "files": 2,
+     "lines": 5608
+    },
+    "Python": {
+     "files": 1,
+     "lines": 545
+    }
+   },
+   "vendored": {
+    "files": 0,
+    "lines": 0,
+    "dirs": {}
+   },
+   "generated": {
+    "files": 5,
+    "lines": 2660,
+    "top": {
+     "emitter/PPCEmit/ppc_emit.h": 2251,
+     "ps3/ps3gl/ps3gl_shader_data.h": 147,
+     "plugs/ImgReader/pfctoc.h": 145,
+     "plugs/vbaARM/arm7_selftest_data.h": 100,
+     "plugs/drkPvr/config.h": 17
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "devtools-v3.0.0-pre",
+   "repo": "skmp_dreamcast-devtools",
+   "ref": "v3.0.0-pre",
+   "commit": "42231c6fb7916037e8625446fb49b3d931b9c790",
+   "date": "2026-10-24",
+   "commit_date": "2026-10-24",
+   "lane": "fpgadc",
+   "why": "dreamcast-devtools (TypeScript debugger UI) at the nullDC 3.0.0-pre pin (HEAD is 2026-10-24 as well)",
+   "files": 217,
+   "lines": 73195,
+   "by_lang": {
+    "TypeScript": {
+     "files": 210,
+     "lines": 71630
+    },
+    "C++": {
+     "files": 5,
+     "lines": 1024
+    },
+    "C/C++ header": {
+     "files": 1,
+     "lines": 390
+    },
+    "Assembly": {
+     "files": 1,
+     "lines": 151
+    }
+   },
+   "vendored": {
+    "files": 0,
+    "lines": 0,
+    "dirs": {}
+   },
+   "generated": {
+    "files": 0,
+    "lines": 0,
+    "top": {}
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "minicast-r6b",
+   "repo": "skmp_minicast",
+   "ref": "9185ab8",
+   "commit": "9185ab882d1d8c3911a8c30d422f48c13c0cd4a3",
+   "date": "2026-10-24",
+   "commit_date": "2026-10-24",
+   "lane": "fpgadc",
+   "why": "minicast pinned by DreamSTer r6b (= minicast main HEAD)",
+   "files": 301,
+   "lines": 109370,
+   "by_lang": {
+    "C++": {
+     "files": 137,
+     "lines": 66530
+    },
+    "C/C++ header": {
+     "files": 161,
+     "lines": 42073
+    },
+    "Python": {
+     "files": 2,
+     "lines": 436
+    },
+    "Assembly": {
+     "files": 1,
+     "lines": 331
+    }
+   },
+   "vendored": {
+    "files": 261,
+    "lines": 356194,
+    "dirs": {
+     "libswirl/deps/vixl": {
+      "files": 55,
+      "lines": 179430
+     },
+     "libswirl/deps/libpng": {
+      "files": 29,
+      "lines": 39173
+     },
+     "libswirl/deps/khronos": {
+      "files": 20,
+      "lines": 38164
+     },
+     "libswirl/deps/imgui": {
+      "files": 11,
+      "lines": 36664
+     },
+     "libswirl/deps/flac": {
+      "files": 51,
+      "lines": 28145
+     },
+     "libswirl/deps/lzma": {
+      "files": 42,
+      "lines": 12560
+     },
+     "libswirl/deps/zlib": {
+      "files": 22,
+      "lines": 11022
+     },
+     "libswirl/deps/chdr": {
+      "files": 11,
+      "lines": 4643
+     },
+     "libswirl/deps/libelf": {
+      "files": 7,
+      "lines": 1990
+     },
+     "libswirl/deps/stb": {
+      "files": 1,
+      "lines": 1724
+     },
+     "libswirl/deps/xxhash": {
+      "files": 2,
+      "lines": 1358
+     },
+     "libswirl/deps/crypto": {
+      "files": 6,
+      "lines": 929
+     },
+     "libswirl/deps/cdipsr": {
+      "files": 2,
+      "lines": 204
+     },
+     "libswirl/deps/coreio": {
+      "files": 2,
+      "lines": 188
+     }
+    }
+   },
+   "generated": {
+    "files": 1,
+    "lines": 18,
+    "top": {
+     "libswirl/hw/pvr/config.h": 18
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "polly2-r6b",
+   "repo": "skmp_polly2-rtl",
+   "ref": "95fc3ba",
+   "commit": "95fc3ba0362b5809ec38bef5f57b86a0547bd009",
+   "date": "2026-10-24",
+   "commit_date": "2026-10-24",
+   "lane": "fpgadc",
+   "why": "polly2-rtl pinned by DreamSTer r6b (last release; = polly2-rtl-lite r6b FPGA core)",
+   "files": 199,
+   "lines": 35127,
+   "by_lang": {
+    "SystemVerilog": {
+     "files": 139,
+     "lines": 25363
+    },
+    "C++": {
+     "files": 43,
+     "lines": 6663
+    },
+    "Verilog": {
+     "files": 4,
+     "lines": 1129
+    },
+    "Python": {
+     "files": 7,
+     "lines": 916
+    },
+    "C": {
+     "files": 4,
+     "lines": 798
+    },
+    "C/C++ header": {
+     "files": 2,
+     "lines": 258
+    }
+   },
+   "vendored": {
+    "files": 0,
+    "lines": 0,
+    "dirs": {}
+   },
+   "generated": {
+    "files": 3,
+    "lines": 767,
+    "top": {
+     "polly2-de10nano/plls/pll.v": 259,
+     "polly2-de10nano/plls/pll_hdmi.v": 256,
+     "polly2-de10nano/plls/pll_audio.v": 252
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "nulldc3-v3.0.0-pre",
+   "repo": "skmp_nulldc3",
+   "ref": "v3.0.0-pre",
+   "commit": "4e773df24d688b1c44257b3d68ef08ef4f478d87",
+   "date": "2026-10-25",
+   "commit_date": "2026-10-25",
+   "lane": "nulldc3",
+   "why": "nullDC 3.0.0-pre tag (= main HEAD 4e773df2)",
+   "files": 563,
+   "lines": 233307,
+   "by_lang": {
+    "C++": {
+     "files": 277,
+     "lines": 166107
+    },
+    "C/C++ header": {
+     "files": 231,
+     "lines": 49193
+    },
+    "Python": {
+     "files": 29,
+     "lines": 10957
+    },
+    "C#": {
+     "files": 11,
+     "lines": 4187
+    },
+    "Assembly": {
+     "files": 7,
+     "lines": 1323
+    },
+    "Objective-C": {
+     "files": 6,
+     "lines": 1293
+    },
+    "C": {
+     "files": 2,
+     "lines": 247
+    }
+   },
+   "vendored": {
+    "files": 478,
+    "lines": 442701,
+    "dirs": {
+     "libswirl/deps/vixl": {
+      "files": 55,
+      "lines": 179408
+     },
+     "libswirl/deps/libpng": {
+      "files": 29,
+      "lines": 39173
+     },
+     "libswirl/deps/khronos": {
+      "files": 20,
+      "lines": 38164
+     },
+     "libswirl/deps/imgui": {
+      "files": 11,
+      "lines": 36657
+     },
+     "libswirl/deps/flac": {
+      "files": 51,
+      "lines": 28145
+     },
+     "libswirl/deps/nlohmann": {
+      "files": 2,
+      "lines": 24941
+     },
+     "libswirl/gpl/deps/picotcp": {
+      "files": 83,
+      "lines": 24340
+     },
+     "libswirl/deps/lua": {
+      "files": 59,
+      "lines": 23127
+     },
+     "libswirl/deps/lzma": {
+      "files": 42,
+      "lines": 12560
+     },
+     "libswirl/deps/zlib": {
+      "files": 22,
+      "lines": 11022
+     },
+     "libswirl/deps/libzip": {
+      "files": 57,
+      "lines": 6331
+     },
+     "libswirl/deps/xbyak": {
+      "files": 4,
+      "lines": 5428
+     },
+     "libswirl/deps/chdr": {
+      "files": 11,
+      "lines": 4643
+     },
+     "libswirl/deps/libelf": {
+      "files": 7,
+      "lines": 1990
+     },
+     "libswirl/deps/stb": {
+      "files": 1,
+      "lines": 1724
+     },
+     "libswirl/gpl/deps/xbrz": {
+      "files": 4,
+      "lines": 1401
+     },
+     "libswirl/deps/xxhash": {
+      "files": 2,
+      "lines": 1358
+     },
+     "libswirl/deps/crypto": {
+      "files": 6,
+      "lines": 929
+     },
+     "libswirl/sdl": {
+      "files": 4,
+      "lines": 656
+     },
+     "libswirl/deps/cdipsr": {
+      "files": 2,
+      "lines": 204
+     },
+     "libswirl/deps/dirent": {
+      "files": 2,
+      "lines": 198
+     },
+     "libswirl/deps/coreio": {
+      "files": 2,
+      "lines": 188
+     },
+     "libswirl/utils/glinit/sdl": {
+      "files": 2,
+      "lines": 114
+     }
+    }
+   },
+   "generated": {
+    "files": 5,
+    "lines": 5447,
+    "top": {
+     "libswirl/linux-dist/x11_icon.h": 3128,
+     "libswirl/utils/glwrap/gl3w.h": 1399,
+     "libswirl/utils/glwrap/gl3w.cpp": 845,
+     "tests/sh4_fpu/vector_cases.h": 57,
+     "libswirl/hw/pvr/config.h": 18
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "shrike4-head",
+   "repo": "skmp_shrike4-rtl",
+   "ref": "5843f0c",
+   "commit": "5843f0ccb2a886f548355f1b89f9a42b0c0c6f60",
+   "date": "2026-10-31",
+   "commit_date": "2026-10-31",
+   "lane": "fpgadc",
+   "why": "shrike4-rtl (SH4) HEAD: models, rtl/v1, testbenches, console harness",
+   "files": 1482,
+   "lines": 184852,
+   "by_lang": {
+    "C++": {
+     "files": 881,
+     "lines": 75970
+    },
+    "SystemVerilog": {
+     "files": 160,
+     "lines": 28058
+    },
+    "C": {
+     "files": 141,
+     "lines": 24181
+    },
+    "Python": {
+     "files": 97,
+     "lines": 20663
+    },
+    "Assembly": {
+     "files": 77,
+     "lines": 18420
+    },
+    "C/C++ header": {
+     "files": 124,
+     "lines": 16992
+    },
+    "Verilog": {
+     "files": 2,
+     "lines": 568
+    }
+   },
+   "vendored": {
+    "files": 0,
+    "lines": 0,
+    "dirs": {}
+   },
+   "generated": {
+    "files": 8,
+    "lines": 21576,
+    "top": {
+     "tools/hw/p4bus/p4b_asm.S": 10043,
+     "model/fipr/kos_fipr_test/vectors.h": 5004,
+     "tools/hw/bsc-memmap/tests.S": 4733,
+     "rtl/timing-proxy/tp_decode.sv": 1293,
+     "rtl/timing-proxy/tp_forms.svh": 240,
+     "tools/hw/bsc-memmap/tests.h": 197,
+     "tools/hw/p4bus/p4b_tab.h": 36,
+     "rtl/fpu_vec/fpu_vec_tables.svh": 30
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "NotDC-PS3-0.8.3",
+   "repo": "Mayo1970_NotDC-PS3",
+   "ref": "0.8.3",
+   "commit": "5d81924ec3fe5f6ea99d8a54ce0a13ca62471d0b",
+   "date": "2026-11-01",
+   "commit_date": "2026-11-01",
+   "lane": "NotDC-PS3",
+   "why": "NotDC-PS3 0.8.3 (= main HEAD); carries plugs/caiqueAICA from caique-rtl 5aa2376",
+   "files": 363,
+   "lines": 108526,
+   "by_lang": {
+    "C++": {
+     "files": 127,
+     "lines": 64173
+    },
+    "C/C++ header": {
+     "files": 223,
+     "lines": 40492
+    },
+    "C": {
+     "files": 9,
+     "lines": 3237
+    },
+    "Python": {
+     "files": 2,
+     "lines": 582
+    },
+    "Assembly": {
+     "files": 2,
+     "lines": 42
+    }
+   },
+   "vendored": {
+    "files": 60,
+    "lines": 24052,
+    "dirs": {
+     "deps/flac": {
+      "files": 38,
+      "lines": 17383
+     },
+     "deps/chdr": {
+      "files": 11,
+      "lines": 4588
+     },
+     "deps/lzma": {
+      "files": 7,
+      "lines": 2038
+     },
+     "deps/coreio": {
+      "files": 1,
+      "lines": 32
+     },
+     "deps/crypto": {
+      "files": 2,
+      "lines": 8
+     },
+     "deps/zlib": {
+      "files": 1,
+      "lines": 3
+     }
+    }
+   },
+   "generated": {
+    "files": 6,
+    "lines": 3564,
+    "top": {
+     "emitter/PPCEmit/ppc_emit.h": 1831,
+     "ps3/ps3gl/ps3gl_shader_dc.h": 1324,
+     "ps3/ps3gl/ps3gl_shader_data.h": 147,
+     "plugs/ImgReader/pfctoc.h": 145,
+     "plugs/vbaARM/arm7_selftest_data.h": 100,
+     "plugs/drkPvr/config.h": 17
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "caique-head",
+   "repo": "skmp_caique-rtl",
+   "ref": "2d9898f",
+   "commit": "2d9898f3ee77af8f733beab0afbb938821fc3492",
+   "date": "2026-11-01",
+   "commit_date": "2026-11-01",
+   "lane": "fpgadc",
+   "why": "caique-rtl (AICA) HEAD",
+   "files": 232,
+   "lines": 32197,
+   "by_lang": {
+    "C++": {
+     "files": 110,
+     "lines": 19070
+    },
+    "C": {
+     "files": 88,
+     "lines": 7839
+    },
+    "SystemVerilog": {
+     "files": 8,
+     "lines": 2425
+    },
+    "C/C++ header": {
+     "files": 10,
+     "lines": 1371
+    },
+    "Python": {
+     "files": 15,
+     "lines": 959
+    },
+    "Assembly": {
+     "files": 1,
+     "lines": 533
+    }
+   },
+   "vendored": {
+    "files": 0,
+    "lines": 0,
+    "dirs": {}
+   },
+   "generated": {
+    "files": 0,
+    "lines": 0,
+    "top": {}
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "wren7-head",
+   "repo": "skmp_wren7-rtl",
+   "ref": "95988ea",
+   "commit": "95988ea4f559678e8939158cde89ce5af9b901a5",
+   "date": "2026-11-01",
+   "commit_date": "2026-11-01",
+   "lane": "fpgadc",
+   "why": "wren7-rtl (ARM7DI) HEAD",
+   "files": 47,
+   "lines": 6970,
+   "by_lang": {
+    "C++": {
+     "files": 10,
+     "lines": 3516
+    },
+    "Assembly": {
+     "files": 26,
+     "lines": 1446
+    },
+    "SystemVerilog": {
+     "files": 5,
+     "lines": 1060
+    },
+    "C/C++ header": {
+     "files": 3,
+     "lines": 518
+    },
+    "C": {
+     "files": 1,
+     "lines": 337
+    },
+    "Python": {
+     "files": 2,
+     "lines": 93
+    }
+   },
+   "vendored": {
+    "files": 47,
+    "lines": 3794,
+    "dirs": {
+     "vendor": {
+      "files": 47,
+      "lines": 3794
+     }
+    }
+   },
+   "generated": {
+    "files": 64,
+    "lines": 15438,
+    "top": {
+     "model/tests/qemu_diff/s4/prog.s": 3499,
+     "model/tests/qemu_diff/s2/prog.s": 3431,
+     "model/tests/qemu_diff/s1/prog.s": 3383,
+     "model/tests/qemu_diff/s3/prog.s": 3315,
+     "model/tests/hw/timing/src/mix10.s": 55,
+     "model/tests/hw/timing/src/mix11.s": 55,
+     "model/tests/hw/timing/src/mix14.s": 55,
+     "model/tests/hw/timing/src/mix15.s": 55,
+     "model/tests/hw/timing/src/mix2.s": 55,
+     "model/tests/hw/timing/src/mix3.s": 55
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "nullDC4Wii-head",
+   "repo": "BenoitAdam_nullDC4Wii",
+   "ref": "ad015e2",
+   "commit": "ad015e23fcc880940a6b4717edca1cd9d108fd3d",
+   "date": "2026-11-19",
+   "commit_date": "2026-11-19",
+   "lane": "nullDC4Wii",
+   "why": "nullDC4Wii main HEAD (alpha0.805 + Wii U port)",
+   "files": 244,
+   "lines": 104405,
+   "by_lang": {
+    "C++": {
+     "files": 109,
+     "lines": 69191
+    },
+    "C/C++ header": {
+     "files": 128,
+     "lines": 28112
+    },
+    "Shader": {
+     "files": 2,
+     "lines": 5608
+    },
+    "C": {
+     "files": 4,
+     "lines": 949
+    },
+    "Python": {
+     "files": 1,
+     "lines": 545
+    }
+   },
+   "vendored": {
+    "files": 0,
+    "lines": 0,
+    "dirs": {}
+   },
+   "generated": {
+    "files": 4,
+    "lines": 2513,
+    "top": {
+     "emitter/PPCEmit/ppc_emit.h": 2251,
+     "plugs/ImgReader/pfctoc.h": 145,
+     "plugs/vbaARM/arm7_selftest_data.h": 100,
+     "plugs/drkPvr/config.h": 17
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "dreamcast-tests-head",
+   "repo": "fpgadc_dreamcast-tests",
+   "ref": "a932980",
+   "commit": "a93298050c1ab8177ca15a136d6434d00e2993bf",
+   "date": "2026-11-20",
+   "commit_date": "2026-11-20",
+   "lane": "fpgadc",
+   "why": "dreamcast-tests (console test suite) HEAD",
+   "files": 420,
+   "lines": 58485,
+   "by_lang": {
+    "C": {
+     "files": 288,
+     "lines": 39344
+    },
+    "C++": {
+     "files": 37,
+     "lines": 8877
+    },
+    "Python": {
+     "files": 77,
+     "lines": 6496
+    },
+    "C/C++ header": {
+     "files": 18,
+     "lines": 3768
+    }
+   },
+   "vendored": {
+    "files": 0,
+    "lines": 0,
+    "dirs": {}
+   },
+   "generated": {
+    "files": 90,
+    "lines": 228143,
+    "top": {
+     "pvr-tests/perpmean_word/cases.h": 16439,
+     "pvr-tests/faredge_cmax/cases.h": 9610,
+     "pvr-tests/faredge_far32/cases.h": 9610,
+     "pvr-tests/faredge_k132/cases.h": 9610,
+     "pvr-tests/tsp2_mipdz/cases.h": 9608,
+     "pvr-tests/tsp2_mipdz2/cases.h": 9608,
+     "pvr-tests/tsp2_zadd/cases.h": 9604,
+     "pvr-tests/perpmean_strip/cases.h": 8226,
+     "pvr-tests/faredge_m131/cases.h": 7366,
+     "pvr-tests/hugepos_rules/cases.h": 7210
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "nulldc3-refsw3",
+   "repo": "skmp_nulldc3",
+   "ref": "4f3efe15",
+   "commit": "4f3efe15f98524db23d8138c3dcfea1ddd6e9473",
+   "date": "2026-11-20",
+   "commit_date": "2026-11-20",
+   "lane": "nulldc3",
+   "why": "nullDC 3 skmp/refsw3 branch tip (29 commits past main: refsw3 bit-exact PVR renderer work)",
+   "files": 584,
+   "lines": 244109,
+   "by_lang": {
+    "C++": {
+     "files": 283,
+     "lines": 171312
+    },
+    "C/C++ header": {
+     "files": 245,
+     "lines": 54681
+    },
+    "Python": {
+     "files": 30,
+     "lines": 11066
+    },
+    "C#": {
+     "files": 11,
+     "lines": 4187
+    },
+    "Assembly": {
+     "files": 7,
+     "lines": 1323
+    },
+    "Objective-C": {
+     "files": 6,
+     "lines": 1293
+    },
+    "C": {
+     "files": 2,
+     "lines": 247
+    }
+   },
+   "vendored": {
+    "files": 478,
+    "lines": 442701,
+    "dirs": {
+     "libswirl/deps/vixl": {
+      "files": 55,
+      "lines": 179408
+     },
+     "libswirl/deps/libpng": {
+      "files": 29,
+      "lines": 39173
+     },
+     "libswirl/deps/khronos": {
+      "files": 20,
+      "lines": 38164
+     },
+     "libswirl/deps/imgui": {
+      "files": 11,
+      "lines": 36657
+     },
+     "libswirl/deps/flac": {
+      "files": 51,
+      "lines": 28145
+     },
+     "libswirl/deps/nlohmann": {
+      "files": 2,
+      "lines": 24941
+     },
+     "libswirl/gpl/deps/picotcp": {
+      "files": 83,
+      "lines": 24340
+     },
+     "libswirl/deps/lua": {
+      "files": 59,
+      "lines": 23127
+     },
+     "libswirl/deps/lzma": {
+      "files": 42,
+      "lines": 12560
+     },
+     "libswirl/deps/zlib": {
+      "files": 22,
+      "lines": 11022
+     },
+     "libswirl/deps/libzip": {
+      "files": 57,
+      "lines": 6331
+     },
+     "libswirl/deps/xbyak": {
+      "files": 4,
+      "lines": 5428
+     },
+     "libswirl/deps/chdr": {
+      "files": 11,
+      "lines": 4643
+     },
+     "libswirl/deps/libelf": {
+      "files": 7,
+      "lines": 1990
+     },
+     "libswirl/deps/stb": {
+      "files": 1,
+      "lines": 1724
+     },
+     "libswirl/gpl/deps/xbrz": {
+      "files": 4,
+      "lines": 1401
+     },
+     "libswirl/deps/xxhash": {
+      "files": 2,
+      "lines": 1358
+     },
+     "libswirl/deps/crypto": {
+      "files": 6,
+      "lines": 929
+     },
+     "libswirl/sdl": {
+      "files": 4,
+      "lines": 656
+     },
+     "libswirl/deps/cdipsr": {
+      "files": 2,
+      "lines": 204
+     },
+     "libswirl/deps/dirent": {
+      "files": 2,
+      "lines": 198
+     },
+     "libswirl/deps/coreio": {
+      "files": 2,
+      "lines": 188
+     },
+     "libswirl/utils/glinit/sdl": {
+      "files": 2,
+      "lines": 114
+     }
+    }
+   },
+   "generated": {
+    "files": 5,
+    "lines": 5447,
+    "top": {
+     "libswirl/linux-dist/x11_icon.h": 3128,
+     "libswirl/utils/glwrap/gl3w.h": 1399,
+     "libswirl/utils/glwrap/gl3w.cpp": 845,
+     "tests/sh4_fpu/vector_cases.h": 57,
+     "libswirl/hw/pvr/config.h": 18
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "polly2-r8-develop",
+   "repo": "skmp_polly2-rtl",
+   "ref": "3800f9f",
+   "commit": "3800f9fed60a70da4a3f0ed3e65fcc37c09e67a8",
+   "date": "2026-11-21",
+   "commit_date": "2026-11-21",
+   "lane": "fpgadc",
+   "why": "polly2-rtl r8/develop: the new bit-exact cycle-accurate PVR2 CORE model (branches from main 2806e9f 2026-10-24; tree rewritten)",
+   "files": 159,
+   "lines": 29241,
+   "by_lang": {
+    "C++": {
+     "files": 37,
+     "lines": 14734
+    },
+    "SystemVerilog": {
+     "files": 102,
+     "lines": 9954
+    },
+    "C/C++ header": {
+     "files": 18,
+     "lines": 4024
+    },
+    "Python": {
+     "files": 2,
+     "lines": 529
+    }
+   },
+   "vendored": {
+    "files": 0,
+    "lines": 0,
+    "dirs": {}
+   },
+   "generated": {
+    "files": 10,
+    "lines": 2415,
+    "top": {
+     "rtl/v1/lib/fp/p2_fp_recip_rom.sv": 541,
+     "rtl/v1/pkg/p2_isp_prog_pkg.sv": 533,
+     "rtl/v1/pkg/p2_regs_pkg.sv": 436,
+     "rtl/v1/lib/rom/p2_rom_bm_cos.sv": 274,
+     "rtl/v1/lib/rom/p2_rom_bm_sin.sv": 274,
+     "tb/isp_setup/ref_copies_setup.h": 204,
+     "rtl/v1/pkg/p2_hw_pkg.sv": 63,
+     "rtl/v1/lib/rom/p2_rom_dither.sv": 34,
+     "tb/isp_depth/triz_rec.h": 30,
+     "tb/isp_edge/tri_rec.h": 26
+    }
+   },
+   "binary_source_ext_files": 0
+  },
+  {
+   "id": "flycast-head",
+   "repo": "flyinghead_flycast",
+   "ref": "105342d53",
+   "commit": "105342d53fc181493cd372c8f1ebf5c49621ed1a",
+   "date": "2026-11-22",
+   "commit_date": "2026-11-22",
+   "lane": "flycast",
+   "why": "flycast master HEAD at collection time",
+   "files": 664,
+   "lines": 221230,
+   "by_lang": {
+    "C++": {
+     "files": 311,
+     "lines": 153148
+    },
+    "C/C++ header": {
+     "files": 297,
+     "lines": 58474
+    },
+    "Java": {
+     "files": 26,
+     "lines": 4120
+    },
+    "Objective-C": {
+     "files": 14,
+     "lines": 2866
+    },
+    "Python": {
+     "files": 13,
+     "lines": 1832
+    },
+    "C": {
+     "files": 2,
+     "lines": 744
+    },
+    "Assembly": {
+     "files": 1,
+     "lines": 46
+    }
+   },
+   "vendored": {
+    "files": 1295,
+    "lines": 687748,
+    "dirs": {
+     "core/deps/vixl": {
+      "files": 57,
+      "lines": 230788
+     },
+     "core/deps/glm": {
+      "files": 553,
+      "lines": 86653
+     },
+     "core/deps/imgui": {
+      "files": 25,
+      "lines": 72523
+     },
+     "core/deps/xxHash": {
+      "files": 44,
+      "lines": 63377
+     },
+     "core/deps/libretro-common": {
+      "files": 92,
+      "lines": 36882
+     },
+     "core/deps/glad": {
+      "files": 6,
+      "lines": 30025
+     },
+     "core/deps/libzip": {
+      "files": 168,
+      "lines": 26806
+     },
+     "core/deps/picotcp": {
+      "files": 87,
+      "lines": 25764
+     },
+     "core/deps/json": {
+      "files": 1,
+      "lines": 23746
+     },
+     "core/deps/libunwind": {
+      "files": 46,
+      "lines": 22342
+     },
+     "core/deps/lzma": {
+      "files": 42,
+      "lines": 12560
+     },
+     "core/deps/implot": {
+      "files": 4,
+      "lines": 11659
+     },
+     "core/deps/miniupnpc": {
+      "files": 52,
+      "lines": 10089
+     },
+     "core/deps/stb": {
+      "files": 2,
+      "lines": 9322
+     },
+     "core/deps/nowide": {
+      "files": 52,
+      "lines": 9007
+     },
+     "core/deps/ggpo": {
+      "files": 33,
+      "lines": 5130
+     },
+     "core/sdl": {
+      "files": 13,
+      "lines": 4827
+     },
+     "core/deps/libelf": {
+      "files": 7,
+      "lines": 2185
+     },
+     "core/deps/xbrz": {
+      "files": 4,
+      "lines": 1736
+     },
+     "core/deps/dirent": {
+      "files": 1,
+      "lines": 1166
+     },
+     "core/lua": {
+      "files": 2,
+      "lines": 719
+     },
+     "core/deps/md5": {
+      "files": 2,
+      "lines": 236
+     },
+     "core/deps/chdpsr": {
+      "files": 2,
+      "lines": 206
+     }
+    }
+   },
+   "generated": {
+    "files": 2,
+    "lines": 93145,
+    "top": {
+     "shell/libretro/libretro_core_options_intl.h": 91739,
+     "core/ui/IconsFontAwesome6.h": 1406
+    }
+   },
+   "binary_source_ext_files": 0
+  }
+ ],
+ "total_lines": 4092201,
+ "total_files": 13566,
+ "total_lines_with_vendored": 11180895,
+ "largest": "nulldc3-refsw3"
+}
