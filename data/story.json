@@ -161,7 +161,7 @@
    "lanes": [
     "HarissaDC"
    ],
-   "text": "A Dreamcast emulator for the Xbox 360 whose credits say it studied nullDC4Wii, nulldc-360 and flycast but did not copy them. The measurements agree: no own file is identical to any lane, and at most 0.5 % of its lines appear anywhere else in the family, the same level as unrelated repos. Its source arrives in one dump on 2026-11-03 (v0.2.0).",
+   "text": "A Dreamcast emulator for the Xbox 360 whose credits say it studied nullDC4Wii, nulldc-360 and flycast but did not copy them. The measurements agree: no own file is identical to any lane, and at most 0.5 % of its lines appear in any one lane (under 1 % in all of them together), the same level as unrelated repos. Its source arrives in one dump on 2026-11-03 (v0.2.0).",
    "bookmarks": [
     "HarissaDC SH4 PowerPC JIT"
    ],

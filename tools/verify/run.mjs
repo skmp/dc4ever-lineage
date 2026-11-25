@@ -122,7 +122,7 @@ try {
       const info = await b.evalJS(`window.viewer.showFrame(${order[k]})`, 180000);
       const shot = await b.send('Page.captureScreenshot', { format: 'png' });
       fs.writeFileSync(path.join(dir, String(k).padStart(5, '0') + '.png'), Buffer.from(shot.data, 'base64'));
-      meta.push({ k, ...info }); console.log(k, info.lane, info.date);
+      meta.push({ k, ...info }); console.log(k, info.lane, info.date, JSON.stringify(info.ms || {}), 'want', info.want);
     }
     fs.writeFileSync(path.join(dir, `frames-${from}-${to}.json`), JSON.stringify(meta, null, 1));
   } else if (cmd === 'eval') {   // eval --js FILE (an async function body; `V` is the viewer) [--shot NAME]

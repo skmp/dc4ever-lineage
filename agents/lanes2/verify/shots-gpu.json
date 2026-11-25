@@ -1,0 +1,34 @@
+{
+ "size": [
+  1600,
+  900
+ ],
+ "views": {
+  "far": {
+   "file": "agents/lanes2/verify/shots/far-gpu-1600x900.png",
+   "ready_ms": 806,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)"
+  },
+  "lanes:nullDC4Wii+nullDC4WiiU+NotDC-PS3": {
+   "file": "agents/lanes2/verify/shots/lanes:nullDC4Wii+nullDC4WiiU+NotDC-PS3-gpu-1600x900.png",
+   "ready_ms": 302,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)"
+  },
+  "lanes:HarissaDC+nulldc-360": {
+   "file": "agents/lanes2/verify/shots/lanes:HarissaDC+nulldc-360-gpu-1600x900.png",
+   "ready_ms": 101,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)"
+  },
+  "wall:nullDC4WiiU": {
+   "file": "agents/lanes2/verify/shots/wall:nullDC4WiiU-gpu-1600x900.png",
+   "ready_ms": 100,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)"
+  },
+  "wall:HarissaDC": {
+   "file": "agents/lanes2/verify/shots/wall:HarissaDC-gpu-1600x900.png",
+   "ready_ms": 100,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)"
+  }
+ },
+ "logs": []
+}

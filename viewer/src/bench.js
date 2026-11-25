@@ -72,13 +72,13 @@ export function initBench(V) {
     V.fixedQuality = true; V.setQualityStep(0); V.flight = null; V.setMarks(null); V.attract && V.attract.stop();
     document.getElementById('caption').classList.add('hidden');
     const w = W[f]; V.soloFrame = f; V.presMode = 'clock'; V.setPlaying(false); V.setX(w.x + 1, { follow: false });
-    await V.ensureWall(f, 60000);
+    const t0 = performance.now(); await V.ensureWall(f, 60000); const tWall = performance.now() - t0;
     // straight on, centred, the wall (z0 .. z0 + cols * 128 wide, 0 .. 4300 high) at 90 % of the tighter screen dimension
     const th = Math.tan(V.FOV / 2), asp = innerWidth / innerHeight, wid = w.cols * 128, hgt = 4300;
     const dist = Math.max(hgt / 2 / th, wid / 2 / (th * asp)) / 0.9;
     V.cam.p = [w.x - dist, hgt / 2, w.z0 + wid / 2]; V.setLook([1, 0, 0]);
-    await V.whenReady({ timeout: 90000 }); await wait(250);
-    const fr = F.frames[f]; return { f, lane: fr.lane, date: fr.date, commit: fr.commit, tags: fr.tags || null };
+    const t1 = performance.now(); await V.whenReady({ timeout: 90000 }); const tReady = performance.now() - t1; await wait(250);
+    const fr = F.frames[f]; return { f, lane: fr.lane, date: fr.date, commit: fr.commit, tags: fr.tags || null, ms: { wall: Math.round(tWall), ready: Math.round(tReady) }, want: V.stats.wantQueue };
   };
 
   // ---- scripted paths
