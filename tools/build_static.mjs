@@ -15,6 +15,7 @@ const strip = s => s.replace(/\/\*\s*DEV-BEGIN[\s\S]*?DEV-END\s*\*\//g, '');
 let bytes = 0, files = 0;
 const put = (rel, buf) => { const f = path.join(OUT, rel); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, buf); bytes += buf.length; files++; };
 put('index.html', fs.readFileSync(path.join(ROOT, 'viewer/index.html')));
+put('og.jpg', fs.readFileSync(path.join(ROOT, 'viewer/og.jpg')));   // the og:image (bench.js 'hero' view, ?heroy=2018&herodir=1,-0.24,0.32&herozoom=1.7)
 for (const f of fs.readdirSync(path.join(ROOT, 'viewer/src'))) {
   if (!f.endsWith('.js')) continue;
   const s = strip(fs.readFileSync(path.join(ROOT, 'viewer/src', f), 'utf8'));
