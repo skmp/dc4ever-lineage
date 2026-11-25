@@ -61,7 +61,7 @@ const LN = layout.lanes.map((L, li) => ({ li, L, name: L.name, frames: L.frames,
 const W = new Array(NF).fill(null);
 for (const lw of layout.walls) {
   const fr = F.frames[lw.frame], ln = LN[lw.lane];
-  W[lw.frame] = { i: lw.frame, lane: lw.lane, x: lw.x, z0: ln.z0, cols: ln.cols, fr, k: fr.k, n: fr.lines, gpu: null, inst: null, loaded: false, imp: null, impKey: '', meta: null, lastUse: 0, wanted: 0 };
+  W[lw.frame] = { i: lw.frame, lane: lw.lane, x: lw.x, z0: ln.z0, cols: ln.cols, fr, k: fr.k, n: fr.lines, gpu: null, inst: null, loaded: false, imp: null, impKey: '', meta: null, lastUse: 0, wanted: 0, wantT: -1e9 };
 }
 for (const ln of LN) ln.frames.forEach((f, k) => ln.xs[k] = W[f].x);
 const WALLS = W.filter(Boolean);
@@ -338,6 +338,44 @@ function buildT3() {
   t3.build(); t4.build(); t5.build();
 }
 
+// ---- occlusion of titles and labels (drawn without depth test): rays through samples of the box that is drawn. The occluders
+// are this frame's opaque walls (solid, in view, seen from either side: every one draws a plate), sorted by x (occAdd from the
+// LOD pass); a sample is hidden when its ray meets one before the plane the title / label lies in.
+const occS = []; let occN = 0;
+function occAdd(w, x) { let o = occS[occN]; if (!o) o = occS[occN] = { x: 0, z0: 0, z1: 0, i: 0 }; o.x = x; o.z0 = w.z0; o.z1 = w.z0 + w.cols * 128 - 4; o.i = w.i; occN++; }
+const RAY = { f: [1, 0, 0], r: [0, 0, 1], u: [0, 1, 0], th: 1, asp: 1, cw: 1, ch: 1, sorted: -1, d: [0, 0, 0] };
+function rayPrep(f, r, u) { Object.assign(RAY, { f, r, u, th: Math.tan(FOV / 2), cw: canvas.width, ch: canvas.height, asp: canvas.width / canvas.height, sorted: -1 }); }
+function rayDir(px, py) { const nx = px / RAY.cw * 2 - 1, ny = 1 - py / RAY.ch * 2, a = nx * RAY.th * RAY.asp, b = ny * RAY.th, d = RAY.d;
+  for (let i = 0; i < 3; i++) d[i] = RAY.f[i] + RAY.r[i] * a + RAY.u[i] * b; return d; }
+// is the camera ray d blocked for 0 < t < tMax by an opaque wall other than `skip`?
+function rayBlocked(d, tMax, skip) {
+  if (Math.abs(d[0]) < 1e-9) return false;
+  if (RAY.sorted !== occN) { const a = occS.slice(0, occN).sort((p, q) => p.x - q.x); for (let k = 0; k < occN; k++) occS[k] = a[k]; RAY.sorted = occN; }
+  const c = V.cam.p, xe = c[0] + d[0] * Math.min(tMax, 1e9), xa = Math.min(c[0], xe), xb = Math.max(c[0], xe);
+  let lo = 0, hi = occN; while (lo < hi) { const m = (lo + hi) >> 1; if (occS[m].x < xa) lo = m + 1; else hi = m; }
+  for (let k = lo; k < occN && occS[k].x <= xb; k++) {
+    const o = occS[k]; if (o.i === skip) continue;
+    const t = (o.x - c[0]) / d[0]; if (t <= 0 || t >= tMax) continue;
+    const y = c[1] + t * d[1]; if (y <= -6 || y >= 4102) continue;
+    const z = c[2] + t * d[2]; if (z > o.z0 && z < o.z1) return true;
+  }
+  return false;
+}
+// any of nx x ny samples of the screen rect [x0, y0, x1, y1] blocked before the plane through p with normal n?
+// (wall planes: n = [1, 0, 0], a wall must stand 2 units nearer to count, so the walls of other lanes in the same month do not)
+function rectBlocked(x0, y0, x1, y1, p, n, skip, nx = 7, ny = 2) {
+  const c = V.cam.p, pn = (p[0] - c[0]) * n[0] + (p[1] - c[1]) * n[1] + (p[2] - c[2]) * n[2], wallPlane = n[1] === 0 && n[2] === 0;
+  for (let i = 0; i < nx; i++) for (let j = 0; j < ny; j++) {
+    const d = rayDir(x0 + (x1 - x0) * i / (nx - 1), y0 + (y1 - y0) * (ny > 1 ? 0.15 + 0.7 * j / (ny - 1) : 0.5));
+    const dn = d[0] * n[0] + d[1] * n[1] + d[2] * n[2];
+    let tMax = Math.abs(dn) > 1e-9 ? pn / dn : Infinity;
+    if (tMax <= 0) tMax = Infinity; else tMax = wallPlane ? tMax - 2 / Math.max(1e-6, Math.abs(d[0])) : tMax * 0.998;
+    if (rayBlocked(d, tMax, skip)) return true;
+  }
+  return false;
+}
+const XN = [1, 0, 0];
+
 // ---- declutter (CPU, per frame): same size rules as labelVS, greedy by priority over a grid of placed screen boxes
 const DL = { cur: new Float32Array(labs.list.length), shift: new Int8Array(labs.list.length), shown: 0 };
 V.declutter = DL;
@@ -349,7 +387,6 @@ function declutter(dt, rgt, up, minPx) {
   const proj = (x, y, z) => { const w = M[3] * x + M[7] * y + M[11] * z + M[15]; if (w <= 1) { ok = false; return; }
     ox = ((M[0] * x + M[4] * y + M[8] * z + M[12]) / w + 1) * 0.5 * cw; oy = (1 - (M[1] * x + M[5] * y + M[9] * z + M[13]) / w) * 0.5 * ch; ok = true; };
   const cand = DL.cand || (DL.cand = []); cand.length = 0;
-  const occW = occList;
   for (let i = 0; i < DLS.length; i++) {
     const l = DLS[i], w = l.w, wa = wallArr[4 * w + 1]; if (wa <= 0 || (w < NONE && wallArr[4 * w + 2] < 0.5)) continue;
     const o0 = wallArr[4 * w] + l.dx, o1 = l.y, o2 = l.z;
@@ -360,15 +397,6 @@ function declutter(dt, rgt, up, minPx) {
     let U0, U1, U2, V0, V1, V2;
     if (l.bb > 0.5) { U0 = rgt[0] * l.lu * k; U1 = rgt[1] * l.lu * k; U2 = rgt[2] * l.lu * k; V0 = up[0] * l.lv * k; V1 = up[1] * l.lv * k; V2 = up[2] * l.lv * k; }
     else { U0 = l.U[0]; U1 = l.U[1]; U2 = l.U[2]; V0 = l.Vv[0]; V1 = l.Vv[1]; V2 = l.Vv[2]; }
-    const c0 = o0 + U0 * l.L / 2 - V0, c1 = o1 + U1 * l.L / 2 - V1, c2 = o2 + U2 * l.L / 2 - V2, dx = c0 - cam[0];
-    let occluded = false;   // drawn without depth test: hide a label whose centre is behind a solid wall
-    if (Math.abs(dx) > 1e-6) for (const ww of occW) {
-      if (ww.i === w) continue;
-      const t = (wallArr[4 * ww.i] - cam[0]) / dx; if (t <= 0 || t >= 0.999) continue;
-      const y = cam[1] + t * (c1 - cam[1]); if (y <= -6 || y >= 4102) continue;
-      const z = cam[2] + t * (c2 - cam[2]); if (z > ww.z0 && z < ww.z0 + ww.cols * 128 - 4) { occluded = true; break; }
-    }
-    if (occluded) continue;
     cand.push({ i, o0, o1, o2, U0, U1, U2, V0, V1, V2, L: l.L, bb: l.bb > 0.5, pr: l.prio + (DL.cur[i] > 0.5 ? 0.5 : 0) });
   }
   cand.sort((a, b) => b.pr - a.pr);
@@ -383,6 +411,7 @@ function declutter(dt, rgt, up, minPx) {
   for (const r of DL.panels) put(r);
   for (const r of TT.rects) put(r);
   const target = DL.target || (DL.target = new Uint8Array(DLS.length)); target.fill(0);
+  DL.occ = DL.occ || new Uint8Array(DLS.length); DL.occ.fill(0);   // hidden behind a wall this frame (for tests)
   const SHF = [0, 0, 1, -1, 2, -2];
   for (const c of cand) {
     const nsh = c.bb ? 6 : 1; SHF[0] = DL.shift[c.i];
@@ -396,7 +425,11 @@ function declutter(dt, rgt, up, minPx) {
       const r = [x0 - 4, y0 - 3, x1 + 4, y1 + 3];
       if (r[2] < 0 || r[0] > cw || r[3] < 0 || r[1] > ch) break;                  // off screen
       if (r[0] < 0 || r[2] > cw) break;                                           // cut by the screen edge: hide, do not clip
-      if (!hit(r)) { put(r); target[c.i] = 1; DL.shift[c.i] = sh; break; }
+      if (!hit(r)) {   // drawn without depth test: hide a label any part of which is behind an opaque wall
+        const n = [c.U1 * c.V2 - c.U2 * c.V1, c.U2 * c.V0 - c.U0 * c.V2, c.U0 * c.V1 - c.U1 * c.V0];
+        if (!rectBlocked(x0, y0, x1, y1, [b0, b1, b2], n, DLS[c.i].w)) { put(r); target[c.i] = 1; DL.shift[c.i] = sh; } else DL.occ[c.i] = 1;
+        break;
+      }
     }
   }
   const k = Math.min(1, dt * 10); let shown = 0; const data = labs.dyn;
@@ -407,6 +440,7 @@ function declutter(dt, rgt, up, minPx) {
   DL.shown = shown; DL.candidates = cand.length;
   gl.bindBuffer(gl.ARRAY_BUFFER, labs.dbuf); gl.bufferSubData(gl.ARRAY_BUFFER, 0, data);
 }
+DL.DLS = DLS;
 V.visibleLabels = () => DLS.map((l, i) => DL.cur[i] > 0.5 ? l.s : null).filter(Boolean);
 
 // ---- wall titles (CPU, per frame): anchored above the wall's top edge (stuck to the screen top while the wall covers it),
@@ -417,12 +451,11 @@ function layoutTitles(dt) {
   const cw = canvas.width, ch = canvas.height, k = cw / Math.max(1, canvas.clientWidth), M = VP, cam = V.cam.p, fp = focalPx();
   const cur = TT.curSet || (TT.curSet = new Set()); cur.clear();
   for (const L of live) cur.add(L.f);
-  if (V.pres() === 'gallery') for (let li = 0; li < LN.length; li++) { const f = V.laneFrameAt(li); if (f >= 0) cur.add(f); }
   const clip = (x, y, z) => [M[0] * x + M[4] * y + M[8] * z + M[12], M[1] * x + M[5] * y + M[9] * z + M[13], M[3] * x + M[7] * y + M[11] * z + M[15], z];
   const cut = (a, b) => { const t = (1 - a[2]) / (b[2] - a[2]); return a.map((v, i) => v + (b[i] - v) * t); };   // a: in front (w >= 1)
   const cand = TT.cand || (TT.cand = []); cand.length = 0;
   for (const w of visList) {
-    const j = w.tj, x = wallArr[4 * w.i]; if (wallArr[4 * w.i + 1] <= 0.02) continue;
+    const j = w.tj, x = wallArr[4 * w.i]; if (wallArr[4 * w.i + 1] <= (ALLF ? 0.5 : 0.02)) continue;   // faded near walls: no title
     const tier = cur.has(w.i) ? 2 : wallArr[4 * w.i + 2] > 0.5 ? 1 : 0, z1 = w.z0 + w.cols * 128;
     let a = clip(x, 4096, w.z0), b = clip(x, 4096, z1);
     if (a[2] < 1 && b[2] < 1) continue;
@@ -445,17 +478,9 @@ function layoutTitles(dt) {
     cand.push({ w, j, tx, ty, size, bw, bh, al, sticky, x, zw, xmax: Math.min(bx, cw - 6), slope: bx - ax > 1 ? (by - ay) / (bx - ax) : 0, pr: tier * 1e9 - d * (TT.cur[j] > 0.5 ? 0.8 : 1) });
   }
   cand.sort((p, q) => q.pr - p.pr);
-  // drawn without depth test: hide a title whose anchor is behind a solid wall (tested only for titles that would fit)
-  const occluded = c => {
-    if (c.sticky) return false;
-    const dx = c.x - cam[0], dy = 4100 - cam[1], dz = c.zw - cam[2];
-    if (Math.abs(dx) < 1e-6) return false;
-    for (const ww of occList) {
-      if (ww === c.w) continue; const t = (wallArr[4 * ww.i] - cam[0]) / dx; if (t <= 0 || t >= 0.999) continue;
-      const y = cam[1] + t * dy, z = cam[2] + t * dz; if (y > -6 && y < 4102 && z > ww.z0 && z < ww.z0 + ww.cols * 128 - 4) return true;
-    }
-    return false;
-  };
+  // drawn without depth test: hide a title any part of whose placed box is behind an opaque wall (sticky ones too: a nearer
+  // wall over the one they stick to hides them); tested only for titles that would fit
+  const occluded = c => rectBlocked(c.tx, c.ty, c.tx + c.bw, c.ty + c.bh, [c.x, 0, 0], XN, c.w.i, 9, 3);
   const rects = TT.rects; rects.length = 0;
   const obst = DL.panels || [];
   const hitR = r => { for (const q of obst) if (q[0] < r[2] && r[0] < q[2] && q[1] < r[3] && r[1] < q[3]) return q;
@@ -485,7 +510,7 @@ V.titles = TT;
 V.visibleTitles = () => WALLS.filter(w => TT.cur[w.tj] > 0.5).map(w => w.shortTitle);
 
 // ------------------------------------------------------------------ instance pool (rows of 4096 lines)
-const pool = { free: [[0, POOLH]] };
+const pool = { free: [[0, POOLH]] }, WANT_KEEP = 1000;
 function palloc(rows) {
   for (let i = 0; i < pool.free.length; i++) { const [a, n] = pool.free[i];
     if (n >= rows) { if (n === rows) pool.free.splice(i, 1); else pool.free[i] = [a + rows, n - rows]; return a; } }
@@ -502,9 +527,10 @@ function evict(w) {
 function upload(w, m) {
   const rows = Math.max(1, Math.ceil(m.n / POOLW));
   let r0 = palloc(rows);
-  while (r0 < 0) {   // evict the least recently used walls that are not wanted now, then wanted ones farther than this one
-    let cand = WALLS.filter(x => x.gpu && x.wanted !== wantEpoch).sort((a, b) => a.lastUse - b.lastUse);
-    if (!cand.length && w.wanted === wantEpoch) cand = WALLS.filter(x => x.gpu && x.wanted === wantEpoch && x.wantD > w.wantD * 1.25 + 500).sort((a, b) => b.wantD - a.wantD);
+  const t = performance.now(), fresh = x => t - x.wantT < WANT_KEEP;
+  while (r0 < 0) {   // evict the least recently used walls not wanted lately, then wanted ones farther than this one
+    let cand = WALLS.filter(x => x.gpu && !fresh(x)).sort((a, b) => a.lastUse - b.lastUse);
+    if (!cand.length && fresh(w)) cand = WALLS.filter(x => x.gpu && x !== w && fresh(x) && x.wantD > w.wantD * 1.25 + 500).sort((a, b) => b.wantD - a.wantD);
     if (!cand.length) return false;
     evict(cand[0]); r0 = palloc(rows);
   }
@@ -682,18 +708,30 @@ function moveCam(dt) {
 }
 
 // ------------------------------------------------------------------ the shared clock: which walls show, where, how solid
-// pres 'now' (playing, or N): one live wall per lane on the clock plane, morphing frame to frame; the lane's other frames
-// within GH months are ghosts at their own X; releases stay solid. pres 'gallery' (paused): every wall solid at its X.
+// pres 'clock' (paused, default): every frame stands solid at its own X; the clock picks each lane's focus frame (its title
+// goes first, the morph starts from it). 'now' (playing, or N): each lane's frame at the clock rides on the clock plane and
+// morphs into the next one; the frames the clock has not reached yet stand at their X, the ones it passed are carried by the
+// live wall. In both, walls close to the camera fade out (nearFade): only the frames at the clock and walls near enough to
+// read stay solid there. The software renderer (llvmpipe) keeps the light presentation: the frames at the clock solid, the
+// lane's frames within GH months as ghosts, releases solid (?allf=1 / 0 overrides).
+const ALLF = Q.has('allf') ? Q.get('allf') === '1' : !SOFT;
 const GH = (SOFT ? 3 : 6) * U;
-// pres 'clock' (paused, default): each lane's frame at the clock solid at its own X, neighbours ghosted, releases solid.
-// 'now' (playing, or chosen): the lane's frame rides on the clock plane and morphs frame to frame. 'gallery': every wall solid.
-V.pres = () => V.playing ? 'now' : V.presMode;
-V.cyclePres = () => { V.presMode = { clock: 'now', now: 'gallery', gallery: 'clock' }[V.presMode]; emit('time'); };
+V.ALLF = ALLF;
+V.pres = () => V.playing ? 'now' : V.presMode === 'now' ? 'now' : 'clock';
+V.cyclePres = () => { V.presMode = V.presMode === 'now' ? 'clock' : 'now'; emit('time'); };
 const lb = (xs, x) => { let lo = 0, hi = xs.length; while (lo < hi) { const m = (lo + hi) >> 1; if (xs[m] <= x) lo = m + 1; else hi = m; } return lo - 1; };
 V.laneFrameAt = (li, x = V.X) => { const ln = LN[li], k = lb(ln.xs, x + 1e-3); return k >= 0 ? ln.frames[k] : -1; };
 V.dateOfX = x => tm.dateOfMonth(tm.monthOfX(x));
-let dispList = [], occList = [], visList = [];
-const live = [];   // per lane: { f, x, morph }
+let dispList = [], visList = [];
+const live = [];   // per lane: { f, x, morph, next }
+// near fade: d0 / d1 camera distance (units) where a wall is gone / whole (a 4096-high wall fills the screen at ~3550 with
+// the 60 degree FOV), read: px per line from which a wall in front of the camera stays solid however close (walk up to read
+// it without moving the clock); ease: per second, so a clock step or a jump does not pop
+const NFP = { d0: 2800, d1: 6000, read: 2.2, ease: 8 };
+V.NFP = NFP;
+const nearCur = new Float32Array(NF).fill(1), focusSet = new Set();
+let lastDisp = 0;
+const smoothstep = (a, b, v) => { const t = Math.max(0, Math.min(1, (v - a) / (b - a))); return t * t * (3 - 2 * t); };
 function updateDisplay() {
   wallArr.fill(0);
   wallArr[4 * NONE] = 0; wallArr[4 * NONE + 1] = 1; wallArr[4 * NONE + 2] = 1;
@@ -701,21 +739,23 @@ function updateDisplay() {
   V.morph = null; live.length = 0;
   const pres = V.pres(), now = pres === 'now', X = V.X;
   if (V.soloFrame != null && W[V.soloFrame]) {   // dev / video stills: one frame's wall alone, solid at its X
-    const f = V.soloFrame, o = 4 * f; wallArr[o] = W[f].x; wallArr[o + 1] = 1; wallArr[o + 2] = 1; live.push({ lane: W[f].lane, f, x: W[f].x, morph: null });
+    const f = V.soloFrame, o = 4 * f; wallArr[o] = W[f].x; wallArr[o + 1] = 1; wallArr[o + 2] = 1; live.push({ lane: W[f].lane, f, x: W[f].x, morph: null, next: -1 });
     dispList = [W[f]]; wallTexI = (wallTexI + 1) % wallTexRing.length; wallTex = wallTexRing[wallTexI]; uploadWallTex(); return;
   }
   for (const ln of LN) {
     const k = lb(ln.xs, X + 1e-3);
-    if (pres === 'gallery') { for (const f of ln.frames) { const o = 4 * f; wallArr[o] = W[f].x; wallArr[o + 1] = 1; wallArr[o + 2] = 1; } continue; }
-    // ghosts first (live / releases overwrite)
-    for (let q = Math.max(0, lb(ln.xs, X - GH)); q < ln.frames.length && ln.xs[q] <= X + GH; q++) {
-      const f = ln.frames[q], o = 4 * f, d = Math.abs(ln.xs[q] - X) / GH;
-      if (d > 1) continue; wallArr[o] = ln.xs[q]; wallArr[o + 1] = 0.05 + 0.25 * (1 - d); wallArr[o + 2] = 0;
+    const lastX = ln.xs.at(-1), dead = k === ln.frames.length - 1 && X > lastX + 3 * U, ride = now && k >= 0 && !dead;
+    if (ALLF) {   // every frame at its X (riding: the ones the clock passed are carried by the live wall)
+      for (let q = ride ? k + 1 : 0; q < ln.frames.length; q++) { const o = 4 * ln.frames[q]; wallArr[o] = ln.xs[q]; wallArr[o + 1] = 1; wallArr[o + 2] = 1; }
+    } else {
+      for (let q = Math.max(0, lb(ln.xs, X - GH)); q < ln.frames.length && ln.xs[q] <= X + GH; q++) {   // ghosts first (live / releases overwrite)
+        const f = ln.frames[q], o = 4 * f, d = Math.abs(ln.xs[q] - X) / GH;
+        if (d > 1) continue; wallArr[o] = ln.xs[q]; wallArr[o + 1] = 0.05 + 0.25 * (1 - d); wallArr[o + 2] = 0;
+      }
+      for (const f of ln.frames) if (W[f].solidRelease) { const o = 4 * f; wallArr[o] = W[f].x; wallArr[o + 1] = 1; wallArr[o + 2] = 1; }
     }
-    for (const f of ln.frames) if (W[f].solidRelease) { const o = 4 * f; wallArr[o] = W[f].x; wallArr[o + 1] = 1; wallArr[o + 2] = 1; }
     if (k < 0) continue;
-    const lastX = ln.xs.at(-1), dead = k === ln.frames.length - 1 && X > lastX + 3 * U;
-    let f = ln.frames[k], x = now && !dead ? X : ln.xs[k], morph = null;
+    let f = ln.frames[k], x = ride ? X : ln.xs[k], morph = null;
     // morph into the next frame over the last part of the step; only where the live wall is near enough to read
     const nearLive = now && k + 1 < ln.frames.length && 2 * focalPx() / Math.max(1, G.boxDist(V.cam.p, x, 0, ln.z0, x, 4096, ln.z0 + ln.cols * 128)) >= (V.quality.t1 || 2) * 0.3;
     if (nearLive) {
@@ -726,22 +766,57 @@ function updateDisplay() {
       } else if (X > xn - 2.5 * U) requestMorph(f, ln.frames[k + 1]);   // prefetch
     }
     const o = 4 * f; wallArr[o] = x; wallArr[o + 1] = 1; wallArr[o + 2] = 1;
-    live.push({ lane: ln.li, f, x, morph });
-    // reading the live wall up close: the lane's other walls behind it (ghosts, releases) shine through its transparent
-    // background as a second, offset layer of text. Fade them out as the camera comes within reading range.
-    const cp = V.cam.p, dx = cp[0] - x;
-    if (cp[2] > ln.z0 - 512 && cp[2] < ln.z0 + ln.cols * 128 + 512 && Math.abs(dx) < 3200) {
-      const fade = Math.max(0, Math.min(1, (Math.abs(dx) - 500) / 2700));
-      for (const g of ln.frames) {
-        const o = 4 * g; if (g === f || (morph && g === morph.a) || wallArr[o + 1] <= 0 || (wallArr[o] - x) * dx >= 0) continue;
-        wallArr[o + 1] *= fade; if (wallArr[o + 1] < 0.01) wallArr[o + 1] = 0;
+    live.push({ lane: ln.li, f, x, morph, next: now && !morph && k + 1 < ln.frames.length ? ln.frames[k + 1] : -1 });
+    if (!ALLF) {
+      // reading the live wall up close: the lane's other walls behind it (ghosts, releases) shine through its transparent
+      // background as a second, offset layer of text. Fade them out as the camera comes within reading range.
+      const cp = V.cam.p, dx = cp[0] - x;
+      if (cp[2] > ln.z0 - 512 && cp[2] < ln.z0 + ln.cols * 128 + 512 && Math.abs(dx) < 3200) {
+        const fade = Math.max(0, Math.min(1, (Math.abs(dx) - 500) / 2700));
+        for (const g of ln.frames) {
+          const o = 4 * g; if (g === f || (morph && g === morph.a) || wallArr[o + 1] <= 0 || (wallArr[o] - x) * dx >= 0) continue;
+          wallArr[o + 1] *= fade; if (wallArr[o + 1] < 0.01) wallArr[o + 1] = 0;
+        }
       }
     }
     if (morph && (!V.morph || Math.abs(W[morph.b].z0 + W[morph.b].cols * 64 - V.cam.p[2]) < Math.abs(W[V.morph.b].z0 + W[V.morph.b].cols * 64 - V.cam.p[2]))) V.morph = morph;
   }
+  if (ALLF) nearFade();
   dispList = WALLS.filter(w => wallArr[4 * w.i + 1] > 0);
   wallTexI = (wallTexI + 1) % wallTexRing.length; wallTex = wallTexRing[wallTexI]; uploadWallTex();
 }
+// A wall close to the camera fades out (it would cover the screen without being readable) unless it is a frame at the clock
+// (search, bookmarks, the file panel and the tour set the clock to their wall) or near enough to read; a faded wall draws as
+// a ghost: no plate, its text / impostor at its alpha, gone below 0.02. Then, per lane the camera stands in, the walls behind
+// the wall being read (the nearest solid one ahead) fade as the camera comes within 3200 units of it: up close their text
+// would show through gaps and stacked frames (some lanes have frames 16 units apart).
+function nearFade() {
+  const t = performance.now(), dt = lastDisp ? Math.min(0.1, (t - lastDisp) / 1000) : 1; lastDisp = t;
+  const cp = V.cam.p, fp = focalPx(), focus = focusSet, kE = Math.min(1, dt * NFP.ease);
+  focus.clear(); for (const L of live) { focus.add(L.f); if (L.morph) focus.add(L.morph.a); }
+  const readD = 2 * fp / NFP.read;
+  for (const w of WALLS) {
+    const o = 4 * w.i; if (wallArr[o + 1] <= 0) continue;
+    const x = wallArr[o];
+    let a = 1;
+    if (!focus.has(w.i)) {
+      const d = G.boxDist(cp, x, 0, w.z0, x, 4096, w.z0 + w.cols * 128);
+      if (d < NFP.d1) { a = smoothstep(NFP.d0, NFP.d1, d); if (x > cp[0] && d < readD) a = Math.max(a, smoothstep(0.7 * NFP.read, NFP.read, 2 * fp / Math.max(1, d))); }
+    }
+    let c = nearCur[w.i]; c += (a - c) * kE; if (Math.abs(a - c) < 0.01) c = a; nearCur[w.i] = c;
+    if (c < 0.999) { const A = wallArr[o + 1] * c; wallArr[o + 1] = A < 0.02 ? 0 : A; wallArr[o + 2] = 0; }
+  }
+  for (const ln of LN) {
+    if (cp[2] < ln.z0 - 512 || cp[2] > ln.z0 + ln.cols * 128 + 512) continue;
+    let ref = -1;   // the nearest solid wall ahead of the camera in this lane, within 3200 units
+    for (const f of ln.frames) { const o = 4 * f, x = wallArr[o]; if (wallArr[o + 2] > 0.5 && wallArr[o + 1] > 0 && x >= cp[0] && x - cp[0] < 3200 && (ref < 0 || x < wallArr[4 * ref])) ref = f; }
+    if (ref < 0) continue;
+    const xr = wallArr[4 * ref], fade = Math.max(0, Math.min(1, (xr - cp[0] - 500) / 2700));
+    for (const g of ln.frames) { const o = 4 * g; if (g === ref || wallArr[o + 1] <= 0 || wallArr[o] <= xr || wallArr[o] - xr > 6000) continue;
+      wallArr[o + 1] *= fade; if (wallArr[o + 1] < 0.01) wallArr[o + 1] = 0; if (fade < 0.999) wallArr[o + 2] = 0; }
+  }
+}
+V.wallA = w => wallArr[4 * w.i + 1];
 V.live = live;
 V.setX = (x, opts = {}) => {
   const x1 = Math.max(xMin - 2 * U, Math.min(xMax + 2 * U, x)), d = x1 - V.X;
@@ -754,11 +829,18 @@ V.isSolid = w => wallArr[4 * w.i + 2] > 0.5 && wallArr[4 * w.i + 1] > 0;
 
 // ------------------------------------------------------------------ impostors (baked walls): low-res for every loaded wall in
 // view, high-res for the nearest ones (refreshed as the camera approaches)
-const IMP = SOFT ? { lo: [2, 512], hi: null, capLo: 40 * 1048576, capHi: 0 } : { lo: [4, 1024], hi: [16, 2048], capLo: 192 * 1048576, capHi: 288 * 1048576 };
+// tiers: far (mid-range walls, below LODP.lo px per line: 2 x 256 texels per column, about 1/16 of lo, so every wall in view
+// at mid range can have one), lo, hi (the nearest LODP.hiN walls). A wall's impostor is only ever upgraded; one with a hi
+// impostor keeps the one it had before (impLo) and falls back to it when the hi one is evicted.
+const IMP = SOFT ? { lo: [2, 512], hi: null, far: null, cap: { lo: 40 * 1048576, hi: 0, far: 0 } } :
+  { far: [2, 256], lo: [4, 1024], hi: [16, 2048], cap: { far: 80 * 1048576, lo: 192 * 1048576, hi: 288 * 1048576 } };
+const TIER_RANK = { far: 0, lo: 1, hi: 2 };
 // LOD distances in px per line at the wall's nearest point (from the camera or from where it is heading): stream the wall's
 // lines (want), bake its sharp impostor (hi), show its file cards (card; the nearest `cards` walls), file quads below t3,
-// column strips below t4, one quad below t5. look: seconds of travel to look ahead.
-const LODP = SOFT ? { want: 0.1, hi: 1e9, hiN: 0, card: 0.3, cards: 4, t4: 0.07, t5: 0.02, look: 1.2 } : { want: 0.045, hi: 0.1, hiN: 6, card: 0.12, cards: 12, t4: 0.03, t5: 0.008, look: 1.5 };
+// column strips below t4, one quad below t5. look: seconds of travel to look ahead. lo: impostors below it are the small 'far'
+// tier. fast: camera speed (units/s) above which no hi impostor is baked and none upgraded far -> lo (in a fast flight the
+// walls pass before the bake pays off; they upgrade once the camera slows down).
+const LODP = SOFT ? { want: 0.1, hi: 1e9, hiN: 0, lo: 0, fast: 1e12, card: 0.3, cards: 4, t4: 0.07, t5: 0.02, look: 1.2 } : { want: 0.045, hi: 0.1, hiN: 6, lo: 0.15, fast: 25000, card: 0.12, cards: 12, t4: 0.03, t5: 0.008, look: 1.5 };
 let hiSet = new Set();
 V.LODP = LODP;
 const NOFADE = new Float32Array([-1, 0]);
@@ -780,20 +862,55 @@ let impVersion = 0;
 function invalidateImpostors() { impVersion++; }
 V.invalidateImpostors = invalidateImpostors;
 const impKey = () => `${V.mode}|${V.hideInc}|${impVersion}`;
-const impBytes = { lo: 0, hi: 0 };
-function freeImp(w) { if (!w.imp) return; gl.deleteTexture(w.imp.tex); gl.deleteFramebuffer(w.imp.fbo); impBytes[w.imp.tier] -= w.imp.bytes; w.imp = null; w.impKey = ''; }
+const impBytes = { far: 0, lo: 0, hi: 0 };
+// a wall with a sharp (hi) impostor keeps its low-res one too (impLo, 1/8 the size): evicting the hi one falls back to it
+// freed impostor textures go to a recycle bin by size (BIN_CAP bytes, oldest dropped first) and are reused by the next bake
+// of that size: creating a texture costs far more on the GPU than baking into it (a fresh 40 MB one is zero-filled, and its
+// mip chain is allocated by the first generateMipmap); lane flights free and bake walls of one size many times a second
+const BIN_CAP = SOFT ? 0 : 96 * 1048576, impBin = []; let binBytes = 0;
+function binPut(tex, fbo, bytes, key) {
+  impBin.push({ tex, fbo, bytes, key }); binBytes += bytes;
+  while (binBytes > BIN_CAP && impBin.length) { const o = impBin.shift(); gl.deleteTexture(o.tex); gl.deleteFramebuffer(o.fbo); binBytes -= o.bytes; }
+}
+const dropImp = I => { impBytes[I.tier] -= I.bytes; binPut(I.tex, I.fbo, I.bytes, I.texKey); };
+function freeImp(w) { if (!w.imp) return; dropImp(w.imp); w.imp = null; w.impKey = '';
+  if (w.impLo) { w.imp = w.impLo; w.impKey = w.impLoKey; w.impLo = null; } }
+const impOfTier = (x, tier) => x.imp && x.imp.tier === tier ? x.imp : x.impLo && x.impLo.tier === tier ? x.impLo : null;
+function freeTier(x, tier) { if (x.impLo && x.impLo.tier === tier) { dropImp(x.impLo); x.impLo = null; } else freeImp(x); }
+// room for `bytes` more of `tier`: free the least recently drawn impostors of the tier; when every one was drawn in the last
+// 300 ms (all in view), the farthest one, but only if it is clearly farther than w; else no room (w waits: noBake)
+function impRoom(w, tier, bytes) {
+  const t = performance.now(), wd = w.lodD ?? 0;
+  while (impBytes[tier] + bytes > IMP.cap[tier]) {
+    let best = null, bv = Infinity;
+    for (const x of WALLS) { if (x === w) continue; const I = impOfTier(x, tier); if (!I) continue;
+      const v = t - I.used > 300 ? I.used - 1e13 : -(x.lodD ?? 0); if (v < bv) { bv = v; best = x; } }
+    if (!best || (bv > -1e12 && -bv <= wd * 1.25 + 500)) return false;
+    freeTier(best, tier);
+  }
+  return true;
+}
+const BK = { alloc: [], done: 0, lines: 0, mb: 0 }; V.bakeLog = BK;
+// per frame: at most ALLOC_MB of new impostor textures (recycled ones are free); lines baked: bakeBudget
+const ALLOC_MB = SOFT ? 1e9 : 48;   // this frame's bakes (for tests)
 function bake(w, budget, tier) {
   if (w.imp && w.imp.tier !== tier && w.imp.ready && !w.bk) { /* keep showing the old one until the new bake completes */ }
   if (!w.bk || w.bk.key !== impKey() || w.bk.tier !== tier) {
     const [iw, ih] = IMP[tier], bytes = w.cols * iw * ih * 4 * 1.34;
-    // memory cap: drop the least recently used impostors of this tier
-    const cap = tier === 'hi' ? IMP.capHi : IMP.capLo;
-    while (impBytes[tier] + bytes > cap) { const c = WALLS.filter(x => x.imp && x.imp.tier === tier && x !== w).sort((a, b) => a.imp.used - b.imp.used)[0]; if (!c) break; freeImp(c); }
-    const tex = G.tex2D(gl, w.cols * iw, ih, gl.RGBA8, gl.RGBA, gl.UNSIGNED_BYTE, null, gl.LINEAR_MIPMAP_LINEAR);
-    if (aniso) gl.texParameterf(gl.TEXTURE_2D, aniso.TEXTURE_MAX_ANISOTROPY_EXT, 4);
-    const fbo = gl.createFramebuffer(); gl.bindFramebuffer(gl.FRAMEBUFFER, fbo); gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, tex, 0);
-    if (w.bk && w.bk.nimp) { gl.deleteTexture(w.bk.nimp.tex); gl.deleteFramebuffer(w.bk.nimp.fbo); impBytes[w.bk.tier] -= w.bk.nimp.bytes; }
-    w.bk = { key: impKey(), tier, c: 0, nimp: { tex, fbo, tier, bytes, iw, ih, ready: false, used: performance.now() } }; impBytes[tier] += bytes;
+    const texKey = (w.cols * iw) + 'x' + ih;
+    if (!impBin.some(o => o.key === texKey) && BK.mb > 0 && BK.mb + bytes / 1048576 > ALLOC_MB) return 0;   // enough new textures this frame
+    if (!impRoom(w, tier, bytes)) { w.noBake = performance.now(); return 0; }   // memory cap (may move impostors into the bin)
+    const bi = impBin.findIndex(o => o.key === texKey);
+    let tex, fbo;
+    if (bi >= 0) { ({ tex, fbo } = impBin[bi]); impBin.splice(bi, 1); binBytes -= bytes; BK.alloc.push(tier + ':r'); }
+    else {
+      BK.alloc.push(tier + ':' + Math.round(bytes / 1048576)); BK.mb += bytes / 1048576;
+      tex = G.tex2D(gl, w.cols * iw, ih, gl.RGBA8, gl.RGBA, gl.UNSIGNED_BYTE, null, gl.LINEAR_MIPMAP_LINEAR);
+      if (aniso) gl.texParameterf(gl.TEXTURE_2D, aniso.TEXTURE_MAX_ANISOTROPY_EXT, 4);
+      fbo = gl.createFramebuffer(); gl.bindFramebuffer(gl.FRAMEBUFFER, fbo); gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, tex, 0);
+    }
+    if (w.bk && w.bk.nimp) dropImp(w.bk.nimp);
+    w.bk = { key: impKey(), tier, c: 0, nimp: { tex, fbo, tier, bytes, iw, ih, texKey, ready: false, used: performance.now() } }; impBytes[tier] += bytes;
   }
   const B = w.bk, I = B.nimp;
   let c1 = B.c; const a = w.colStart[B.c];
@@ -809,11 +926,16 @@ function bake(w, budget, tier) {
     gl.bindVertexArray(emptyVAO); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, n);
     gl.uniform1i(P.line.u.uBake, 0);
   }
-  gl.disable(gl.SCISSOR_TEST);
+  gl.disable(gl.SCISSOR_TEST); BK.lines += n;
   B.c = c1;
   if (c1 >= w.cols) {
-    gl.bindTexture(gl.TEXTURE_2D, I.tex); gl.generateMipmap(gl.TEXTURE_2D);
-    if (w.imp) { gl.deleteTexture(w.imp.tex); gl.deleteFramebuffer(w.imp.fbo); impBytes[w.imp.tier] -= w.imp.bytes; }
+    gl.bindTexture(gl.TEXTURE_2D, I.tex); gl.generateMipmap(gl.TEXTURE_2D); BK.done++;
+    if (I.tier === 'hi' && w.imp && w.imp.tier !== 'hi' && w.impKey === B.key) {   // keep the lower one under it
+      if (w.impLo) dropImp(w.impLo); w.impLo = w.imp; w.impLoKey = w.impKey;
+    } else {
+      if (w.imp) dropImp(w.imp);
+      if (w.impLo && (I.tier !== 'hi' || w.impLoKey !== B.key)) { dropImp(w.impLo); w.impLo = null; }
+    }
     I.ready = true; w.imp = I; w.impKey = B.key; w.bk = null; V.stats.baked = (V.stats.baked || 0) + 1;
   }
   gl.bindFramebuffer(gl.FRAMEBUFFER, null);
@@ -957,6 +1079,7 @@ function frame(now) {
   const cw = Math.max(1, Math.round(canvas.clientWidth * scale)), ch = Math.max(1, Math.round(canvas.clientHeight * scale));
   if (canvas.width !== cw || canvas.height !== ch) { canvas.width = cw; canvas.height = ch; }
   const { f, r, u } = camBasis(); camP = new Float32Array(V.cam.p); camF = new Float32Array(f);
+  rayPrep(f, r, u);
   let nearest = 1e9;
   for (const w of dispList) { const x = wallArr[4 * w.i]; nearest = Math.min(nearest, G.boxDist(V.cam.p, x - 1, -10, w.z0, x + 1, 4600, w.z0 + w.cols * 128)); }
   const near = Math.max(1, Math.min(4000, nearest * 0.4)), far = Math.max(near * 10, 1.6e6);
@@ -968,26 +1091,33 @@ function frame(now) {
   // the real distance and the distance from where the camera will be in LODP.look s (its velocity), so the walls ahead
   // are loaded, baked sharp and carded before the camera reaches them.
   const fp = focalPx(), LF = V.quality.lf, epoch = ++wantEpoch, want = [], cards = [];
-  const ah = aheadPoint(dt);
+  const ah = aheadPoint(dt), camSpeed = Math.hypot(...vel.v);
   const lineRuns = [], impRuns = [], t3Walls = [], bakeCand = [], lineWalls = new Set(), hiNext = [];
   let inst = 0;
   const morphB = V.morph ? V.morph.b : -1;
-  occList = []; visList = [];
+  visList = []; occN = 0;
   for (const w of dispList) {
     const x = wallArr[4 * w.i], A = wallArr[4 * w.i + 1], solid = wallArr[4 * w.i + 2] > 0.5, z1 = w.z0 + w.cols * 128;
     if (!G.boxVisible(planes, x - 1, -10, w.z0, x + 1, 4110, z1)) continue;
     visList.push(w);
+    if (solid) occAdd(w, x);   // opaque plate, front or back: hides the titles and labels behind it
     if (V.cam.p[0] > x) continue;
-    if (solid) occList.push(w);
     const dW = G.boxDist(V.cam.p, x, 0, w.z0, x, 4096, z1), pW = 2 * fp / Math.max(dW, 1);
     const dE = ah ? Math.min(dW, G.boxDist(ah, x, 0, w.z0, x, 4096, z1)) : dW, pE = 2 * fp / Math.max(dE, 1);
-    if (solid && pE >= LODP.want) want.push([dE, w]);
+    // faded walls (near the camera) are streamed, baked and drawn as text too, at their alpha; legacy ghosts only as impostor / T3
+    const text = solid || (ALLF && A >= 0.05);
+    if (text && pE >= LODP.want) want.push([solid ? dE : dE * 1.5, w]);
     if (solid && pE >= LODP.card && w.meta) cards.push([dE, w]);
     if (w.loaded) w.lastUse = now;
-    if (IMP.hi && w.loaded && pE > LODP.hi) hiNext.push([dE, w.i]);
-    const stale = w.loaded && (w.impKey !== impKey() || (hiSet.has(w.i) && (!w.imp || w.imp.tier !== 'hi')));
-    if (!solid) { if (w.imp && w.imp.ready) impRuns.push([w, 0, w.cols, A, 0]); else t3Walls.push(w); continue; }
-    if (!w.loaded || pW < LF[0]) { if (w.imp && w.imp.ready) impRuns.push([w, 0, w.cols, A, 0]); else t3Walls.push(w); if (stale && pE >= LODP.t4) bakeCand.push([dE, w, pE]); continue; }
+    if (IMP.hi && w.loaded && pE > LODP.hi && camSpeed < LODP.fast) hiNext.push([dE, w.i]);
+    w.lodD = dE;
+    // the impostor tier this wall should have (only ever upgraded); stale: missing, outdated or below it
+    const tier = hiSet.has(w.i) ? 'hi' : !IMP.far || (pE >= LODP.lo && camSpeed < LODP.fast) || (w.imp && w.imp.tier !== 'far') ? 'lo' : 'far';
+    const stale = w.loaded && (w.impKey !== impKey() || !w.imp || TIER_RANK[w.imp.tier] < TIER_RANK[tier]) && !(now - w.noBake < 1000);
+    // mid range (below the streaming range, above T4) with no impostor yet: stream it at the lowest priority, to bake it
+    if (text && IMP.far && !w.imp && pE < LODP.want && pE >= LODP.t4) want.push([dE * 4 + 1e6, w]);
+    if (!text) { if (w.imp && w.imp.ready) impRuns.push([w, 0, w.cols, A, 0]); else t3Walls.push(w); continue; }
+    if (!w.loaded || pW < LF[0]) { if (w.imp && w.imp.ready) impRuns.push([w, 0, w.cols, A, 0]); else t3Walls.push(w); if (stale && pE >= LODP.t4) bakeCand.push([dE, w, tier]); continue; }
     if (w.i === morphB) continue;
     let run = null, irun = null;
     for (let c = 0; c < w.cols; c++) {
@@ -997,25 +1127,28 @@ function frame(now) {
       // lines fade in over the ppl band LF (per pixel); the impostor fades out under them over the same band
       const lines = ppl >= LF[0], imp = !lines || 2 * fp / boxFar(V.cam.p, x, 0, za, x, 4096, zb) < LF[1];
       if (lines) { if (run && run[2] === c) run[2] = c + 1; else { run = [w, c, c + 1, d]; lineRuns.push(run); } run[3] = Math.min(run[3], d); } else run = null;
-      if (imp) { if (irun && irun[2] === c) irun[2] = c + 1; else { irun = [w, c, c + 1, 1, 1]; impRuns.push(irun); } } else irun = null;
+      if (imp) { if (irun && irun[2] === c) irun[2] = c + 1; else { irun = [w, c, c + 1, A, 1]; impRuns.push(irun); } } else irun = null;
     }
-    if (stale) bakeCand.push([dE, w, pE]);
+    if (stale) bakeCand.push([dE, w, tier]);
   }
   // sharp impostors for the nearest LODP.hiN walls in range (next frame): more would evict and re-bake each other
   hiNext.sort((a, b) => a[0] - b[0]); hiSet = new Set(hiNext.slice(0, LODP.hiN).map(h => h[1]));
   // morph target lane: its next frames are wanted too
   for (const L of live) if (L.morph) { want.push([0, W[L.morph.a]], [0, W[L.morph.b]]); }
+  // Now: each live wall in streaming range brings its next frame along, so the frame change does not show it unloaded
+  for (const L of live) if (L.next >= 0) { const w = W[L.f], d = G.boxDist(V.cam.p, L.x, 0, w.z0, L.x, 4096, w.z0 + w.cols * 128);
+    if (2 * fp / Math.max(d, 1) >= LODP.want) want.push([d + 1, W[L.next]]); }
   lineRuns.sort((a, b) => a[3] - b[3]);
   const drawRuns = [];
   for (const rr of lineRuns) { const w = rr[0], n = w.colStart[rr[2]] - w.colStart[rr[1]]; if (n === 0) continue;
-    if (inst + n > V.quality.maxInst && drawRuns.length) { impRuns.push([w, rr[1], rr[2], 1, 0]); continue; } inst += n; drawRuns.push(rr); lineWalls.add(w); }
+    if (inst + n > V.quality.maxInst && drawRuns.length) { impRuns.push([w, rr[1], rr[2], wallArr[4 * w.i + 1], 0]); continue; } inst += n; drawRuns.push(rr); lineWalls.add(w); }
   // streaming: the wanted walls, nearest first (sent a few times a second; the worker keeps only the newest list)
   want.sort((a, b) => a[0] - b[0]);
   // nearest first, as many as the instance pool holds (more would evict each other and be decoded again and again)
   const wl = []; let poolRows = POOLH * 0.92;
+  // a wall stays wanted (safe from eviction) for WANT_KEEP ms after it was last in this set, so the set follows the camera
   for (const [d, w] of want) { if (w.wanted === epoch) continue; poolRows -= Math.max(1, Math.ceil(w.n / POOLW)); if (poolRows < 0 && d > 0) break;
-    w.wantD = d; w.wanted = epoch; if (!w.loaded) wl.push(w.i); }
-  for (const w of WALLS) if (w.wanted === epoch - 1) w.wanted = epoch;   // keep last frame's set while it settles
+    w.wantD = d; w.wanted = epoch; w.wantT = now; if (!w.loaded) wl.push(w.i); }
   if (now - wantT > 200) { wantT = now; fw.postMessage({ type: 'want', frames: wl.slice(0, SOFT ? 12 : 40) }); }
   const t4Walls = [], t5Walls = [];
   for (let i = t3Walls.length - 1; i >= 0; i--) { const w = t3Walls[i], p = pWOf(w);
@@ -1023,9 +1156,12 @@ function frame(now) {
     else if (p < LODP.t4) { t4Walls.push(w); t3Walls.splice(i, 1); wallArr[4 * w.i + 3] = 2; } else wallArr[4 * w.i + 3] = 1; }
   uploadWallTex();
   PM('lod');
-  bakeCand.sort((a, b) => a[0] - b[0]);
+  bakeCand.sort((a, b) => a[0] - b[0]); BK.alloc = []; BK.done = 0; BK.lines = 0; BK.mb = 0;
   let bakeBudget = SOFT ? 40000 : 1200000;
-  for (let i = 0; i < bakeCand.length && bakeBudget > 0; i++) { const [, w, pW] = bakeCand[i]; bakeBudget -= Math.max(1, bake(w, bakeBudget, hiSet.has(w.i) ? 'hi' : 'lo')); }
+  let farBudget = 300000;   // far impostors are background work (mid-range walls): a smaller share, so a burst of them does not stall
+  for (let i = 0; i < bakeCand.length && bakeBudget > 0; i++) { const [, w, tier] = bakeCand[i];
+    if (tier === 'far') { if (farBudget <= 0) continue; const n = Math.max(1, bake(w, Math.min(bakeBudget, farBudget), tier)); farBudget -= n; bakeBudget -= n; }
+    else bakeBudget -= Math.max(1, bake(w, bakeBudget, tier)); }
   V.stats.pendingBake = bakeCand.length;
   cards.sort((a, b) => a[0] - b[0]);
   updateCards(cards.slice(0, LODP.cards).map(c => c[1]), now);
@@ -1046,11 +1182,12 @@ function frame(now) {
   const drawRanges = (buf, ranges, list, all) => { if (!list.length || !buf.n) return; gl.bindVertexArray(buf.vao);
     if (list.length > all) { buf.bind(0); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, buf.n); draws++; return; }
     for (const w of list) { const rg = ranges.get(w.i); if (!rg || !rg[1]) continue; buf.bind(rg[0]); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, rg[1]); draws++; } };
-  if (!V.skip.has('t3')) { drawRanges(t3, t3Range, t3Walls, 300); drawRanges(t4, t4Range, t4Walls, 300); drawRanges(t5, t5Range, t5Walls, 120); }
+  // T4 / T5: one draw of the whole buffer once there are more than a few walls (the shader drops walls not in that tier)
+  if (!V.skip.has('t3')) { drawRanges(t3, t3Range, t3Walls, 300); drawRanges(t4, t4Range, t4Walls, 40); drawRanges(t5, t5Range, t5Walls, 12); }
   PM('plates');
   if (impRuns.length && !V.skip.has('imp')) { common(P.imp); gl.bindVertexArray(emptyVAO);
     for (const [w, c0, c1, A, fl] of impRuns) {
-      if (!w.imp || !w.imp.ready) continue; w.imp.used = now;
+      if (!w.imp || !w.imp.ready) continue; w.imp.used = now; if (w.impLo) w.impLo.used = now;
       bindTex(0, gl.TEXTURE_2D, w.imp.tex, P.imp, 'uImp'); gl.uniform1f(P.imp.u.uFade, A); gl.uniform2fv(P.imp.u.uLF, fl ? LF : NOFADE);
       gl.uniform1f(P.imp.u.uWallX, wallArr[4 * w.i]); gl.uniform1f(P.imp.u.uZ0, w.z0); gl.uniform1f(P.imp.u.uC0, c0); gl.uniform1f(P.imp.u.uC1, c1); gl.uniform1f(P.imp.u.uCols, w.cols);
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); draws++; } }
@@ -1058,7 +1195,7 @@ function frame(now) {
   if (drawRuns.length) { setupLineProg(P.line); gl.bindVertexArray(emptyVAO);
     let cur = null;
     for (const [w, c0, c1] of drawRuns) {
-      if (cur !== w) { wallUniforms(P.line, w, wallArr[4 * w.i]); cur = w; }
+      if (cur !== w) { wallUniforms(P.line, w, wallArr[4 * w.i]); gl.uniform1f(P.line.u.uAlpha, wallArr[4 * w.i + 1]); cur = w; }
       const a = w.colStart[c0], n = w.colStart[c1] - a;
       gl.uniform1i(P.line.u.uBase, w.base + a); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, n); draws++; } }
   PM('lines');
@@ -1117,7 +1254,7 @@ function frame(now) {
   const cpu = performance.now() - c0;
   if (cpu > 30) { PROF.worst.push([+cpu.toFixed(1), PROF.cur.filter(x => x[1] > 2)]); PROF.worst.sort((a, b) => b[0] - a[0]); PROF.worst.length = Math.min(PROF.worst.length, 12); }
   V.stats.cpu.push(cpu); if (V.stats.cpu.length > 240) V.stats.cpu.shift();
-  Object.assign(V.stats, { draws, inst, imp: impRuns.length, t3: t3Walls.length, t4: t4Walls.length, t5: t5Walls.length, lineRuns: drawRuns.length, gpuBytes: gpuBytes + impBytes.lo + impBytes.hi, visibleWalls: dispList.length, wantQueue: wl.length });
+  Object.assign(V.stats, { draws, inst, imp: impRuns.length, t3: t3Walls.length, t4: t4Walls.length, t5: t5Walls.length, lineRuns: drawRuns.length, gpuBytes: gpuBytes + impBytes.far + impBytes.lo + impBytes.hi + binBytes, visibleWalls: dispList.length, wantQueue: wl.length });
   V.stats.frames++;
   if (!V.load.firstFrame) { V.load.firstFrame = performance.now() - t0Boot; setLoading(''); }
   adapt();

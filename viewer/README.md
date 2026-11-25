@@ -21,14 +21,23 @@ One shared clock (the slider, the blue gate across every lane) drives all lanes.
 
 | presentation | what shows |
 |---|---|
-| Clock (paused, default) | each lane's frame at the clock, solid at its own X; the lane's frames within 6 months as ghosts; releases solid |
-| Now (playing, or N) | each lane's frame rides on the clock plane and morphs into the next one (kept lines slide, removed fade red, added grow green) |
-| Gallery (N) | every frame solid at its X: the streets through time |
+| Clock (paused, default) | every frame solid at its own X: the streets through time. The clock picks each lane's frame in focus (the frame at the clock: its title comes first, it never fades, the morph starts from it) |
+| Now (playing, or N) | each lane's frame rides on the clock plane and morphs into the next one (kept lines slide, removed fade red, added grow green); the frames the clock has not reached stand at their X, the ones it passed are carried by the live wall |
+
+Walls close to the camera fade out (from 6000 units, gone at 2800: a 4096-high wall fills the screen at about 3550), so
+they do not cover the view with a wall that is too close to read. Not faded: the frames at the clock (search, bookmarks,
+the file panel, `[` `]` and the tour set the clock to their wall) and any wall in front of the camera at 2.2 px per line
+or more (walk up to a wall to read it without moving the clock). A fading wall is drawn as a ghost: no plate, its text at
+its alpha; the fade eases in and out over about a third of a second. Old `pm=gallery` links open in Clock. The software renderer (llvmpipe)
+keeps the light presentation: the frames at the clock solid, the lane's frames within 3 months as ghosts, releases solid
+(`?allf=1` / `?allf=0` forces either).
 
 Release marks (yellow: DreamSTer pins; blue: tags) sit on the time axis under the slider: click one, or PageUp /
 PageDown, to jump. Frames stream in around the camera and the clock: a worker fetches a lane chunk (keyframe + up to
-24 deltas), applies the edit scripts and builds the wall; the GPU keeps a pool of walls and evicts the least recently
-used ones.
+24 deltas), applies the edit scripts and builds the wall; the GPU keeps a pool of walls. A wall stays wanted (safe from
+eviction) for 1 s after it was last in the streaming set; past that the least recently used walls are evicted first,
+then wanted walls clearly farther than the one arriving. In Now, each live wall in streaming range brings its next
+frame along.
 
 ## Controls
 
@@ -40,7 +49,7 @@ used ones.
 | click a file header bar | file panel: the file in every lane that holds it |
 | P , . | play / pause, one month back / forward |
 | PageUp / PageDown | previous / next release |
-| N | Clock / Now / Gallery |
+| N | Clock / Now |
 | `[` `]`, `{` `}` | same place in the lane's previous / next frame; previous / next lane |
 | G | overview |
 | 1-5 | colour: origin, age, survival, diff vs previous frame, repo of origin |
@@ -56,8 +65,11 @@ The URL hash keeps the camera, clock, mode and presentation.
 Every wall has a title: lane, month (or release tag / DreamSTer pin; `approx` for dc4ever, the date range for nullDCe),
 commit. Titles are drawn in screen space (one instanced draw, the SDF font) above the wall's top edge, or stuck to the
 top of the screen while the wall covers it, at 16 to 25 CSS px for the lane's frame at the clock, smaller and fainter for
-other solid walls and ghosts. They are placed greedily every frame (the frame at the clock first, then solid walls, then
-ghosts, nearer first), so none overlap; a title behind a solid wall is hidden.
+other walls (none on a wall faded below half). They are placed greedily every frame (the frame at the clock first, then
+solid walls, then ghosts, nearer first), so none overlap. Titles and labels are drawn without depth test, so occlusion is
+decided on the CPU: rays through 9 x 3 points of the box a title is placed in (7 x 2 for a label) are tested against
+every opaque wall in view (front or back, sorted by X); if any ray meets one before the plane the title lies in, the title
+is hidden. That holds for titles stuck to the top of the screen too.
 
 ## Text rendering (three tiers per line, chosen per pixel)
 
@@ -68,15 +80,22 @@ ghosts, nearer first), so none overlap; a title behind a solid wall is hidden.
   edges anti-aliased against the neighbouring cells.
 - Lines are drawn down to 0.28 px per line (fully from 0.45, as bars); over that band they fade in per pixel while the
   wall's impostor fades out under them, so nothing pops.
-- Far: impostors baked from the same shader (16 px per column x 2048 rows from 0.1 px per line at the wall, 4 px per
-  column below), then per-file quads (to 0.03 px per line), then per-column strips, then one quad per wall.
+- Far: impostors baked from the same shader: hi (16 px per column x 2048 rows, the 6 nearest walls from 0.1 px per line),
+  lo (4 x 1024, from 0.15 px per line), far (2 x 256, below that); a wall's impostor is only upgraded, and one with a hi
+  impostor keeps its lower one, so evicting the hi one (288 MB cap) falls back to it instead of to file quads. Walls in
+  view between 0.03 and 0.045 px per line that have no impostor yet are streamed at the lowest priority to bake one, so
+  mid-range walls show their text, not blocks. Below 0.03 px per line: per-column strips, then one quad per wall; the
+  per-file quads (T3) remain only for a wall whose impostor is not baked yet. While the camera moves faster than 25000
+  units/s no hi impostor is baked and none is upgraded from far (the walls pass before the bake pays off). Freed
+  impostor textures go to a 96 MB recycle bin by size and are reused (a fresh texture costs far more GPU time than a
+  bake into it); at most 48 MB of new textures per frame.
 - File cards: on the 12 nearest solid walls (from 0.12 px per line) every file has its header bar, a screen-space outline
   and, where the path label would be smaller than 12 CSS px, its file name grown in the wall plane to fit the card.
 - Look-ahead: streaming (from 0.045 px per line), the sharp impostor bake and the file cards use the nearer of the
   camera's distance and its distance 1.5 s ahead along its velocity, so walls ahead are ready before the camera arrives.
 
-Up close, the lane's other walls behind the wall being read (ghosts, releases) fade out, so their text does not show
-through as a second layer. On llvmpipe the canvas renders at half scale and lines in motion during a morph are bars;
+Up close, the lane's other walls just behind the wall being read (the nearest solid one ahead) fade out, so their text
+does not show through as a second layer. On llvmpipe the canvas renders at half scale and lines in motion during a morph are bars;
 `?scale=1` and `?morphglyph=1` turn both off (used for the screenshots in `agents/viewer3/shots/`).
 
 ## Attract mode (the tour)
@@ -109,7 +128,7 @@ node tools/render_score.mjs --dur 180 --seed 2026 --out agents/score   # offline
 ## Benchmark
 
 The bench button (or `?bench`, `?bench=A,E`, `&dur=`) runs five scripted paths: A file street (sh4 interpreter
-through its frames), B orbit (Gallery), C lane flights (Gallery), D close reading (nullDC 3), E live playback (Now,
+through its frames), B orbit, C lane flights (A to C in Clock at the end, every frame), D close reading (nullDC 3), E live playback (Now,
 2010 to 2026). The score card shows the GPU, canvas resolution, fps mean and 1 % low (mean of the slowest 1 % of
 frames) per path and an overall score (10 x geometric mean of the fps means). Dev only: `?bench&dev=1` on the dev server
 also posts the results to `agents/verify/` (removed from `dist/`). `tools/verify/run.mjs bench|shots|eval` drives
