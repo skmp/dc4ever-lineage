@@ -93,7 +93,7 @@ server.on('clientError', (err, sock) => { try { sock.end('HTTP/1.1 400 Bad Reque
 server.listen(PORT, '0.0.0.0', () => {
   const addrs = Object.values(os.networkInterfaces()).flat().filter(a => a && a.family === 'IPv4' && !a.internal).map(a => a.address);
   const wsl = addrs.find(a => !a.startsWith('172.17.')) || addrs[0] || '127.0.0.1';
-  console.log(`nullDC lineage viewer on 0.0.0.0:${PORT}${REPORTS ? '' : ' (reports off)'}`);
+  console.log(`dc4ever lineage viewer on 0.0.0.0:${PORT}${REPORTS ? '' : ' (reports off)'}`);
   console.log(`open from Windows:  http://${wsl}:${PORT}/`);
   for (const a of addrs) if (a !== wsl) console.log(`  also:  http://${a}:${PORT}/`);
 });

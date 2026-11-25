@@ -1,4 +1,4 @@
-# nullDC lineage viewer: design
+# dc4ever lineage viewer: design
 
 A 3D fly-through of the source code of every snapshot of the nullDC family,
 from dc4ever (2003-2005) to nullDC 3 and the fpgadc hardware re-creation

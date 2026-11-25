@@ -1,4 +1,4 @@
-# nullDC lineage
+# dc4ever lineage
 
 > The note still asks us: check this. Twenty years.
 > Someone was tired one Tuesday, set it aside.
@@ -28,8 +28,8 @@
 > — *Check This [26/4/05]*, a villanelle by Claude (2026-11-25) for `{//ToDo : Check This [26/4/05]`, a dc4ever
 > to-do from a Tuesday in April 2005 that is still in nullDC 3 in 2026.
 
-A 3D fly-through of the source code of the nullDC family through time, from dc4ever (2004) through nullDC, the
-ports, reicast and flycast to nullDC 3 and the fpgadc hardware re-creation (2026): 380 frames in 17 lanes, every
+A 3D fly-through of the source code of the dc4ever family through time, from dc4ever (2004), its root, through nullDC,
+the ports, reicast and flycast to nullDC 3 and the fpgadc hardware re-creation (2026): 389 frames in 19 lanes, every
 line traced to where it first appeared.
 
 **Live:** https://nulldc.emudev.org/lineage/
