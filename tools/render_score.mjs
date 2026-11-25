@@ -8,6 +8,8 @@ import { spawn } from 'node:child_process'; import fs from 'node:fs'; import os 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const args = process.argv.slice(2), opt = (k, d) => { const i = args.indexOf('--' + k); return i < 0 ? d : args[i + 1]; };
 const DUR = +opt('dur', 180), SEED = +opt('seed', 2026), SR = 48000, OUT = path.resolve(ROOT, opt('out', 'agents/score'));
+// --drive FILE: [{t, year, fork, density, arc}, ...] every 0.5 s (a video's own timeline) instead of the synthetic run
+const DRIVE = opt('drive', null) ? fs.readFileSync(path.resolve(ROOT, opt('drive')), 'utf8') : 'null';
 const CHROME = process.env.CHROME || path.join(os.homedir(), '.cache/ms-playwright/chromium-1243/chrome-linux64/chrome');
 fs.mkdirSync(OUT, { recursive: true });
 const udd = fs.mkdtempSync(path.join(os.tmpdir(), 'score-chrome-'));
@@ -30,7 +32,9 @@ try {
     const S = m.createScore(ctx, { seed: ${SEED}, volume: 0.6 });
     const D = ${DUR}, forks = [0.12, 0.3, 0.42, 0.55, 0.71].map(f => f * D);
     let fork = 0;
-    for (let t = 0; t < D; t += 0.5) {
+    const DRV = ${DRIVE};
+    if (DRV) for (const d of DRV) { if (d.t < D) S.schedule(d.t, Math.min(D, d.t + 0.5), d); }
+    else for (let t = 0; t < D; t += 0.5) {
       const u = t / D; fork = forks.filter(x => x <= t).length;
       S.schedule(t, Math.min(D, t + 0.5), { year: 2004 + 22.9 * u, fork, density: 0.5 + 0.45 * Math.sin(u * 17), arc: u > 0.66 ? Math.sin((u - 0.66) / 0.34 * Math.PI) : 0 });
     }
@@ -49,7 +53,7 @@ try {
   const wav = Buffer.alloc(44 + N * 4); wav.write('RIFF', 0); wav.writeUInt32LE(36 + N * 4, 4); wav.write('WAVEfmt ', 8); wav.writeUInt32LE(16, 16); wav.writeUInt16LE(1, 20); wav.writeUInt16LE(2, 22);
   wav.writeUInt32LE(SR, 24); wav.writeUInt32LE(SR * 4, 28); wav.writeUInt16LE(4, 32); wav.writeUInt16LE(16, 34); wav.write('data', 36); wav.writeUInt32LE(N * 4, 40);
   for (let i = 0; i < N; i++) { wav.writeInt16LE(Math.max(-32768, Math.min(32767, Math.round(L[i] * 32767))), 44 + 4 * i); wav.writeInt16LE(Math.max(-32768, Math.min(32767, Math.round(R[i] * 32767))), 46 + 4 * i); }
-  const name = `score-seed${SEED}-${DUR}s`; fs.writeFileSync(path.join(OUT, name + '.wav'), wav);
+  const name = opt('name', `score-seed${SEED}-${DUR}s`); fs.writeFileSync(path.join(OUT, name + '.wav'), wav);
   // measurements: peak, RMS, clipped samples, clicks (second-difference spikes far above the local level), key (chroma)
   let peak = 0, sum = 0, clip = 0; for (const ch of [L, R]) for (let i = 0; i < N; i++) { const v = Math.abs(ch[i]); peak = Math.max(peak, v); sum += v * v; if (v >= 0.999) clip++; }
   const rms = Math.sqrt(sum / (2 * N));
