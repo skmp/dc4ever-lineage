@@ -1,0 +1,5 @@
+child skmp_nullDCe.git@c3e0c9b: 26476 significant own lines; in base skmp_nullDCe.git@39c0550: 26223 (99.0%); novel 253
+  psp_main                          0/253 novel lines = 0.0%   (all child lines found: 17339/26476 = 65.5%)
+  psp_first                         0/253 novel lines = 0.0%   (all child lines found: 18217/26476 = 68.8%)
+  reicast                           0/253 novel lines = 0.0%   (all child lines found: 8187/26476 = 30.9%)
+  union                             0/253 = 0.0%

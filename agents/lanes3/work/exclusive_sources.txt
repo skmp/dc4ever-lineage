@@ -1,0 +1,63 @@
+43/29613 child lines in nullDC only (not in nullDCe, n360, reicast, fly, n4wii)
+     14 dc/mem/sh4_internal_reg.cpp
+      9 plugs/drkPvr/nullRend.cpp
+      6 dc/mem/sb.cpp
+      4 dc/sh4/ccn.cpp
+      1 dc/aica/aica_if.cpp
+      1 dc/arm7/aica.h
+      1 dc/arm7/mem.cpp
+      1 dc/arm7/vbaARM.h
+      1 dc/mem/mmu.cpp
+      1 dc/sh4/sh4_cpu.cpp
+      1 plugs/ImgReader/iso9660.cpp
+72/29613 child lines in n360 only (not in nullDCe, nullDC, reicast, fly, n4wii)
+     24 plugs/nullAICA/sgc_if.cpp
+     23 dc/arm7/SoundOut.cpp
+     15 plugs/drkPvr/threaded.cpp
+      7 plugs/drkPvr/threaded.h
+      2 dc/sh4/dmac.h
+      1 psp/include/melib.h
+     dc/arm7/SoundOut.cpp | #define MAX_UNPLAYED 16384
+1030/29613 child lines in reicast only (not in nullDCe, nullDC, n360, fly, n4wii)
+    344 psp/dc/sh4/rec_v2/ssa_regalloc.h
+     69 dc/gdrom/gdromv3.cpp
+     57 dc/gdrom/disc_common.cpp
+     51 plugs/ImgReader/imgread.h
+     49 dc/sh4/rec_v2/shil.cpp
+     42 dc/sh4/rec_v2/decoder.cpp
+     35 plugs/ImgReader/cdi.cpp
+     32 plugs/ImgReader/cue.cpp
+     29 dc/sh4/tmu.cpp
+     26 dc/pvr/pvr_if.cpp
+     20 dc/aica/aica_if.cpp
+     20 plugs/ImgReader/chd.cpp
+     19 psp/dc/sh4/rec_v2/psp_driver.cpp
+483/29613 child lines in fly only (not in nullDCe, nullDC, n360, reicast, n4wii)
+    216 dc/sh4/rec_v2/shil.cpp
+    114 dc/sh4/rec_v2/ssa.cpp
+     30 dc/gdrom/gdromv3.cpp
+     16 dc/maple/maple_if.cpp
+     11 dc/maple/maple_devs.cpp
+     10 dc/sh4/dmac.cpp
+      9 dc/sh4/rec_v2/shil.h
+      9 psp/dc/sh4/rec_v2/psp_driver.cpp
+      8 dc/mem/sh4_internal_reg.cpp
+      7 dc/aica/aica_if.cpp
+      5 dc/arm7/arm7.cpp
+      4 dc/arm7/mem.cpp
+      4 dc/arm7/mem.h
+10/29613 child lines in fly21feb only (not in nullDCe, nullDC, n360, reicast, fly)
+      3 psp/dc/sh4/rec_v2/psp_driver.cpp
+      1 dc/mem/mmu.h
+34/21359 child lines in reicast only (not in nullDCe, nullDC, fly)
+      7 plugs/ImgReader/cdi.cpp
+      6 dc/mem/sh4_mem.cpp
+      6 dc/sh4/dmac.cpp
+      5 dc/maple/maple_devs.cpp
+      4 dc/mem/sh4_area0.cpp
+203/21359 child lines in fly only (not in nullDCe, nullDC, reicast)
+     84 dc/gdrom/gdromv3.cpp
+     70 dc/sh4/rec_v2/shil.cpp
+     10 dc/sh4/sh4_cpu.cpp
+      8 dc/maple/maple_devs.cpp
+      5 dc/sh4/ccn.cpp

@@ -1,0 +1,8 @@
+24/57383 child lines in psp only (not in nullDCe, nullDC, n360, reicast, fly)
+      7 plugs/nullAICA/mem.cpp
+      3 dc/aica/aica_if.cpp
+      3 dc/pvr/pvr_sb_regs.cpp
+      3 dc/sh4/rec_v2/decoder.cpp
+      2 dc/sh4/sh4_sched.h
+      2 plugs/drkPvr/gxRend.cpp
+      1 archive/gxRend_fmv_tev.fx

@@ -1,0 +1,19 @@
+  7006  dc/arm7/arm-new.h  ==  nulldc/plugins/vbaARM/arm-new.h
+    10  dc/mem/sh4_area0.h  ==  nulldc/nullDC/dc/mem/sh4_area0.h
+    12  dc/pvr/pvr_sb_regs.h  ==  nulldc/nullDC/dc/pvr/pvr_sb_regs.h
+    65  dc/sh4/cpg.cpp  ==  nulldc/nullDC/dc/sh4/cpg.cpp
+    14  dc/sh4/cpg.h  ==  nulldc/nullDC/dc/sh4/cpg.h
+     8  dc/sh4/rtc.h  ==  nulldc/nullDC/dc/sh4/rtc.h
+     8  dc/sh4/sci.h  ==  nulldc/nullDC/dc/sh4/sci.h
+     8  dc/sh4/tmu.h  ==  nulldc/nullDC/dc/sh4/tmu.h
+    28  dc/sh4/ubc.h  ==  nulldc/nullDC/dc/sh4/ubc.h
+    41  deps/crypto/md5.h  ==  nulldc/plugins/ImgReader/deps/md5.h
+   387  deps/crypto/sha1.cpp  ==  nulldc/plugins/ImgReader/deps/sha1.cpp
+     9  plugs/ImgReader/gd_driver.h  ==  nulldc/plugins/ImgReader/gd_driver.h
+   144  plugs/ImgReader/pfctoc.h  ==  nulldc/plugins/ImgReader/pfctoc.h
+    20  plugs/ImgReader/resource.h  ==  nulldc/plugins/ImgReader/resource.h
+    47  plugs/drkPvr/ta_const_df.h  ==  nulldc/plugins/drkPvr/ta_const_df.h
+    15  plugs/nullAICA/mem.h  ==  nulldc/plugins/nullAICA/mem.h
+    29  plugs/nullAICA/resource.h  ==  nulldc/plugins/nullAICA/resource.h
+    50  plugs/nullAICA/sgc_if.h  ==  nulldc/plugins/nullAICA/sgc_if.h
+TOTAL shared lines 7901 files 18

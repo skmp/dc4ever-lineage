@@ -1,0 +1,22 @@
+    26  dc/asic/asic.h  ==  dc/asic/asic.h
+    21  dc/gdrom/gdrom_if.h  ==  dc/gdrom/gdrom_if.h
+    37  dc/maple/maple_helper.cpp  ==  dc/maple/maple_helper.cpp
+     7  dc/maple/maple_helper.h  ==  dc/maple/maple_helper.h
+    13  dc/maple/maple_if.h  ==  dc/maple/maple_if.h
+    10  dc/mem/sh4_area0.h  ==  dc/mem/sh4_area0.h
+    14  dc/sh4/cpg.h  ==  dc/sh4/cpg.h
+    98  dc/sh4/intc_types.h  ==  dc/sh4/intc_types.h
+   409  dc/sh4/sh4_cpu.h  ==  dc/sh4/sh4_cpu.h
+     6  plugs/EmptyAICA/EmptyAICA.h  ==  plugs/EmptyAICA/EmptyAICA.h
+     9  plugs/ImgReader/gd_driver.h  ==  plugs/ImgReader/gd_driver.h
+    45  plugs/ImgReader/mds_reader.h  ==  plugs/ImgReader/mds_reader.h
+   144  plugs/ImgReader/pfctoc.h  ==  plugs/ImgReader/pfctoc.h
+    94  plugs/ImgReader/remote_tcp.cpp  ==  plugs/ImgReader/remote_tcp.cpp
+    20  plugs/ImgReader/resource.h  ==  plugs/ImgReader/resource.h
+    16  plugs/drkPvr/config.h  ==  plugs/drkPvr/config.h
+   134  plugs/nullAICA/mem.cpp  ==  plugs/nullAICA/mem.cpp
+    15  plugs/nullAICA/mem.h  ==  plugs/nullAICA/mem.h
+    29  plugs/nullAICA/resource.h  ==  plugs/nullAICA/resource.h
+    61  plugs/nullExtDev/nullExtDev.cpp  ==  plugs/nullExtDev/nullExtDev.cpp
+   139  sh4_reg_playground.h  ==  sh4_reg_playground.h
+TOTAL shared lines 1347 files 21

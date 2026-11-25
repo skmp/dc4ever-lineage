@@ -1,0 +1,13 @@
+    10  dc/mem/sh4_area0.h  ==  nullDC/dc/mem/sh4_area0.h
+    12  dc/pvr/pvr_sb_regs.h  ==  nullDC/dc/pvr/pvr_sb_regs.h
+    14  dc/sh4/cpg.h  ==  nullDC/dc/sh4/cpg.h
+     8  dc/sh4/rtc.h  ==  nullDC/dc/sh4/rtc.h
+     8  dc/sh4/sci.h  ==  nullDC/dc/sh4/sci.h
+     8  dc/sh4/tmu.h  ==  nullDC/dc/sh4/tmu.h
+    28  dc/sh4/ubc.h  ==  nullDC/dc/sh4/ubc.h
+    41  deps/crypto/md5.h  ==  plugins/ImgReader/deps/md5.h
+   387  deps/crypto/sha1.cpp  ==  plugins/ImgReader/deps/sha1.cpp
+     9  plugs/ImgReader/gd_driver.h  ==  plugins/ImgReader/gd_driver.h
+    20  plugs/ImgReader/resource.h  ==  plugins/ImgReader/resource.h
+    47  plugs/drkPvr/ta_const_df.h  ==  plugins/drkPvr/ta_const_df.h
+TOTAL shared lines 592 files 12

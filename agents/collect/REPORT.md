@@ -28,6 +28,7 @@ Machine-readable output: `snapshots.json` (this dir), produced by `tools/snapsho
 | skmp/dreamcast-devtools | main | 2025-09-30 | 2026-10-24 | 534 / 534 | TypeScript devtools / debugger UI used by nullDC 3 (tag v3.0.0-pre). 0.1 % overlap (protocol strings). |
 | nulldc4wiiu/nulldc_wiiu (added 2026-11-25) | main | 2026-11-07 (own commits) | 2026-11-25 | 79 own / 1304 (1224 shared with nullDC4Wii) | **Git fork** of nullDC4Wii: last shared commit 1459ccb (2026-10-25); a native Wii U (Aroma) port with a GX2 renderer, fastmem JIT and HOME menu. Tags v0.800-U1 .. U2.2 (2026-11-13 .. 11-22). No code flows back either way. Unrelated to nullDC4Wii's own short-lived Wii U attempt (2026-11-13, removed 11-17). Evidence: `agents/lanes2/nullDC4WiiU-ancestry.md`. |
 | kernel64/HarissaDC (added 2026-11-25) | main | 2026-10-20 | 2026-11-20 | 7 / 7 | Xbox 360 Dreamcast emulator, a clean rewrite: CREDITS.md says it studied nullDC4Wii, nulldc-360 and flycast ("studied, not copied"). 0 identical own files, <= 0.5 % shared significant lines with any lane. Source arrives in one dump 37fa91c (2026-11-03); tags v0.2.0 .. v0.3.0. Evidence: `agents/lanes2/HarissaDC-ancestry.md`. |
+| PSP-Archive/nulldce-psp (added 2026-11-25) | main (lane: Experimental-builds = main + 2) | 2021-02-04 | 2021-10-17 | 22 / 39 | nullDCe's PSP port restored to build in 2021 (README: "compiled and restored by xiro and hlide in 2021"). First upload 95b5a20 is the PSP subset of nullDCe 39c0550: 106 files byte-identical, 93.1 % of its non-table lines in 39c0550; plus reicast's FSCA table and small flycast / reicast fixes. 2021-06 .. 08 copies: vbaARM ARM7 (arm-new.h identical to nullDC's) and nullAICA from nullDC / nulldc-360, image readers / scheduler / ssa_regalloc.h from reicast, shil / ssa from flycast. Nothing flowed back. Lane nullDCe-PSP. Evidence: `agents/lanes3/ancestry.md`. |
 | skmp/mister-utils (added: DreamSTer r6b submodule) | main | 2026-07-13 | 2026-10-24 | 7 / 7 | Tiny MiSTer helper scripts and a kernel module; cloned for completeness, not snapshotted. |
 
 Notes on dates: first/last are author dates on the default branch. Mirrors also contain `refs/pull/*`, which are
@@ -44,6 +45,7 @@ reicast --git fork (shared history, merged until 2019-05-17)--> flycast (2018-10
 reicast 95b673698 (2021-12-22) --git ancestry--> nullDC 3 (own commits from 2023-07-07 "fpgadc: refsw-offline")
 nullDCe main bad8d6a (2024-09-26) --imported snapshot, verbatim--> nullDC4Wii (2026-01-21)
 nullDC4Wii ~9659506 (2026-09-18) --imported snapshot--> NotDC-PS3 (2026-09-19)
+nullDCe 39c0550 (2009 PSP tree) --restored to build, 2021; copies from reicast, flycast, nullDC, nulldc-360--> nullDCe-PSP (PSP, 2021-02 .. 2021-10)
 nullDC4Wii 1459ccb (2026-10-25) --git fork--> nullDC4WiiU (Wii U, own commits from 2026-11-07)
 nullDC4Wii, nulldc-360, flycast --studied (CREDITS.md), no shared code--> HarissaDC (Xbox 360, 2026-11-03)
 fpgadc lane (branches from nullDC 3 / refsw, 2023-2026):
@@ -68,6 +70,7 @@ parent commit) and `tools/sharedfiles.py`. Measured edges:
 | nullDC 761dc87 | dc4ever | 0 | 0.6 % |
 | nullDC4Wii e812c58 | nullDCe bad8d6a | 203/203 | 100 % |
 | NotDC-PS3 5a32b94 | nullDC4Wii 9659506 | 229/272 | 90.4 % |
+| nullDCe-PSP 95b5a20 | nullDCe 39c0550 | 106/171 (+2 after CRLF) | 75.2 % (93.1 % without reicast's FSCA table) |
 | nullDC4WiiU 75bc844 | nullDC4Wii 1459ccb | 213/280 | 91.6 % (tree at 1459ccb identical, 243/243) |
 | HarissaDC v0.3.0 | nullDC4Wii / nulldc-360 / flycast | 0 own | 0.3 / 0.0 / 0.3 % (all lanes together 0.86 %) |
 | nullDC 3 038f7ef3 | reicast 95b673698 | (git) | 99.8 % |
@@ -93,7 +96,7 @@ Excluded and listed separately, so they can be turned back on:
   libzip, lzma, chdr, xbyak, vixl, glslang, imgui, SDL, lua, xxhash, picotcp, libretro-common, glm, stb, miniupnpc,
   json/nlohmann, glad, zstd, flac, ...). Extra per-repo rules: nulldc-360 `gui/shaders/` (third-party upscaler .cg and
   compiled shader headers), `gui/gui/` (libwiigui), `gui/utils/smb/`, `nullDC/emitter/disasm/` (binutils);
-  wren7-rtl `vendor/` (arm7di-tests-dreamcast). Largest: flycast 2026 688k lines (vixl 231k, glm 87k, imgui 73k,
+  wren7-rtl `vendor/` (arm7di-tests-dreamcast); nulldce-psp `psp/include/` (third-party PSP headers: Yabause me.h, Protothread.h, kubridge.h, PSPSDK pspdmac.h, melib.h). Largest: flycast 2026 688k lines (vixl 231k, glm 87k, imgui 73k,
   xxHash 63k ...), nullDC 3 443k (vixl 179k), reicast 2020 419k.
 - **generated** files: header line says generated / do not edit, data headers written by a gen program
   (dreamcast-tests `cases.h`, 228k lines), files over 2 MB (flycast `libretro_core_options_intl.h`, 92k), and

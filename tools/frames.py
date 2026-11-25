@@ -31,6 +31,7 @@ LANES = [
     ('nulldc-360', 'gligli_nulldc-360', 'master', {}),
     ('HarissaDC', 'kernel64_HarissaDC', 'main', {'tags': r'^v\d'}),
     ('nullDCe', 'skmp_nullDCe', 'skmp/ps2', {'date': {'39c0550': ('2009-10-16', '2008-2010', 'recovered archive committed 2017-11-20; latest in-source date 2009-10-16')}}),
+    ('nullDCe-PSP', 'PSP-Archive_nulldce-psp', 'Experimental-builds', {}),   # = main + the 2021-10-17 vbaARM.h fix
     ('nullDC4Wii', 'BenoitAdam_nullDC4Wii', 'main', {'tags': r'.'}),
     ('NotDC-PS3', 'Mayo1970_NotDC-PS3', 'main', {'tags': r'.'}),
     ('nullDC4WiiU', 'nulldc4wiiu_nulldc_wiiu', 'main', {'tags': r'.', 'not_in': 'BenoitAdam_nullDC4Wii'}),
@@ -66,6 +67,7 @@ IMPORTS = [
     ('NotDC-PS3', '5a32b94', 'initial repo: nullDC4Wii ~9659506'),
     ('minicast', '580d7b8', 'initial import: nullDC 3 fpgadc commits (2023-08 .. 2024-07)'),
     ('nullDC', '761dc87', 'first complete public tree (Google Code svn, 2010-05)'),
+    ('nullDCe-PSP', '95b5a20', 'first upload: nullDCe 39c0550 PSP tree restored to build (xiro, hlide, 2021)'),
 ]
 # DreamSTer releases: tag, date, DreamSTer commit, polly2-rtl pin, minicast pin (skmp/DreamSTer submodules)
 RELEASES = [('r1', '2026-07-17', 'd87e716', 'be391db', '697f565'), ('r2', '2026-07-17', 'fa11f4b', '7a70d24', '6fcc0e1'),
@@ -86,6 +88,11 @@ LANE_EDGES = {  # child: [(parent lane, kind, parent commit or None = parent's l
     'NotDC-PS3': [('nullDC4Wii', 'code', '9659506'), ('caique', 'copy', None)],
     'nullDC4WiiU': [('nullDC4Wii', 'code', 'FORK')],   # git fork of nullDC4Wii (last shared commit 1459ccb, 2026-10-25)
     'HarissaDC': [('nullDC4Wii', 'related', None), ('nulldc-360', 'related', None), ('flycast', 'related', None)],   # studied, not copied (CREDITS.md)
+    'nullDCe-PSP': [('nullDCe', 'code', '39c0550'),   # the 2009 PSP subset of the recovered archive, restored in 2021
+                    ('reicast', 'copy', None),        # FSCA table, image readers, sh4_sched, ssa_regalloc.h
+                    ('flycast', 'copy', None),        # shil / ssa passes, gdromv3 fixes
+                    ('nullDC', 'copy', None),         # vbaARM ARM7 (arm-new.h identical), nullAICA
+                    ('nulldc-360', 'copy', None)],    # weakest: nullAICA / SoundOut / threaded lines only it has
     'nullDCe': [('dc4ever', 'related', None)],
     'nullDC': [('dc4ever', 'related', None)],
     'polly2': [('nulldc3', 'related', None)],
@@ -218,7 +225,7 @@ def main():
             fk = shared_fork(repo, tip, opt['not_in'], ptip); FORK_OF[ln] = fk
             print(f'{ln}: shared history with {pl} ends at {fk[:9]} {cdate(repo, fk)}', file=sys.stderr)
             FORKS.append((pl, fk, f'{ln} fork point (last shared commit)'))
-    with Pool(9) as p: res = p.map(lane_frames, sorted(LANES, key=lambda c: -len(c[1]) if c[0] in ('flycast', 'reicast', 'nulldc3') else 0))
+    with Pool(int(os.environ.get('JOBS', 9))) as p: res = p.map(lane_frames, sorted(LANES, key=lambda c: -len(c[1]) if c[0] in ('flycast', 'reicast', 'nulldc3') else 0))
     forks = {ln: fk for ln, fk, fr in res}
     byl = {ln: fr for ln, fk, fr in res}
     order = [c[0] for c in LANES]

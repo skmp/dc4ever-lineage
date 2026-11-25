@@ -35,6 +35,7 @@ VRE = [re.compile(p, re.I) for p in VENDOR]
 EXTRA = {
  'gligli_nulldc-360': [r'^gui/shaders/', r'^gui/gui/', r'^gui/utils/smb/', r'/emitter/disasm/'],
  'skmp_wren7-rtl': [r'^vendor/'],
+ 'PSP-Archive_nulldce-psp': [r'^psp/include/'],   # third-party PSP headers (Yabause me.h, Protothread.h, kubridge.h, pspdmac.h, melib.h)
 }
 def is_vendored(repo, path):
     key = repo.rstrip('/').rsplit('/',1)[-1].replace('.git','')

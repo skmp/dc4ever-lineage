@@ -1,0 +1,6 @@
+1208fc5 own 163 47010 | 16056/21377 significant lines of A found in B = 75.1%
+7fe5a44 own 205 68128 | 16389/29613 significant lines of A found in B = 55.3%
+88567f2 own 204 68765 | 16612/29848 significant lines of A found in B = 55.7%
+894243b own 202 66843 | 16769/29232 significant lines of A found in B = 57.4%
+95b5a20 own 163 46964 | 16060/21359 significant lines of A found in B = 75.2%
+d6f1774 own 205 68128 | 16389/29613 significant lines of A found in B = 55.3%

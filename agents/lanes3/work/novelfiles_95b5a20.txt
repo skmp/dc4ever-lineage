@@ -1,0 +1,251 @@
+lines inbase novel | nullDC reicast flycast n4wii | none  path
+ 4105     0  4105 |     0  4102  4102     0 |     3  dc/sh4/rec_v2/sinTable.cpp
+  213    47   166 |     0    26    19     0 |   140  plugs/ImgReader/cdi.cpp
+  327   188   139 |     0    16    19     5 |   115  dc/maple/maple_devs.cpp
+  495   382   113 |     1     7    92     8 |    21  dc/gdrom/gdromv3.cpp
+  128    24   104 |     0     3    73     0 |    31  dc/sh4/rec_v2/shil.cpp
+  652   555    97 |    44    13     3     0 |    51  plugs/drkPvr/nullRend.cpp
+  342   293    49 |    25     5    15     0 |    18  dc/mem/sh4_internal_reg.cpp
+   37     3    34 |    32    32    32     0 |     2  dc/gdrom/gdrom_response.cpp
+  172   139    33 |     1    17    13     0 |    15  dc/mem/sh4_area0.cpp
+   79    47    32 |    22     3     3     0 |    10  dc/mem/memutil.cpp
+  133   104    29 |     2    12     6     1 |    15  dc/mem/sh4_mem.cpp
+  201   174    27 |     3     9     5     1 |    12  dc/sh4/dmac.cpp
+  327   300    27 |     0     4     8     1 |    18  dc/sh4/rec_v2/decoder.cpp
+  201   175    26 |     0     0     0     0 |    26  psp/main.cpp
+  326   301    25 |     6    11    21     1 |     4  dc/sh4/sh4_cpu.cpp
+  238   216    22 |     4     5     3     0 |    13  dc/mem/_vmem.cpp
+  107    88    19 |     1     9     7     0 |     8  dc/pvr/pvr_if.cpp
+  747   730    17 |     0     2     5     0 |    12  psp/dc/sh4/rec_v2/psp_driver.cpp
+  213   197    16 |    15     0     0     0 |     1  dc/sh4/intc.cpp
+  106    92    14 |     1     0     0     1 |    12  plugs/drkPvr/SPG.cpp
+  106    93    13 |     4     3     5     0 |     7  dc/aica/aica_if.cpp
+   14     1    13 |     0     0     0     0 |    13  psp/include/melib.h
+   31    20    11 |    11     0     0     0 |     0  dc/mem/mmu.cpp
+  276   265    11 |     0     0     1     0 |    10  dc/mem/sh4_internal_reg.h
+   66    55    11 |     2     3     5     0 |     4  dc/pvr/pvr_sb_regs.cpp
+   86    76    10 |     0     0     0     0 |    10  dc/dc.cpp
+   92    82    10 |    10     0     0     0 |     0  plugs/ImgReader/iso9660.cpp
+  104    95     9 |     0     2     7     0 |     2  dc/sh4/ccn.cpp
+  105    96     9 |     0     0     0     0 |     9  plugs/ImgReader/common.cpp
+   13     4     9 |     0     0     0     0 |     9  psp/include/pspdmac.h
+   65    58     7 |     4     0     0     0 |     3  dc/pvr/pvrLock.cpp
+  119   113     6 |     0     0     4     0 |     2  dc/gdrom/gdromv3.h
+  295   289     6 |     0     4     4     0 |     2  dc/sh4/sh4_fpu.cpp
+   53    47     6 |     1     0     2     0 |     4  plugs/ImgReader/ImgReader.cpp
+   48    42     6 |     1     2     2     0 |     3  plugs/drkPvr/regs.cpp
+  137   132     5 |     0     2     2     0 |     3  dc/sh4/tmu.cpp
+   57    52     5 |     0     0     0     0 |     5  plugs/drkMapleDevices/drkMapleDevices.cpp
+   86    82     4 |     0     2     2     0 |     2  dc/maple/maple_if.cpp
+  159   155     4 |     0     0     0     0 |     4  dc/sh4/bsc.cpp
+   46    42     4 |     0     2     2     0 |     2  dc/sh4/rec_v2/blockmanager.cpp
+  102    98     4 |     0     0     0     0 |     4  dc/sh4/rec_v2/driver.cpp
+   83    79     4 |     0     0     0     0 |     4  dc/sh4/sh4_interpreter.cpp
+   52    48     4 |     0     0     0     0 |     4  nullDC.cpp
+   13    10     3 |     1     1     2     0 |     0  dc/mem/mmu.h
+  142   139     3 |     0     2     2     0 |     1  dc/sh4/rec_v2/shil_canonical.h
+   47    44     3 |     0     2     2     0 |     1  dc/sh4/sh4_opcode_list.h
+   61    58     3 |     0     0     0     0 |     3  dc/sh4/sh4_registers.h
+   62    59     3 |     0     0     0     0 |     3  plugs/drkPvr/drkPvr.cpp
+  115   112     3 |     0     2     2     0 |     1  types.h
+    9     7     2 |     0     0     0     0 |     2  dc/dc.h
+   29    27     2 |     1     1     2     0 |     0  dc/sh4/ccn.h
+   37    35     2 |     0     0     0     0 |     2  dc/sh4/dmac.h
+    5     3     2 |     0     0     2     0 |     0  plugs/ImgReader/ImgReader.h
+   37    36     1 |     0     1     0     0 |     0  dc/mem/_vmem.h
+   47    46     1 |     0     0     0     0 |     1  dc/sh4/rec_v2/ngen.h
+    2     1     1 |     0     0     0     0 |     1  dc/sh4/rec_v2/rec_config.h
+   47    46     1 |     0     0     0     0 |     1  dc/sh4/rec_v2/shil.h
+    1     0     1 |     0     1     1     0 |     0  dc/sh4/rec_v2/sinTable.h
+   45    44     1 |     0     0     0     0 |     1  dc/sh4/sh4_registers.cpp
+   57    56     1 |     0     0     0     0 |     1  plugins/plugin_types.h
+    5     4     1 |     1     0     0     0 |     0  plugs/drkPvr/spg.h
+TOTAL 21359 16060 5299 [193, 4306, 4475, 18] 651
+
+# samples of novel lines found nowhere
+plugs/ImgReader/cdi.cpp
+     #define CDI_V2 0x80000004
+     #define CDI_V3 0x80000005
+     #define CDI_V35 0x80000006
+dc/maple/maple_devs.cpp
+     #include "../zlib/zlib.h"
+     #include "pspDmac.h"
+     sceKernelDcacheWritebackInvalidateAll();
+plugs/drkPvr/nullRend.cpp
+     #include "pspDmac.h"
+     bool changed = true;
+     ScePspFMatrix4 curr_mtx;
+dc/sh4/rec_v2/shil.cpp
+     //u32 RegisterWrite[sh4_reg_count];
+     //u32 RegisterRead[sh4_reg_count];
+     void IdentityMovePass(DecodedBlock* blk)
+psp/main.cpp
+     int pspAllocExtraVram();
+     /*SceKernelLMOption option;
+     printf("Loading exception.prx ..\n");*/
+dc/gdrom/gdromv3.cpp
+     #include "../plugs/ImgReader/ImgReader.h"
+     #include "pspDmac.h"
+     /*DEBUG_LOG(GDROM, "gd_get_subcode: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x",
+dc/mem/sh4_internal_reg.cpp
+     ALIGN(64) u8 sq_both[64];
+     ALIGN(32) u8 OnChipRAM[OnChipRAM_SIZE];
+     ALIGN(32) RegisterStruct CCN[20];
+dc/sh4/rec_v2/decoder.cpp
+     #define BLOCK_MAX_SH_OPS_SOFT 510
+     /*sh4dec(i0100_nnnn_0000_0111)
+     block.Emit(shop_sync_sr);*/
+dc/mem/sh4_area0.cpp
+     if ((addr<= 0x005F67FF)) // :Unassigned
+     //INFO_LOG(MEMORY, "Read from area0_32 not implemented [Unassigned], addr=%x", addr);
+     if ((addr>= 0x005F7000) && (addr<= 0x005F70FF)) // :GD-ROM
+dc/mem/sh4_mem.cpp
+     #include "pspDmac.h"
+     if (unlikely(size >= 512)){
+     sceKernelDcacheWritebackInvalidateAll();
+dc/mem/_vmem.cpp
+     size_t iirf=(size_t)_vmem_MemInfo_ptr[page];
+     return (T)_vmem_RF8[id/4](addr);
+     return (T)_vmem_RF16[id/4](addr);
+psp/include/melib.h
+     #include <stdbool.h>
+     #include <pspkerneltypes.h>
+     * The mode of execution for a specific job.
+dc/sh4/dmac.cpp
+     void meUtilityDcacheWritebackInvalidateAll(void)
+     unsigned int cachesize_bits;
+     asm volatile("mfc0 %0, $16; ext %0, %0, 6, 3" : "=r" (cachesize_bits));
+plugs/drkPvr/SPG.cpp
+     spg_LineSh4Cycles=(u32)((u64)SH4_CLOCK*(u64)(SPG_LOAD.hcount+1)/(u64)pixel_clock);
+     //rend_set_fb_scale(scale_x,scale_y);
+     bool render_end_pending;
+psp/dc/sh4/rec_v2/psp_driver.cpp
+     if (unlikely(emit_FreeSpace()<16*1024))
+     if (unlikely(readwriteparams(op,wasram,ptr)))
+     if (op->rs2.is_imm()) emit_li(psp_a1,op->rs2._imm);
+dc/dc.cpp
+     #include "../plugs/drkPvr/nullRend.h"
+     #include "sh4/rec_v2/sinTable.h"
+     /*sh4_cpu.SetRegister(reg_gbr,0x8c000000);
+dc/mem/memutil.cpp
+     #define GDROM_OPCODE ((u16)0x30F9)
+     //if (EnabledPatches & patch_syscall_system)
+     //if (EnabledPatches & patch_syscall_font)
+dc/mem/sh4_internal_reg.h
+     extern ALIGN(32) RegisterStruct CCN[20]; //CCN : 14 registers
+     extern ALIGN(32) RegisterStruct UBC[20]; //UBC : 9 registers
+     extern ALIGN(32) RegisterStruct BSC[20]; //BSC : 18 registers
+plugs/ImgReader/common.cpp
+     #include "pspDmac.h"
+     sceKernelDcacheWritebackInvalidateAll();
+     sceDmacMemcpy(out_buff,in_buff,to);
+psp/include/pspdmac.h
+     * dmac.c - A DMAC function
+     * Copyright (c) 2016 173210 <root.3.173210@live.com>
+     * Copy data in memory using DMAC
+dc/pvr/pvr_if.cpp
+     #include "pspDmac.h"
+     const u32 bank_bit = VRAM_BANK_BIT;
+     *(u16*)&vram.data[pvr_map32(addr)]=data;
+dc/aica/aica_if.cpp
+     bool _firstTime = true;
+     if (unlikely(_firstTime)){
+     //printf("ReadMem_aica_rtc : invalid address\n");
+plugs/drkMapleDevices/drkMapleDevices.cpp
+     extern u8 CodeCache[CODE_SIZE];
+     if (pad.Buttons&PSP_CTRL_SELECT){
+     static int codeNum = 0;
+dc/pvr/pvr_sb_regs.cpp
+     if(unlikely(0x8201 != (dmaor &DMAOR_MASK)))
+     if(unlikely(len & 0x1F))
+     u8* base=&mem_b[SB_SDSTAW & (RAM_MASK - 31)];
+dc/sh4/bsc.cpp
+     /*vreg_2&=~mask_write;
+     vreg_2|=BSC_PDTRA.full&mask_write;*/
+     /*vreg_2&=~mask_write;
+dc/sh4/rec_v2/driver.cpp
+     //sh4_int_bCpuRun=false;
+     DecodedBlock* blk=dec_DecodeBlock(bpc,fpscr,SH4_TIMESLICE/2);
+     //printf("rdv_FailedToFindBlock ~ %08X\n",next_pc);
+dc/sh4/sh4_cpu.cpp
+     macf = (u64)r[n] * (u64)r[m];
+     macf = (s64)(s32)r[n] * (s64)(s32)r[m];
+     macf += (s64)rm * (s64)rn;
+dc/sh4/sh4_interpreter.cpp
+     #define SH4_TIMESLICE (448) // Under clock cpu 2x
+     #define CPU_RATIO (12)
+     /*printf("Generating sincos tables ...\n");
+nullDC.cpp
+     settings.dynarec.Enable=1;//|cfgLoadInt("nullDC","Dynarec.Enabled",1)!=0;
+     settings.dynarec.CPpass=1;//cfgLoadInt("nullDC","Dynarec.DoConstantPropagation",1)!=0;
+     settings.dynarec.UnderclockFpu=1;//cfgLoadInt("nullDC","Dynarec.UnderclockFpu",1)!=0;
+plugs/ImgReader/ImgReader.cpp
+     for (int i = 0; i < tracks.size(); i++)
+     if (tracks[i].StartFAD <= sector && (sector <= tracks[i].EndFAD || tracks[i].EndFAD == 0))
+     elapsed = sector - tracks[i].StartFAD;
+dc/pvr/pvrLock.cpp
+     static const u32 bank_bit=VRAM_MASK-(VRAM_MASK/2);
+     static const u32 static_bits=(VRAM_MASK-(bank_bit*2)+1)|3;
+     static const u32 moved_bits=VRAM_MASK-static_bits-bank_bit;
+dc/sh4/rec_v2/sinTable.cpp
+     #include "sinTable.h"
+     for (i=0x0000;i<0x10000;i++)
+     for (i=0x0000;i<0x10000;i++)
+dc/sh4/sh4_registers.h
+     #define mach Sh4cntx.mac.h
+     #define macl Sh4cntx.mac.l
+     #define macf Sh4cntx.mac.full
+dc/sh4/tmu.cpp
+     if (unlikely(steps>tmu_regs_CNT[ch]))
+     tmu_prescaler_shift[reg]+=2;// because we count in I� cycles (cpu core cycles) and the tmu is provided w/
+     // the P� (perhipal clock)
+plugs/drkPvr/drkPvr.cpp
+     settings.Emulation.AlphaSortMode = cfgGetInt("Emulation.AlphaSortMode",0);
+     settings.Emulation.PaletteMode = cfgGetInt("Emulation.PaletteMode",0);
+     settings.OSD.ShowFPS = cfgGetInt("OSD.ShowFPS",1);
+plugs/drkPvr/regs.cpp
+     if (unlikely(size!=4))
+     if (unlikely(size!=4))
+     /*if (addr>=PALETTE_RAM_START_addr)
+dc/dc.h
+     #define printf(fmt, ...) (0)
+     extern u32 dynarecIdle;
+dc/gdrom/gdrom_response.cpp
+     u16 gd_data_0x11[] =
+     u16 gd_data_0x71[] =
+dc/gdrom/gdromv3.h
+     extern u16 gd_data_0x11[];
+     extern u16 gd_data_0x71[];
+dc/maple/maple_if.cpp
+     if (unlikely(!IsOnSh4Ram(header_2)))
+     if (likely(SB_MDEN&1))
+dc/sh4/ccn.cpp
+     /*SH4IO_REGN(CCN,CCN_QACR0_addr+idx*4,32)=value;
+     if ((temp.AT!=CCN_MMUCR.AT))
+dc/sh4/dmac.h
+     u32 DS:1; //In normal DMA mode, this bit is valid only in CHCR0 and CHCR1. In DDT mode, it is valid in CHCR0�C
+     u32 DS:1; //In normal DMA mode, this bit is valid only in CHCR0 and CHCR1. In DDT mode, it is valid in CHCR0�C
+dc/sh4/rec_v2/blockmanager.cpp
+     //printf("here %d",block.size());
+     //ngen_ResetBlocks();
+dc/sh4/sh4_fpu.cpp
+     #include "rec_v2/sinTable.h"
+     : "=m" ( *fo ),"=m" ( *(fo+1) ) : "r" ( pi_index ) );*/
+dc/sh4/intc.cpp
+     next_pc-=2;//fix up ;)
+dc/sh4/rec_v2/ngen.h
+     #define CODE_SIZE (8*1024*1024)
+dc/sh4/rec_v2/rec_config.h
+     #define CPU_RATIO (2)
+dc/sh4/rec_v2/shil.h
+     #include "../../mem/sh4_mem.h"
+dc/sh4/rec_v2/shil_canonical.h
+     #include "sinTable.h"
+dc/sh4/sh4_opcode_list.h
+     inline bool IsFloatingPoint() const
+dc/sh4/sh4_registers.cpp
+     if (unlikely(sr.RB))
+plugins/plugin_types.h
+     #define SH4_CLOCK (200*1000*1000) //200
+types.h
+     #define verify(x) if(unlikely((x)==false)){ msgboxf(_T("Verify Failed : ") #x "\n in %s -> %s : %d \n",MBX_ICO

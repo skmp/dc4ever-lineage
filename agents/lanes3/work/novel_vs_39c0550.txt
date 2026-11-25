@@ -1,0 +1,26 @@
+child PSP-Archive_nulldce-psp.git@95b5a20: 21359 significant own lines; in base skmp_nullDCe.git@39c0550: 16060 (75.2%); novel 5299
+  nullDC_1611c3c                  193/5299 novel lines = 3.6%   (all child lines found: 9099/21359 = 42.6%)
+  nulldc360_7b0bd50               176/5299 novel lines = 3.3%   (all child lines found: 7545/21359 = 35.3%)
+  reicast_0bd6ea371e             4306/5299 novel lines = 81.3%   (all child lines found: 10149/21359 = 47.5%)
+  flycast_30b54694aa             4475/5299 novel lines = 84.4%   (all child lines found: 10074/21359 = 47.2%)
+  flycast_3171cfd381             4418/5299 novel lines = 83.4%   (all child lines found: 9579/21359 = 44.8%)
+  dc4ever                           0/5299 novel lines = 0.0%   (all child lines found: 146/21359 = 0.7%)
+  nullDCe_bad8d6a                   0/5299 novel lines = 0.0%   (all child lines found: 16057/21359 = 75.2%)
+  nullDCe_c3e0c9b                   0/5299 novel lines = 0.0%   (all child lines found: 16044/21359 = 75.1%)
+  nullDC4Wii_e812c58                0/5299 novel lines = 0.0%   (all child lines found: 16057/21359 = 75.2%)
+  nullDC4Wii_main                  18/5299 novel lines = 0.3%   (all child lines found: 8529/21359 = 39.9%)
+  NotDCPS3_main                    20/5299 novel lines = 0.4%   (all child lines found: 7988/21359 = 37.4%)
+  union                          4611/5299 = 87.0%
+child PSP-Archive_nulldce-psp.git@main: 29613 significant own lines; in base skmp_nullDCe.git@39c0550: 16389 (55.3%); novel 13224
+  nullDC_1611c3c                 4329/13224 novel lines = 32.7%   (all child lines found: 13039/29613 = 44.0%)
+  nulldc360_7b0bd50              4277/13224 novel lines = 32.3%   (all child lines found: 11488/29613 = 38.8%)
+  reicast_0bd6ea371e             9152/13224 novel lines = 69.2%   (all child lines found: 15202/29613 = 51.3%)
+  flycast_30b54694aa             9007/13224 novel lines = 68.1%   (all child lines found: 14756/29613 = 49.8%)
+  flycast_3171cfd381             8565/13224 novel lines = 64.8%   (all child lines found: 13863/29613 = 46.8%)
+  dc4ever                           1/13224 novel lines = 0.0%   (all child lines found: 133/29613 = 0.4%)
+  nullDCe_bad8d6a                   0/13224 novel lines = 0.0%   (all child lines found: 16387/29613 = 55.3%)
+  nullDCe_c3e0c9b                   0/13224 novel lines = 0.0%   (all child lines found: 16372/29613 = 55.3%)
+  nullDC4Wii_e812c58                0/13224 novel lines = 0.0%   (all child lines found: 16387/29613 = 55.3%)
+  nullDC4Wii_main                3308/13224 novel lines = 25.0%   (all child lines found: 11793/29613 = 39.8%)
+  NotDCPS3_main                  3328/13224 novel lines = 25.2%   (all child lines found: 11257/29613 = 38.0%)
+  union                          7935/13224 = 60.0%

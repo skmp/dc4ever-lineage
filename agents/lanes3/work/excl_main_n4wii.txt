@@ -1,0 +1,30 @@
+21/29613 child lines in n4wii only (not in nullDCe, nullDC, n360, reicast, fly)
+      7 plugs/nullAICA/mem.cpp
+      3 dc/aica/aica_if.cpp
+      3 dc/sh4/rec_v2/decoder.cpp
+      3 plugs/drkPvr/nullRend.cpp
+      2 dc/pvr/pvr_sb_regs.cpp
+      1 dc/sh4/dmac.cpp
+      1 dc/sh4/rec_v2/decoder_opcodes.h
+      1 plugs/drkPvr/SPG.cpp
+     dc/aica/aica_if.cpp | libAICA_WriteMem_aica_reg(addr, data, sz);
+     dc/aica/aica_if.cpp | void Write_SB_E2ST(u32 data)
+     dc/aica/aica_if.cpp | asic_RaiseInterrupt(holly_EXT_DMA2);
+     dc/pvr/pvr_sb_regs.cpp | DMAC_SAR[0] = src + len;
+     dc/pvr/pvr_sb_regs.cpp | DMAC_CHCR[0].TE = 1;
+     dc/sh4/dmac.cpp | DMAC_CHCR[2].TE = 1;
+     dc/sh4/rec_v2/decoder.cpp | //return false;//fpu off for now
+     dc/sh4/rec_v2/decoder.cpp | block.Emit(natop, rs1, rs2, mk_reg(reg_sr_T), 0, shil_param(), mk_reg(reg_sr_T));
+     dc/sh4/rec_v2/decoder.cpp | block.sh4_code_size=state.cpu.rpc-block.start;
+     dc/sh4/rec_v2/decoder_opcodes.h | sh4dec(i0100_nnnn_0000_0111);
+     plugs/drkPvr/SPG.cpp | if (spg_CurrentScanline == 0)
+     plugs/drkPvr/nullRend.cpp | if (mod->tcw.NO_PAL.VQ_Comp)
+     plugs/drkPvr/nullRend.cpp | if (mod->tcw.NO_PAL.StrideSel)
+     plugs/drkPvr/nullRend.cpp | if (mod->tcw.NO_PAL.StrideSel)
+     plugs/nullAICA/mem.cpp | //dsp_writenmem(addr);
+     plugs/nullAICA/mem.cpp | //dsp_writenmem(addr);
+     plugs/nullAICA/mem.cpp | //dsp_writenmem(addr+1);
+     plugs/nullAICA/mem.cpp | void LIBAICA_init_mem()
+     plugs/nullAICA/mem.cpp | //aica_ram=aica_params.aica_ram;
+     plugs/nullAICA/mem.cpp | //memset(aica_ram,0,AICA_RAM_SIZE);
+     plugs/nullAICA/mem.cpp | void LIBAICA_term_mem()

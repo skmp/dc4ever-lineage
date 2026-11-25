@@ -1,0 +1,19 @@
+dc4ever          frames 13 -> 13 added [] removed [] | text/file diffs 0 | lines 150942 origin changed 0 {} keep changed 0
+nullDC           frames 20 -> 20 added [] removed [] | text/file diffs 0 | lines 2056022 origin changed 0 {} keep changed 623355
+nulldc-360       frames 10 -> 10 added [] removed [] | text/file diffs 0 | lines 729516 origin changed 0 {} keep changed 244219
+HarissaDC        frames 4 -> 4 added [] removed [] | text/file diffs 0 | lines 131260 origin changed 0 {} keep changed 1921
+nullDCe          frames 3 -> 3 added [] removed [] | text/file diffs 0 | lines 195657 origin changed 0 {} keep changed 92273
+nullDC4Wii       frames 98 -> 98 added [] removed [] | text/file diffs 0 | lines 6900165 origin changed 27444 {('virtual', 'dc4ever'): 18410, ('nullDC4Wii', 'reicast'): 6594, ('nullDC4Wii', 'nullDCe-PSP'): 656, ('nullDC4Wii', 'flycast'): 1216, ('nullDC4Wii', 'nullDC'): 542, ('NotDC-PS3', 'reicast'): 9, ('NotDC-PS3', 'flycast'): 17} keep changed 1658900
+NotDC-PS3        frames 7 -> 7 added [] removed [] | text/file diffs 0 | lines 750747 origin changed 2694 {('nullDC4Wii', 'reicast'): 869, ('nullDC4Wii', 'flycast'): 117, ('virtual', 'dc4ever'): 1475, ('nullDC4Wii', 'nullDCe-PSP'): 91, ('nullDC4Wii', 'nullDC'): 56, ('NotDC-PS3', 'flycast'): 37, ('NotDC-PS3', 'nullDC'): 19, ('NotDC-PS3', 'reicast'): 25, ('NotDC-PS3', 'nullDCe-PSP'): 5} keep changed 122985
+nullDC4WiiU      frames 4 -> 4 added [] removed [] | text/file diffs 0 | lines 441975 origin changed 1566 {('nullDC4Wii', 'reicast'): 449, ('nullDC4Wii', 'flycast'): 114, ('virtual', 'dc4ever'): 895, ('nullDC4Wii', 'nullDCe-PSP'): 56, ('NotDC-PS3', 'reicast'): 4, ('nullDC4Wii', 'nullDC'): 32, ('NotDC-PS3', 'flycast'): 8, ('nullDC4WiiU', 'nullDCe-PSP'): 4, ('nullDC4WiiU', 'nullDC'): 4} keep changed 72406
+reicast          frames 84 -> 84 added [] removed [] | text/file diffs 0 | lines 9362538 origin changed 0 {} keep changed 2433872
+flycast          frames 100 -> 100 added [] removed [] | text/file diffs 0 | lines 18654522 origin changed 0 {} keep changed 3090134
+nulldc3          frames 14 -> 14 added [] removed [] | text/file diffs 0 | lines 2269269 origin changed 182 {('reicast', 'flycast'): 182} keep changed 431110
+minicast         frames 9 -> 9 added [] removed [] | text/file diffs 0 | lines 932057 origin changed 117 {('reicast', 'flycast'): 117} keep changed 247325
+polly2           frames 11 -> 11 added [] removed [] | text/file diffs 0 | lines 317868 origin changed 0 {} keep changed 102
+polly2-r8        frames 1 -> 1 added [] removed [] | text/file diffs 0 | lines 29501 origin changed 0 {} keep changed 323
+devtools         frames 3 -> 3 added [] removed [] | text/file diffs 0 | lines 114460 origin changed 0 {} keep changed 541
+dreamcast-tests  frames 1 -> 1 added [] removed [] | text/file diffs 0 | lines 59942 origin changed 0 {} keep changed 62
+shrike4          frames 2 -> 2 added [] removed [] | text/file diffs 0 | lines 203446 origin changed 0 {} keep changed 156
+caique           frames 3 -> 3 added [] removed [] | text/file diffs 0 | lines 89217 origin changed 0 {} keep changed 186
+wren7            frames 2 -> 2 added [] removed [] | text/file diffs 0 | lines 12431 origin changed 0 {} keep changed 29

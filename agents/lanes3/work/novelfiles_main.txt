@@ -1,0 +1,505 @@
+lines inbase novel | nullDC n360 reicast fly21 n4wii | none  path
+ 4105     0  4105 |     0     0  4102  4102     0 |     3  dc/sh4/rec_v2/sinTable.cpp
+ 3068     0  3068 |  3068  3048  2740  2740  2725 |     0  dc/arm7/arm-new.h
+ 1053   619   434 |     1     0    17     3     0 |   415  psp/dc/sh4/rec_v2/psp_driver_nostatic.cpp
+  398     6   392 |   341   368   163   200    87 |    23  plugs/nullAICA/sgc_if.cpp
+  732   345   387 |     1     0    29    19     0 |   348  psp/dc/sh4/rec_v2/psp_driver.cpp
+  411    30   381 |     0     0    57   224     0 |   108  dc/sh4/rec_v2/shil.cpp
+  393    13   380 |     0     0   362    18     0 |    18  psp/dc/sh4/rec_v2/ssa_regalloc.h
+  896   657   239 |     0     0    16     4     0 |   221  psp/dc/sh4/rec_v2/psp_driver2.cpp
+  787   580   207 |    56    47    42    15     5 |   124  plugs/drkPvr/nullRend.cpp
+  494   342   152 |     6     6    95    53     5 |    26  dc/gdrom/gdromv3.cpp
+  151     0   151 |   145   145   101    81   144 |     1  dc/arm7/arm7.cpp
+  339   194   145 |     0     0    23    29     5 |   109  dc/maple/maple_devs.cpp
+  141     5   136 |     0     0     0   114     0 |    22  dc/sh4/rec_v2/ssa.cpp
+  130     0   130 |     0     0     6     7     0 |   123  psp/include/me.h
+  416   292   124 |    29    28    89    36     7 |    31  dc/sh4/rec_v2/decoder.cpp
+  182    65   117 |    11    10    47    32     9 |    49  dc/aica/aica_if.cpp
+  137    26   111 |    30    21   106    43     0 |     5  dc/gdrom/disc_common.cpp
+  276   173   103 |     0     0     0     0     0 |   103  psp/main.cpp
+  110     9   101 |    37    37   101    43     0 |     0  plugs/ImgReader/imgread.h
+  189   105    84 |     1     1    13     2     0 |    69  dc/mem/sh4_mem.cpp
+  160    77    83 |     0     0    55    26     2 |    28  dc/sh4/tmu.cpp
+   79     0    79 |     3     3    79    47     0 |     0  plugs/ImgReader/cue.cpp
+   78     0    78 |     0     0     0     0     0 |    78  psp/include/Protothread.h
+   77     0    77 |     0     0    72    37     0 |     5  plugs/ImgReader/cdi.cpp
+   73     0    73 |    20    20    73    46     0 |     0  plugs/ImgReader/chd.cpp
+   73     1    72 |    67    67    36    49    29 |     2  plugs/nullAICA/aica.cpp
+   75     4    71 |    55    54     9    26    51 |    12  dc/arm7/mem.cpp
+  134    64    70 |     1     1    36    13     1 |    30  dc/pvr/pvr_if.cpp
+  168    98    70 |    56     3    70    61     0 |     0  plugs/ImgReader/ioctl.cpp
+   68     2    66 |    61    61    45    54    58 |     4  plugs/nullAICA/aica.h
+   63     2    61 |     0     0    57    41     6 |     2  dc/sh4/sh4_sched.cpp
+  141    80    61 |     0     0    18     5     1 |    41  plugs/drkPvr/SPG.cpp
+  291   232    59 |    19     5    14    11     4 |    21  dc/mem/sh4_internal_reg.cpp
+   63     9    54 |     7     7    54    34     0 |     0  plugs/ImgReader/gdi.cpp
+  212   162    50 |     0     0    40    37     3 |     6  dc/sh4/rec_v2/shil_canonical.h
+  299   249    50 |     0     0    26    26     2 |    24  dc/sh4/sh4_opcode_list.cpp
+   46     2    44 |    37    37     7     9    44 |     0  plugs/nullAICA/mem.cpp
+  146   104    42 |     1     1    18     2     2 |    23  dc/mem/sh4_area0.cpp
+   43     2    41 |    40    40    40    37     0 |     1  dc/gdrom/gdrom_response.cpp
+   44     3    41 |     0     0     0     0     0 |    41  psp/include/kubridge.h
+  136    96    40 |     0     0     2     1     1 |    37  dc/sh4/rec_v2/driver.cpp
+   39     0    39 |     0    23     0     0     0 |    16  dc/arm7/SoundOut.cpp
+   68    31    37 |     0     0    17    26     5 |    11  dc/sh4/rec_v2/shil.h
+  855   819    36 |    32    26     0     0     0 |     4  dc/mem/sb.cpp
+   91    55    36 |     8     8     8     0     8 |    28  plugs/EmptyAICA/aica_hax.cpp
+  319   284    35 |     9    10    20    14     0 |    12  dc/sh4/sh4_cpu.cpp
+  103    70    33 |     0     0     6    17     0 |    11  dc/maple/maple_if.cpp
+   79    47    32 |    22    22     3     3     0 |    10  dc/mem/memutil.cpp
+   36     6    30 |     0    15     0     0     0 |    15  plugs/drkPvr/threaded.cpp
+   28     0    28 |     0     0    26    20     9 |     0  dc/sh4/sh4_sched.h
+  243   218    25 |     2     2    10     2     0 |    12  dc/mem/_vmem.cpp
+   96    71    25 |     2     2     6     3     0 |    18  dc/sh4/sh4_interpreter.cpp
+   59    35    24 |     8     8    12    12     6 |     2  plugs/drkPvr/regs.cpp
+   40    17    23 |    12    11     6     7     0 |     5  dc/mem/mmu.cpp
+  176   153    23 |     0     0     2    12     2 |    10  dc/sh4/dmac.cpp
+   22     0    22 |    15    15     0    13    15 |     3  dc/arm7/mem.h
+  196   174    22 |     0     0    13    12     0 |     9  dc/sh4/intc.cpp
+  129   108    21 |     0     0    15     3     0 |     6  types.h
+   20     0    20 |     4     4    20     3     0 |     0  plugs/ImgReader/imgread_common.h
+   64    45    19 |     2     2     8     8     4 |     3  dc/pvr/pvr_sb_regs.cpp
+  106    87    19 |     6     2     4     4     2 |     8  dc/sh4/ccn.cpp
+   58    41    17 |     0     0     5     5     0 |    12  dc/sh4/sh4_registers.cpp
+  293   276    17 |    11    11     9     9     0 |     1  plugs/drkPvr/regs.h
+   24     7    17 |    17    14     0     0    17 |     0  plugs/nullAICA/resource.h
+   16     1    15 |     0     0     0     0     0 |    15  psp/include/driver/me.h
+  417   402    15 |     0     0     0     0     0 |    15  psp/psp_emit.h
+   17     3    14 |    13    12     8     0    12 |     1  dc/arm7/vbaARM.h
+   14     0    14 |     0     0     0     0     0 |    14  psp/dc/sh4/rec_v2/fast_access.s
+   51    38    13 |     0     0     2     1     1 |    10  dc/mem/_vmem.h
+   33    20    13 |     0     0     4     1     0 |     9  dc/sh4/rec_v2/decoder.h
+  298   285    13 |     0     0    10     8     0 |     3  dc/sh4/sh4_fpu.cpp
+   15     2    13 |     1     1    11     1     0 |     2  plugs/ImgReader/imgread_common.cpp
+  152   139    13 |     0     0    11    11     0 |     2  plugs/drkPvr/ta_structs.h
+   12     0    12 |     0     7     0     0     0 |     5  plugs/drkPvr/threaded.h
+   18     7    11 |     6     6     0     0     6 |     5  dc/arm7/vbaARM.cpp
+  270   259    11 |     0     0     0     1     0 |    10  dc/mem/sh4_internal_reg.h
+   92    82    10 |    10     9     0     0     0 |     0  plugs/ImgReader/iso9660.cpp
+   10     0    10 |    10    10     4     5     4 |     0  plugs/nullAICA/sgc_if.h
+  121   112     9 |     3     3     4     5     1 |     1  dc/gdrom/gdromv3.h
+  105    96     9 |     0     0     0     0     0 |     9  plugs/ImgReader/common.cpp
+   13     4     9 |     0     0     0     0     0 |     9  psp/include/pspdmac.h
+   59    51     8 |     8     8     0     0     0 |     0  dc/pvr/pvrLock.cpp
+   64    56     8 |     7     7     0     0     1 |     1  plugins/plugin_types.h
+  503   495     8 |     0     0     0     0     0 |     8  plugs/drkPvr/ta.h
+   11     3     8 |     8     8     8     0     8 |     0  plugs/nullAICA/nullAICA.h
+    9     1     8 |     0     1     0     0     0 |     7  psp/include/melib.h
+   82    75     7 |     0     0     0     0     0 |     7  dc/dc.cpp
+    6     0     6 |     6     5     0     2     5 |     0  dc/arm7/aica.h
+  285   279     6 |     0     0     6     6     2 |     0  dc/sh4/sh4_cpu_movs.h
+   64    58     6 |     0     0     0     0     0 |     6  dc/sh4/sh4_registers.h
+   53    47     6 |     0     0     1     0     0 |     5  nullDC.cpp
+  123   117     6 |     0     0     3     0     0 |     3  plugins/plugin_manager.cpp
+   53    47     6 |     1     1     0     2     0 |     4  plugs/ImgReader/ImgReader.cpp
+   59    53     6 |     0     0     0     0     0 |     6  plugs/drkMapleDevices/drkMapleDevices.cpp
+   87    82     5 |     0     0     4     4     0 |     1  dc/asic/asic.cpp
+   47    42     5 |     0     0     2     0     0 |     3  dc/sh4/rec_v2/blockmanager.cpp
+   25    20     5 |     0     0     4     4     2 |     0  dc/sh4/rec_v2/decoder_opcodes.h
+   41    36     5 |     0     0     1     1     0 |     4  dc/sh4/sh4_if.h
+   10     5     5 |     0     0     0     0     0 |     5  plugs/EmptyAICA/aica_hax.h
+    7     2     5 |     5     5     0     0     5 |     0  plugs/nullAICA/mem.h
+    4     0     4 |     3     3     1     0     2 |     1  dc/arm7/arm7.h
+    8     4     4 |     0     0     3     0     0 |     1  dc/gdrom/disc_common.h
+   13     9     4 |     1     1     1     1     0 |     2  dc/mem/mmu.h
+   21    17     4 |     0     0     2     1     0 |     2  dc/pvr/pvr_if.h
+  159   155     4 |     0     0     0     0     0 |     4  dc/sh4/bsc.cpp
+   50    46     4 |     0     0     1     0     0 |     3  dc/sh4/rec_v2/ngen.h
+   12     8     4 |     0     0     0     0     0 |     4  plugs/EmptyAICA/EmptyAICA.cpp
+    3     0     3 |     0     0     0     0     0 |     3  dc/arm7/SoundOut.h
+   10     7     3 |     0     0     0     0     0 |     3  dc/dc.h
+   26    23     3 |     2     2     1     1     0 |     1  dc/sh4/ccn.h
+   49    46     3 |     0     0     1     1     0 |     2  dc/sh4/sh4_cpu_branch.h
+   36    33     3 |     0     0     2     3     0 |     0  dc/sh4/sh4_interpreter.h
+   49    46     3 |     0     0     0     0     0 |     3  plugs/EmptyAICA/aica_hle.cpp
+   62    59     3 |     0     0     0     0     0 |     3  plugs/drkPvr/drkPvr.cpp
+   47    45     2 |     0     0     1     0     0 |     1  dc/mem/sh4_mem.h
+   37    35     2 |     0     2     0     0     0 |     0  dc/sh4/dmac.h
+   46    44     2 |     0     0     1     1     0 |     1  dc/sh4/sh4_opcode_list.h
+   45    43     2 |     0     0     1     0     0 |     1  plugins/plugin_manager.h
+    5     3     2 |     0     0     0     2     0 |     0  plugs/ImgReader/ImgReader.h
+   14    12     2 |     0     0     1     0     0 |     1  plugs/drkPvr/ta.cpp
+    3     1     2 |     0     0     0     0     0 |     2  psp/VramExt.S
+   12    11     1 |     1     1     0     0     0 |     0  dc/aica/aica_if.h
+   12    11     1 |     0     0     1     1     0 |     0  dc/maple/maple_devs.h
+  623   622     1 |     0     0     0     0     0 |     1  dc/mem/sb.h
+   11    10     1 |     0     0     0     0     0 |     1  dc/sh4/rec_v2/blockmanager.h
+    1     0     1 |     0     0     1     1     0 |     0  dc/sh4/rec_v2/sinTable.h
+    4     3     1 |     0     0     1     1     0 |     0  dc/sh4/sh4_if.cpp
+   24    23     1 |     0     0     0     0     0 |     1  plugs/drkPvr/nullRend.h
+    5     4     1 |     1     0     0     0     0 |     0  plugs/drkPvr/spg.h
+    1     0     1 |     0     0     0     0     0 |     1  psp/dc/vram.h
+TOTAL 29613 16389 13224 [4329, 4277, 9152, 8565, 3308] 2561
+
+# samples of novel lines found nowhere
+psp/dc/sh4/rec_v2/psp_driver_nostatic.cpp
+     const psp_gpr_t psp_mem_lut = psp_s1;
+     u32 regMapping[9] {255};
+     bool blocked = false;
+psp/dc/sh4/rec_v2/psp_driver.cpp
+     #include "ssa_regalloc.h"
+     const psp_gpr_t psp_mem_lut = psp_s1;
+     //verify(prm.is_r32f());
+psp/dc/sh4/rec_v2/psp_driver2.cpp
+     u32 regMapping[9] {0};
+     bool blocked = false;
+     u8 GetMappedRegister(u32 psp_reg, u32 sh_reg){
+plugs/drkPvr/nullRend.cpp
+     #include "threaded.h"
+     #include "dc/sh4/sh4_sched.h"
+     #include "dc/sh4/rec_v2/xxhash/xxhash.h"
+psp/include/me.h
+     /* src/psp/me.h: PSP Media Engine access library header
+     Copyright 2009-2010 Andrew Church
+     This file is part of Yabause.
+dc/maple/maple_devs.cpp
+     #include "../zlib/zlib.h"
+     #include "pspDmac.h"
+     dma_count_out[0]+= len;
+dc/sh4/rec_v2/shil.cpp
+     //verify(op.rd2.is_null());
+     //verify(op.rd2.is_null());
+     //printf("val: %d\n", v);
+psp/main.cpp
+     #include "dc/vram.h"
+     #include "plugs/drkPvr/threaded.h"
+     #include "kubridge.h"
+psp/include/Protothread.h
+     // Protothread class and macros for lightweight, stackless threads in C++.
+     // This was "ported" to C++ from Adam Dunkels' protothreads C library at:
+     // http://www.sics.se/~adam/pt/
+dc/mem/sh4_mem.cpp
+     #include "pspDmac.h"
+     void memcpy_vfpu( void* dst, const void* src, u32 size)
+     //less than 16bytes or there is no 32bit alignment -> not worth optimizing
+dc/aica/aica_if.cpp
+     #include "dc/sh4/sh4_sched.h"
+     #include "dc/arm7/vbaARM.h"
+     #include "plugs/nullAICA/aica.h"
+plugs/drkPvr/SPG.cpp
+     #include "dc/sh4/sh4_sched.h"
+     #define PROFILER_REG_BASE 0x1C400000
+     pixel_clock = (FB_R_CTRL.vclk_div ? PIXEL_CLOCK : PIXEL_CLOCK / 2);
+psp/include/kubridge.h
+     #ifndef __KULIBRARY__
+     #define __KULIBRARY__
+     * Functions to let user mode access certain functions only available in
+dc/sh4/rec_v2/driver.cpp
+     void StartCodeDump(){
+     startAddr = LastAddr;
+     void CodeDump(const char * filename){
+dc/sh4/rec_v2/decoder.cpp
+     #define BLOCK_MAX_SH_OPS_SOFT 510
+     block.Emit(shop_xor,reg_fpscr,reg_fpscr,mk_imm(1<<21));
+     block.Emit(shop_mov32,reg_old_fpscr,reg_fpscr);
+dc/pvr/pvr_if.cpp
+     #include "plugs/drkPvr/regs.h"
+     u32 _TA_YUV_TEX_CTRL=pvr_readreg_TA(0x5F814C,4);
+     YUV_blockcount=(((_TA_YUV_TEX_CTRL>>0)&0x3F)+1)*(((_TA_YUV_TEX_CTRL>>8)&0x3F)+1);
+dc/sh4/tmu.cpp
+     #include "dc/sh4/sh4_sched.h"
+     if (togo > SH4_CLOCK)
+     if (cycles > SH4_CLOCK)
+plugs/EmptyAICA/aica_hax.cpp
+     using namespace HACK_AICA;
+     void FASTCALL HACK_libAICA_WriteMem_aica_reg(u32 addr,u32 data,u32 sz){
+     WriteMemArrRet(aica_reg,addr&0x7FFF,data,sz);
+dc/gdrom/gdromv3.cpp
+     #include "dc/sh4/sh4_sched.h"
+     #include "pspDmac.h"
+     u8 cache[2352 * 1024]; //up to 1024 sectors //2mb
+dc/sh4/sh4_opcode_list.cpp
+     {0 ,i0010_nnnn_mmmm_1100 ,Mask_n_m ,0x200C ,Normal |NO_FP ,"cmp/str <REG_M>,<REG_N>" ,1,1,MT,fix_none ,dec_cmp
+     {0 ,i0010_nnnn_mmmm_1101 ,Mask_n_m ,0x200D ,Normal |NO_FP ,"xtrct <REG_M>,<REG_N>" ,1,1,EX,fix_none ,dec_Bin_r
+     {0 ,i0011_nnnn_mmmm_0100 ,Mask_n_m ,0x3004 ,Normal ,"div1 <REG_M>,<REG_N>" ,1,1,EX,fix_none /*,dec_Fill(DM_DIV
+dc/mem/sh4_area0.cpp
+     //EMUERROR3("Read from [MPX System/Boot ROM], addr=%x , sz=%d",addr,sz);
+     //EMUERROR3("Read from [Flash Memory], addr=%x , sz=%d",addr,sz);
+     if ((addr>= 0x005F7000) && (addr<= 0x005F70FF)) // :GD-ROM
+plugs/nullAICA/sgc_if.cpp
+     #include "dc/arm7/SoundOut.h"
+     #define key_printf(x...) //printf(x);
+     #define aeg_printf(x...) //printf(x);
+dc/sh4/rec_v2/ssa.cpp
+     extern std::map<RegValue, u32> constprop_values;
+     void ReplaceByMov32(shil_opcode& op, u32 v);
+     void InsertMov32Op(DecodedBlock* block, const shil_param& rd, const shil_param& rs)
+dc/mem/sh4_internal_reg.cpp
+     #include "../sh4/sh4_registers.h"
+     ALIGN(32) u8 OnChipRAM[OnChipRAM_SIZE];
+     ALIGN(32) RegisterStruct CCN[20];
+dc/sh4/sh4_interpreter.cpp
+     //#include "dc/arm7/arm7.h"
+     #include "plugs/EmptyAICA/aica_hle.h"
+     #include "dc/sh4/sh4_sched.h"
+psp/dc/sh4/rec_v2/ssa_regalloc.h
+     void ReplaceSpan(nreg_t regd, nreg_t regS)
+     if (all_spans[sid]->nreg==regd)
+     all_spans[sid]->nreg = regS;
+dc/arm7/SoundOut.cpp
+     //Taken from nulldc 360
+     #include "SoundOut.h"
+     #include <pspaudio.h>
+plugs/drkPvr/threaded.cpp
+     #include "threaded.h"
+     static volatile u32 TA_cachedIndex = 0;
+     #define vfpu_TADMA_cache_push(data) \
+psp/include/driver/me.h
+     int (*func)(int); // function ptr - func takes an int argument and returns int
+     int param; // function argument
+     int result; // function return value
+psp/psp_emit.h
+     struct { u32 fun : 6, fd : 5, fs : 5, ft : 5, fmt : 5, op : 6; } ftype; // register type
+     #define emit_ftype(_op, _fmt, _fs, _ft, _fd, _func) \
+     // | (addi|addiu|subiu|slti|sltiu|andi|ori|xori) rt, rs, immediate
+psp/dc/sh4/rec_v2/fast_access.s
+     BGTZ $6, _nativeOP08
+     ADDIU $3, $17, 0x600
+     BGTZ $6, _nativeOP16
+dc/arm7/mem.cpp
+     #include "plugs/nullAICA/aica.h"
+     u32 FASTCALL libAICA_ReadMem_aica_reg(u32 addr,u32 sz)
+     void FASTCALL libAICA_WriteMem_aica_reg(u32 addr,u32 data,u32 sz)
+dc/mem/_vmem.cpp
+     size_t iirf=(size_t)_vmem_MemInfo_ptr[page];
+     u32* _vmem_get_ptr2(u32 addr)
+     size_t iirf=(size_t)_vmem_MemInfo_ptr[page];
+dc/sh4/sh4_cpu.cpp
+     //0100 1101 1100 1000
+     Address=mmu_TranslateSQW(Dest);
+     Address = QACR+(Dest&~0x1f);
+dc/sh4/sh4_registers.cpp
+     "lv.q c000, %0 \t\n"
+     "lv.q c100, %1 \t\n"
+     "sv.q c000, %2 \t\n"
+dc/maple/maple_if.cpp
+     #include "dc/sh4/sh4_sched.h"
+     if (!maple_ddt_pending_reset)
+     if (unlikely(!IsOnSh4Ram(header_2)))
+dc/sh4/rec_v2/shil.h
+     #include "../../mem/sh4_mem.h"
+     }else if (reg==regv_fmtrx)
+     bool loadReg = true;
+dc/mem/_vmem.h
+     extern _vmem_handler _vmem_lrp;
+     extern _vmem_ReadMem8FP* _vmem_RF8[HANDLER_MAX + 1];
+     extern _vmem_WriteMem8FP* _vmem_WF8[HANDLER_MAX + 1];
+dc/mem/memutil.cpp
+     #define GDROM_OPCODE ((u16)0x30F9)
+     //if (EnabledPatches & patch_syscall_system)
+     //if (EnabledPatches & patch_syscall_font)
+dc/mem/sh4_internal_reg.h
+     extern ALIGN(32) RegisterStruct CCN[20]; //CCN : 14 registers
+     extern ALIGN(32) RegisterStruct UBC[20]; //UBC : 9 registers
+     extern ALIGN(32) RegisterStruct BSC[20]; //BSC : 18 registers
+dc/sh4/dmac.cpp
+     #include "plugs/drkPvr/nullRend.h"
+     u32 src = DMAC_SAR[2] & 0x1fffffe0;
+     if(unlikely(0x8201 != (dmaor &DMAOR_MASK))) {
+dc/sh4/intc.cpp
+     u32 interrupt_vmask; // Vector of masked interrupts (-1 inhibits all interrupts)errupts ( virtual interrupts a
+     void fastcall SIIDRebuild()
+     return Do_Interrupt(InterruptEnvId[BSR(Sh4cntx.interrupt_pend)]);
+dc/sh4/rec_v2/decoder.h
+     static char block_hash[1024];
+     bool contains_fpu_op = false;
+     bool contains_writeMem = false;
+plugs/ImgReader/common.cpp
+     #include "pspDmac.h"
+     sceKernelDcacheWritebackInvalidateAll();
+     sceDmacMemcpy(out_buff,in_buff,to);
+psp/include/pspdmac.h
+     * dmac.c - A DMAC function
+     * Copyright (c) 2016 173210 <root.3.173210@live.com>
+     * Copy data in memory using DMAC
+dc/sh4/ccn.cpp
+     CCN_QACR[idx].reg_data = value;
+     do_sqw_nommu=&do_sqw_nommu_area_3_nonvmem;
+     do_sqw_nommu=&TAWriteSQ_nommu;
+plugs/drkPvr/ta.h
+     #include "threaded.h"
+     threaded_CurrentList=new_list;
+     threaded_CurrentList=data->pcw.ListType;
+dc/dc.cpp
+     #include "../plugs/drkPvr/nullRend.h"
+     #include "sh4/rec_v2/sinTable.h"
+     printf("Init...\n");
+psp/include/melib.h
+     #include <pspkerneltypes.h>
+     #include <driver/me.h>
+     typedef int (*fun)(int ptr);
+dc/sh4/rec_v2/shil_canonical.h
+     #define shil_cf_ext(x) ngen_CC_Call(op,(void*)&x);
+     #include "sinTable.h"
+     #include "../../mem/sh4_internal_reg.h"
+dc/sh4/sh4_registers.h
+     ALIGN(64) u64 sq_buffer[64/8];
+     volatile bool *is_runnning;
+     #define mach Sh4cntx.mac.h
+plugs/drkMapleDevices/drkMapleDevices.cpp
+     #include "../drkPvr/drkPvr.h"
+     extern u8 CodeCache[CODE_SIZE];
+     if (pad.Buttons&PSP_CTRL_SELECT){
+types.h
+     #define VER_MINOR 2 //less-major changes (like, new dynarec / gui / whatever)
+     #define VER_FIXBUILD 1 //minnor changes, fixes and few features added
+     #define VER_EMUNAME "NullDC/" VER_TARGET
+dc/arm7/vbaARM.cpp
+     memcpy(&aica_params,param, sizeof(aica_params));
+     printf("AICA LLE\n");
+     arm_params.aica_ram=param->aica_ram;
+dc/gdrom/disc_common.cpp
+     /*if (settings.imgread.LoadDefaultImage)
+     wchar buff[512] {0};
+     if (!DiscInit_(buff))
+dc/mem/mmu.cpp
+     //printf("SQ remap %d : 0x%X to 0x%X\n",entry,UTLB[entry].Address.VPN<<10,UTLB[entry].Data.PPN<<10);
+     printf("MEM remap %d : 0x%X to 0x%X\n",entry,UTLB[entry].Address.VPN<<10,UTLB[entry].Data.PPN<<10);*/
+     //printf("ITLB MEM remap %d : 0x%X to 0x%X\n",entry,ITLB[entry].Address.VPN<<10,ITLB[entry].Data.PPN<<10);
+nullDC.cpp
+     void CPUType(int type){
+     settings.dynarec.Enable=1;//|cfgLoadInt("nullDC","Dynarec.Enabled",1)!=0;
+     settings.dynarec.CPpass=1;//cfgLoadInt("nullDC","Dynarec.DoConstantPropagation",1)!=0;
+plugs/EmptyAICA/aica_hax.h
+     u32 FASTCALL HACK_ReadMem_reg(u32 addr,u32 size);
+     void FASTCALL HACK_WriteMem_reg(u32 addr,u32 data,u32 size);
+     u32 HACK_ReadMem_ram(u32 addr,u32 size);
+plugs/ImgReader/cdi.cpp
+     core_file* fsource = nullptr;
+     fsource=core_fopen(file);
+     t.file = new RawTrackFile(/*core_fopen(file)*/fsource,(u32)(track.position + track.pregap_length * track.secto
+plugs/drkPvr/threaded.h
+     #define end_list (1<<2)
+     #define fill_data (1<<3)
+     extern volatile bool draw;
+dc/mem/sb.cpp
+     __attribute__((aligned(32))) RegisterStruct sb_regs[0x540];
+     if (unlikely(rflags& REG_NOT_IMPL))
+     if (unlikely(rflags & REG_CONST))
+dc/sh4/bsc.cpp
+     /*vreg_2&=~mask_write;
+     vreg_2|=BSC_PDTRA.full&mask_write;*/
+     /*vreg_2&=~mask_write;
+dc/sh4/sh4_if.h
+     extern "C" void do_sqw_nommu_area_3_nonvmem(u32 dst);
+     void do_sqw_nommu_full(u32 dst);
+     typedef void sqw_fp(u32 dst);
+plugs/EmptyAICA/EmptyAICA.cpp
+     using namespace HACK_AICA;
+     s32 FASTCALL HACK_libAICA_Init(aica_init_params* param)
+     void FASTCALL HACK_libAICA_Term()
+plugs/ImgReader/ImgReader.cpp
+     for (int i = 0; i < tracks.size(); i++)
+     if (tracks[i].StartFAD <= sector && (sector <= tracks[i].EndFAD || tracks[i].EndFAD == 0))
+     elapsed = sector - tracks[i].StartFAD;
+plugs/nullAICA/aica.h
+     extern u8 * aica_reg;
+     void update_arm_interrupts();
+     void UpdateSh4Ints();
+dc/arm7/SoundOut.h
+     void PSP_InitAudio();
+     void PSP_TermAudio();
+     void PSP_WriteSample(s16 r,s16 l);
+dc/arm7/mem.h
+     T ReadMemArm(u32 addr);
+     void WriteMemArm(u32 addr,T data);
+     #define aica_reg_16 ((u16*)aica_reg.data)
+dc/dc.h
+     //#define printf(fmt, ...) (0)
+     extern u32 dynarecIdle;
+     extern bool BETcondPatch;
+dc/pvr/pvr_sb_regs.cpp
+     #include "plugs/drkPvr/threaded.h"
+     if(unlikely(0x8201 != (dmaor &DMAOR_MASK)))
+     DMAC_DMATCR[0] = 0x0;
+dc/sh4/rec_v2/blockmanager.cpp
+     //printf("here %d",block.size());
+     //ngen_ResetBlocks();
+     //cache = (DynarecBlock**)0x00010000;
+dc/sh4/rec_v2/ngen.h
+     void CodeDump(const char * filename);
+     void StartCodeDump();
+     DynarecCodeEntry* ngen_Compile(DecodedBlock* block,bool force_checks, bool opt);
+dc/sh4/rec_v2/sinTable.cpp
+     #include "sinTable.h"
+     for (i=0x0000;i<0x10000;i++)
+     for (i=0x0000;i<0x10000;i++)
+dc/sh4/sh4_fpu.cpp
+     #include "rec_v2/sinTable.h"
+     : "=m" ( *fo ),"=m" ( *(fo+1) ) : "r" ( pi_index ) );*/
+     fpul = (u32)(s32)min(fr[n], 2147483520.0f); // IEEE 754: 0x4effffff
+plugins/plugin_manager.cpp
+     #include "dc/arm7/vbaARM.h"
+     aica_info.ArmInterruptChange = ArmInterruptChange;
+     /*if (s32 rv = libAICA_Init_LLE(&aica_info))
+plugs/EmptyAICA/aica_hle.cpp
+     //while (*cmd_start!=0 && *cmd_start!=0xFFFFFFFF )
+     printf("CMD: %x\n",*data);
+     //*cmd_start=0xFFFFFFFF;
+plugs/drkPvr/drkPvr.cpp
+     settings.Emulation.AlphaSortMode = cfgGetInt("Emulation.AlphaSortMode",0);
+     settings.Emulation.PaletteMode = cfgGetInt("Emulation.PaletteMode",0);
+     settings.OSD.ShowFPS = cfgGetInt("OSD.ShowFPS",1);
+dc/mem/mmu.h
+     #define mmu_TranslateSQW(addr) (sq_remap[(addr>>20)&0x3F] | (addr & 0xFFFE0))
+     static INLINE bool mmu_enabled()
+dc/pvr/pvr_if.h
+     void FASTCALL TAWriteSQ(u32 address,u8* data);
+     void FASTCALL TAWriteSQ_nommu(u32 address);
+dc/sh4/sh4_cpu_branch.h
+     //sh4_sleeping=true;
+     //sh4_sleeping=false;
+dc/sh4/sh4_sched.cpp
+     Sh4cntx.sh4_sched_next=SH4_CLOCK;
+     sched_list t={ssc, tag,-1,-1};
+plugs/ImgReader/imgread_common.cpp
+     for (unat i = 0; imgread_drivers[i]; i++) {
+     if (rv = imgread_drivers[i](fn))
+plugs/drkPvr/regs.cpp
+     #include "../../dc/pvr/pvr_if.h"
+     if ((PvrReg(addr, u32) ^ data) & (1 << 23)){
+plugs/drkPvr/ta_structs.h
+     u8 *render_passes[15];
+     else printf("OUT\n");
+plugs/nullAICA/aica.cpp
+     void arm_avoidRaceCondition();
+     arm_avoidRaceCondition();
+psp/VramExt.S
+     STUB_START "VramExt",0x40090000,0x00010005
+     STUB_FUNC 0xA5853E1E,VramSetSize
+dc/arm7/arm7.cpp
+     void arm_avoidRaceCondition()
+dc/arm7/arm7.h
+     #define UpdateArm(Cycles) arm_Run(Cycles/arm_sh4_bias);
+dc/arm7/vbaARM.h
+     void FASTCALL SetResetState(u32 state);
+dc/asic/asic.cpp
+     u32 v = SB_ISTNRM & 0x3FFFFFFF;
+dc/gdrom/disc_common.h
+     #include "plugs/ImgReader/imgread.h"
+dc/gdrom/gdrom_response.cpp
+     u16 gd_data_0x11[] =
+dc/gdrom/gdromv3.h
+     extern u16 gd_data_0x11[];
+dc/mem/sb.h
+     extern RegisterStruct sb_regs[0x540];
+dc/mem/sh4_mem.h
+     void memcpy_vfpu( void* dst, const void* src, u32 size);
+dc/sh4/ccn.h
+     void CCN_QACR_write(u32 value);
+dc/sh4/rec_v2/blockmanager.h
+     #define BM_BLOCKLIST_COUNT (16384 * 2)
+dc/sh4/sh4_opcode_list.h
+     inline bool IsFloatingPoint() const
+plugins/plugin_manager.h
+     void libPvr_TaDMA_ME(u32* data,u32 size); //Used by the ME
+plugins/plugin_types.h
+     #define SH4_CLOCK (200*1000*1000) //200
+plugs/drkPvr/nullRend.h
+     extern volatile bool FB_DIRTY;
+plugs/drkPvr/regs.h
+     #define TA_YUV_TEX_CTRL PvrReg(TA_YUV_TEX_CTRL_addr,TA_YUV_TEX_CTRL_type) // RW YUV converter control
+plugs/drkPvr/ta.cpp
+     void ta_vtx_data32(void* data)
+psp/dc/vram.h
+     Copyright (C) 2010 Crow_bar and MDave.

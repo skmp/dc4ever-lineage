@@ -1,0 +1,59 @@
+20 lanes, 396 frames, 18395 blobs read in 0.7s
+  lane dc4ever          frames  13 anc dc4ever<=-1 desc 1 lanes
+  lane nullDC           frames  20 anc nullDC<=-1 desc 9 lanes
+  lane nulldc-360       frames  10 anc nulldc-360<=-1 nullDC<=28 desc 2 lanes
+  lane HarissaDC        frames   4 anc HarissaDC<=-1 desc 1 lanes
+  lane nullDCe          frames   3 anc nullDCe<=-1 desc 11 lanes
+  lane nullDCe-PSP      frames   6 anc nullDCe-PSP<=-1 nullDCe<=14 desc 1 lanes
+  lane nullDC4Wii       frames  98 anc nullDC4Wii<=-1 nullDCe<=209 desc 3 lanes
+  lane NotDC-PS3        frames   7 anc NotDC-PS3<=-1 nullDC4Wii<=349 nullDCe<=209 desc 1 lanes
+  lane nullDC4WiiU      frames   4 anc nullDC4WiiU<=-1 nullDC4Wii<=370 nullDCe<=209 desc 1 lanes
+  lane reicast          frames  84 anc reicast<=-1 nullDC<=28 nullDCe<=14 desc 7 lanes
+  lane flycast          frames 100 anc flycast<=-1 reicast<=94 nullDC<=28 nullDCe<=14 desc 2 lanes
+  lane nulldc3          frames  14 anc nulldc3<=-1 reicast<=164 nullDC<=28 nullDCe<=14 desc 3 lanes
+  lane minicast         frames   9 anc minicast<=-1 nulldc3<=206 reicast<=164 nullDC<=28 nullDCe<=14 desc 1 lanes
+  lane polly2           frames  11 anc polly2<=-1 desc 1 lanes
+  lane polly2-r8        frames   1 anc polly2-r8<=-1 desc 1 lanes
+  lane devtools         frames   3 anc devtools<=-1 desc 1 lanes
+  lane dreamcast-tests  frames   1 anc dreamcast-tests<=-1 desc 1 lanes
+  lane shrike4          frames   2 anc shrike4<=-1 desc 1 lanes
+  lane caique           frames   3 anc caique<=-1 desc 2 lanes
+  lane wren7            frames   2 anc wren7<=-1 desc 1 lanes
+raw lines 831044, norm lines 750293 (2.5s)
+    0 2004-04-24 dc4ever          k0      5 files     476 lines +476    -0      KEY 0.00s
+    2 2004-10-19 dc4ever          k2     18 files    7244 lines +6703   -14     KEY 0.00s
+    9 2005-06-26 dc4ever          k9     29 files   22431 lines +16183  -3879   KEY 0.10s
+   14 2009-10-16 nullDCe          k0    236 files   62897 lines +62897  -0      KEY 0.02s
+   15 2010-05-09 nullDC           k0    264 files   89587 lines +89587  -0      KEY 0.02s
+   29 2011-10-15 nulldc-360       k0    195 files   53378 lines +4846   -4265   KEY 0.07s
+   42 2013-12-19 reicast          k0    200 files   72911 lines +45480  -11429  KEY 0.08s
+   67 2015-12-18 reicast          k25   309 files  100189 lines +360    -50     KEY 0.01s
+   86 2018-10-20 flycast          k0    314 files  102979 lines +1      -0      KEY 0.03s
+   94 2019-05-17 reicast          k50   366 files  129314 lines +1297   -806    KEY 0.01s
+  127 2020-02-29 reicast          k75   417 files  135009 lines +6267   -1186   KEY 0.03s
+  130 2020-03-31 flycast          k11   433 files  163697 lines +10199  -8978   KEY 0.10s
+  146 2021-02-04 nullDCe-PSP      k0    161 files   46895 lines +6843   -2640   KEY 0.07s
+  165 2021-12-31 flycast          k33   500 files  245159 lines +95536  -82591  KEY 0.17s
+  188 2023-07-07 nulldc3          k0    453 files  145787 lines +345    -27     KEY 0.05s
+  195 2023-10-30 flycast          k58   563 files  195779 lines +6      -5      KEY 0.03s
+  217 2025-01-20 minicast         k0    273 files   94780 lines +224    -126    KEY 0.03s
+  232 2025-08-29 flycast          k83   595 files  205865 lines +57     -10     KEY 0.03s
+  233 2025-10-14 devtools         k0     74 files   19470 lines +19470  -0      KEY 0.04s
+  239 2026-01-21 nullDC4Wii       k0    238 files   64790 lines +0      -0      KEY 0.02s
+  268 2026-05-01 nullDC4Wii       k25   199 files   55540 lines +0      -0      KEY 0.01s
+  297 2026-07-09 nullDC4Wii       k50   204 files   67785 lines +85     -6      KEY 0.01s
+  310 2026-07-17 polly2           k0    154 files   24210 lines +24210  -0      KEY 0.02s
+  340 2026-09-07 nullDC4Wii       k75   236 files   85211 lines +1490   -82     KEY 0.01s
+  352 2026-09-19 NotDC-PS3        k0    266 files  100497 lines +8447   -1016   KEY 0.03s
+  355 2026-09-24 caique           k0    201 files   26608 lines +26608  -0      KEY 0.01s
+  357 2026-09-24 wren7            k0     41 files    5461 lines +5461   -0      KEY 0.00s
+  358 2026-09-27 shrike4          k0     68 files   18594 lines +18594  -0      KEY 0.01s
+  364 2026-10-24 NotDC-PS3        k4    360 files  107061 lines +5705   -6792   KEY 0.02s
+  368 2026-10-24 devtools         k2    217 files   73195 lines +56470  -5070   KEY 0.05s
+  375 2026-10-31 shrike4          k1   1482 files  184852 lines +166401 -143    KEY 0.13s
+  379 2026-11-03 HarissaDC        k0    121 files   30585 lines +30585  -0      KEY 0.06s
+  386 2026-11-13 nullDC4WiiU      k0    277 files  106911 lines +7405   -102    KEY 0.04s
+  390 2026-11-20 dreamcast-tests  k0    423 files   59942 lines +59942  -0      KEY 0.06s
+  393 2026-11-21 polly2-r8        k0    162 files   29501 lines +29501  -0      KEY 0.01s
+pass done (12.3s), identities 5272, idorg 1014387
+done in 15.5s: 35 chunks

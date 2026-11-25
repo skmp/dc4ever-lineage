@@ -29,7 +29,7 @@
 > to-do from a Tuesday in April 2005 that is still in nullDC 3 in 2026.
 
 A 3D fly-through of the source code of the dc4ever family through time, from dc4ever (2004), its root, through nullDC,
-the ports, reicast and flycast to nullDC 3 and the fpgadc hardware re-creation (2026): 389 frames in 19 lanes, every
+the ports, reicast and flycast to nullDC 3 and the fpgadc hardware re-creation (2026): 395 frames in 20 lanes, every
 line traced to where it first appeared.
 
 **Live:** https://nulldc.emudev.org/lineage/

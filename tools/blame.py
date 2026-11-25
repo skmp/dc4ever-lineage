@@ -28,6 +28,7 @@ IMPORTS = {
     'BenoitAdam_nullDC4Wii': ('e812c58', 'nullDC4Wii first commit imports nullDCe main bad8d6a verbatim'),
     'Mayo1970_NotDC-PS3': ('5a32b94', 'NotDC-PS3 first commit imports nullDC4Wii (~9659506)'),
     'skmp_minicast': ('580d7b8', 'minicast initial import of nullDC 3 / reicast code'),
+    'PSP-Archive_nulldce-psp': ('95b5a20', 'nullDCe-PSP first upload: nullDCe 39c0550 PSP tree restored to build in 2021 (xiro, hlide)'),
     'kernel64_HarissaDC': ('37fa91c', 'HarissaDC 0.2.0: the whole source tree in one commit (private development since 2026-10-19)'),
 }
 NOREPLY = re.compile(r'^<(?:\d+\+)?([^@>]+)@users\.noreply\.github\.com>$')
