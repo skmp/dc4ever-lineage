@@ -1,0 +1,24 @@
+{
+ "size": [
+  1600,
+  900
+ ],
+ "views": {
+  "far": {
+   "file": "agents/lanes3/verify/shots/far-gpu-1600x900.png",
+   "ready_ms": 704,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)"
+  },
+  "wall:nullDCe-PSP": {
+   "file": "agents/lanes3/verify/shots/wall:nullDCe-PSP-gpu-1600x900.png",
+   "ready_ms": 101,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)"
+  },
+  "lanes:nullDCe+nullDCe-PSP": {
+   "file": "agents/lanes3/verify/shots/lanes:nullDCe+nullDCe-PSP-gpu-1600x900.png",
+   "ready_ms": 101,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)"
+  }
+ },
+ "logs": []
+}

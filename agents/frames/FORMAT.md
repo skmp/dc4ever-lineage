@@ -116,7 +116,9 @@ morphs can pair kept lines directly.
 - origin: earliest frame where the whitespace-collapsed line appears (a) in an earlier frame of the lane or of a
   code / merge parent lane up to its fork frame, (b) in an earlier version of the same file identity, or (c) in a
   related / copy lane's file (its state at that time) sharing >= 5 significant lines with this file. Inherited
-  transitively. nullDC-pre2008 (frame `virt`): origin in nullDC or nullDCe, and the line is in both nullDCe's 2009
+  transitively. Rule (b) spans lanes: a file identity shared by sibling lanes (for example nullDCe's tree in
+  nullDC4Wii and nullDCe-PSP) takes its origins from its earliest version in any lane, so a sibling lane that
+  held a line first can claim it even though no code moved between the two. nullDC-pre2008 (frame `virt`): origin in nullDC or nullDCe, and the line is in both nullDCe's 2009
   tree and some nullDC frame.
 - keep: frames after the origin frame holding the line, over the lanes D = desc(origin lane) | desc(holder lane);
   desc follows code / merge / copy edges, not concept (`related`) edges.

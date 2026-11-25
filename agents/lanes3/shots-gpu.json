@@ -9,11 +9,6 @@
    "ready_ms": 806,
    "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)"
   },
-  "lanes:nullDCe+nullDCe-PSP": {
-   "file": "agents/lanes3/shots/lanes:nullDCe+nullDCe-PSP-gpu-1600x900.png",
-   "ready_ms": 101,
-   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)"
-  },
   "lanes:nullDCe-PSP+nullDC4Wii+NotDC-PS3": {
    "file": "agents/lanes3/shots/lanes:nullDCe-PSP+nullDC4Wii+NotDC-PS3-gpu-1600x900.png",
    "ready_ms": 101,

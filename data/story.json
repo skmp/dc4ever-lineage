@@ -63,7 +63,7 @@
    "lanes": [
     "nullDCe-PSP"
    ],
-   "text": "In 2021 the PSP homebrew scene took nullDCe's recovered archive (39c0550, published 2017) and kept its PSP build. xiro and hlide got it compiling and running again; it was uploaded to PSP-Archive on 2021-02-04. To revive it they pulled small pieces of reicast and flycast into the 2009 core: the FSCA sine table, GD-ROM and SHIL fixes. From June to August 2021 the vbaARM ARM7 and nullAICA sound plugins came over from nullDC and nulldc-360, with reicast's disc image readers and scheduler, flycast's SSA pass and a PSP static register allocator. Work stopped in October 2021, and no code went back into another lane.",
+   "text": "In 2021 xiro and hlide took nullDCe's recovered archive (39c0550, published 2017) and kept its PSP build. They got it compiling and running again; it was uploaded to PSP-Archive on 2021-02-04. To revive it they pulled small pieces of reicast and flycast into the 2009 core: the FSCA sine table, GD-ROM and SHIL fixes. From June to August 2021 the vbaARM ARM7 and nullAICA sound plugins came over from nullDC and nulldc-360, with reicast's disc image readers and scheduler, flycast's SSA pass and a PSP static register allocator. Work stopped in October 2021, and no code went back into another lane. Origins follow the earliest version of a shared file, so about 380 lines of later Wii, PS3 and Wii U snapshots take the origins this tree gave them first, some of them reicast or flycast colours.",
    "bookmarks": [
     "nullDCe-PSP SH4 to MIPS JIT"
    ],

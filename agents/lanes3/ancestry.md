@@ -127,7 +127,7 @@ LANE_EDGES['nullDCe-PSP'] = [('nullDCe', 'code', '39c0550'),
                              ('nullDC', 'copy', None),       # ARM7 (arm-new.h identical), nullAICA
                              ('nulldc-360', 'copy', None)]   # weakest: 72 exclusive lines (SoundOut, sgc_if, threaded); 'related' is defensible
 rules.EXTRA['PSP-Archive_nulldce-psp'] = [r'^psp/include/']
-LANE_INFO['nullDCe-PSP'] = (62, 0.17, 'nullDCe-PSP (PSP, 2021 restoration)', 'PSP-Archive/nulldce-psp', 'nullDCe')
+LANE_INFO['nullDCe-PSP'] = (320, 0.15, 'nullDCe-PSP (PSP, 2021 restoration)', 'PSP-Archive/nulldce-psp', 'nullDCe')
 ```
 
 Frames expected (first-parent, counted source): import 95b5a20 (2021-02-04), month 2021-02 1208fc5, 2021-06 894243b,
