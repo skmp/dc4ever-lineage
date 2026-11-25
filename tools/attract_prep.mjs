@@ -51,6 +51,18 @@ const seenFile = new Set(items.map(i => firstIdent[i.id])), perLane = new Map();
 for (const [, id] of cand) { if (items.length >= 16) break; const t = text[id].trim(), ol = F.frames[origin[id]].lane;
   if (seenText.has(t) || seenFile.has(firstIdent[id]) || (perLane.get(ol) || 0) >= 3) continue;
   seenText.add(t); seenFile.add(firstIdent[id]); perLane.set(ol, (perLane.get(ol) || 0) + 1); items.push({ kind: 'line', id }); }
+// hand-picked tour items (tools/attract_picks.json, from the curation workflow in agents/attract/): lines by id, segments
+// as runs of line ids; pool 'unique' items only ever lived in one lineage and are highlighted as such
+const PICKS = fs.existsSync(path.join(ROOT, 'tools/attract_picks.json')) ? JSON.parse(fs.readFileSync(path.join(ROOT, 'tools/attract_picks.json'))).items : [];
+const segs = [];
+for (const p of PICKS) {
+  if (p.kind === 'line') { if (seenText.has((text[p.id] || '').trim())) continue; seenText.add(text[p.id].trim()); items.push({ kind: 'line', id: p.id, note: p.note, curated: true, picked: true, pool: p.pool }); }
+  else segs.push(p);
+}
+const trivialT = t => /^[\s{}();]*$/.test(t || '');
+const segAnchor = segs.map(g => { const a = g.ids.findIndex(x => !trivialT(text[x])); return a < 0 ? 0 : a; });
+const segByAnchor = new Map(); segs.forEach((g, k) => { const id = g.ids[segAnchor[k]]; if (!segByAnchor.has(id)) segByAnchor.set(id, []); segByAnchor.get(id).push(k); });
+const segStops = segs.map(() => []);
 // famous files (path regexes over the lane's file paths)
 const famous = [
   { re: /(^|\/)rec_v1\/driver\.cpp$/, title: 'the SH4 dynarec (rec_v1 driver, nullDC 2006)' },
@@ -65,6 +77,10 @@ const want = new Map(items.map((it, k) => [it.id, k])), stops = items.map(() => 
 for (let li = 0; li < F.lanes.length; li++) for (const [f, st] of laneFrames(li)) {
   for (const [ident, file] of st) {
     for (let l = 0; l < file.ids.length; l++) { const k = want.get(file.ids[l]); if (k !== undefined && !(stops[k].length && stops[k].at(-1)[0] === f)) stops[k].push([f, ident, l]); }
+    for (let l = 0; l < file.ids.length; l++) { const ks = segByAnchor.get(file.ids[l]); if (!ks) continue;
+      for (const k of ks) { const g = segs[k], st0 = l - segAnchor[k]; if (st0 < 0) continue; let m = 0, nt = 0;
+        for (let q = 0; q < g.ids.length; q++) { if (trivialT(text[g.ids[q]])) continue; nt++; if (file.ids[st0 + q] === g.ids[q]) m++; }
+        if (m >= Math.max(3, Math.ceil(nt * 0.75)) && !(segStops[k].length && segStops[k].at(-1)[0] === f)) segStops[k].push([f, ident, st0, g.ids.length]); } }
     famous.forEach((fm, k) => { if (fm.re.test(file.path) && !(fileStops[k].length && fileStops[k].at(-1)[0] === f)) fileStops[k].push([f, ident, 0, file.ids.length]); });
   }
 }
@@ -82,9 +98,16 @@ const out = { format: 1, note: 'attract-mode list: tools/attract_prep.mjs', item
 items.forEach((it, k) => {
   const id = it.id, o = origin[id], of = F.frames[o];
   const lanes = [...Array(F.lanes.length).keys()].filter(li => (laneM[id] >> li) & 1).map(li => F.lanes[li].name);
-  out.items.push({ kind: 'line', id, text: text[id].replace(/\t/g, '    ').trim().slice(0, 160), curated: !!it.curated, note: it.note || null,
+  out.items.push({ kind: 'line', id, text: text[id].replace(/\t/g, '    ').trim().slice(0, 160), curated: !!it.curated, picked: !!it.picked, unique: new Set(stops[k].map(s => laneOf(s[0]))).size === 1 /* present (in any form) in one lane only */, note: it.note || null,
     origin: o, origin_lane: of.virtual ? 'nullDC-pre2008' : of.lane, origin_date: of.virtual ? '2005-2008' : of.date, frames: nFr[id], lanes,
     stops: thin(stops[k]) });
+});
+segs.forEach((g, k) => {
+  const st = segStops[k]; if (!st.length) { console.warn('segment without stops:', g.title); return; }
+  const lanes = [...new Set(st.map(s => laneOf(s[0])))], a = g.ids[segAnchor[k]], o = origin[a], of = F.frames[o];
+  out.items.push({ kind: 'segment', title: g.title, note: g.note || null, curated: true, picked: true, unique: lanes.length === 1, n: g.ids.length, ids: g.ids, marks: [...new Set(g.ids.filter(x => (text[x] || '').trim().length > 8))],   // short generic lines (break;, };, else) repeat elsewhere: not highlighted
+    code: g.ids.map(x => (text[x] || '').replace(/\t/g, '    ').trimEnd().slice(0, 120)).join('\n'),
+    origin: o, origin_lane: of.virtual ? 'nullDC-pre2008' : of.lane, origin_date: of.virtual ? '2005-2008' : of.date, frames: st.length, lanes, stops: thin(st) });
 });
 famous.forEach((fm, k) => {
   if (!fileStops[k].length) return;
