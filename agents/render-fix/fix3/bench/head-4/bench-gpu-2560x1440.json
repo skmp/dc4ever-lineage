@@ -1,0 +1,102 @@
+{
+ "date": "2026-11-25T19:39:38.253Z",
+ "size": [
+  2560,
+  1440
+ ],
+ "paths": {
+  "C": {
+   "path": "C",
+   "name": "lane flights",
+   "dur": 20,
+   "frames": 1753,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "fps_mean": 87.6,
+   "fps_1pct_low": 10.4,
+   "frame_ms": {
+    "p50": 4.5,
+    "p95": 25.9,
+    "p99": 58.7,
+    "max": 202.6
+   },
+   "cpu_ms": {
+    "p50": 1.2,
+    "p95": 5.6,
+    "p99": 8.5
+   },
+   "gpu_ms": {
+    "p50": 1.13,
+    "p95": 9.86,
+    "p99": 42.91
+   },
+   "draws_p95": 300,
+   "lines_p95": 544484,
+   "quality_steps": [
+    0,
+    1
+   ],
+   "frames_over_100ms": 8,
+   "ready_ms": 1300,
+   "skipped_rafs": 747,
+   "slowest_frames_cpu_sections": []
+  },
+  "A": {
+   "path": "A",
+   "name": "file street",
+   "dur": 20,
+   "frames": 2065,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "fps_mean": 103.2,
+   "fps_1pct_low": 15,
+   "frame_ms": {
+    "p50": 2.8,
+    "p95": 21.8,
+    "p99": 39.9,
+    "max": 126.7
+   },
+   "cpu_ms": {
+    "p50": 1,
+    "p95": 3.1,
+    "p99": 6.8
+   },
+   "gpu_ms": {
+    "p50": 0.79,
+    "p95": 2.44,
+    "p99": 31.05
+   },
+   "draws_p95": 264,
+   "lines_p95": 241720,
+   "quality_steps": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "frames_over_100ms": 3,
+   "ready_ms": 1313,
+   "skipped_rafs": 806,
+   "slowest_frames_cpu_sections": []
+  }
+ },
+ "logs": []
+}

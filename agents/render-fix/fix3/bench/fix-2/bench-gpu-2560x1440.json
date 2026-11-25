@@ -1,0 +1,262 @@
+{
+ "date": "2026-11-25T19:37:13.111Z",
+ "size": [
+  2560,
+  1440
+ ],
+ "paths": {
+  "A": {
+   "path": "A",
+   "name": "file street",
+   "dur": 20,
+   "frames": 2022,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "fps_mean": 101.1,
+   "fps_1pct_low": 18.4,
+   "frame_ms": {
+    "p50": 3.1,
+    "p95": 21.9,
+    "p99": 40.1,
+    "max": 86.7
+   },
+   "cpu_ms": {
+    "p50": 1.1,
+    "p95": 3.5,
+    "p99": 6.3
+   },
+   "gpu_ms": {
+    "p50": 0.87,
+    "p95": 3.6,
+    "p99": 23.89
+   },
+   "draws_p95": 266,
+   "lines_p95": 252456,
+   "quality_steps": [
+    0,
+    1,
+    2
+   ],
+   "frames_over_100ms": 0,
+   "ready_ms": 1193,
+   "skipped_rafs": 805,
+   "slowest_frames_cpu_sections": []
+  },
+  "B": {
+   "path": "B",
+   "name": "orbit",
+   "dur": 20,
+   "frames": 2534,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "fps_mean": 126.6,
+   "fps_1pct_low": 38.7,
+   "frame_ms": {
+    "p50": 3.1,
+    "p95": 21.4,
+    "p99": 22.9,
+    "max": 39.1
+   },
+   "cpu_ms": {
+    "p50": 1.5,
+    "p95": 2.5,
+    "p99": 3.2
+   },
+   "gpu_ms": {
+    "p50": 0.15,
+    "p95": 0.23,
+    "p99": 0.24
+   },
+   "draws_p95": 211,
+   "lines_p95": 0,
+   "quality_steps": [
+    0
+   ],
+   "frames_over_100ms": 0,
+   "ready_ms": 1266,
+   "skipped_rafs": 701,
+   "slowest_frames_cpu_sections": []
+  },
+  "C": {
+   "path": "C",
+   "name": "lane flights",
+   "dur": 20,
+   "frames": 1435,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "fps_mean": 71.8,
+   "fps_1pct_low": 8.9,
+   "frame_ms": {
+    "p50": 6.9,
+    "p95": 39.8,
+    "p99": 68.2,
+    "max": 227.8
+   },
+   "cpu_ms": {
+    "p50": 1.6,
+    "p95": 7.6,
+    "p99": 15.4
+   },
+   "gpu_ms": {
+    "p50": 1.21,
+    "p95": 19.08,
+    "p99": 55.62
+   },
+   "draws_p95": 296,
+   "lines_p95": 371446,
+   "quality_steps": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "frames_over_100ms": 7,
+   "ready_ms": 1406,
+   "skipped_rafs": 725,
+   "slowest_frames_cpu_sections": [
+    [
+     37.5,
+     [
+      [
+       "pre",
+       4.4
+      ],
+      [
+       "bake",
+       27.6
+      ]
+     ]
+    ],
+    [
+     32.2,
+     [
+      [
+       "bake",
+       17.1
+      ],
+      [
+       "titles",
+       13
+      ]
+     ]
+    ]
+   ]
+  },
+  "D": {
+   "path": "D",
+   "name": "close reading",
+   "dur": 20,
+   "frames": 2499,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "fps_mean": 124.9,
+   "fps_1pct_low": 40.4,
+   "frame_ms": {
+    "p50": 2.3,
+    "p95": 20.4,
+    "p99": 21.3,
+    "max": 39.4
+   },
+   "cpu_ms": {
+    "p50": 0.6,
+    "p95": 0.9,
+    "p99": 1.1
+   },
+   "gpu_ms": {
+    "p50": 0.45,
+    "p95": 0.57,
+    "p99": 0.67
+   },
+   "draws_p95": 9,
+   "lines_p95": 8694,
+   "quality_steps": [
+    0
+   ],
+   "frames_over_100ms": 0,
+   "ready_ms": 1320,
+   "skipped_rafs": 838,
+   "slowest_frames_cpu_sections": []
+  },
+  "E": {
+   "path": "E",
+   "name": "live playback",
+   "dur": 20,
+   "frames": 2145,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "fps_mean": 107.2,
+   "fps_1pct_low": 21.9,
+   "frame_ms": {
+    "p50": 3.1,
+    "p95": 21.5,
+    "p99": 38.3,
+    "max": 86.2
+   },
+   "cpu_ms": {
+    "p50": 1,
+    "p95": 3,
+    "p99": 5.4
+   },
+   "gpu_ms": {
+    "p50": 0.4,
+    "p95": 1.12,
+    "p99": 1.92
+   },
+   "draws_p95": 246,
+   "lines_p95": 0,
+   "quality_steps": [
+    0
+   ],
+   "frames_over_100ms": 0,
+   "ready_ms": 1233,
+   "skipped_rafs": 780,
+   "slowest_frames_cpu_sections": []
+  }
+ },
+ "logs": []
+}

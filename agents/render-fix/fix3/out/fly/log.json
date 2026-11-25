@@ -1,0 +1,3926 @@
+{
+ "log": [
+  {
+   "name": "fly-8000",
+   "t": 5207,
+   "pres": "clock",
+   "cam": [
+    675784,
+    2048,
+    119328
+   ],
+   "q": 0,
+   "walls": 31,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 40,
+    "t5": 122,
+    "imp": 4,
+    "inst": 51770,
+    "draws": 99,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 438
+   },
+   "classes": {
+    "faded lines": {
+     "n": 1,
+     "area": 0.105
+    },
+    "solid imp-hi": {
+     "n": 4,
+     "area": 0.942
+    },
+    "solid imp-far": {
+     "n": 14,
+     "area": 0.48
+    },
+    "solid T4": {
+     "n": 86,
+     "area": 0.184
+    },
+    "solid T5": {
+     "n": 129,
+     "area": 0.01
+    }
+   },
+   "top": [
+    {
+     "f": 159,
+     "lane": "flycast",
+     "date": "2021-08-26",
+     "solid": false,
+     "A": 0.1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.543,
+     "area": 1
+    },
+    {
+     "f": 160,
+     "lane": "flycast",
+     "date": "2021-09-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.235,
+     "area": 0.446
+    },
+    {
+     "f": 162,
+     "lane": "flycast",
+     "date": "2021-11-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.12,
+     "area": 0.213
+    },
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.102,
+     "area": 0.155
+    },
+    {
+     "f": 165,
+     "lane": "flycast",
+     "date": "2021-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.093,
+     "area": 0.128
+    },
+    {
+     "f": 166,
+     "lane": "flycast",
+     "date": "2022-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.079,
+     "area": 0.091
+    },
+    {
+     "f": 168,
+     "lane": "flycast",
+     "date": "2022-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.068,
+     "area": 0.067
+    },
+    {
+     "f": 169,
+     "lane": "flycast",
+     "date": "2022-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.059,
+     "area": 0.052
+    }
+   ],
+   "leaks": {
+    "titles": 3,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2021-07  fcef404",
+      "leakFrac": 0,
+      "sticky": true
+     },
+     {
+      "title": "flycast  v1.1  2021-08  a51f310",
+      "leakFrac": 0,
+      "sticky": true
+     },
+     {
+      "title": "flycast  2021-09  23d1f6b",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 1.65,
+   "cpu_ms": 1.23,
+   "labels": 0,
+   "titlesShown": 2,
+   "tgtA": 1,
+   "tgtSolid": true
+  },
+  {
+   "name": "fly-6500",
+   "t": 6569,
+   "pres": "clock",
+   "cam": [
+    677270,
+    2048,
+    119328
+   ],
+   "q": 0,
+   "walls": 31,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 42,
+    "t5": 120,
+    "imp": 2,
+    "inst": 20166,
+    "draws": 60,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 438
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 0.548
+    },
+    "solid imp-hi": {
+     "n": 3,
+     "area": 0.585
+    },
+    "solid imp-far": {
+     "n": 14,
+     "area": 0.518
+    },
+    "solid T4": {
+     "n": 88,
+     "area": 0.189
+    },
+    "solid T5": {
+     "n": 127,
+     "area": 0.01
+    }
+   },
+   "top": [
+    {
+     "f": 160,
+     "lane": "flycast",
+     "date": "2021-09-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.289,
+     "area": 0.548
+    },
+    {
+     "f": 162,
+     "lane": "flycast",
+     "date": "2021-11-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.133,
+     "area": 0.252
+    },
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.111,
+     "area": 0.183
+    },
+    {
+     "f": 165,
+     "lane": "flycast",
+     "date": "2021-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.101,
+     "area": 0.15
+    },
+    {
+     "f": 166,
+     "lane": "flycast",
+     "date": "2022-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.084,
+     "area": 0.104
+    },
+    {
+     "f": 168,
+     "lane": "flycast",
+     "date": "2022-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.071,
+     "area": 0.075
+    },
+    {
+     "f": 169,
+     "lane": "flycast",
+     "date": "2022-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.062,
+     "area": 0.057
+    },
+    {
+     "f": 170,
+     "lane": "flycast",
+     "date": "2022-04-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.059,
+     "area": 0.051
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2021-09  23d1f6b",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.43,
+   "cpu_ms": 1.18,
+   "labels": 0,
+   "titlesShown": 1,
+   "tgtA": 1,
+   "tgtSolid": true
+  },
+  {
+   "name": "fly-5000",
+   "t": 7972,
+   "pres": "clock",
+   "cam": [
+    678775,
+    2048,
+    119328
+   ],
+   "q": 0,
+   "walls": 31,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 45,
+    "t5": 117,
+    "imp": 1,
+    "inst": 68192,
+    "draws": 67,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 438
+   },
+   "classes": {
+    "faded lines": {
+     "n": 1,
+     "area": 0.3
+    },
+    "solid lines": {
+     "n": 1,
+     "area": 0.539
+    },
+    "solid imp-hi": {
+     "n": 3,
+     "area": 0.68
+    },
+    "solid imp-far": {
+     "n": 13,
+     "area": 0.568
+    },
+    "solid T4": {
+     "n": 92,
+     "area": 0.197
+    },
+    "solid T5": {
+     "n": 123,
+     "area": 0.008
+    }
+   },
+   "top": [
+    {
+     "f": 159,
+     "lane": "flycast",
+     "date": "2021-08-26",
+     "solid": false,
+     "A": 0.3,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 4.146,
+     "area": 1
+    },
+    {
+     "f": 160,
+     "lane": "flycast",
+     "date": "2021-09-30",
+     "solid": true,
+     "A": 0.75,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.377,
+     "area": 0.714
+    },
+    {
+     "f": 162,
+     "lane": "flycast",
+     "date": "2021-11-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.149,
+     "area": 0.282
+    },
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.122,
+     "area": 0.221
+    },
+    {
+     "f": 165,
+     "lane": "flycast",
+     "date": "2021-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.109,
+     "area": 0.177
+    },
+    {
+     "f": 166,
+     "lane": "flycast",
+     "date": "2022-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.09,
+     "area": 0.119
+    },
+    {
+     "f": 168,
+     "lane": "flycast",
+     "date": "2022-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.076,
+     "area": 0.085
+    },
+    {
+     "f": 169,
+     "lane": "flycast",
+     "date": "2022-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.065,
+     "area": 0.063
+    }
+   ],
+   "leaks": {
+    "titles": 2,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  v1.1  2021-08  a51f310",
+      "leakFrac": 0,
+      "sticky": true
+     },
+     {
+      "title": "flycast  2021-09  23d1f6b",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 1,
+   "cpu_ms": 1.26,
+   "labels": 0,
+   "titlesShown": 2,
+   "tgtA": 0.7691612839698792,
+   "tgtSolid": true
+  },
+  {
+   "name": "fly-4000",
+   "t": 8903,
+   "pres": "clock",
+   "cam": [
+    679778,
+    2048,
+    119328
+   ],
+   "q": 0,
+   "walls": 31,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 46,
+    "t5": 116,
+    "imp": 2,
+    "inst": 55729,
+    "draws": 66,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 477
+   },
+   "classes": {
+    "faded lines": {
+     "n": 1,
+     "area": 0.316
+    },
+    "solid imp-hi": {
+     "n": 4,
+     "area": 0.886
+    },
+    "solid imp-far": {
+     "n": 12,
+     "area": 0.475
+    },
+    "solid T4": {
+     "n": 93,
+     "area": 0.199
+    },
+    "solid T5": {
+     "n": 122,
+     "area": 0.008
+    }
+   },
+   "top": [
+    {
+     "f": 160,
+     "lane": "flycast",
+     "date": "2021-09-30",
+     "solid": false,
+     "A": 0.35,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.472,
+     "area": 0.895
+    },
+    {
+     "f": 162,
+     "lane": "flycast",
+     "date": "2021-11-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.162,
+     "area": 0.306
+    },
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.131,
+     "area": 0.248
+    },
+    {
+     "f": 165,
+     "lane": "flycast",
+     "date": "2021-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.116,
+     "area": 0.2
+    },
+    {
+     "f": 166,
+     "lane": "flycast",
+     "date": "2022-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.094,
+     "area": 0.132
+    },
+    {
+     "f": 168,
+     "lane": "flycast",
+     "date": "2022-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.079,
+     "area": 0.092
+    },
+    {
+     "f": 169,
+     "lane": "flycast",
+     "date": "2022-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.068,
+     "area": 0.068
+    },
+    {
+     "f": 170,
+     "lane": "flycast",
+     "date": "2022-04-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.064,
+     "area": 0.06
+    }
+   ],
+   "leaks": {
+    "titles": 2,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2021-09  23d1f6b",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2021-11  ef3af9a",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 1.7,
+   "cpu_ms": 0.89,
+   "labels": 0,
+   "titlesShown": 2,
+   "tgtA": 0.368544340133667,
+   "tgtSolid": false
+  },
+  {
+   "name": "fly-3200",
+   "t": 9642,
+   "pres": "clock",
+   "cam": [
+    680567,
+    2048,
+    119328
+   ],
+   "q": 0,
+   "walls": 32,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 47,
+    "t5": 115,
+    "imp": 3,
+    "inst": 48355,
+    "draws": 67,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 477
+   },
+   "classes": {
+    "faded lines": {
+     "n": 1,
+     "area": 0.066
+    },
+    "solid imp-hi": {
+     "n": 4,
+     "area": 0.956
+    },
+    "solid imp-far": {
+     "n": 13,
+     "area": 0.513
+    },
+    "solid T4": {
+     "n": 93,
+     "area": 0.189
+    },
+    "solid T5": {
+     "n": 121,
+     "area": 0.008
+    }
+   },
+   "top": [
+    {
+     "f": 160,
+     "lane": "flycast",
+     "date": "2021-09-30",
+     "solid": false,
+     "A": 0.07,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.589,
+     "area": 1
+    },
+    {
+     "f": 162,
+     "lane": "flycast",
+     "date": "2021-11-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.173,
+     "area": 0.329
+    },
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.139,
+     "area": 0.263
+    },
+    {
+     "f": 165,
+     "lane": "flycast",
+     "date": "2021-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.122,
+     "area": 0.221
+    },
+    {
+     "f": 166,
+     "lane": "flycast",
+     "date": "2022-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.098,
+     "area": 0.143
+    },
+    {
+     "f": 168,
+     "lane": "flycast",
+     "date": "2022-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.082,
+     "area": 0.099
+    },
+    {
+     "f": 169,
+     "lane": "flycast",
+     "date": "2022-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.07,
+     "area": 0.072
+    },
+    {
+     "f": 170,
+     "lane": "flycast",
+     "date": "2022-04-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.066,
+     "area": 0.064
+    }
+   ],
+   "leaks": {
+    "titles": 2,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2021-09  23d1f6b",
+      "leakFrac": 0,
+      "sticky": true
+     },
+     {
+      "title": "flycast  2021-11  ef3af9a",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 1.01,
+   "cpu_ms": 1.04,
+   "labels": 0,
+   "titlesShown": 2,
+   "tgtA": 0.07542822510004044,
+   "tgtSolid": false
+  },
+  {
+   "name": "fly-2600",
+   "t": 10201,
+   "pres": "clock",
+   "cam": [
+    681176,
+    2048,
+    119328
+   ],
+   "q": 0,
+   "walls": 32,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 47,
+    "t5": 115,
+    "imp": 1,
+    "inst": 0,
+    "draws": 62,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 477
+   },
+   "classes": {
+    "solid imp-hi": {
+     "n": 4,
+     "area": 1.015
+    },
+    "solid imp-far": {
+     "n": 13,
+     "area": 0.534
+    },
+    "solid T4": {
+     "n": 93,
+     "area": 0.192
+    },
+    "solid T5": {
+     "n": 121,
+     "area": 0.008
+    }
+   },
+   "top": [
+    {
+     "f": 162,
+     "lane": "flycast",
+     "date": "2021-11-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.184,
+     "area": 0.348
+    },
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.145,
+     "area": 0.275
+    },
+    {
+     "f": 165,
+     "lane": "flycast",
+     "date": "2021-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.127,
+     "area": 0.24
+    },
+    {
+     "f": 166,
+     "lane": "flycast",
+     "date": "2022-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.101,
+     "area": 0.152
+    },
+    {
+     "f": 168,
+     "lane": "flycast",
+     "date": "2022-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.084,
+     "area": 0.104
+    },
+    {
+     "f": 169,
+     "lane": "flycast",
+     "date": "2022-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.071,
+     "area": 0.076
+    },
+    {
+     "f": 170,
+     "lane": "flycast",
+     "date": "2022-04-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.067,
+     "area": 0.067
+    },
+    {
+     "f": 171,
+     "lane": "flycast",
+     "date": "2022-04-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.061,
+     "area": 0.055
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2021-11  ef3af9a",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.52,
+   "cpu_ms": 0.95,
+   "labels": 0,
+   "titlesShown": 1,
+   "tgtA": 0,
+   "tgtSolid": false
+  },
+  {
+   "name": "fly-2000",
+   "t": 10748,
+   "pres": "clock",
+   "cam": [
+    681767,
+    2048,
+    119328
+   ],
+   "q": 0,
+   "walls": 32,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 47,
+    "t5": 115,
+    "imp": 1,
+    "inst": 0,
+    "draws": 62,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 477
+   },
+   "classes": {
+    "solid imp-hi": {
+     "n": 4,
+     "area": 1.073
+    },
+    "solid imp-far": {
+     "n": 13,
+     "area": 0.555
+    },
+    "solid T4": {
+     "n": 93,
+     "area": 0.196
+    },
+    "solid T5": {
+     "n": 121,
+     "area": 0.008
+    }
+   },
+   "top": [
+    {
+     "f": 162,
+     "lane": "flycast",
+     "date": "2021-11-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.195,
+     "area": 0.37
+    },
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.152,
+     "area": 0.288
+    },
+    {
+     "f": 165,
+     "lane": "flycast",
+     "date": "2021-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.133,
+     "area": 0.252
+    },
+    {
+     "f": 166,
+     "lane": "flycast",
+     "date": "2022-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.105,
+     "area": 0.163
+    },
+    {
+     "f": 168,
+     "lane": "flycast",
+     "date": "2022-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.086,
+     "area": 0.11
+    },
+    {
+     "f": 169,
+     "lane": "flycast",
+     "date": "2022-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.073,
+     "area": 0.079
+    },
+    {
+     "f": 170,
+     "lane": "flycast",
+     "date": "2022-04-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.069,
+     "area": 0.07
+    },
+    {
+     "f": 171,
+     "lane": "flycast",
+     "date": "2022-04-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.062,
+     "area": 0.058
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2021-11  ef3af9a",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.51,
+   "cpu_ms": 0.92,
+   "labels": 0,
+   "titlesShown": 1,
+   "tgtA": 0,
+   "tgtSolid": false
+  },
+  {
+   "name": "fly-1500",
+   "t": 11216,
+   "pres": "clock",
+   "cam": [
+    682269,
+    2048,
+    119328
+   ],
+   "q": 0,
+   "walls": 32,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 48,
+    "t5": 114,
+    "imp": 1,
+    "inst": 0,
+    "draws": 63,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 477
+   },
+   "classes": {
+    "solid imp-hi": {
+     "n": 4,
+     "area": 1.124
+    },
+    "solid imp-far": {
+     "n": 13,
+     "area": 0.573
+    },
+    "solid T4": {
+     "n": 95,
+     "area": 0.199
+    },
+    "solid T5": {
+     "n": 119,
+     "area": 0.007
+    }
+   },
+   "top": [
+    {
+     "f": 162,
+     "lane": "flycast",
+     "date": "2021-11-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.206,
+     "area": 0.39
+    },
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.159,
+     "area": 0.301
+    },
+    {
+     "f": 165,
+     "lane": "flycast",
+     "date": "2021-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.138,
+     "area": 0.261
+    },
+    {
+     "f": 166,
+     "lane": "flycast",
+     "date": "2022-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.108,
+     "area": 0.172
+    },
+    {
+     "f": 168,
+     "lane": "flycast",
+     "date": "2022-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.088,
+     "area": 0.115
+    },
+    {
+     "f": 169,
+     "lane": "flycast",
+     "date": "2022-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.075,
+     "area": 0.082
+    },
+    {
+     "f": 170,
+     "lane": "flycast",
+     "date": "2022-04-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.07,
+     "area": 0.072
+    },
+    {
+     "f": 171,
+     "lane": "flycast",
+     "date": "2022-04-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.063,
+     "area": 0.06
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2021-11  ef3af9a",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.5,
+   "cpu_ms": 0.96,
+   "labels": 0,
+   "titlesShown": 1,
+   "tgtA": 0,
+   "tgtSolid": false
+  },
+  {
+   "name": "fly-1100",
+   "t": 11586,
+   "pres": "clock",
+   "cam": [
+    682663,
+    2048,
+    119328
+   ],
+   "q": 0,
+   "walls": 32,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 49,
+    "t5": 113,
+    "imp": 2,
+    "inst": 0,
+    "draws": 67,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 477
+   },
+   "classes": {
+    "faded lines": {
+     "n": 1,
+     "area": 0.039
+    },
+    "solid imp-hi": {
+     "n": 4,
+     "area": 1.168
+    },
+    "solid imp-far": {
+     "n": 13,
+     "area": 0.588
+    },
+    "solid T4": {
+     "n": 96,
+     "area": 0.201
+    },
+    "solid T5": {
+     "n": 118,
+     "area": 0.007
+    }
+   },
+   "top": [
+    {
+     "f": 160,
+     "lane": "flycast",
+     "date": "2021-09-30",
+     "solid": false,
+     "A": 0.04,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 1.734,
+     "area": 1
+    },
+    {
+     "f": 162,
+     "lane": "flycast",
+     "date": "2021-11-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.215,
+     "area": 0.408
+    },
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.164,
+     "area": 0.311
+    },
+    {
+     "f": 165,
+     "lane": "flycast",
+     "date": "2021-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.142,
+     "area": 0.269
+    },
+    {
+     "f": 166,
+     "lane": "flycast",
+     "date": "2022-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.11,
+     "area": 0.18
+    },
+    {
+     "f": 168,
+     "lane": "flycast",
+     "date": "2022-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.09,
+     "area": 0.119
+    },
+    {
+     "f": 169,
+     "lane": "flycast",
+     "date": "2022-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.076,
+     "area": 0.085
+    },
+    {
+     "f": 170,
+     "lane": "flycast",
+     "date": "2022-04-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.071,
+     "area": 0.074
+    }
+   ],
+   "leaks": {
+    "titles": 2,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2021-09  23d1f6b",
+      "leakFrac": 0,
+      "sticky": true
+     },
+     {
+      "title": "flycast  2021-11  ef3af9a",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.46,
+   "cpu_ms": 1.17,
+   "labels": 0,
+   "titlesShown": 2,
+   "tgtA": 0.033949557691812515,
+   "tgtSolid": false
+  },
+  {
+   "name": "fly-800",
+   "t": 11867,
+   "pres": "clock",
+   "cam": [
+    682968,
+    2048,
+    119328
+   ],
+   "q": 0,
+   "walls": 32,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 49,
+    "t5": 113,
+    "imp": 1,
+    "inst": 10050,
+    "draws": 69,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 477
+   },
+   "classes": {
+    "faded lines": {
+     "n": 1,
+     "area": 0.249
+    },
+    "solid imp-hi": {
+     "n": 4,
+     "area": 1.205
+    },
+    "solid imp-far": {
+     "n": 13,
+     "area": 0.601
+    },
+    "solid T4": {
+     "n": 96,
+     "area": 0.202
+    },
+    "solid T5": {
+     "n": 118,
+     "area": 0.007
+    }
+   },
+   "top": [
+    {
+     "f": 160,
+     "lane": "flycast",
+     "date": "2021-09-30",
+     "solid": false,
+     "A": 0.25,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 2.416,
+     "area": 1
+    },
+    {
+     "f": 162,
+     "lane": "flycast",
+     "date": "2021-11-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.223,
+     "area": 0.423
+    },
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.169,
+     "area": 0.32
+    },
+    {
+     "f": 165,
+     "lane": "flycast",
+     "date": "2021-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.145,
+     "area": 0.275
+    },
+    {
+     "f": 166,
+     "lane": "flycast",
+     "date": "2022-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.112,
+     "area": 0.187
+    },
+    {
+     "f": 168,
+     "lane": "flycast",
+     "date": "2022-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.091,
+     "area": 0.123
+    },
+    {
+     "f": 169,
+     "lane": "flycast",
+     "date": "2022-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.077,
+     "area": 0.087
+    },
+    {
+     "f": 170,
+     "lane": "flycast",
+     "date": "2022-04-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.072,
+     "area": 0.076
+    }
+   ],
+   "leaks": {
+    "titles": 2,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2021-09  23d1f6b",
+      "leakFrac": 0,
+      "sticky": true
+     },
+     {
+      "title": "flycast  2021-11  ef3af9a",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.71,
+   "cpu_ms": 1.1,
+   "labels": 0,
+   "titlesShown": 2,
+   "tgtA": 0.23235106468200684,
+   "tgtSolid": false
+  },
+  {
+   "name": "fly-500",
+   "t": 12152,
+   "pres": "clock",
+   "cam": [
+    683272,
+    2048,
+    119328
+   ],
+   "q": 0,
+   "walls": 32,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 49,
+    "t5": 113,
+    "imp": 1,
+    "inst": 5392,
+    "draws": 70,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 477
+   },
+   "classes": {
+    "faded lines": {
+     "n": 1,
+     "area": 0.3
+    },
+    "solid imp-hi": {
+     "n": 5,
+     "area": 1.371
+    },
+    "solid imp-far": {
+     "n": 12,
+     "area": 0.487
+    },
+    "solid T4": {
+     "n": 96,
+     "area": 0.202
+    },
+    "solid T5": {
+     "n": 118,
+     "area": 0.007
+    }
+   },
+   "top": [
+    {
+     "f": 160,
+     "lane": "flycast",
+     "date": "2021-09-30",
+     "solid": false,
+     "A": 0.3,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 3.982,
+     "area": 1
+    },
+    {
+     "f": 162,
+     "lane": "flycast",
+     "date": "2021-11-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.231,
+     "area": 0.439
+    },
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.173,
+     "area": 0.329
+    },
+    {
+     "f": 165,
+     "lane": "flycast",
+     "date": "2021-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.148,
+     "area": 0.282
+    },
+    {
+     "f": 166,
+     "lane": "flycast",
+     "date": "2022-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.114,
+     "area": 0.194
+    },
+    {
+     "f": 168,
+     "lane": "flycast",
+     "date": "2022-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.093,
+     "area": 0.127
+    },
+    {
+     "f": 169,
+     "lane": "flycast",
+     "date": "2022-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.078,
+     "area": 0.089
+    },
+    {
+     "f": 170,
+     "lane": "flycast",
+     "date": "2022-04-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.073,
+     "area": 0.078
+    }
+   ],
+   "leaks": {
+    "titles": 2,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2021-09  23d1f6b",
+      "leakFrac": 0,
+      "sticky": true
+     },
+     {
+      "title": "flycast  2021-11  ef3af9a",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.79,
+   "cpu_ms": 0.92,
+   "labels": 0,
+   "titlesShown": 2,
+   "tgtA": 0.30000001192092896,
+   "tgtSolid": false
+  },
+  {
+   "name": "read-nonfocus-11",
+   "t": 13413,
+   "pres": "clock",
+   "cam": [
+    683572,
+    4044,
+    111222
+   ],
+   "q": 0,
+   "walls": 32,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 58,
+    "t5": 104,
+    "imp": 1,
+    "inst": 867,
+    "draws": 79,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 468
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 0.765
+    },
+    "solid imp-hi": {
+     "n": 6,
+     "area": 1.236
+    },
+    "solid imp-far": {
+     "n": 12,
+     "area": 0.497
+    },
+    "solid T4": {
+     "n": 105,
+     "area": 0.204
+    },
+    "solid T5": {
+     "n": 109,
+     "area": 0.007
+    }
+   },
+   "top": [
+    {
+     "f": 160,
+     "lane": "flycast",
+     "date": "2021-09-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 11,
+     "area": 0.765
+    },
+    {
+     "f": 162,
+     "lane": "flycast",
+     "date": "2021-11-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.24,
+     "area": 0.424
+    },
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.178,
+     "area": 0.277
+    },
+    {
+     "f": 165,
+     "lane": "flycast",
+     "date": "2021-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.152,
+     "area": 0.223
+    },
+    {
+     "f": 166,
+     "lane": "flycast",
+     "date": "2022-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.117,
+     "area": 0.157
+    },
+    {
+     "f": 168,
+     "lane": "flycast",
+     "date": "2022-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.094,
+     "area": 0.119
+    },
+    {
+     "f": 169,
+     "lane": "flycast",
+     "date": "2022-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.079,
+     "area": 0.092
+    },
+    {
+     "f": 170,
+     "lane": "flycast",
+     "date": "2022-04-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.073,
+     "area": 0.08
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2021-09  23d1f6b",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.5,
+   "cpu_ms": 0.87,
+   "labels": 0,
+   "titlesShown": 1
+  },
+  {
+   "name": "read-nonfocus-4",
+   "t": 14377,
+   "pres": "clock",
+   "cam": [
+    683274,
+    4026,
+    111264
+   ],
+   "q": 0,
+   "walls": 32,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 56,
+    "t5": 106,
+    "imp": 1,
+    "inst": 2008,
+    "draws": 77,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 468
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 0.629
+    },
+    "solid imp-hi": {
+     "n": 6,
+     "area": 1.192
+    },
+    "solid imp-far": {
+     "n": 12,
+     "area": 0.487
+    },
+    "solid T4": {
+     "n": 103,
+     "area": 0.202
+    },
+    "solid T5": {
+     "n": 111,
+     "area": 0.007
+    }
+   },
+   "top": [
+    {
+     "f": 160,
+     "lane": "flycast",
+     "date": "2021-09-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 4,
+     "area": 0.629
+    },
+    {
+     "f": 162,
+     "lane": "flycast",
+     "date": "2021-11-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.231,
+     "area": 0.402
+    },
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.173,
+     "area": 0.267
+    },
+    {
+     "f": 165,
+     "lane": "flycast",
+     "date": "2021-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.149,
+     "area": 0.216
+    },
+    {
+     "f": 166,
+     "lane": "flycast",
+     "date": "2022-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.114,
+     "area": 0.153
+    },
+    {
+     "f": 168,
+     "lane": "flycast",
+     "date": "2022-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.093,
+     "area": 0.117
+    },
+    {
+     "f": 169,
+     "lane": "flycast",
+     "date": "2022-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.078,
+     "area": 0.089
+    },
+    {
+     "f": 170,
+     "lane": "flycast",
+     "date": "2022-04-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.073,
+     "area": 0.078
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2021-09  23d1f6b",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.48,
+   "cpu_ms": 0.85,
+   "labels": 0,
+   "titlesShown": 1
+  },
+  {
+   "name": "read-nonfocus-2.2",
+   "t": 15345,
+   "pres": "clock",
+   "cam": [
+    682892,
+    4003,
+    111318
+   ],
+   "q": 0,
+   "walls": 32,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 54,
+    "t5": 108,
+    "imp": 3,
+    "inst": 5585,
+    "draws": 77,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 468
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 0.594
+    },
+    "solid imp-hi": {
+     "n": 6,
+     "area": 1.144
+    },
+    "solid imp-far": {
+     "n": 12,
+     "area": 0.475
+    },
+    "solid T4": {
+     "n": 101,
+     "area": 0.202
+    },
+    "solid T5": {
+     "n": 113,
+     "area": 0.007
+    }
+   },
+   "top": [
+    {
+     "f": 160,
+     "lane": "flycast",
+     "date": "2021-09-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 2.2,
+     "area": 0.594
+    },
+    {
+     "f": 162,
+     "lane": "flycast",
+     "date": "2021-11-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.221,
+     "area": 0.378
+    },
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.167,
+     "area": 0.255
+    },
+    {
+     "f": 165,
+     "lane": "flycast",
+     "date": "2021-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.144,
+     "area": 0.208
+    },
+    {
+     "f": 166,
+     "lane": "flycast",
+     "date": "2022-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.112,
+     "area": 0.149
+    },
+    {
+     "f": 168,
+     "lane": "flycast",
+     "date": "2022-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.091,
+     "area": 0.115
+    },
+    {
+     "f": 169,
+     "lane": "flycast",
+     "date": "2022-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.076,
+     "area": 0.086
+    },
+    {
+     "f": 170,
+     "lane": "flycast",
+     "date": "2022-04-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.072,
+     "area": 0.076
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2021-09  23d1f6b",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.48,
+   "cpu_ms": 0.86,
+   "labels": 0,
+   "titlesShown": 1
+  },
+  {
+   "name": "read-nonfocus-1.8",
+   "t": 16320,
+   "pres": "clock",
+   "cam": [
+    682703,
+    3992,
+    111344
+   ],
+   "q": 0,
+   "walls": 32,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 53,
+    "t5": 109,
+    "imp": 4,
+    "inst": 7039,
+    "draws": 78,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 468
+   },
+   "classes": {
+    "faded lines": {
+     "n": 1,
+     "area": 0.201
+    },
+    "solid imp-hi": {
+     "n": 6,
+     "area": 1.12
+    },
+    "solid imp-far": {
+     "n": 12,
+     "area": 0.47
+    },
+    "solid T4": {
+     "n": 100,
+     "area": 0.201
+    },
+    "solid T5": {
+     "n": 114,
+     "area": 0.007
+    }
+   },
+   "top": [
+    {
+     "f": 160,
+     "lane": "flycast",
+     "date": "2021-09-30",
+     "solid": false,
+     "A": 0.34,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 1.8,
+     "area": 0.587
+    },
+    {
+     "f": 162,
+     "lane": "flycast",
+     "date": "2021-11-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.216,
+     "area": 0.366
+    },
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.165,
+     "area": 0.25
+    },
+    {
+     "f": 165,
+     "lane": "flycast",
+     "date": "2021-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.142,
+     "area": 0.204
+    },
+    {
+     "f": 166,
+     "lane": "flycast",
+     "date": "2022-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.111,
+     "area": 0.147
+    },
+    {
+     "f": 168,
+     "lane": "flycast",
+     "date": "2022-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.09,
+     "area": 0.113
+    },
+    {
+     "f": 169,
+     "lane": "flycast",
+     "date": "2022-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.076,
+     "area": 0.085
+    },
+    {
+     "f": 170,
+     "lane": "flycast",
+     "date": "2022-04-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.071,
+     "area": 0.075
+    }
+   ],
+   "leaks": {
+    "titles": 5,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2021-09  23d1f6b",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2021-11  ef3af9a",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  v1.2  2021-12  7555263",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2021-12  95b6736",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2021-12  a52977d",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.7,
+   "cpu_ms": 0.98,
+   "labels": 4,
+   "titlesShown": 5
+  },
+  {
+   "name": "read-nonfocus-1.4",
+   "t": 17282,
+   "pres": "clock",
+   "cam": [
+    682406,
+    3975,
+    111386
+   ],
+   "q": 0,
+   "walls": 32,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 53,
+    "t5": 109,
+    "imp": 2,
+    "inst": 0,
+    "draws": 72,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 468
+   },
+   "classes": {
+    "solid imp-hi": {
+     "n": 6,
+     "area": 1.088
+    },
+    "solid imp-far": {
+     "n": 12,
+     "area": 0.461
+    },
+    "solid T4": {
+     "n": 100,
+     "area": 0.199
+    },
+    "solid T5": {
+     "n": 114,
+     "area": 0.007
+    }
+   },
+   "top": [
+    {
+     "f": 162,
+     "lane": "flycast",
+     "date": "2021-11-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.209,
+     "area": 0.35
+    },
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.16,
+     "area": 0.242
+    },
+    {
+     "f": 165,
+     "lane": "flycast",
+     "date": "2021-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.139,
+     "area": 0.199
+    },
+    {
+     "f": 166,
+     "lane": "flycast",
+     "date": "2022-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.109,
+     "area": 0.144
+    },
+    {
+     "f": 168,
+     "lane": "flycast",
+     "date": "2022-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.089,
+     "area": 0.112
+    },
+    {
+     "f": 169,
+     "lane": "flycast",
+     "date": "2022-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.075,
+     "area": 0.083
+    },
+    {
+     "f": 170,
+     "lane": "flycast",
+     "date": "2022-04-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.07,
+     "area": 0.073
+    },
+    {
+     "f": 171,
+     "lane": "flycast",
+     "date": "2022-04-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.064,
+     "area": 0.06
+    }
+   ],
+   "leaks": {
+    "titles": 4,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2021-11  ef3af9a",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  v1.2  2021-12  7555263",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2021-12  95b6736",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2021-12  a52977d",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.57,
+   "cpu_ms": 0.91,
+   "labels": 4,
+   "titlesShown": 4
+  },
+  {
+   "name": "read-nonfocus-1",
+   "t": 18249,
+   "pres": "clock",
+   "cam": [
+    681871,
+    3943,
+    111462
+   ],
+   "q": 0,
+   "walls": 32,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 51,
+    "t5": 111,
+    "imp": 2,
+    "inst": 0,
+    "draws": 68,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 468
+   },
+   "classes": {
+    "solid imp-hi": {
+     "n": 6,
+     "area": 1.031
+    },
+    "solid imp-far": {
+     "n": 12,
+     "area": 0.446
+    },
+    "solid T4": {
+     "n": 97,
+     "area": 0.196
+    },
+    "solid T5": {
+     "n": 117,
+     "area": 0.008
+    }
+   },
+   "top": [
+    {
+     "f": 162,
+     "lane": "flycast",
+     "date": "2021-11-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.197,
+     "area": 0.324
+    },
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.153,
+     "area": 0.228
+    },
+    {
+     "f": 165,
+     "lane": "flycast",
+     "date": "2021-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.134,
+     "area": 0.189
+    },
+    {
+     "f": 166,
+     "lane": "flycast",
+     "date": "2022-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.105,
+     "area": 0.139
+    },
+    {
+     "f": 168,
+     "lane": "flycast",
+     "date": "2022-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.087,
+     "area": 0.108
+    },
+    {
+     "f": 169,
+     "lane": "flycast",
+     "date": "2022-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.073,
+     "area": 0.08
+    },
+    {
+     "f": 170,
+     "lane": "flycast",
+     "date": "2022-04-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.069,
+     "area": 0.07
+    },
+    {
+     "f": 171,
+     "lane": "flycast",
+     "date": "2022-04-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.063,
+     "area": 0.058
+    }
+   ],
+   "leaks": {
+    "titles": 4,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2021-11  ef3af9a",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  v1.2  2021-12  7555263",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2021-12  95b6736",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2021-12  a52977d",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.47,
+   "cpu_ms": 0.9,
+   "labels": 4,
+   "titlesShown": 4
+  },
+  {
+   "name": "read-focus-11",
+   "t": 19515,
+   "pres": "clock",
+   "cam": [
+    751314,
+    4044,
+    111222
+   ],
+   "q": 0,
+   "walls": 48,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 159,
+    "t5": 0,
+    "imp": 1,
+    "inst": 875,
+    "draws": 175,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 491
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 0.765
+    },
+    "solid imp-hi": {
+     "n": 3,
+     "area": 0.764
+    },
+    "solid imp-far": {
+     "n": 14,
+     "area": 0.534
+    },
+    "solid T4": {
+     "n": 191,
+     "area": 0.315
+    }
+   },
+   "top": [
+    {
+     "f": 183,
+     "lane": "flycast",
+     "date": "2023-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 11,
+     "area": 0.765
+    },
+    {
+     "f": 185,
+     "lane": "flycast",
+     "date": "2023-04-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.229,
+     "area": 0.395
+    },
+    {
+     "f": 186,
+     "lane": "flycast",
+     "date": "2023-05-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.149,
+     "area": 0.217
+    },
+    {
+     "f": 187,
+     "lane": "flycast",
+     "date": "2023-06-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.114,
+     "area": 0.152
+    },
+    {
+     "f": 191,
+     "lane": "flycast",
+     "date": "2023-07-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.091,
+     "area": 0.114
+    },
+    {
+     "f": 193,
+     "lane": "flycast",
+     "date": "2023-09-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.066,
+     "area": 0.065
+    },
+    {
+     "f": 190,
+     "lane": "reicast",
+     "date": "2023-07-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.094,
+     "area": 0.051
+    },
+    {
+     "f": 194,
+     "lane": "flycast",
+     "date": "2023-10-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.058,
+     "area": 0.05
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2023-02  a1472fb",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.52,
+   "cpu_ms": 0.84,
+   "labels": 0,
+   "titlesShown": 1
+  },
+  {
+   "name": "read-focus-2.2",
+   "t": 20482,
+   "pres": "clock",
+   "cam": [
+    750634,
+    4003,
+    111318
+   ],
+   "q": 0,
+   "walls": 48,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 159,
+    "t5": 0,
+    "imp": 3,
+    "inst": 5844,
+    "draws": 179,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 491
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 0.594
+    },
+    "faded lines": {
+     "n": 1,
+     "area": 0.057
+    },
+    "solid imp-hi": {
+     "n": 3,
+     "area": 0.702
+    },
+    "solid imp-far": {
+     "n": 14,
+     "area": 0.519
+    },
+    "solid T4": {
+     "n": 191,
+     "area": 0.313
+    }
+   },
+   "top": [
+    {
+     "f": 183,
+     "lane": "flycast",
+     "date": "2023-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 2.2,
+     "area": 0.594
+    },
+    {
+     "f": 184,
+     "lane": "flycast",
+     "date": "2023-03-31",
+     "solid": false,
+     "A": 0.11,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.357,
+     "area": 0.515
+    },
+    {
+     "f": 185,
+     "lane": "flycast",
+     "date": "2023-04-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.211,
+     "area": 0.354
+    },
+    {
+     "f": 186,
+     "lane": "flycast",
+     "date": "2023-05-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.141,
+     "area": 0.203
+    },
+    {
+     "f": 187,
+     "lane": "flycast",
+     "date": "2023-06-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.109,
+     "area": 0.145
+    },
+    {
+     "f": 191,
+     "lane": "flycast",
+     "date": "2023-07-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.088,
+     "area": 0.11
+    },
+    {
+     "f": 193,
+     "lane": "flycast",
+     "date": "2023-09-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.065,
+     "area": 0.062
+    },
+    {
+     "f": 190,
+     "lane": "reicast",
+     "date": "2023-07-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.091,
+     "area": 0.051
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2023-02  a1472fb",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.66,
+   "cpu_ms": 0.93,
+   "labels": 0,
+   "titlesShown": 1
+  },
+  {
+   "name": "read-focus-1",
+   "t": 21446,
+   "pres": "clock",
+   "cam": [
+    749613,
+    3943,
+    111462
+   ],
+   "q": 0,
+   "walls": 47,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 159,
+    "t5": 0,
+    "imp": 3,
+    "inst": 18317,
+    "draws": 180,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 492
+   },
+   "classes": {
+    "solid lines": {
+     "n": 2,
+     "area": 0.836
+    },
+    "solid imp-hi": {
+     "n": 3,
+     "area": 0.626
+    },
+    "solid imp-far": {
+     "n": 15,
+     "area": 0.495
+    },
+    "solid T4": {
+     "n": 191,
+     "area": 0.307
+    }
+   },
+   "top": [
+    {
+     "f": 183,
+     "lane": "flycast",
+     "date": "2023-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 1,
+     "area": 0.571
+    },
+    {
+     "f": 184,
+     "lane": "flycast",
+     "date": "2023-03-31",
+     "solid": true,
+     "A": 0.51,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.299,
+     "area": 0.521
+    },
+    {
+     "f": 185,
+     "lane": "flycast",
+     "date": "2023-04-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.19,
+     "area": 0.306
+    },
+    {
+     "f": 186,
+     "lane": "flycast",
+     "date": "2023-05-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.131,
+     "area": 0.185
+    },
+    {
+     "f": 187,
+     "lane": "flycast",
+     "date": "2023-06-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.103,
+     "area": 0.135
+    },
+    {
+     "f": 191,
+     "lane": "flycast",
+     "date": "2023-07-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.084,
+     "area": 0.104
+    },
+    {
+     "f": 193,
+     "lane": "flycast",
+     "date": "2023-09-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.062,
+     "area": 0.058
+    },
+    {
+     "f": 190,
+     "lane": "reicast",
+     "date": "2023-07-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.087,
+     "area": 0.05
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2023-02  a1472fb",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.54,
+   "cpu_ms": 0.88,
+   "labels": 1,
+   "titlesShown": 1
+  },
+  {
+   "name": "read-focus-0.5",
+   "t": 22415,
+   "pres": "clock",
+   "cam": [
+    747743,
+    3831,
+    111725
+   ],
+   "q": 0,
+   "walls": 47,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 159,
+    "t5": 0,
+    "imp": 3,
+    "inst": 33535,
+    "draws": 178,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 492
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 0.561
+    },
+    "solid imp-hi": {
+     "n": 4,
+     "area": 0.934
+    },
+    "solid imp-far": {
+     "n": 15,
+     "area": 0.455
+    },
+    "solid T4": {
+     "n": 191,
+     "area": 0.301
+    }
+   },
+   "top": [
+    {
+     "f": 183,
+     "lane": "flycast",
+     "date": "2023-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.5,
+     "area": 0.561
+    },
+    {
+     "f": 184,
+     "lane": "flycast",
+     "date": "2023-03-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.23,
+     "area": 0.411
+    },
+    {
+     "f": 185,
+     "lane": "flycast",
+     "date": "2023-04-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.159,
+     "area": 0.243
+    },
+    {
+     "f": 186,
+     "lane": "flycast",
+     "date": "2023-05-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.116,
+     "area": 0.159
+    },
+    {
+     "f": 187,
+     "lane": "flycast",
+     "date": "2023-06-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.094,
+     "area": 0.121
+    },
+    {
+     "f": 191,
+     "lane": "flycast",
+     "date": "2023-07-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.078,
+     "area": 0.089
+    },
+    {
+     "f": 193,
+     "lane": "flycast",
+     "date": "2023-09-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.059,
+     "area": 0.051
+    },
+    {
+     "f": 190,
+     "lane": "reicast",
+     "date": "2023-07-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.08,
+     "area": 0.048
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2023-02  a1472fb",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.61,
+   "cpu_ms": 0.9,
+   "labels": 1,
+   "titlesShown": 1
+  }
+ ],
+ "maxJump": 0.10200000000000004,
+ "jumpAt": {
+  "i": 160,
+  "d": 400,
+  "dx": 400,
+  "from": 0.3,
+  "to": 0.402
+ },
+ "plateFlips": [
+  {
+   "i": 157,
+   "dx": 676,
+   "A": 0.488,
+   "S": 0,
+   "prevA": 0.517
+  },
+  {
+   "i": 160,
+   "dx": 4250,
+   "A": 0.493,
+   "S": 0,
+   "prevA": 0.501
+  },
+  {
+   "i": 160,
+   "dx": 400,
+   "A": 0.544,
+   "S": 1,
+   "prevA": 0.472
+  }
+ ],
+ "nFlips": 3,
+ "reads": [
+  {
+   "px": 11,
+   "A": 1,
+   "solid": true,
+   "dist": 170
+  },
+  {
+   "px": 4,
+   "A": 1,
+   "solid": true,
+   "dist": 468
+  },
+  {
+   "px": 2.2,
+   "A": 1,
+   "solid": true,
+   "dist": 850
+  },
+  {
+   "px": 1.8,
+   "A": 0.34329521656036377,
+   "solid": false,
+   "dist": 1039
+  },
+  {
+   "px": 1.4,
+   "A": 0,
+   "solid": false,
+   "dist": 1336
+  },
+  {
+   "px": 1,
+   "A": 0,
+   "solid": false,
+   "dist": 1871
+  },
+  {
+   "focus": 1,
+   "px": 11,
+   "A": 1,
+   "solid": true,
+   "dist": 170
+  },
+  {
+   "focus": 1,
+   "px": 2.2,
+   "A": 1,
+   "solid": true,
+   "dist": 850
+  },
+  {
+   "focus": 1,
+   "px": 1,
+   "A": 1,
+   "solid": true,
+   "dist": 1871
+  },
+  {
+   "focus": 1,
+   "px": 0.5,
+   "A": 1,
+   "solid": true,
+   "dist": 3741
+  }
+ ],
+ "tl": [
+  [
+   2,
+   8998,
+   0.21,
+   1,
+   1
+  ],
+  [
+   101,
+   8891,
+   0.21,
+   1,
+   1
+  ],
+  [
+   202,
+   8783,
+   0.21,
+   1,
+   1
+  ],
+  [
+   302,
+   8676,
+   0.22,
+   1,
+   1
+  ],
+  [
+   402,
+   8568,
+   0.22,
+   1,
+   1
+  ],
+  [
+   501,
+   8461,
+   0.22,
+   1,
+   1
+  ],
+  [
+   602,
+   8353,
+   0.22,
+   1,
+   1
+  ],
+  [
+   702,
+   8246,
+   0.23,
+   1,
+   1
+  ],
+  [
+   802,
+   8138,
+   0.23,
+   1,
+   1
+  ],
+  [
+   901,
+   8032,
+   0.23,
+   1,
+   1
+  ],
+  [
+   1056,
+   7865,
+   0.24,
+   1,
+   1
+  ],
+  [
+   1152,
+   7762,
+   0.24,
+   1,
+   1
+  ],
+  [
+   1252,
+   7654,
+   0.24,
+   1,
+   1
+  ],
+  [
+   1352,
+   7547,
+   0.25,
+   1,
+   1
+  ],
+  [
+   1452,
+   7440,
+   0.25,
+   1,
+   1
+  ],
+  [
+   1552,
+   7332,
+   0.26,
+   1,
+   1
+  ],
+  [
+   1651,
+   7225,
+   0.26,
+   1,
+   1
+  ],
+  [
+   1751,
+   7117,
+   0.26,
+   1,
+   1
+  ],
+  [
+   1851,
+   7010,
+   0.27,
+   1,
+   1
+  ],
+  [
+   1952,
+   6902,
+   0.27,
+   1,
+   1
+  ],
+  [
+   2052,
+   6795,
+   0.28,
+   1,
+   1
+  ],
+  [
+   2152,
+   6687,
+   0.28,
+   1,
+   1
+  ],
+  [
+   2252,
+   6579,
+   0.28,
+   1,
+   1
+  ],
+  [
+   2352,
+   6472,
+   0.29,
+   1,
+   1
+  ],
+  [
+   2468,
+   6346,
+   0.29,
+   1,
+   1
+  ],
+  [
+   2568,
+   6240,
+   0.3,
+   1,
+   1
+  ],
+  [
+   2668,
+   6132,
+   0.31,
+   1,
+   1
+  ],
+  [
+   2768,
+   6024,
+   0.31,
+   1,
+   1
+  ],
+  [
+   2869,
+   5916,
+   0.32,
+   0.999,
+   1
+  ],
+  [
+   2968,
+   5809,
+   0.32,
+   0.992,
+   1
+  ],
+  [
+   3069,
+   5701,
+   0.33,
+   0.978,
+   1
+  ],
+  [
+   3169,
+   5594,
+   0.33,
+   0.96,
+   1
+  ],
+  [
+   3268,
+   5487,
+   0.34,
+   0.936,
+   1
+  ],
+  [
+   3369,
+   5379,
+   0.35,
+   0.907,
+   1
+  ],
+  [
+   3468,
+   5272,
+   0.35,
+   0.874,
+   1
+  ],
+  [
+   3568,
+   5165,
+   0.36,
+   0.837,
+   1
+  ],
+  [
+   3669,
+   5056,
+   0.37,
+   0.798,
+   1
+  ],
+  [
+   3795,
+   4921,
+   0.38,
+   0.755,
+   1
+  ],
+  [
+   3885,
+   4824,
+   0.39,
+   0.732,
+   1
+  ],
+  [
+   3985,
+   4717,
+   0.4,
+   0.697,
+   1
+  ],
+  [
+   4085,
+   4609,
+   0.41,
+   0.654,
+   1
+  ],
+  [
+   4185,
+   4502,
+   0.42,
+   0.607,
+   1
+  ],
+  [
+   4286,
+   4393,
+   0.43,
+   0.559,
+   1
+  ],
+  [
+   4385,
+   4286,
+   0.44,
+   0.51,
+   1
+  ],
+  [
+   4485,
+   4179,
+   0.45,
+   0.459,
+   0
+  ],
+  [
+   4585,
+   4072,
+   0.46,
+   0.41,
+   0
+  ],
+  [
+   4685,
+   3964,
+   0.47,
+   0.361,
+   0
+  ],
+  [
+   4801,
+   3839,
+   0.49,
+   0.304,
+   0
+  ],
+  [
+   4901,
+   3731,
+   0.5,
+   0.26,
+   0
+  ],
+  [
+   5002,
+   3623,
+   0.52,
+   0.217,
+   0
+  ],
+  [
+   5102,
+   3515,
+   0.53,
+   0.176,
+   0
+  ],
+  [
+   5201,
+   3409,
+   0.55,
+   0.138,
+   0
+  ],
+  [
+   5301,
+   3302,
+   0.57,
+   0.105,
+   0
+  ],
+  [
+   5402,
+   3193,
+   0.59,
+   0.075,
+   0
+  ],
+  [
+   5518,
+   3068,
+   0.61,
+   0.045,
+   0
+  ],
+  [
+   5617,
+   2961,
+   0.63,
+   0.027,
+   0
+  ],
+  [
+   5718,
+   2853,
+   0.66,
+   0,
+   0
+  ],
+  [
+   5819,
+   2745,
+   0.68,
+   0,
+   0
+  ],
+  [
+   5919,
+   2638,
+   0.71,
+   0,
+   0
+  ],
+  [
+   6035,
+   2512,
+   0.74,
+   0,
+   0
+  ],
+  [
+   6134,
+   2406,
+   0.78,
+   0,
+   0
+  ],
+  [
+   6235,
+   2297,
+   0.81,
+   0,
+   0
+  ],
+  [
+   6335,
+   2190,
+   0.85,
+   0,
+   0
+  ],
+  [
+   6435,
+   2083,
+   0.9,
+   0,
+   0
+  ],
+  [
+   6535,
+   1975,
+   0.95,
+   0,
+   0
+  ],
+  [
+   6651,
+   1850,
+   1.01,
+   0,
+   0
+  ],
+  [
+   6752,
+   1742,
+   1.07,
+   0,
+   0
+  ],
+  [
+   6852,
+   1635,
+   1.14,
+   0,
+   0
+  ],
+  [
+   6951,
+   1527,
+   1.22,
+   0,
+   0
+  ],
+  [
+   7068,
+   1402,
+   1.33,
+   0,
+   0
+  ],
+  [
+   7168,
+   1294,
+   1.45,
+   0,
+   0
+  ],
+  [
+   7268,
+   1187,
+   1.58,
+   0,
+   0
+  ],
+  [
+   7368,
+   1079,
+   1.73,
+   0.036,
+   0
+  ],
+  [
+   7485,
+   954,
+   1.96,
+   0.1,
+   0
+  ],
+  [
+   7585,
+   847,
+   2.21,
+   0.195,
+   0
+  ],
+  [
+   7701,
+   721,
+   2.59,
+   0.264,
+   0
+  ],
+  [
+   7801,
+   614,
+   3.05,
+   0.284,
+   0
+  ],
+  [
+   7902,
+   506,
+   3.7,
+   0.3,
+   0
+  ],
+  [
+   8018,
+   400,
+   4.68,
+   0.402,
+   0
+  ],
+  [
+   8118,
+   400,
+   4.68,
+   0.704,
+   1
+  ],
+  [
+   8218,
+   400,
+   4.68,
+   0.875,
+   1
+  ]
+ ]
+}

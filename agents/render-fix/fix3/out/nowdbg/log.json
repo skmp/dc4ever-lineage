@@ -1,0 +1,480 @@
+{
+ "log": [
+  {
+   "name": "now-2.5s",
+   "t": 6249,
+   "pres": "now",
+   "cam": [
+    739589,
+    2886,
+    106998
+   ],
+   "q": 0,
+   "walls": 42,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 159,
+    "t5": 0,
+    "imp": 3,
+    "inst": 0,
+    "draws": 188,
+    "pendingBake": 1,
+    "wantQueue": 0,
+    "gpuMB": 513
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "faded lines": {
+     "n": 1,
+     "area": 0.043
+    },
+    "solid imp-hi": {
+     "n": 4,
+     "area": 0.805
+    },
+    "solid imp-lo": {
+     "n": 2,
+     "area": 0.182
+    },
+    "solid imp-far": {
+     "n": 17,
+     "area": 0.372
+    },
+    "solid T4": {
+     "n": 191,
+     "area": 0.271
+    }
+   },
+   "top": [
+    {
+     "f": 179,
+     "lane": "flycast",
+     "date": "2022-11-04",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 10.935,
+     "area": 1
+    },
+    {
+     "f": 180,
+     "lane": "flycast",
+     "date": "2022-12-31",
+     "solid": false,
+     "A": 0.07,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.437,
+     "area": 0.597
+    },
+    {
+     "f": 181,
+     "lane": "flycast",
+     "date": "2023-01-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.226,
+     "area": 0.281
+    },
+    {
+     "f": 182,
+     "lane": "flycast",
+     "date": "2023-02-15",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.183,
+     "area": 0.217
+    },
+    {
+     "f": 183,
+     "lane": "flycast",
+     "date": "2023-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.157,
+     "area": 0.181
+    },
+    {
+     "f": 184,
+     "lane": "flycast",
+     "date": "2023-03-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.115,
+     "area": 0.126
+    },
+    {
+     "f": 185,
+     "lane": "flycast",
+     "date": "2023-04-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-lo",
+     "ppl": 0.094,
+     "area": 0.101
+    },
+    {
+     "f": 186,
+     "lane": "flycast",
+     "date": "2023-05-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-lo",
+     "ppl": 0.077,
+     "area": 0.081
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2022-11  1920488",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.75,
+   "cpu_ms": 2.52,
+   "labels": 0,
+   "titlesShown": 1
+  }
+ ],
+ "smp": [
+  {
+   "t": 5,
+   "f": 173,
+   "k": 40,
+   "A": 1,
+   "S": true,
+   "dx": 171,
+   "morph": false,
+   "pres": "now",
+   "dispX": 171
+  },
+  {
+   "t": 10,
+   "f": 173,
+   "k": 40,
+   "A": 1,
+   "S": true,
+   "dx": 171,
+   "morph": false,
+   "pres": "now",
+   "dispX": 171
+  },
+  {
+   "t": 15,
+   "f": 174,
+   "k": 41,
+   "A": 1,
+   "S": true,
+   "dx": 171,
+   "morph": true,
+   "pres": "now",
+   "dispX": 171
+  },
+  {
+   "t": 20,
+   "f": 174,
+   "k": 41,
+   "A": 1,
+   "S": true,
+   "dx": 171,
+   "morph": true,
+   "pres": "now",
+   "dispX": 171
+  },
+  {
+   "t": 25,
+   "f": 174,
+   "k": 41,
+   "A": 1,
+   "S": true,
+   "dx": 171,
+   "morph": true,
+   "pres": "now",
+   "dispX": 171
+  },
+  {
+   "t": 30,
+   "f": 174,
+   "k": 41,
+   "A": 1,
+   "S": true,
+   "dx": 171,
+   "morph": true,
+   "pres": "now",
+   "dispX": 171
+  },
+  {
+   "t": 35,
+   "f": 174,
+   "k": 41,
+   "A": 1,
+   "S": true,
+   "dx": 171,
+   "morph": false,
+   "pres": "now",
+   "dispX": 171
+  },
+  {
+   "t": 40,
+   "f": 175,
+   "k": 42,
+   "A": 1,
+   "S": true,
+   "dx": 171,
+   "morph": true,
+   "pres": "now",
+   "dispX": 171
+  },
+  {
+   "t": 45,
+   "f": 175,
+   "k": 42,
+   "A": 1,
+   "S": true,
+   "dx": 171,
+   "morph": true,
+   "pres": "now",
+   "dispX": 171
+  },
+  {
+   "t": 50,
+   "f": 175,
+   "k": 42,
+   "A": 1,
+   "S": true,
+   "dx": 171,
+   "morph": true,
+   "pres": "now",
+   "dispX": 171
+  },
+  {
+   "t": 55,
+   "f": 175,
+   "k": 42,
+   "A": 1,
+   "S": true,
+   "dx": 171,
+   "morph": true,
+   "pres": "now",
+   "dispX": 171
+  },
+  {
+   "t": 60,
+   "f": 175,
+   "k": 42,
+   "A": 1,
+   "S": true,
+   "dx": 171,
+   "morph": false,
+   "pres": "now",
+   "dispX": 171
+  },
+  {
+   "t": 65,
+   "f": 176,
+   "k": 43,
+   "A": 1,
+   "S": true,
+   "dx": 171,
+   "morph": false,
+   "pres": "now",
+   "dispX": 171
+  },
+  {
+   "t": 70,
+   "f": 177,
+   "k": 44,
+   "A": 1,
+   "S": true,
+   "dx": 171,
+   "morph": true,
+   "pres": "now",
+   "dispX": 171
+  },
+  {
+   "t": 75,
+   "f": 177,
+   "k": 44,
+   "A": 1,
+   "S": true,
+   "dx": 171,
+   "morph": true,
+   "pres": "now",
+   "dispX": 171
+  },
+  {
+   "t": 80,
+   "f": 177,
+   "k": 44,
+   "A": 1,
+   "S": true,
+   "dx": 171,
+   "morph": true,
+   "pres": "now",
+   "dispX": 171
+  },
+  {
+   "t": 85,
+   "f": 177,
+   "k": 44,
+   "A": 1,
+   "S": true,
+   "dx": 171,
+   "morph": true,
+   "pres": "now",
+   "dispX": 171
+  },
+  {
+   "t": 90,
+   "f": 177,
+   "k": 44,
+   "A": 1,
+   "S": true,
+   "dx": 171,
+   "morph": false,
+   "pres": "now",
+   "dispX": 171
+  },
+  {
+   "t": 95,
+   "f": 177,
+   "k": 44,
+   "A": 1,
+   "S": true,
+   "dx": 171,
+   "morph": false,
+   "pres": "now",
+   "dispX": 171
+  },
+  {
+   "t": 100,
+   "f": 177,
+   "k": 44,
+   "A": 1,
+   "S": true,
+   "dx": 171,
+   "morph": false,
+   "pres": "now",
+   "dispX": 171
+  },
+  {
+   "t": 105,
+   "f": 178,
+   "k": 45,
+   "A": 1,
+   "S": true,
+   "dx": 171,
+   "morph": true,
+   "pres": "now",
+   "dispX": 171
+  },
+  {
+   "t": 110,
+   "f": 178,
+   "k": 45,
+   "A": 1,
+   "S": true,
+   "dx": 171,
+   "morph": true,
+   "pres": "now",
+   "dispX": 171
+  },
+  {
+   "t": 115,
+   "f": 178,
+   "k": 45,
+   "A": 1,
+   "S": true,
+   "dx": 171,
+   "morph": true,
+   "pres": "now",
+   "dispX": 171
+  },
+  {
+   "t": 120,
+   "f": 178,
+   "k": 45,
+   "A": 1,
+   "S": true,
+   "dx": 171,
+   "morph": true,
+   "pres": "now",
+   "dispX": 171
+  },
+  {
+   "t": 125,
+   "f": 178,
+   "k": 45,
+   "A": 1,
+   "S": true,
+   "dx": 171,
+   "morph": false,
+   "pres": "now",
+   "dispX": 171
+  },
+  {
+   "t": 130,
+   "f": 179,
+   "k": 46,
+   "A": 1,
+   "S": true,
+   "dx": 171,
+   "morph": false,
+   "pres": "now",
+   "dispX": 171
+  },
+  {
+   "t": 135,
+   "f": 179,
+   "k": 46,
+   "A": 1,
+   "S": true,
+   "dx": 171,
+   "morph": false,
+   "pres": "now",
+   "dispX": 171
+  },
+  {
+   "t": 140,
+   "f": 179,
+   "k": 46,
+   "A": 1,
+   "S": true,
+   "dx": 171,
+   "morph": false,
+   "pres": "now",
+   "dispX": 171
+  },
+  {
+   "t": 145,
+   "f": 179,
+   "k": 46,
+   "A": 1,
+   "S": true,
+   "dx": 171,
+   "morph": false,
+   "pres": "now",
+   "dispX": 171
+  }
+ ]
+}

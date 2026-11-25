@@ -63,7 +63,9 @@ for (const lw of layout.walls) {
   const fr = F.frames[lw.frame], ln = LN[lw.lane];
   W[lw.frame] = { i: lw.frame, lane: lw.lane, x: lw.x, z0: ln.z0, cols: ln.cols, fr, k: fr.k, n: fr.lines, gpu: null, inst: null, loaded: false, imp: null, impKey: '', meta: null, lastUse: 0, wanted: 0, wantT: -1e9 };
 }
-for (const ln of LN) ln.frames.forEach((f, k) => ln.xs[k] = W[f].x);
+// each lane's frames in X order (the clock's order): in a few lanes the layout order is not (nullDC4Wii, reicast, ...: a
+// frame can stand a little before the one listed ahead of it), and the clock looks its frames up by binary search on xs
+for (const ln of LN) { ln.frames = ln.frames.map((f, k) => [f, k]).sort((a, b) => W[a[0]].x - W[b[0]].x || a[1] - b[1]).map(a => a[0]); ln.frames.forEach((f, k) => ln.xs[k] = W[f].x); }
 const WALLS = W.filter(Boolean);
 const marks = new Map(layout.marks.map(m => [m.frame, m]));
 for (const w of WALLS) { const m = marks.get(w.i); w.mark = m || null; w.release = !!(m && m.release); }
@@ -388,7 +390,7 @@ function declutter(dt, rgt, up, minPx) {
     ox = ((M[0] * x + M[4] * y + M[8] * z + M[12]) / w + 1) * 0.5 * cw; oy = (1 - (M[1] * x + M[5] * y + M[9] * z + M[13]) / w) * 0.5 * ch; ok = true; };
   const cand = DL.cand || (DL.cand = []); cand.length = 0;
   for (let i = 0; i < DLS.length; i++) {
-    const l = DLS[i], w = l.w, wa = wallArr[4 * w + 1]; if (wa <= 0 || (w < NONE && wallArr[4 * w + 2] < 0.5)) continue;
+    const l = DLS[i], w = l.w, wa = wallArr[4 * w + 1]; if (wa <= 0 || (w < NONE && wallArr[4 * w + 2] <= 0)) continue;   // ghosts (no plate): no labels
     const o0 = wallArr[4 * w] + l.dx, o1 = l.y, o2 = l.z;
     if (l.wallPlane && cam[0] > o0) continue;
     const d = Math.hypot(o0 - cam[0], o1 - cam[1], o2 - cam[2]); let px = l.lv * 2 * fp / Math.max(d, 1), k = 1;
@@ -455,15 +457,16 @@ function layoutTitles(dt) {
   const cut = (a, b) => { const t = (1 - a[2]) / (b[2] - a[2]); return a.map((v, i) => v + (b[i] - v) * t); };   // a: in front (w >= 1)
   const cand = TT.cand || (TT.cand = []); cand.length = 0;
   for (const w of visList) {
-    const j = w.tj, x = wallArr[4 * w.i]; if (wallArr[4 * w.i + 1] <= (ALLF ? 0.5 : 0.02)) continue;   // faded near walls: no title
-    const tier = cur.has(w.i) ? 2 : wallArr[4 * w.i + 2] > 0.5 ? 1 : 0, z1 = w.z0 + w.cols * 128;
+    const j = w.tj, x = wallArr[4 * w.i], A = wallArr[4 * w.i + 1]; if (A <= 0.02) continue;
+    // a fading near wall (ALLF: it keeps a plate, z PLATE_FADE below alpha 0.5) keeps its tier; its title fades with it
+    const tier = cur.has(w.i) ? 2 : wallArr[4 * w.i + 2] > (ALLF ? 0 : 0.5) ? 1 : 0, z1 = w.z0 + w.cols * 128, fa = ALLF ? Math.min(1, A) : 1;
     let a = clip(x, 4096, w.z0), b = clip(x, 4096, z1);
     if (a[2] < 1 && b[2] < 1) continue;
     if (a[2] < 1) a = cut(b, a); else if (b[2] < 1) b = cut(a, b);
     let ax = (a[0] / a[2] + 1) * 0.5 * cw, ay = (1 - a[1] / a[2]) * 0.5 * ch, bx = (b[0] / b[2] + 1) * 0.5 * cw, by = (1 - b[1] / b[2]) * 0.5 * ch, za = a[3], zb = b[3];
     if (ax > bx) { [ax, bx] = [bx, ax]; [ay, by] = [by, ay]; [za, zb] = [zb, za]; }
     if (bx < 8 || ax > cw - 8) continue;
-    const d = G.boxDist(cam, x, 4096, w.z0, x, 4096, z1), [mn, mx, al, fl] = TSZ[tier];
+    const d = G.boxDist(cam, x, 4096, w.z0, x, 4096, z1), [mn, mx, al0, fl] = TSZ[tier], al = al0 * fa;
     const size = Math.min(mx * k, Math.max(mn * k, fl, 160 * fp / Math.max(d, 1)));
     const bw = (TT.len[j] + 1.2) * size * 0.5, bh = size * 1.2;
     let tx = Math.max(ax, 6); if (tx + bw > bx) tx = Math.max(ax, bx - bw);
@@ -475,7 +478,7 @@ function layoutTitles(dt) {
       const q = clip(x, 0, zw), qy = q[2] >= 1 ? (1 - q[1] / q[2]) * 0.5 * ch : ch;
       if (qy < bh + 20) continue; ty = 6; sticky = true;
     }
-    cand.push({ w, j, tx, ty, size, bw, bh, al, sticky, x, zw, xmax: Math.min(bx, cw - 6), slope: bx - ax > 1 ? (by - ay) / (bx - ax) : 0, pr: tier * 1e9 - d * (TT.cur[j] > 0.5 ? 0.8 : 1) });
+    cand.push({ w, j, tx, ty, size, bw, bh, al, sticky, x, zw, xmax: Math.min(bx, cw - 6), slope: bx - ax > 1 ? (by - ay) / (bx - ax) : 0, pr: (tier - (fa < 0.5 ? 0.5 : 0)) * 1e9 - d * (TT.cur[j] > 0.5 ? 0.8 : 1) });
   }
   cand.sort((p, q) => q.pr - p.pr);
   // drawn without depth test: hide a title any part of whose placed box is behind an opaque wall (sticky ones too: a nearer
@@ -727,8 +730,9 @@ const live = [];   // per lane: { f, x, morph, next }
 // near fade: d0 / d1 camera distance (units) where a wall is gone / whole (a 4096-high wall fills the screen at ~3550 with
 // the 60 degree FOV), read: px per line from which a wall in front of the camera stays solid however close (walk up to read
 // it without moving the clock); ease: per second, so a clock step or a jump does not pop; still: camera speed (units/s) under
-// which the wall on the centre ray counts as being read (flying through a lane, the walls passed do not hide the ones ahead)
-const NFP = { d0: 2800, d1: 6000, read: 2.2, ease: 8, still: 600 };
+// which the wall on the centre ray counts as being read (flying through a lane, the walls passed do not hide the ones ahead);
+// seek: the read wall's share of that while the camera moves under the user's keys (so they see where to stop)
+const NFP = { d0: 2800, d1: 6000, read: 2.2, ease: 8, still: 600, seek: 0.3 };
 V.NFP = NFP;
 const nearCur = new Float32Array(NF).fill(1), focusSet = new Set();
 let lastDisp = 0;
@@ -788,28 +792,36 @@ function updateDisplay() {
 }
 // A wall close to the camera fades out (it would cover the screen without being readable) unless it is a frame at the clock
 // (search, bookmarks, the file panel and the tour set the clock to their wall; never faded, and whole at once when it becomes
-// one) or the wall being read: the first wall the centre ray hits, facing the camera, with the camera (nearly) still, and
-// no frame at the clock on that ray within d1 (a frame view of the clock frame often stands just behind an earlier frame:
-// that one fades, it does not hide the frame being framed). The read wall comes in over read*0.7..read px per line. A wall
-// stays solid (opaque plate, title, title / label occluder) down to alpha 0.5, then draws as a ghost: no plate, no title,
-// its text / impostor at its alpha, gone below 0.02. Then, per lane the camera stands in, the walls behind the wall being
-// read (or a frame at the clock) fade as the camera comes within 3200 units of it: up close their text would show through
-// gaps and stacked frames (some lanes have frames 16 units apart). The frames at the clock are not faded there either.
+// one) or the wall being read: the first wall the centre ray hits, facing the camera, with no frame at the clock on that ray
+// within d1 (a frame view of the clock frame often stands just behind an earlier frame: that one fades, it does not hide
+// the frame being framed). The read wall comes in over read*0.7..read px per line; while the camera moves (not in a flight)
+// it comes in only to NFP.seek of that, so walking up to a wall shows where to stop, and in full once the camera stops
+// (this frame's speed, not only the smoothed one). A fading wall's plate fades with it (plateA; drawn after everything
+// else, back to front, see the draw); down to alpha 0.5 it counts as solid (wallArr z 1: title / label occluder), below
+// that z = PLATE_FADE (a plate, not an occluder); its title fades with its alpha. Then, per lane the camera stands in,
+// the walls behind the wall being read (or a frame at the clock) fade as the camera comes within 3200 units of it: up close
+// their text would show through gaps and stacked frames (some lanes have frames 16 units apart); eased per wall like the
+// near fade. The frames at the clock are not faded there either.
+// plateA: a fading wall's plate opacity from its alpha: whole from 0.75 (it hides the stack behind it, which is then not
+// drawn), none under 0.25 (the nearest, screen-filling ghosts cost no fill), continuous in between
+const plateA = A => smoothstep(0.25, 0.75, A);
+const PLATE_FADE = 0.25, behCur = new Float32Array(NF).fill(1), behT = new Float32Array(NF);
 function nearFade() {
   const t = performance.now(), dt = lastDisp ? Math.min(0.1, (t - lastDisp) / 1000) : 1; lastDisp = t;
   const cp = V.cam.p, fp = focalPx(), focus = focusSet, kE = Math.min(1, dt * NFP.ease);
   focus.clear(); for (const L of live) { focus.add(L.f); if (L.morph) focus.add(L.morph.a); }
   // the centre ray: the nearest wall it hits (front face), and the nearest frame at the clock it hits
   const cy = Math.cos(V.cam.pitch), rd = [cy * Math.cos(V.cam.yaw), Math.sin(V.cam.pitch), cy * Math.sin(V.cam.yaw)];
+  const still = Math.min(Math.hypot(...vel.v), vel.raw) < NFP.still, seek = still ? 1 : V.flight ? 0 : NFP.seek;
   let readW = -1, tR = Infinity, tF = Infinity;
-  if (rd[0] > 1e-3 && Math.hypot(...vel.v) < NFP.still) for (const w of WALLS) {
+  if (rd[0] > 1e-3 && seek > 0) for (const w of WALLS) {
     const x = wallArr[4 * w.i]; if (wallArr[4 * w.i + 1] <= 0 || x <= cp[0]) continue;
     const tt = (x - cp[0]) / rd[0], y = cp[1] + tt * rd[1], z = cp[2] + tt * rd[2];
     if (y < 0 || y > 4096 || z < w.z0 || z > w.z0 + w.cols * 128) continue;
     if (focus.has(w.i)) { if (tt < tF) tF = tt; } else if (tt < tR) { tR = tt; readW = w.i; }
   }
   if (readW >= 0 && tF < NFP.d1) readW = -1;   // framing a frame at the clock: the walls in front of it are not being read
-  V.readWall = readW;
+  V.readWall = still ? readW : -1;
   for (const w of WALLS) {
     const o = 4 * w.i; if (wallArr[o + 1] <= 0) continue;
     const x = wallArr[o];
@@ -817,20 +829,27 @@ function nearFade() {
     if (focus.has(w.i)) c = 1;
     else {
       const d = G.boxDist(cp, x, 0, w.z0, x, 4096, w.z0 + w.cols * 128);
-      if (d < NFP.d1) { a = smoothstep(NFP.d0, NFP.d1, d); if (w.i === readW) a = Math.max(a, smoothstep(0.7 * NFP.read, NFP.read, 2 * fp / Math.max(1, d))); }
+      if (d < NFP.d1) { a = smoothstep(NFP.d0, NFP.d1, d); if (w.i === readW) a = Math.max(a, seek * smoothstep(0.7 * NFP.read, NFP.read, 2 * fp / Math.max(1, d))); }
       c = nearCur[w.i]; c += (a - c) * kE; if (Math.abs(a - c) < 0.01) c = a;
     }
     nearCur[w.i] = c;
-    if (c < 0.999) { const A = wallArr[o + 1] * c; wallArr[o + 1] = A < 0.02 ? 0 : A; if (A < 0.5) wallArr[o + 2] = 0; }
+    if (c < 0.999) { const A = wallArr[o + 1] * c; wallArr[o + 1] = A < 0.02 ? 0 : A; if (A < 0.5) wallArr[o + 2] = PLATE_FADE; }
   }
+  behT.fill(1);
   for (const ln of LN) {
     if (cp[2] < ln.z0 - 512 || cp[2] > ln.z0 + ln.cols * 128 + 512) continue;
     let ref = -1;   // the nearest solid wall ahead of the camera in this lane (the read wall or a frame at the clock), within 3200 units
-    for (const f of ln.frames) { const o = 4 * f, x = wallArr[o]; if ((f === readW || focus.has(f)) && wallArr[o + 2] > 0.5 && wallArr[o + 1] > 0 && x >= cp[0] && x - cp[0] < 3200 && (ref < 0 || x < wallArr[4 * ref])) ref = f; }
+    for (const f of ln.frames) { const o = 4 * f, x = wallArr[o]; if (((f === readW && still) || focus.has(f)) && wallArr[o + 2] > 0.5 && wallArr[o + 1] > 0 && x >= cp[0] && x - cp[0] < 3200 && (ref < 0 || x < wallArr[4 * ref])) ref = f; }
     if (ref < 0) continue;
     const xr = wallArr[4 * ref], fade = Math.max(0, Math.min(1, (xr - cp[0] - 500) / 2700));
-    for (const g of ln.frames) { const o = 4 * g; if (g === ref || focus.has(g) || wallArr[o + 1] <= 0 || wallArr[o] <= xr || wallArr[o] - xr > 6000) continue;
-      wallArr[o + 1] *= fade; if (wallArr[o + 1] < 0.01) wallArr[o + 1] = 0; if (wallArr[o + 1] < 0.5) wallArr[o + 2] = 0; }
+    for (const g of ln.frames) { const o = 4 * g; if (g === ref || focus.has(g) || wallArr[o] <= xr || wallArr[o] - xr > 6000) continue; behT[g] = fade; }
+  }
+  for (const w of WALLS) {
+    const i = w.i, o = 4 * i;
+    let b = behCur[i];
+    if (focus.has(i)) b = 1; else { b += (behT[i] - b) * kE; if (Math.abs(behT[i] - b) < 0.01) b = behT[i]; }
+    behCur[i] = b;
+    if (b < 0.999 && wallArr[o + 1] > 0) { const A = wallArr[o + 1] * b; wallArr[o + 1] = A < 0.02 ? 0 : A; if (A < 0.5 && wallArr[o + 2] > 0) wallArr[o + 2] = PLATE_FADE; }
   }
 }
 V.wallA = w => wallArr[4 * w.i + 1];
@@ -863,11 +882,12 @@ V.LODP = LODP;
 const NOFADE = new Float32Array([-1, 0]);
 const boxFar = (p, x0, y0, z0, x1, y1, z1) => Math.hypot(Math.max(Math.abs(p[0] - x0), Math.abs(p[0] - x1)), Math.max(Math.abs(p[1] - y0), Math.abs(p[1] - y1)), Math.max(Math.abs(p[2] - z0), Math.abs(p[2] - z1)));
 // camera velocity (from its motion, whatever moves it: keys, flights, the tour, the benchmark), smoothed; jumps reset it
-const vel = { v: [0, 0, 0], p: null };
+const vel = { v: [0, 0, 0], p: null, raw: 0 };
 function aheadPoint(dt) {
   const p = V.cam.p;
   if (vel.p && dt > 0) {
     const d = [0, 1, 2].map(i => (p[i] - vel.p[i]) / dt), sp = Math.hypot(...d);
+    vel.raw = sp > 300000 ? 0 : sp;   // this frame's speed: 0 the frame the camera stops (the smoothed one takes ~0.4 s)
     if (sp > 300000) vel.v = [0, 0, 0]; else for (let i = 0; i < 3; i++) vel.v[i] += (d[i] - vel.v[i]) * Math.min(1, dt * 5);
   }
   vel.p = p.slice();
@@ -1124,7 +1144,7 @@ function frame(now) {
     // faded walls (near the camera) are streamed, baked and drawn as text too, at their alpha; legacy ghosts only as impostor / T3
     const text = solid || (ALLF && A >= 0.05);
     if (text && pE >= LODP.want) want.push([solid ? dE : dE * 1.5, w]);
-    if (solid && pE >= LODP.card && w.meta) cards.push([dE, w]);
+    if ((solid || (ALLF && A >= 0.05 && wallArr[4 * w.i + 2] > 0)) && pE >= LODP.card && w.meta) cards.push([dE, w]);
     if (w.loaded) w.lastUse = now;
     if (IMP.hi && w.loaded && pE > LODP.hi && camSpeed < LODP.fast) hiNext.push([dE, w.i]);
     w.lodD = dE;
@@ -1155,6 +1175,21 @@ function frame(now) {
   // Now: each live wall in streaming range brings its next frame along, so the frame change does not show it unloaded
   for (const L of live) if (L.next >= 0) { const w = W[L.f], d = G.boxDist(V.cam.p, L.x, 0, w.z0, L.x, 4096, w.z0 + w.cols * 128);
     if (2 * fp / Math.max(d, 1) >= LODP.want) want.push([d + 1, W[L.next]]); }
+  // walls hidden behind the plates in front of them: in the lane the camera stands in (its y / z inside the walls' extent),
+  // each wall ahead is covered whole by every nearer one, so what shows of it is its share T = prod (1 - alpha) of the
+  // nearer plates (an opaque one: 0). Below 0.02 it is not drawn at all (fading plates write no depth, so this is what keeps
+  // a lane flight from drawing every stacked wall behind them).
+  const hidden = new Set();
+  if (ALLF && V.cam.p[1] > 0 && V.cam.p[1] < 4096) for (const ln of LN) {
+    if (V.cam.p[2] <= ln.z0 || V.cam.p[2] >= ln.z0 + ln.cols * 128 - 4) continue;
+    const ahead = visList.filter(w => w.lane === ln.li && wallArr[4 * w.i] > V.cam.p[0]).sort((a, b) => wallArr[4 * a.i] - wallArr[4 * b.i]);
+    let T = 1;
+    for (const w of ahead) { if (T < 0.02) { hidden.add(w); continue; } const o = 4 * w.i; if (wallArr[o + 2] > 0) T *= wallArr[o + 1] >= 0.999 ? 0 : 1 - plateA(wallArr[o + 1]); }
+  }
+  V.stats.hidden = hidden.size;
+  if (hidden.size) { for (let i = lineRuns.length - 1; i >= 0; i--) if (hidden.has(lineRuns[i][0])) lineRuns.splice(i, 1);
+    for (let i = impRuns.length - 1; i >= 0; i--) if (hidden.has(impRuns[i][0])) impRuns.splice(i, 1);
+    for (let i = t3Walls.length - 1; i >= 0; i--) if (hidden.has(t3Walls[i])) t3Walls.splice(i, 1); }
   lineRuns.sort((a, b) => a[3] - b[3]);
   const drawRuns = [];
   for (const rr of lineRuns) { const w = rr[0], n = w.colStart[rr[2]] - w.colStart[rr[1]]; if (n === 0) continue;
@@ -1172,6 +1207,12 @@ function frame(now) {
     if (p < LODP.t5) { t5Walls.push(w); t3Walls.splice(i, 1); wallArr[4 * w.i + 3] = 3; }
     else if (p < LODP.t4) { t4Walls.push(w); t3Walls.splice(i, 1); wallArr[4 * w.i + 3] = 2; } else wallArr[4 * w.i + 3] = 1; }
   uploadWallTex();
+  // fading walls (ALLF, a plate, alpha below 1): drawn last, back to front, each its plate at its alpha and then its content,
+  // so the plate dims what stands behind it (an opaque, depth-writing plate would hide it all) and not its own text
+  const fadeSet = new Set(), fadeList = [];
+  if (ALLF) for (const w of visList) { const o = 4 * w.i; if (wallArr[o + 2] > 0 && wallArr[o + 1] < 0.999 && wallArr[o + 3] !== 3 && !hidden.has(w)) { fadeSet.add(w); fadeList.push(w); } }
+  fadeList.sort((a, b) => Math.abs(wallArr[4 * b.i] - V.cam.p[0]) - Math.abs(wallArr[4 * a.i] - V.cam.p[0]));
+  V.stats.fading = fadeList.length;
   PM('lod');
   bakeCand.sort((a, b) => a[0] - b[0]); BK.alloc = []; BK.done = 0; BK.lines = 0; BK.mb = 0;
   let bakeBudget = SOFT ? 40000 : 1200000;
@@ -1191,7 +1232,7 @@ function frame(now) {
   common(P.rect); bindTex(5, gl.TEXTURE_2D, palTex, P.rect, 'uPal'); gl.uniform1i(P.rect.u.uMode, V.mode); gl.uniform1f(P.rect.u.uMul, 1);
   if (!V.skip.has('plates')) {   // solid walls: opaque plates (depth)
     gl.bindVertexArray(plates.vao);
-    for (const w of visList) { if (!V.isSolid(w) || wallArr[4 * w.i + 3] === 3) continue; const [a, n] = plateRange.get(w.i); plates.bind(a); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, n); draws++; }
+    for (const w of visList) { if (!V.isSolid(w) || wallArr[4 * w.i + 3] === 3 || fadeSet.has(w) || hidden.has(w)) continue; const [a, n] = plateRange.get(w.i); plates.bind(a); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, n); draws++; }
   }
   gl.enable(gl.BLEND); gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA); gl.depthMask(false);
   if (!V.skip.has('floor')) { gl.bindVertexArray(floor.vao); floor.bind(0); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, floor.n); draws++;
@@ -1200,21 +1241,26 @@ function frame(now) {
     if (list.length > all) { buf.bind(0); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, buf.n); draws++; return; }
     for (const w of list) { const rg = ranges.get(w.i); if (!rg || !rg[1]) continue; buf.bind(rg[0]); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, rg[1]); draws++; } };
   // T4 / T5: one draw of the whole buffer once there are more than a few walls (the shader drops walls not in that tier)
-  if (!V.skip.has('t3')) { drawRanges(t3, t3Range, t3Walls, 300); drawRanges(t4, t4Range, t4Walls, 40); drawRanges(t5, t5Range, t5Walls, 12); }
+  const t3A = fadeList.length ? t3Walls.filter(w => !fadeSet.has(w)) : t3Walls, t3All = t3A.length > 300;   // all: one draw (fading ones too)
+  if (!V.skip.has('t3')) { drawRanges(t3, t3Range, t3A, 300); drawRanges(t4, t4Range, t4Walls, 40); drawRanges(t5, t5Range, t5Walls, 12); }
   PM('plates');
-  if (impRuns.length && !V.skip.has('imp')) { common(P.imp); gl.bindVertexArray(emptyVAO);
-    for (const [w, c0, c1, A, fl] of impRuns) {
-      if (!w.imp || !w.imp.ready) continue; w.imp.used = now; if (w.impLo) w.impLo.used = now;
+  const drawImp = (runs, skip) => { let on = false;
+    for (const [w, c0, c1, A, fl] of runs) {
+      if (!w.imp || !w.imp.ready || (skip && skip.has(w))) continue; w.imp.used = now; if (w.impLo) w.impLo.used = now;
+      if (!on) { common(P.imp); gl.bindVertexArray(emptyVAO); on = true; }
       bindTex(0, gl.TEXTURE_2D, w.imp.tex, P.imp, 'uImp'); gl.uniform1f(P.imp.u.uFade, A); gl.uniform2fv(P.imp.u.uLF, fl ? LF : NOFADE);
       gl.uniform1f(P.imp.u.uWallX, wallArr[4 * w.i]); gl.uniform1f(P.imp.u.uZ0, w.z0); gl.uniform1f(P.imp.u.uC0, c0); gl.uniform1f(P.imp.u.uC1, c1); gl.uniform1f(P.imp.u.uCols, w.cols);
-      gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); draws++; } }
-  PM('imp');
-  if (drawRuns.length) { setupLineProg(P.line); gl.bindVertexArray(emptyVAO);
-    let cur = null;
-    for (const [w, c0, c1] of drawRuns) {
+      gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); draws++; } };
+  const drawLines = (runs, skip) => { let on = false, cur = null;
+    for (const [w, c0, c1] of runs) {
+      if (skip && skip.has(w)) continue;
+      if (!on) { setupLineProg(P.line); gl.bindVertexArray(emptyVAO); on = true; }
       if (cur !== w) { wallUniforms(P.line, w, wallArr[4 * w.i]); gl.uniform1f(P.line.u.uAlpha, wallArr[4 * w.i + 1]); cur = w; }
       const a = w.colStart[c0], n = w.colStart[c1] - a;
-      gl.uniform1i(P.line.u.uBase, w.base + a); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, n); draws++; } }
+      gl.uniform1i(P.line.u.uBase, w.base + a); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, n); draws++; } };
+  if (!V.skip.has('imp')) drawImp(impRuns, fadeList.length ? fadeSet : null);
+  PM('imp');
+  drawLines(drawRuns, fadeList.length ? fadeSet : null);
   PM('lines');
   // the live morph of the nearest lane (the other lanes show their arriving frame); far away it is the arriving frame's T3 / impostor
   for (const M of V.morph ? [V.morph] : []) {
@@ -1241,7 +1287,7 @@ function frame(now) {
   }
   PM('morph');
   if (cardList.length && !V.skip.has('deco')) { common(P.rect); bindTex(5, gl.TEXTURE_2D, palTex, P.rect, 'uPal'); gl.uniform1f(P.rect.u.uMul, 1);
-    for (const c of cardList) if (c.deco.n) { gl.bindVertexArray(c.deco.vao); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, c.deco.n); draws++; } }
+    for (const c of cardList) if (c.deco.n && !fadeSet.has(c.w)) { gl.bindVertexArray(c.deco.vao); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, c.deco.n); draws++; } }
   if (!V.skip.has('segs')) { common(P.seg); gl.bindVertexArray(segBuf.vao); gl.drawArrays(gl.LINES, 0, segBuf.n); draws++; }
   PM('segs');
   common(P.label); bindTex(4, gl.TEXTURE_2D, atlasTex, P.label, 'uAtlas');
@@ -1249,9 +1295,30 @@ function frame(now) {
   const kpx = cw / Math.max(1, canvas.clientWidth);
   if (cardList.length && !V.skip.has('deco')) {   // file cards: path labels from 12 CSS px per line of text, grown names below that
     gl.uniform1f(P.label.u.uMinPx, Math.max(SOFT ? 6 : 5, 7 * kpx)); gl.uniform1f(P.label.u.uMinFade, 1.3); gl.uniform1f(P.label.u.uCardPx, Math.max(SOFT ? 8 : 7, 12 * kpx));
-    for (const c of cardList) if (c.labs.n) { bindTex(9, gl.TEXTURE_2D, c.labs.tex, P.label, 'uLab'); gl.bindVertexArray(c.labs.vao); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, c.labs.n); draws++; } }
-  gl.uniform1f(P.label.u.uMinPx, SOFT ? 8 : 5); gl.uniform1f(P.label.u.uMinFade, 1.6); gl.uniform1f(P.label.u.uCardPx, 0);
+    for (const c of cardList) if (c.labs.n && !fadeSet.has(c.w)) { bindTex(9, gl.TEXTURE_2D, c.labs.tex, P.label, 'uLab'); gl.bindVertexArray(c.labs.vao); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, c.labs.n); draws++; } }
   PM('cards');
+  // the fading walls, back to front: plate (blended at the wall's alpha, depth test, no depth write), T3, impostor, lines, cards
+  if (fadeList.length) {
+    const cardOf = new Map(cardList.map(c => [c.w, c]));
+    for (const w of fadeList) {
+      if (!V.skip.has('plates')) { common(P.rect); bindTex(5, gl.TEXTURE_2D, palTex, P.rect, 'uPal'); gl.uniform1i(P.rect.u.uMode, V.mode); gl.uniform1f(P.rect.u.uMul, 1);
+        const A = wallArr[4 * w.i + 1], pa = plateA(A);   // the plate at plateA (uMul scales the wall's alpha A in the shader)
+        if (pa > 0.004) { gl.uniform1f(P.rect.u.uMul, pa / A); gl.bindVertexArray(plates.vao); const [a, n] = plateRange.get(w.i); plates.bind(a); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, n); draws++; gl.uniform1f(P.rect.u.uMul, 1); }
+        if (!t3All && !V.skip.has('t3') && wallArr[4 * w.i + 3] === 1) drawRanges(t3, t3Range, [w], 300); }
+      if (!V.skip.has('imp')) drawImp(impRuns.filter(r => r[0] === w));
+      drawLines(drawRuns.filter(r => r[0] === w));
+      const c = cardOf.get(w);
+      if (c && !V.skip.has('deco')) {
+        if (c.deco.n) { common(P.rect); bindTex(5, gl.TEXTURE_2D, palTex, P.rect, 'uPal'); gl.uniform1i(P.rect.u.uMode, V.mode); gl.uniform1f(P.rect.u.uMul, 1); gl.bindVertexArray(c.deco.vao); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, c.deco.n); draws++; }
+        if (c.labs.n) { common(P.label); bindTex(4, gl.TEXTURE_2D, atlasTex, P.label, 'uAtlas'); gl.uniform3fv(P.label.u.uRight, r); gl.uniform3fv(P.label.u.uUp, u);
+          gl.uniform1f(P.label.u.uMinPx, Math.max(SOFT ? 6 : 5, 7 * kpx)); gl.uniform1f(P.label.u.uMinFade, 1.3); gl.uniform1f(P.label.u.uCardPx, Math.max(SOFT ? 8 : 7, 12 * kpx));
+          bindTex(9, gl.TEXTURE_2D, c.labs.tex, P.label, 'uLab'); gl.bindVertexArray(c.labs.vao); gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, c.labs.n); draws++; }
+      }
+    }
+    common(P.label); bindTex(4, gl.TEXTURE_2D, atlasTex, P.label, 'uAtlas'); gl.uniform3fv(P.label.u.uRight, r); gl.uniform3fv(P.label.u.uUp, u);
+  }
+  PM('fading');
+  gl.uniform1f(P.label.u.uMinPx, SOFT ? 8 : 5); gl.uniform1f(P.label.u.uMinFade, 1.6); gl.uniform1f(P.label.u.uCardPx, 0);
   if (!V.skip.has('titles')) layoutTitles(dt);
   PM('titles');
   if (!V.skip.has('labels')) {

@@ -1,0 +1,60 @@
+{
+ "shots": {},
+ "log": [],
+ "r": [
+  {
+   "q": 55,
+   "f": 302,
+   "x": 914048,
+   "xs": 914048,
+   "title": "nullDC4Wii  alpha0.50  2026-07  ec3c34d"
+  },
+  {
+   "q": 56,
+   "f": 303,
+   "x": 913677,
+   "xs": 913677,
+   "title": "nullDC4Wii  alpha0.51  2026-07  bd614f2"
+  },
+  {
+   "q": 57,
+   "f": 304,
+   "x": 913935,
+   "xs": 913935,
+   "title": "nullDC4Wii  alpha0.52  2026-07  fe2f17d"
+  },
+  {
+   "q": 58,
+   "f": 305,
+   "x": 914435,
+   "xs": 914435,
+   "title": "nullDC4Wii  alpha0.53  2026-07  7fb93e8"
+  },
+  {
+   "q": 59,
+   "f": 306,
+   "x": 914065,
+   "xs": 914065,
+   "title": "nullDC4Wii  alpha0.54  2026-07  7f2d51e"
+  },
+  {
+   "q": 60,
+   "f": 316,
+   "x": 914323,
+   "xs": 914323,
+   "title": "nullDC4Wii  alpha0.55  2026-07  df92b47"
+  },
+  {
+   "q": 61,
+   "f": 317,
+   "x": 914452,
+   "xs": 914452,
+   "title": "nullDC4Wii  alpha0.56  2026-07  41272b7"
+  }
+ ],
+ "live": 316,
+ "focus": 305,
+ "dupLT1": 20,
+ "minGap": -1371
+}
+2.1s closed

@@ -1,0 +1,2072 @@
+{
+ "log": [
+  {
+   "name": "tour-3s",
+   "t": 5194,
+   "pres": "clock",
+   "cam": [
+    144207,
+    20570,
+    27347
+   ],
+   "q": 0,
+   "walls": 19,
+   "t3area": 0.01,
+   "stats": {
+    "t3": 1,
+    "t4": 18,
+    "t5": 339,
+    "imp": 18,
+    "inst": 0,
+    "draws": 80,
+    "pendingBake": 0,
+    "wantQueue": 1,
+    "gpuMB": 199
+   },
+   "classes": {
+    "solid T3": {
+     "n": 1,
+     "area": 0.008
+    },
+    "solid imp-far": {
+     "n": 13,
+     "area": 0.065
+    },
+    "solid imp-hi": {
+     "n": 5,
+     "area": 0.012
+    },
+    "solid T4": {
+     "n": 18,
+     "area": 0.018
+    },
+    "solid T5": {
+     "n": 339,
+     "area": 0.001
+    }
+   },
+   "top": [
+    {
+     "f": 21,
+     "lane": "nullDC",
+     "date": "2010-10-25",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.05,
+     "area": 0.015
+    },
+    {
+     "f": 22,
+     "lane": "nullDC",
+     "date": "2010-11-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.045,
+     "area": 0.012
+    },
+    {
+     "f": 23,
+     "lane": "nullDC",
+     "date": "2010-12-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.042,
+     "area": 0.01
+    },
+    {
+     "f": 24,
+     "lane": "nullDC",
+     "date": "2011-01-08",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.041,
+     "area": 0.009
+    },
+    {
+     "f": 20,
+     "lane": "nullDC",
+     "date": "2010-09-29",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.054,
+     "area": 0.008
+    },
+    {
+     "f": 25,
+     "lane": "nullDC",
+     "date": "2011-05-22",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.03,
+     "area": 0.005
+    },
+    {
+     "f": 26,
+     "lane": "nullDC",
+     "date": "2011-06-04",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.029,
+     "area": 0.004
+    },
+    {
+     "f": 27,
+     "lane": "nullDC",
+     "date": "2011-08-21",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.025,
+     "area": 0.003
+    }
+   ],
+   "leaks": {
+    "titles": 9,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDC  2010-10  2ebb118",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nullDC  2011-05  6377ab0",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nullDC  2011-08  0a284d8",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nulldc-360  2011-10  0330292",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nulldc-360  2012-02  4c84334",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nulldc-360  2012-09  14e8058",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.25,
+   "cpu_ms": 1.76,
+   "labels": 14,
+   "titlesShown": 11,
+   "attract": true,
+   "cap": "SHAD, the SH4 dynamic shift15 lines, first seen in nullDCe 2009-10-16; held by 223 frames in 7 lanes (nullDCe, nullDCe-P",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-6s",
+   "t": 8280,
+   "pres": "clock",
+   "cam": [
+    122262,
+    2715,
+    32991
+   ],
+   "q": 0,
+   "walls": 25,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 13,
+    "t5": 344,
+    "imp": 25,
+    "inst": 62897,
+    "draws": 85,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 211
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 0.865
+    },
+    "solid imp-far": {
+     "n": 19,
+     "area": 0.104
+    },
+    "solid imp-hi": {
+     "n": 5,
+     "area": 0.007
+    },
+    "solid T4": {
+     "n": 13,
+     "area": 0.013
+    },
+    "solid T5": {
+     "n": 344,
+     "area": 0
+    }
+   },
+   "top": [
+    {
+     "f": 14,
+     "lane": "nullDCe",
+     "date": "2009-10-16",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.509,
+     "area": 0.865
+    },
+    {
+     "f": 15,
+     "lane": "nullDC",
+     "date": "2010-05-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.051,
+     "area": 0.019
+    },
+    {
+     "f": 16,
+     "lane": "nullDC",
+     "date": "2010-05-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.048,
+     "area": 0.016
+    },
+    {
+     "f": 17,
+     "lane": "nullDC",
+     "date": "2010-06-20",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.045,
+     "area": 0.013
+    },
+    {
+     "f": 18,
+     "lane": "nullDC",
+     "date": "2010-07-23",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.042,
+     "area": 0.01
+    },
+    {
+     "f": 19,
+     "lane": "nullDC",
+     "date": "2010-08-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.038,
+     "area": 0.008
+    },
+    {
+     "f": 20,
+     "lane": "nullDC",
+     "date": "2010-09-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.035,
+     "area": 0.007
+    },
+    {
+     "f": 21,
+     "lane": "nullDC",
+     "date": "2010-10-25",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.033,
+     "area": 0.006
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDCe  2008-2010  39c0550",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.65,
+   "cpu_ms": 1.19,
+   "labels": 1,
+   "titlesShown": 1,
+   "attract": true,
+   "cap": "SHAD, the SH4 dynamic shift15 lines, first seen in nullDCe 2009-10-16; held by 223 frames in 7 lanes (nullDCe, nullDCe-P",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-9s",
+   "t": 11419,
+   "pres": "clock",
+   "cam": [
+    125845,
+    3450,
+    31488
+   ],
+   "q": 0,
+   "walls": 25,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 13,
+    "t5": 344,
+    "imp": 24,
+    "inst": 4805,
+    "draws": 84,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 211
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-far": {
+     "n": 19,
+     "area": 0.111
+    },
+    "solid imp-hi": {
+     "n": 5,
+     "area": 0.007
+    },
+    "solid T4": {
+     "n": 13,
+     "area": 0.013
+    },
+    "solid T5": {
+     "n": 344,
+     "area": 0.001
+    }
+   },
+   "top": [
+    {
+     "f": 14,
+     "lane": "nullDCe",
+     "date": "2009-10-16",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 20.86,
+     "area": 1
+    },
+    {
+     "f": 15,
+     "lane": "nullDC",
+     "date": "2010-05-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.057,
+     "area": 0.021
+    },
+    {
+     "f": 16,
+     "lane": "nullDC",
+     "date": "2010-05-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.053,
+     "area": 0.017
+    },
+    {
+     "f": 17,
+     "lane": "nullDC",
+     "date": "2010-06-20",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.05,
+     "area": 0.014
+    },
+    {
+     "f": 18,
+     "lane": "nullDC",
+     "date": "2010-07-23",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.045,
+     "area": 0.011
+    },
+    {
+     "f": 19,
+     "lane": "nullDC",
+     "date": "2010-08-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.041,
+     "area": 0.009
+    },
+    {
+     "f": 20,
+     "lane": "nullDC",
+     "date": "2010-09-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.038,
+     "area": 0.007
+    },
+    {
+     "f": 21,
+     "lane": "nullDC",
+     "date": "2010-10-25",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.036,
+     "area": 0.006
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDCe  2008-2010  39c0550",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.32,
+   "cpu_ms": 1.23,
+   "labels": 1,
+   "titlesShown": 1,
+   "attract": true,
+   "cap": "SHAD, the SH4 dynamic shift15 lines, first seen in nullDCe 2009-10-16; held by 223 frames in 7 lanes (nullDCe, nullDCe-P",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-12s",
+   "t": 14480,
+   "pres": "clock",
+   "cam": [
+    125840,
+    3438,
+    31511
+   ],
+   "q": 0,
+   "walls": 25,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 13,
+    "t5": 344,
+    "imp": 24,
+    "inst": 4805,
+    "draws": 84,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 211
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-far": {
+     "n": 19,
+     "area": 0.111
+    },
+    "solid imp-hi": {
+     "n": 5,
+     "area": 0.007
+    },
+    "solid T4": {
+     "n": 13,
+     "area": 0.013
+    },
+    "solid T5": {
+     "n": 344,
+     "area": 0.001
+    }
+   },
+   "top": [
+    {
+     "f": 14,
+     "lane": "nullDCe",
+     "date": "2009-10-16",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 19.764,
+     "area": 1
+    },
+    {
+     "f": 15,
+     "lane": "nullDC",
+     "date": "2010-05-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.057,
+     "area": 0.021
+    },
+    {
+     "f": 16,
+     "lane": "nullDC",
+     "date": "2010-05-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.053,
+     "area": 0.017
+    },
+    {
+     "f": 17,
+     "lane": "nullDC",
+     "date": "2010-06-20",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.05,
+     "area": 0.014
+    },
+    {
+     "f": 18,
+     "lane": "nullDC",
+     "date": "2010-07-23",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.045,
+     "area": 0.011
+    },
+    {
+     "f": 19,
+     "lane": "nullDC",
+     "date": "2010-08-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.041,
+     "area": 0.009
+    },
+    {
+     "f": 20,
+     "lane": "nullDC",
+     "date": "2010-09-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.038,
+     "area": 0.007
+    },
+    {
+     "f": 21,
+     "lane": "nullDC",
+     "date": "2010-10-25",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.036,
+     "area": 0.006
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDCe  2008-2010  39c0550",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.32,
+   "cpu_ms": 0.86,
+   "labels": 1,
+   "titlesShown": 1,
+   "attract": true,
+   "cap": "SHAD, the SH4 dynamic shift15 lines, first seen in nullDCe 2009-10-16; held by 223 frames in 7 lanes (nullDCe, nullDCe-P",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-15s",
+   "t": 17549,
+   "pres": "clock",
+   "cam": [
+    125820,
+    3429,
+    31539
+   ],
+   "q": 0,
+   "walls": 25,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 13,
+    "t5": 344,
+    "imp": 24,
+    "inst": 3189,
+    "draws": 84,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 211
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-far": {
+     "n": 19,
+     "area": 0.111
+    },
+    "solid imp-hi": {
+     "n": 5,
+     "area": 0.007
+    },
+    "solid T4": {
+     "n": 13,
+     "area": 0.013
+    },
+    "solid T5": {
+     "n": 344,
+     "area": 0.001
+    }
+   },
+   "top": [
+    {
+     "f": 14,
+     "lane": "nullDCe",
+     "date": "2009-10-16",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 16.321,
+     "area": 1
+    },
+    {
+     "f": 15,
+     "lane": "nullDC",
+     "date": "2010-05-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.057,
+     "area": 0.021
+    },
+    {
+     "f": 16,
+     "lane": "nullDC",
+     "date": "2010-05-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.053,
+     "area": 0.017
+    },
+    {
+     "f": 17,
+     "lane": "nullDC",
+     "date": "2010-06-20",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.05,
+     "area": 0.014
+    },
+    {
+     "f": 18,
+     "lane": "nullDC",
+     "date": "2010-07-23",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.045,
+     "area": 0.011
+    },
+    {
+     "f": 19,
+     "lane": "nullDC",
+     "date": "2010-08-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.041,
+     "area": 0.009
+    },
+    {
+     "f": 20,
+     "lane": "nullDC",
+     "date": "2010-09-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.038,
+     "area": 0.007
+    },
+    {
+     "f": 21,
+     "lane": "nullDC",
+     "date": "2010-10-25",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.036,
+     "area": 0.006
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDCe  2008-2010  39c0550",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.31,
+   "cpu_ms": 1.05,
+   "labels": 1,
+   "titlesShown": 1,
+   "attract": true,
+   "cap": "SHAD, the SH4 dynamic shift15 lines, first seen in nullDCe 2009-10-16; held by 223 frames in 7 lanes (nullDCe, nullDCe-P",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-18s",
+   "t": 20616,
+   "pres": "clock",
+   "cam": [
+    609292,
+    36955,
+    79486
+   ],
+   "q": 0,
+   "walls": 29,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 66,
+    "t5": 181,
+    "imp": 0,
+    "inst": 0,
+    "draws": 73,
+    "pendingBake": 0,
+    "wantQueue": 11,
+    "gpuMB": 211
+   },
+   "classes": {
+    "solid T4": {
+     "n": 66,
+     "area": 0.245
+    },
+    "solid T5": {
+     "n": 181,
+     "area": 0.032
+    }
+   },
+   "top": [
+    {
+     "f": 150,
+     "lane": "flycast",
+     "date": "2021-04-30",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.027,
+     "area": 0.016
+    },
+    {
+     "f": 152,
+     "lane": "flycast",
+     "date": "2021-05-28",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.026,
+     "area": 0.015
+    },
+    {
+     "f": 153,
+     "lane": "flycast",
+     "date": "2021-05-31",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.026,
+     "area": 0.015
+    },
+    {
+     "f": 154,
+     "lane": "flycast",
+     "date": "2021-06-27",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.025,
+     "area": 0.013
+    },
+    {
+     "f": 157,
+     "lane": "flycast",
+     "date": "2021-07-30",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.024,
+     "area": 0.012
+    },
+    {
+     "f": 159,
+     "lane": "flycast",
+     "date": "2021-08-26",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.023,
+     "area": 0.01
+    },
+    {
+     "f": 160,
+     "lane": "flycast",
+     "date": "2021-09-30",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.022,
+     "area": 0.009
+    },
+    {
+     "f": 149,
+     "lane": "flycast",
+     "date": "2021-03-31",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.029,
+     "area": 0.008
+    }
+   ],
+   "leaks": {
+    "titles": 17,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2021-02  8845f4e",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2021-03  4d81557",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2021-04  6dfa9f7",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nulldc-360  2021-05  f9d1610",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2021-11  ef3af9a",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nulldc-360  2022-02  7b0bd50",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.39,
+   "cpu_ms": 1.36,
+   "labels": 8,
+   "titlesShown": 20,
+   "attract": true,
+   "cap": "SHAD, the SH4 dynamic shift15 lines, first seen in nullDCe 2009-10-16; held by 223 frames in 7 lanes (nullDCe, nullDCe-P",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-21s",
+   "t": 23688,
+   "pres": "clock",
+   "cam": [
+    762283,
+    3717,
+    94277
+   ],
+   "q": 0,
+   "walls": 41,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 182,
+    "t5": 0,
+    "imp": 23,
+    "inst": 0,
+    "draws": 238,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 526
+   },
+   "classes": {
+    "solid imp-hi": {
+     "n": 7,
+     "area": 0.773
+    },
+    "solid imp-lo": {
+     "n": 1,
+     "area": 0.039
+    },
+    "solid imp-far": {
+     "n": 15,
+     "area": 0.267
+    },
+    "solid T4": {
+     "n": 182,
+     "area": 0.258
+    }
+   },
+   "top": [
+    {
+     "f": 190,
+     "lane": "reicast",
+     "date": "2023-07-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.272,
+     "area": 0.526
+    },
+    {
+     "f": 193,
+     "lane": "flycast",
+     "date": "2023-09-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.093,
+     "area": 0.049
+    },
+    {
+     "f": 194,
+     "lane": "flycast",
+     "date": "2023-10-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.08,
+     "area": 0.048
+    },
+    {
+     "f": 195,
+     "lane": "flycast",
+     "date": "2023-10-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.079,
+     "area": 0.048
+    },
+    {
+     "f": 196,
+     "lane": "flycast",
+     "date": "2023-11-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.069,
+     "area": 0.045
+    },
+    {
+     "f": 197,
+     "lane": "flycast",
+     "date": "2023-12-22",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.062,
+     "area": 0.043
+    },
+    {
+     "f": 198,
+     "lane": "flycast",
+     "date": "2024-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-lo",
+     "ppl": 0.054,
+     "area": 0.039
+    },
+    {
+     "f": 199,
+     "lane": "flycast",
+     "date": "2024-02-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.048,
+     "area": 0.035
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "reicast  2023-07  6cdb605",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.57,
+   "cpu_ms": 1.31,
+   "labels": 2,
+   "titlesShown": 1,
+   "attract": true,
+   "cap": "SHAD, the SH4 dynamic shift15 lines, first seen in nullDCe 2009-10-16; held by 223 frames in 7 lanes (nullDCe, nullDCe-P",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-24s",
+   "t": 26750,
+   "pres": "clock",
+   "cam": [
+    769076,
+    3110,
+    92686
+   ],
+   "q": 0,
+   "walls": 41,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 182,
+    "t5": 0,
+    "imp": 20,
+    "inst": 4346,
+    "draws": 232,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 526
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-hi": {
+     "n": 4,
+     "area": 0.128
+    },
+    "solid imp-lo": {
+     "n": 1,
+     "area": 0.038
+    },
+    "solid imp-far": {
+     "n": 15,
+     "area": 0.328
+    },
+    "solid T4": {
+     "n": 182,
+     "area": 0.279
+    }
+   },
+   "top": [
+    {
+     "f": 190,
+     "lane": "reicast",
+     "date": "2023-07-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 21.978,
+     "area": 1
+    },
+    {
+     "f": 197,
+     "lane": "flycast",
+     "date": "2023-12-22",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.076,
+     "area": 0.039
+    },
+    {
+     "f": 198,
+     "lane": "flycast",
+     "date": "2024-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-lo",
+     "ppl": 0.065,
+     "area": 0.038
+    },
+    {
+     "f": 196,
+     "lane": "flycast",
+     "date": "2023-11-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.085,
+     "area": 0.037
+    },
+    {
+     "f": 199,
+     "lane": "flycast",
+     "date": "2024-02-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.057,
+     "area": 0.036
+    },
+    {
+     "f": 200,
+     "lane": "flycast",
+     "date": "2024-03-15",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.054,
+     "area": 0.035
+    },
+    {
+     "f": 201,
+     "lane": "flycast",
+     "date": "2024-03-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.051,
+     "area": 0.034
+    },
+    {
+     "f": 202,
+     "lane": "flycast",
+     "date": "2024-04-26",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.047,
+     "area": 0.033
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "reicast  2023-07  6cdb605",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.64,
+   "cpu_ms": 0.94,
+   "labels": 0,
+   "titlesShown": 1,
+   "attract": true,
+   "cap": "SHAD, the SH4 dynamic shift15 lines, first seen in nullDCe 2009-10-16; held by 223 frames in 7 lanes (nullDCe, nullDCe-P",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-27s",
+   "t": 29818,
+   "pres": "clock",
+   "cam": [
+    769065,
+    3101,
+    92714
+   ],
+   "q": 0,
+   "walls": 41,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 182,
+    "t5": 0,
+    "imp": 20,
+    "inst": 4346,
+    "draws": 232,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 526
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-hi": {
+     "n": 4,
+     "area": 0.129
+    },
+    "solid imp-lo": {
+     "n": 1,
+     "area": 0.038
+    },
+    "solid imp-far": {
+     "n": 15,
+     "area": 0.329
+    },
+    "solid T4": {
+     "n": 182,
+     "area": 0.279
+    }
+   },
+   "top": [
+    {
+     "f": 190,
+     "lane": "reicast",
+     "date": "2023-07-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 19.475,
+     "area": 1
+    },
+    {
+     "f": 197,
+     "lane": "flycast",
+     "date": "2023-12-22",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.076,
+     "area": 0.039
+    },
+    {
+     "f": 198,
+     "lane": "flycast",
+     "date": "2024-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-lo",
+     "ppl": 0.065,
+     "area": 0.038
+    },
+    {
+     "f": 196,
+     "lane": "flycast",
+     "date": "2023-11-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.085,
+     "area": 0.037
+    },
+    {
+     "f": 199,
+     "lane": "flycast",
+     "date": "2024-02-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.057,
+     "area": 0.037
+    },
+    {
+     "f": 200,
+     "lane": "flycast",
+     "date": "2024-03-15",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.054,
+     "area": 0.035
+    },
+    {
+     "f": 201,
+     "lane": "flycast",
+     "date": "2024-03-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.051,
+     "area": 0.034
+    },
+    {
+     "f": 202,
+     "lane": "flycast",
+     "date": "2024-04-26",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.047,
+     "area": 0.033
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "reicast  2023-07  6cdb605",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.71,
+   "cpu_ms": 0.76,
+   "labels": 0,
+   "titlesShown": 1,
+   "attract": true,
+   "cap": "SHAD, the SH4 dynamic shift15 lines, first seen in nullDCe 2009-10-16; held by 223 frames in 7 lanes (nullDCe, nullDCe-P",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-30s",
+   "t": 32881,
+   "pres": "clock",
+   "cam": [
+    811918,
+    36226,
+    100516
+   ],
+   "q": 0,
+   "walls": 42,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 162,
+    "t5": 0,
+    "imp": 0,
+    "inst": 0,
+    "draws": 168,
+    "pendingBake": 0,
+    "wantQueue": 1,
+    "gpuMB": 531
+   },
+   "classes": {
+    "solid T4": {
+     "n": 162,
+     "area": 0.393
+    }
+   },
+   "top": [
+    {
+     "f": 232,
+     "lane": "flycast",
+     "date": "2025-08-29",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.028,
+     "area": 0.015
+    },
+    {
+     "f": 234,
+     "lane": "flycast",
+     "date": "2025-10-21",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.025,
+     "area": 0.012
+    },
+    {
+     "f": 235,
+     "lane": "flycast",
+     "date": "2025-11-22",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.024,
+     "area": 0.01
+    },
+    {
+     "f": 237,
+     "lane": "flycast",
+     "date": "2025-12-29",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.023,
+     "area": 0.009
+    },
+    {
+     "f": 238,
+     "lane": "flycast",
+     "date": "2026-01-07",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.022,
+     "area": 0.009
+    },
+    {
+     "f": 243,
+     "lane": "flycast",
+     "date": "2026-01-28",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.022,
+     "area": 0.008
+    },
+    {
+     "f": 231,
+     "lane": "nulldc3",
+     "date": "2025-07-30",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.025,
+     "area": 0.007
+    },
+    {
+     "f": 247,
+     "lane": "flycast",
+     "date": "2026-02-27",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.021,
+     "area": 0.007
+    }
+   ],
+   "leaks": {
+    "titles": 11,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nulldc3  2025-05  aa461b9",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2025-06  3f79b6b",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nulldc3  2025-07  2fc0945",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nulldc3  2026-05  a1944d6",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2026-06  7ec978e",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "polly2  2026-07  49c3b2f",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.68,
+   "cpu_ms": 1.04,
+   "labels": 6,
+   "titlesShown": 12,
+   "attract": true,
+   "cap": "SHAD, the SH4 dynamic shift15 lines, first seen in nullDCe 2009-10-16; held by 223 frames in 7 lanes (nullDCe, nullDCe-P",
+   "capOp": "1"
+  },
+  {
+   "name": "now-morph",
+   "t": 34253,
+   "pres": "now",
+   "cam": [
+    720922,
+    2886,
+    106998
+   ],
+   "q": 0,
+   "walls": 42,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 168,
+    "t5": 2,
+    "imp": 49,
+    "inst": 11605,
+    "draws": 288,
+    "pendingBake": 0,
+    "wantQueue": 2,
+    "gpuMB": 534
+   },
+   "classes": {
+    "solid lines": {
+     "n": 2,
+     "area": 1.407
+    },
+    "solid imp-hi": {
+     "n": 5,
+     "area": 0.595
+    },
+    "solid imp-far": {
+     "n": 36,
+     "area": 0.465
+    },
+    "solid imp-lo": {
+     "n": 7,
+     "area": 0.092
+    },
+    "solid T4": {
+     "n": 168,
+     "area": 0.135
+    },
+    "solid T5": {
+     "n": 2,
+     "area": 0
+    }
+   },
+   "top": [
+    {
+     "f": 174,
+     "lane": "flycast",
+     "date": "2022-07-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 10.937,
+     "area": 1
+    },
+    {
+     "f": 176,
+     "lane": "flycast",
+     "date": "2022-08-25",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.303,
+     "area": 0.407
+    },
+    {
+     "f": 177,
+     "lane": "flycast",
+     "date": "2022-09-24",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.186,
+     "area": 0.222
+    },
+    {
+     "f": 178,
+     "lane": "flycast",
+     "date": "2022-10-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.126,
+     "area": 0.14
+    },
+    {
+     "f": 179,
+     "lane": "flycast",
+     "date": "2022-11-04",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.121,
+     "area": 0.134
+    },
+    {
+     "f": 180,
+     "lane": "flycast",
+     "date": "2022-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.082,
+     "area": 0.086
+    },
+    {
+     "f": 181,
+     "lane": "flycast",
+     "date": "2023-01-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.069,
+     "area": 0.071
+    },
+    {
+     "f": 182,
+     "lane": "flycast",
+     "date": "2023-02-15",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.065,
+     "area": 0.062
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2022-07  a6ac753",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.61,
+   "cpu_ms": 1.72,
+   "labels": 0,
+   "titlesShown": 1
+  },
+  {
+   "name": "bookmark",
+   "t": 37315,
+   "pres": "clock",
+   "cam": [
+    217560,
+    3393,
+    6558
+   ],
+   "q": 0,
+   "walls": 47,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 32,
+    "t5": 272,
+    "imp": 61,
+    "inst": 5127,
+    "draws": 200,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 553
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-hi": {
+     "n": 8,
+     "area": 0.069
+    },
+    "solid imp-far": {
+     "n": 41,
+     "area": 0.093
+    },
+    "solid T4": {
+     "n": 32,
+     "area": 0.05
+    },
+    "solid T5": {
+     "n": 272,
+     "area": 0
+    },
+    "solid imp-lo": {
+     "n": 12,
+     "area": 0
+    }
+   },
+   "top": [
+    {
+     "f": 28,
+     "lane": "nullDC",
+     "date": "2011-09-14",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 16,
+     "area": 1
+    },
+    {
+     "f": 32,
+     "lane": "nulldc-360",
+     "date": "2011-12-18",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.121,
+     "area": 0.045
+    },
+    {
+     "f": 33,
+     "lane": "nulldc-360",
+     "date": "2012-02-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.08,
+     "area": 0.026
+    },
+    {
+     "f": 34,
+     "lane": "nullDC",
+     "date": "2012-03-20",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.075,
+     "area": 0.025
+    },
+    {
+     "f": 31,
+     "lane": "nulldc-360",
+     "date": "2011-11-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.141,
+     "area": 0.024
+    },
+    {
+     "f": 35,
+     "lane": "nullDC",
+     "date": "2012-04-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.068,
+     "area": 0.02
+    },
+    {
+     "f": 36,
+     "lane": "nulldc-360",
+     "date": "2012-05-19",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.055,
+     "area": 0.011
+    },
+    {
+     "f": 37,
+     "lane": "nulldc-360",
+     "date": "2012-08-31",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "imp-far",
+     "ppl": 0.04,
+     "area": 0.006
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDC  2011-09  c563e07",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.43,
+   "cpu_ms": 1.06,
+   "labels": 0,
+   "titlesShown": 1,
+   "bmWall": "nullDC  2011-09  c563e07",
+   "bmA": 1
+  },
+  {
+   "name": "search-click",
+   "t": 45013,
+   "pres": "clock",
+   "cam": [
+    217560,
+    2043,
+    9502
+   ],
+   "q": 0,
+   "walls": 47,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 32,
+    "t5": 272,
+    "imp": 61,
+    "inst": 2539,
+    "draws": 200,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 564
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-hi": {
+     "n": 8,
+     "area": 0.151
+    },
+    "solid imp-far": {
+     "n": 41,
+     "area": 0.093
+    },
+    "solid T4": {
+     "n": 32,
+     "area": 0.05
+    },
+    "solid T5": {
+     "n": 272,
+     "area": 0
+    },
+    "solid imp-lo": {
+     "n": 12,
+     "area": 0
+    }
+   },
+   "top": [
+    {
+     "f": 28,
+     "lane": "nullDC",
+     "date": "2011-09-14",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 16,
+     "area": 1
+    },
+    {
+     "f": 32,
+     "lane": "nulldc-360",
+     "date": "2011-12-18",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.134,
+     "area": 0.076
+    },
+    {
+     "f": 31,
+     "lane": "nulldc-360",
+     "date": "2011-11-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.162,
+     "area": 0.075
+    },
+    {
+     "f": 33,
+     "lane": "nulldc-360",
+     "date": "2012-02-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.083,
+     "area": 0.026
+    },
+    {
+     "f": 34,
+     "lane": "nullDC",
+     "date": "2012-03-20",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.075,
+     "area": 0.025
+    },
+    {
+     "f": 35,
+     "lane": "nullDC",
+     "date": "2012-04-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.068,
+     "area": 0.02
+    },
+    {
+     "f": 36,
+     "lane": "nulldc-360",
+     "date": "2012-05-19",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.056,
+     "area": 0.011
+    },
+    {
+     "f": 37,
+     "lane": "nulldc-360",
+     "date": "2012-08-31",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "imp-far",
+     "ppl": 0.04,
+     "area": 0.006
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDC  2011-09  c563e07",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.39,
+   "cpu_ms": 0.98,
+   "labels": 0,
+   "titlesShown": 1,
+   "nres": 1,
+   "sWall": "nullDC  2011-09  c563e07",
+   "sA": 1
+  }
+ ],
+ "S": {
+  "ticks": 1814,
+  "capShown": 1814,
+  "marks": 0,
+  "focusHidden": 0,
+  "focusTicks": 1175,
+  "hiddenAt": []
+ },
+ "now": {
+  "ticks": 105,
+  "morphTicks": 69,
+  "liveHiddenTicks": 0
+ },
+ "searchWorker": "{\"type\":\"search\",\"req\":1,\"hits\":[55318],\"text\":[\"//Time to emulate that stuff correctly ;)\"],\"ms\":35.69999998807907,\"partial\":false}",
+ "errs": []
+}

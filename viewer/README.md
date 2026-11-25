@@ -28,10 +28,13 @@ Walls close to the camera fade out (from 6000 units, gone at 2800: a 4096-high w
 they do not cover the view with a wall that is too close to read. Not faded: the frames at the clock (search, bookmarks,
 the file panel, `[` `]` and the tour set the clock to their wall; a wall that becomes one is whole at once) and the wall
 being read: the first wall the centre of the view hits, from 1.5 px per line (whole at 2.2), while the camera is still
-(walk up to a wall and stop to read it without moving the clock). A wall in front of a frame at the clock that the view
-is centred on is not being read: it fades, so it does not hide that frame. A fading wall keeps its plate and title down
-to half opacity, then is drawn as a ghost (no plate, no title, its text at its alpha); the fade eases in and out over
-about a third of a second. Up close, the walls behind the wall being read fade too; the frames at the clock never do. Old `pm=gallery` links open in Clock. The software renderer (llvmpipe)
+(walk up to a wall and stop to read it without moving the clock; while you walk it shows at 30 % of that, so you see where
+to stop, and it comes in as soon as you stop). A wall in front of a frame at the clock that the view is centred on is not
+being read: it fades, so it does not hide that frame. A fading wall's plate fades with it: whole down to alpha 0.75, none
+under 0.25, so the walls behind show through it gradually (fading walls are drawn last, back to front); its title fades
+with its alpha, and down to half opacity it hides the titles and labels behind it. The fade eases in and out over about a
+third of a second. Up close, the walls behind the wall being read fade too (eased the same way); the frames at the clock
+never do. Old `pm=gallery` links open in Clock. The software renderer (llvmpipe)
 keeps the light presentation: the frames at the clock solid, the lane's frames within 3 months as ghosts, releases solid
 (`?allf=1` / `?allf=0` forces either).
 
@@ -68,7 +71,7 @@ The URL hash keeps the camera, clock, mode and presentation.
 Every wall has a title: lane, month (or release tag / DreamSTer pin; `approx` for dc4ever, the date range for nullDCe),
 commit. Titles are drawn in screen space (one instanced draw, the SDF font) above the wall's top edge, or stuck to the
 top of the screen while the wall covers it, at 16 to 25 CSS px for the lane's frame at the clock, smaller and fainter for
-other walls (none on a wall faded below half). They are placed greedily every frame (the frame at the clock first, then
+other walls (fading with the wall's alpha). They are placed greedily every frame (the frame at the clock first, then
 solid walls, then ghosts, nearer first), so none overlap. Titles and labels are drawn without depth test, so occlusion is
 decided on the CPU: rays through 9 x 3 points of the box a title is placed in (7 x 2 for a label) are tested against
 every opaque wall in view (front or back, sorted by X); if any ray meets one before the plane the title lies in, the title

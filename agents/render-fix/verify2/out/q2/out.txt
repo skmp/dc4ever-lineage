@@ -1,0 +1,87 @@
+{
+ "shots": {},
+ "log": [],
+ "tot": 395,
+ "miss": 42,
+ "per": {
+  "nullDC4Wii": 23,
+  "nullDC4WiiU": 2,
+  "reicast": 12,
+  "minicast": 2,
+  "polly2": 3
+ },
+ "neg": {
+  "nullDC4Wii": 13,
+  "nullDC4WiiU": 1,
+  "reicast": 4,
+  "minicast": 1,
+  "polly2": 1
+ },
+ "ex": [
+  {
+   "lane": "nullDC4Wii",
+   "f": 240,
+   "title": "nullDC4Wii  nulldc  2026-01  3b4c398",
+   "got": "nullDC4Wii  0.02  2026-01  6478d63",
+   "x": 891081,
+   "gx": 890710
+  },
+  {
+   "lane": "nullDC4Wii",
+   "f": 241,
+   "title": "nullDC4Wii  0.02  2026-01  6478d63",
+   "got": "nullDC4Wii  2026-01  e812c58",
+   "x": 890710,
+   "gx": 890581
+  },
+  {
+   "lane": "nullDC4Wii",
+   "f": 254,
+   "title": "nullDC4Wii  alpha0.11  2026-03  1ac7a18",
+   "got": "nullDC4Wii  alpha0.12  2026-03  b1272ee",
+   "x": 898306,
+   "gx": 898065
+  },
+  {
+   "lane": "nullDC4Wii",
+   "f": 261,
+   "title": "nullDC4Wii  alpha0.16  2026-04  940db51",
+   "got": "nullDC4Wii  alpha0.17  2026-04  8a0dea3",
+   "x": 900629,
+   "gx": 900387
+  },
+  {
+   "lane": "nullDC4Wii",
+   "f": 283,
+   "title": "nullDC4Wii  alpha0.33  2026-06  0b05277",
+   "got": "nullDC4Wii  alpha0.37 / alpha0.37wince  2026-06  6868431",
+   "x": 911597,
+   "gx": 911484
+  },
+  {
+   "lane": "nullDC4Wii",
+   "f": 284,
+   "title": "nullDC4Wii  alpha0.34  2026-06  b920702",
+   "got": "nullDC4Wii  alpha0.32  2026-06  1fb55e4",
+   "x": 911226,
+   "gx": 911097
+  },
+  {
+   "lane": "nullDC4Wii",
+   "f": 285,
+   "title": "nullDC4Wii  alpha0.35  2026-06  78ae954",
+   "got": "nullDC4Wii  alpha0.37 / alpha0.37wince  2026-06  6868431",
+   "x": 911726,
+   "gx": 911484
+  },
+  {
+   "lane": "nullDC4Wii",
+   "f": 287,
+   "title": "nullDC4Wii  alpha0.36  2026-06  6c0eda2",
+   "got": "nullDC4Wii  alpha0.32  2026-06  1fb55e4",
+   "x": 911355,
+   "gx": 911097
+  }
+ ]
+}
+1.8s closed

@@ -1,0 +1,21 @@
+{
+ "shots": {},
+ "log": [],
+ "res": {
+  "flycast": {
+   "ticks": 228,
+   "fading50": 1,
+   "fading95": 2,
+   "fadingMax": 3,
+   "hidden50": 52
+  },
+  "nullDC4Wii": {
+   "ticks": 181,
+   "fading50": 7,
+   "fading95": 23,
+   "fadingMax": 30,
+   "hidden50": 28
+  }
+ }
+}
+12.4s closed

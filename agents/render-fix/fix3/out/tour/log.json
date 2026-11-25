@@ -1,0 +1,2048 @@
+{
+ "log": [
+  {
+   "name": "tour-3s",
+   "t": 5222,
+   "pres": "clock",
+   "cam": [
+    144322,
+    20644,
+    27318
+   ],
+   "q": 0,
+   "walls": 20,
+   "t3area": 0,
+   "stats": {
+    "t3": 3,
+    "t4": 18,
+    "t5": 339,
+    "imp": 16,
+    "inst": 0,
+    "draws": 80,
+    "pendingBake": 3,
+    "wantQueue": 0,
+    "gpuMB": 200
+   },
+   "classes": {
+    "solid imp-far": {
+     "n": 14,
+     "area": 0.073
+    },
+    "solid imp-hi": {
+     "n": 5,
+     "area": 0.012
+    },
+    "solid T4": {
+     "n": 18,
+     "area": 0.018
+    },
+    "solid T5": {
+     "n": 339,
+     "area": 0.001
+    }
+   },
+   "top": [
+    {
+     "f": 21,
+     "lane": "nullDC",
+     "date": "2010-10-25",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.05,
+     "area": 0.015
+    },
+    {
+     "f": 22,
+     "lane": "nullDC",
+     "date": "2010-11-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.045,
+     "area": 0.012
+    },
+    {
+     "f": 23,
+     "lane": "nullDC",
+     "date": "2010-12-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.042,
+     "area": 0.01
+    },
+    {
+     "f": 24,
+     "lane": "nullDC",
+     "date": "2011-01-08",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.041,
+     "area": 0.009
+    },
+    {
+     "f": 20,
+     "lane": "nullDC",
+     "date": "2010-09-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.054,
+     "area": 0.008
+    },
+    {
+     "f": 25,
+     "lane": "nullDC",
+     "date": "2011-05-22",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.03,
+     "area": 0.005
+    },
+    {
+     "f": 26,
+     "lane": "nullDC",
+     "date": "2011-06-04",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.029,
+     "area": 0.004
+    },
+    {
+     "f": 27,
+     "lane": "nullDC",
+     "date": "2011-08-21",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.025,
+     "area": 0.003
+    }
+   ],
+   "leaks": {
+    "titles": 10,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDC  2010-10  2ebb118",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nullDC  2011-05  6377ab0",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nullDC  2011-08  0a284d8",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nulldc-360  2011-10  0330292",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nulldc-360  2011-12  4d3717f",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nulldc-360  2012-05  4e8e313",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.21,
+   "cpu_ms": 1.86,
+   "labels": 14,
+   "titlesShown": 12,
+   "attract": true,
+   "cap": "//misses delay , and stop/start implementationfirst seen in nullDC-pre2008 2005-2008; held by 350 frames in 11 lanes (nu",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-6s",
+   "t": 8291,
+   "pres": "clock",
+   "cam": [
+    122263,
+    2666,
+    32928
+   ],
+   "q": 0,
+   "walls": 25,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 13,
+    "t5": 342,
+    "imp": 25,
+    "inst": 62897,
+    "draws": 85,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 211
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 0.882
+    },
+    "solid imp-far": {
+     "n": 19,
+     "area": 0.104
+    },
+    "solid imp-hi": {
+     "n": 5,
+     "area": 0.007
+    },
+    "solid T4": {
+     "n": 13,
+     "area": 0.013
+    },
+    "solid T5": {
+     "n": 344,
+     "area": 0
+    }
+   },
+   "top": [
+    {
+     "f": 14,
+     "lane": "nullDCe",
+     "date": "2009-10-16",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.509,
+     "area": 0.882
+    },
+    {
+     "f": 15,
+     "lane": "nullDC",
+     "date": "2010-05-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.051,
+     "area": 0.019
+    },
+    {
+     "f": 16,
+     "lane": "nullDC",
+     "date": "2010-05-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.048,
+     "area": 0.016
+    },
+    {
+     "f": 17,
+     "lane": "nullDC",
+     "date": "2010-06-20",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.045,
+     "area": 0.013
+    },
+    {
+     "f": 18,
+     "lane": "nullDC",
+     "date": "2010-07-23",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.042,
+     "area": 0.01
+    },
+    {
+     "f": 19,
+     "lane": "nullDC",
+     "date": "2010-08-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.038,
+     "area": 0.008
+    },
+    {
+     "f": 20,
+     "lane": "nullDC",
+     "date": "2010-09-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.035,
+     "area": 0.007
+    },
+    {
+     "f": 21,
+     "lane": "nullDC",
+     "date": "2010-10-25",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.033,
+     "area": 0.006
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDCe  2008-2010  39c0550",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.61,
+   "cpu_ms": 1.07,
+   "labels": 1,
+   "titlesShown": 1,
+   "attract": true,
+   "cap": "//misses delay , and stop/start implementationfirst seen in nullDC-pre2008 2005-2008; held by 350 frames in 11 lanes (nu",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-9s",
+   "t": 11350,
+   "pres": "clock",
+   "cam": [
+    125845,
+    2298,
+    30466
+   ],
+   "q": 0,
+   "walls": 25,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 13,
+    "t5": 342,
+    "imp": 24,
+    "inst": 3270,
+    "draws": 84,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 211
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-far": {
+     "n": 19,
+     "area": 0.111
+    },
+    "solid imp-hi": {
+     "n": 5,
+     "area": 0.007
+    },
+    "solid T4": {
+     "n": 13,
+     "area": 0.013
+    },
+    "solid T5": {
+     "n": 344,
+     "area": 0.001
+    }
+   },
+   "top": [
+    {
+     "f": 14,
+     "lane": "nullDCe",
+     "date": "2009-10-16",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 20.686,
+     "area": 1
+    },
+    {
+     "f": 15,
+     "lane": "nullDC",
+     "date": "2010-05-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.058,
+     "area": 0.021
+    },
+    {
+     "f": 16,
+     "lane": "nullDC",
+     "date": "2010-05-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.054,
+     "area": 0.017
+    },
+    {
+     "f": 17,
+     "lane": "nullDC",
+     "date": "2010-06-20",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.051,
+     "area": 0.014
+    },
+    {
+     "f": 18,
+     "lane": "nullDC",
+     "date": "2010-07-23",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.046,
+     "area": 0.011
+    },
+    {
+     "f": 19,
+     "lane": "nullDC",
+     "date": "2010-08-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.041,
+     "area": 0.009
+    },
+    {
+     "f": 20,
+     "lane": "nullDC",
+     "date": "2010-09-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.038,
+     "area": 0.007
+    },
+    {
+     "f": 21,
+     "lane": "nullDC",
+     "date": "2010-10-25",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.036,
+     "area": 0.006
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDCe  2008-2010  39c0550",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.41,
+   "cpu_ms": 0.95,
+   "labels": 1,
+   "titlesShown": 1,
+   "attract": true,
+   "cap": "//misses delay , and stop/start implementationfirst seen in nullDC-pre2008 2005-2008; held by 350 frames in 11 lanes (nu",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-12s",
+   "t": 14416,
+   "pres": "clock",
+   "cam": [
+    125841,
+    2284,
+    30486
+   ],
+   "q": 0,
+   "walls": 25,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 13,
+    "t5": 342,
+    "imp": 24,
+    "inst": 3270,
+    "draws": 84,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 211
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-far": {
+     "n": 19,
+     "area": 0.111
+    },
+    "solid imp-hi": {
+     "n": 5,
+     "area": 0.007
+    },
+    "solid T4": {
+     "n": 13,
+     "area": 0.013
+    },
+    "solid T5": {
+     "n": 344,
+     "area": 0.001
+    }
+   },
+   "top": [
+    {
+     "f": 14,
+     "lane": "nullDCe",
+     "date": "2009-10-16",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 19.852,
+     "area": 1
+    },
+    {
+     "f": 15,
+     "lane": "nullDC",
+     "date": "2010-05-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.058,
+     "area": 0.021
+    },
+    {
+     "f": 16,
+     "lane": "nullDC",
+     "date": "2010-05-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.054,
+     "area": 0.017
+    },
+    {
+     "f": 17,
+     "lane": "nullDC",
+     "date": "2010-06-20",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.051,
+     "area": 0.014
+    },
+    {
+     "f": 18,
+     "lane": "nullDC",
+     "date": "2010-07-23",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.046,
+     "area": 0.011
+    },
+    {
+     "f": 19,
+     "lane": "nullDC",
+     "date": "2010-08-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.041,
+     "area": 0.009
+    },
+    {
+     "f": 20,
+     "lane": "nullDC",
+     "date": "2010-09-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.038,
+     "area": 0.007
+    },
+    {
+     "f": 21,
+     "lane": "nullDC",
+     "date": "2010-10-25",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.036,
+     "area": 0.006
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDCe  2008-2010  39c0550",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.43,
+   "cpu_ms": 0.89,
+   "labels": 1,
+   "titlesShown": 1,
+   "attract": true,
+   "cap": "//misses delay , and stop/start implementationfirst seen in nullDC-pre2008 2005-2008; held by 350 frames in 11 lanes (nu",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-15s",
+   "t": 17487,
+   "pres": "clock",
+   "cam": [
+    125821,
+    2275,
+    30514
+   ],
+   "q": 0,
+   "walls": 25,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 13,
+    "t5": 342,
+    "imp": 24,
+    "inst": 1890,
+    "draws": 84,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 211
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-far": {
+     "n": 19,
+     "area": 0.111
+    },
+    "solid imp-hi": {
+     "n": 5,
+     "area": 0.007
+    },
+    "solid T4": {
+     "n": 13,
+     "area": 0.013
+    },
+    "solid T5": {
+     "n": 344,
+     "area": 0.001
+    }
+   },
+   "top": [
+    {
+     "f": 14,
+     "lane": "nullDCe",
+     "date": "2009-10-16",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 16.419,
+     "area": 1
+    },
+    {
+     "f": 15,
+     "lane": "nullDC",
+     "date": "2010-05-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.058,
+     "area": 0.021
+    },
+    {
+     "f": 16,
+     "lane": "nullDC",
+     "date": "2010-05-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.054,
+     "area": 0.017
+    },
+    {
+     "f": 17,
+     "lane": "nullDC",
+     "date": "2010-06-20",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.051,
+     "area": 0.014
+    },
+    {
+     "f": 18,
+     "lane": "nullDC",
+     "date": "2010-07-23",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.046,
+     "area": 0.011
+    },
+    {
+     "f": 19,
+     "lane": "nullDC",
+     "date": "2010-08-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.041,
+     "area": 0.009
+    },
+    {
+     "f": 20,
+     "lane": "nullDC",
+     "date": "2010-09-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.038,
+     "area": 0.007
+    },
+    {
+     "f": 21,
+     "lane": "nullDC",
+     "date": "2010-10-25",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.036,
+     "area": 0.006
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDCe  2008-2010  39c0550",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.4,
+   "cpu_ms": 0.92,
+   "labels": 1,
+   "titlesShown": 1,
+   "attract": true,
+   "cap": "//misses delay , and stop/start implementationfirst seen in nullDC-pre2008 2005-2008; held by 350 frames in 11 lanes (nu",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-18s",
+   "t": 20558,
+   "pres": "clock",
+   "cam": [
+    583082,
+    41347,
+    15098
+   ],
+   "q": 0,
+   "walls": 29,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 51,
+    "t5": 197,
+    "imp": 0,
+    "inst": 0,
+    "draws": 58,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 269
+   },
+   "classes": {
+    "solid T4": {
+     "n": 51,
+     "area": 0.1
+    },
+    "solid T5": {
+     "n": 197,
+     "area": 0.035
+    }
+   },
+   "top": [
+    {
+     "f": 160,
+     "lane": "flycast",
+     "date": "2021-09-30",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.013,
+     "area": 0.004
+    },
+    {
+     "f": 162,
+     "lane": "flycast",
+     "date": "2021-11-27",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.013,
+     "area": 0.004
+    },
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.013,
+     "area": 0.004
+    },
+    {
+     "f": 165,
+     "lane": "flycast",
+     "date": "2021-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.013,
+     "area": 0.004
+    },
+    {
+     "f": 166,
+     "lane": "flycast",
+     "date": "2022-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.012,
+     "area": 0.004
+    },
+    {
+     "f": 157,
+     "lane": "flycast",
+     "date": "2021-07-30",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.014,
+     "area": 0.003
+    },
+    {
+     "f": 159,
+     "lane": "flycast",
+     "date": "2021-08-26",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.014,
+     "area": 0.003
+    },
+    {
+     "f": 168,
+     "lane": "flycast",
+     "date": "2022-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.012,
+     "area": 0.003
+    }
+   ],
+   "leaks": {
+    "titles": 14,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "reicast  2020-08  2712a00",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2021-03  4d81557",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nulldc-360  2021-05  f9d1610",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  v1.0  2021-05  d6e1554",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2021-07  fcef404",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nullDCe-PSP  2021-10  d6f1774",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.64,
+   "cpu_ms": 1.27,
+   "labels": 10,
+   "titlesShown": 18,
+   "attract": true,
+   "cap": "//misses delay , and stop/start implementationfirst seen in nullDC-pre2008 2005-2008; held by 350 frames in 11 lanes (nu",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-21s",
+   "t": 23653,
+   "pres": "clock",
+   "cam": [
+    765141,
+    2896,
+    8530
+   ],
+   "q": 0,
+   "walls": 37,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 157,
+    "t5": 3,
+    "imp": 3,
+    "inst": 107066,
+    "draws": 175,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 283
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 0.838
+    },
+    "solid imp-far": {
+     "n": 2,
+     "area": 0.006
+    },
+    "solid T4": {
+     "n": 157,
+     "area": 0.172
+    },
+    "solid T5": {
+     "n": 3,
+     "area": 0
+    }
+   },
+   "top": [
+    {
+     "f": 189,
+     "lane": "nullDC",
+     "date": "2023-07-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.465,
+     "area": 0.838
+    },
+    {
+     "f": 234,
+     "lane": "flycast",
+     "date": "2025-10-21",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.013,
+     "area": 0.004
+    },
+    {
+     "f": 209,
+     "lane": "nullDCe",
+     "date": "2024-09-26",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.029,
+     "area": 0.003
+    },
+    {
+     "f": 210,
+     "lane": "nullDCe",
+     "date": "2024-09-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.028,
+     "area": 0.003
+    },
+    {
+     "f": 232,
+     "lane": "flycast",
+     "date": "2025-08-29",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.013,
+     "area": 0.003
+    },
+    {
+     "f": 235,
+     "lane": "flycast",
+     "date": "2025-11-22",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.012,
+     "area": 0.003
+    },
+    {
+     "f": 237,
+     "lane": "flycast",
+     "date": "2025-12-29",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.012,
+     "area": 0.003
+    },
+    {
+     "f": 238,
+     "lane": "flycast",
+     "date": "2026-01-07",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.012,
+     "area": 0.003
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDC  2023-07  1611c3c",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.98,
+   "cpu_ms": 0.94,
+   "labels": 0,
+   "titlesShown": 1,
+   "attract": true,
+   "cap": "//misses delay , and stop/start implementationfirst seen in nullDC-pre2008 2005-2008; held by 350 frames in 11 lanes (nu",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-24s",
+   "t": 26728,
+   "pres": "clock",
+   "cam": [
+    769076,
+    798,
+    5390
+   ],
+   "q": 0,
+   "walls": 37,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 135,
+    "t5": 0,
+    "imp": 2,
+    "inst": 5006,
+    "draws": 149,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 283
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-far": {
+     "n": 2,
+     "area": 0.008
+    },
+    "solid T4": {
+     "n": 135,
+     "area": 0.156
+    }
+   },
+   "top": [
+    {
+     "f": 189,
+     "lane": "nullDC",
+     "date": "2023-07-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 22,
+     "area": 1
+    },
+    {
+     "f": 209,
+     "lane": "nullDCe",
+     "date": "2024-09-26",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.03,
+     "area": 0.004
+    },
+    {
+     "f": 210,
+     "lane": "nullDCe",
+     "date": "2024-09-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.03,
+     "area": 0.004
+    },
+    {
+     "f": 237,
+     "lane": "flycast",
+     "date": "2025-12-29",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.012,
+     "area": 0.003
+    },
+    {
+     "f": 238,
+     "lane": "flycast",
+     "date": "2026-01-07",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.012,
+     "area": 0.003
+    },
+    {
+     "f": 243,
+     "lane": "flycast",
+     "date": "2026-01-28",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.012,
+     "area": 0.003
+    },
+    {
+     "f": 247,
+     "lane": "flycast",
+     "date": "2026-02-27",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.012,
+     "area": 0.003
+    },
+    {
+     "f": 258,
+     "lane": "flycast",
+     "date": "2026-03-31",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.011,
+     "area": 0.003
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDC  2023-07  1611c3c",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.59,
+   "cpu_ms": 0.81,
+   "labels": 0,
+   "titlesShown": 1,
+   "attract": true,
+   "cap": "//misses delay , and stop/start implementationfirst seen in nullDC-pre2008 2005-2008; held by 350 frames in 11 lanes (nu",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-27s",
+   "t": 29786,
+   "pres": "clock",
+   "cam": [
+    769065,
+    790,
+    5417
+   ],
+   "q": 0,
+   "walls": 37,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 135,
+    "t5": 0,
+    "imp": 2,
+    "inst": 5006,
+    "draws": 149,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 283
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-far": {
+     "n": 2,
+     "area": 0.008
+    },
+    "solid T4": {
+     "n": 135,
+     "area": 0.156
+    }
+   },
+   "top": [
+    {
+     "f": 189,
+     "lane": "nullDC",
+     "date": "2023-07-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 19.585,
+     "area": 1
+    },
+    {
+     "f": 209,
+     "lane": "nullDCe",
+     "date": "2024-09-26",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.03,
+     "area": 0.004
+    },
+    {
+     "f": 210,
+     "lane": "nullDCe",
+     "date": "2024-09-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.03,
+     "area": 0.004
+    },
+    {
+     "f": 237,
+     "lane": "flycast",
+     "date": "2025-12-29",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.012,
+     "area": 0.003
+    },
+    {
+     "f": 238,
+     "lane": "flycast",
+     "date": "2026-01-07",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.012,
+     "area": 0.003
+    },
+    {
+     "f": 243,
+     "lane": "flycast",
+     "date": "2026-01-28",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.012,
+     "area": 0.003
+    },
+    {
+     "f": 247,
+     "lane": "flycast",
+     "date": "2026-02-27",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.012,
+     "area": 0.003
+    },
+    {
+     "f": 258,
+     "lane": "flycast",
+     "date": "2026-03-31",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.011,
+     "area": 0.003
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDC  2023-07  1611c3c",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.64,
+   "cpu_ms": 0.69,
+   "labels": 0,
+   "titlesShown": 1,
+   "attract": true,
+   "cap": "//misses delay , and stop/start implementationfirst seen in nullDC-pre2008 2005-2008; held by 350 frames in 11 lanes (nu",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-30s",
+   "t": 32850,
+   "pres": "clock",
+   "cam": [
+    804977,
+    36184,
+    33381
+   ],
+   "q": 0,
+   "walls": 38,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 133,
+    "t5": 0,
+    "imp": 0,
+    "inst": 0,
+    "draws": 139,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 283
+   },
+   "classes": {
+    "solid T4": {
+     "n": 133,
+     "area": 0.276
+    }
+   },
+   "top": [
+    {
+     "f": 258,
+     "lane": "flycast",
+     "date": "2026-03-31",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.015,
+     "area": 0.006
+    },
+    {
+     "f": 243,
+     "lane": "flycast",
+     "date": "2026-01-28",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.016,
+     "area": 0.005
+    },
+    {
+     "f": 247,
+     "lane": "flycast",
+     "date": "2026-02-27",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.016,
+     "area": 0.005
+    },
+    {
+     "f": 265,
+     "lane": "flycast",
+     "date": "2026-04-24",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.015,
+     "area": 0.005
+    },
+    {
+     "f": 272,
+     "lane": "flycast",
+     "date": "2026-05-29",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.015,
+     "area": 0.005
+    },
+    {
+     "f": 286,
+     "lane": "flycast",
+     "date": "2026-06-26",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.014,
+     "area": 0.005
+    },
+    {
+     "f": 237,
+     "lane": "flycast",
+     "date": "2025-12-29",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.016,
+     "area": 0.004
+    },
+    {
+     "f": 238,
+     "lane": "flycast",
+     "date": "2026-01-07",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.016,
+     "area": 0.004
+    }
+   ],
+   "leaks": {
+    "titles": 8,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2025-10  bf2bd7e",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2025-12  4886dcb",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nullDC4Wii  2026-01  e812c58",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2026-04  acb4966",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2026-07  d4fc077",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nullDC4Wii  alpha0.63  2026-08  b4b2347",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.36,
+   "cpu_ms": 0.77,
+   "labels": 5,
+   "titlesShown": 13,
+   "attract": true,
+   "cap": "//misses delay , and stop/start implementationfirst seen in nullDC-pre2008 2005-2008; held by 350 frames in 11 lanes (nu",
+   "capOp": "1"
+  },
+  {
+   "name": "now-morph",
+   "t": 34531,
+   "pres": "now",
+   "cam": [
+    720922,
+    2886,
+    106998
+   ],
+   "q": 0,
+   "walls": 60,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 155,
+    "t5": 2,
+    "imp": 5,
+    "inst": 0,
+    "draws": 188,
+    "pendingBake": 0,
+    "wantQueue": 2,
+    "gpuMB": 543
+   },
+   "classes": {
+    "solid lines": {
+     "n": 3,
+     "area": 1.694
+    },
+    "solid imp-hi": {
+     "n": 3,
+     "area": 0.496
+    },
+    "solid imp-far": {
+     "n": 17,
+     "area": 0.507
+    },
+    "solid T4": {
+     "n": 196,
+     "area": 0.284
+    },
+    "solid T5": {
+     "n": 2,
+     "area": 0
+    }
+   },
+   "top": [
+    {
+     "f": 174,
+     "lane": "flycast",
+     "date": "2022-07-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 10.937,
+     "area": 1
+    },
+    {
+     "f": 175,
+     "lane": "flycast",
+     "date": "2022-08-22",
+     "solid": true,
+     "A": 0.65,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.323,
+     "area": 0.443
+    },
+    {
+     "f": 176,
+     "lane": "flycast",
+     "date": "2022-08-25",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.303,
+     "area": 0.407
+    },
+    {
+     "f": 177,
+     "lane": "flycast",
+     "date": "2022-09-24",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.186,
+     "area": 0.222
+    },
+    {
+     "f": 178,
+     "lane": "flycast",
+     "date": "2022-10-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.126,
+     "area": 0.14
+    },
+    {
+     "f": 179,
+     "lane": "flycast",
+     "date": "2022-11-04",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.121,
+     "area": 0.134
+    },
+    {
+     "f": 180,
+     "lane": "flycast",
+     "date": "2022-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.082,
+     "area": 0.086
+    },
+    {
+     "f": 181,
+     "lane": "flycast",
+     "date": "2023-01-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.069,
+     "area": 0.071
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2022-07  a6ac753",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.6,
+   "cpu_ms": 2.24,
+   "labels": 0,
+   "titlesShown": 1
+  },
+  {
+   "name": "bookmark",
+   "t": 37400,
+   "pres": "clock",
+   "cam": [
+    217560,
+    3393,
+    6558
+   ],
+   "q": 0,
+   "walls": 59,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 29,
+    "t5": 290,
+    "imp": 40,
+    "inst": 5127,
+    "draws": 152,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 520
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-hi": {
+     "n": 8,
+     "area": 0.069
+    },
+    "solid imp-far": {
+     "n": 32,
+     "area": 0.102
+    },
+    "solid T4": {
+     "n": 29,
+     "area": 0.041
+    },
+    "solid T5": {
+     "n": 290,
+     "area": 0
+    },
+    "solid imp-lo": {
+     "n": 6,
+     "area": 0
+    }
+   },
+   "top": [
+    {
+     "f": 28,
+     "lane": "nullDC",
+     "date": "2011-09-14",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 16,
+     "area": 1
+    },
+    {
+     "f": 32,
+     "lane": "nulldc-360",
+     "date": "2011-12-18",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.121,
+     "area": 0.045
+    },
+    {
+     "f": 33,
+     "lane": "nulldc-360",
+     "date": "2012-02-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.08,
+     "area": 0.026
+    },
+    {
+     "f": 34,
+     "lane": "nullDC",
+     "date": "2012-03-20",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.075,
+     "area": 0.025
+    },
+    {
+     "f": 31,
+     "lane": "nulldc-360",
+     "date": "2011-11-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.141,
+     "area": 0.024
+    },
+    {
+     "f": 35,
+     "lane": "nullDC",
+     "date": "2012-04-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.068,
+     "area": 0.02
+    },
+    {
+     "f": 36,
+     "lane": "nulldc-360",
+     "date": "2012-05-19",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.055,
+     "area": 0.011
+    },
+    {
+     "f": 37,
+     "lane": "nulldc-360",
+     "date": "2012-08-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.04,
+     "area": 0.006
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDC  2011-09  c563e07",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.47,
+   "cpu_ms": 0.91,
+   "labels": 0,
+   "titlesShown": 1,
+   "bmWall": "nullDC  2011-09  c563e07",
+   "bmA": 1
+  },
+  {
+   "name": "search-click",
+   "t": 45100,
+   "pres": "clock",
+   "cam": [
+    217560,
+    2043,
+    9502
+   ],
+   "q": 0,
+   "walls": 59,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 29,
+    "t5": 290,
+    "imp": 40,
+    "inst": 2539,
+    "draws": 152,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 520
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-hi": {
+     "n": 8,
+     "area": 0.151
+    },
+    "solid imp-far": {
+     "n": 32,
+     "area": 0.102
+    },
+    "solid T4": {
+     "n": 29,
+     "area": 0.041
+    },
+    "solid T5": {
+     "n": 290,
+     "area": 0
+    },
+    "solid imp-lo": {
+     "n": 6,
+     "area": 0
+    }
+   },
+   "top": [
+    {
+     "f": 28,
+     "lane": "nullDC",
+     "date": "2011-09-14",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 16,
+     "area": 1
+    },
+    {
+     "f": 32,
+     "lane": "nulldc-360",
+     "date": "2011-12-18",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.134,
+     "area": 0.076
+    },
+    {
+     "f": 31,
+     "lane": "nulldc-360",
+     "date": "2011-11-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.162,
+     "area": 0.075
+    },
+    {
+     "f": 33,
+     "lane": "nulldc-360",
+     "date": "2012-02-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.083,
+     "area": 0.026
+    },
+    {
+     "f": 34,
+     "lane": "nullDC",
+     "date": "2012-03-20",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.075,
+     "area": 0.025
+    },
+    {
+     "f": 35,
+     "lane": "nullDC",
+     "date": "2012-04-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.068,
+     "area": 0.02
+    },
+    {
+     "f": 36,
+     "lane": "nulldc-360",
+     "date": "2012-05-19",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.056,
+     "area": 0.011
+    },
+    {
+     "f": 37,
+     "lane": "nulldc-360",
+     "date": "2012-08-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.04,
+     "area": 0.006
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDC  2011-09  c563e07",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.46,
+   "cpu_ms": 1.15,
+   "labels": 0,
+   "titlesShown": 1,
+   "nres": 1,
+   "sWall": "nullDC  2011-09  c563e07",
+   "sA": 1
+  }
+ ],
+ "S": {
+  "ticks": 1826,
+  "capShown": 1826,
+  "marks": 0,
+  "focusHidden": 0,
+  "focusTicks": 1309,
+  "hiddenAt": []
+ },
+ "now": {
+  "ticks": 105,
+  "morphTicks": 68,
+  "liveHiddenTicks": 0
+ },
+ "searchWorker": "{\"type\":\"search\",\"req\":1,\"hits\":[55318],\"text\":[\"//Time to emulate that stuff correctly ;)\"],\"ms\":39,\"partial\":false}",
+ "errs": []
+}

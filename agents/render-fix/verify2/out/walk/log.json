@@ -1,0 +1,5474 @@
+{
+ "log": [
+  {
+   "name": "walk-stop80ms-1800",
+   "t": 7384,
+   "pres": "clock",
+   "cam": [
+    681975,
+    2048,
+    119328
+   ],
+   "q": 0,
+   "walls": 31,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 93,
+    "t5": 121,
+    "imp": 17,
+    "inst": 0,
+    "draws": 140,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 473
+   },
+   "classes": {
+    "solid imp-hi": {
+     "n": 5,
+     "area": 1.204
+    },
+    "solid imp-far": {
+     "n": 12,
+     "area": 0.449
+    },
+    "solid T4": {
+     "n": 93,
+     "area": 0.196
+    },
+    "solid T5": {
+     "n": 121,
+     "area": 0.008
+    }
+   },
+   "top": [
+    {
+     "f": 162,
+     "lane": "flycast",
+     "date": "2021-11-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.199,
+     "area": 0.378
+    },
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.155,
+     "area": 0.293
+    },
+    {
+     "f": 165,
+     "lane": "flycast",
+     "date": "2021-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.135,
+     "area": 0.255
+    },
+    {
+     "f": 166,
+     "lane": "flycast",
+     "date": "2022-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.106,
+     "area": 0.166
+    },
+    {
+     "f": 168,
+     "lane": "flycast",
+     "date": "2022-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.087,
+     "area": 0.112
+    },
+    {
+     "f": 169,
+     "lane": "flycast",
+     "date": "2022-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.074,
+     "area": 0.08
+    },
+    {
+     "f": 170,
+     "lane": "flycast",
+     "date": "2022-04-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.069,
+     "area": 0.071
+    },
+    {
+     "f": 171,
+     "lane": "flycast",
+     "date": "2022-04-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.063,
+     "area": 0.058
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2021-11  ef3af9a",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 1.4,
+   "cpu_ms": 1.2,
+   "labels": 0,
+   "titlesShown": 1,
+   "A": 0
+  },
+  {
+   "name": "walk-stopped-1800",
+   "t": 8942,
+   "pres": "clock",
+   "cam": [
+    681975,
+    2048,
+    119328
+   ],
+   "q": 0,
+   "walls": 31,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 93,
+    "t5": 121,
+    "imp": 17,
+    "inst": 0,
+    "draws": 140,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 473
+   },
+   "classes": {
+    "solid imp-hi": {
+     "n": 5,
+     "area": 1.204
+    },
+    "solid imp-far": {
+     "n": 12,
+     "area": 0.449
+    },
+    "solid T4": {
+     "n": 93,
+     "area": 0.196
+    },
+    "solid T5": {
+     "n": 121,
+     "area": 0.008
+    }
+   },
+   "top": [
+    {
+     "f": 162,
+     "lane": "flycast",
+     "date": "2021-11-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.199,
+     "area": 0.378
+    },
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.155,
+     "area": 0.293
+    },
+    {
+     "f": 165,
+     "lane": "flycast",
+     "date": "2021-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.135,
+     "area": 0.255
+    },
+    {
+     "f": 166,
+     "lane": "flycast",
+     "date": "2022-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.106,
+     "area": 0.166
+    },
+    {
+     "f": 168,
+     "lane": "flycast",
+     "date": "2022-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.087,
+     "area": 0.112
+    },
+    {
+     "f": 169,
+     "lane": "flycast",
+     "date": "2022-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.074,
+     "area": 0.08
+    },
+    {
+     "f": 170,
+     "lane": "flycast",
+     "date": "2022-04-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.069,
+     "area": 0.071
+    },
+    {
+     "f": 171,
+     "lane": "flycast",
+     "date": "2022-04-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.063,
+     "area": 0.058
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2021-11  ef3af9a",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.62,
+   "cpu_ms": 0.78,
+   "labels": 0,
+   "titlesShown": 1,
+   "A": 0
+  },
+  {
+   "name": "walk-moving-1000",
+   "t": 13834,
+   "pres": "clock",
+   "cam": [
+    682242,
+    2048,
+    119328
+   ],
+   "q": 0,
+   "walls": 31,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 95,
+    "t5": 119,
+    "imp": 17,
+    "inst": 0,
+    "draws": 144,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 473
+   },
+   "classes": {
+    "solid imp-hi": {
+     "n": 5,
+     "area": 1.236
+    },
+    "solid imp-far": {
+     "n": 12,
+     "area": 0.457
+    },
+    "solid T4": {
+     "n": 95,
+     "area": 0.199
+    },
+    "solid T5": {
+     "n": 119,
+     "area": 0.007
+    }
+   },
+   "top": [
+    {
+     "f": 162,
+     "lane": "flycast",
+     "date": "2021-11-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.205,
+     "area": 0.389
+    },
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.158,
+     "area": 0.3
+    },
+    {
+     "f": 165,
+     "lane": "flycast",
+     "date": "2021-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.137,
+     "area": 0.26
+    },
+    {
+     "f": 166,
+     "lane": "flycast",
+     "date": "2022-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.108,
+     "area": 0.172
+    },
+    {
+     "f": 168,
+     "lane": "flycast",
+     "date": "2022-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.088,
+     "area": 0.115
+    },
+    {
+     "f": 169,
+     "lane": "flycast",
+     "date": "2022-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.074,
+     "area": 0.082
+    },
+    {
+     "f": 170,
+     "lane": "flycast",
+     "date": "2022-04-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.07,
+     "area": 0.072
+    },
+    {
+     "f": 171,
+     "lane": "flycast",
+     "date": "2022-04-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.063,
+     "area": 0.059
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2021-11  ef3af9a",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.65,
+   "cpu_ms": 0.96,
+   "labels": 0,
+   "titlesShown": 1,
+   "A": 0
+  },
+  {
+   "name": "walk-stop80ms-1000",
+   "t": 14216,
+   "pres": "clock",
+   "cam": [
+    682775,
+    2048,
+    119328
+   ],
+   "q": 0,
+   "walls": 31,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 96,
+    "t5": 118,
+    "imp": 17,
+    "inst": 0,
+    "draws": 145,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 473
+   },
+   "classes": {
+    "solid imp-hi": {
+     "n": 5,
+     "area": 1.302
+    },
+    "solid imp-far": {
+     "n": 12,
+     "area": 0.472
+    },
+    "solid T4": {
+     "n": 96,
+     "area": 0.202
+    },
+    "solid T5": {
+     "n": 118,
+     "area": 0.007
+    }
+   },
+   "top": [
+    {
+     "f": 162,
+     "lane": "flycast",
+     "date": "2021-11-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.218,
+     "area": 0.413
+    },
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.166,
+     "area": 0.314
+    },
+    {
+     "f": 165,
+     "lane": "flycast",
+     "date": "2021-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.143,
+     "area": 0.271
+    },
+    {
+     "f": 166,
+     "lane": "flycast",
+     "date": "2022-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.111,
+     "area": 0.183
+    },
+    {
+     "f": 168,
+     "lane": "flycast",
+     "date": "2022-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.09,
+     "area": 0.121
+    },
+    {
+     "f": 169,
+     "lane": "flycast",
+     "date": "2022-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.076,
+     "area": 0.086
+    },
+    {
+     "f": 170,
+     "lane": "flycast",
+     "date": "2022-04-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.071,
+     "area": 0.075
+    },
+    {
+     "f": 171,
+     "lane": "flycast",
+     "date": "2022-04-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.065,
+     "area": 0.062
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2021-11  ef3af9a",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.73,
+   "cpu_ms": 1.02,
+   "labels": 0,
+   "titlesShown": 1,
+   "A": 0
+  },
+  {
+   "name": "walk-stopped-1000",
+   "t": 15778,
+   "pres": "clock",
+   "cam": [
+    682775,
+    2048,
+    119328
+   ],
+   "q": 0,
+   "walls": 31,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 96,
+    "t5": 118,
+    "imp": 17,
+    "inst": 10603,
+    "draws": 147,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 473
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 0.645
+    },
+    "solid imp-hi": {
+     "n": 5,
+     "area": 1.302
+    },
+    "solid imp-far": {
+     "n": 12,
+     "area": 0.472
+    },
+    "solid T4": {
+     "n": 96,
+     "area": 0.202
+    },
+    "solid T5": {
+     "n": 118,
+     "area": 0.007
+    }
+   },
+   "top": [
+    {
+     "f": 160,
+     "lane": "flycast",
+     "date": "2021-09-30",
+     "solid": true,
+     "A": 0.64,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 1.934,
+     "area": 1
+    },
+    {
+     "f": 162,
+     "lane": "flycast",
+     "date": "2021-11-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.218,
+     "area": 0.413
+    },
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.166,
+     "area": 0.314
+    },
+    {
+     "f": 165,
+     "lane": "flycast",
+     "date": "2021-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.143,
+     "area": 0.271
+    },
+    {
+     "f": 166,
+     "lane": "flycast",
+     "date": "2022-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.111,
+     "area": 0.183
+    },
+    {
+     "f": 168,
+     "lane": "flycast",
+     "date": "2022-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.09,
+     "area": 0.121
+    },
+    {
+     "f": 169,
+     "lane": "flycast",
+     "date": "2022-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.076,
+     "area": 0.086
+    },
+    {
+     "f": 170,
+     "lane": "flycast",
+     "date": "2022-04-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.071,
+     "area": 0.075
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2021-09  23d1f6b",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.63,
+   "cpu_ms": 1.16,
+   "labels": 0,
+   "titlesShown": 1,
+   "A": 0.644618809223175
+  },
+  {
+   "name": "walk-moving-600",
+   "t": 20668,
+   "pres": "clock",
+   "cam": [
+    682242,
+    2048,
+    119328
+   ],
+   "q": 0,
+   "walls": 31,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 95,
+    "t5": 119,
+    "imp": 17,
+    "inst": 0,
+    "draws": 144,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 473
+   },
+   "classes": {
+    "solid imp-hi": {
+     "n": 5,
+     "area": 1.236
+    },
+    "solid imp-far": {
+     "n": 12,
+     "area": 0.457
+    },
+    "solid T4": {
+     "n": 95,
+     "area": 0.199
+    },
+    "solid T5": {
+     "n": 119,
+     "area": 0.007
+    }
+   },
+   "top": [
+    {
+     "f": 162,
+     "lane": "flycast",
+     "date": "2021-11-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.205,
+     "area": 0.389
+    },
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.158,
+     "area": 0.3
+    },
+    {
+     "f": 165,
+     "lane": "flycast",
+     "date": "2021-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.137,
+     "area": 0.26
+    },
+    {
+     "f": 166,
+     "lane": "flycast",
+     "date": "2022-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.108,
+     "area": 0.172
+    },
+    {
+     "f": 168,
+     "lane": "flycast",
+     "date": "2022-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.088,
+     "area": 0.115
+    },
+    {
+     "f": 169,
+     "lane": "flycast",
+     "date": "2022-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.074,
+     "area": 0.082
+    },
+    {
+     "f": 170,
+     "lane": "flycast",
+     "date": "2022-04-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.07,
+     "area": 0.072
+    },
+    {
+     "f": 171,
+     "lane": "flycast",
+     "date": "2022-04-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.063,
+     "area": 0.059
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2021-11  ef3af9a",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.9,
+   "cpu_ms": 0.99,
+   "labels": 0,
+   "titlesShown": 1,
+   "A": 0
+  },
+  {
+   "name": "walk-stop80ms-600",
+   "t": 21229,
+   "pres": "clock",
+   "cam": [
+    683175,
+    2048,
+    119328
+   ],
+   "q": 0,
+   "walls": 32,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 95,
+    "t5": 118,
+    "imp": 18,
+    "inst": 0,
+    "draws": 146,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 473
+   },
+   "classes": {
+    "solid imp-hi": {
+     "n": 5,
+     "area": 1.356
+    },
+    "solid imp-far": {
+     "n": 13,
+     "area": 0.497
+    },
+    "solid T4": {
+     "n": 95,
+     "area": 0.19
+    },
+    "solid T5": {
+     "n": 118,
+     "area": 0.007
+    }
+   },
+   "top": [
+    {
+     "f": 162,
+     "lane": "flycast",
+     "date": "2021-11-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.229,
+     "area": 0.434
+    },
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.172,
+     "area": 0.326
+    },
+    {
+     "f": 165,
+     "lane": "flycast",
+     "date": "2021-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.147,
+     "area": 0.279
+    },
+    {
+     "f": 166,
+     "lane": "flycast",
+     "date": "2022-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.114,
+     "area": 0.192
+    },
+    {
+     "f": 168,
+     "lane": "flycast",
+     "date": "2022-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.092,
+     "area": 0.125
+    },
+    {
+     "f": 169,
+     "lane": "flycast",
+     "date": "2022-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.077,
+     "area": 0.089
+    },
+    {
+     "f": 170,
+     "lane": "flycast",
+     "date": "2022-04-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.072,
+     "area": 0.077
+    },
+    {
+     "f": 171,
+     "lane": "flycast",
+     "date": "2022-04-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.065,
+     "area": 0.063
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2021-11  ef3af9a",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.65,
+   "cpu_ms": 0.94,
+   "labels": 0,
+   "titlesShown": 1,
+   "A": 0
+  },
+  {
+   "name": "walk-stopped-600",
+   "t": 22796,
+   "pres": "clock",
+   "cam": [
+    683175,
+    2048,
+    119328
+   ],
+   "q": 0,
+   "walls": 32,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 95,
+    "t5": 118,
+    "imp": 18,
+    "inst": 5545,
+    "draws": 148,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 473
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-hi": {
+     "n": 5,
+     "area": 1.356
+    },
+    "solid imp-far": {
+     "n": 13,
+     "area": 0.497
+    },
+    "solid T4": {
+     "n": 95,
+     "area": 0.19
+    },
+    "solid T5": {
+     "n": 118,
+     "area": 0.007
+    }
+   },
+   "top": [
+    {
+     "f": 160,
+     "lane": "flycast",
+     "date": "2021-09-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 3.299,
+     "area": 1
+    },
+    {
+     "f": 162,
+     "lane": "flycast",
+     "date": "2021-11-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.229,
+     "area": 0.434
+    },
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.172,
+     "area": 0.326
+    },
+    {
+     "f": 165,
+     "lane": "flycast",
+     "date": "2021-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.147,
+     "area": 0.279
+    },
+    {
+     "f": 166,
+     "lane": "flycast",
+     "date": "2022-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.114,
+     "area": 0.192
+    },
+    {
+     "f": 168,
+     "lane": "flycast",
+     "date": "2022-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.092,
+     "area": 0.125
+    },
+    {
+     "f": 169,
+     "lane": "flycast",
+     "date": "2022-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.077,
+     "area": 0.089
+    },
+    {
+     "f": 170,
+     "lane": "flycast",
+     "date": "2022-04-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.072,
+     "area": 0.077
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2021-09  23d1f6b",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.79,
+   "cpu_ms": 1.03,
+   "labels": 0,
+   "titlesShown": 1,
+   "A": 1
+  },
+  {
+   "name": "walk-moving-1000c",
+   "t": 37289,
+   "pres": "clock",
+   "cam": [
+    682167,
+    2048,
+    119328
+   ],
+   "q": 0,
+   "walls": 32,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 94,
+    "t5": 119,
+    "imp": 18,
+    "inst": 0,
+    "draws": 143,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 473
+   },
+   "classes": {
+    "solid imp-hi": {
+     "n": 5,
+     "area": 1.227
+    },
+    "solid imp-far": {
+     "n": 13,
+     "area": 0.469
+    },
+    "solid T4": {
+     "n": 94,
+     "area": 0.187
+    },
+    "solid T5": {
+     "n": 119,
+     "area": 0.007
+    }
+   },
+   "top": [
+    {
+     "f": 162,
+     "lane": "flycast",
+     "date": "2021-11-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.204,
+     "area": 0.386
+    },
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.157,
+     "area": 0.298
+    },
+    {
+     "f": 165,
+     "lane": "flycast",
+     "date": "2021-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.136,
+     "area": 0.259
+    },
+    {
+     "f": 166,
+     "lane": "flycast",
+     "date": "2022-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.107,
+     "area": 0.17
+    },
+    {
+     "f": 168,
+     "lane": "flycast",
+     "date": "2022-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.088,
+     "area": 0.114
+    },
+    {
+     "f": 169,
+     "lane": "flycast",
+     "date": "2022-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.074,
+     "area": 0.082
+    },
+    {
+     "f": 170,
+     "lane": "flycast",
+     "date": "2022-04-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.07,
+     "area": 0.072
+    },
+    {
+     "f": 171,
+     "lane": "flycast",
+     "date": "2022-04-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.063,
+     "area": 0.059
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2021-11  ef3af9a",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.63,
+   "cpu_ms": 1.09,
+   "labels": 0,
+   "titlesShown": 1,
+   "A": 0
+  },
+  {
+   "name": "walk-stop80ms-1000c",
+   "t": 38548,
+   "pres": "clock",
+   "cam": [
+    682750,
+    2048,
+    119328
+   ],
+   "q": 0,
+   "walls": 32,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 95,
+    "t5": 118,
+    "imp": 18,
+    "inst": 10603,
+    "draws": 145,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 473
+   },
+   "classes": {
+    "faded lines": {
+     "n": 1,
+     "area": 0.446
+    },
+    "solid imp-hi": {
+     "n": 5,
+     "area": 1.298
+    },
+    "solid imp-far": {
+     "n": 13,
+     "area": 0.483
+    },
+    "solid T4": {
+     "n": 95,
+     "area": 0.19
+    },
+    "solid T5": {
+     "n": 118,
+     "area": 0.007
+    }
+   },
+   "top": [
+    {
+     "f": 160,
+     "lane": "flycast",
+     "date": "2021-09-30",
+     "solid": false,
+     "A": 0.45,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 1.886,
+     "area": 1
+    },
+    {
+     "f": 162,
+     "lane": "flycast",
+     "date": "2021-11-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.217,
+     "area": 0.412
+    },
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.165,
+     "area": 0.314
+    },
+    {
+     "f": 165,
+     "lane": "flycast",
+     "date": "2021-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.143,
+     "area": 0.27
+    },
+    {
+     "f": 166,
+     "lane": "flycast",
+     "date": "2022-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.111,
+     "area": 0.182
+    },
+    {
+     "f": 168,
+     "lane": "flycast",
+     "date": "2022-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.09,
+     "area": 0.12
+    },
+    {
+     "f": 169,
+     "lane": "flycast",
+     "date": "2022-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.076,
+     "area": 0.085
+    },
+    {
+     "f": 170,
+     "lane": "flycast",
+     "date": "2022-04-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.071,
+     "area": 0.075
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2021-11  ef3af9a",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.86,
+   "cpu_ms": 1.01,
+   "labels": 0,
+   "titlesShown": 1,
+   "A": 0.4155760109424591
+  },
+  {
+   "name": "walk-stopped-1000c",
+   "t": 40127,
+   "pres": "clock",
+   "cam": [
+    682750,
+    2048,
+    119328
+   ],
+   "q": 0,
+   "walls": 32,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 95,
+    "t5": 118,
+    "imp": 18,
+    "inst": 10603,
+    "draws": 148,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 473
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 0.536
+    },
+    "solid imp-hi": {
+     "n": 5,
+     "area": 1.298
+    },
+    "solid imp-far": {
+     "n": 13,
+     "area": 0.483
+    },
+    "solid T4": {
+     "n": 95,
+     "area": 0.19
+    },
+    "solid T5": {
+     "n": 118,
+     "area": 0.007
+    }
+   },
+   "top": [
+    {
+     "f": 160,
+     "lane": "flycast",
+     "date": "2021-09-30",
+     "solid": true,
+     "A": 0.54,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 1.886,
+     "area": 1
+    },
+    {
+     "f": 162,
+     "lane": "flycast",
+     "date": "2021-11-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.217,
+     "area": 0.412
+    },
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.165,
+     "area": 0.314
+    },
+    {
+     "f": 165,
+     "lane": "flycast",
+     "date": "2021-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.143,
+     "area": 0.27
+    },
+    {
+     "f": 166,
+     "lane": "flycast",
+     "date": "2022-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.111,
+     "area": 0.182
+    },
+    {
+     "f": 168,
+     "lane": "flycast",
+     "date": "2022-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.09,
+     "area": 0.12
+    },
+    {
+     "f": 169,
+     "lane": "flycast",
+     "date": "2022-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.076,
+     "area": 0.085
+    },
+    {
+     "f": 170,
+     "lane": "flycast",
+     "date": "2022-04-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.071,
+     "area": 0.075
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2021-09  23d1f6b",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.77,
+   "cpu_ms": 1.12,
+   "labels": 0,
+   "titlesShown": 1,
+   "A": 0.5358715057373047
+  }
+ ],
+ "res": [
+  {
+   "stopD": 1800,
+   "ctrl": 0,
+   "maxJump": {
+    "j": 0.022,
+    "i": 159,
+    "t": 242,
+    "dx": 3017,
+    "from": 0.022,
+    "to": 0,
+    "readWall": -1
+   },
+   "stopAt": 3111,
+   "backMs": null,
+   "finalD": 1767,
+   "finalA": 0,
+   "movingBelow2800": {
+    "n": 30,
+    "maxA": 0.025,
+    "readTicks": 0
+   },
+   "tl": [
+    [
+     9,
+     8000,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     76,
+     7867,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     143,
+     7733,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     209,
+     7600,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     276,
+     7467,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     342,
+     7333,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     409,
+     7200,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     475,
+     7067,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     543,
+     6933,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     609,
+     6800,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     676,
+     6667,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     742,
+     6533,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     809,
+     6400,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     875,
+     6267,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     942,
+     6133,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     1009,
+     6000,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     1076,
+     5867,
+     0.997,
+     1,
+     0,
+     -1
+    ],
+    [
+     1142,
+     5733,
+     0.985,
+     1,
+     0,
+     -1
+    ],
+    [
+     1209,
+     5600,
+     0.964,
+     1,
+     0,
+     -1
+    ],
+    [
+     1276,
+     5467,
+     0.934,
+     1,
+     0,
+     -1
+    ],
+    [
+     1342,
+     5333,
+     0.898,
+     1,
+     0,
+     -1
+    ],
+    [
+     1409,
+     5200,
+     0.855,
+     1,
+     0,
+     -1
+    ],
+    [
+     1476,
+     5067,
+     0.842,
+     1,
+     0,
+     -1
+    ],
+    [
+     1542,
+     4933,
+     0.811,
+     1,
+     0,
+     -1
+    ],
+    [
+     1609,
+     4800,
+     0.77,
+     1,
+     0,
+     -1
+    ],
+    [
+     1676,
+     4667,
+     0.722,
+     1,
+     0,
+     -1
+    ],
+    [
+     1743,
+     4533,
+     0.667,
+     1,
+     0,
+     -1
+    ],
+    [
+     1809,
+     4400,
+     0.61,
+     1,
+     0,
+     -1
+    ],
+    [
+     1876,
+     4267,
+     0.551,
+     1,
+     0,
+     -1
+    ],
+    [
+     1942,
+     4134,
+     0.49,
+     0,
+     0,
+     -1
+    ],
+    [
+     2009,
+     4000,
+     0.429,
+     0,
+     0,
+     -1
+    ],
+    [
+     2076,
+     3867,
+     0.37,
+     0,
+     0,
+     -1
+    ],
+    [
+     2142,
+     3733,
+     0.312,
+     0,
+     0,
+     -1
+    ],
+    [
+     2209,
+     3600,
+     0.256,
+     0,
+     0,
+     -1
+    ],
+    [
+     2275,
+     3467,
+     0.205,
+     0,
+     0,
+     -1
+    ],
+    [
+     2342,
+     3334,
+     0.158,
+     0,
+     0,
+     -1
+    ],
+    [
+     2408,
+     3200,
+     0.115,
+     0,
+     0,
+     -1
+    ],
+    [
+     2475,
+     3067,
+     0.079,
+     0,
+     0,
+     -1
+    ],
+    [
+     2542,
+     2934,
+     0.05,
+     0,
+     0,
+     -1
+    ],
+    [
+     2608,
+     2800,
+     0.029,
+     0,
+     0,
+     -1
+    ],
+    [
+     2676,
+     2667,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     2742,
+     2534,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     2809,
+     2400,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     2875,
+     2267,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     2942,
+     2134,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3009,
+     2000,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3082,
+     1867,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3142,
+     1767,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3208,
+     1767,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3325,
+     1767,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3392,
+     1767,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     3459,
+     1767,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     3526,
+     1767,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     3592,
+     1767,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     3659,
+     1767,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     3726,
+     1767,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     3791,
+     1767,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     3859,
+     1767,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     3926,
+     1767,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     3992,
+     1767,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     4059,
+     1767,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     4125,
+     1767,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     4192,
+     1767,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     4259,
+     1767,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     4326,
+     1767,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     4392,
+     1767,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     4459,
+     1767,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     4526,
+     1767,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     4592,
+     1767,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     4659,
+     1767,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     4725,
+     1767,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     4792,
+     1767,
+     0,
+     0,
+     1,
+     160
+    ]
+   ]
+  },
+  {
+   "stopD": 1000,
+   "ctrl": 0,
+   "maxJump": {
+    "j": 0.081,
+    "i": 160,
+    "t": 3797,
+    "dx": 967,
+    "from": 0.05,
+    "to": 0.131,
+    "readWall": 160
+   },
+   "stopAt": 3514,
+   "backMs": null,
+   "finalD": 967,
+   "finalA": 0.645,
+   "movingBelow2800": {
+    "n": 53,
+    "maxA": 0.025,
+    "readTicks": 0
+   },
+   "tl": [
+    [
+     13,
+     8000,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     80,
+     7867,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     146,
+     7733,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     213,
+     7600,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     280,
+     7467,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     347,
+     7333,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     413,
+     7200,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     481,
+     7067,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     547,
+     6933,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     613,
+     6800,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     680,
+     6667,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     747,
+     6533,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     813,
+     6400,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     880,
+     6267,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     947,
+     6133,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     1013,
+     6000,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     1079,
+     5867,
+     0.997,
+     1,
+     0,
+     -1
+    ],
+    [
+     1147,
+     5733,
+     0.985,
+     1,
+     0,
+     -1
+    ],
+    [
+     1214,
+     5600,
+     0.964,
+     1,
+     0,
+     -1
+    ],
+    [
+     1281,
+     5467,
+     0.934,
+     1,
+     0,
+     -1
+    ],
+    [
+     1347,
+     5333,
+     0.898,
+     1,
+     0,
+     -1
+    ],
+    [
+     1413,
+     5200,
+     0.855,
+     1,
+     0,
+     -1
+    ],
+    [
+     1480,
+     5067,
+     0.842,
+     1,
+     0,
+     -1
+    ],
+    [
+     1546,
+     4933,
+     0.812,
+     1,
+     0,
+     -1
+    ],
+    [
+     1613,
+     4800,
+     0.771,
+     1,
+     0,
+     -1
+    ],
+    [
+     1680,
+     4667,
+     0.722,
+     1,
+     0,
+     -1
+    ],
+    [
+     1746,
+     4533,
+     0.668,
+     1,
+     0,
+     -1
+    ],
+    [
+     1813,
+     4400,
+     0.61,
+     1,
+     0,
+     -1
+    ],
+    [
+     1880,
+     4267,
+     0.551,
+     1,
+     0,
+     -1
+    ],
+    [
+     1946,
+     4133,
+     0.49,
+     0,
+     0,
+     -1
+    ],
+    [
+     2014,
+     4000,
+     0.43,
+     0,
+     0,
+     -1
+    ],
+    [
+     2080,
+     3867,
+     0.37,
+     0,
+     0,
+     -1
+    ],
+    [
+     2147,
+     3733,
+     0.312,
+     0,
+     0,
+     -1
+    ],
+    [
+     2213,
+     3600,
+     0.257,
+     0,
+     0,
+     -1
+    ],
+    [
+     2280,
+     3467,
+     0.205,
+     0,
+     0,
+     -1
+    ],
+    [
+     2346,
+     3333,
+     0.157,
+     0,
+     0,
+     -1
+    ],
+    [
+     2413,
+     3200,
+     0.115,
+     0,
+     0,
+     -1
+    ],
+    [
+     2480,
+     3067,
+     0.079,
+     0,
+     0,
+     -1
+    ],
+    [
+     2546,
+     2933,
+     0.05,
+     0,
+     0,
+     -1
+    ],
+    [
+     2613,
+     2800,
+     0.029,
+     0,
+     0,
+     -1
+    ],
+    [
+     2680,
+     2667,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     2746,
+     2534,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     2814,
+     2400,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     2879,
+     2267,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     2946,
+     2134,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3013,
+     2000,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3080,
+     1867,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3147,
+     1733,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3214,
+     1600,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3296,
+     1434,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3363,
+     1300,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3430,
+     1167,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3497,
+     1034,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3564,
+     967,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3678,
+     967,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3729,
+     967,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3797,
+     967,
+     0.131,
+     0,
+     1,
+     160
+    ],
+    [
+     3863,
+     967,
+     0.355,
+     0,
+     1,
+     160
+    ],
+    [
+     3929,
+     967,
+     0.48,
+     0,
+     1,
+     160
+    ],
+    [
+     3996,
+     967,
+     0.552,
+     1,
+     1,
+     160
+    ],
+    [
+     4063,
+     967,
+     0.593,
+     1,
+     1,
+     160
+    ],
+    [
+     4130,
+     967,
+     0.616,
+     1,
+     1,
+     160
+    ],
+    [
+     4197,
+     967,
+     0.628,
+     1,
+     1,
+     160
+    ],
+    [
+     4263,
+     967,
+     0.645,
+     1,
+     1,
+     160
+    ],
+    [
+     4330,
+     967,
+     0.645,
+     1,
+     1,
+     160
+    ],
+    [
+     4396,
+     967,
+     0.645,
+     1,
+     1,
+     160
+    ],
+    [
+     4463,
+     967,
+     0.645,
+     1,
+     1,
+     160
+    ],
+    [
+     4531,
+     967,
+     0.645,
+     1,
+     1,
+     160
+    ],
+    [
+     4597,
+     967,
+     0.645,
+     1,
+     1,
+     160
+    ],
+    [
+     4663,
+     967,
+     0.645,
+     1,
+     1,
+     160
+    ],
+    [
+     4730,
+     967,
+     0.645,
+     1,
+     1,
+     160
+    ],
+    [
+     4796,
+     967,
+     0.645,
+     1,
+     1,
+     160
+    ],
+    [
+     4863,
+     967,
+     0.645,
+     1,
+     1,
+     160
+    ],
+    [
+     4930,
+     967,
+     0.645,
+     1,
+     1,
+     160
+    ],
+    [
+     4997,
+     967,
+     0.645,
+     1,
+     1,
+     160
+    ],
+    [
+     5063,
+     967,
+     0.645,
+     1,
+     1,
+     160
+    ],
+    [
+     5130,
+     967,
+     0.645,
+     1,
+     1,
+     160
+    ],
+    [
+     5196,
+     967,
+     0.645,
+     1,
+     1,
+     160
+    ]
+   ]
+  },
+  {
+   "stopD": 600,
+   "ctrl": 0,
+   "maxJump": {
+    "j": 0.126,
+    "i": 160,
+    "t": 3977,
+    "dx": 567,
+    "from": 0,
+    "to": 0.126,
+    "readWall": 160
+   },
+   "stopAt": 3712,
+   "backMs": 782,
+   "finalD": 567,
+   "finalA": 1,
+   "movingBelow2800": {
+    "n": 65,
+    "maxA": 0.025,
+    "readTicks": 0
+   },
+   "tl": [
+    [
+     10,
+     8000,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     77,
+     7867,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     143,
+     7733,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     211,
+     7600,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     277,
+     7467,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     344,
+     7333,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     410,
+     7200,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     477,
+     7067,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     543,
+     6933,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     610,
+     6800,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     677,
+     6667,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     744,
+     6533,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     810,
+     6400,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     876,
+     6267,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     943,
+     6134,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     1010,
+     6000,
+     1,
+     1,
+     0,
+     -1
+    ],
+    [
+     1077,
+     5867,
+     0.997,
+     1,
+     0,
+     -1
+    ],
+    [
+     1143,
+     5733,
+     0.985,
+     1,
+     0,
+     -1
+    ],
+    [
+     1211,
+     5600,
+     0.964,
+     1,
+     0,
+     -1
+    ],
+    [
+     1277,
+     5467,
+     0.934,
+     1,
+     0,
+     -1
+    ],
+    [
+     1343,
+     5333,
+     0.898,
+     1,
+     0,
+     -1
+    ],
+    [
+     1410,
+     5200,
+     0.855,
+     1,
+     0,
+     -1
+    ],
+    [
+     1477,
+     5067,
+     0.835,
+     1,
+     0,
+     -1
+    ],
+    [
+     1543,
+     4933,
+     0.808,
+     1,
+     0,
+     -1
+    ],
+    [
+     1610,
+     4800,
+     0.768,
+     1,
+     0,
+     -1
+    ],
+    [
+     1677,
+     4667,
+     0.72,
+     1,
+     0,
+     -1
+    ],
+    [
+     1744,
+     4534,
+     0.667,
+     1,
+     0,
+     -1
+    ],
+    [
+     1810,
+     4400,
+     0.61,
+     1,
+     0,
+     -1
+    ],
+    [
+     1877,
+     4267,
+     0.55,
+     1,
+     0,
+     -1
+    ],
+    [
+     1944,
+     4133,
+     0.491,
+     0,
+     0,
+     -1
+    ],
+    [
+     2010,
+     4000,
+     0.429,
+     0,
+     0,
+     -1
+    ],
+    [
+     2076,
+     3867,
+     0.37,
+     0,
+     0,
+     -1
+    ],
+    [
+     2143,
+     3734,
+     0.312,
+     0,
+     0,
+     -1
+    ],
+    [
+     2210,
+     3600,
+     0.256,
+     0,
+     0,
+     -1
+    ],
+    [
+     2277,
+     3467,
+     0.204,
+     0,
+     0,
+     -1
+    ],
+    [
+     2344,
+     3334,
+     0.157,
+     0,
+     0,
+     -1
+    ],
+    [
+     2410,
+     3200,
+     0.115,
+     0,
+     0,
+     -1
+    ],
+    [
+     2477,
+     3067,
+     0.079,
+     0,
+     0,
+     -1
+    ],
+    [
+     2543,
+     2933,
+     0.05,
+     0,
+     0,
+     -1
+    ],
+    [
+     2610,
+     2800,
+     0.029,
+     0,
+     0,
+     -1
+    ],
+    [
+     2677,
+     2667,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     2743,
+     2534,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     2810,
+     2400,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     2877,
+     2267,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     2944,
+     2134,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3010,
+     2000,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3076,
+     1867,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3144,
+     1733,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3210,
+     1600,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3293,
+     1434,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3360,
+     1300,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3427,
+     1167,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3494,
+     1034,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3561,
+     900,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3627,
+     767,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3693,
+     634,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3760,
+     567,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3851,
+     567,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3910,
+     567,
+     0,
+     0,
+     0,
+     -1
+    ],
+    [
+     3977,
+     567,
+     0.126,
+     0,
+     1,
+     160
+    ],
+    [
+     4044,
+     567,
+     0.512,
+     1,
+     1,
+     160
+    ],
+    [
+     4111,
+     567,
+     0.726,
+     1,
+     1,
+     160
+    ],
+    [
+     4178,
+     567,
+     0.843,
+     1,
+     1,
+     160
+    ],
+    [
+     4243,
+     567,
+     0.912,
+     1,
+     1,
+     160
+    ],
+    [
+     4309,
+     567,
+     0.95,
+     1,
+     1,
+     160
+    ],
+    [
+     4376,
+     567,
+     0.972,
+     1,
+     1,
+     160
+    ],
+    [
+     4444,
+     567,
+     0.984,
+     1,
+     1,
+     160
+    ],
+    [
+     4510,
+     567,
+     1,
+     1,
+     1,
+     160
+    ],
+    [
+     4576,
+     567,
+     1,
+     1,
+     1,
+     160
+    ],
+    [
+     4644,
+     567,
+     1,
+     1,
+     1,
+     160
+    ],
+    [
+     4711,
+     567,
+     1,
+     1,
+     1,
+     160
+    ],
+    [
+     4777,
+     567,
+     1,
+     1,
+     1,
+     160
+    ],
+    [
+     4843,
+     567,
+     1,
+     1,
+     1,
+     160
+    ],
+    [
+     4910,
+     567,
+     1,
+     1,
+     1,
+     160
+    ],
+    [
+     4977,
+     567,
+     1,
+     1,
+     1,
+     160
+    ],
+    [
+     5044,
+     567,
+     1,
+     1,
+     1,
+     160
+    ],
+    [
+     5110,
+     567,
+     1,
+     1,
+     1,
+     160
+    ],
+    [
+     5178,
+     567,
+     1,
+     1,
+     1,
+     160
+    ],
+    [
+     5244,
+     567,
+     1,
+     1,
+     1,
+     160
+    ],
+    [
+     5310,
+     567,
+     1,
+     1,
+     1,
+     160
+    ],
+    [
+     5377,
+     567,
+     1,
+     1,
+     1,
+     160
+    ]
+   ]
+  },
+  {
+   "stopD": 1000,
+   "ctrl": 1,
+   "maxJump": {
+    "j": 0.774,
+    "i": 160,
+    "t": 5092,
+    "dx": 5458,
+    "from": 0.928,
+    "to": 0.155,
+    "readWall": 159
+   },
+   "stopAt": 14009,
+   "backMs": null,
+   "finalD": 992,
+   "finalA": 0.536,
+   "movingBelow2800": {
+    "n": 214,
+    "maxA": 0.294,
+    "readTicks": 214
+   },
+   "tl": [
+    [
+     9,
+     8000,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     76,
+     7967,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     142,
+     7933,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     208,
+     7900,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     275,
+     7867,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     342,
+     7833,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     409,
+     7800,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     476,
+     7767,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     543,
+     7733,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     609,
+     7700,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     675,
+     7667,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     742,
+     7633,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     808,
+     7600,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     875,
+     7567,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     943,
+     7533,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     1009,
+     7500,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     1075,
+     7467,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     1142,
+     7433,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     1208,
+     7400,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     1275,
+     7367,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     1342,
+     7333,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     1408,
+     7300,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     1475,
+     7267,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     1542,
+     7233,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     1608,
+     7200,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     1676,
+     7167,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     1742,
+     7133,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     1808,
+     7100,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     1875,
+     7067,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     1942,
+     7033,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     2008,
+     7000,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     2076,
+     6967,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     2142,
+     6933,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     2209,
+     6900,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     2275,
+     6867,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     2343,
+     6833,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     2409,
+     6800,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     2475,
+     6767,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     2543,
+     6733,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     2608,
+     6700,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     2675,
+     6667,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     2742,
+     6633,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     2809,
+     6600,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     2876,
+     6567,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     2941,
+     6533,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     3009,
+     6500,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     3075,
+     6467,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     3142,
+     6433,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     3209,
+     6400,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     3276,
+     6367,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     3342,
+     6333,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     3409,
+     6300,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     3475,
+     6267,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     3542,
+     6233,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     3609,
+     6200,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     3675,
+     6167,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     3742,
+     6133,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     3809,
+     6100,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     3876,
+     6067,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     3942,
+     6033,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     4009,
+     6000,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     4075,
+     5967,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     4142,
+     5933,
+     1,
+     1,
+     0,
+     159
+    ],
+    [
+     4209,
+     5900,
+     0.998,
+     1,
+     0,
+     159
+    ],
+    [
+     4275,
+     5867,
+     0.996,
+     1,
+     0,
+     159
+    ],
+    [
+     4342,
+     5833,
+     0.993,
+     1,
+     0,
+     159
+    ],
+    [
+     4409,
+     5800,
+     0.99,
+     1,
+     0,
+     159
+    ],
+    [
+     4476,
+     5767,
+     0.986,
+     1,
+     0,
+     159
+    ],
+    [
+     4542,
+     5733,
+     0.982,
+     1,
+     0,
+     159
+    ],
+    [
+     4609,
+     5700,
+     0.977,
+     1,
+     0,
+     159
+    ],
+    [
+     4675,
+     5667,
+     0.971,
+     1,
+     0,
+     159
+    ],
+    [
+     4741,
+     5633,
+     0.965,
+     1,
+     0,
+     159
+    ],
+    [
+     4809,
+     5600,
+     0.959,
+     1,
+     0,
+     159
+    ],
+    [
+     4875,
+     5567,
+     0.952,
+     1,
+     0,
+     159
+    ],
+    [
+     4941,
+     5533,
+     0.944,
+     1,
+     0,
+     159
+    ],
+    [
+     5008,
+     5500,
+     0.936,
+     1,
+     0,
+     159
+    ],
+    [
+     5075,
+     5467,
+     0.928,
+     1,
+     0,
+     159
+    ],
+    [
+     5141,
+     5433,
+     0.145,
+     0,
+     0,
+     159
+    ],
+    [
+     5209,
+     5400,
+     0.132,
+     0,
+     0,
+     159
+    ],
+    [
+     5275,
+     5367,
+     0.12,
+     0,
+     0,
+     159
+    ],
+    [
+     5342,
+     5333,
+     0.107,
+     0,
+     0,
+     159
+    ],
+    [
+     5409,
+     5300,
+     0.095,
+     0,
+     0,
+     159
+    ],
+    [
+     5476,
+     5267,
+     0.083,
+     0,
+     0,
+     159
+    ],
+    [
+     5542,
+     5233,
+     0.072,
+     0,
+     0,
+     159
+    ],
+    [
+     5609,
+     5200,
+     0.06,
+     0,
+     0,
+     159
+    ],
+    [
+     5675,
+     5167,
+     0.049,
+     0,
+     0,
+     159
+    ],
+    [
+     5741,
+     5133,
+     0.038,
+     0,
+     0,
+     159
+    ],
+    [
+     5808,
+     5100,
+     0.028,
+     0,
+     0,
+     159
+    ],
+    [
+     5875,
+     5067,
+     0.017,
+     0,
+     0,
+     159
+    ],
+    [
+     5942,
+     5033,
+     0,
+     0,
+     0,
+     159
+    ],
+    [
+     6009,
+     5000,
+     0,
+     0,
+     0,
+     159
+    ],
+    [
+     6076,
+     4967,
+     0,
+     0,
+     0,
+     159
+    ],
+    [
+     6142,
+     4933,
+     0,
+     0,
+     0,
+     159
+    ],
+    [
+     6208,
+     4900,
+     0,
+     0,
+     0,
+     159
+    ],
+    [
+     6275,
+     4867,
+     0,
+     0,
+     0,
+     159
+    ],
+    [
+     6342,
+     4833,
+     0,
+     0,
+     0,
+     159
+    ],
+    [
+     6408,
+     4800,
+     0,
+     0,
+     0,
+     159
+    ],
+    [
+     6475,
+     4767,
+     0,
+     0,
+     0,
+     159
+    ],
+    [
+     6542,
+     4733,
+     0,
+     0,
+     0,
+     159
+    ],
+    [
+     6608,
+     4700,
+     0,
+     0,
+     0,
+     159
+    ],
+    [
+     6675,
+     4667,
+     0,
+     0,
+     0,
+     159
+    ],
+    [
+     6741,
+     4633,
+     0,
+     0,
+     0,
+     159
+    ],
+    [
+     6808,
+     4600,
+     0,
+     0,
+     0,
+     159
+    ],
+    [
+     6876,
+     4567,
+     0,
+     0,
+     0,
+     159
+    ],
+    [
+     6942,
+     4533,
+     0,
+     0,
+     0,
+     159
+    ],
+    [
+     7009,
+     4500,
+     0.551,
+     1,
+     1,
+     160
+    ],
+    [
+     7075,
+     4467,
+     0.535,
+     1,
+     1,
+     160
+    ],
+    [
+     7142,
+     4433,
+     0.52,
+     1,
+     1,
+     160
+    ],
+    [
+     7208,
+     4400,
+     0.504,
+     1,
+     1,
+     160
+    ],
+    [
+     7275,
+     4367,
+     0.488,
+     0,
+     1,
+     160
+    ],
+    [
+     7342,
+     4333,
+     0.473,
+     0,
+     1,
+     160
+    ],
+    [
+     7409,
+     4300,
+     0.457,
+     0,
+     1,
+     160
+    ],
+    [
+     7475,
+     4267,
+     0.442,
+     0,
+     1,
+     160
+    ],
+    [
+     7543,
+     4233,
+     0.426,
+     0,
+     1,
+     160
+    ],
+    [
+     7608,
+     4200,
+     0.411,
+     0,
+     1,
+     160
+    ],
+    [
+     7675,
+     4167,
+     0.395,
+     0,
+     1,
+     160
+    ],
+    [
+     7742,
+     4133,
+     0.38,
+     0,
+     1,
+     160
+    ],
+    [
+     7808,
+     4100,
+     0.365,
+     0,
+     1,
+     160
+    ],
+    [
+     7875,
+     4067,
+     0.35,
+     0,
+     1,
+     160
+    ],
+    [
+     7942,
+     4033,
+     0.335,
+     0,
+     1,
+     160
+    ],
+    [
+     8008,
+     4000,
+     0.32,
+     0,
+     1,
+     160
+    ],
+    [
+     8075,
+     3967,
+     0.306,
+     0,
+     1,
+     160
+    ],
+    [
+     8142,
+     3933,
+     0.291,
+     0,
+     1,
+     160
+    ],
+    [
+     8208,
+     3900,
+     0.277,
+     0,
+     1,
+     160
+    ],
+    [
+     8275,
+     3867,
+     0.263,
+     0,
+     1,
+     160
+    ],
+    [
+     8342,
+     3833,
+     0.249,
+     0,
+     1,
+     160
+    ],
+    [
+     8409,
+     3800,
+     0.235,
+     0,
+     1,
+     160
+    ],
+    [
+     8475,
+     3767,
+     0.222,
+     0,
+     1,
+     160
+    ],
+    [
+     8542,
+     3733,
+     0.209,
+     0,
+     1,
+     160
+    ],
+    [
+     8609,
+     3700,
+     0.196,
+     0,
+     1,
+     160
+    ],
+    [
+     8675,
+     3667,
+     0.183,
+     0,
+     1,
+     160
+    ],
+    [
+     8742,
+     3633,
+     0.171,
+     0,
+     1,
+     160
+    ],
+    [
+     8808,
+     3600,
+     0.159,
+     0,
+     1,
+     160
+    ],
+    [
+     8875,
+     3567,
+     0.148,
+     0,
+     1,
+     160
+    ],
+    [
+     8941,
+     3534,
+     0.136,
+     0,
+     1,
+     160
+    ],
+    [
+     9008,
+     3500,
+     0.125,
+     0,
+     1,
+     160
+    ],
+    [
+     9075,
+     3467,
+     0.115,
+     0,
+     1,
+     160
+    ],
+    [
+     9141,
+     3434,
+     0.105,
+     0,
+     1,
+     160
+    ],
+    [
+     9208,
+     3400,
+     0.095,
+     0,
+     1,
+     160
+    ],
+    [
+     9275,
+     3367,
+     0.085,
+     0,
+     1,
+     160
+    ],
+    [
+     9342,
+     3333,
+     0.076,
+     0,
+     1,
+     160
+    ],
+    [
+     9408,
+     3300,
+     0.068,
+     0,
+     1,
+     160
+    ],
+    [
+     9475,
+     3267,
+     0.06,
+     0,
+     1,
+     160
+    ],
+    [
+     9542,
+     3233,
+     0.052,
+     0,
+     1,
+     160
+    ],
+    [
+     9609,
+     3200,
+     0.045,
+     0,
+     1,
+     160
+    ],
+    [
+     9675,
+     3167,
+     0.038,
+     0,
+     1,
+     160
+    ],
+    [
+     9742,
+     3134,
+     0.032,
+     0,
+     1,
+     160
+    ],
+    [
+     9808,
+     3100,
+     0.026,
+     0,
+     1,
+     160
+    ],
+    [
+     9876,
+     3067,
+     0.021,
+     0,
+     1,
+     160
+    ],
+    [
+     9942,
+     3034,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     10009,
+     3000,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     10075,
+     2967,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     10142,
+     2934,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     10208,
+     2900,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     10275,
+     2867,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     10343,
+     2834,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     10408,
+     2800,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     10475,
+     2767,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     10542,
+     2734,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     10608,
+     2700,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     10676,
+     2667,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     10742,
+     2634,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     10808,
+     2600,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     10875,
+     2567,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     10943,
+     2534,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     11009,
+     2500,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     11075,
+     2467,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     11141,
+     2434,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     11208,
+     2400,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     11276,
+     2367,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     11342,
+     2334,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     11408,
+     2300,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     11475,
+     2267,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     11541,
+     2234,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     11608,
+     2200,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     11676,
+     2167,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     11741,
+     2134,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     11809,
+     2100,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     11875,
+     2067,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     11942,
+     2034,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     12008,
+     2000,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     12075,
+     1967,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     12143,
+     1934,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     12208,
+     1900,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     12275,
+     1867,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     12341,
+     1834,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     12409,
+     1800,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     12475,
+     1767,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     12542,
+     1734,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     12608,
+     1700,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     12675,
+     1667,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     12742,
+     1634,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     12808,
+     1600,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     12908,
+     1550,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     12975,
+     1517,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     13041,
+     1484,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     13108,
+     1450,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     13175,
+     1417,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     13242,
+     1384,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     13308,
+     1350,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     13375,
+     1317,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     13442,
+     1284,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     13507,
+     1250,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     13575,
+     1217,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     13642,
+     1184,
+     0,
+     0,
+     1,
+     160
+    ],
+    [
+     13708,
+     1150,
+     0.035,
+     0,
+     1,
+     160
+    ],
+    [
+     13775,
+     1117,
+     0.057,
+     0,
+     1,
+     160
+    ],
+    [
+     13843,
+     1084,
+     0.094,
+     0,
+     1,
+     160
+    ],
+    [
+     13908,
+     1050,
+     0.156,
+     0,
+     1,
+     160
+    ],
+    [
+     13975,
+     1017,
+     0.243,
+     0,
+     1,
+     160
+    ],
+    [
+     14042,
+     992,
+     0.351,
+     0,
+     1,
+     160
+    ],
+    [
+     14109,
+     992,
+     0.431,
+     0,
+     1,
+     160
+    ],
+    [
+     14192,
+     992,
+     0.487,
+     0,
+     1,
+     160
+    ],
+    [
+     14258,
+     992,
+     0.508,
+     1,
+     1,
+     160
+    ],
+    [
+     14325,
+     992,
+     0.52,
+     1,
+     1,
+     160
+    ],
+    [
+     14391,
+     992,
+     0.536,
+     1,
+     1,
+     160
+    ],
+    [
+     14458,
+     992,
+     0.536,
+     1,
+     1,
+     160
+    ],
+    [
+     14524,
+     992,
+     0.536,
+     1,
+     1,
+     160
+    ],
+    [
+     14591,
+     992,
+     0.536,
+     1,
+     1,
+     160
+    ],
+    [
+     14659,
+     992,
+     0.536,
+     1,
+     1,
+     160
+    ],
+    [
+     14725,
+     992,
+     0.536,
+     1,
+     1,
+     160
+    ],
+    [
+     14792,
+     992,
+     0.536,
+     1,
+     1,
+     160
+    ],
+    [
+     14858,
+     992,
+     0.536,
+     1,
+     1,
+     160
+    ],
+    [
+     14925,
+     992,
+     0.536,
+     1,
+     1,
+     160
+    ],
+    [
+     14991,
+     992,
+     0.536,
+     1,
+     1,
+     160
+    ],
+    [
+     15058,
+     992,
+     0.536,
+     1,
+     1,
+     160
+    ],
+    [
+     15125,
+     992,
+     0.536,
+     1,
+     1,
+     160
+    ],
+    [
+     15192,
+     992,
+     0.536,
+     1,
+     1,
+     160
+    ],
+    [
+     15258,
+     992,
+     0.536,
+     1,
+     1,
+     160
+    ],
+    [
+     15326,
+     992,
+     0.536,
+     1,
+     1,
+     160
+    ],
+    [
+     15392,
+     992,
+     0.536,
+     1,
+     1,
+     160
+    ],
+    [
+     15459,
+     992,
+     0.536,
+     1,
+     1,
+     160
+    ],
+    [
+     15524,
+     992,
+     0.536,
+     1,
+     1,
+     160
+    ],
+    [
+     15592,
+     992,
+     0.536,
+     1,
+     1,
+     160
+    ],
+    [
+     15659,
+     992,
+     0.536,
+     1,
+     1,
+     160
+    ]
+   ]
+  }
+ ]
+}

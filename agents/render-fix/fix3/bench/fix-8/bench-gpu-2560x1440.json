@@ -1,0 +1,131 @@
+{
+ "date": "2026-11-25T19:49:33.374Z",
+ "size": [
+  2560,
+  1440
+ ],
+ "paths": {
+  "C": {
+   "path": "C",
+   "name": "lane flights",
+   "dur": 20,
+   "frames": 1773,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "fps_mean": 88.6,
+   "fps_1pct_low": 11.2,
+   "frame_ms": {
+    "p50": 4.5,
+    "p95": 26.1,
+    "p99": 53.8,
+    "max": 257.9
+   },
+   "cpu_ms": {
+    "p50": 1.2,
+    "p95": 5,
+    "p99": 7.7
+   },
+   "gpu_ms": {
+    "p50": 1.03,
+    "p95": 9.09,
+    "p99": 37.91
+   },
+   "draws_p95": 267,
+   "lines_p95": 173117,
+   "quality_steps": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "frames_over_100ms": 3,
+   "ready_ms": 1245,
+   "skipped_rafs": 741,
+   "slowest_frames_cpu_sections": [
+    [
+     82.8,
+     [
+      [
+       "pre",
+       81
+      ]
+     ]
+    ],
+    [
+     49.4,
+     [
+      [
+       "bake",
+       47.9
+      ]
+     ]
+    ],
+    [
+     34.7,
+     [
+      [
+       "pre",
+       33.7
+      ]
+     ]
+    ]
+   ]
+  },
+  "A": {
+   "path": "A",
+   "name": "file street",
+   "dur": 20,
+   "frames": 2161,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "fps_mean": 108,
+   "fps_1pct_low": 19.7,
+   "frame_ms": {
+    "p50": 2.9,
+    "p95": 22,
+    "p99": 40.2,
+    "max": 80.3
+   },
+   "cpu_ms": {
+    "p50": 1,
+    "p95": 3.5,
+    "p99": 6.4
+   },
+   "gpu_ms": {
+    "p50": 0.79,
+    "p95": 2.85,
+    "p99": 25.95
+   },
+   "draws_p95": 252,
+   "lines_p95": 156092,
+   "quality_steps": [
+    0,
+    1
+   ],
+   "frames_over_100ms": 0,
+   "ready_ms": 1239,
+   "skipped_rafs": 797,
+   "slowest_frames_cpu_sections": []
+  }
+ },
+ "logs": []
+}
