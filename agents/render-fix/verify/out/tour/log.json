@@ -1,0 +1,2057 @@
+{
+ "log": [
+  {
+   "name": "tour-3s",
+   "t": 5217,
+   "pres": "clock",
+   "cam": [
+    287466,
+    28019,
+    73755
+   ],
+   "q": 0,
+   "walls": 29,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 22,
+    "t5": 318,
+    "imp": 12,
+    "inst": 0,
+    "draws": 74,
+    "pendingBake": 0,
+    "wantQueue": 1,
+    "gpuMB": 203
+   },
+   "classes": {
+    "solid imp-far": {
+     "n": 12,
+     "area": 0.092
+    },
+    "solid T4": {
+     "n": 22,
+     "area": 0.043
+    },
+    "solid T5": {
+     "n": 318,
+     "area": 0.011
+    }
+   },
+   "top": [
+    {
+     "f": 46,
+     "lane": "reicast",
+     "date": "2014-02-26",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.039,
+     "area": 0.013
+    },
+    {
+     "f": 47,
+     "lane": "reicast",
+     "date": "2014-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.036,
+     "area": 0.013
+    },
+    {
+     "f": 48,
+     "lane": "reicast",
+     "date": "2014-04-25",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.034,
+     "area": 0.011
+    },
+    {
+     "f": 49,
+     "lane": "reicast",
+     "date": "2014-05-26",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.032,
+     "area": 0.009
+    },
+    {
+     "f": 50,
+     "lane": "reicast",
+     "date": "2014-06-25",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.03,
+     "area": 0.008
+    },
+    {
+     "f": 51,
+     "lane": "reicast",
+     "date": "2014-07-26",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.028,
+     "area": 0.007
+    },
+    {
+     "f": 45,
+     "lane": "reicast",
+     "date": "2014-01-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.041,
+     "area": 0.006
+    },
+    {
+     "f": 52,
+     "lane": "reicast",
+     "date": "2014-09-14",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.026,
+     "area": 0.006
+    }
+   ],
+   "leaks": {
+    "titles": 12,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "reicast  r6  2014-01  382f2e5",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2014-02  b95826d",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2014-06  43def48",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2014-07  3ba9170",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2014-09  aa33d23",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2014-11  f13d12a",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.36,
+   "cpu_ms": 1.48,
+   "labels": 11,
+   "titlesShown": 14,
+   "attract": true,
+   "cap": "//this isn't always true for gdroms, depends on area look @ the get-toc codefirst seen in reicast 2013-12-31; held by 21",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-6s",
+   "t": 8292,
+   "pres": "clock",
+   "cam": [
+    312338,
+    3039,
+    94462
+   ],
+   "q": 0,
+   "walls": 35,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 26,
+    "t5": 308,
+    "imp": 20,
+    "inst": 37795,
+    "draws": 109,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 333
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 0.619
+    },
+    "solid imp-hi": {
+     "n": 5,
+     "area": 1.124
+    },
+    "solid imp-far": {
+     "n": 14,
+     "area": 0.233
+    },
+    "solid T4": {
+     "n": 26,
+     "area": 0.044
+    },
+    "solid T5": {
+     "n": 308,
+     "area": 0.017
+    }
+   },
+   "top": [
+    {
+     "f": 42,
+     "lane": "reicast",
+     "date": "2013-12-19",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.313,
+     "area": 0.619
+    },
+    {
+     "f": 43,
+     "lane": "reicast",
+     "date": "2013-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.248,
+     "area": 0.474
+    },
+    {
+     "f": 44,
+     "lane": "reicast",
+     "date": "2014-01-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.17,
+     "area": 0.231
+    },
+    {
+     "f": 45,
+     "lane": "reicast",
+     "date": "2014-01-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.164,
+     "area": 0.216
+    },
+    {
+     "f": 46,
+     "lane": "reicast",
+     "date": "2014-02-26",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.126,
+     "area": 0.126
+    },
+    {
+     "f": 47,
+     "lane": "reicast",
+     "date": "2014-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.098,
+     "area": 0.077
+    },
+    {
+     "f": 48,
+     "lane": "reicast",
+     "date": "2014-04-25",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.082,
+     "area": 0.053
+    },
+    {
+     "f": 49,
+     "lane": "reicast",
+     "date": "2014-05-26",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.07,
+     "area": 0.038
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "reicast  2012-2013  1c16bae",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.46,
+   "cpu_ms": 1.22,
+   "labels": 0,
+   "titlesShown": 1,
+   "attract": true,
+   "cap": "//this isn't always true for gdroms, depends on area look @ the get-toc codefirst seen in reicast 2013-12-31; held by 21",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-9s",
+   "t": 11360,
+   "pres": "clock",
+   "cam": [
+    319775,
+    1888,
+    93200
+   ],
+   "q": 0,
+   "walls": 35,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 27,
+    "t5": 307,
+    "imp": 16,
+    "inst": 2744,
+    "draws": 102,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 376
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-hi": {
+     "n": 4,
+     "area": 0.826
+    },
+    "solid imp-far": {
+     "n": 12,
+     "area": 0.205
+    },
+    "solid T4": {
+     "n": 27,
+     "area": 0.05
+    },
+    "solid T5": {
+     "n": 307,
+     "area": 0.018
+    }
+   },
+   "top": [
+    {
+     "f": 43,
+     "lane": "reicast",
+     "date": "2013-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 19.434,
+     "area": 1
+    },
+    {
+     "f": 46,
+     "lane": "reicast",
+     "date": "2014-02-26",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.251,
+     "area": 0.439
+    },
+    {
+     "f": 47,
+     "lane": "reicast",
+     "date": "2014-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.162,
+     "area": 0.201
+    },
+    {
+     "f": 48,
+     "lane": "reicast",
+     "date": "2014-04-25",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.122,
+     "area": 0.115
+    },
+    {
+     "f": 49,
+     "lane": "reicast",
+     "date": "2014-05-26",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.096,
+     "area": 0.071
+    },
+    {
+     "f": 50,
+     "lane": "reicast",
+     "date": "2014-06-25",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.08,
+     "area": 0.05
+    },
+    {
+     "f": 51,
+     "lane": "reicast",
+     "date": "2014-07-26",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.068,
+     "area": 0.036
+    },
+    {
+     "f": 52,
+     "lane": "reicast",
+     "date": "2014-09-14",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.055,
+     "area": 0.023
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "reicast  2013-12  1a4801b",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.4,
+   "cpu_ms": 1.09,
+   "labels": 0,
+   "titlesShown": 1,
+   "attract": true,
+   "cap": "//this isn't always true for gdroms, depends on area look @ the get-toc codefirst seen in reicast 2013-12-31; held by 21",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-12s",
+   "t": 14424,
+   "pres": "clock",
+   "cam": [
+    319777,
+    1868,
+    93222
+   ],
+   "q": 0,
+   "walls": 35,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 27,
+    "t5": 307,
+    "imp": 16,
+    "inst": 2744,
+    "draws": 102,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 376
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-hi": {
+     "n": 4,
+     "area": 0.827
+    },
+    "solid imp-far": {
+     "n": 12,
+     "area": 0.205
+    },
+    "solid T4": {
+     "n": 27,
+     "area": 0.05
+    },
+    "solid T5": {
+     "n": 307,
+     "area": 0.018
+    }
+   },
+   "top": [
+    {
+     "f": 43,
+     "lane": "reicast",
+     "date": "2013-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 19.845,
+     "area": 1
+    },
+    {
+     "f": 46,
+     "lane": "reicast",
+     "date": "2014-02-26",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.251,
+     "area": 0.44
+    },
+    {
+     "f": 47,
+     "lane": "reicast",
+     "date": "2014-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.162,
+     "area": 0.201
+    },
+    {
+     "f": 48,
+     "lane": "reicast",
+     "date": "2014-04-25",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.122,
+     "area": 0.115
+    },
+    {
+     "f": 49,
+     "lane": "reicast",
+     "date": "2014-05-26",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.096,
+     "area": 0.071
+    },
+    {
+     "f": 50,
+     "lane": "reicast",
+     "date": "2014-06-25",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.08,
+     "area": 0.05
+    },
+    {
+     "f": 51,
+     "lane": "reicast",
+     "date": "2014-07-26",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.068,
+     "area": 0.036
+    },
+    {
+     "f": 52,
+     "lane": "reicast",
+     "date": "2014-09-14",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.055,
+     "area": 0.023
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "reicast  2013-12  1a4801b",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.4,
+   "cpu_ms": 1.14,
+   "labels": 0,
+   "titlesShown": 1,
+   "attract": true,
+   "cap": "//this isn't always true for gdroms, depends on area look @ the get-toc codefirst seen in reicast 2013-12-31; held by 21",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-15s",
+   "t": 17493,
+   "pres": "clock",
+   "cam": [
+    319757,
+    1859,
+    93250
+   ],
+   "q": 0,
+   "walls": 35,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 27,
+    "t5": 307,
+    "imp": 16,
+    "inst": 1612,
+    "draws": 102,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 376
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-hi": {
+     "n": 4,
+     "area": 0.826
+    },
+    "solid imp-far": {
+     "n": 12,
+     "area": 0.205
+    },
+    "solid T4": {
+     "n": 27,
+     "area": 0.05
+    },
+    "solid T5": {
+     "n": 307,
+     "area": 0.018
+    }
+   },
+   "top": [
+    {
+     "f": 43,
+     "lane": "reicast",
+     "date": "2013-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 16.421,
+     "area": 1
+    },
+    {
+     "f": 46,
+     "lane": "reicast",
+     "date": "2014-02-26",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.25,
+     "area": 0.439
+    },
+    {
+     "f": 47,
+     "lane": "reicast",
+     "date": "2014-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.161,
+     "area": 0.201
+    },
+    {
+     "f": 48,
+     "lane": "reicast",
+     "date": "2014-04-25",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.122,
+     "area": 0.115
+    },
+    {
+     "f": 49,
+     "lane": "reicast",
+     "date": "2014-05-26",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.096,
+     "area": 0.071
+    },
+    {
+     "f": 50,
+     "lane": "reicast",
+     "date": "2014-06-25",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.08,
+     "area": 0.05
+    },
+    {
+     "f": 51,
+     "lane": "reicast",
+     "date": "2014-07-26",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.068,
+     "area": 0.036
+    },
+    {
+     "f": 52,
+     "lane": "reicast",
+     "date": "2014-09-14",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.055,
+     "area": 0.023
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "reicast  2013-12  1a4801b",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.39,
+   "cpu_ms": 0.94,
+   "labels": 0,
+   "titlesShown": 1,
+   "attract": true,
+   "cap": "//this isn't always true for gdroms, depends on area look @ the get-toc codefirst seen in reicast 2013-12-31; held by 21",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-18s",
+   "t": 20556,
+   "pres": "clock",
+   "cam": [
+    632219,
+    41651,
+    132149
+   ],
+   "q": 0,
+   "walls": 52,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 67,
+    "t5": 166,
+    "imp": 0,
+    "inst": 0,
+    "draws": 74,
+    "pendingBake": 0,
+    "wantQueue": 10,
+    "gpuMB": 491
+   },
+   "classes": {
+    "solid T4": {
+     "n": 67,
+     "area": 0.215
+    },
+    "solid T5": {
+     "n": 166,
+     "area": 0.021
+    }
+   },
+   "top": [
+    {
+     "f": 165,
+     "lane": "flycast",
+     "date": "2021-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.025,
+     "area": 0.012
+    },
+    {
+     "f": 166,
+     "lane": "flycast",
+     "date": "2022-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.024,
+     "area": 0.012
+    },
+    {
+     "f": 168,
+     "lane": "flycast",
+     "date": "2022-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.023,
+     "area": 0.011
+    },
+    {
+     "f": 169,
+     "lane": "flycast",
+     "date": "2022-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.022,
+     "area": 0.01
+    },
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.026,
+     "area": 0.009
+    },
+    {
+     "f": 170,
+     "lane": "flycast",
+     "date": "2022-04-09",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.022,
+     "area": 0.009
+    },
+    {
+     "f": 171,
+     "lane": "flycast",
+     "date": "2022-04-30",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.021,
+     "area": 0.009
+    },
+    {
+     "f": 172,
+     "lane": "flycast",
+     "date": "2022-05-14",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.021,
+     "area": 0.008
+    }
+   ],
+   "leaks": {
+    "titles": 14,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2021-11  ef3af9a",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2021-12  95b6736",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2022-06  b5b0875",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2022-09  1858cf3",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2022-12  7372df3",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2023-06  a870fb7",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.54,
+   "cpu_ms": 1.24,
+   "labels": 10,
+   "titlesShown": 20,
+   "attract": true,
+   "cap": "//this isn't always true for gdroms, depends on area look @ the get-toc codefirst seen in reicast 2013-12-31; held by 21",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-21s",
+   "t": 23630,
+   "pres": "clock",
+   "cam": [
+    758517,
+    3968,
+    147534
+   ],
+   "q": 0,
+   "walls": 44,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 176,
+    "t5": 0,
+    "imp": 27,
+    "inst": 0,
+    "draws": 240,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 553
+   },
+   "classes": {
+    "solid imp-hi": {
+     "n": 6,
+     "area": 0.65
+    },
+    "solid imp-far": {
+     "n": 21,
+     "area": 0.336
+    },
+    "solid T4": {
+     "n": 176,
+     "area": 0.237
+    }
+   },
+   "top": [
+    {
+     "f": 188,
+     "lane": "nulldc3",
+     "date": "2023-07-07",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.182,
+     "area": 0.356
+    },
+    {
+     "f": 192,
+     "lane": "nulldc3",
+     "date": "2023-08-18",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.119,
+     "area": 0.164
+    },
+    {
+     "f": 194,
+     "lane": "flycast",
+     "date": "2023-10-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.066,
+     "area": 0.033
+    },
+    {
+     "f": 195,
+     "lane": "flycast",
+     "date": "2023-10-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.066,
+     "area": 0.033
+    },
+    {
+     "f": 196,
+     "lane": "flycast",
+     "date": "2023-11-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.059,
+     "area": 0.033
+    },
+    {
+     "f": 197,
+     "lane": "flycast",
+     "date": "2023-12-22",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.054,
+     "area": 0.032
+    },
+    {
+     "f": 193,
+     "lane": "flycast",
+     "date": "2023-09-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.075,
+     "area": 0.031
+    },
+    {
+     "f": 198,
+     "lane": "flycast",
+     "date": "2024-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.047,
+     "area": 0.03
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nulldc3  2023-07  038f7ef",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.57,
+   "cpu_ms": 1.12,
+   "labels": 7,
+   "titlesShown": 2,
+   "attract": true,
+   "cap": "//this isn't always true for gdroms, depends on area look @ the get-toc codefirst seen in reicast 2013-12-31; held by 21",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-24s",
+   "t": 26709,
+   "pres": "clock",
+   "cam": [
+    768689,
+    2059,
+    146350
+   ],
+   "q": 0,
+   "walls": 44,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 176,
+    "t5": 0,
+    "imp": 24,
+    "inst": 4556,
+    "draws": 234,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 553
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-hi": {
+     "n": 3,
+     "area": 0.086
+    },
+    "solid imp-far": {
+     "n": 21,
+     "area": 0.434
+    },
+    "solid T4": {
+     "n": 176,
+     "area": 0.258
+    }
+   },
+   "top": [
+    {
+     "f": 188,
+     "lane": "nulldc3",
+     "date": "2023-07-07",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 21.995,
+     "area": 1
+    },
+    {
+     "f": 197,
+     "lane": "flycast",
+     "date": "2023-12-22",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.075,
+     "area": 0.038
+    },
+    {
+     "f": 198,
+     "lane": "flycast",
+     "date": "2024-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.063,
+     "area": 0.037
+    },
+    {
+     "f": 196,
+     "lane": "flycast",
+     "date": "2023-11-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.083,
+     "area": 0.036
+    },
+    {
+     "f": 199,
+     "lane": "flycast",
+     "date": "2024-02-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.056,
+     "area": 0.036
+    },
+    {
+     "f": 200,
+     "lane": "flycast",
+     "date": "2024-03-15",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.053,
+     "area": 0.035
+    },
+    {
+     "f": 201,
+     "lane": "flycast",
+     "date": "2024-03-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.051,
+     "area": 0.034
+    },
+    {
+     "f": 202,
+     "lane": "flycast",
+     "date": "2024-04-26",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.046,
+     "area": 0.032
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nulldc3  2023-07  038f7ef",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.62,
+   "cpu_ms": 0.93,
+   "labels": 0,
+   "titlesShown": 1,
+   "attract": true,
+   "cap": "//this isn't always true for gdroms, depends on area look @ the get-toc codefirst seen in reicast 2013-12-31; held by 21",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-27s",
+   "t": 29779,
+   "pres": "clock",
+   "cam": [
+    768678,
+    2049,
+    146377
+   ],
+   "q": 0,
+   "walls": 44,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 176,
+    "t5": 0,
+    "imp": 24,
+    "inst": 4556,
+    "draws": 234,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 553
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-hi": {
+     "n": 3,
+     "area": 0.085
+    },
+    "solid imp-far": {
+     "n": 21,
+     "area": 0.434
+    },
+    "solid T4": {
+     "n": 176,
+     "area": 0.258
+    }
+   },
+   "top": [
+    {
+     "f": 188,
+     "lane": "nulldc3",
+     "date": "2023-07-07",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 19.554,
+     "area": 1
+    },
+    {
+     "f": 197,
+     "lane": "flycast",
+     "date": "2023-12-22",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.074,
+     "area": 0.038
+    },
+    {
+     "f": 198,
+     "lane": "flycast",
+     "date": "2024-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.063,
+     "area": 0.037
+    },
+    {
+     "f": 199,
+     "lane": "flycast",
+     "date": "2024-02-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.056,
+     "area": 0.036
+    },
+    {
+     "f": 196,
+     "lane": "flycast",
+     "date": "2023-11-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.083,
+     "area": 0.035
+    },
+    {
+     "f": 200,
+     "lane": "flycast",
+     "date": "2024-03-15",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.053,
+     "area": 0.035
+    },
+    {
+     "f": 201,
+     "lane": "flycast",
+     "date": "2024-03-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.051,
+     "area": 0.034
+    },
+    {
+     "f": 202,
+     "lane": "flycast",
+     "date": "2024-04-26",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.046,
+     "area": 0.032
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nulldc3  2023-07  038f7ef",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.63,
+   "cpu_ms": 0.86,
+   "labels": 0,
+   "titlesShown": 1,
+   "attract": true,
+   "cap": "//this isn't always true for gdroms, depends on area look @ the get-toc codefirst seen in reicast 2013-12-31; held by 21",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-30s",
+   "t": 32853,
+   "pres": "clock",
+   "cam": [
+    804051,
+    30999,
+    139866
+   ],
+   "q": 0,
+   "walls": 42,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 165,
+    "t5": 0,
+    "imp": 8,
+    "inst": 0,
+    "draws": 187,
+    "pendingBake": 0,
+    "wantQueue": 1,
+    "gpuMB": 498
+   },
+   "classes": {
+    "solid imp-far": {
+     "n": 8,
+     "area": 0.11
+    },
+    "solid T4": {
+     "n": 165,
+     "area": 0.34
+    }
+   },
+   "top": [
+    {
+     "f": 226,
+     "lane": "flycast",
+     "date": "2025-04-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.032,
+     "area": 0.02
+    },
+    {
+     "f": 227,
+     "lane": "flycast",
+     "date": "2025-05-06",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.032,
+     "area": 0.019
+    },
+    {
+     "f": 228,
+     "lane": "flycast",
+     "date": "2025-05-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.03,
+     "area": 0.017
+    },
+    {
+     "f": 230,
+     "lane": "flycast",
+     "date": "2025-06-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.029,
+     "area": 0.015
+    },
+    {
+     "f": 229,
+     "lane": "nulldc3",
+     "date": "2025-05-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.03,
+     "area": 0.013
+    },
+    {
+     "f": 232,
+     "lane": "flycast",
+     "date": "2025-08-29",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.026,
+     "area": 0.012
+    },
+    {
+     "f": 225,
+     "lane": "nulldc3",
+     "date": "2025-04-06",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.034,
+     "area": 0.01
+    },
+    {
+     "f": 231,
+     "lane": "nulldc3",
+     "date": "2025-07-30",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.027,
+     "area": 0.01
+    }
+   ],
+   "leaks": {
+    "titles": 21,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "minicast  2025-01  580d7b8",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2025-01  431d71d",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2025-02  9e0573a",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nulldc3  2025-03  02c0773",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2025-03  130675a",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2025-04  57cc7b4",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.64,
+   "cpu_ms": 1.37,
+   "labels": 12,
+   "titlesShown": 21,
+   "attract": true,
+   "cap": "//this isn't always true for gdroms, depends on area look @ the get-toc codefirst seen in reicast 2013-12-31; held by 21",
+   "capOp": "1"
+  },
+  {
+   "name": "now-morph",
+   "t": 34253,
+   "pres": "now",
+   "cam": [
+    720923,
+    2886,
+    106998
+   ],
+   "q": 0,
+   "walls": 42,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 165,
+    "t5": 2,
+    "imp": 53,
+    "inst": 25578,
+    "draws": 290,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 546
+   },
+   "classes": {
+    "faded lines": {
+     "n": 2,
+     "area": 1.031
+    },
+    "solid lines": {
+     "n": 1,
+     "area": 0.407
+    },
+    "solid imp-hi": {
+     "n": 4,
+     "area": 0.511
+    },
+    "solid imp-far": {
+     "n": 45,
+     "area": 0.616
+    },
+    "solid imp-lo": {
+     "n": 2,
+     "area": 0.03
+    },
+    "solid T4": {
+     "n": 165,
+     "area": 0.131
+    },
+    "solid T5": {
+     "n": 2,
+     "area": 0
+    }
+   },
+   "top": [
+    {
+     "f": 174,
+     "lane": "flycast",
+     "date": "2022-07-29",
+     "solid": false,
+     "A": 0.59,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 10.936,
+     "area": 1
+    },
+    {
+     "f": 175,
+     "lane": "flycast",
+     "date": "2022-08-22",
+     "solid": false,
+     "A": 0.99,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.323,
+     "area": 0.443
+    },
+    {
+     "f": 176,
+     "lane": "flycast",
+     "date": "2022-08-25",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.303,
+     "area": 0.407
+    },
+    {
+     "f": 177,
+     "lane": "flycast",
+     "date": "2022-09-24",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.186,
+     "area": 0.222
+    },
+    {
+     "f": 178,
+     "lane": "flycast",
+     "date": "2022-10-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.126,
+     "area": 0.141
+    },
+    {
+     "f": 179,
+     "lane": "flycast",
+     "date": "2022-11-04",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.121,
+     "area": 0.134
+    },
+    {
+     "f": 180,
+     "lane": "flycast",
+     "date": "2022-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.082,
+     "area": 0.086
+    },
+    {
+     "f": 181,
+     "lane": "flycast",
+     "date": "2023-01-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.069,
+     "area": 0.071
+    }
+   ],
+   "leaks": {
+    "titles": 2,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2022-08  e0d87eb",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nullDCe  2024-09  bad8d6a",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.73,
+   "cpu_ms": 2.12,
+   "labels": 2,
+   "titlesShown": 4
+  },
+  {
+   "name": "bookmark",
+   "t": 37341,
+   "pres": "clock",
+   "cam": [
+    217560,
+    3393,
+    6558
+   ],
+   "q": 0,
+   "walls": 47,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 0,
+    "t5": 263,
+    "imp": 102,
+    "inst": 5127,
+    "draws": 218,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 592
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-hi": {
+     "n": 8,
+     "area": 0.069
+    },
+    "solid imp-far": {
+     "n": 79,
+     "area": 0.129
+    },
+    "solid imp-lo": {
+     "n": 15,
+     "area": 0.014
+    },
+    "solid T5": {
+     "n": 263,
+     "area": 0
+    }
+   },
+   "top": [
+    {
+     "f": 28,
+     "lane": "nullDC",
+     "date": "2011-09-14",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 16,
+     "area": 1
+    },
+    {
+     "f": 32,
+     "lane": "nulldc-360",
+     "date": "2011-12-18",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.121,
+     "area": 0.045
+    },
+    {
+     "f": 33,
+     "lane": "nulldc-360",
+     "date": "2012-02-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.08,
+     "area": 0.026
+    },
+    {
+     "f": 34,
+     "lane": "nullDC",
+     "date": "2012-03-20",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.075,
+     "area": 0.025
+    },
+    {
+     "f": 31,
+     "lane": "nulldc-360",
+     "date": "2011-11-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.141,
+     "area": 0.024
+    },
+    {
+     "f": 35,
+     "lane": "nullDC",
+     "date": "2012-04-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.068,
+     "area": 0.02
+    },
+    {
+     "f": 36,
+     "lane": "nulldc-360",
+     "date": "2012-05-19",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.055,
+     "area": 0.011
+    },
+    {
+     "f": 37,
+     "lane": "nulldc-360",
+     "date": "2012-08-31",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "imp-far",
+     "ppl": 0.04,
+     "area": 0.006
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDC  2011-09  c563e07",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.38,
+   "cpu_ms": 1.39,
+   "labels": 0,
+   "titlesShown": 1,
+   "bmWall": "nullDC  2011-09  c563e07",
+   "bmA": 1
+  },
+  {
+   "name": "search-click",
+   "t": 45075,
+   "pres": "clock",
+   "cam": [
+    217560,
+    2043,
+    9502
+   ],
+   "q": 0,
+   "walls": 47,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 0,
+    "t5": 263,
+    "imp": 102,
+    "inst": 2539,
+    "draws": 218,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 580
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-hi": {
+     "n": 8,
+     "area": 0.151
+    },
+    "solid imp-far": {
+     "n": 79,
+     "area": 0.129
+    },
+    "solid imp-lo": {
+     "n": 15,
+     "area": 0.014
+    },
+    "solid T5": {
+     "n": 263,
+     "area": 0
+    }
+   },
+   "top": [
+    {
+     "f": 28,
+     "lane": "nullDC",
+     "date": "2011-09-14",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 16,
+     "area": 1
+    },
+    {
+     "f": 32,
+     "lane": "nulldc-360",
+     "date": "2011-12-18",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.134,
+     "area": 0.076
+    },
+    {
+     "f": 31,
+     "lane": "nulldc-360",
+     "date": "2011-11-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.162,
+     "area": 0.075
+    },
+    {
+     "f": 33,
+     "lane": "nulldc-360",
+     "date": "2012-02-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.083,
+     "area": 0.026
+    },
+    {
+     "f": 34,
+     "lane": "nullDC",
+     "date": "2012-03-20",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.075,
+     "area": 0.025
+    },
+    {
+     "f": 35,
+     "lane": "nullDC",
+     "date": "2012-04-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.068,
+     "area": 0.02
+    },
+    {
+     "f": 36,
+     "lane": "nulldc-360",
+     "date": "2012-05-19",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.056,
+     "area": 0.011
+    },
+    {
+     "f": 37,
+     "lane": "nulldc-360",
+     "date": "2012-08-31",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "imp-far",
+     "ppl": 0.04,
+     "area": 0.006
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDC  2011-09  c563e07",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.34,
+   "cpu_ms": 1.19,
+   "labels": 0,
+   "titlesShown": 1,
+   "nres": 1,
+   "sWall": "nullDC  2011-09  c563e07",
+   "sA": 1
+  }
+ ],
+ "S": {
+  "ticks": 1819,
+  "capShown": 1819,
+  "marks": 0,
+  "focusHidden": 0,
+  "focusTicks": 983,
+  "hiddenAt": []
+ },
+ "now": {
+  "ticks": 105,
+  "morphTicks": 69,
+  "liveHiddenTicks": 87
+ },
+ "searchWorker": "{\"type\":\"search\",\"req\":1,\"hits\":[55318],\"text\":[\"//Time to emulate that stuff correctly ;)\"],\"ms\":59.89999997615814,\"partial\":false}",
+ "errs": []
+}

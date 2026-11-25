@@ -250,7 +250,7 @@ The same step writes:
 
 ### 3.1 Two presentations
 
-- **Gallery** (default): all 40 walls stand at their X. The time slider at
+- **Clock** (default; originally named Gallery, `pm=gallery` still opens it): every frame stands at its X. The time slider at
   the bottom moves the camera's target date. The camera glides along X and
   stays at its current Z and Y, so you stay on your street.
 - **Now**: each lane shows a single *live wall* on a common moving plane,

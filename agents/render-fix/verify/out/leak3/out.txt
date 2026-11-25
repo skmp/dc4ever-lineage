@@ -1,0 +1,173 @@
+{
+ "shots": {},
+ "log": [],
+ "out": [
+  {
+   "n": "leak-street-side",
+   "titles": 2,
+   "leakSolid": 0,
+   "leakA50": 0,
+   "worst": []
+  },
+  {
+   "n": "leak-street-low",
+   "titles": 5,
+   "leakSolid": 0,
+   "leakA50": 2,
+   "worst": [
+    {
+     "title": "reicast  r7  2018-08  3d59456",
+     "leakFrac": 0.63,
+     "by": {
+      "A": 0.86,
+      "solid": false
+     }
+    },
+    {
+     "title": "reicast  2018-08  a8711e2",
+     "leakFrac": 0.33,
+     "by": {
+      "A": 0.98,
+      "solid": false
+     }
+    }
+   ]
+  },
+  {
+   "n": "leak-front-close",
+   "titles": 1,
+   "leakSolid": 0,
+   "leakA50": 0,
+   "worst": []
+  },
+  {
+   "n": "leak-across",
+   "titles": 13,
+   "leakSolid": 0,
+   "leakA50": 0,
+   "worst": []
+  },
+  {
+   "n": "s-flycast-low",
+   "titles": 2,
+   "leakSolid": 0,
+   "leakA50": 1,
+   "worst": [
+    {
+     "title": "flycast  2023-12  4a0ace5",
+     "leakFrac": 0.33,
+     "by": {
+      "A": 0.88,
+      "solid": false
+     }
+    }
+   ]
+  },
+  {
+   "n": "s-flycast-other-side",
+   "titles": 13,
+   "leakSolid": 0,
+   "leakA50": 0,
+   "worst": []
+  },
+  {
+   "n": "s-nullDC4Wii-low",
+   "titles": 5,
+   "leakSolid": 0,
+   "leakA50": 4,
+   "worst": [
+    {
+     "title": "nullDC4Wii  alpha0.801  2026-10  ef0d3f9",
+     "leakFrac": 1,
+     "by": {
+      "A": 0.53,
+      "solid": false
+     }
+    },
+    {
+     "title": "nullDC4Wii  alpha0.802  2026-11  75d4ab5",
+     "leakFrac": 0.89,
+     "by": {
+      "A": 1,
+      "solid": false
+     }
+    },
+    {
+     "title": "nullDC4Wii  2026-10  1459ccb",
+     "leakFrac": 0.78,
+     "by": {
+      "A": 0.84,
+      "solid": false
+     }
+    },
+    {
+     "title": "nullDC4Wii  alpha0.800  2026-10  7b3d591",
+     "leakFrac": 0.59,
+     "by": {
+      "A": 0.53,
+      "solid": false
+     }
+    }
+   ]
+  },
+  {
+   "n": "s-nullDC4Wii-other-side",
+   "titles": 19,
+   "leakSolid": 0,
+   "leakA50": 0,
+   "worst": []
+  },
+  {
+   "n": "s-NotDC-PS3-low",
+   "titles": 1,
+   "leakSolid": 0,
+   "leakA50": 0,
+   "worst": []
+  },
+  {
+   "n": "s-NotDC-PS3-other-side",
+   "titles": 7,
+   "leakSolid": 0,
+   "leakA50": 0,
+   "worst": []
+  },
+  {
+   "n": "s-nullDC-low",
+   "titles": 2,
+   "leakSolid": 0,
+   "leakA50": 0,
+   "worst": []
+  },
+  {
+   "n": "s-nullDC-other-side",
+   "titles": 1,
+   "leakSolid": 0,
+   "leakA50": 0,
+   "worst": []
+  },
+  {
+   "n": "s-nulldc3-low",
+   "titles": 2,
+   "leakSolid": 0,
+   "leakA50": 1,
+   "worst": [
+    {
+     "title": "nulldc3  2025-02  2d70c78",
+     "leakFrac": 0.44,
+     "by": {
+      "A": 0.94,
+      "solid": false
+     }
+    }
+   ]
+  },
+  {
+   "n": "s-nulldc3-other-side",
+   "titles": 13,
+   "leakSolid": 0,
+   "leakA50": 0,
+   "worst": []
+  }
+ ]
+}
+24.3s closed

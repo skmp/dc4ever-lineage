@@ -1,0 +1,1625 @@
+{
+ "log": [
+  {
+   "name": "s-flycast-low",
+   "t": 3857,
+   "pres": "clock",
+   "cam": [
+    782710,
+    1200,
+    102352
+   ],
+   "q": 0,
+   "walls": 32,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 66,
+    "t5": 0,
+    "imp": 19,
+    "inst": 14357,
+    "draws": 114,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 442
+   },
+   "classes": {
+    "faded lines": {
+     "n": 1,
+     "area": 0.356
+    },
+    "solid imp-hi": {
+     "n": 3,
+     "area": 0.623
+    },
+    "solid imp-far": {
+     "n": 15,
+     "area": 0.834
+    },
+    "solid T4": {
+     "n": 66,
+     "area": 0.312
+    }
+   },
+   "top": [
+    {
+     "f": 196,
+     "lane": "flycast",
+     "date": "2023-11-29",
+     "solid": false,
+     "A": 0.88,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.353,
+     "area": 0.406
+    },
+    {
+     "f": 197,
+     "lane": "flycast",
+     "date": "2023-12-22",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.227,
+     "area": 0.292
+    },
+    {
+     "f": 198,
+     "lane": "flycast",
+     "date": "2024-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.143,
+     "area": 0.189
+    },
+    {
+     "f": 199,
+     "lane": "flycast",
+     "date": "2024-02-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.11,
+     "area": 0.142
+    },
+    {
+     "f": 200,
+     "lane": "flycast",
+     "date": "2024-03-15",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.097,
+     "area": 0.123
+    },
+    {
+     "f": 201,
+     "lane": "flycast",
+     "date": "2024-03-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.089,
+     "area": 0.11
+    },
+    {
+     "f": 202,
+     "lane": "flycast",
+     "date": "2024-04-26",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.076,
+     "area": 0.09
+    },
+    {
+     "f": 203,
+     "lane": "flycast",
+     "date": "2024-05-11",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.07,
+     "area": 0.081
+    }
+   ],
+   "leaks": {
+    "titles": 2,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2023-11  bd25c14",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2023-12  4a0ace5",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.58,
+   "cpu_ms": 1,
+   "labels": 1,
+   "titlesShown": 2
+  },
+  {
+   "name": "s-flycast-other-side",
+   "t": 5441,
+   "pres": "clock",
+   "cam": [
+    778710,
+    6500,
+    137304
+   ],
+   "q": 0,
+   "walls": 34,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 148,
+    "t5": 0,
+    "imp": 23,
+    "inst": 30829,
+    "draws": 210,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 487
+   },
+   "classes": {
+    "faded lines": {
+     "n": 1,
+     "area": 0.037
+    },
+    "solid lines": {
+     "n": 2,
+     "area": 0.483
+    },
+    "solid imp-hi": {
+     "n": 4,
+     "area": 0.78
+    },
+    "solid imp-far": {
+     "n": 16,
+     "area": 0.816
+    },
+    "solid T4": {
+     "n": 148,
+     "area": 0.391
+    }
+   },
+   "top": [
+    {
+     "f": 196,
+     "lane": "flycast",
+     "date": "2023-11-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.193,
+     "area": 0.268
+    },
+    {
+     "f": 195,
+     "lane": "flycast",
+     "date": "2023-10-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.295,
+     "area": 0.244
+    },
+    {
+     "f": 194,
+     "lane": "flycast",
+     "date": "2023-10-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.31,
+     "area": 0.239
+    },
+    {
+     "f": 197,
+     "lane": "flycast",
+     "date": "2023-12-22",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.148,
+     "area": 0.225
+    },
+    {
+     "f": 198,
+     "lane": "flycast",
+     "date": "2024-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.108,
+     "area": 0.161
+    },
+    {
+     "f": 199,
+     "lane": "flycast",
+     "date": "2024-02-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.088,
+     "area": 0.126
+    },
+    {
+     "f": 193,
+     "lane": "flycast",
+     "date": "2023-09-29",
+     "solid": false,
+     "A": 0.29,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.474,
+     "area": 0.125
+    },
+    {
+     "f": 200,
+     "lane": "flycast",
+     "date": "2024-03-15",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.08,
+     "area": 0.112
+    }
+   ],
+   "leaks": {
+    "titles": 13,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  v2.2  2023-10  c1f0a5a",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2023-11  bd25c14",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2023-12  4a0ace5",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2024-01  57c88e0",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2024-02  f63a82a",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  v2.3  2024-03  966ff37",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.83,
+   "cpu_ms": 1.02,
+   "labels": 7,
+   "titlesShown": 13
+  },
+  {
+   "name": "s-nullDC4Wii-low",
+   "t": 7026,
+   "pres": "clock",
+   "cam": [
+    922323,
+    1200,
+    44816
+   ],
+   "q": 0,
+   "walls": 47,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 0,
+    "t5": 0,
+    "imp": 13,
+    "inst": 141220,
+    "draws": 41,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 523
+   },
+   "classes": {
+    "faded lines": {
+     "n": 5,
+     "area": 1.221
+    },
+    "solid imp-far": {
+     "n": 3,
+     "area": 0.026
+    },
+    "solid imp-hi": {
+     "n": 1,
+     "area": 0.248
+    },
+    "solid imp-lo": {
+     "n": 4,
+     "area": 0.853
+    }
+   },
+   "top": [
+    {
+     "f": 362,
+     "lane": "nullDC4Wii",
+     "date": "2026-10-19",
+     "solid": false,
+     "A": 0.53,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.418,
+     "area": 0.398
+    },
+    {
+     "f": 360,
+     "lane": "nullDC4Wii",
+     "date": "2026-10-15",
+     "solid": false,
+     "A": 0.32,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.466,
+     "area": 0.391
+    },
+    {
+     "f": 369,
+     "lane": "nullDC4Wii",
+     "date": "2026-10-25",
+     "solid": false,
+     "A": 0.84,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.361,
+     "area": 0.345
+    },
+    {
+     "f": 370,
+     "lane": "nullDC4Wii",
+     "date": "2026-10-25",
+     "solid": false,
+     "A": 0.96,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.332,
+     "area": 0.311
+    },
+    {
+     "f": 373,
+     "lane": "nullDC4Wii",
+     "date": "2026-10-31",
+     "solid": false,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.317,
+     "area": 0.294
+    },
+    {
+     "f": 382,
+     "lane": "nullDC4Wii",
+     "date": "2026-11-07",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.277,
+     "area": 0.248
+    },
+    {
+     "f": 383,
+     "lane": "nullDC4Wii",
+     "date": "2026-11-11",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-lo",
+     "ppl": 0.258,
+     "area": 0.226
+    },
+    {
+     "f": 384,
+     "lane": "nullDC4Wii",
+     "date": "2026-11-12",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-lo",
+     "ppl": 0.254,
+     "area": 0.221
+    }
+   ],
+   "leaks": {
+    "titles": 5,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDC4Wii  alpha0.79  2026-10  c58d555",
+      "leakFrac": 0,
+      "sticky": true
+     },
+     {
+      "title": "nullDC4Wii  alpha0.800  2026-10  7b3d591",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nullDC4Wii  2026-10  1459ccb",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nullDC4Wii  alpha0.801  2026-10  ef0d3f9",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nullDC4Wii  alpha0.802  2026-11  75d4ab5",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 1.11,
+   "cpu_ms": 0.85,
+   "labels": 2,
+   "titlesShown": 5
+  },
+  {
+   "name": "s-nullDC4Wii-other-side",
+   "t": 8614,
+   "pres": "clock",
+   "cam": [
+    918323,
+    6500,
+    61848
+   ],
+   "q": 0,
+   "walls": 65,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 0,
+    "t5": 0,
+    "imp": 38,
+    "inst": 243598,
+    "draws": 104,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 597
+   },
+   "classes": {
+    "faded lines": {
+     "n": 20,
+     "area": 1.822
+    },
+    "solid imp-hi": {
+     "n": 9,
+     "area": 1.323
+    },
+    "solid imp-lo": {
+     "n": 6,
+     "area": 0.697
+    },
+    "solid imp-far": {
+     "n": 3,
+     "area": 0.007
+    }
+   },
+   "top": [
+    {
+     "f": 350,
+     "lane": "nullDC4Wii",
+     "date": "2026-09-18",
+     "solid": false,
+     "A": 0.99,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.321,
+     "area": 0.189
+    },
+    {
+     "f": 353,
+     "lane": "nullDC4Wii",
+     "date": "2026-09-20",
+     "solid": false,
+     "A": 0.97,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.332,
+     "area": 0.183
+    },
+    {
+     "f": 360,
+     "lane": "nullDC4Wii",
+     "date": "2026-10-15",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.222,
+     "area": 0.183
+    },
+    {
+     "f": 362,
+     "lane": "nullDC4Wii",
+     "date": "2026-10-19",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.211,
+     "area": 0.181
+    },
+    {
+     "f": 351,
+     "lane": "nullDC4Wii",
+     "date": "2026-09-19",
+     "solid": false,
+     "A": 0.95,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.337,
+     "area": 0.179
+    },
+    {
+     "f": 349,
+     "lane": "nullDC4Wii",
+     "date": "2026-09-18",
+     "solid": false,
+     "A": 0.92,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.343,
+     "area": 0.175
+    },
+    {
+     "f": 348,
+     "lane": "nullDC4Wii",
+     "date": "2026-09-17",
+     "solid": false,
+     "A": 0.9,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.349,
+     "area": 0.172
+    },
+    {
+     "f": 369,
+     "lane": "nullDC4Wii",
+     "date": "2026-10-25",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.195,
+     "area": 0.162
+    }
+   ],
+   "leaks": {
+    "titles": 18,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDC4Wii  alpha0.69 / alpha0.695  2026-09  52cce56",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nullDC4Wii  alpha0.70  2026-09  3cf688a",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nullDC4Wii  alpha0.71  2026-09  b11b2c3",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nullDC4Wii  alpha0.74  2026-09  2c94d65",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nullDC4Wii  alpha0.75  2026-09  f2c0452",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nullDC4Wii  2026-09  9659506",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 1.51,
+   "cpu_ms": 1.26,
+   "labels": 9,
+   "titlesShown": 18
+  },
+  {
+   "name": "s-NotDC-PS3-low",
+   "t": 10193,
+   "pres": "clock",
+   "cam": [
+    920000,
+    1200,
+    58848
+   ],
+   "q": 0,
+   "walls": 64,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 0,
+    "t5": 0,
+    "imp": 19,
+    "inst": 57239,
+    "draws": 72,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 562
+   },
+   "classes": {
+    "solid lines": {
+     "n": 4,
+     "area": 0.741
+    },
+    "faded lines": {
+     "n": 1,
+     "area": 0.043
+    },
+    "solid imp-hi": {
+     "n": 7,
+     "area": 1.597
+    },
+    "solid imp-lo": {
+     "n": 4,
+     "area": 0.904
+    },
+    "solid imp-far": {
+     "n": 4,
+     "area": 0.108
+    }
+   },
+   "top": [
+    {
+     "f": 354,
+     "lane": "NotDC-PS3",
+     "date": "2026-09-23",
+     "solid": false,
+     "A": 0.11,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.539,
+     "area": 0.381
+    },
+    {
+     "f": 361,
+     "lane": "NotDC-PS3",
+     "date": "2026-10-18",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.287,
+     "area": 0.265
+    },
+    {
+     "f": 363,
+     "lane": "NotDC-PS3",
+     "date": "2026-10-19",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.282,
+     "area": 0.259
+    },
+    {
+     "f": 369,
+     "lane": "nullDC4Wii",
+     "date": "2026-10-25",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.264,
+     "area": 0.241
+    },
+    {
+     "f": 370,
+     "lane": "nullDC4Wii",
+     "date": "2026-10-25",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.246,
+     "area": 0.241
+    },
+    {
+     "f": 373,
+     "lane": "nullDC4Wii",
+     "date": "2026-10-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.238,
+     "area": 0.24
+    },
+    {
+     "f": 382,
+     "lane": "nullDC4Wii",
+     "date": "2026-11-07",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.213,
+     "area": 0.24
+    },
+    {
+     "f": 383,
+     "lane": "nullDC4Wii",
+     "date": "2026-11-11",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-lo",
+     "ppl": 0.201,
+     "area": 0.237
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "NotDC-PS3  0.8  2026-10  60576d2",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.65,
+   "cpu_ms": 0.99,
+   "labels": 4,
+   "titlesShown": 1
+  },
+  {
+   "name": "s-NotDC-PS3-other-side",
+   "t": 11561,
+   "pres": "clock",
+   "cam": [
+    916000,
+    6500,
+    76520
+   ],
+   "q": 0,
+   "walls": 64,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 0,
+    "t5": 0,
+    "imp": 35,
+    "inst": 0,
+    "draws": 97,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 578
+   },
+   "classes": {
+    "solid imp-hi": {
+     "n": 16,
+     "area": 1.234
+    },
+    "solid imp-lo": {
+     "n": 14,
+     "area": 0.285
+    },
+    "solid imp-far": {
+     "n": 5,
+     "area": 0.5
+    }
+   },
+   "top": [
+    {
+     "f": 352,
+     "lane": "NotDC-PS3",
+     "date": "2026-09-19",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.253,
+     "area": 0.193
+    },
+    {
+     "f": 354,
+     "lane": "NotDC-PS3",
+     "date": "2026-09-23",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.238,
+     "area": 0.191
+    },
+    {
+     "f": 361,
+     "lane": "NotDC-PS3",
+     "date": "2026-10-18",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.172,
+     "area": 0.139
+    },
+    {
+     "f": 363,
+     "lane": "NotDC-PS3",
+     "date": "2026-10-19",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.17,
+     "area": 0.137
+    },
+    {
+     "f": 386,
+     "lane": "nullDC4WiiU",
+     "date": "2026-11-13",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.136,
+     "area": 0.133
+    },
+    {
+     "f": 364,
+     "lane": "NotDC-PS3",
+     "date": "2026-10-24",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.161,
+     "area": 0.126
+    },
+    {
+     "f": 391,
+     "lane": "nullDC4WiiU",
+     "date": "2026-11-21",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.127,
+     "area": 0.125
+    },
+    {
+     "f": 394,
+     "lane": "nullDC4WiiU",
+     "date": "2026-11-22",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.126,
+     "area": 0.123
+    }
+   ],
+   "leaks": {
+    "titles": 7,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDC4Wii  alpha0.77  2026-09  d20e761",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "NotDC-PS3  2026-09  5a32b94",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "NotDC-PS3  2026-09  24873d0",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "NotDC-PS3  0.8  2026-10  60576d2",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nullDC4Wii  alpha0.801  2026-10  ef0d3f9",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "NotDC-PS3  0.8.3  2026-11  5d81924",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.41,
+   "cpu_ms": 0.9,
+   "labels": 6,
+   "titlesShown": 7
+  },
+  {
+   "name": "s-nullDC-low",
+   "t": 12935,
+   "pres": "clock",
+   "cam": [
+    761161,
+    1200,
+    2560
+   ],
+   "q": 0,
+   "walls": 64,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 126,
+    "t5": 13,
+    "imp": 59,
+    "inst": 0,
+    "draws": 253,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 591
+   },
+   "classes": {
+    "solid imp-hi": {
+     "n": 18,
+     "area": 0.175
+    },
+    "solid T4": {
+     "n": 126,
+     "area": 0.119
+    },
+    "solid imp-far": {
+     "n": 23,
+     "area": 0.04
+    },
+    "solid imp-lo": {
+     "n": 18,
+     "area": 0.018
+    },
+    "solid T5": {
+     "n": 13,
+     "area": 0
+    }
+   },
+   "top": [
+    {
+     "f": 189,
+     "lane": "nullDC",
+     "date": "2023-07-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.227,
+     "area": 0.158
+    },
+    {
+     "f": 202,
+     "lane": "flycast",
+     "date": "2024-04-26",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.017,
+     "area": 0.003
+    },
+    {
+     "f": 203,
+     "lane": "flycast",
+     "date": "2024-05-11",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.017,
+     "area": 0.003
+    },
+    {
+     "f": 204,
+     "lane": "flycast",
+     "date": "2024-05-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.016,
+     "area": 0.003
+    },
+    {
+     "f": 205,
+     "lane": "flycast",
+     "date": "2024-06-23",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.016,
+     "area": 0.003
+    },
+    {
+     "f": 207,
+     "lane": "flycast",
+     "date": "2024-07-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.016,
+     "area": 0.003
+    },
+    {
+     "f": 208,
+     "lane": "flycast",
+     "date": "2024-08-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.016,
+     "area": 0.003
+    },
+    {
+     "f": 211,
+     "lane": "flycast",
+     "date": "2024-09-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.015,
+     "area": 0.003
+    }
+   ],
+   "leaks": {
+    "titles": 2,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDC  2023-07  1611c3c",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2024-10  742090b",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.37,
+   "cpu_ms": 1.46,
+   "labels": 3,
+   "titlesShown": 2
+  },
+  {
+   "name": "s-nullDC-other-side",
+   "t": 14305,
+   "pres": "clock",
+   "cam": [
+    757161,
+    6500,
+    16392
+   ],
+   "q": 0,
+   "walls": 64,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 73,
+    "t5": 0,
+    "imp": 43,
+    "inst": 0,
+    "draws": 167,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 591
+   },
+   "classes": {
+    "solid imp-hi": {
+     "n": 18,
+     "area": 0.105
+    },
+    "solid T4": {
+     "n": 73,
+     "area": 0.15
+    },
+    "solid imp-lo": {
+     "n": 18,
+     "area": 0.018
+    },
+    "solid imp-far": {
+     "n": 7,
+     "area": 0.004
+    }
+   },
+   "top": [
+    {
+     "f": 189,
+     "lane": "nullDC",
+     "date": "2023-07-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.148,
+     "area": 0.081
+    },
+    {
+     "f": 209,
+     "lane": "nullDCe",
+     "date": "2024-09-26",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.026,
+     "area": 0.005
+    },
+    {
+     "f": 210,
+     "lane": "nullDCe",
+     "date": "2024-09-27",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.026,
+     "area": 0.005
+    },
+    {
+     "f": 239,
+     "lane": "nullDC4Wii",
+     "date": "2026-01-21",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.014,
+     "area": 0.002
+    },
+    {
+     "f": 240,
+     "lane": "nullDC4Wii",
+     "date": "2026-01-21",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.014,
+     "area": 0.002
+    },
+    {
+     "f": 241,
+     "lane": "nullDC4Wii",
+     "date": "2026-01-22",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.014,
+     "area": 0.002
+    },
+    {
+     "f": 242,
+     "lane": "nullDC4Wii",
+     "date": "2026-01-25",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.014,
+     "area": 0.002
+    },
+    {
+     "f": 244,
+     "lane": "nullDC4Wii",
+     "date": "2026-01-31",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.014,
+     "area": 0.002
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDC  2023-07  1611c3c",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.34,
+   "cpu_ms": 1,
+   "labels": 4,
+   "titlesShown": 1
+  },
+  {
+   "name": "s-nulldc3-low",
+   "t": 16176,
+   "pres": "clock",
+   "cam": [
+    838194,
+    1200,
+    134304
+   ],
+   "q": 0,
+   "walls": 61,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 43,
+    "t5": 0,
+    "imp": 23,
+    "inst": 20528,
+    "draws": 108,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 644
+   },
+   "classes": {
+    "solid imp-far": {
+     "n": 17,
+     "area": 0.581
+    },
+    "faded lines": {
+     "n": 1,
+     "area": 0.35
+    },
+    "solid lines": {
+     "n": 1,
+     "area": 0.013
+    },
+    "solid imp-hi": {
+     "n": 4,
+     "area": 0.421
+    },
+    "solid T4": {
+     "n": 43,
+     "area": 0.156
+    }
+   },
+   "top": [
+    {
+     "f": 219,
+     "lane": "nulldc3",
+     "date": "2025-01-27",
+     "solid": false,
+     "A": 0.94,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.338,
+     "area": 0.371
+    },
+    {
+     "f": 221,
+     "lane": "nulldc3",
+     "date": "2025-02-18",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.227,
+     "area": 0.258
+    },
+    {
+     "f": 223,
+     "lane": "nulldc3",
+     "date": "2025-03-25",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.143,
+     "area": 0.156
+    },
+    {
+     "f": 225,
+     "lane": "nulldc3",
+     "date": "2025-04-06",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.128,
+     "area": 0.136
+    },
+    {
+     "f": 230,
+     "lane": "flycast",
+     "date": "2025-06-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.074,
+     "area": 0.108
+    },
+    {
+     "f": 229,
+     "lane": "nulldc3",
+     "date": "2025-05-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.086,
+     "area": 0.081
+    },
+    {
+     "f": 232,
+     "lane": "flycast",
+     "date": "2025-08-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.056,
+     "area": 0.053
+    },
+    {
+     "f": 231,
+     "lane": "nulldc3",
+     "date": "2025-07-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.063,
+     "area": 0.052
+    }
+   ],
+   "leaks": {
+    "titles": 2,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nulldc3  2025-01  47a2e2c",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nulldc3  2025-02  2d70c78",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.59,
+   "cpu_ms": 0.82,
+   "labels": 0,
+   "titlesShown": 2
+  },
+  {
+   "name": "s-nulldc3-other-side",
+   "t": 17539,
+   "pres": "clock",
+   "cam": [
+    834194,
+    6500,
+    162088
+   ],
+   "q": 0,
+   "walls": 62,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 92,
+    "t5": 0,
+    "imp": 64,
+    "inst": 0,
+    "draws": 229,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 649
+   },
+   "classes": {
+    "faded lines": {
+     "n": 1,
+     "area": 0.166
+    },
+    "solid imp-hi": {
+     "n": 7,
+     "area": 0.631
+    },
+    "solid imp-far": {
+     "n": 22,
+     "area": 0.408
+    },
+    "solid T4": {
+     "n": 92,
+     "area": 0.217
+    },
+    "solid imp-lo": {
+     "n": 34,
+     "area": 0.034
+    }
+   },
+   "top": [
+    {
+     "f": 219,
+     "lane": "nulldc3",
+     "date": "2025-01-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.188,
+     "area": 0.236
+    },
+    {
+     "f": 215,
+     "lane": "nulldc3",
+     "date": "2024-12-12",
+     "solid": false,
+     "A": 0.78,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.373,
+     "area": 0.214
+    },
+    {
+     "f": 221,
+     "lane": "nulldc3",
+     "date": "2025-02-18",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.148,
+     "area": 0.181
+    },
+    {
+     "f": 223,
+     "lane": "nulldc3",
+     "date": "2025-03-25",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.108,
+     "area": 0.122
+    },
+    {
+     "f": 225,
+     "lane": "nulldc3",
+     "date": "2025-04-06",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.099,
+     "area": 0.109
+    },
+    {
+     "f": 229,
+     "lane": "nulldc3",
+     "date": "2025-05-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.072,
+     "area": 0.07
+    },
+    {
+     "f": 231,
+     "lane": "nulldc3",
+     "date": "2025-07-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.055,
+     "area": 0.047
+    },
+    {
+     "f": 220,
+     "lane": "flycast",
+     "date": "2025-01-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.063,
+     "area": 0.024
+    }
+   ],
+   "leaks": {
+    "titles": 13,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nulldc3  2024-12  bc3ae0c",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nulldc3  2025-01  47a2e2c",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2025-01  431d71d",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nulldc3  2025-02  2d70c78",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nulldc3  2025-03  02c0773",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2025-03  130675a",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.64,
+   "cpu_ms": 0.97,
+   "labels": 5,
+   "titlesShown": 13
+  }
+ ]
+}

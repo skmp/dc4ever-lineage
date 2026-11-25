@@ -26,9 +26,12 @@ One shared clock (the slider, the blue gate across every lane) drives all lanes.
 
 Walls close to the camera fade out (from 6000 units, gone at 2800: a 4096-high wall fills the screen at about 3550), so
 they do not cover the view with a wall that is too close to read. Not faded: the frames at the clock (search, bookmarks,
-the file panel, `[` `]` and the tour set the clock to their wall) and any wall in front of the camera at 2.2 px per line
-or more (walk up to a wall to read it without moving the clock). A fading wall is drawn as a ghost: no plate, its text at
-its alpha; the fade eases in and out over about a third of a second. Old `pm=gallery` links open in Clock. The software renderer (llvmpipe)
+the file panel, `[` `]` and the tour set the clock to their wall; a wall that becomes one is whole at once) and the wall
+being read: the first wall the centre of the view hits, from 1.5 px per line (whole at 2.2), while the camera is still
+(walk up to a wall and stop to read it without moving the clock). A wall in front of a frame at the clock that the view
+is centred on is not being read: it fades, so it does not hide that frame. A fading wall keeps its plate and title down
+to half opacity, then is drawn as a ghost (no plate, no title, its text at its alpha); the fade eases in and out over
+about a third of a second. Up close, the walls behind the wall being read fade too; the frames at the clock never do. Old `pm=gallery` links open in Clock. The software renderer (llvmpipe)
 keeps the light presentation: the frames at the clock solid, the lane's frames within 3 months as ghosts, releases solid
 (`?allf=1` / `?allf=0` forces either).
 

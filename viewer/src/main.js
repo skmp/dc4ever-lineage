@@ -726,8 +726,9 @@ let dispList = [], visList = [];
 const live = [];   // per lane: { f, x, morph, next }
 // near fade: d0 / d1 camera distance (units) where a wall is gone / whole (a 4096-high wall fills the screen at ~3550 with
 // the 60 degree FOV), read: px per line from which a wall in front of the camera stays solid however close (walk up to read
-// it without moving the clock); ease: per second, so a clock step or a jump does not pop
-const NFP = { d0: 2800, d1: 6000, read: 2.2, ease: 8 };
+// it without moving the clock); ease: per second, so a clock step or a jump does not pop; still: camera speed (units/s) under
+// which the wall on the centre ray counts as being read (flying through a lane, the walls passed do not hide the ones ahead)
+const NFP = { d0: 2800, d1: 6000, read: 2.2, ease: 8, still: 600 };
 V.NFP = NFP;
 const nearCur = new Float32Array(NF).fill(1), focusSet = new Set();
 let lastDisp = 0;
@@ -786,34 +787,50 @@ function updateDisplay() {
   wallTexI = (wallTexI + 1) % wallTexRing.length; wallTex = wallTexRing[wallTexI]; uploadWallTex();
 }
 // A wall close to the camera fades out (it would cover the screen without being readable) unless it is a frame at the clock
-// (search, bookmarks, the file panel and the tour set the clock to their wall) or near enough to read; a faded wall draws as
-// a ghost: no plate, its text / impostor at its alpha, gone below 0.02. Then, per lane the camera stands in, the walls behind
-// the wall being read (the nearest solid one ahead) fade as the camera comes within 3200 units of it: up close their text
-// would show through gaps and stacked frames (some lanes have frames 16 units apart).
+// (search, bookmarks, the file panel and the tour set the clock to their wall; never faded, and whole at once when it becomes
+// one) or the wall being read: the first wall the centre ray hits, facing the camera, with the camera (nearly) still, and
+// no frame at the clock on that ray within d1 (a frame view of the clock frame often stands just behind an earlier frame:
+// that one fades, it does not hide the frame being framed). The read wall comes in over read*0.7..read px per line. A wall
+// stays solid (opaque plate, title, title / label occluder) down to alpha 0.5, then draws as a ghost: no plate, no title,
+// its text / impostor at its alpha, gone below 0.02. Then, per lane the camera stands in, the walls behind the wall being
+// read (or a frame at the clock) fade as the camera comes within 3200 units of it: up close their text would show through
+// gaps and stacked frames (some lanes have frames 16 units apart). The frames at the clock are not faded there either.
 function nearFade() {
   const t = performance.now(), dt = lastDisp ? Math.min(0.1, (t - lastDisp) / 1000) : 1; lastDisp = t;
   const cp = V.cam.p, fp = focalPx(), focus = focusSet, kE = Math.min(1, dt * NFP.ease);
   focus.clear(); for (const L of live) { focus.add(L.f); if (L.morph) focus.add(L.morph.a); }
-  const readD = 2 * fp / NFP.read;
+  // the centre ray: the nearest wall it hits (front face), and the nearest frame at the clock it hits
+  const cy = Math.cos(V.cam.pitch), rd = [cy * Math.cos(V.cam.yaw), Math.sin(V.cam.pitch), cy * Math.sin(V.cam.yaw)];
+  let readW = -1, tR = Infinity, tF = Infinity;
+  if (rd[0] > 1e-3 && Math.hypot(...vel.v) < NFP.still) for (const w of WALLS) {
+    const x = wallArr[4 * w.i]; if (wallArr[4 * w.i + 1] <= 0 || x <= cp[0]) continue;
+    const tt = (x - cp[0]) / rd[0], y = cp[1] + tt * rd[1], z = cp[2] + tt * rd[2];
+    if (y < 0 || y > 4096 || z < w.z0 || z > w.z0 + w.cols * 128) continue;
+    if (focus.has(w.i)) { if (tt < tF) tF = tt; } else if (tt < tR) { tR = tt; readW = w.i; }
+  }
+  if (readW >= 0 && tF < NFP.d1) readW = -1;   // framing a frame at the clock: the walls in front of it are not being read
+  V.readWall = readW;
   for (const w of WALLS) {
     const o = 4 * w.i; if (wallArr[o + 1] <= 0) continue;
     const x = wallArr[o];
-    let a = 1;
-    if (!focus.has(w.i)) {
+    let a = 1, c;
+    if (focus.has(w.i)) c = 1;
+    else {
       const d = G.boxDist(cp, x, 0, w.z0, x, 4096, w.z0 + w.cols * 128);
-      if (d < NFP.d1) { a = smoothstep(NFP.d0, NFP.d1, d); if (x > cp[0] && d < readD) a = Math.max(a, smoothstep(0.7 * NFP.read, NFP.read, 2 * fp / Math.max(1, d))); }
+      if (d < NFP.d1) { a = smoothstep(NFP.d0, NFP.d1, d); if (w.i === readW) a = Math.max(a, smoothstep(0.7 * NFP.read, NFP.read, 2 * fp / Math.max(1, d))); }
+      c = nearCur[w.i]; c += (a - c) * kE; if (Math.abs(a - c) < 0.01) c = a;
     }
-    let c = nearCur[w.i]; c += (a - c) * kE; if (Math.abs(a - c) < 0.01) c = a; nearCur[w.i] = c;
-    if (c < 0.999) { const A = wallArr[o + 1] * c; wallArr[o + 1] = A < 0.02 ? 0 : A; wallArr[o + 2] = 0; }
+    nearCur[w.i] = c;
+    if (c < 0.999) { const A = wallArr[o + 1] * c; wallArr[o + 1] = A < 0.02 ? 0 : A; if (A < 0.5) wallArr[o + 2] = 0; }
   }
   for (const ln of LN) {
     if (cp[2] < ln.z0 - 512 || cp[2] > ln.z0 + ln.cols * 128 + 512) continue;
-    let ref = -1;   // the nearest solid wall ahead of the camera in this lane, within 3200 units
-    for (const f of ln.frames) { const o = 4 * f, x = wallArr[o]; if (wallArr[o + 2] > 0.5 && wallArr[o + 1] > 0 && x >= cp[0] && x - cp[0] < 3200 && (ref < 0 || x < wallArr[4 * ref])) ref = f; }
+    let ref = -1;   // the nearest solid wall ahead of the camera in this lane (the read wall or a frame at the clock), within 3200 units
+    for (const f of ln.frames) { const o = 4 * f, x = wallArr[o]; if ((f === readW || focus.has(f)) && wallArr[o + 2] > 0.5 && wallArr[o + 1] > 0 && x >= cp[0] && x - cp[0] < 3200 && (ref < 0 || x < wallArr[4 * ref])) ref = f; }
     if (ref < 0) continue;
     const xr = wallArr[4 * ref], fade = Math.max(0, Math.min(1, (xr - cp[0] - 500) / 2700));
-    for (const g of ln.frames) { const o = 4 * g; if (g === ref || wallArr[o + 1] <= 0 || wallArr[o] <= xr || wallArr[o] - xr > 6000) continue;
-      wallArr[o + 1] *= fade; if (wallArr[o + 1] < 0.01) wallArr[o + 1] = 0; if (fade < 0.999) wallArr[o + 2] = 0; }
+    for (const g of ln.frames) { const o = 4 * g; if (g === ref || focus.has(g) || wallArr[o + 1] <= 0 || wallArr[o] <= xr || wallArr[o] - xr > 6000) continue;
+      wallArr[o + 1] *= fade; if (wallArr[o + 1] < 0.01) wallArr[o + 1] = 0; if (wallArr[o + 1] < 0.5) wallArr[o + 2] = 0; }
   }
 }
 V.wallA = w => wallArr[4 * w.i + 1];

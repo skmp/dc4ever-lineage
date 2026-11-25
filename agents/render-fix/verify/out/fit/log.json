@@ -1,0 +1,786 @@
+{
+ "log": [
+  {
+   "name": "fit-hidden-dc4ever-12",
+   "t": 5019,
+   "pres": "clock",
+   "cam": [
+    65344,
+    2160,
+    1893
+   ],
+   "q": 0,
+   "walls": 24,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 17,
+    "t5": 354,
+    "imp": 11,
+    "inst": 4265,
+    "draws": 65,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 224
+   },
+   "classes": {
+    "solid T4": {
+     "n": 17,
+     "area": 0.02
+    },
+    "solid imp-hi": {
+     "n": 4,
+     "area": 0.002
+    },
+    "solid imp-far": {
+     "n": 7,
+     "area": 0
+    },
+    "solid T5": {
+     "n": 354,
+     "area": 0
+    }
+   },
+   "top": [
+    {
+     "f": 14,
+     "lane": "nullDCe",
+     "date": "2009-10-16",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.028,
+     "area": 0.003
+    },
+    {
+     "f": 15,
+     "lane": "nullDC",
+     "date": "2010-05-09",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.021,
+     "area": 0.002
+    },
+    {
+     "f": 16,
+     "lane": "nullDC",
+     "date": "2010-05-31",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.021,
+     "area": 0.002
+    },
+    {
+     "f": 17,
+     "lane": "nullDC",
+     "date": "2010-06-20",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.02,
+     "area": 0.002
+    },
+    {
+     "f": 18,
+     "lane": "nullDC",
+     "date": "2010-07-23",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.019,
+     "area": 0.002
+    },
+    {
+     "f": 19,
+     "lane": "nullDC",
+     "date": "2010-08-31",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.018,
+     "area": 0.001
+    },
+    {
+     "f": 20,
+     "lane": "nullDC",
+     "date": "2010-09-29",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.018,
+     "area": 0.001
+    },
+    {
+     "f": 21,
+     "lane": "nullDC",
+     "date": "2010-10-25",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.017,
+     "area": 0.001
+    }
+   ],
+   "leaks": {
+    "titles": 0,
+    "leaking": 0,
+    "worst": []
+   },
+   "gpu_ms": 0.29,
+   "cpu_ms": 1.13,
+   "labels": 0,
+   "titlesShown": 0,
+   "lane": "dc4ever",
+   "k": 12,
+   "date": "2005-09-15",
+   "dist": 4462,
+   "A": 0,
+   "S": false,
+   "front": [
+    {
+     "dx": 75,
+     "A": 1,
+     "S": true
+    }
+   ]
+  },
+  {
+   "name": "fit-hidden-nullDC-4",
+   "t": 5993,
+   "pres": "clock",
+   "cam": [
+    162527,
+    2151,
+    9713
+   ],
+   "q": 0,
+   "walls": 37,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 22,
+    "t5": 335,
+    "imp": 19,
+    "inst": 10597,
+    "draws": 96,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 312
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-hi": {
+     "n": 7,
+     "area": 0.351
+    },
+    "solid imp-far": {
+     "n": 12,
+     "area": 0.104
+    },
+    "solid T4": {
+     "n": 22,
+     "area": 0.022
+    },
+    "solid T5": {
+     "n": 335,
+     "area": 0.003
+    }
+   },
+   "top": [
+    {
+     "f": 18,
+     "lane": "nullDC",
+     "date": "2010-07-23",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 6.004,
+     "area": 1
+    },
+    {
+     "f": 20,
+     "lane": "nullDC",
+     "date": "2010-09-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.206,
+     "area": 0.187
+    },
+    {
+     "f": 21,
+     "lane": "nullDC",
+     "date": "2010-10-25",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.149,
+     "area": 0.098
+    },
+    {
+     "f": 22,
+     "lane": "nullDC",
+     "date": "2010-11-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.109,
+     "area": 0.052
+    },
+    {
+     "f": 23,
+     "lane": "nullDC",
+     "date": "2010-12-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.089,
+     "area": 0.035
+    },
+    {
+     "f": 24,
+     "lane": "nullDC",
+     "date": "2011-01-08",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.084,
+     "area": 0.031
+    },
+    {
+     "f": 25,
+     "lane": "nullDC",
+     "date": "2011-05-22",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.047,
+     "area": 0.01
+    },
+    {
+     "f": 26,
+     "lane": "nullDC",
+     "date": "2011-06-04",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.045,
+     "area": 0.009
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDC  2010-07  dd6b667",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 1.11,
+   "cpu_ms": 1.47,
+   "labels": 0,
+   "titlesShown": 1,
+   "lane": "nullDC",
+   "k": 4,
+   "date": "2010-08-31",
+   "dist": 5344,
+   "A": 0,
+   "S": false,
+   "front": [
+    {
+     "dx": 312,
+     "A": 1,
+     "S": true
+    }
+   ]
+  },
+  {
+   "name": "fit-hidden-nullDCe-PSP-3",
+   "t": 15588,
+   "pres": "clock",
+   "cam": [
+    670764,
+    2160,
+    42293
+   ],
+   "q": 0,
+   "walls": 57,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 84,
+    "t5": 127,
+    "imp": 11,
+    "inst": 87337,
+    "draws": 121,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 544
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "faded lines": {
+     "n": 1,
+     "area": 0.045
+    },
+    "solid imp-hi": {
+     "n": 6,
+     "area": 0.24
+    },
+    "solid imp-lo": {
+     "n": 4,
+     "area": 0.015
+    },
+    "solid T4": {
+     "n": 84,
+     "area": 0.147
+    },
+    "solid T5": {
+     "n": 127,
+     "area": 0.014
+    }
+   },
+   "top": [
+    {
+     "f": 155,
+     "lane": "nullDCe-PSP",
+     "date": "2021-06-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 2.598,
+     "area": 1
+    },
+    {
+     "f": 156,
+     "lane": "nullDCe-PSP",
+     "date": "2021-07-26",
+     "solid": false,
+     "A": 0.08,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.419,
+     "area": 0.557
+    },
+    {
+     "f": 158,
+     "lane": "nullDCe-PSP",
+     "date": "2021-08-19",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.247,
+     "area": 0.193
+    },
+    {
+     "f": 161,
+     "lane": "nullDCe-PSP",
+     "date": "2021-10-17",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.122,
+     "area": 0.047
+    },
+    {
+     "f": 167,
+     "lane": "nulldc-360",
+     "date": "2022-02-11",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-lo",
+     "ppl": 0.051,
+     "area": 0.013
+    },
+    {
+     "f": 183,
+     "lane": "flycast",
+     "date": "2023-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.018,
+     "area": 0.006
+    },
+    {
+     "f": 184,
+     "lane": "flycast",
+     "date": "2023-03-31",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.018,
+     "area": 0.006
+    },
+    {
+     "f": 185,
+     "lane": "flycast",
+     "date": "2023-04-28",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.017,
+     "area": 0.006
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDCe-PSP  2021-06  894243b",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 1.09,
+   "cpu_ms": 1.19,
+   "labels": 0,
+   "titlesShown": 1,
+   "lane": "nullDCe-PSP",
+   "k": 3,
+   "date": "2021-07-26",
+   "dist": 4462,
+   "A": 0.08,
+   "S": false,
+   "front": [
+    {
+     "dx": 720,
+     "A": 1,
+     "S": true
+    }
+   ]
+  },
+  {
+   "name": "fit-hidden-nullDC4WiiU-2",
+   "t": 23361,
+   "pres": "clock",
+   "cam": [
+    925510,
+    2149,
+    80897
+   ],
+   "q": 0,
+   "walls": 107,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 0,
+    "t5": 0,
+    "imp": 4,
+    "inst": 387629,
+    "draws": 16,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 690
+   },
+   "classes": {
+    "faded lines": {
+     "n": 3,
+     "area": 1.273
+    },
+    "solid lines": {
+     "n": 1,
+     "area": 0.592
+    }
+   },
+   "top": [
+    {
+     "f": 386,
+     "lane": "nullDC4WiiU",
+     "date": "2026-11-13",
+     "solid": false,
+     "A": 0.33,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.463,
+     "area": 0.857
+    },
+    {
+     "f": 391,
+     "lane": "nullDC4WiiU",
+     "date": "2026-11-21",
+     "solid": false,
+     "A": 0.8,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.369,
+     "area": 0.614
+    },
+    {
+     "f": 394,
+     "lane": "nullDC4WiiU",
+     "date": "2026-11-22",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.36,
+     "area": 0.592
+    },
+    {
+     "f": 392,
+     "lane": "nullDC4WiiU",
+     "date": "2026-11-21",
+     "solid": false,
+     "A": 0.95,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.336,
+     "area": 0.523
+    }
+   ],
+   "leaks": {
+    "titles": 2,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDC4WiiU  v0.800-U2  2026-11  77b35aa",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nullDC4WiiU  v0.800-U2.2  2026-11  c934dc3",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 1.93,
+   "cpu_ms": 0.74,
+   "labels": 0,
+   "titlesShown": 2,
+   "lane": "nullDC4WiiU",
+   "k": 2,
+   "date": "2026-11-21",
+   "dist": 5571,
+   "A": 0.95,
+   "S": false,
+   "front": [
+    {
+     "dx": 4038,
+     "A": 0.33,
+     "S": false
+    },
+    {
+     "dx": 5071,
+     "A": 0.8,
+     "S": false
+    },
+    {
+     "dx": 5200,
+     "A": 1,
+     "S": true
+    }
+   ]
+  }
+ ],
+ "n": 89,
+ "nbad": 10,
+ "bad": [
+  {
+   "lane": "dc4ever",
+   "k": 12,
+   "date": "2005-09-15",
+   "dist": 4462,
+   "A": 0,
+   "S": false,
+   "front": [
+    {
+     "dx": 75,
+     "A": 1,
+     "S": true
+    }
+   ]
+  },
+  {
+   "lane": "nullDC",
+   "k": 4,
+   "date": "2010-08-31",
+   "dist": 5344,
+   "A": 0,
+   "S": false,
+   "front": [
+    {
+     "dx": 312,
+     "A": 1,
+     "S": true
+    }
+   ]
+  },
+  {
+   "lane": "nullDCe-PSP",
+   "k": 3,
+   "date": "2021-07-26",
+   "dist": 4462,
+   "A": 0.08,
+   "S": false,
+   "front": [
+    {
+     "dx": 720,
+     "A": 1,
+     "S": true
+    }
+   ]
+  },
+  {
+   "lane": "nullDC4WiiU",
+   "k": 2,
+   "date": "2026-11-21",
+   "dist": 5571,
+   "A": 0.95,
+   "S": false,
+   "front": [
+    {
+     "dx": 4038,
+     "A": 0.33,
+     "S": false
+    },
+    {
+     "dx": 5071,
+     "A": 0.8,
+     "S": false
+    },
+    {
+     "dx": 5200,
+     "A": 1,
+     "S": true
+    }
+   ]
+  },
+  {
+   "lane": "nullDC4WiiU",
+   "k": 3,
+   "date": "2026-11-22",
+   "dist": 5571,
+   "A": 0.95,
+   "S": false,
+   "front": [
+    {
+     "dx": 4409,
+     "A": 0.5,
+     "S": false
+    },
+    {
+     "dx": 5442,
+     "A": 1,
+     "S": true
+    }
+   ]
+  },
+  {
+   "lane": "minicast",
+   "k": 5,
+   "date": "2026-07-18",
+   "dist": 5495,
+   "A": 0.93,
+   "S": false,
+   "front": [
+    {
+     "dx": 5366,
+     "A": 1,
+     "S": true
+    }
+   ]
+  },
+  {
+   "lane": "polly2",
+   "k": 2,
+   "date": "2026-07-17",
+   "dist": 4462,
+   "A": 0.53,
+   "S": false,
+   "front": [
+    {
+     "dx": 3462,
+     "A": 0.13,
+     "S": false
+    },
+    {
+     "dx": 3962,
+     "A": 0.3,
+     "S": false
+    },
+    {
+     "dx": 3591,
+     "A": 1,
+     "S": true
+    }
+   ]
+  },
+  {
+   "lane": "polly2",
+   "k": 4,
+   "date": "2026-07-18",
+   "dist": 4462,
+   "A": 0.53,
+   "S": false,
+   "front": [
+    {
+     "dx": 4333,
+     "A": 0.98,
+     "S": false
+    }
+   ]
+  },
+  {
+   "lane": "polly2",
+   "k": 8,
+   "date": "2026-09-06",
+   "dist": 4462,
+   "A": 0,
+   "S": false,
+   "front": [
+    {
+     "dx": 75,
+     "A": 1,
+     "S": true
+    }
+   ]
+  },
+  {
+   "lane": "wren7",
+   "k": 0,
+   "date": "2026-09-24",
+   "dist": 4462,
+   "A": 0.98,
+   "S": false,
+   "front": []
+  }
+ ]
+}

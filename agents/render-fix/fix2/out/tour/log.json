@@ -1,0 +1,2088 @@
+{
+ "log": [
+  {
+   "name": "tour-3s",
+   "t": 6083,
+   "pres": "clock",
+   "cam": [
+    216518,
+    4477,
+    16627
+   ],
+   "q": 0,
+   "walls": 11,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 32,
+    "t5": 325,
+    "imp": 10,
+    "inst": 107101,
+    "draws": 100,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 199
+   },
+   "classes": {
+    "solid lines": {
+     "n": 2,
+     "area": 0.599
+    },
+    "solid imp-hi": {
+     "n": 2,
+     "area": 0.161
+    },
+    "solid imp-far": {
+     "n": 6,
+     "area": 0.087
+    },
+    "solid T4": {
+     "n": 32,
+     "area": 0.048
+    },
+    "solid T5": {
+     "n": 325,
+     "area": 0
+    }
+   },
+   "top": [
+    {
+     "f": 29,
+     "lane": "nulldc-360",
+     "date": "2011-10-15",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.353,
+     "area": 0.316
+    },
+    {
+     "f": 30,
+     "lane": "nulldc-360",
+     "date": "2011-10-16",
+     "solid": true,
+     "A": 0.92,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.344,
+     "area": 0.309
+    },
+    {
+     "f": 31,
+     "lane": "nulldc-360",
+     "date": "2011-11-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.17,
+     "area": 0.098
+    },
+    {
+     "f": 32,
+     "lane": "nulldc-360",
+     "date": "2011-12-18",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.137,
+     "area": 0.063
+    },
+    {
+     "f": 34,
+     "lane": "nullDC",
+     "date": "2012-03-20",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.072,
+     "area": 0.024
+    },
+    {
+     "f": 33,
+     "lane": "nulldc-360",
+     "date": "2012-02-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.082,
+     "area": 0.023
+    },
+    {
+     "f": 35,
+     "lane": "nullDC",
+     "date": "2012-04-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.065,
+     "area": 0.019
+    },
+    {
+     "f": 36,
+     "lane": "nulldc-360",
+     "date": "2012-05-19",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.055,
+     "area": 0.011
+    }
+   ],
+   "leaks": {
+    "titles": 8,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nulldc-360  2011-10  0330292",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nulldc-360  2011-10  c2d01d5",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nulldc-360  2011-11  a181694",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nulldc-360  2011-12  4d3717f",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nullDC  2012-03  ffd64f5",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2012-2013  1c16bae",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.69,
+   "cpu_ms": 1.9,
+   "labels": 4,
+   "titlesShown": 9,
+   "attract": true,
+   "cap": "unique: only ever in nulldc-360drkPvr's accuracy-vs-speed menus21 lines, first seen in nulldc-360 2011-10-15; held by 10",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-6s",
+   "t": 9216,
+   "pres": "clock",
+   "cam": [
+    218176,
+    2739,
+    18940
+   ],
+   "q": 0,
+   "walls": 11,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 32,
+    "t5": 325,
+    "imp": 10,
+    "inst": 121377,
+    "draws": 97,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 199
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 0.861
+    },
+    "faded lines": {
+     "n": 1,
+     "area": 0.18
+    },
+    "solid imp-hi": {
+     "n": 2,
+     "area": 0.231
+    },
+    "solid imp-far": {
+     "n": 6,
+     "area": 0.102
+    },
+    "solid T4": {
+     "n": 32,
+     "area": 0.05
+    },
+    "solid T5": {
+     "n": 325,
+     "area": 0
+    }
+   },
+   "top": [
+    {
+     "f": 29,
+     "lane": "nulldc-360",
+     "date": "2011-10-15",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.515,
+     "area": 0.861
+    },
+    {
+     "f": 30,
+     "lane": "nulldc-360",
+     "date": "2011-10-16",
+     "solid": false,
+     "A": 0.22,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.498,
+     "area": 0.834
+    },
+    {
+     "f": 31,
+     "lane": "nulldc-360",
+     "date": "2011-11-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.201,
+     "area": 0.145
+    },
+    {
+     "f": 32,
+     "lane": "nulldc-360",
+     "date": "2011-12-18",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.156,
+     "area": 0.086
+    },
+    {
+     "f": 33,
+     "lane": "nulldc-360",
+     "date": "2012-02-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.088,
+     "area": 0.028
+    },
+    {
+     "f": 34,
+     "lane": "nullDC",
+     "date": "2012-03-20",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.075,
+     "area": 0.028
+    },
+    {
+     "f": 35,
+     "lane": "nullDC",
+     "date": "2012-04-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.068,
+     "area": 0.023
+    },
+    {
+     "f": 36,
+     "lane": "nulldc-360",
+     "date": "2012-05-19",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.058,
+     "area": 0.012
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nulldc-360  2011-10  0330292",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.97,
+   "cpu_ms": 1.75,
+   "labels": 0,
+   "titlesShown": 1,
+   "attract": true,
+   "cap": "unique: only ever in nulldc-360drkPvr's accuracy-vs-speed menus21 lines, first seen in nulldc-360 2011-10-15; held by 10",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-9s",
+   "t": 12290,
+   "pres": "clock",
+   "cam": [
+    221720,
+    3327,
+    19294
+   ],
+   "q": 0,
+   "walls": 13,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 30,
+    "t5": 325,
+    "imp": 9,
+    "inst": 5250,
+    "draws": 90,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 208
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-hi": {
+     "n": 2,
+     "area": 0.208
+    },
+    "solid imp-far": {
+     "n": 7,
+     "area": 0.1
+    },
+    "solid T4": {
+     "n": 30,
+     "area": 0.047
+    },
+    "solid T5": {
+     "n": 325,
+     "area": 0.002
+    }
+   },
+   "top": [
+    {
+     "f": 29,
+     "lane": "nulldc-360",
+     "date": "2011-10-15",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 21.642,
+     "area": 1
+    },
+    {
+     "f": 32,
+     "lane": "nulldc-360",
+     "date": "2011-12-18",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.221,
+     "area": 0.169
+    },
+    {
+     "f": 33,
+     "lane": "nulldc-360",
+     "date": "2012-02-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.106,
+     "area": 0.039
+    },
+    {
+     "f": 34,
+     "lane": "nullDC",
+     "date": "2012-03-20",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.087,
+     "area": 0.036
+    },
+    {
+     "f": 35,
+     "lane": "nullDC",
+     "date": "2012-04-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.077,
+     "area": 0.028
+    },
+    {
+     "f": 36,
+     "lane": "nulldc-360",
+     "date": "2012-05-19",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.065,
+     "area": 0.015
+    },
+    {
+     "f": 37,
+     "lane": "nulldc-360",
+     "date": "2012-08-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.044,
+     "area": 0.007
+    },
+    {
+     "f": 38,
+     "lane": "nulldc-360",
+     "date": "2012-09-22",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.042,
+     "area": 0.006
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nulldc-360  2011-10  0330292",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.43,
+   "cpu_ms": 1.2,
+   "labels": 0,
+   "titlesShown": 1,
+   "attract": true,
+   "cap": "unique: only ever in nulldc-360drkPvr's accuracy-vs-speed menus21 lines, first seen in nulldc-360 2011-10-15; held by 10",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-12s",
+   "t": 15393,
+   "pres": "clock",
+   "cam": [
+    221711,
+    3318,
+    19320
+   ],
+   "q": 0,
+   "walls": 13,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 30,
+    "t5": 325,
+    "imp": 9,
+    "inst": 5250,
+    "draws": 90,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 208
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-hi": {
+     "n": 2,
+     "area": 0.208
+    },
+    "solid imp-far": {
+     "n": 7,
+     "area": 0.099
+    },
+    "solid T4": {
+     "n": 30,
+     "area": 0.047
+    },
+    "solid T5": {
+     "n": 325,
+     "area": 0.002
+    }
+   },
+   "top": [
+    {
+     "f": 29,
+     "lane": "nulldc-360",
+     "date": "2011-10-15",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 19.725,
+     "area": 1
+    },
+    {
+     "f": 32,
+     "lane": "nulldc-360",
+     "date": "2011-12-18",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.221,
+     "area": 0.169
+    },
+    {
+     "f": 33,
+     "lane": "nulldc-360",
+     "date": "2012-02-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.106,
+     "area": 0.039
+    },
+    {
+     "f": 34,
+     "lane": "nullDC",
+     "date": "2012-03-20",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.087,
+     "area": 0.035
+    },
+    {
+     "f": 35,
+     "lane": "nullDC",
+     "date": "2012-04-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.077,
+     "area": 0.028
+    },
+    {
+     "f": 36,
+     "lane": "nulldc-360",
+     "date": "2012-05-19",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.065,
+     "area": 0.015
+    },
+    {
+     "f": 37,
+     "lane": "nulldc-360",
+     "date": "2012-08-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.044,
+     "area": 0.007
+    },
+    {
+     "f": 38,
+     "lane": "nulldc-360",
+     "date": "2012-09-22",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.042,
+     "area": 0.006
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nulldc-360  2011-10  0330292",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.48,
+   "cpu_ms": 1.81,
+   "labels": 0,
+   "titlesShown": 1,
+   "attract": true,
+   "cap": "unique: only ever in nulldc-360drkPvr's accuracy-vs-speed menus21 lines, first seen in nulldc-360 2011-10-15; held by 10",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-15s",
+   "t": 18468,
+   "pres": "clock",
+   "cam": [
+    221691,
+    3309,
+    19347
+   ],
+   "q": 0,
+   "walls": 13,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 30,
+    "t5": 325,
+    "imp": 9,
+    "inst": 3683,
+    "draws": 90,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 208
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-hi": {
+     "n": 2,
+     "area": 0.207
+    },
+    "solid imp-far": {
+     "n": 7,
+     "area": 0.099
+    },
+    "solid T4": {
+     "n": 30,
+     "area": 0.047
+    },
+    "solid T5": {
+     "n": 325,
+     "area": 0.002
+    }
+   },
+   "top": [
+    {
+     "f": 29,
+     "lane": "nulldc-360",
+     "date": "2011-10-15",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 16.252,
+     "area": 1
+    },
+    {
+     "f": 32,
+     "lane": "nulldc-360",
+     "date": "2011-12-18",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.22,
+     "area": 0.168
+    },
+    {
+     "f": 33,
+     "lane": "nulldc-360",
+     "date": "2012-02-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.106,
+     "area": 0.039
+    },
+    {
+     "f": 34,
+     "lane": "nullDC",
+     "date": "2012-03-20",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.087,
+     "area": 0.035
+    },
+    {
+     "f": 35,
+     "lane": "nullDC",
+     "date": "2012-04-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.077,
+     "area": 0.028
+    },
+    {
+     "f": 36,
+     "lane": "nulldc-360",
+     "date": "2012-05-19",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.065,
+     "area": 0.015
+    },
+    {
+     "f": 37,
+     "lane": "nulldc-360",
+     "date": "2012-08-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.044,
+     "area": 0.007
+    },
+    {
+     "f": 38,
+     "lane": "nulldc-360",
+     "date": "2012-09-22",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.042,
+     "area": 0.006
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nulldc-360  2011-10  0330292",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.41,
+   "cpu_ms": 1.03,
+   "labels": 0,
+   "titlesShown": 1,
+   "attract": true,
+   "cap": "unique: only ever in nulldc-360drkPvr's accuracy-vs-speed menus21 lines, first seen in nulldc-360 2011-10-15; held by 10",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-18s",
+   "t": 21538,
+   "pres": "clock",
+   "cam": [
+    232580,
+    4964,
+    19004
+   ],
+   "q": 0,
+   "walls": 14,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 30,
+    "t5": 324,
+    "imp": 9,
+    "inst": 0,
+    "draws": 92,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 229
+   },
+   "classes": {
+    "solid imp-hi": {
+     "n": 4,
+     "area": 0.417
+    },
+    "solid imp-far": {
+     "n": 5,
+     "area": 0.039
+    },
+    "solid T4": {
+     "n": 30,
+     "area": 0.049
+    },
+    "solid T5": {
+     "n": 324,
+     "area": 0.002
+    }
+   },
+   "top": [
+    {
+     "f": 33,
+     "lane": "nulldc-360",
+     "date": "2012-02-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.274,
+     "area": 0.225
+    },
+    {
+     "f": 34,
+     "lane": "nullDC",
+     "date": "2012-03-20",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.164,
+     "area": 0.077
+    },
+    {
+     "f": 35,
+     "lane": "nullDC",
+     "date": "2012-04-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.136,
+     "area": 0.077
+    },
+    {
+     "f": 36,
+     "lane": "nulldc-360",
+     "date": "2012-05-19",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.105,
+     "area": 0.038
+    },
+    {
+     "f": 37,
+     "lane": "nulldc-360",
+     "date": "2012-08-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.06,
+     "area": 0.012
+    },
+    {
+     "f": 38,
+     "lane": "nulldc-360",
+     "date": "2012-09-22",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.055,
+     "area": 0.01
+    },
+    {
+     "f": 39,
+     "lane": "nullDC",
+     "date": "2013-01-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.036,
+     "area": 0.006
+    },
+    {
+     "f": 40,
+     "lane": "nullDC",
+     "date": "2013-02-11",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.035,
+     "area": 0.006
+    }
+   ],
+   "leaks": {
+    "titles": 9,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nulldc-360  2012-02  4c84334",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nullDC  2012-03  ffd64f5",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nullDC  2012-04  e4476f3",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nulldc-360  2012-05  4e8e313",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nulldc-360  2012-08  c5a32c0",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2012-2013  1c16bae",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.29,
+   "cpu_ms": 1.49,
+   "labels": 4,
+   "titlesShown": 9,
+   "attract": true,
+   "cap": "unique: only ever in nulldc-360drkPvr's accuracy-vs-speed menus21 lines, first seen in nulldc-360 2011-10-15; held by 10",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-21s",
+   "t": 24613,
+   "pres": "clock",
+   "cam": [
+    236093,
+    3134,
+    18976
+   ],
+   "q": 0,
+   "walls": 14,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 31,
+    "t5": 323,
+    "imp": 9,
+    "inst": 65814,
+    "draws": 95,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 229
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 0.82
+    },
+    "solid imp-hi": {
+     "n": 3,
+     "area": 0.165
+    },
+    "solid imp-far": {
+     "n": 5,
+     "area": 0.049
+    },
+    "solid T4": {
+     "n": 31,
+     "area": 0.054
+    },
+    "solid T5": {
+     "n": 323,
+     "area": 0.002
+    }
+   },
+   "top": [
+    {
+     "f": 33,
+     "lane": "nulldc-360",
+     "date": "2012-02-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.573,
+     "area": 0.82
+    },
+    {
+     "f": 35,
+     "lane": "nullDC",
+     "date": "2012-04-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.176,
+     "area": 0.074
+    },
+    {
+     "f": 36,
+     "lane": "nulldc-360",
+     "date": "2012-05-19",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.131,
+     "area": 0.061
+    },
+    {
+     "f": 34,
+     "lane": "nullDC",
+     "date": "2012-03-20",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.221,
+     "area": 0.03
+    },
+    {
+     "f": 37,
+     "lane": "nulldc-360",
+     "date": "2012-08-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.067,
+     "area": 0.016
+    },
+    {
+     "f": 38,
+     "lane": "nulldc-360",
+     "date": "2012-09-22",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.061,
+     "area": 0.013
+    },
+    {
+     "f": 39,
+     "lane": "nullDC",
+     "date": "2013-01-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.039,
+     "area": 0.007
+    },
+    {
+     "f": 40,
+     "lane": "nullDC",
+     "date": "2013-02-11",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.038,
+     "area": 0.007
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nulldc-360  2012-02  4c84334",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.61,
+   "cpu_ms": 1.13,
+   "labels": 0,
+   "titlesShown": 1,
+   "attract": true,
+   "cap": "unique: only ever in nulldc-360drkPvr's accuracy-vs-speed menus21 lines, first seen in nulldc-360 2011-10-15; held by 10",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-24s",
+   "t": 27675,
+   "pres": "clock",
+   "cam": [
+    239270,
+    3322,
+    19295
+   ],
+   "q": 0,
+   "walls": 14,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 31,
+    "t5": 323,
+    "imp": 7,
+    "inst": 5377,
+    "draws": 90,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 229
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-hi": {
+     "n": 2,
+     "area": 0.107
+    },
+    "solid imp-far": {
+     "n": 5,
+     "area": 0.057
+    },
+    "solid T4": {
+     "n": 31,
+     "area": 0.06
+    },
+    "solid T5": {
+     "n": 323,
+     "area": 0.002
+    }
+   },
+   "top": [
+    {
+     "f": 33,
+     "lane": "nulldc-360",
+     "date": "2012-02-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 21.932,
+     "area": 1
+    },
+    {
+     "f": 36,
+     "lane": "nulldc-360",
+     "date": "2012-05-19",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.169,
+     "area": 0.1
+    },
+    {
+     "f": 37,
+     "lane": "nulldc-360",
+     "date": "2012-08-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.076,
+     "area": 0.02
+    },
+    {
+     "f": 38,
+     "lane": "nulldc-360",
+     "date": "2012-09-22",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.068,
+     "area": 0.016
+    },
+    {
+     "f": 39,
+     "lane": "nullDC",
+     "date": "2013-01-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.042,
+     "area": 0.008
+    },
+    {
+     "f": 35,
+     "lane": "nullDC",
+     "date": "2012-04-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.224,
+     "area": 0.007
+    },
+    {
+     "f": 40,
+     "lane": "nullDC",
+     "date": "2013-02-11",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.04,
+     "area": 0.007
+    },
+    {
+     "f": 41,
+     "lane": "nullDC",
+     "date": "2013-03-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.037,
+     "area": 0.006
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nulldc-360  2012-02  4c84334",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.42,
+   "cpu_ms": 1.12,
+   "labels": 0,
+   "titlesShown": 1,
+   "attract": true,
+   "cap": "unique: only ever in nulldc-360drkPvr's accuracy-vs-speed menus21 lines, first seen in nulldc-360 2011-10-15; held by 10",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-27s",
+   "t": 30734,
+   "pres": "clock",
+   "cam": [
+    239259,
+    3313,
+    19322
+   ],
+   "q": 0,
+   "walls": 14,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 31,
+    "t5": 323,
+    "imp": 7,
+    "inst": 5377,
+    "draws": 90,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 229
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-hi": {
+     "n": 2,
+     "area": 0.105
+    },
+    "solid imp-far": {
+     "n": 5,
+     "area": 0.057
+    },
+    "solid T4": {
+     "n": 31,
+     "area": 0.06
+    },
+    "solid T5": {
+     "n": 323,
+     "area": 0.002
+    }
+   },
+   "top": [
+    {
+     "f": 33,
+     "lane": "nulldc-360",
+     "date": "2012-02-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 19.413,
+     "area": 1
+    },
+    {
+     "f": 36,
+     "lane": "nulldc-360",
+     "date": "2012-05-19",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.169,
+     "area": 0.099
+    },
+    {
+     "f": 37,
+     "lane": "nulldc-360",
+     "date": "2012-08-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.076,
+     "area": 0.02
+    },
+    {
+     "f": 38,
+     "lane": "nulldc-360",
+     "date": "2012-09-22",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.068,
+     "area": 0.016
+    },
+    {
+     "f": 39,
+     "lane": "nullDC",
+     "date": "2013-01-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.042,
+     "area": 0.008
+    },
+    {
+     "f": 40,
+     "lane": "nullDC",
+     "date": "2013-02-11",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.04,
+     "area": 0.007
+    },
+    {
+     "f": 35,
+     "lane": "nullDC",
+     "date": "2012-04-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.224,
+     "area": 0.006
+    },
+    {
+     "f": 41,
+     "lane": "nullDC",
+     "date": "2013-03-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.037,
+     "area": 0.006
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nulldc-360  2012-02  4c84334",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.46,
+   "cpu_ms": 0.89,
+   "labels": 0,
+   "titlesShown": 1,
+   "attract": true,
+   "cap": "unique: only ever in nulldc-360drkPvr's accuracy-vs-speed menus21 lines, first seen in nulldc-360 2011-10-15; held by 10",
+   "capOp": "1"
+  },
+  {
+   "name": "tour-30s",
+   "t": 33798,
+   "pres": "clock",
+   "cam": [
+    388718,
+    45756,
+    19197
+   ],
+   "q": 0,
+   "walls": 15,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 55,
+    "t5": 269,
+    "imp": 0,
+    "inst": 0,
+    "draws": 62,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 282
+   },
+   "classes": {
+    "solid T4": {
+     "n": 55,
+     "area": 0.067
+    },
+    "solid T5": {
+     "n": 269,
+     "area": 0.032
+    }
+   },
+   "top": [
+    {
+     "f": 73,
+     "lane": "reicast",
+     "date": "2016-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.017,
+     "area": 0.004
+    },
+    {
+     "f": 74,
+     "lane": "reicast",
+     "date": "2017-05-18",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.015,
+     "area": 0.003
+    },
+    {
+     "f": 75,
+     "lane": "reicast",
+     "date": "2017-06-17",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.015,
+     "area": 0.003
+    },
+    {
+     "f": 76,
+     "lane": "reicast",
+     "date": "2018-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.013,
+     "area": 0.002
+    },
+    {
+     "f": 77,
+     "lane": "reicast",
+     "date": "2018-04-22",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.012,
+     "area": 0.002
+    },
+    {
+     "f": 86,
+     "lane": "flycast",
+     "date": "2018-10-20",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.01,
+     "area": 0.002
+    },
+    {
+     "f": 92,
+     "lane": "flycast",
+     "date": "2019-04-15",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.009,
+     "area": 0.002
+    },
+    {
+     "f": 96,
+     "lane": "flycast",
+     "date": "2019-05-30",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.009,
+     "area": 0.002
+    }
+   ],
+   "leaks": {
+    "titles": 9,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "reicast  2016-09  d8a7212",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2016-11  aca9cb6",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2016-12  ca837e1",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2017-05  6eb4880",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2018-03  c832df6",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2018-07  25ec591",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.22,
+   "cpu_ms": 1.01,
+   "labels": 10,
+   "titlesShown": 14,
+   "attract": true,
+   "cap": "unique: only ever in nulldc-360drkPvr's accuracy-vs-speed menus21 lines, first seen in nulldc-360 2011-10-15; held by 10",
+   "capOp": "1"
+  },
+  {
+   "name": "now-morph",
+   "t": 35408,
+   "pres": "now",
+   "cam": [
+    720923,
+    2886,
+    106998
+   ],
+   "q": 0,
+   "walls": 37,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 199,
+    "t5": 2,
+    "imp": 18,
+    "inst": 11605,
+    "draws": 257,
+    "pendingBake": 1,
+    "wantQueue": 2,
+    "gpuMB": 543
+   },
+   "classes": {
+    "solid lines": {
+     "n": 2,
+     "area": 1.407
+    },
+    "solid imp-hi": {
+     "n": 4,
+     "area": 0.583
+    },
+    "solid imp-far": {
+     "n": 14,
+     "area": 0.419
+    },
+    "solid T4": {
+     "n": 198,
+     "area": 0.286
+    },
+    "solid T5": {
+     "n": 2,
+     "area": 0
+    }
+   },
+   "top": [
+    {
+     "f": 174,
+     "lane": "flycast",
+     "date": "2022-07-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 10.936,
+     "area": 1
+    },
+    {
+     "f": 176,
+     "lane": "flycast",
+     "date": "2022-08-25",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.303,
+     "area": 0.407
+    },
+    {
+     "f": 177,
+     "lane": "flycast",
+     "date": "2022-09-24",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.186,
+     "area": 0.222
+    },
+    {
+     "f": 178,
+     "lane": "flycast",
+     "date": "2022-10-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.126,
+     "area": 0.141
+    },
+    {
+     "f": 179,
+     "lane": "flycast",
+     "date": "2022-11-04",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.121,
+     "area": 0.134
+    },
+    {
+     "f": 180,
+     "lane": "flycast",
+     "date": "2022-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.082,
+     "area": 0.086
+    },
+    {
+     "f": 181,
+     "lane": "flycast",
+     "date": "2023-01-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.069,
+     "area": 0.071
+    },
+    {
+     "f": 182,
+     "lane": "flycast",
+     "date": "2023-02-15",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.065,
+     "area": 0.062
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2022-07  a6ac753",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.88,
+   "cpu_ms": 1.99,
+   "labels": 0,
+   "titlesShown": 1
+  },
+  {
+   "name": "bookmark",
+   "t": 38266,
+   "pres": "clock",
+   "cam": [
+    217560,
+    3393,
+    6558
+   ],
+   "q": 0,
+   "walls": 43,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 29,
+    "t5": 298,
+    "imp": 38,
+    "inst": 5127,
+    "draws": 148,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 502
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-hi": {
+     "n": 8,
+     "area": 0.069
+    },
+    "solid imp-far": {
+     "n": 26,
+     "area": 0.102
+    },
+    "solid T4": {
+     "n": 29,
+     "area": 0.041
+    },
+    "solid T5": {
+     "n": 298,
+     "area": 0
+    },
+    "solid imp-lo": {
+     "n": 4,
+     "area": 0
+    }
+   },
+   "top": [
+    {
+     "f": 28,
+     "lane": "nullDC",
+     "date": "2011-09-14",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 16,
+     "area": 1
+    },
+    {
+     "f": 32,
+     "lane": "nulldc-360",
+     "date": "2011-12-18",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.121,
+     "area": 0.045
+    },
+    {
+     "f": 33,
+     "lane": "nulldc-360",
+     "date": "2012-02-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.08,
+     "area": 0.026
+    },
+    {
+     "f": 34,
+     "lane": "nullDC",
+     "date": "2012-03-20",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.075,
+     "area": 0.025
+    },
+    {
+     "f": 31,
+     "lane": "nulldc-360",
+     "date": "2011-11-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.141,
+     "area": 0.024
+    },
+    {
+     "f": 35,
+     "lane": "nullDC",
+     "date": "2012-04-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.068,
+     "area": 0.02
+    },
+    {
+     "f": 36,
+     "lane": "nulldc-360",
+     "date": "2012-05-19",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.055,
+     "area": 0.011
+    },
+    {
+     "f": 37,
+     "lane": "nulldc-360",
+     "date": "2012-08-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.04,
+     "area": 0.006
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDC  2011-09  c563e07",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.37,
+   "cpu_ms": 1.03,
+   "labels": 0,
+   "titlesShown": 1,
+   "bmWall": "nullDC  2011-09  c563e07",
+   "bmA": 1
+  },
+  {
+   "name": "search-click",
+   "t": 45963,
+   "pres": "clock",
+   "cam": [
+    217560,
+    2043,
+    9502
+   ],
+   "q": 0,
+   "walls": 43,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 29,
+    "t5": 298,
+    "imp": 38,
+    "inst": 2539,
+    "draws": 148,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 511
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-hi": {
+     "n": 8,
+     "area": 0.151
+    },
+    "solid imp-far": {
+     "n": 26,
+     "area": 0.102
+    },
+    "solid T4": {
+     "n": 29,
+     "area": 0.041
+    },
+    "solid T5": {
+     "n": 298,
+     "area": 0
+    },
+    "solid imp-lo": {
+     "n": 4,
+     "area": 0
+    }
+   },
+   "top": [
+    {
+     "f": 28,
+     "lane": "nullDC",
+     "date": "2011-09-14",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 16,
+     "area": 1
+    },
+    {
+     "f": 32,
+     "lane": "nulldc-360",
+     "date": "2011-12-18",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.134,
+     "area": 0.076
+    },
+    {
+     "f": 31,
+     "lane": "nulldc-360",
+     "date": "2011-11-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.162,
+     "area": 0.075
+    },
+    {
+     "f": 33,
+     "lane": "nulldc-360",
+     "date": "2012-02-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.083,
+     "area": 0.026
+    },
+    {
+     "f": 34,
+     "lane": "nullDC",
+     "date": "2012-03-20",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.075,
+     "area": 0.025
+    },
+    {
+     "f": 35,
+     "lane": "nullDC",
+     "date": "2012-04-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.068,
+     "area": 0.02
+    },
+    {
+     "f": 36,
+     "lane": "nulldc-360",
+     "date": "2012-05-19",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.056,
+     "area": 0.011
+    },
+    {
+     "f": 37,
+     "lane": "nulldc-360",
+     "date": "2012-08-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.04,
+     "area": 0.006
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDC  2011-09  c563e07",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.33,
+   "cpu_ms": 1.47,
+   "labels": 0,
+   "titlesShown": 1,
+   "nres": 1,
+   "sWall": "nullDC  2011-09  c563e07",
+   "sA": 1
+  }
+ ],
+ "S": {
+  "ticks": 1819,
+  "capShown": 1819,
+  "marks": 0,
+  "focusHidden": 0,
+  "focusTicks": 1574,
+  "hiddenAt": []
+ },
+ "now": {
+  "ticks": 105,
+  "morphTicks": 69,
+  "liveHiddenTicks": 0
+ },
+ "searchWorker": "{\"type\":\"search\",\"req\":1,\"hits\":[55318],\"text\":[\"//Time to emulate that stuff correctly ;)\"],\"ms\":36.200000047683716,\"partial\":false}",
+ "errs": []
+}
