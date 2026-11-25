@@ -83,6 +83,32 @@
    "shared_until": null
   },
   {
+   "lane": "HarissaDC",
+   "repo": "kernel64_HarissaDC",
+   "tip": "main",
+   "frames": [
+    373,
+    374,
+    375,
+    382
+   ],
+   "parents": [
+    {
+     "lane": "nullDC4Wii",
+     "kind": "related"
+    },
+    {
+     "lane": "nulldc-360",
+     "kind": "related"
+    },
+    {
+     "lane": "flycast",
+     "kind": "related"
+    }
+   ],
+   "shared_until": null
+  },
+  {
    "lane": "nullDCe",
    "repo": "skmp_nullDCe",
    "tip": "skmp/ps2",
@@ -195,12 +221,13 @@
     354,
     356,
     363,
-    366,
-    372,
-    373,
-    374,
-    375,
-    376
+    364,
+    367,
+    376,
+    377,
+    378,
+    379,
+    381
    ],
    "parents": [
     {
@@ -222,8 +249,8 @@
     355,
     357,
     358,
-    365,
-    369
+    366,
+    370
    ],
    "parents": [
     {
@@ -238,6 +265,26 @@
     }
    ],
    "shared_until": null
+  },
+  {
+   "lane": "nullDC4WiiU",
+   "repo": "nulldc4wiiu_nulldc_wiiu",
+   "tip": "main",
+   "frames": [
+    380,
+    385,
+    386,
+    388
+   ],
+   "parents": [
+    {
+     "lane": "nullDC4Wii",
+     "kind": "code",
+     "frame": 364,
+     "commit": "1459ccb126884c8489a6b80f4a7561f423304ed4"
+    }
+   ],
+   "shared_until": "1459ccb126884c8489a6b80f4a7561f423304ed4"
   },
   {
    "lane": "reicast",
@@ -452,8 +499,8 @@
     325,
     329,
     353,
-    367,
-    380
+    368,
+    389
    ],
    "parents": [
     {
@@ -488,8 +535,8 @@
     225,
     263,
     275,
-    364,
-    377
+    365,
+    383
    ],
    "parents": [
     {
@@ -556,7 +603,7 @@
    "repo": "skmp_polly2-rtl",
    "tip": "r8/develop",
    "frames": [
-    379
+    387
    ],
    "parents": [
     {
@@ -600,7 +647,7 @@
    "repo": "fpgadc_dreamcast-tests",
    "tip": "main",
    "frames": [
-    378
+    384
    ],
    "parents": [
     {
@@ -628,7 +675,7 @@
    "tip": "main",
    "frames": [
     352,
-    368
+    369
    ],
    "parents": [
     {
@@ -645,7 +692,7 @@
    "frames": [
     349,
     350,
-    370
+    371
    ],
    "parents": [
     {
@@ -665,7 +712,7 @@
    "tip": "main",
    "frames": [
     351,
-    371
+    372
    ],
    "parents": [
     {
@@ -6479,6 +6526,23 @@
    "i": 363
   },
   {
+   "lane": "nullDC4Wii",
+   "repo": "BenoitAdam_nullDC4Wii",
+   "commit": "1459ccb126884c8489a6b80f4a7561f423304ed4",
+   "date": "2026-10-25",
+   "commit_date": "2026-10-25",
+   "kinds": [
+    "fork"
+   ],
+   "tags": [],
+   "labels": [
+    "nullDC4WiiU fork point (last shared commit)"
+   ],
+   "files": 243,
+   "k": 91,
+   "i": 364
+  },
+  {
    "lane": "nulldc3",
    "repo": "skmp_nulldc3",
    "commit": "4e773df24d688b1c44257b3d68ef08ef4f478d87",
@@ -6494,7 +6558,7 @@
    "labels": [],
    "files": 563,
    "k": 12,
-   "i": 364
+   "i": 365
   },
   {
    "lane": "NotDC-PS3",
@@ -6509,7 +6573,7 @@
    "labels": [],
    "files": 361,
    "k": 5,
-   "i": 365
+   "i": 366
   },
   {
    "lane": "nullDC4Wii",
@@ -6526,8 +6590,8 @@
    ],
    "labels": [],
    "files": 244,
-   "k": 91,
-   "i": 366
+   "k": 92,
+   "i": 367
   },
   {
    "lane": "flycast",
@@ -6542,7 +6606,7 @@
    "labels": [],
    "files": 664,
    "k": 98,
-   "i": 367
+   "i": 368
   },
   {
    "lane": "shrike4",
@@ -6557,7 +6621,7 @@
    "labels": [],
    "files": 1482,
    "k": 1,
-   "i": 368
+   "i": 369
   },
   {
    "lane": "NotDC-PS3",
@@ -6575,7 +6639,7 @@
    "labels": [],
    "files": 363,
    "k": 6,
-   "i": 369
+   "i": 370
   },
   {
    "lane": "caique",
@@ -6590,7 +6654,7 @@
    "labels": [],
    "files": 232,
    "k": 2,
-   "i": 370
+   "i": 371
   },
   {
    "lane": "wren7",
@@ -6605,7 +6669,58 @@
    "labels": [],
    "files": 47,
    "k": 1,
-   "i": 371
+   "i": 372
+  },
+  {
+   "lane": "HarissaDC",
+   "repo": "kernel64_HarissaDC",
+   "commit": "462ddbb56efd8ba7e90a364a170525a9a2b20b9d",
+   "date": "2026-11-03",
+   "commit_date": "2026-11-03",
+   "kinds": [
+    "tag"
+   ],
+   "tags": [
+    "v0.2.0"
+   ],
+   "labels": [],
+   "files": 121,
+   "k": 0,
+   "i": 373
+  },
+  {
+   "lane": "HarissaDC",
+   "repo": "kernel64_HarissaDC",
+   "commit": "bf379efaf88191c81d3aef904dceeff762d6f91f",
+   "date": "2026-11-05",
+   "commit_date": "2026-11-05",
+   "kinds": [
+    "tag"
+   ],
+   "tags": [
+    "v0.2.1"
+   ],
+   "labels": [],
+   "files": 121,
+   "k": 1,
+   "i": 374
+  },
+  {
+   "lane": "HarissaDC",
+   "repo": "kernel64_HarissaDC",
+   "commit": "790280a636351abdad986468c065c47d06d2e87f",
+   "date": "2026-11-06",
+   "commit_date": "2026-11-06",
+   "kinds": [
+    "tag"
+   ],
+   "tags": [
+    "v0.2.2"
+   ],
+   "labels": [],
+   "files": 121,
+   "k": 2,
+   "i": 375
   },
   {
    "lane": "nullDC4Wii",
@@ -6621,8 +6736,8 @@
    ],
    "labels": [],
    "files": 244,
-   "k": 92,
-   "i": 372
+   "k": 93,
+   "i": 376
   },
   {
    "lane": "nullDC4Wii",
@@ -6638,8 +6753,8 @@
    ],
    "labels": [],
    "files": 244,
-   "k": 93,
-   "i": 373
+   "k": 94,
+   "i": 377
   },
   {
    "lane": "nullDC4Wii",
@@ -6655,8 +6770,8 @@
    ],
    "labels": [],
    "files": 244,
-   "k": 94,
-   "i": 374
+   "k": 95,
+   "i": 378
   },
   {
    "lane": "nullDC4Wii",
@@ -6672,8 +6787,25 @@
    ],
    "labels": [],
    "files": 268,
-   "k": 95,
-   "i": 375
+   "k": 96,
+   "i": 379
+  },
+  {
+   "lane": "nullDC4WiiU",
+   "repo": "nulldc4wiiu_nulldc_wiiu",
+   "commit": "0dc61a14bbd7e438d89c29d722302c281ff1d556",
+   "date": "2026-11-13",
+   "commit_date": "2026-11-13",
+   "kinds": [
+    "tag"
+   ],
+   "tags": [
+    "v0.800-U1"
+   ],
+   "labels": [],
+   "files": 277,
+   "k": 0,
+   "i": 380
   },
   {
    "lane": "nullDC4Wii",
@@ -6687,8 +6819,26 @@
    "tags": [],
    "labels": [],
    "files": 244,
-   "k": 96,
-   "i": 376
+   "k": 97,
+   "i": 381
+  },
+  {
+   "lane": "HarissaDC",
+   "repo": "kernel64_HarissaDC",
+   "commit": "e399c5f90afaa391919949d51ce206eef6796849",
+   "date": "2026-11-20",
+   "commit_date": "2026-11-20",
+   "kinds": [
+    "month",
+    "tag"
+   ],
+   "tags": [
+    "v0.3.0"
+   ],
+   "labels": [],
+   "files": 133,
+   "k": 3,
+   "i": 382
   },
   {
    "lane": "nulldc3",
@@ -6703,7 +6853,7 @@
    "labels": [],
    "files": 584,
    "k": 13,
-   "i": 377
+   "i": 383
   },
   {
    "lane": "dreamcast-tests",
@@ -6718,7 +6868,41 @@
    "labels": [],
    "files": 423,
    "k": 0,
-   "i": 378
+   "i": 384
+  },
+  {
+   "lane": "nullDC4WiiU",
+   "repo": "nulldc4wiiu_nulldc_wiiu",
+   "commit": "77b35aabe77b901b7984fb6bdc2d4ddc7a2e6ada",
+   "date": "2026-11-21",
+   "commit_date": "2026-11-21",
+   "kinds": [
+    "tag"
+   ],
+   "tags": [
+    "v0.800-U2"
+   ],
+   "labels": [],
+   "files": 293,
+   "k": 1,
+   "i": 385
+  },
+  {
+   "lane": "nullDC4WiiU",
+   "repo": "nulldc4wiiu_nulldc_wiiu",
+   "commit": "8d0c254f7749df72984cb1338eb3a782bb9c8570",
+   "date": "2026-11-21",
+   "commit_date": "2026-11-21",
+   "kinds": [
+    "tag"
+   ],
+   "tags": [
+    "v0.800-U2.1"
+   ],
+   "labels": [],
+   "files": 293,
+   "k": 2,
+   "i": 386
   },
   {
    "lane": "polly2-r8",
@@ -6733,7 +6917,24 @@
    "labels": [],
    "files": 162,
    "k": 0,
-   "i": 379
+   "i": 387
+  },
+  {
+   "lane": "nullDC4WiiU",
+   "repo": "nulldc4wiiu_nulldc_wiiu",
+   "commit": "c934dc334c81da78f162363fb599d0b8910c7cda",
+   "date": "2026-11-22",
+   "commit_date": "2026-11-22",
+   "kinds": [
+    "tag"
+   ],
+   "tags": [
+    "v0.800-U2.2"
+   ],
+   "labels": [],
+   "files": 293,
+   "k": 3,
+   "i": 388
   },
   {
    "lane": "flycast",
@@ -6748,7 +6949,7 @@
    "labels": [],
    "files": 664,
    "k": 99,
-   "i": 380
+   "i": 389
   }
  ],
  "releases": [

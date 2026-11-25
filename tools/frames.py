@@ -29,9 +29,11 @@ LANES = [
     ('dc4ever', 'skmp_dc4ever', 'master', {'approx': True}),
     ('nullDC', 'skmp_nullDC', 'master', {}),
     ('nulldc-360', 'gligli_nulldc-360', 'master', {}),
+    ('HarissaDC', 'kernel64_HarissaDC', 'main', {'tags': r'^v\d'}),
     ('nullDCe', 'skmp_nullDCe', 'skmp/ps2', {'date': {'39c0550': ('2009-10-16', '2008-2010', 'recovered archive committed 2017-11-20; latest in-source date 2009-10-16')}}),
     ('nullDC4Wii', 'BenoitAdam_nullDC4Wii', 'main', {'tags': r'.'}),
     ('NotDC-PS3', 'Mayo1970_NotDC-PS3', 'main', {'tags': r'.'}),
+    ('nullDC4WiiU', 'nulldc4wiiu_nulldc_wiiu', 'main', {'tags': r'.', 'not_in': 'BenoitAdam_nullDC4Wii'}),
     ('reicast', 'skmp_reicast-emulator', 'alpha', {'tags': r'^r\d',
         'date': {'1c16baeb0': ('2013-12-19', '2012-2013', 'project import of the private newdc / nullDC-Android rewrite of 2012-2013')}}),
     ('flycast', 'flyinghead_flycast', 'master', {'tags': r'^[vV]\d', 'not_in': 'skmp_reicast-emulator'}),
@@ -82,6 +84,8 @@ LANE_EDGES = {  # child: [(parent lane, kind, parent commit or None = parent's l
     'minicast': [('nulldc3', 'code', 'd5d4eae1')],
     'nullDC4Wii': [('nullDCe', 'code', 'bad8d6a')],
     'NotDC-PS3': [('nullDC4Wii', 'code', '9659506'), ('caique', 'copy', None)],
+    'nullDC4WiiU': [('nullDC4Wii', 'code', 'FORK')],   # git fork of nullDC4Wii (last shared commit 1459ccb, 2026-10-25)
+    'HarissaDC': [('nullDC4Wii', 'related', None), ('nulldc-360', 'related', None), ('flycast', 'related', None)],   # studied, not copied (CREDITS.md)
     'nullDCe': [('dc4ever', 'related', None)],
     'nullDC': [('dc4ever', 'related', None)],
     'polly2': [('nulldc3', 'related', None)],
@@ -116,7 +120,7 @@ def tree_files(repo, sha):
         meta, path = rec.split(b'\t', 1); m = meta.split()
         if m[1] != b'blob': continue
         p = path.decode('utf-8', 'replace')
-        if not lang_of(p) or is_vendored(repo, p): continue
+        if not lang_of(p, repo) or is_vendored(repo, p): continue
         r.append((p, m[2].decode(), int(m[3])))
     return r
 

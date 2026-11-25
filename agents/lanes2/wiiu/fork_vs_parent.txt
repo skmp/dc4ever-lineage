@@ -1,0 +1,6 @@
+child nulldc4wiiu_nulldc_wiiu.git 75bc844 : 280 files, 59106 significant lines
+  BenoitAdam_nullDC4Wii.git        1459ccb      identical files  213/280 (42138 sig lines)  lines  54155/59106 =  91.6%   -> 4951 lines not in it
+  BenoitAdam_nullDC4Wii.git        7a9a0d8      identical files  212/280 (41992 sig lines)  lines  54152/59106 =  91.6%   of the rest: 0/4951
+  BenoitAdam_nullDC4Wii.git        7b3d591      identical files  212/280 (38147 sig lines)  lines  53987/59106 =  91.3%   of the rest: 0/4951
+child nulldc4wiiu_nulldc_wiiu.git 1459ccb : 243 files, 54050 significant lines
+  BenoitAdam_nullDC4Wii.git        1459ccb      identical files  243/243 (54050 sig lines)  lines  54050/54050 = 100.0%   -> 0 lines not in it

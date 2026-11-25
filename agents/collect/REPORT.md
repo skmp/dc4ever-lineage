@@ -1,4 +1,4 @@
-# nullDC lineage: collection report
+# dc4ever lineage: collection report
 
 Collected 2026-11-22. All repositories are public GitHub repos, mirror-cloned (`git clone --mirror`) into
 `/home/skmp/projects/nulldc-lineage/repos/<owner>_<name>.git`. Nothing was cloned from local working trees.
@@ -26,6 +26,8 @@ Machine-readable output: `snapshots.json` (this dir), produced by `tools/snapsho
 | skmp/wren7-rtl | main | 2026-09-23 | 2026-11-01 | 4 / 4 | ARM7DI model + rtl/v1. Vendors arm7di-tests-dreamcast. 3.3 % line overlap with caique-rtl. |
 | fpgadc/dreamcast-tests (skmp/dreamcast-tests redirects here) | main | 2026-11-17 | 2026-11-20 | 124 / 124 | Console test suite (PowerVR2 hardware tests, refsw2-offline harness). 0.7 % line overlap with nullDC 3. |
 | skmp/dreamcast-devtools | main | 2025-09-30 | 2026-10-24 | 534 / 534 | TypeScript devtools / debugger UI used by nullDC 3 (tag v3.0.0-pre). 0.1 % overlap (protocol strings). |
+| nulldc4wiiu/nulldc_wiiu (added 2026-11-25) | main | 2026-11-07 (own commits) | 2026-11-25 | 79 own / 1304 (1224 shared with nullDC4Wii) | **Git fork** of nullDC4Wii: last shared commit 1459ccb (2026-10-25); a native Wii U (Aroma) port with a GX2 renderer, fastmem JIT and HOME menu. Tags v0.800-U1 .. U2.2 (2026-11-13 .. 11-22). No code flows back either way. Unrelated to nullDC4Wii's own short-lived Wii U attempt (2026-11-13, removed 11-17). Evidence: `agents/lanes2/nullDC4WiiU-ancestry.md`. |
+| kernel64/HarissaDC (added 2026-11-25) | main | 2026-10-20 | 2026-11-20 | 7 / 7 | Xbox 360 Dreamcast emulator, a clean rewrite: CREDITS.md says it studied nullDC4Wii, nulldc-360 and flycast ("studied, not copied"). 0 identical own files, <= 0.5 % shared significant lines with any lane. Source arrives in one dump 37fa91c (2026-11-03); tags v0.2.0 .. v0.3.0. Evidence: `agents/lanes2/HarissaDC-ancestry.md`. |
 | skmp/mister-utils (added: DreamSTer r6b submodule) | main | 2026-07-13 | 2026-10-24 | 7 / 7 | Tiny MiSTer helper scripts and a kernel module; cloned for completeness, not snapshotted. |
 
 Notes on dates: first/last are author dates on the default branch. Mirrors also contain `refs/pull/*`, which are
@@ -42,6 +44,8 @@ reicast --git fork (shared history, merged until 2019-05-17)--> flycast (2018-10
 reicast 95b673698 (2021-12-22) --git ancestry--> nullDC 3 (own commits from 2023-07-07 "fpgadc: refsw-offline")
 nullDCe main bad8d6a (2024-09-26) --imported snapshot, verbatim--> nullDC4Wii (2026-01-21)
 nullDC4Wii ~9659506 (2026-09-18) --imported snapshot--> NotDC-PS3 (2026-09-19)
+nullDC4Wii 1459ccb (2026-10-25) --git fork--> nullDC4WiiU (Wii U, own commits from 2026-11-07)
+nullDC4Wii, nulldc-360, flycast --studied (CREDITS.md), no shared code--> HarissaDC (Xbox 360, 2026-11-03)
 fpgadc lane (branches from nullDC 3 / refsw, 2023-2026):
   nullDC 3 fpgadc commits (2023-08 .. 2024-07) --imported snapshot--> minicast (2025-01-20)
   nullDC 3 dumps + refsw-offline (2023-07) --concept / dump format, no shared code--> polly2-rtl main (2026-07, FPGA core r1..r6b)
@@ -64,6 +68,8 @@ parent commit) and `tools/sharedfiles.py`. Measured edges:
 | nullDC 761dc87 | dc4ever | 0 | 0.6 % |
 | nullDC4Wii e812c58 | nullDCe bad8d6a | 203/203 | 100 % |
 | NotDC-PS3 5a32b94 | nullDC4Wii 9659506 | 229/272 | 90.4 % |
+| nullDC4WiiU 75bc844 | nullDC4Wii 1459ccb | 213/280 | 91.6 % (tree at 1459ccb identical, 243/243) |
+| HarissaDC v0.3.0 | nullDC4Wii / nulldc-360 / flycast | 0 own | 0.3 / 0.0 / 0.3 % (all lanes together 0.86 %) |
 | nullDC 3 038f7ef3 | reicast 95b673698 | (git) | 99.8 % |
 | minicast 580d7b8 | nullDC 3 d5d4eae1 | 513/533 | 99.8 % |
 | polly2-rtl r8 3800f9f | nullDC 3 refsw3 4f3efe15 | 0 | 6.8 % (ref_copies*.h: tb/ref 426, tb/fp 346, isp_depth 74, isp_edge 69 lines) |
@@ -91,7 +97,10 @@ Excluded and listed separately, so they can be turned back on:
   xxHash 63k ...), nullDC 3 443k (vixl 179k), reicast 2020 419k.
 - **generated** files: header line says generated / do not edit, data headers written by a gen program
   (dreamcast-tests `cases.h`, 228k lines), files over 2 MB (flycast `libretro_core_options_intl.h`, 92k), and
-  nulldc-360 compiled shader blobs (`shaders.S`). Generator programs themselves (gen*, make_*) stay counted.
+  nulldc-360 compiled shader blobs (`shaders.S`), HarissaDC `xb_lang_table.h` (written by gen_lang.py) and
+  `xb_flags.h` (PNG byte arrays), nullDC4WiiU `wiiu/vmu_bg.h` (an image array). Generator programs themselves (gen*,
+  make_*) stay counted. Extra counted source: nullDC4WiiU `wii/dc/sh4/rec_v2/*.inc` (the JIT driver split into nine
+  `.inc` files #included by wii_driver.cpp; `.inc` is otherwise not counted).
 
 ## Snapshots (40, time order)
 

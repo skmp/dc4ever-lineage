@@ -1,0 +1,12 @@
+child BenoitAdam_nullDC4Wii.git main : 244 files, 57383 significant lines
+  BenoitAdam_nullDC4Wii.git        1459ccb      identical files  213/244 (29306 sig lines)  lines  53887/57383 =  93.9%   -> 3496 lines not in it
+  nulldc4wiiu_nulldc_wiiu.git      main         identical files  176/244 (20727 sig lines)  lines  50766/57383 =  88.5%   of the rest: 0/3496
+  nulldc4wiiu_nulldc_wiiu.git      0dc61a1      identical files  200/244 (25038 sig lines)  lines  53822/57383 =  93.8%   of the rest: 0/3496
+child BenoitAdam_nullDC4Wii.git ca3f6b5 wiiu/: 23 files, 1023 significant lines
+  BenoitAdam_nullDC4Wii.git        1459ccb      identical files    0/23 (0 sig lines)  lines     50/1023 =   4.9%   -> 973 lines not in it
+  nulldc4wiiu_nulldc_wiiu.git      0dc61a1      identical files    0/23 (0 sig lines)  lines    100/1023 =   9.8%   of the rest: 50/973
+  nulldc4wiiu_nulldc_wiiu.git      ccb79cf      identical files    0/23 (0 sig lines)  lines    100/1023 =   9.8%   of the rest: 50/973
+  nulldc4wiiu_nulldc_wiiu.git      75bc844      identical files    0/23 (0 sig lines)  lines    100/1023 =   9.8%   of the rest: 50/973
+  nulldc4wiiu_nulldc_wiiu.git      main         identical files    0/23 (0 sig lines)  lines    100/1023 =   9.8%   of the rest: 50/973
+  flyinghead_flycast.git           master       identical files    0/23 (0 sig lines)  lines      3/1023 =   0.3%   of the rest: 0/973
+  skmp_reicast-emulator.git        alpha        identical files    0/23 (0 sig lines)  lines      6/1023 =   0.6%   of the rest: 0/973

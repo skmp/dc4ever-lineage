@@ -1,0 +1,8 @@
+  217/  287 child  vs   248 parent  493fa4b 2026-10-29 Update README.md
+  217/  287 child  vs   248 parent  1459ccb 2026-10-25 coloring a bit the menu
+  216/  287 child  vs   254 parent  df2b53a 2026-10-29 Correct endian-safe BBA config and register reads
+  216/  287 child  vs   254 parent  6f4611b 2026-10-29 Implement virtual Dreamcast BBA bridge and connect DCNet
+  216/  287 child  vs   254 parent  20c2f67 2026-10-29 Harden BBA register and RAM access bounds
+  216/  287 child  vs   253 parent  2035ab8 2026-10-29 Port permissively licensed RTL8139 NIC model for BBA
+  216/  287 child  vs   253 parent  0bbf5ae 2026-10-29 fix minor typo
+  216/  287 child  vs   252 parent  f2fb43e 2026-10-29 Add BBA-to-RTL8139 compatibility interface

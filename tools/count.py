@@ -12,7 +12,7 @@ def scan(repo, ref):
         if not rec: continue
         meta, path = rec.split(b'\t',1); m=meta.split()
         if m[1]!=b'blob': continue
-        path=path.decode('utf-8','replace'); lang=lang_of(path)
+        path=path.decode('utf-8','replace'); lang=lang_of(path, repo)
         if lang: ents.append((path, m[2].decode(), int(m[3]), lang))
     # batch line counts
     ids=[e[1] for e in ents]

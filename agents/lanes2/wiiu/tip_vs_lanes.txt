@@ -1,0 +1,12 @@
+child nulldc4wiiu_nulldc_wiiu.git main : 285 files, 57927 significant lines
+  BenoitAdam_nullDC4Wii.git        1459ccb      identical files  189/285 (31145 sig lines)  lines  51059/57927 =  88.1%   -> 6868 lines not in it
+  BenoitAdam_nullDC4Wii.git        main         identical files  176/285 (20727 sig lines)  lines  50789/57927 =  87.7%   of the rest: 0/6868
+  BenoitAdam_nullDC4Wii.git        ca3f6b5      identical files  176/285 (20727 sig lines)  lines  50922/57927 =  87.9%   of the rest: 131/6868
+  Mayo1970_NotDC-PS3.git           main         identical files   83/285 (4979 sig lines)  lines  22480/57927 =  38.8%   of the rest: 57/6868
+  flyinghead_flycast.git           master       identical files    0/285 (0 sig lines)  lines   6184/57927 =  10.7%   of the rest: 48/6868
+  skmp_reicast-emulator.git        alpha        identical files    4/285 (985 sig lines)  lines   8830/57927 =  15.2%   of the rest: 19/6868
+  skmp_nulldc3.git                 skmp/refsw3  identical files    0/285 (0 sig lines)  lines   7274/57927 =  12.6%   of the rest: 46/6868
+  skmp_nullDCe.git                 skmp/ps2     identical files    0/285 (0 sig lines)  lines  10734/57927 =  18.5%   of the rest: 3/6868
+  skmp_nullDC.git                  master       identical files    9/285 (1049 sig lines)  lines  11078/57927 =  19.1%   of the rest: 4/6868
+  gligli_nulldc-360.git            master       identical files    1/285 (23 sig lines)  lines   8869/57927 =  15.3%   of the rest: 29/6868
+  skmp_caique-rtl.git              main         identical files    0/285 (0 sig lines)  lines     25/57927 =   0.0%   of the rest: 7/6868

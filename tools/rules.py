@@ -11,7 +11,15 @@ EXT = {
  '.sv':'SystemVerilog', '.svh':'SystemVerilog', '.v':'Verilog', '.vh':'Verilog',
  '.ts':'TypeScript', '.tsx':'TypeScript', '.py':'Python',
 }
-def lang_of(path):
+# per-repo extra counted source (regex on the path): files outside EXT that hold code split out of a counted file
+SRC_EXTRA = {
+ # 434f8aa (2026-11-19) splits the JIT driver wii_driver.cpp into nine wii_driver_*.inc files #included back into it
+ 'nulldc4wiiu_nulldc_wiiu': [r'^wii/dc/sh4/rec_v2/[^/]+\.inc$'],
+}
+def lang_of(path, repo=None):
+    if repo is not None:
+        key = repo.rstrip('/').rsplit('/',1)[-1].replace('.git','')
+        if any(re.search(p, path) for p in SRC_EXTRA.get(key, [])): return 'C/C++ header'
     base = path.rsplit('/',1)[-1]
     if '.' not in base: return None
     ext = '.'+base.rsplit('.',1)[1]
@@ -49,6 +57,9 @@ def first_text_line(head):
 # per-repo generated paths (regex)
 GEN_EXTRA = {
  'gligli_nulldc-360': [r'^plugins/drkPvr/shaders\.S$', r'\.(ps|vs)\.h$'],
+ 'kernel64_HarissaDC': [r'^src/platform/xbox360/xb_lang_table\.h$',   # written by tools/gen_lang.py from lang/*
+                        r'^src/platform/xbox360/xb_flags\.h$'],        # PNG files as byte arrays
+ 'nulldc4wiiu_nulldc_wiiu': [r'^wiiu/vmu_bg\.h$'],                      # an RGB565 image as an array
 }
 def is_generated(repo, path, size, lines, head=b''):
     key = repo.rstrip('/').rsplit('/',1)[-1].replace('.git','')

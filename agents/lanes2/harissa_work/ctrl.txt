@@ -1,0 +1,3 @@
+shrike4 skmp_shrike4-rtl.git 5843f0c
+caique skmp_caique-rtl.git 2d9898f
+dc4ever skmp_dc4ever.git d9a82c6e7

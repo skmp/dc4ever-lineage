@@ -31,9 +31,11 @@ LANE_INFO = {  # hue (OKLCH degrees), chroma, title, github repo, slot-order par
     'dc4ever': (300, 0.13, 'dc4ever (C#)', 'skmp/dc4ever', None),
     'nullDC': (75, 0.14, 'nullDC', 'skmp/nullDC', None),
     'nulldc-360': (125, 0.14, 'nulldc-360 (Xbox 360)', 'gligli/nulldc-360', 'nullDC'),
+    'HarissaDC': (100, 0.14, 'HarissaDC (Xbox 360)', 'kernel64/HarissaDC', 'nulldc-360'),
     'nullDCe': (50, 0.15, 'nullDCe (PSP / Wii / PS3 / PS2)', 'skmp/nullDCe', 'nullDC'),
     'nullDC4Wii': (10, 0.14, 'nullDC4Wii', 'BenoitAdam/nullDC4Wii', 'nullDCe'),
     'NotDC-PS3': (340, 0.15, 'NotDC-PS3', 'Mayo1970/NotDC-PS3', 'nullDC4Wii'),
+    'nullDC4WiiU': (25, 0.14, 'nullDC4WiiU (Wii U)', 'nulldc4wiiu/nulldc_wiiu', 'nullDC4Wii'),
     'reicast': (255, 0.14, 'reicast', 'skmp/reicast-emulator', 'nullDC'),
     'flycast': (215, 0.12, 'flycast', 'flyinghead/flycast', 'reicast'),
     'nulldc3': (145, 0.15, 'nullDC 3 (devcast)', 'skmp/nulldc3', 'reicast'),
@@ -187,7 +189,7 @@ def by_origin_lane(g):
             tot += 1; c['nullDC-pre2008' if o == VIRT else FR[o]['lane']] += 1
     return c, tot
 KIND = {'code': 'import', 'merge': 'git-merge', 'copy': 'copy', 'related': 'concept'}
-GITFORK = {'flycast', 'nulldc3'}   # lanes sharing git history with their code parent
+GITFORK = {'flycast', 'nulldc3', 'nullDC4WiiU'}   # lanes sharing git history with their code parent
 EDGE_TEXT = {
     ('nullDC', 'nulldc-360'): 'nullDC trunk c563e07 -> nulldc-360: imported snapshot',
     ('nullDC', 'reicast'): 'nullDC c563e07 -> reicast project import 1c16baeb (2012-2013 newdc rewrite)',
@@ -197,6 +199,10 @@ EDGE_TEXT = {
     ('nulldc3', 'minicast'): 'nullDC 3 fpgadc commits (d5d4eae1, 2024-07) -> minicast: imported snapshot',
     ('nullDCe', 'nullDC4Wii'): 'nullDCe bad8d6a -> nullDC4Wii: imported verbatim',
     ('nullDC4Wii', 'NotDC-PS3'): 'nullDC4Wii ~9659506 -> NotDC-PS3: imported snapshot',
+    ('nullDC4Wii', 'nullDC4WiiU'): 'nullDC4Wii 1459ccb -> nullDC4WiiU: git fork (native Wii U port)',
+    ('nullDC4Wii', 'HarissaDC'): 'nullDC4Wii -> HarissaDC: studied (CREDITS.md), no shared code',
+    ('nulldc-360', 'HarissaDC'): 'nulldc-360 -> HarissaDC: studied (CREDITS.md), no shared code',
+    ('flycast', 'HarissaDC'): 'flycast -> HarissaDC: studied (CREDITS.md), no shared code',
     ('dc4ever', 'nullDC'): 'dc4ever -> nullDC: partial derivation (C# to C++)',
     ('dc4ever', 'nullDCe'): 'dc4ever -> nullDCe', ('dc4ever', 'reicast'): 'dc4ever -> reicast',
     ('nulldc3', 'polly2'): 'nullDC 3 dumps + refsw-offline -> polly2-rtl: concept / dump format',
@@ -326,6 +332,8 @@ BM = [  # group, title, lane, frame selector, path, line, grep
     ('FPGA', 'shrike4 v1_core', 'shrike4', 'last', 'rtl/v1/v1_core.sv', 0, None),
     ('FPGA', 'caique aica_core', 'caique', 'last', 'rtl/v1/aica_core.sv', 0, None),
     ('FPGA', 'wren7 core', 'wren7', 'last', 'rtl/v1/wren7_core.sv', 0, None),
+    ('Ports 2026', 'nullDC4WiiU Wii U main', 'nullDC4WiiU', 'last', 'wiiu/main_wiiu.cpp', 0, None),
+    ('Ports 2026', 'HarissaDC SH4 PowerPC JIT', 'HarissaDC', 'last', 'src/sh4/sh4_jit.cpp', 0, None),
     ('Cross-lane copies', 'NotDC-PS3 caiqueAICA', 'NotDC-PS3', 'last', 'plugs/caiqueAICA/aica_model.cpp', 0, None),
     ('Cross-lane copies', 'devtools aica_dsp_playground dsp.h', 'devtools', 'last', 'experiments/aica_dsp_playground/dsp/dsp.h', 0, None),
     ('Oddities', 'fsca-table.h (4096 rows)', 'nulldc3', 'last', 'libswirl/hw/sh4/fsca-table.h', 0, None),
@@ -346,7 +354,8 @@ chapters = [
     {'title': 'reicast, 2013-2021', 'lanes': ['reicast'], 'text': 'The newdc / nullDC-Android rewrite of 2012-2013, imported as one commit (1c16baeb), then developed in the open with releases r6 .. r20.04. The ARM dynarec and the GLES renderer start here.', 'bookmarks': ['reicast ARM dynarec', 'reicast gles.cpp', 'sh4_opcodes.cpp in reicast 2013']},
     {'title': 'flycast, 2018-', 'lanes': ['flycast'], 'text': 'flyinghead\'s git fork of reicast (last shared commit 2018-09-03; merged reicast until 2019-05-17), the most active descendant today, with releases v1.0 .. v2.7.', 'bookmarks': ['flycast rec_x64', 'naomi_roms.cpp (longest file)', 'and here are the new ones :D']},
     {'title': 'nullDC 3, 2023-', 'lanes': ['nulldc3'], 'text': 'nullDC 3 (devcast) is built on reicast 2021-12 and starts with the fpgadc refsw-offline work in 2023-07. refsw grows into refsw2 and the refsw3 refcore, the bit-exact reference for the PowerVR2 hardware work.', 'bookmarks': ['refsw (nullDC 3 2023)', 'refsw2 tile', 'refsw3 refcore tile', 'sh4_opcodes.cpp in nullDC 3 refsw3']},
-    {'title': 'nullDC4Wii and NotDC-PS3, 2026', 'lanes': ['nullDC4Wii', 'NotDC-PS3'], 'text': 'nullDC4Wii imports nullDCe verbatim (2026-01) and ships about 90 tagged alphas; NotDC-PS3 imports nullDC4Wii (2026-09) and later carries plugs/caiqueAICA, a port of the caique-rtl AICA model.', 'bookmarks': ['NotDC-PS3 caiqueAICA']},
+    {'title': 'nullDC4Wii, NotDC-PS3 and nullDC4WiiU, 2026', 'lanes': ['nullDC4Wii', 'NotDC-PS3', 'nullDC4WiiU'], 'text': 'nullDC4Wii imports nullDCe verbatim (2026-01) and ships about 90 tagged alphas; NotDC-PS3 imports nullDC4Wii (2026-09) and later carries plugs/caiqueAICA, a port of the caique-rtl AICA model. nullDC4WiiU is a git fork of nullDC4Wii at 1459ccb (2026-10-25): from 2026-11-07 a native Wii U (Aroma) port with a GX2 renderer, a JIT with fastmem and a HOME menu, released as v0.800-U1 .. U2.2. It shares no code with nullDC4Wii\'s own short-lived Wii U attempt (2026-11-13, removed 11-17).', 'bookmarks': ['NotDC-PS3 caiqueAICA', 'nullDC4WiiU Wii U main']},
+    {'title': 'HarissaDC, Xbox 360, 2026', 'lanes': ['HarissaDC'], 'text': 'A Dreamcast emulator for the Xbox 360 whose credits say it studied nullDC4Wii, nulldc-360 and flycast but did not copy them. The measurements agree: no own file is identical to any lane, and at most 0.5 % of its lines appear anywhere else in the family, the same level as unrelated repos. Its source arrives in one dump on 2026-11-03 (v0.2.0).', 'bookmarks': ['HarissaDC SH4 PowerPC JIT']},
     {'title': 'fpgadc: the hardware re-creation', 'lanes': ['minicast', 'polly2', 'polly2-r8', 'devtools', 'dreamcast-tests', 'shrike4', 'caique', 'wren7'], 'text': 'The FPGA branch of the lineage. Every DreamSTer release pins a polly2-rtl commit (PowerVR2 in SystemVerilog) and a minicast commit (the nullDC-3-derived ARM side); each pin is a release frame: r1, r2, r2b and r3 on 2026-07-17, r4 = r5 on 2026-07-18 (r5 repins nothing), r6 on 2026-07-30 and r6b on 2026-10-24. polly2-rtl r8/develop is its own lane: the new bit-exact model has its own root commit (no merge-base with main) and carries verbatim refsw3 C++ in tb/ ref_copies*.h. shrike4 (SH4), caique (AICA), wren7 (ARM7), dreamcast-tests and dreamcast-devtools are new code.', 'bookmarks': ['polly2 r6b peel_core', 'polly2 r8 ref_copies.h (refsw3 C++ copy)', 'shrike4 v1_core', 'caique aica_core', 'wren7 core']},
 ]
 for c in chapters: c['frames'] = {ln: span(ln) for ln in c['lanes']}
