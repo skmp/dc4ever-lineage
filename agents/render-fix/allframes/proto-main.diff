@@ -1,0 +1,90 @@
+--- ../../../../viewer/src/main.js	2026-11-25 09:06:25.704312340 +0200
++++ viewer/src/main.js	2026-11-25 19:38:19.473813812 +0200
+@@ -685,6 +685,7 @@
+ // pres 'now' (playing, or N): one live wall per lane on the clock plane, morphing frame to frame; the lane's other frames
+ // within GH months are ghosts at their own X; releases stay solid. pres 'gallery' (paused): every wall solid at its X.
+ const GH = (SOFT ? 3 : 6) * U;
++const ALLF = Q.get('allf') === '1', NFB = ALLF && Q.get('nfb') !== '0';
+ // pres 'clock' (paused, default): each lane's frame at the clock solid at its own X, neighbours ghosted, releases solid.
+ // 'now' (playing, or chosen): the lane's frame rides on the clock plane and morphs frame to frame. 'gallery': every wall solid.
+ V.pres = () => V.playing ? 'now' : V.presMode;
+@@ -707,8 +708,10 @@
+   for (const ln of LN) {
+     const k = lb(ln.xs, X + 1e-3);
+     if (pres === 'gallery') { for (const f of ln.frames) { const o = 4 * f; wallArr[o] = W[f].x; wallArr[o + 1] = 1; wallArr[o + 2] = 1; } continue; }
++    // PROTO allframes: every frame solid at its own X (the near fade below takes the ones close to the camera away)
++    if (ALLF) for (const f of ln.frames) { const o = 4 * f; wallArr[o] = W[f].x; wallArr[o + 1] = 1; wallArr[o + 2] = 1; }
+     // ghosts first (live / releases overwrite)
+-    for (let q = Math.max(0, lb(ln.xs, X - GH)); q < ln.frames.length && ln.xs[q] <= X + GH; q++) {
++    if (!ALLF) for (let q = Math.max(0, lb(ln.xs, X - GH)); q < ln.frames.length && ln.xs[q] <= X + GH; q++) {
+       const f = ln.frames[q], o = 4 * f, d = Math.abs(ln.xs[q] - X) / GH;
+       if (d > 1) continue; wallArr[o] = ln.xs[q]; wallArr[o + 1] = 0.05 + 0.25 * (1 - d); wallArr[o + 2] = 0;
+     }
+@@ -723,10 +726,12 @@
+       if (X > xn - mL) {
+         const u = (X - (xn - mL)) / Math.max(1, mL), b = ln.frames[k + 1], mm = requestMorph(f, b);
+         if (mm) { morph = { a: f, b, u, m: mm, lane: ln.li }; wallArr[4 * f + 1] = 0; f = b; }
++        if (ALLF && now) wallArr[4 * ln.frames[k] + 1] = 0;
+       } else if (X > xn - 2.5 * U) requestMorph(f, ln.frames[k + 1]);   // prefetch
+     }
+     const o = 4 * f; wallArr[o] = x; wallArr[o + 1] = 1; wallArr[o + 2] = 1;
+     live.push({ lane: ln.li, f, x, morph });
++    if (ALLF && now && !dead && ln.frames[k] !== f) wallArr[4 * ln.frames[k] + 1] = 0;   // riding: frame k is the live wall
+     // reading the live wall up close: the lane's other walls behind it (ghosts, releases) shine through its transparent
+     // background as a second, offset layer of text. Fade them out as the camera comes within reading range.
+     const cp = V.cam.p, dx = cp[0] - x;
+@@ -739,10 +744,30 @@
+     }
+     if (morph && (!V.morph || Math.abs(W[morph.b].z0 + W[morph.b].cols * 64 - V.cam.p[2]) < Math.abs(W[V.morph.b].z0 + W[V.morph.b].cols * 64 - V.cam.p[2]))) V.morph = morph;
+   }
++  if (ALLF && pres !== 'gallery') nearFade();
+   dispList = WALLS.filter(w => wallArr[4 * w.i + 1] > 0);
+   wallTexI = (wallTexI + 1) % wallTexRing.length; wallTex = wallTexRing[wallTexI]; uploadWallTex();
+ }
+ V.live = live;
++// PROTO allframes near fade: a wall in front of the camera fades out as the camera comes close (it would cover the screen
++// without being readable), except the frame at the clock of its lane (the focus: search / bookmarks / file panel / tour all
++// set the clock to their wall) and any wall close enough to read (>= NFP.read px per line). Faded walls draw as ghosts.
++const NFP = { d0: +(Q.get('nf0') || 2800), d1: +(Q.get('nf1') || 6000), read: +(Q.get('nfr') || 2.2), floor: +(Q.get('nff') || 0) };
++V.NFP = NFP;
++function nearFade() {
++  const cp = V.cam.p, fp = focalPx(), focus = new Set(live.map(L => L.f));
++  for (const L of live) if (L.morph) focus.add(L.morph.a);
++  const sm = (a, b, v) => { const t = Math.max(0, Math.min(1, (v - a) / (b - a))); return t * t * (3 - 2 * t); };
++  for (const w of WALLS) {
++    const o = 4 * w.i, x = wallArr[o]; if (wallArr[o + 1] <= 0 || focus.has(w.i) || x <= cp[0]) continue;
++    const d = G.boxDist(cp, x, 0, w.z0, x, 4096, w.z0 + w.cols * 128);
++    if (d >= NFP.d1) continue;
++    const a = Math.max(sm(NFP.d0, NFP.d1, d), sm(NFP.read * 0.7, NFP.read, 2 * fp / Math.max(1, d)));
++    if (a >= 0.999) continue;
++    const A = NFP.floor + (1 - NFP.floor) * a;
++    wallArr[o + 1] = A < 0.02 ? 0 : A; wallArr[o + 2] = 0;
++  }
++}
+ V.setX = (x, opts = {}) => {
+   const x1 = Math.max(xMin - 2 * U, Math.min(xMax + 2 * U, x)), d = x1 - V.X;
+   V.X = x1;
+@@ -981,12 +1006,12 @@
+     if (solid) occList.push(w);
+     const dW = G.boxDist(V.cam.p, x, 0, w.z0, x, 4096, z1), pW = 2 * fp / Math.max(dW, 1);
+     const dE = ah ? Math.min(dW, G.boxDist(ah, x, 0, w.z0, x, 4096, z1)) : dW, pE = 2 * fp / Math.max(dE, 1);
+-    if (solid && pE >= LODP.want) want.push([dE, w]);
++    if ((solid || (NFB && A > 0.1)) && pE >= LODP.want) want.push([dE, w]);
+     if (solid && pE >= LODP.card && w.meta) cards.push([dE, w]);
+     if (w.loaded) w.lastUse = now;
+     if (IMP.hi && w.loaded && pE > LODP.hi) hiNext.push([dE, w.i]);
+     const stale = w.loaded && (w.impKey !== impKey() || (hiSet.has(w.i) && (!w.imp || w.imp.tier !== 'hi')));
+-    if (!solid) { if (w.imp && w.imp.ready) impRuns.push([w, 0, w.cols, A, 0]); else t3Walls.push(w); continue; }
++    if (!solid) { if (w.imp && w.imp.ready) impRuns.push([w, 0, w.cols, A, 0]); else t3Walls.push(w); if (NFB && stale && A > 0.1 && pE >= LODP.t4) bakeCand.push([dE, w, pE]); continue; }
+     if (!w.loaded || pW < LF[0]) { if (w.imp && w.imp.ready) impRuns.push([w, 0, w.cols, A, 0]); else t3Walls.push(w); if (stale && pE >= LODP.t4) bakeCand.push([dE, w, pE]); continue; }
+     if (w.i === morphB) continue;
+     let run = null, irun = null;
+@@ -1024,7 +1049,7 @@
+   uploadWallTex();
+   PM('lod');
+   bakeCand.sort((a, b) => a[0] - b[0]);
+-  let bakeBudget = SOFT ? 40000 : 1200000;
++  let bakeBudget = SOFT ? 40000 : +(Q.get('bb') || 1200000);
+   for (let i = 0; i < bakeCand.length && bakeBudget > 0; i++) { const [, w, pW] = bakeCand[i]; bakeBudget -= Math.max(1, bake(w, bakeBudget, hiSet.has(w.i) ? 'hi' : 'lo')); }
+   V.stats.pendingBake = bakeCand.length;
+   cards.sort((a, b) => a[0] - b[0]);

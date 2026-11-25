@@ -1,0 +1,2 @@
+const f = process.argv.slice(2); for (const x of f) { const j = require(require('path').resolve(x)); console.log('==', x);
+for (const p of Object.values(j.paths)) console.log(p.path, 'fps', p.fps_mean, 'p50', p.frame_ms.p50, 'p95', p.frame_ms.p95, 'p99', p.frame_ms.p99, 'gpu95', p.gpu_ms && p.gpu_ms.p95, 'cpu95', p.cpu_ms.p95, '>100', p.frames_over_100ms, 'draws', p.draws_p95, 'q', p.quality_steps.join('')); }

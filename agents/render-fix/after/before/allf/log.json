@@ -1,0 +1,1849 @@
+{
+ "log": [
+  {
+   "name": "a-lane-clock",
+   "t": 3713,
+   "pres": "clock",
+   "cam": [
+    530259,
+    3000,
+    93044
+   ],
+   "q": 0,
+   "walls": 4,
+   "t3area": 0.85,
+   "stats": {
+    "t3": 10,
+    "t4": 8,
+    "t5": 34,
+    "imp": 4,
+    "inst": 137606,
+    "draws": 82,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 206
+   },
+   "classes": {
+    "faded T3": {
+     "n": 9,
+     "area": 0.837
+    },
+    "solid lines": {
+     "n": 3,
+     "area": 2.177
+    },
+    "solid T3": {
+     "n": 1,
+     "area": 0.012
+    },
+    "solid T4": {
+     "n": 8,
+     "area": 0.02
+    },
+    "solid T5": {
+     "n": 34,
+     "area": 0.004
+    }
+   },
+   "top": [
+    {
+     "f": 79,
+     "lane": "reicast",
+     "date": "2018-07-31",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 1.16,
+     "area": 1
+    },
+    {
+     "f": 80,
+     "lane": "reicast",
+     "date": "2018-08-04",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.879,
+     "area": 1
+    },
+    {
+     "f": 81,
+     "lane": "reicast",
+     "date": "2018-08-29",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.349,
+     "area": 0.667
+    },
+    {
+     "f": 82,
+     "lane": "reicast",
+     "date": "2018-09-03",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.312,
+     "area": 0.595
+    },
+    {
+     "f": 83,
+     "lane": "reicast",
+     "date": "2018-09-04",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.305,
+     "area": 0.582
+    },
+    {
+     "f": 84,
+     "lane": "reicast",
+     "date": "2018-09-12",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.261,
+     "area": 0.474
+    },
+    {
+     "f": 85,
+     "lane": "reicast",
+     "date": "2018-09-30",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.197,
+     "area": 0.303
+    },
+    {
+     "f": 87,
+     "lane": "reicast",
+     "date": "2018-10-28",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.141,
+     "area": 0.155
+    }
+   ],
+   "leaks": {
+    "titles": 2,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "reicast  2018-07  25ec591",
+      "leakFrac": 0,
+      "sticky": true
+     },
+     {
+      "title": "reicast  r7  2018-08  3d59456",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.99,
+   "cpu_ms": 0.81,
+   "labels": 0,
+   "titlesShown": 2
+  },
+  {
+   "name": "a-obl-clock",
+   "t": 5383,
+   "pres": "clock",
+   "cam": [
+    506259,
+    9000,
+    40000
+   ],
+   "q": 0,
+   "walls": 4,
+   "t3area": 0.01,
+   "stats": {
+    "t3": 8,
+    "t4": 12,
+    "t5": 25,
+    "imp": 3,
+    "inst": 0,
+    "draws": 64,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 206
+   },
+   "classes": {
+    "faded T3": {
+     "n": 8,
+     "area": 0.008
+    },
+    "solid imp-hi": {
+     "n": 3,
+     "area": 0.015
+    },
+    "faded T4": {
+     "n": 4,
+     "area": 0.004
+    },
+    "solid T4": {
+     "n": 8,
+     "area": 0.02
+    },
+    "solid T5": {
+     "n": 25,
+     "area": 0.008
+    }
+   },
+   "top": [
+    {
+     "f": 78,
+     "lane": "reicast",
+     "date": "2018-06-25",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.036,
+     "area": 0.005
+    },
+    {
+     "f": 79,
+     "lane": "reicast",
+     "date": "2018-07-31",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.035,
+     "area": 0.005
+    },
+    {
+     "f": 80,
+     "lane": "reicast",
+     "date": "2018-08-04",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.035,
+     "area": 0.005
+    },
+    {
+     "f": 81,
+     "lane": "reicast",
+     "date": "2018-08-29",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.034,
+     "area": 0.005
+    },
+    {
+     "f": 82,
+     "lane": "reicast",
+     "date": "2018-09-03",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.034,
+     "area": 0.005
+    },
+    {
+     "f": 83,
+     "lane": "reicast",
+     "date": "2018-09-04",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.034,
+     "area": 0.005
+    },
+    {
+     "f": 84,
+     "lane": "reicast",
+     "date": "2018-09-12",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.033,
+     "area": 0.005
+    },
+    {
+     "f": 85,
+     "lane": "reicast",
+     "date": "2018-09-30",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.032,
+     "area": 0.005
+    }
+   ],
+   "leaks": {
+    "titles": 5,
+    "leaking": 1,
+    "worst": [
+     {
+      "title": "reicast  2018-09  239e178",
+      "leakFrac": 0.07,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2018-04  a50861b",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "reicast  r19.07  2019-07  154e224",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  v1.0  2021-05  d6e1554",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  v2.4  2024-10  8108e63",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.23,
+   "cpu_ms": 0.64,
+   "labels": 4,
+   "titlesShown": 5
+  },
+  {
+   "name": "a-high-clock",
+   "t": 7050,
+   "pres": "clock",
+   "cam": [
+    446259,
+    60000,
+    10000
+   ],
+   "q": 0,
+   "walls": 4,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 15,
+    "t5": 40,
+    "imp": 3,
+    "inst": 0,
+    "draws": 69,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 206
+   },
+   "classes": {
+    "faded T4": {
+     "n": 12,
+     "area": 0.011
+    },
+    "solid imp-hi": {
+     "n": 3,
+     "area": 0.006
+    },
+    "solid T4": {
+     "n": 3,
+     "area": 0.003
+    },
+    "solid T5": {
+     "n": 40,
+     "area": 0.011
+    }
+   },
+   "top": [
+    {
+     "f": 86,
+     "lane": "flycast",
+     "date": "2018-10-20",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.013,
+     "area": 0.004
+    },
+    {
+     "f": 76,
+     "lane": "reicast",
+     "date": "2018-03-27",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.016,
+     "area": 0.003
+    },
+    {
+     "f": 77,
+     "lane": "reicast",
+     "date": "2018-04-22",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.016,
+     "area": 0.003
+    },
+    {
+     "f": 78,
+     "lane": "reicast",
+     "date": "2018-06-25",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.015,
+     "area": 0.002
+    },
+    {
+     "f": 79,
+     "lane": "reicast",
+     "date": "2018-07-31",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.015,
+     "area": 0.002
+    },
+    {
+     "f": 80,
+     "lane": "reicast",
+     "date": "2018-08-04",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.015,
+     "area": 0.002
+    },
+    {
+     "f": 81,
+     "lane": "reicast",
+     "date": "2018-08-29",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.014,
+     "area": 0.002
+    },
+    {
+     "f": 82,
+     "lane": "reicast",
+     "date": "2018-09-03",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.014,
+     "area": 0.002
+    }
+   ],
+   "leaks": {
+    "titles": 11,
+    "leaking": 1,
+    "worst": [
+     {
+      "title": "flycast  v2.7  2026-08  5aa091f",
+      "leakFrac": 0.04,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2018-04  a50861b",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2018-06  e6afd22",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2018-09  239e178",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2018-11  3ab2eef",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2019-02  2b3a052",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.18,
+   "cpu_ms": 0.56,
+   "labels": 15,
+   "titlesShown": 11
+  },
+  {
+   "name": "a-read-nonclock-clock",
+   "t": 8914,
+   "pres": "clock",
+   "cam": [
+    683572,
+    4044,
+    111222
+   ],
+   "q": 0,
+   "walls": 7,
+   "t3area": 0.05,
+   "stats": {
+    "t3": 5,
+    "t4": 22,
+    "t5": 23,
+    "imp": 3,
+    "inst": 0,
+    "draws": 79,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 271
+   },
+   "classes": {
+    "solid imp-hi": {
+     "n": 2,
+     "area": 0.313
+    },
+    "solid imp-lo": {
+     "n": 1,
+     "area": 0.08
+    },
+    "solid T3": {
+     "n": 1,
+     "area": 0.027
+    },
+    "faded T3": {
+     "n": 4,
+     "area": 0.023
+    },
+    "faded T4": {
+     "n": 9,
+     "area": 0.02
+    },
+    "solid T4": {
+     "n": 13,
+     "area": 0.04
+    },
+    "solid T5": {
+     "n": 23,
+     "area": 0.002
+    }
+   },
+   "top": [
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.178,
+     "area": 0.277
+    },
+    {
+     "f": 170,
+     "lane": "flycast",
+     "date": "2022-04-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-lo",
+     "ppl": 0.073,
+     "area": 0.08
+    },
+    {
+     "f": 164,
+     "lane": "reicast",
+     "date": "2021-12-22",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.131,
+     "area": 0.036
+    },
+    {
+     "f": 176,
+     "lane": "flycast",
+     "date": "2022-08-25",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.043,
+     "area": 0.027
+    },
+    {
+     "f": 177,
+     "lane": "flycast",
+     "date": "2022-09-24",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.039,
+     "area": 0.023
+    },
+    {
+     "f": 178,
+     "lane": "flycast",
+     "date": "2022-10-30",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.036,
+     "area": 0.019
+    },
+    {
+     "f": 179,
+     "lane": "flycast",
+     "date": "2022-11-04",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.035,
+     "area": 0.019
+    },
+    {
+     "f": 180,
+     "lane": "flycast",
+     "date": "2022-12-31",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.031,
+     "area": 0.014
+    }
+   ],
+   "leaks": {
+    "titles": 2,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  v1.2  2021-12  7555263",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2021-12  95b6736",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.65,
+   "cpu_ms": 0.54,
+   "labels": 5,
+   "titlesShown": 2
+  },
+  {
+   "name": "a-far-clock",
+   "t": 10584,
+   "pres": "clock",
+   "cam": [
+    189807,
+    244522,
+    544935
+   ],
+   "q": 0,
+   "walls": 7,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 0,
+    "t5": 139,
+    "imp": 4,
+    "inst": 0,
+    "draws": 15,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 271
+   },
+   "classes": {
+    "solid T5": {
+     "n": 59,
+     "area": 0
+    },
+    "solid imp-hi": {
+     "n": 3,
+     "area": 0
+    },
+    "solid imp-lo": {
+     "n": 1,
+     "area": 0
+    },
+    "faded T5": {
+     "n": 80,
+     "area": 0
+    }
+   },
+   "top": [
+    {
+     "f": 44,
+     "lane": "reicast",
+     "date": "2014-01-27",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T5",
+     "ppl": 0.004,
+     "area": 0
+    },
+    {
+     "f": 55,
+     "lane": "reicast",
+     "date": "2014-12-11",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T5",
+     "ppl": 0.004,
+     "area": 0
+    },
+    {
+     "f": 80,
+     "lane": "reicast",
+     "date": "2018-08-04",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.003,
+     "area": 0
+    },
+    {
+     "f": 83,
+     "lane": "reicast",
+     "date": "2018-09-04",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.003,
+     "area": 0
+    },
+    {
+     "f": 99,
+     "lane": "reicast",
+     "date": "2019-07-14",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T5",
+     "ppl": 0.003,
+     "area": 0
+    },
+    {
+     "f": 111,
+     "lane": "reicast",
+     "date": "2020-01-27",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T5",
+     "ppl": 0.003,
+     "area": 0
+    },
+    {
+     "f": 131,
+     "lane": "reicast",
+     "date": "2020-04-02",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T5",
+     "ppl": 0.003,
+     "area": 0
+    },
+    {
+     "f": 152,
+     "lane": "flycast",
+     "date": "2021-05-28",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T5",
+     "ppl": 0.003,
+     "area": 0
+    }
+   ],
+   "leaks": {
+    "titles": 7,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "dc4ever  2005-09 approx  d9a82c6",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "reicast  r6  2014-01  382f2e5",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "reicast  r7  2018-08  3d59456",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nullDCe-PSP  2021-10  d6f1774",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  v1.2  2021-12  7555263",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nullDC  2023-07  1611c3c",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.29,
+   "cpu_ms": 0.59,
+   "labels": 23,
+   "titlesShown": 7
+  },
+  {
+   "name": "a-lane-gallery",
+   "t": 12460,
+   "pres": "gallery",
+   "cam": [
+    530259,
+    3000,
+    93044
+   ],
+   "q": 0,
+   "walls": 21,
+   "t3area": 0.2,
+   "stats": {
+    "t3": 13,
+    "t4": 74,
+    "t5": 210,
+    "imp": 20,
+    "inst": 232400,
+    "draws": 241,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 365
+   },
+   "classes": {
+    "solid lines": {
+     "n": 5,
+     "area": 3.844
+    },
+    "solid imp-hi": {
+     "n": 3,
+     "area": 0.477
+    },
+    "solid imp-lo": {
+     "n": 12,
+     "area": 0.763
+    },
+    "solid T3": {
+     "n": 13,
+     "area": 0.204
+    },
+    "solid T4": {
+     "n": 74,
+     "area": 0.251
+    },
+    "solid T5": {
+     "n": 210,
+     "area": 0.028
+    }
+   },
+   "top": [
+    {
+     "f": 79,
+     "lane": "reicast",
+     "date": "2018-07-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 1.16,
+     "area": 1
+    },
+    {
+     "f": 80,
+     "lane": "reicast",
+     "date": "2018-08-04",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.879,
+     "area": 1
+    },
+    {
+     "f": 81,
+     "lane": "reicast",
+     "date": "2018-08-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.349,
+     "area": 0.667
+    },
+    {
+     "f": 82,
+     "lane": "reicast",
+     "date": "2018-09-03",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.312,
+     "area": 0.595
+    },
+    {
+     "f": 83,
+     "lane": "reicast",
+     "date": "2018-09-04",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.305,
+     "area": 0.582
+    },
+    {
+     "f": 84,
+     "lane": "reicast",
+     "date": "2018-09-12",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.261,
+     "area": 0.474
+    },
+    {
+     "f": 85,
+     "lane": "reicast",
+     "date": "2018-09-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-lo",
+     "ppl": 0.197,
+     "area": 0.303
+    },
+    {
+     "f": 87,
+     "lane": "reicast",
+     "date": "2018-10-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-lo",
+     "ppl": 0.141,
+     "area": 0.155
+    }
+   ],
+   "leaks": {
+    "titles": 2,
+    "leaking": 1,
+    "worst": [
+     {
+      "title": "reicast  r7  2018-08  3d59456",
+      "leakFrac": 1,
+      "sticky": true
+     },
+     {
+      "title": "reicast  2018-07  25ec591",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 1.48,
+   "cpu_ms": 1.2,
+   "labels": 0,
+   "titlesShown": 2
+  },
+  {
+   "name": "a-obl-gallery",
+   "t": 14126,
+   "pres": "gallery",
+   "cam": [
+    506259,
+    9000,
+    40000
+   ],
+   "q": 0,
+   "walls": 21,
+   "t3area": 0.01,
+   "stats": {
+    "t3": 3,
+    "t4": 71,
+    "t5": 113,
+    "imp": 20,
+    "inst": 0,
+    "draws": 306,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 365
+   },
+   "classes": {
+    "solid T3": {
+     "n": 3,
+     "area": 0.013
+    },
+    "solid imp-hi": {
+     "n": 8,
+     "area": 0.033
+    },
+    "solid imp-lo": {
+     "n": 12,
+     "area": 0.051
+    },
+    "solid T4": {
+     "n": 71,
+     "area": 0.203
+    },
+    "solid T5": {
+     "n": 113,
+     "area": 0.069
+    }
+   },
+   "top": [
+    {
+     "f": 78,
+     "lane": "reicast",
+     "date": "2018-06-25",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.036,
+     "area": 0.005
+    },
+    {
+     "f": 79,
+     "lane": "reicast",
+     "date": "2018-07-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.035,
+     "area": 0.005
+    },
+    {
+     "f": 80,
+     "lane": "reicast",
+     "date": "2018-08-04",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.035,
+     "area": 0.005
+    },
+    {
+     "f": 81,
+     "lane": "reicast",
+     "date": "2018-08-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.034,
+     "area": 0.005
+    },
+    {
+     "f": 82,
+     "lane": "reicast",
+     "date": "2018-09-03",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.034,
+     "area": 0.005
+    },
+    {
+     "f": 83,
+     "lane": "reicast",
+     "date": "2018-09-04",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.034,
+     "area": 0.005
+    },
+    {
+     "f": 84,
+     "lane": "reicast",
+     "date": "2018-09-12",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.033,
+     "area": 0.005
+    },
+    {
+     "f": 85,
+     "lane": "reicast",
+     "date": "2018-09-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-lo",
+     "ppl": 0.032,
+     "area": 0.005
+    }
+   ],
+   "leaks": {
+    "titles": 8,
+    "leaking": 4,
+    "worst": [
+     {
+      "title": "reicast  2018-09  239e178",
+      "leakFrac": 0.15,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2018-04  a50861b",
+      "leakFrac": 0.11,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2019-07  5db946e",
+      "leakFrac": 0.11,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2020-05  971d614",
+      "leakFrac": 0.04,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2019-01  55a2261",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2021-12  95b6736",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.43,
+   "cpu_ms": 1.01,
+   "labels": 6,
+   "titlesShown": 8
+  },
+  {
+   "name": "a-high-gallery",
+   "t": 15783,
+   "pres": "gallery",
+   "cam": [
+    446259,
+    60000,
+    10000
+   ],
+   "q": 0,
+   "walls": 21,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 61,
+    "t5": 243,
+    "imp": 20,
+    "inst": 0,
+    "draws": 168,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 365
+   },
+   "classes": {
+    "solid T4": {
+     "n": 61,
+     "area": 0.104
+    },
+    "solid imp-hi": {
+     "n": 8,
+     "area": 0.014
+    },
+    "solid imp-lo": {
+     "n": 12,
+     "area": 0.023
+    },
+    "solid T5": {
+     "n": 243,
+     "area": 0.059
+    }
+   },
+   "top": [
+    {
+     "f": 72,
+     "lane": "reicast",
+     "date": "2016-11-21",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.02,
+     "area": 0.007
+    },
+    {
+     "f": 73,
+     "lane": "reicast",
+     "date": "2016-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.019,
+     "area": 0.006
+    },
+    {
+     "f": 74,
+     "lane": "reicast",
+     "date": "2017-05-18",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.018,
+     "area": 0.004
+    },
+    {
+     "f": 75,
+     "lane": "reicast",
+     "date": "2017-06-17",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.018,
+     "area": 0.004
+    },
+    {
+     "f": 86,
+     "lane": "flycast",
+     "date": "2018-10-20",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-lo",
+     "ppl": 0.013,
+     "area": 0.004
+    },
+    {
+     "f": 76,
+     "lane": "reicast",
+     "date": "2018-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.016,
+     "area": 0.003
+    },
+    {
+     "f": 77,
+     "lane": "reicast",
+     "date": "2018-04-22",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.016,
+     "area": 0.003
+    },
+    {
+     "f": 92,
+     "lane": "flycast",
+     "date": "2019-04-15",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-lo",
+     "ppl": 0.012,
+     "area": 0.003
+    }
+   ],
+   "leaks": {
+    "titles": 23,
+    "leaking": 14,
+    "worst": [
+     {
+      "title": "reicast  2019-07  5db946e",
+      "leakFrac": 0.63,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2020-05  971d614",
+      "leakFrac": 0.48,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2019-04  1e04de0",
+      "leakFrac": 0.33,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2021-12  95b6736",
+      "leakFrac": 0.3,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2018-09  239e178",
+      "leakFrac": 0.15,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2019-09  8eac844",
+      "leakFrac": 0.15,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.24,
+   "cpu_ms": 1.29,
+   "labels": 10,
+   "titlesShown": 23
+  },
+  {
+   "name": "a-read-nonclock-gallery",
+   "t": 17667,
+   "pres": "gallery",
+   "cam": [
+    683572,
+    4044,
+    111222
+   ],
+   "q": 0,
+   "walls": 31,
+   "t3area": 0.13,
+   "stats": {
+    "t3": 6,
+    "t4": 105,
+    "t5": 109,
+    "imp": 12,
+    "inst": 867,
+    "draws": 372,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 478
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 0.765
+    },
+    "solid imp-hi": {
+     "n": 5,
+     "area": 1.117
+    },
+    "solid imp-lo": {
+     "n": 7,
+     "area": 0.486
+    },
+    "solid T3": {
+     "n": 6,
+     "area": 0.13
+    },
+    "solid T4": {
+     "n": 105,
+     "area": 0.204
+    },
+    "solid T5": {
+     "n": 109,
+     "area": 0.007
+    }
+   },
+   "top": [
+    {
+     "f": 160,
+     "lane": "flycast",
+     "date": "2021-09-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 11,
+     "area": 0.765
+    },
+    {
+     "f": 162,
+     "lane": "flycast",
+     "date": "2021-11-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.24,
+     "area": 0.424
+    },
+    {
+     "f": 163,
+     "lane": "flycast",
+     "date": "2021-12-17",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.178,
+     "area": 0.277
+    },
+    {
+     "f": 165,
+     "lane": "flycast",
+     "date": "2021-12-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.152,
+     "area": 0.223
+    },
+    {
+     "f": 166,
+     "lane": "flycast",
+     "date": "2022-01-29",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.117,
+     "area": 0.157
+    },
+    {
+     "f": 168,
+     "lane": "flycast",
+     "date": "2022-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-lo",
+     "ppl": 0.094,
+     "area": 0.119
+    },
+    {
+     "f": 169,
+     "lane": "flycast",
+     "date": "2022-03-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-lo",
+     "ppl": 0.079,
+     "area": 0.092
+    },
+    {
+     "f": 170,
+     "lane": "flycast",
+     "date": "2022-04-09",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-lo",
+     "ppl": 0.073,
+     "area": 0.08
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  2021-09  23d1f6b",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.51,
+   "cpu_ms": 1.23,
+   "labels": 0,
+   "titlesShown": 1
+  },
+  {
+   "name": "a-far-gallery",
+   "t": 19334,
+   "pres": "gallery",
+   "cam": [
+    189807,
+    244522,
+    544935
+   ],
+   "q": 0,
+   "walls": 31,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 0,
+    "t5": 344,
+    "imp": 27,
+    "inst": 0,
+    "draws": 84,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 478
+   },
+   "classes": {
+    "solid T5": {
+     "n": 344,
+     "area": 0
+    },
+    "solid imp-hi": {
+     "n": 9,
+     "area": 0
+    },
+    "solid imp-lo": {
+     "n": 18,
+     "area": 0
+    }
+   },
+   "top": [
+    {
+     "f": 25,
+     "lane": "nullDC",
+     "date": "2011-05-22",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T5",
+     "ppl": 0.003,
+     "area": 0
+    },
+    {
+     "f": 26,
+     "lane": "nullDC",
+     "date": "2011-06-04",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T5",
+     "ppl": 0.003,
+     "area": 0
+    },
+    {
+     "f": 27,
+     "lane": "nullDC",
+     "date": "2011-08-21",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T5",
+     "ppl": 0.003,
+     "area": 0
+    },
+    {
+     "f": 28,
+     "lane": "nullDC",
+     "date": "2011-09-14",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "T5",
+     "ppl": 0.003,
+     "area": 0
+    },
+    {
+     "f": 29,
+     "lane": "nulldc-360",
+     "date": "2011-10-15",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T5",
+     "ppl": 0.003,
+     "area": 0
+    },
+    {
+     "f": 30,
+     "lane": "nulldc-360",
+     "date": "2011-10-16",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T5",
+     "ppl": 0.003,
+     "area": 0
+    },
+    {
+     "f": 31,
+     "lane": "nulldc-360",
+     "date": "2011-11-28",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T5",
+     "ppl": 0.003,
+     "area": 0
+    },
+    {
+     "f": 32,
+     "lane": "nulldc-360",
+     "date": "2011-12-18",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T5",
+     "ppl": 0.003,
+     "area": 0
+    }
+   ],
+   "leaks": {
+    "titles": 12,
+    "leaking": 2,
+    "worst": [
+     {
+      "title": "dc4ever  2004-10 approx  e58f53e",
+      "leakFrac": 0.07,
+      "sticky": false
+     },
+     {
+      "title": "nullDC  2011-01  0f57aad",
+      "leakFrac": 0.04,
+      "sticky": false
+     },
+     {
+      "title": "dc4ever  2005-09 approx  d9a82c6",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nulldc-360  2012-08  c5a32c0",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2012-2013  1c16bae",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2015-02  e82d6a8",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.11,
+   "cpu_ms": 1.2,
+   "labels": 21,
+   "titlesShown": 12
+  },
+  {
+   "name": "a-now",
+   "t": 20999,
+   "pres": "now",
+   "cam": [
+    507458,
+    9000,
+    40000
+   ],
+   "q": 0,
+   "walls": 31,
+   "t3area": 0.01,
+   "stats": {
+    "t3": 5,
+    "t4": 6,
+    "t5": 25,
+    "imp": 12,
+    "inst": 0,
+    "draws": 64,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 481
+   },
+   "classes": {
+    "faded T3": {
+     "n": 5,
+     "area": 0.005
+    },
+    "solid imp-lo": {
+     "n": 2,
+     "area": 0.007
+    },
+    "faded imp-hi": {
+     "n": 1,
+     "area": 0.001
+    },
+    "solid imp-hi": {
+     "n": 3,
+     "area": 0.012
+    },
+    "faded imp-lo": {
+     "n": 6,
+     "area": 0.006
+    },
+    "solid T4": {
+     "n": 6,
+     "area": 0.016
+    },
+    "solid T5": {
+     "n": 25,
+     "area": 0.008
+    }
+   },
+   "top": [
+    {
+     "f": 78,
+     "lane": "reicast",
+     "date": "2018-06-25",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.037,
+     "area": 0.005
+    },
+    {
+     "f": 79,
+     "lane": "reicast",
+     "date": "2018-07-31",
+     "solid": false,
+     "A": 1,
+     "loaded": true,
+     "tier": "T3",
+     "ppl": 0.035,
+     "area": 0.005
+    },
+    {
+     "f": 80,
+     "lane": "reicast",
+     "date": "2018-08-04",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-lo",
+     "ppl": 0.035,
+     "area": 0.005
+    },
+    {
+     "f": 81,
+     "lane": "reicast",
+     "date": "2018-08-29",
+     "solid": false,
+     "A": 1,
+     "loaded": true,
+     "tier": "T3",
+     "ppl": 0.034,
+     "area": 0.005
+    },
+    {
+     "f": 82,
+     "lane": "reicast",
+     "date": "2018-09-03",
+     "solid": false,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.034,
+     "area": 0.005
+    },
+    {
+     "f": 83,
+     "lane": "reicast",
+     "date": "2018-09-04",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.034,
+     "area": 0.005
+    },
+    {
+     "f": 84,
+     "lane": "reicast",
+     "date": "2018-09-12",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.034,
+     "area": 0.005
+    },
+    {
+     "f": 85,
+     "lane": "reicast",
+     "date": "2018-09-30",
+     "solid": false,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-lo",
+     "ppl": 0.033,
+     "area": 0.005
+    }
+   ],
+   "leaks": {
+    "titles": 5,
+    "leaking": 1,
+    "worst": [
+     {
+      "title": "reicast  r8.1  2018-09  1a09ccb",
+      "leakFrac": 0.15,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2018-04  a50861b",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "reicast  r19.07  2019-07  154e224",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  v1.0  2021-05  d6e1554",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  v2.4  2024-10  8108e63",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.31,
+   "cpu_ms": 0.59,
+   "labels": 4,
+   "titlesShown": 5
+  }
+ ]
+}

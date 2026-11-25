@@ -1,0 +1,1580 @@
+[
+ {
+  "name": "s4a-paused-clock",
+  "t": 6223,
+  "pres": "clock",
+  "X": 719226,
+  "cam": [
+   705226,
+   6000,
+   98352
+  ],
+  "q": 0,
+  "walls": 4,
+  "stats": {
+   "t3": 9,
+   "t4": 21,
+   "t5": 2,
+   "imp": 3,
+   "inst": 0,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 228
+  },
+  "classes": {
+   "ghost T3": {
+    "n": 8,
+    "area": 0.859
+   },
+   "solid imp-hi": {
+    "n": 2,
+    "area": 0.331
+   },
+   "solid imp-lo": {
+    "n": 1,
+    "area": 0.08
+   },
+   "solid T3": {
+    "n": 1,
+    "area": 0.032
+   },
+   "solid T4": {
+    "n": 21,
+    "area": 0.049
+   },
+   "solid T5": {
+    "n": 2,
+    "area": 0
+   }
+  },
+  "top": [
+   {
+    "f": 170,
+    "lane": "flycast",
+    "date": "2022-04-09",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.254,
+    "area": 0.21
+   },
+   {
+    "f": 171,
+    "lane": "flycast",
+    "date": "2022-04-30",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.206,
+    "area": 0.186
+   },
+   {
+    "f": 172,
+    "lane": "flycast",
+    "date": "2022-05-14",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.178,
+    "area": 0.167
+   },
+   {
+    "f": 169,
+    "lane": "flycast",
+    "date": "2022-03-27",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.282,
+    "area": 0.157
+   },
+   {
+    "f": 173,
+    "lane": "flycast",
+    "date": "2022-06-26",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.122,
+    "area": 0.121
+   },
+   {
+    "f": 174,
+    "lane": "flycast",
+    "date": "2022-07-29",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.096,
+    "area": 0.095
+   },
+   {
+    "f": 175,
+    "lane": "flycast",
+    "date": "2022-08-22",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.084,
+    "area": 0.081
+   },
+   {
+    "f": 176,
+    "lane": "flycast",
+    "date": "2022-08-25",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.082,
+    "area": 0.08
+   },
+   {
+    "f": 177,
+    "lane": "flycast",
+    "date": "2022-09-24",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.071,
+    "area": 0.066
+   },
+   {
+    "f": 178,
+    "lane": "flycast",
+    "date": "2022-10-30",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.06,
+    "area": 0.054
+   },
+   {
+    "f": 179,
+    "lane": "flycast",
+    "date": "2022-11-04",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.059,
+    "area": 0.053
+   },
+   {
+    "f": 182,
+    "lane": "flycast",
+    "date": "2023-02-15",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.042,
+    "area": 0.032
+   }
+  ]
+ },
+ {
+  "name": "s4b-now-1s",
+  "t": 7291,
+  "pres": "now",
+  "X": 727892.4000000003,
+  "cam": [
+   713892,
+   6000,
+   98352
+  ],
+  "q": 0,
+  "walls": 8,
+  "stats": {
+   "t3": 6,
+   "t4": 23,
+   "t5": 0,
+   "imp": 6,
+   "inst": 0,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 366
+  },
+  "classes": {
+   "solid imp-hi": {
+    "n": 2,
+    "area": 0.287
+   },
+   "ghost imp-hi": {
+    "n": 3,
+    "area": 0.484
+   },
+   "ghost T3": {
+    "n": 6,
+    "area": 0.402
+   },
+   "solid imp-lo": {
+    "n": 1,
+    "area": 0.044
+   },
+   "solid T4": {
+    "n": 23,
+    "area": 0.057
+   }
+  },
+  "top": [
+   {
+    "f": 173,
+    "lane": "flycast",
+    "date": "2022-06-26",
+    "solid": false,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.227,
+    "area": 0.198
+   },
+   {
+    "f": 164,
+    "lane": "reicast",
+    "date": "2021-12-22",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.132,
+    "area": 0.166
+   },
+   {
+    "f": 174,
+    "lane": "flycast",
+    "date": "2022-07-29",
+    "solid": false,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.162,
+    "area": 0.156
+   },
+   {
+    "f": 175,
+    "lane": "flycast",
+    "date": "2022-08-22",
+    "solid": false,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.131,
+    "area": 0.13
+   },
+   {
+    "f": 176,
+    "lane": "flycast",
+    "date": "2022-08-25",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.122,
+    "area": 0.121
+   },
+   {
+    "f": 177,
+    "lane": "flycast",
+    "date": "2022-09-24",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.103,
+    "area": 0.102
+   },
+   {
+    "f": 178,
+    "lane": "flycast",
+    "date": "2022-10-30",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.082,
+    "area": 0.08
+   },
+   {
+    "f": 179,
+    "lane": "flycast",
+    "date": "2022-11-04",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.08,
+    "area": 0.077
+   },
+   {
+    "f": 180,
+    "lane": "flycast",
+    "date": "2022-12-31",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.061,
+    "area": 0.055
+   },
+   {
+    "f": 181,
+    "lane": "flycast",
+    "date": "2023-01-31",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.054,
+    "area": 0.047
+   },
+   {
+    "f": 182,
+    "lane": "flycast",
+    "date": "2023-02-15",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.051,
+    "area": 0.044
+   },
+   {
+    "f": 183,
+    "lane": "flycast",
+    "date": "2023-02-28",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.049,
+    "area": 0.041
+   }
+  ],
+  "live": [
+   {
+    "lane": "reicast",
+    "f": 164,
+    "loaded": true,
+    "imp": "hi",
+    "morph": false
+   },
+   {
+    "lane": "flycast",
+    "f": 176,
+    "loaded": true,
+    "imp": "hi",
+    "morph": false
+   }
+  ]
+ },
+ {
+  "name": "s4b-now-2s",
+  "t": 8303,
+  "pres": "now",
+  "X": 736025.2000000004,
+  "cam": [
+   722025,
+   6000,
+   98352
+  ],
+  "q": 0,
+  "walls": 9,
+  "stats": {
+   "t3": 8,
+   "t4": 22,
+   "t5": 0,
+   "imp": 6,
+   "inst": 0,
+   "pendingBake": 0,
+   "wantQueue": 1,
+   "gpuMB": 389
+  },
+  "classes": {
+   "solid imp-hi": {
+    "n": 3,
+    "area": 0.427
+   },
+   "ghost imp-hi": {
+    "n": 3,
+    "area": 0.497
+   },
+   "solid T3": {
+    "n": 2,
+    "area": 0.141
+   },
+   "ghost T3": {
+    "n": 6,
+    "area": 0.409
+   },
+   "solid T4": {
+    "n": 22,
+    "area": 0.046
+   }
+  },
+  "top": [
+   {
+    "f": 175,
+    "lane": "flycast",
+    "date": "2022-08-22",
+    "solid": false,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.238,
+    "area": 0.204
+   },
+   {
+    "f": 176,
+    "lane": "flycast",
+    "date": "2022-08-25",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.231,
+    "area": 0.2
+   },
+   {
+    "f": 164,
+    "lane": "reicast",
+    "date": "2021-12-22",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.132,
+    "area": 0.166
+   },
+   {
+    "f": 177,
+    "lane": "flycast",
+    "date": "2022-09-24",
+    "solid": false,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.171,
+    "area": 0.163
+   },
+   {
+    "f": 174,
+    "lane": "flycast",
+    "date": "2022-07-29",
+    "solid": false,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.288,
+    "area": 0.13
+   },
+   {
+    "f": 178,
+    "lane": "flycast",
+    "date": "2022-10-30",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.122,
+    "area": 0.121
+   },
+   {
+    "f": 179,
+    "lane": "flycast",
+    "date": "2022-11-04",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.119,
+    "area": 0.119
+   },
+   {
+    "f": 180,
+    "lane": "flycast",
+    "date": "2022-12-31",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.082,
+    "area": 0.08
+   },
+   {
+    "f": 181,
+    "lane": "flycast",
+    "date": "2023-01-31",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.07,
+    "area": 0.066
+   },
+   {
+    "f": 182,
+    "lane": "flycast",
+    "date": "2023-02-15",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.066,
+    "area": 0.061
+   },
+   {
+    "f": 183,
+    "lane": "flycast",
+    "date": "2023-02-28",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.062,
+    "area": 0.056
+   },
+   {
+    "f": 184,
+    "lane": "flycast",
+    "date": "2023-03-31",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.054,
+    "area": 0.047
+   }
+  ],
+  "live": [
+   {
+    "lane": "reicast",
+    "f": 164,
+    "loaded": true,
+    "imp": "hi",
+    "morph": false
+   },
+   {
+    "lane": "flycast",
+    "f": 178,
+    "loaded": false,
+    "imp": null,
+    "morph": false
+   }
+  ]
+ },
+ {
+  "name": "s4b-now-3s",
+  "t": 9321,
+  "pres": "now",
+  "X": 744025.2000000003,
+  "cam": [
+   730025,
+   6000,
+   98352
+  ],
+  "q": 0,
+  "walls": 11,
+  "stats": {
+   "t3": 9,
+   "t4": 22,
+   "t5": 0,
+   "imp": 4,
+   "inst": 0,
+   "pendingBake": 1,
+   "wantQueue": 0,
+   "gpuMB": 389
+  },
+  "classes": {
+   "solid imp-hi": {
+    "n": 3,
+    "area": 0.376
+   },
+   "ghost imp-hi": {
+    "n": 2,
+    "area": 0.281
+   },
+   "ghost T3": {
+    "n": 7,
+    "area": 0.583
+   },
+   "solid T3": {
+    "n": 1,
+    "area": 0.025
+   },
+   "solid T4": {
+    "n": 22,
+    "area": 0.053
+   }
+  },
+  "top": [
+   {
+    "f": 178,
+    "lane": "flycast",
+    "date": "2022-10-30",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.22,
+    "area": 0.194
+   },
+   {
+    "f": 179,
+    "lane": "flycast",
+    "date": "2022-11-04",
+    "solid": false,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.209,
+    "area": 0.188
+   },
+   {
+    "f": 164,
+    "lane": "reicast",
+    "date": "2021-12-22",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.132,
+    "area": 0.166
+   },
+   {
+    "f": 180,
+    "lane": "flycast",
+    "date": "2022-12-31",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.122,
+    "area": 0.121
+   },
+   {
+    "f": 181,
+    "lane": "flycast",
+    "date": "2023-01-31",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.099,
+    "area": 0.098
+   },
+   {
+    "f": 177,
+    "lane": "flycast",
+    "date": "2022-09-24",
+    "solid": false,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.294,
+    "area": 0.093
+   },
+   {
+    "f": 182,
+    "lane": "flycast",
+    "date": "2023-02-15",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.09,
+    "area": 0.089
+   },
+   {
+    "f": 183,
+    "lane": "flycast",
+    "date": "2023-02-28",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.084,
+    "area": 0.081
+   },
+   {
+    "f": 184,
+    "lane": "flycast",
+    "date": "2023-03-31",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.07,
+    "area": 0.066
+   },
+   {
+    "f": 185,
+    "lane": "flycast",
+    "date": "2023-04-28",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.062,
+    "area": 0.056
+   },
+   {
+    "f": 186,
+    "lane": "flycast",
+    "date": "2023-05-31",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.054,
+    "area": 0.047
+   },
+   {
+    "f": 187,
+    "lane": "flycast",
+    "date": "2023-06-30",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.049,
+    "area": 0.041
+   }
+  ],
+  "live": [
+   {
+    "lane": "reicast",
+    "f": 164,
+    "loaded": true,
+    "imp": "hi",
+    "morph": false
+   },
+   {
+    "lane": "flycast",
+    "f": 179,
+    "loaded": true,
+    "imp": "hi",
+    "morph": false
+   }
+  ]
+ },
+ {
+  "name": "s4b-now-4s",
+  "t": 10302,
+  "pres": "now",
+  "X": 752025.2000000003,
+  "cam": [
+   738025,
+   6000,
+   98352
+  ],
+  "q": 0,
+  "walls": 13,
+  "stats": {
+   "t3": 9,
+   "t4": 22,
+   "t5": 0,
+   "imp": 5,
+   "inst": 0,
+   "pendingBake": 0,
+   "wantQueue": 1,
+   "gpuMB": 394
+  },
+  "classes": {
+   "solid imp-hi": {
+    "n": 2,
+    "area": 0.304
+   },
+   "ghost imp-hi": {
+    "n": 2,
+    "area": 0.348
+   },
+   "solid T3": {
+    "n": 1,
+    "area": 0.121
+   },
+   "ghost T3": {
+    "n": 8,
+    "area": 0.415
+   },
+   "solid imp-lo": {
+    "n": 1,
+    "area": 0.032
+   },
+   "solid T4": {
+    "n": 22,
+    "area": 0.067
+   }
+  },
+  "top": [
+   {
+    "f": 180,
+    "lane": "flycast",
+    "date": "2022-12-31",
+    "solid": false,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.218,
+    "area": 0.193
+   },
+   {
+    "f": 164,
+    "lane": "reicast",
+    "date": "2021-12-22",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.132,
+    "area": 0.166
+   },
+   {
+    "f": 181,
+    "lane": "flycast",
+    "date": "2023-01-31",
+    "solid": false,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.16,
+    "area": 0.155
+   },
+   {
+    "f": 182,
+    "lane": "flycast",
+    "date": "2023-02-15",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.14,
+    "area": 0.138
+   },
+   {
+    "f": 183,
+    "lane": "flycast",
+    "date": "2023-02-28",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.122,
+    "area": 0.121
+   },
+   {
+    "f": 184,
+    "lane": "flycast",
+    "date": "2023-03-31",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.099,
+    "area": 0.098
+   },
+   {
+    "f": 185,
+    "lane": "flycast",
+    "date": "2023-04-28",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.084,
+    "area": 0.081
+   },
+   {
+    "f": 186,
+    "lane": "flycast",
+    "date": "2023-05-31",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.07,
+    "area": 0.066
+   },
+   {
+    "f": 187,
+    "lane": "flycast",
+    "date": "2023-06-30",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.062,
+    "area": 0.056
+   },
+   {
+    "f": 190,
+    "lane": "reicast",
+    "date": "2023-07-10",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.06,
+    "area": 0.048
+   },
+   {
+    "f": 191,
+    "lane": "flycast",
+    "date": "2023-07-31",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.054,
+    "area": 0.047
+   },
+   {
+    "f": 194,
+    "lane": "flycast",
+    "date": "2023-10-27",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.041,
+    "area": 0.032
+   }
+  ],
+  "live": [
+   {
+    "lane": "reicast",
+    "f": 164,
+    "loaded": true,
+    "imp": "hi",
+    "morph": false
+   },
+   {
+    "lane": "flycast",
+    "f": 183,
+    "loaded": false,
+    "imp": null,
+    "morph": false
+   }
+  ]
+ },
+ {
+  "name": "s4b-now-6s",
+  "t": 12328,
+  "pres": "now",
+  "X": 768024.4000000006,
+  "cam": [
+   754024,
+   6000,
+   98352
+  ],
+  "q": 0,
+  "walls": 18,
+  "stats": {
+   "t3": 10,
+   "t4": 20,
+   "t5": 0,
+   "imp": 6,
+   "inst": 0,
+   "pendingBake": 0,
+   "wantQueue": 1,
+   "gpuMB": 394
+  },
+  "classes": {
+   "solid imp-hi": {
+    "n": 2,
+    "area": 0.223
+   },
+   "ghost imp-hi": {
+    "n": 3,
+    "area": 0.495
+   },
+   "solid T3": {
+    "n": 2,
+    "area": 0.145
+   },
+   "ghost T3": {
+    "n": 8,
+    "area": 0.495
+   },
+   "solid imp-lo": {
+    "n": 1,
+    "area": 0.029
+   },
+   "solid T4": {
+    "n": 20,
+    "area": 0.041
+   }
+  },
+  "top": [
+   {
+    "f": 185,
+    "lane": "flycast",
+    "date": "2023-04-28",
+    "solid": false,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.224,
+    "area": 0.197
+   },
+   {
+    "f": 164,
+    "lane": "reicast",
+    "date": "2021-12-22",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.132,
+    "area": 0.166
+   },
+   {
+    "f": 190,
+    "lane": "reicast",
+    "date": "2023-07-10",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.123,
+    "area": 0.162
+   },
+   {
+    "f": 186,
+    "lane": "flycast",
+    "date": "2023-05-31",
+    "solid": false,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.16,
+    "area": 0.155
+   },
+   {
+    "f": 184,
+    "lane": "flycast",
+    "date": "2023-03-31",
+    "solid": false,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.285,
+    "area": 0.143
+   },
+   {
+    "f": 187,
+    "lane": "flycast",
+    "date": "2023-06-30",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.122,
+    "area": 0.121
+   },
+   {
+    "f": 191,
+    "lane": "flycast",
+    "date": "2023-07-31",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.099,
+    "area": 0.098
+   },
+   {
+    "f": 193,
+    "lane": "flycast",
+    "date": "2023-09-29",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.071,
+    "area": 0.067
+   },
+   {
+    "f": 194,
+    "lane": "flycast",
+    "date": "2023-10-27",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.062,
+    "area": 0.057
+   },
+   {
+    "f": 195,
+    "lane": "flycast",
+    "date": "2023-10-30",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.062,
+    "area": 0.056
+   },
+   {
+    "f": 196,
+    "lane": "flycast",
+    "date": "2023-11-29",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.055,
+    "area": 0.048
+   },
+   {
+    "f": 197,
+    "lane": "flycast",
+    "date": "2023-12-22",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.05,
+    "area": 0.042
+   }
+  ],
+  "live": [
+   {
+    "lane": "reicast",
+    "f": 164,
+    "loaded": true,
+    "imp": "hi",
+    "morph": false
+   },
+   {
+    "lane": "flycast",
+    "f": 187,
+    "loaded": false,
+    "imp": null,
+    "morph": false
+   }
+  ]
+ },
+ {
+  "name": "s4b-now-8s",
+  "t": 14301,
+  "pres": "now",
+  "X": 784023.600000001,
+  "cam": [
+   770024,
+   6000,
+   98352
+  ],
+  "q": 0,
+  "walls": 25,
+  "stats": {
+   "t3": 8,
+   "t4": 19,
+   "t5": 0,
+   "imp": 6,
+   "inst": 0,
+   "pendingBake": 0,
+   "wantQueue": 1,
+   "gpuMB": 406
+  },
+  "classes": {
+   "ghost imp-hi": {
+    "n": 2,
+    "area": 0.3
+   },
+   "solid imp-lo": {
+    "n": 3,
+    "area": 0.101
+   },
+   "solid imp-hi": {
+    "n": 1,
+    "area": 0.126
+   },
+   "solid T3": {
+    "n": 2,
+    "area": 0.141
+   },
+   "ghost T3": {
+    "n": 6,
+    "area": 0.397
+   },
+   "solid T4": {
+    "n": 19,
+    "area": 0.032
+   }
+  },
+  "top": [
+   {
+    "f": 193,
+    "lane": "flycast",
+    "date": "2023-09-29",
+    "solid": false,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.163,
+    "area": 0.157
+   },
+   {
+    "f": 191,
+    "lane": "flycast",
+    "date": "2023-07-31",
+    "solid": false,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.285,
+    "area": 0.143
+   },
+   {
+    "f": 194,
+    "lane": "flycast",
+    "date": "2023-10-27",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.127,
+    "area": 0.126
+   },
+   {
+    "f": 195,
+    "lane": "flycast",
+    "date": "2023-10-30",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.122,
+    "area": 0.121
+   },
+   {
+    "f": 196,
+    "lane": "flycast",
+    "date": "2023-11-29",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.1,
+    "area": 0.099
+   },
+   {
+    "f": 197,
+    "lane": "flycast",
+    "date": "2023-12-22",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.087,
+    "area": 0.085
+   },
+   {
+    "f": 198,
+    "lane": "flycast",
+    "date": "2024-01-29",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.071,
+    "area": 0.067
+   },
+   {
+    "f": 199,
+    "lane": "flycast",
+    "date": "2024-02-29",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.062,
+    "area": 0.056
+   },
+   {
+    "f": 200,
+    "lane": "flycast",
+    "date": "2024-03-15",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.058,
+    "area": 0.051
+   },
+   {
+    "f": 201,
+    "lane": "flycast",
+    "date": "2024-03-29",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.055,
+    "area": 0.048
+   },
+   {
+    "f": 202,
+    "lane": "flycast",
+    "date": "2024-04-26",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.05,
+    "area": 0.042
+   },
+   {
+    "f": 203,
+    "lane": "flycast",
+    "date": "2024-05-11",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.047,
+    "area": 0.039
+   }
+  ],
+  "live": [
+   {
+    "lane": "reicast",
+    "f": 190,
+    "loaded": true,
+    "imp": "hi",
+    "morph": false
+   },
+   {
+    "lane": "flycast",
+    "f": 195,
+    "loaded": false,
+    "imp": null,
+    "morph": false
+   },
+   {
+    "lane": "nulldc3",
+    "f": 192,
+    "loaded": true,
+    "imp": "lo",
+    "morph": false
+   }
+  ]
+ },
+ {
+  "name": "s4b-now-10s",
+  "t": 16299,
+  "pres": "now",
+  "X": 800022.8000000016,
+  "cam": [
+   786023,
+   6000,
+   98352
+  ],
+  "q": 0,
+  "walls": 30,
+  "stats": {
+   "t3": 8,
+   "t4": 19,
+   "t5": 0,
+   "imp": 7,
+   "inst": 0,
+   "pendingBake": 0,
+   "wantQueue": 1,
+   "gpuMB": 420
+  },
+  "classes": {
+   "solid imp-lo": {
+    "n": 2,
+    "area": 0.043
+   },
+   "ghost imp-hi": {
+    "n": 3,
+    "area": 0.491
+   },
+   "solid T3": {
+    "n": 1,
+    "area": 0.121
+   },
+   "solid imp-hi": {
+    "n": 2,
+    "area": 0.185
+   },
+   "ghost T3": {
+    "n": 7,
+    "area": 0.404
+   },
+   "solid T4": {
+    "n": 19,
+    "area": 0.039
+   }
+  },
+  "top": [
+   {
+    "f": 197,
+    "lane": "flycast",
+    "date": "2023-12-22",
+    "solid": false,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.238,
+    "area": 0.204
+   },
+   {
+    "f": 198,
+    "lane": "flycast",
+    "date": "2024-01-29",
+    "solid": false,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.163,
+    "area": 0.157
+   },
+   {
+    "f": 196,
+    "lane": "flycast",
+    "date": "2023-11-29",
+    "solid": false,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.288,
+    "area": 0.13
+   },
+   {
+    "f": 199,
+    "lane": "flycast",
+    "date": "2024-02-29",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.122,
+    "area": 0.121
+   },
+   {
+    "f": 200,
+    "lane": "flycast",
+    "date": "2024-03-15",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.11,
+    "area": 0.11
+   },
+   {
+    "f": 201,
+    "lane": "flycast",
+    "date": "2024-03-29",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.1,
+    "area": 0.099
+   },
+   {
+    "f": 202,
+    "lane": "flycast",
+    "date": "2024-04-26",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.085,
+    "area": 0.082
+   },
+   {
+    "f": 203,
+    "lane": "flycast",
+    "date": "2024-05-11",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.078,
+    "area": 0.075
+   },
+   {
+    "f": 204,
+    "lane": "flycast",
+    "date": "2024-05-31",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.07,
+    "area": 0.066
+   },
+   {
+    "f": 205,
+    "lane": "flycast",
+    "date": "2024-06-23",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.063,
+    "area": 0.058
+   },
+   {
+    "f": 207,
+    "lane": "flycast",
+    "date": "2024-07-29",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.055,
+    "area": 0.048
+   },
+   {
+    "f": 208,
+    "lane": "flycast",
+    "date": "2024-08-30",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.049,
+    "area": 0.041
+   }
+  ],
+  "live": [
+   {
+    "lane": "reicast",
+    "f": 190,
+    "loaded": true,
+    "imp": null,
+    "morph": false
+   },
+   {
+    "lane": "flycast",
+    "f": 199,
+    "loaded": false,
+    "imp": null,
+    "morph": false
+   },
+   {
+    "lane": "nulldc3",
+    "f": 192,
+    "loaded": true,
+    "imp": "lo",
+    "morph": false
+   }
+  ]
+ }
+]

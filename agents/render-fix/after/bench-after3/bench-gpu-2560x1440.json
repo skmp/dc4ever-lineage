@@ -1,0 +1,232 @@
+{
+ "date": "2026-11-25T18:11:21.003Z",
+ "size": [
+  2560,
+  1440
+ ],
+ "paths": {
+  "A": {
+   "path": "A",
+   "name": "file street",
+   "dur": 20,
+   "frames": 3275,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "fps_mean": 163.8,
+   "fps_1pct_low": 35,
+   "frame_ms": {
+    "p50": 1.5,
+    "p95": 19.4,
+    "p99": 21.1,
+    "max": 56.6
+   },
+   "cpu_ms": {
+    "p50": 0.5,
+    "p95": 1.7,
+    "p99": 3
+   },
+   "gpu_ms": {
+    "p50": 0.22,
+    "p95": 0.81,
+    "p99": 13.71
+   },
+   "draws_p95": 439,
+   "lines_p95": 251447,
+   "quality_steps": [
+    0,
+    1
+   ],
+   "frames_over_100ms": 0,
+   "ready_ms": 653,
+   "skipped_rafs": 871,
+   "slowest_frames_cpu_sections": []
+  },
+  "B": {
+   "path": "B",
+   "name": "orbit",
+   "dur": 20,
+   "frames": 3587,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "fps_mean": 179.3,
+   "fps_1pct_low": 48.1,
+   "frame_ms": {
+    "p50": 1.6,
+    "p95": 19,
+    "p99": 19.7,
+    "max": 38.2
+   },
+   "cpu_ms": {
+    "p50": 0.6,
+    "p95": 1.4,
+    "p99": 1.8
+   },
+   "gpu_ms": {
+    "p50": 0.05,
+    "p95": 0.09,
+    "p99": 0.99
+   },
+   "draws_p95": 211,
+   "lines_p95": 0,
+   "quality_steps": [
+    0
+   ],
+   "frames_over_100ms": 0,
+   "ready_ms": 709,
+   "skipped_rafs": 846,
+   "slowest_frames_cpu_sections": []
+  },
+  "C": {
+   "path": "C",
+   "name": "lane flights",
+   "dur": 20,
+   "frames": 3002,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "fps_mean": 150,
+   "fps_1pct_low": 25.5,
+   "frame_ms": {
+    "p50": 1.8,
+    "p95": 19.8,
+    "p99": 22.6,
+    "max": 81.1
+   },
+   "cpu_ms": {
+    "p50": 0.6,
+    "p95": 2.5,
+    "p99": 4.1
+   },
+   "gpu_ms": {
+    "p50": 0.33,
+    "p95": 4.64,
+    "p99": 21.59
+   },
+   "draws_p95": 497,
+   "lines_p95": 1163608,
+   "quality_steps": [
+    0,
+    1
+   ],
+   "frames_over_100ms": 0,
+   "ready_ms": 751,
+   "skipped_rafs": 839,
+   "slowest_frames_cpu_sections": []
+  },
+  "D": {
+   "path": "D",
+   "name": "close reading",
+   "dur": 20,
+   "frames": 3761,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "fps_mean": 188.1,
+   "fps_1pct_low": 51.5,
+   "frame_ms": {
+    "p50": 1.1,
+    "p95": 18.6,
+    "p99": 19.1,
+    "max": 20.6
+   },
+   "cpu_ms": {
+    "p50": 0.2,
+    "p95": 0.6,
+    "p99": 0.9
+   },
+   "gpu_ms": {
+    "p50": 0.12,
+    "p95": 0.17,
+    "p99": 0.21
+   },
+   "draws_p95": 9,
+   "lines_p95": 8714,
+   "quality_steps": [
+    0
+   ],
+   "frames_over_100ms": 0,
+   "ready_ms": 727,
+   "skipped_rafs": 932,
+   "slowest_frames_cpu_sections": []
+  },
+  "E": {
+   "path": "E",
+   "name": "live playback",
+   "dur": 20,
+   "frames": 3215,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "fps_mean": 160.7,
+   "fps_1pct_low": 42.1,
+   "frame_ms": {
+    "p50": 1.8,
+    "p95": 19.7,
+    "p99": 20.6,
+    "max": 38.4
+   },
+   "cpu_ms": {
+    "p50": 0.6,
+    "p95": 1.7,
+    "p99": 2.7
+   },
+   "gpu_ms": {
+    "p50": 0.11,
+    "p95": 0.23,
+    "p99": 1.1
+   },
+   "draws_p95": 361,
+   "lines_p95": 0,
+   "quality_steps": [
+    0
+   ],
+   "frames_over_100ms": 0,
+   "ready_ms": 718,
+   "skipped_rafs": 825,
+   "slowest_frames_cpu_sections": []
+  }
+ },
+ "logs": []
+}

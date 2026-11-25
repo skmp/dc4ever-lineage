@@ -1,0 +1,1345 @@
+[
+ {
+  "name": "street-side-gallery",
+  "pres": "gallery",
+  "cam": [
+   529258,
+   3000,
+   80736
+  ],
+  "titles": [
+   {
+    "title": "reicast  2018-10  75d319e",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     1162,
+     440,
+     1345,
+     457
+    ],
+    "size": 14,
+    "leakFrac": 1,
+    "behind": [
+     "reicast@2018-09-03",
+     "reicast@2018-08-29"
+    ]
+   },
+   {
+    "title": "reicast  2019-01  55a2261",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     971,
+     460,
+     1154,
+     477
+    ],
+    "size": 14,
+    "leakFrac": 1,
+    "behind": [
+     "reicast@2018-10-28",
+     "reicast@2018-09-30",
+     "reicast@2018-09-12"
+    ]
+   },
+   {
+    "title": "reicast  r8.1  2018-09  1a09ccb",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     1369,
+     411,
+     1606,
+     429
+    ],
+    "size": 14.7,
+    "leakFrac": 0.74,
+    "behind": [
+     "reicast@2018-08-29",
+     "reicast@2018-08-04"
+    ]
+   },
+   {
+    "title": "reicast  2021-12  95b6736",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     483,
+     489,
+     667,
+     505
+    ],
+    "size": 14,
+    "leakFrac": 0.59,
+    "behind": [
+     "reicast@2020-03-28",
+     "reicast@2019-12-31",
+     "reicast@2019-07-31"
+    ]
+   },
+   {
+    "title": "reicast  2018-09  4b24d22",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     971,
+     410,
+     1155,
+     427
+    ],
+    "size": 14,
+    "leakFrac": 0.37,
+    "behind": [
+     "reicast@2018-09-12",
+     "reicast@2018-09-03"
+    ]
+   },
+   {
+    "title": "reicast  2019-03  26f02e2",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     634,
+     464,
+     817,
+     481
+    ],
+    "size": 14,
+    "leakFrac": 0.37,
+    "behind": [
+     "reicast@2019-01-18",
+     "reicast@2018-11-28"
+    ]
+   },
+   {
+    "title": "reicast  2018-11  3ab2eef",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     780,
+     441,
+     964,
+     458
+    ],
+    "size": 14,
+    "leakFrac": 0.26,
+    "behind": [
+     "reicast@2018-10-28"
+    ]
+   },
+   {
+    "title": "reicast  2018-08  a8711e2",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     1369,
+     385,
+     1592,
+     405
+    ],
+    "size": 17,
+    "leakFrac": 0.11,
+    "behind": [
+     "reicast@2018-08-04"
+    ]
+   },
+   {
+    "title": "reicast  2018-09  239e178",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     1151,
+     379,
+     1362,
+     398
+    ],
+    "size": 16.1,
+    "leakFrac": 0.04,
+    "behind": [
+     "reicast@2018-08-29"
+    ]
+   },
+   {
+    "title": "nullDCe-PSP  2021-02  95b5a20",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     6,
+     484,
+     217,
+     501
+    ],
+    "size": 14,
+    "leakFrac": 0,
+    "behind": []
+   }
+  ],
+  "labels": [
+   "r7",
+   "r8",
+   "r8.1",
+   "nullDC4Wii",
+   "NotDC-PS3",
+   "… table, disc image readers, scheduler, PSP register allocator: 6,404 lines of nullDCe-PSP 2021-10 first seen in reicast"
+  ]
+ },
+ {
+  "name": "street-low-gallery",
+  "pres": "gallery",
+  "cam": [
+   527258,
+   1500,
+   84236
+  ],
+  "titles": [
+   {
+    "title": "reicast  2018-08  a8711e2",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     1140,
+     313,
+     1355,
+     333
+    ],
+    "size": 16.4,
+    "leakFrac": 1,
+    "behind": [
+     "reicast@2018-07-31"
+    ]
+   },
+   {
+    "title": "reicast  r8  2018-09  00ecf2f",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     1362,
+     355,
+     1593,
+     373
+    ],
+    "size": 15.2,
+    "leakFrac": 1,
+    "behind": [
+     "reicast@2018-07-31"
+    ]
+   },
+   {
+    "title": "reicast  2019-02  2b3a052",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     944,
+     500,
+     1127,
+     516
+    ],
+    "size": 14,
+    "leakFrac": 1,
+    "behind": [
+     "reicast@2018-08-29",
+     "reicast@2018-08-04"
+    ]
+   },
+   {
+    "title": "reicast  r8.1  2018-09  1a09ccb",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     896,
+     342,
+     1121,
+     359
+    ],
+    "size": 14,
+    "leakFrac": 0.89,
+    "behind": [
+     "reicast@2018-09-03",
+     "reicast@2018-08-29",
+     "reicast@2018-08-04"
+    ]
+   },
+   {
+    "title": "reicast  2019-08  d350e68",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     705,
+     528,
+     888,
+     544
+    ],
+    "size": 14,
+    "leakFrac": 0.89,
+    "behind": [
+     "reicast@2019-04-28",
+     "reicast@2019-02-26",
+     "reicast@2019-01-18"
+    ]
+   },
+   {
+    "title": "reicast  2021-12  95b6736",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     675,
+     557,
+     858,
+     574
+    ],
+    "size": 14,
+    "leakFrac": 0.89,
+    "behind": [
+     "reicast@2019-12-31",
+     "reicast@2019-05-17",
+     "reicast@2019-02-26"
+    ]
+   },
+   {
+    "title": "reicast  2019-03  26f02e2",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     729,
+     504,
+     913,
+     521
+    ],
+    "size": 14,
+    "leakFrac": 0.81,
+    "behind": [
+     "reicast@2019-02-26",
+     "reicast@2019-01-18",
+     "reicast@2018-11-28"
+    ]
+   },
+   {
+    "title": "reicast  2018-09  4b24d22",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     855,
+     382,
+     1038,
+     399
+    ],
+    "size": 14,
+    "leakFrac": 0.78,
+    "behind": [
+     "reicast@2018-09-12",
+     "reicast@2018-09-03",
+     "reicast@2018-08-29"
+    ]
+   },
+   {
+    "title": "reicast  2018-10  75d319e",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     812,
+     423,
+     996,
+     440
+    ],
+    "size": 14,
+    "leakFrac": 0.78,
+    "behind": [
+     "reicast@2018-09-30",
+     "reicast@2018-09-12",
+     "reicast@2018-09-03"
+    ]
+   },
+   {
+    "title": "reicast  2018-11  3ab2eef",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     783,
+     451,
+     967,
+     468
+    ],
+    "size": 14,
+    "leakFrac": 0.78,
+    "behind": [
+     "reicast@2018-10-28",
+     "reicast@2018-09-30",
+     "reicast@2018-09-12"
+    ]
+   },
+   {
+    "title": "reicast  2019-01  55a2261",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     753,
+     481,
+     937,
+     497
+    ],
+    "size": 14,
+    "leakFrac": 0.78,
+    "behind": [
+     "reicast@2018-11-28",
+     "reicast@2018-10-28",
+     "reicast@2018-09-30"
+    ]
+   },
+   {
+    "title": "reicast  2018-09  239e178",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     923,
+     313,
+     1133,
+     332
+    ],
+    "size": 16,
+    "leakFrac": 0.52,
+    "behind": [
+     "reicast@2018-08-29",
+     "reicast@2018-08-04"
+    ]
+   },
+   {
+    "title": "reicast  r7  2018-08  3d59456",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     1091,
+     145,
+     1393,
+     169
+    ],
+    "size": 20,
+    "leakFrac": 0.41,
+    "behind": [
+     "reicast@2018-07-31"
+    ]
+   },
+   {
+    "title": "reicast  2018-07  25ec591",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     1131,
+     106,
+     1393,
+     130
+    ],
+    "size": 20,
+    "leakFrac": 0,
+    "behind": []
+   },
+   {
+    "title": "nullDCe-PSP  2021-02  95b5a20",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     233,
+     549,
+     444,
+     566
+    ],
+    "size": 14,
+    "leakFrac": 0,
+    "behind": []
+   },
+   {
+    "title": "nullDCe  2024-09  bad8d6a",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     460,
+     563,
+     643,
+     580
+    ],
+    "size": 14,
+    "leakFrac": 0,
+    "behind": []
+   }
+  ],
+  "labels": [
+   "r7",
+   "r8",
+   "r8.1",
+   "nullDCe-PSP (PSP, 2021 restoration)",
+   "nullDC4Wii",
+   "2023",
+   "2026"
+  ]
+ },
+ {
+  "name": "front-close-gallery",
+  "pres": "gallery",
+  "cam": [
+   533658,
+   2600,
+   92544
+  ],
+  "titles": [
+   {
+    "title": "reicast  2018-09  239e178",
+    "solid": true,
+    "sticky": true,
+    "rect": [
+     352,
+     6,
+     679,
+     36
+    ],
+    "size": 25,
+    "leakFrac": 1,
+    "behind": [
+     "reicast@2018-08-29"
+    ]
+   },
+   {
+    "title": "reicast  2018-08  a8711e2",
+    "solid": true,
+    "sticky": true,
+    "rect": [
+     686,
+     6,
+     948,
+     30
+    ],
+    "size": 20,
+    "leakFrac": 0,
+    "behind": []
+   }
+  ],
+  "labels": []
+ },
+ {
+  "name": "across-gallery",
+  "pres": "gallery",
+  "cam": [
+   522258,
+   5000,
+   89736
+  ],
+  "titles": [
+   {
+    "title": "reicast  r8  2018-09  00ecf2f",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     413,
+     531,
+     624,
+     548
+    ],
+    "size": 14,
+    "leakFrac": 0.11,
+    "behind": [
+     "reicast@2018-09-03",
+     "reicast@2018-08-29"
+    ]
+   },
+   {
+    "title": "reicast  r7  2018-08  3d59456",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     222,
+     568,
+     444,
+     586
+    ],
+    "size": 14.7,
+    "leakFrac": 0.07,
+    "behind": [
+     "reicast@2018-07-31"
+    ]
+   },
+   {
+    "title": "reicast  r8.1  2018-09  1a09ccb",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     631,
+     518,
+     856,
+     535
+    ],
+    "size": 14,
+    "leakFrac": 0.04,
+    "behind": [
+     "reicast@2018-09-04"
+    ]
+   },
+   {
+    "title": "reicast  2018-06  e6afd22",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     6,
+     703,
+     268,
+     727
+    ],
+    "size": 20,
+    "leakFrac": 0,
+    "behind": []
+   },
+   {
+    "title": "reicast  2018-07  25ec591",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     6,
+     586,
+     209,
+     604
+    ],
+    "size": 15.5,
+    "leakFrac": 0,
+    "behind": []
+   },
+   {
+    "title": "reicast  2018-08  a8711e2",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     222,
+     543,
+     406,
+     560
+    ],
+    "size": 14,
+    "leakFrac": 0,
+    "behind": []
+   },
+   {
+    "title": "reicast  2018-09  239e178",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     6,
+     546,
+     215,
+     565
+    ],
+    "size": 16,
+    "leakFrac": 0,
+    "behind": []
+   },
+   {
+    "title": "flycast  2018-10  84ab237",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     891,
+     497,
+     1075,
+     514
+    ],
+    "size": 14,
+    "leakFrac": 0,
+    "behind": []
+   },
+   {
+    "title": "reicast  2018-10  75d319e",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     6,
+     519,
+     189,
+     536
+    ],
+    "size": 14,
+    "leakFrac": 0,
+    "behind": []
+   },
+   {
+    "title": "reicast  2018-11  3ab2eef",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     196,
+     506,
+     379,
+     523
+    ],
+    "size": 14,
+    "leakFrac": 0,
+    "behind": []
+   },
+   {
+    "title": "reicast  2019-01  55a2261",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     386,
+     494,
+     570,
+     510
+    ],
+    "size": 14,
+    "leakFrac": 0,
+    "behind": []
+   },
+   {
+    "title": "flycast  2019-04  cf1a924",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     591,
+     483,
+     774,
+     499
+    ],
+    "size": 14,
+    "leakFrac": 0,
+    "behind": []
+   },
+   {
+    "title": "reicast  r19.07.4  2019-07  29e1c8e",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     86,
+     483,
+     339,
+     500
+    ],
+    "size": 14,
+    "leakFrac": 0,
+    "behind": []
+   },
+   {
+    "title": "flycast  2021-01  d98462b",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     346,
+     471,
+     529,
+     487
+    ],
+    "size": 14,
+    "leakFrac": 0,
+    "behind": []
+   }
+  ],
+  "labels": [
+   "NotDC-PS3",
+   "flycast",
+   "fpgadc: hardware re-creation, 2023-2026",
+   "flycast -> nullDCe-PSP: SHIL / SSA passes, GD-ROM fixes: 608 lines of nullDCe-PSP 2021-10 first seen in flycast",
+   "…st -> flycast: git fork (last shared commit 2018-09-03): 25,996 lines of flycast 2026-11 first seen in reicast (16.2 %)",
+   "flycast merged reicast until 2019-05-17 (a6b773a23): 25,996 lines of flycast 2026-11 first seen in reicast (16.2 %)",
+   "shrike4-rtl -> caique-rtl: 21 lines of caique 2026-11 first seen in shrike4 (0.1 %)"
+  ]
+ },
+ {
+  "name": "street-side-clock",
+  "pres": "clock",
+  "cam": [
+   529258,
+   3000,
+   80736
+  ],
+  "titles": [
+   {
+    "title": "reicast  2018-10  75d319e",
+    "solid": false,
+    "sticky": false,
+    "rect": [
+     1140,
+     442,
+     1297,
+     456
+    ],
+    "size": 12,
+    "leakFrac": 0.89,
+    "behind": [
+     "reicast@2018-09-03"
+    ]
+   },
+   {
+    "title": "reicast  r8  2018-09  00ecf2f",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     1369,
+     398,
+     1610,
+     417
+    ],
+    "size": 16,
+    "leakFrac": 0.22,
+    "behind": [
+     "reicast@2018-08-04"
+    ]
+   },
+   {
+    "title": "reicast  2018-09  239e178",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     1151,
+     379,
+     1362,
+     398
+    ],
+    "size": 16.1,
+    "leakFrac": 0,
+    "behind": []
+   },
+   {
+    "title": "reicast  2018-09  4b24d22",
+    "solid": false,
+    "sticky": false,
+    "rect": [
+     971,
+     412,
+     1133,
+     427
+    ],
+    "size": 12.3,
+    "leakFrac": 0,
+    "behind": []
+   },
+   {
+    "title": "reicast  2018-11  3ab2eef",
+    "solid": false,
+    "sticky": false,
+    "rect": [
+     780,
+     443,
+     937,
+     458
+    ],
+    "size": 12,
+    "leakFrac": 0,
+    "behind": []
+   },
+   {
+    "title": "reicast  2019-01  55a2261",
+    "solid": false,
+    "sticky": false,
+    "rect": [
+     944,
+     462,
+     1102,
+     476
+    ],
+    "size": 12,
+    "leakFrac": 0,
+    "behind": []
+   },
+   {
+    "title": "reicast  r19.07  2019-07  154e224",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     581,
+     473,
+     821,
+     490
+    ],
+    "size": 14,
+    "leakFrac": 0,
+    "behind": []
+   },
+   {
+    "title": "HarissaDC  v0.2.0  2026-11  462ddbb",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     252,
+     492,
+     506,
+     509
+    ],
+    "size": 14,
+    "leakFrac": 0,
+    "behind": []
+   }
+  ],
+  "labels": [
+   "r7",
+   "r8",
+   "NotDC-PS3",
+   "polly2-rtl r8/develop (new bit-exact model, own history)",
+   "fpgadc: hardware re-creation, 2023-2026",
+   "2025",
+   "2026"
+  ]
+ },
+ {
+  "name": "street-low-clock",
+  "pres": "clock",
+  "cam": [
+   527258,
+   1500,
+   84236
+  ],
+  "titles": [
+   {
+    "title": "reicast  2018-08  a8711e2",
+    "solid": false,
+    "sticky": false,
+    "rect": [
+     1377,
+     337,
+     1574,
+     355
+    ],
+    "size": 15,
+    "leakFrac": 1,
+    "behind": [
+     "reicast@2018-08-04"
+    ]
+   },
+   {
+    "title": "reicast  r8  2018-09  00ecf2f",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     1140,
+     336,
+     1370,
+     354
+    ],
+    "size": 15.2,
+    "leakFrac": 1,
+    "behind": [
+     "reicast@2018-08-04"
+    ]
+   },
+   {
+    "title": "reicast  2019-02  2b3a052",
+    "solid": false,
+    "sticky": false,
+    "rect": [
+     918,
+     501,
+     1075,
+     516
+    ],
+    "size": 12,
+    "leakFrac": 0.89,
+    "behind": [
+     "reicast@2018-09-03"
+    ]
+   },
+   {
+    "title": "reicast  r8.1  2018-09  1a09ccb",
+    "solid": false,
+    "sticky": false,
+    "rect": [
+     896,
+     342,
+     1119,
+     359
+    ],
+    "size": 13.9,
+    "leakFrac": 0.81,
+    "behind": [
+     "reicast@2018-09-03",
+     "reicast@2018-08-04"
+    ]
+   },
+   {
+    "title": "reicast  2018-09  4b24d22",
+    "solid": false,
+    "sticky": false,
+    "rect": [
+     855,
+     384,
+     1012,
+     399
+    ],
+    "size": 12,
+    "leakFrac": 0.56,
+    "behind": [
+     "reicast@2018-09-03"
+    ]
+   },
+   {
+    "title": "reicast  2018-10  75d319e",
+    "solid": false,
+    "sticky": false,
+    "rect": [
+     812,
+     426,
+     969,
+     440
+    ],
+    "size": 12,
+    "leakFrac": 0.33,
+    "behind": [
+     "reicast@2018-09-03"
+    ]
+   },
+   {
+    "title": "reicast  2018-09  239e178",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     923,
+     313,
+     1133,
+     332
+    ],
+    "size": 16,
+    "leakFrac": 0.22,
+    "behind": [
+     "reicast@2018-08-04"
+    ]
+   },
+   {
+    "title": "reicast  2018-11  3ab2eef",
+    "solid": false,
+    "sticky": false,
+    "rect": [
+     783,
+     454,
+     941,
+     468
+    ],
+    "size": 12,
+    "leakFrac": 0.22,
+    "behind": [
+     "reicast@2018-09-04",
+     "reicast@2018-09-03"
+    ]
+   },
+   {
+    "title": "reicast  r19.07  2019-07  154e224",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     710,
+     522,
+     950,
+     539
+    ],
+    "size": 14,
+    "leakFrac": 0.22,
+    "behind": [
+     "reicast@2018-09-04",
+     "reicast@2018-09-03"
+    ]
+   },
+   {
+    "title": "HarissaDC  v0.2.0  2026-11  462ddbb",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     498,
+     566,
+     751,
+     582
+    ],
+    "size": 14,
+    "leakFrac": 0.22,
+    "behind": [
+     "reicast@2019-07-14"
+    ]
+   },
+   {
+    "title": "reicast  2018-07  25ec591",
+    "solid": false,
+    "sticky": false,
+    "rect": [
+     1131,
+     112,
+     1328,
+     130
+    ],
+    "size": 15,
+    "leakFrac": 0,
+    "behind": []
+   },
+   {
+    "title": "reicast  r7  2018-08  3d59456",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     1091,
+     145,
+     1393,
+     169
+    ],
+    "size": 20,
+    "leakFrac": 0,
+    "behind": []
+   },
+   {
+    "title": "reicast  2019-01  55a2261",
+    "solid": false,
+    "sticky": false,
+    "rect": [
+     753,
+     483,
+     911,
+     497
+    ],
+    "size": 12,
+    "leakFrac": 0,
+    "behind": []
+   }
+  ],
+  "labels": [
+   "r7",
+   "r8",
+   "nullDCe-PSP (PSP, 2021 restoration)",
+   "NotDC-PS3",
+   "2023",
+   "2024",
+   "2025",
+   "2026"
+  ]
+ },
+ {
+  "name": "front-close-clock",
+  "pres": "clock",
+  "cam": [
+   533658,
+   2600,
+   92544
+  ],
+  "titles": [
+   {
+    "title": "reicast  2018-08  a8711e2",
+    "solid": false,
+    "sticky": true,
+    "rect": [
+     686,
+     6,
+     883,
+     24
+    ],
+    "size": 15,
+    "leakFrac": 0,
+    "behind": []
+   },
+   {
+    "title": "reicast  2018-09  239e178",
+    "solid": true,
+    "sticky": true,
+    "rect": [
+     352,
+     6,
+     679,
+     36
+    ],
+    "size": 25,
+    "leakFrac": 0,
+    "behind": []
+   }
+  ],
+  "labels": []
+ },
+ {
+  "name": "across-clock",
+  "pres": "clock",
+  "cam": [
+   522258,
+   5000,
+   89736
+  ],
+  "titles": [
+   {
+    "title": "reicast  r8  2018-09  00ecf2f",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     222,
+     539,
+     434,
+     556
+    ],
+    "size": 14,
+    "leakFrac": 0.11,
+    "behind": [
+     "reicast@2018-09-03"
+    ]
+   },
+   {
+    "title": "reicast  2018-06  e6afd22",
+    "solid": false,
+    "sticky": false,
+    "rect": [
+     6,
+     709,
+     202,
+     727
+    ],
+    "size": 15,
+    "leakFrac": 0,
+    "behind": []
+   },
+   {
+    "title": "reicast  2018-07  25ec591",
+    "solid": false,
+    "sticky": false,
+    "rect": [
+     235,
+     573,
+     431,
+     591
+    ],
+    "size": 15,
+    "leakFrac": 0,
+    "behind": []
+   },
+   {
+    "title": "reicast  r7  2018-08  3d59456",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     6,
+     580,
+     228,
+     598
+    ],
+    "size": 14.7,
+    "leakFrac": 0,
+    "behind": []
+   },
+   {
+    "title": "reicast  2018-08  a8711e2",
+    "solid": false,
+    "sticky": false,
+    "rect": [
+     441,
+     536,
+     598,
+     551
+    ],
+    "size": 12,
+    "leakFrac": 0,
+    "behind": []
+   },
+   {
+    "title": "reicast  2018-09  239e178",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     6,
+     546,
+     215,
+     565
+    ],
+    "size": 16,
+    "leakFrac": 0,
+    "behind": []
+   },
+   {
+    "title": "reicast  r8.1  2018-09  1a09ccb",
+    "solid": false,
+    "sticky": false,
+    "rect": [
+     605,
+     521,
+     798,
+     536
+    ],
+    "size": 12,
+    "leakFrac": 0,
+    "behind": []
+   },
+   {
+    "title": "flycast  2018-10  84ab237",
+    "solid": false,
+    "sticky": false,
+    "rect": [
+     891,
+     499,
+     1049,
+     514
+    ],
+    "size": 12,
+    "leakFrac": 0,
+    "behind": []
+   },
+   {
+    "title": "reicast  2018-10  75d319e",
+    "solid": false,
+    "sticky": false,
+    "rect": [
+     6,
+     522,
+     163,
+     536
+    ],
+    "size": 12,
+    "leakFrac": 0,
+    "behind": []
+   },
+   {
+    "title": "reicast  2018-11  3ab2eef",
+    "solid": false,
+    "sticky": false,
+    "rect": [
+     170,
+     509,
+     327,
+     523
+    ],
+    "size": 12,
+    "leakFrac": 0,
+    "behind": []
+   },
+   {
+    "title": "reicast  2019-01  55a2261",
+    "solid": false,
+    "sticky": false,
+    "rect": [
+     334,
+     497,
+     491,
+     511
+    ],
+    "size": 12,
+    "leakFrac": 0,
+    "behind": []
+   },
+   {
+    "title": "reicast  r19.07  2019-07  154e224",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     82,
+     484,
+     321,
+     500
+    ],
+    "size": 14,
+    "leakFrac": 0,
+    "behind": []
+   },
+   {
+    "title": "flycast  v1.0  2021-05  d6e1554",
+    "solid": true,
+    "sticky": false,
+    "rect": [
+     328,
+     470,
+     554,
+     487
+    ],
+    "size": 14,
+    "leakFrac": 0,
+    "behind": []
+   }
+  ],
+  "labels": [
+   "NotDC-PS3",
+   "flycast",
+   "dreamcast-devtools (TS)",
+   "caique-rtl (AICA)",
+   "fpgadc: hardware re-creation, 2023-2026",
+   "…st -> flycast: git fork (last shared commit 2018-09-03): 25,996 lines of flycast 2026-11 first seen in reicast (16.2 %)"
+  ]
+ }
+]

@@ -1,0 +1,1458 @@
+[
+ {
+  "name": "s2a-gallery-street-start",
+  "t": 5389,
+  "pres": "gallery",
+  "X": 935081,
+  "cam": [
+   677742,
+   3000,
+   117828
+  ],
+  "q": 0,
+  "walls": 14,
+  "stats": {
+   "t3": 6,
+   "t4": 91,
+   "t5": 124,
+   "imp": 12,
+   "inst": 65213,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 378
+  },
+  "classes": {
+   "solid lines": {
+    "n": 2,
+    "area": 1.609
+   },
+   "solid imp-hi": {
+    "n": 3,
+    "area": 0.622
+   },
+   "solid imp-lo": {
+    "n": 8,
+    "area": 0.427
+   },
+   "solid T3": {
+    "n": 6,
+    "area": 0.117
+   },
+   "solid T4": {
+    "n": 91,
+    "area": 0.195
+   },
+   "solid T5": {
+    "n": 124,
+    "area": 0.009
+   }
+  },
+  "top": [
+   {
+    "f": 159,
+    "lane": "flycast",
+    "date": "2021-08-26",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 1.261,
+    "area": 1
+   },
+   {
+    "f": 160,
+    "lane": "flycast",
+    "date": "2021-09-30",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 0.312,
+    "area": 0.609
+   },
+   {
+    "f": 162,
+    "lane": "flycast",
+    "date": "2021-11-27",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.137,
+    "area": 0.265
+   },
+   {
+    "f": 163,
+    "lane": "flycast",
+    "date": "2021-12-17",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.115,
+    "area": 0.197
+   },
+   {
+    "f": 165,
+    "lane": "flycast",
+    "date": "2021-12-31",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.103,
+    "area": 0.16
+   },
+   {
+    "f": 166,
+    "lane": "flycast",
+    "date": "2022-01-29",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.086,
+    "area": 0.11
+   },
+   {
+    "f": 168,
+    "lane": "flycast",
+    "date": "2022-02-28",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.073,
+    "area": 0.079
+   },
+   {
+    "f": 169,
+    "lane": "flycast",
+    "date": "2022-03-27",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.063,
+    "area": 0.06
+   },
+   {
+    "f": 170,
+    "lane": "flycast",
+    "date": "2022-04-09",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.06,
+    "area": 0.053
+   },
+   {
+    "f": 171,
+    "lane": "flycast",
+    "date": "2022-04-30",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.055,
+    "area": 0.045
+   },
+   {
+    "f": 172,
+    "lane": "flycast",
+    "date": "2022-05-14",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.052,
+    "area": 0.041
+   },
+   {
+    "f": 173,
+    "lane": "flycast",
+    "date": "2022-06-26",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.045,
+    "area": 0.03
+   }
+  ]
+ },
+ {
+  "name": "s2b-gallery-fly-1.5s",
+  "t": 6974,
+  "pres": "gallery",
+  "X": 935081,
+  "cam": [
+   690003,
+   3000,
+   117828
+  ],
+  "q": 0,
+  "walls": 20,
+  "stats": {
+   "t3": 4,
+   "t4": 149,
+   "t5": 62,
+   "imp": 15,
+   "inst": 127442,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 459
+  },
+  "classes": {
+   "solid lines": {
+    "n": 3,
+    "area": 2.432
+   },
+   "solid imp-hi": {
+    "n": 3,
+    "area": 0.819
+   },
+   "solid imp-lo": {
+    "n": 10,
+    "area": 0.614
+   },
+   "solid T3": {
+    "n": 4,
+    "area": 0.063
+   },
+   "solid T4": {
+    "n": 149,
+    "area": 0.203
+   },
+   "solid T5": {
+    "n": 62,
+    "area": 0.004
+   }
+  },
+  "top": [
+   {
+    "f": 162,
+    "lane": "flycast",
+    "date": "2021-11-27",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 1.383,
+    "area": 1
+   },
+   {
+    "f": 163,
+    "lane": "flycast",
+    "date": "2021-12-17",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 0.46,
+    "area": 0.808
+   },
+   {
+    "f": 165,
+    "lane": "flycast",
+    "date": "2021-12-31",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 0.319,
+    "area": 0.624
+   },
+   {
+    "f": 166,
+    "lane": "flycast",
+    "date": "2022-01-29",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.195,
+    "area": 0.377
+   },
+   {
+    "f": 168,
+    "lane": "flycast",
+    "date": "2022-02-28",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.139,
+    "area": 0.267
+   },
+   {
+    "f": 169,
+    "lane": "flycast",
+    "date": "2022-03-27",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.108,
+    "area": 0.175
+   },
+   {
+    "f": 170,
+    "lane": "flycast",
+    "date": "2022-04-09",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.098,
+    "area": 0.145
+   },
+   {
+    "f": 171,
+    "lane": "flycast",
+    "date": "2022-04-30",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.086,
+    "area": 0.111
+   },
+   {
+    "f": 172,
+    "lane": "flycast",
+    "date": "2022-05-14",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.079,
+    "area": 0.094
+   },
+   {
+    "f": 173,
+    "lane": "flycast",
+    "date": "2022-06-26",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.064,
+    "area": 0.061
+   },
+   {
+    "f": 174,
+    "lane": "flycast",
+    "date": "2022-07-29",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.056,
+    "area": 0.046
+   },
+   {
+    "f": 175,
+    "lane": "flycast",
+    "date": "2022-08-22",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.051,
+    "area": 0.039
+   }
+  ]
+ },
+ {
+  "name": "s2b-gallery-fly-3s",
+  "t": 8473,
+  "pres": "gallery",
+  "X": 935081,
+  "cam": [
+   702008,
+   3000,
+   117828
+  ],
+  "q": 1,
+  "walls": 24,
+  "stats": {
+   "t3": 3,
+   "t4": 189,
+   "t5": 19,
+   "imp": 16,
+   "inst": 25787,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 459
+  },
+  "classes": {
+   "solid lines": {
+    "n": 1,
+    "area": 1
+   },
+   "solid imp-hi": {
+    "n": 5,
+    "area": 2.062
+   },
+   "solid imp-lo": {
+    "n": 10,
+    "area": 0.532
+   },
+   "solid T3": {
+    "n": 3,
+    "area": 0.048
+   },
+   "solid T4": {
+    "n": 189,
+    "area": 0.236
+   },
+   "solid T5": {
+    "n": 19,
+    "area": 0
+   }
+  },
+  "top": [
+   {
+    "f": 168,
+    "lane": "flycast",
+    "date": "2022-02-28",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 1.267,
+    "area": 1
+   },
+   {
+    "f": 169,
+    "lane": "flycast",
+    "date": "2022-03-27",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.35,
+    "area": 0.686
+   },
+   {
+    "f": 170,
+    "lane": "flycast",
+    "date": "2022-04-09",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.266,
+    "area": 0.518
+   },
+   {
+    "f": 171,
+    "lane": "flycast",
+    "date": "2022-04-30",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.192,
+    "area": 0.372
+   },
+   {
+    "f": 172,
+    "lane": "flycast",
+    "date": "2022-05-14",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.16,
+    "area": 0.309
+   },
+   {
+    "f": 173,
+    "lane": "flycast",
+    "date": "2022-06-26",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.109,
+    "area": 0.177
+   },
+   {
+    "f": 174,
+    "lane": "flycast",
+    "date": "2022-07-29",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.087,
+    "area": 0.112
+   },
+   {
+    "f": 175,
+    "lane": "flycast",
+    "date": "2022-08-22",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.076,
+    "area": 0.086
+   },
+   {
+    "f": 176,
+    "lane": "flycast",
+    "date": "2022-08-25",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.075,
+    "area": 0.083
+   },
+   {
+    "f": 177,
+    "lane": "flycast",
+    "date": "2022-09-24",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.065,
+    "area": 0.062
+   },
+   {
+    "f": 178,
+    "lane": "flycast",
+    "date": "2022-10-30",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.055,
+    "area": 0.046
+   },
+   {
+    "f": 179,
+    "lane": "flycast",
+    "date": "2022-11-04",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.054,
+    "area": 0.044
+   }
+  ]
+ },
+ {
+  "name": "s2b-gallery-fly-5s",
+  "t": 10470,
+  "pres": "gallery",
+  "X": 935081,
+  "cam": [
+   718007,
+   3000,
+   117828
+  ],
+  "q": 0,
+  "walls": 28,
+  "stats": {
+   "t3": 5,
+   "t4": 201,
+   "t5": 1,
+   "imp": 14,
+   "inst": 77411,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 454
+  },
+  "classes": {
+   "solid lines": {
+    "n": 2,
+    "area": 1.653
+   },
+   "solid imp-hi": {
+    "n": 4,
+    "area": 1.261
+   },
+   "solid imp-lo": {
+    "n": 9,
+    "area": 0.504
+   },
+   "solid T3": {
+    "n": 5,
+    "area": 0.07
+   },
+   "solid T4": {
+    "n": 201,
+    "area": 0.301
+   },
+   "solid T5": {
+    "n": 1,
+    "area": 0
+   }
+  },
+  "top": [
+   {
+    "f": 173,
+    "lane": "flycast",
+    "date": "2022-06-26",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 1.534,
+    "area": 1
+   },
+   {
+    "f": 174,
+    "lane": "flycast",
+    "date": "2022-07-29",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 0.334,
+    "area": 0.653
+   },
+   {
+    "f": 175,
+    "lane": "flycast",
+    "date": "2022-08-22",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.215,
+    "area": 0.417
+   },
+   {
+    "f": 176,
+    "lane": "flycast",
+    "date": "2022-08-25",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.206,
+    "area": 0.399
+   },
+   {
+    "f": 177,
+    "lane": "flycast",
+    "date": "2022-09-24",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.144,
+    "area": 0.278
+   },
+   {
+    "f": 178,
+    "lane": "flycast",
+    "date": "2022-10-30",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.105,
+    "area": 0.167
+   },
+   {
+    "f": 179,
+    "lane": "flycast",
+    "date": "2022-11-04",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.102,
+    "area": 0.156
+   },
+   {
+    "f": 180,
+    "lane": "flycast",
+    "date": "2022-12-31",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.072,
+    "area": 0.078
+   },
+   {
+    "f": 181,
+    "lane": "flycast",
+    "date": "2023-01-31",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.063,
+    "area": 0.059
+   },
+   {
+    "f": 182,
+    "lane": "flycast",
+    "date": "2023-02-15",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.059,
+    "area": 0.052
+   },
+   {
+    "f": 183,
+    "lane": "flycast",
+    "date": "2023-02-28",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.056,
+    "area": 0.047
+   },
+   {
+    "f": 184,
+    "lane": "flycast",
+    "date": "2023-03-31",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.049,
+    "area": 0.036
+   }
+  ]
+ },
+ {
+  "name": "s2b-gallery-fly-8s",
+  "t": 13489,
+  "pres": "gallery",
+  "X": 935081,
+  "cam": [
+   742138,
+   3000,
+   117828
+  ],
+  "q": 0,
+  "walls": 37,
+  "stats": {
+   "t3": 4,
+   "t4": 194,
+   "t5": 0,
+   "imp": 16,
+   "inst": 84164,
+   "pendingBake": 0,
+   "wantQueue": 1,
+   "gpuMB": 460
+  },
+  "classes": {
+   "solid lines": {
+    "n": 2,
+    "area": 1.639
+   },
+   "solid imp-hi": {
+    "n": 4,
+    "area": 1.298
+   },
+   "solid imp-lo": {
+    "n": 11,
+    "area": 0.472
+   },
+   "solid T3": {
+    "n": 4,
+    "area": 0.063
+   },
+   "solid T4": {
+    "n": 194,
+    "area": 0.315
+   }
+  },
+  "top": [
+   {
+    "f": 180,
+    "lane": "flycast",
+    "date": "2022-12-31",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 1.079,
+    "area": 1
+   },
+   {
+    "f": 181,
+    "lane": "flycast",
+    "date": "2023-01-31",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 0.326,
+    "area": 0.639
+   },
+   {
+    "f": 182,
+    "lane": "flycast",
+    "date": "2023-02-15",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.244,
+    "area": 0.474
+   },
+   {
+    "f": 183,
+    "lane": "flycast",
+    "date": "2023-02-28",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.2,
+    "area": 0.387
+   },
+   {
+    "f": 184,
+    "lane": "flycast",
+    "date": "2023-03-31",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.136,
+    "area": 0.262
+   },
+   {
+    "f": 185,
+    "lane": "flycast",
+    "date": "2023-04-28",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.108,
+    "area": 0.175
+   },
+   {
+    "f": 186,
+    "lane": "flycast",
+    "date": "2023-05-31",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.086,
+    "area": 0.111
+   },
+   {
+    "f": 187,
+    "lane": "flycast",
+    "date": "2023-06-30",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.073,
+    "area": 0.08
+   },
+   {
+    "f": 191,
+    "lane": "flycast",
+    "date": "2023-07-31",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.063,
+    "area": 0.059
+   },
+   {
+    "f": 193,
+    "lane": "flycast",
+    "date": "2023-09-29",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.05,
+    "area": 0.037
+   },
+   {
+    "f": 194,
+    "lane": "flycast",
+    "date": "2023-10-27",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.045,
+    "area": 0.031
+   },
+   {
+    "f": 195,
+    "lane": "flycast",
+    "date": "2023-10-30",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.045,
+    "area": 0.03
+   }
+  ]
+ },
+ {
+  "name": "s2b-gallery-fly-12s",
+  "t": 17466,
+  "pres": "gallery",
+  "X": 935081,
+  "cam": [
+   774010,
+   3000,
+   117828
+  ],
+  "q": 0,
+  "walls": 44,
+  "stats": {
+   "t3": 8,
+   "t4": 181,
+   "t5": 0,
+   "imp": 12,
+   "inst": 65064,
+   "pendingBake": 0,
+   "wantQueue": 4,
+   "gpuMB": 450
+  },
+  "classes": {
+   "solid lines": {
+    "n": 1,
+    "area": 0.654
+   },
+   "solid imp-hi": {
+    "n": 5,
+    "area": 1.326
+   },
+   "solid imp-lo": {
+    "n": 6,
+    "area": 0.333
+   },
+   "solid T3": {
+    "n": 8,
+    "area": 0.162
+   },
+   "solid T4": {
+    "n": 181,
+    "area": 0.316
+   }
+  },
+  "top": [
+   {
+    "f": 193,
+    "lane": "flycast",
+    "date": "2023-09-29",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 0.334,
+    "area": 0.654
+   },
+   {
+    "f": 194,
+    "lane": "flycast",
+    "date": "2023-10-27",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.2,
+    "area": 0.388
+   },
+   {
+    "f": 195,
+    "lane": "flycast",
+    "date": "2023-10-30",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.192,
+    "area": 0.372
+   },
+   {
+    "f": 196,
+    "lane": "flycast",
+    "date": "2023-11-29",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.138,
+    "area": 0.265
+   },
+   {
+    "f": 197,
+    "lane": "flycast",
+    "date": "2023-12-22",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.112,
+    "area": 0.189
+   },
+   {
+    "f": 198,
+    "lane": "flycast",
+    "date": "2024-01-29",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.087,
+    "area": 0.112
+   },
+   {
+    "f": 199,
+    "lane": "flycast",
+    "date": "2024-02-29",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.073,
+    "area": 0.08
+   },
+   {
+    "f": 200,
+    "lane": "flycast",
+    "date": "2024-03-15",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.067,
+    "area": 0.068
+   },
+   {
+    "f": 201,
+    "lane": "flycast",
+    "date": "2024-03-29",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.063,
+    "area": 0.06
+   },
+   {
+    "f": 202,
+    "lane": "flycast",
+    "date": "2024-04-26",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.056,
+    "area": 0.047
+   },
+   {
+    "f": 203,
+    "lane": "flycast",
+    "date": "2024-05-11",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.053,
+    "area": 0.042
+   },
+   {
+    "f": 204,
+    "lane": "flycast",
+    "date": "2024-05-31",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.049,
+    "area": 0.036
+   }
+  ]
+ },
+ {
+  "name": "s2c-gallery-stopped-3s",
+  "t": 20540,
+  "pres": "gallery",
+  "X": 935081,
+  "cam": [
+   774010,
+   3000,
+   117828
+  ],
+  "q": 0,
+  "walls": 44,
+  "stats": {
+   "t3": 8,
+   "t4": 181,
+   "t5": 0,
+   "imp": 12,
+   "inst": 65064,
+   "pendingBake": 0,
+   "wantQueue": 1,
+   "gpuMB": 450
+  },
+  "classes": {
+   "solid lines": {
+    "n": 1,
+    "area": 0.654
+   },
+   "solid imp-hi": {
+    "n": 5,
+    "area": 1.326
+   },
+   "solid imp-lo": {
+    "n": 6,
+    "area": 0.333
+   },
+   "solid T3": {
+    "n": 8,
+    "area": 0.162
+   },
+   "solid T4": {
+    "n": 181,
+    "area": 0.316
+   }
+  },
+  "top": [
+   {
+    "f": 193,
+    "lane": "flycast",
+    "date": "2023-09-29",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 0.334,
+    "area": 0.654
+   },
+   {
+    "f": 194,
+    "lane": "flycast",
+    "date": "2023-10-27",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.2,
+    "area": 0.388
+   },
+   {
+    "f": 195,
+    "lane": "flycast",
+    "date": "2023-10-30",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.192,
+    "area": 0.372
+   },
+   {
+    "f": 196,
+    "lane": "flycast",
+    "date": "2023-11-29",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.138,
+    "area": 0.265
+   },
+   {
+    "f": 197,
+    "lane": "flycast",
+    "date": "2023-12-22",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.112,
+    "area": 0.189
+   },
+   {
+    "f": 198,
+    "lane": "flycast",
+    "date": "2024-01-29",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.087,
+    "area": 0.112
+   },
+   {
+    "f": 199,
+    "lane": "flycast",
+    "date": "2024-02-29",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.073,
+    "area": 0.08
+   },
+   {
+    "f": 200,
+    "lane": "flycast",
+    "date": "2024-03-15",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.067,
+    "area": 0.068
+   },
+   {
+    "f": 201,
+    "lane": "flycast",
+    "date": "2024-03-29",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.063,
+    "area": 0.06
+   },
+   {
+    "f": 202,
+    "lane": "flycast",
+    "date": "2024-04-26",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.056,
+    "area": 0.047
+   },
+   {
+    "f": 203,
+    "lane": "flycast",
+    "date": "2024-05-11",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.053,
+    "area": 0.042
+   },
+   {
+    "f": 204,
+    "lane": "flycast",
+    "date": "2024-05-31",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.049,
+    "area": 0.036
+   }
+  ]
+ },
+ {
+  "name": "s2d-clock-2s",
+  "t": 22614,
+  "pres": "clock",
+  "X": 794010,
+  "cam": [
+   774010,
+   3000,
+   117828
+  ],
+  "q": 0,
+  "walls": 44,
+  "stats": {
+   "t3": 3,
+   "t4": 30,
+   "t5": 0,
+   "imp": 12,
+   "inst": 0,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 450
+  },
+  "classes": {
+   "ghost imp-hi": {
+    "n": 4,
+    "area": 1.403
+   },
+   "solid imp-hi": {
+    "n": 2,
+    "area": 0.577
+   },
+   "ghost imp-lo": {
+    "n": 4,
+    "area": 0.223
+   },
+   "solid imp-lo": {
+    "n": 2,
+    "area": 0.11
+   },
+   "ghost T3": {
+    "n": 2,
+    "area": 0.052
+   },
+   "solid T3": {
+    "n": 1,
+    "area": 0.016
+   },
+   "solid T4": {
+    "n": 30,
+    "area": 0.035
+   }
+  },
+  "top": [
+   {
+    "f": 193,
+    "lane": "flycast",
+    "date": "2023-09-29",
+    "solid": false,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.334,
+    "area": 0.654
+   },
+   {
+    "f": 194,
+    "lane": "flycast",
+    "date": "2023-10-27",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.2,
+    "area": 0.388
+   },
+   {
+    "f": 195,
+    "lane": "flycast",
+    "date": "2023-10-30",
+    "solid": false,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.192,
+    "area": 0.372
+   },
+   {
+    "f": 196,
+    "lane": "flycast",
+    "date": "2023-11-29",
+    "solid": false,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.138,
+    "area": 0.265
+   },
+   {
+    "f": 197,
+    "lane": "flycast",
+    "date": "2023-12-22",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.112,
+    "area": 0.189
+   },
+   {
+    "f": 198,
+    "lane": "flycast",
+    "date": "2024-01-29",
+    "solid": false,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.087,
+    "area": 0.112
+   },
+   {
+    "f": 199,
+    "lane": "flycast",
+    "date": "2024-02-29",
+    "solid": false,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.073,
+    "area": 0.08
+   },
+   {
+    "f": 200,
+    "lane": "flycast",
+    "date": "2024-03-15",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.067,
+    "area": 0.068
+   },
+   {
+    "f": 201,
+    "lane": "flycast",
+    "date": "2024-03-29",
+    "solid": false,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.063,
+    "area": 0.06
+   },
+   {
+    "f": 202,
+    "lane": "flycast",
+    "date": "2024-04-26",
+    "solid": false,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.056,
+    "area": 0.047
+   },
+   {
+    "f": 203,
+    "lane": "flycast",
+    "date": "2024-05-11",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.053,
+    "area": 0.042
+   },
+   {
+    "f": 204,
+    "lane": "flycast",
+    "date": "2024-05-31",
+    "solid": false,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.049,
+    "area": 0.036
+   }
+  ]
+ }
+]

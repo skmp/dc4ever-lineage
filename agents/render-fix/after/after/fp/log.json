@@ -1,0 +1,317 @@
+{
+ "log": [
+  {
+   "name": "fp-after-click",
+   "t": 7134,
+   "pres": "clock",
+   "cam": [
+    217560,
+    2005,
+    9502
+   ],
+   "q": 0,
+   "walls": 12,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 31,
+    "t5": 325,
+    "imp": 9,
+    "inst": 2539,
+    "draws": 94,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 196
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-hi": {
+     "n": 3,
+     "area": 0.177
+    },
+    "solid imp-far": {
+     "n": 6,
+     "area": 0.07
+    },
+    "solid T4": {
+     "n": 31,
+     "area": 0.047
+    },
+    "solid T5": {
+     "n": 325,
+     "area": 0
+    }
+   },
+   "top": [
+    {
+     "f": 28,
+     "lane": "nullDC",
+     "date": "2011-09-14",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 16,
+     "area": 1
+    },
+    {
+     "f": 32,
+     "lane": "nulldc-360",
+     "date": "2011-12-18",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.134,
+     "area": 0.076
+    },
+    {
+     "f": 31,
+     "lane": "nulldc-360",
+     "date": "2011-11-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.162,
+     "area": 0.075
+    },
+    {
+     "f": 33,
+     "lane": "nulldc-360",
+     "date": "2012-02-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.083,
+     "area": 0.026
+    },
+    {
+     "f": 34,
+     "lane": "nullDC",
+     "date": "2012-03-20",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.075,
+     "area": 0.025
+    },
+    {
+     "f": 35,
+     "lane": "nullDC",
+     "date": "2012-04-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.068,
+     "area": 0.02
+    },
+    {
+     "f": 36,
+     "lane": "nulldc-360",
+     "date": "2012-05-19",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.056,
+     "area": 0.011
+    },
+    {
+     "f": 37,
+     "lane": "nulldc-360",
+     "date": "2012-08-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.04,
+     "area": 0.006
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDC  2011-09  c563e07",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.31,
+   "cpu_ms": 1.14,
+   "labels": 0,
+   "titlesShown": 1,
+   "rows": 6,
+   "X": 217678,
+   "focus": [
+    "nullDC  2011-09  c563e07"
+   ]
+  },
+  {
+   "name": "search-after-click",
+   "t": 14803,
+   "pres": "clock",
+   "cam": [
+    217560,
+    2043,
+    9502
+   ],
+   "q": 0,
+   "walls": 12,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 31,
+    "t5": 325,
+    "imp": 9,
+    "inst": 2539,
+    "draws": 94,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 218
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "solid imp-hi": {
+     "n": 2,
+     "area": 0.151
+    },
+    "solid imp-lo": {
+     "n": 1,
+     "area": 0.026
+    },
+    "solid imp-far": {
+     "n": 6,
+     "area": 0.07
+    },
+    "solid T4": {
+     "n": 31,
+     "area": 0.047
+    },
+    "solid T5": {
+     "n": 325,
+     "area": 0
+    }
+   },
+   "top": [
+    {
+     "f": 28,
+     "lane": "nullDC",
+     "date": "2011-09-14",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 16,
+     "area": 1
+    },
+    {
+     "f": 32,
+     "lane": "nulldc-360",
+     "date": "2011-12-18",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.134,
+     "area": 0.076
+    },
+    {
+     "f": 31,
+     "lane": "nulldc-360",
+     "date": "2011-11-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.162,
+     "area": 0.075
+    },
+    {
+     "f": 33,
+     "lane": "nulldc-360",
+     "date": "2012-02-27",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-lo",
+     "ppl": 0.083,
+     "area": 0.026
+    },
+    {
+     "f": 34,
+     "lane": "nullDC",
+     "date": "2012-03-20",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.075,
+     "area": 0.025
+    },
+    {
+     "f": 35,
+     "lane": "nullDC",
+     "date": "2012-04-10",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.068,
+     "area": 0.02
+    },
+    {
+     "f": 36,
+     "lane": "nulldc-360",
+     "date": "2012-05-19",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.056,
+     "area": 0.011
+    },
+    {
+     "f": 37,
+     "lane": "nulldc-360",
+     "date": "2012-08-31",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-far",
+     "ppl": 0.04,
+     "area": 0.006
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDC  2011-09  c563e07",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.35,
+   "cpu_ms": 0.68,
+   "labels": 0,
+   "titlesShown": 1,
+   "nres": 1,
+   "X": 217678
+  }
+ ]
+}

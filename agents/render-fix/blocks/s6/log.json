@@ -1,0 +1,181 @@
+[
+ {
+  "name": "s6-flycast-oblique-after-session",
+  "t": 46261,
+  "pres": "gallery",
+  "X": 935081,
+  "cam": [
+   740710,
+   20000,
+   74352
+  ],
+  "q": 0,
+  "walls": 82,
+  "stats": {
+   "t3": 13,
+   "t4": 145,
+   "t5": 3,
+   "imp": 48,
+   "inst": 0,
+   "pendingBake": 0,
+   "wantQueue": 6,
+   "gpuMB": 538
+  },
+  "classes": {
+   "solid T3": {
+    "n": 13,
+    "area": 0.397
+   },
+   "solid imp-lo": {
+    "n": 30,
+    "area": 0.083
+   },
+   "solid T4": {
+    "n": 145,
+    "area": 0.413
+   },
+   "solid imp-hi": {
+    "n": 18,
+    "area": 0.036
+   },
+   "solid T5": {
+    "n": 3,
+    "area": 0
+   }
+  },
+  "top": [
+   {
+    "f": 183,
+    "lane": "flycast",
+    "date": "2023-02-28",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.053,
+    "area": 0.049
+   },
+   {
+    "f": 184,
+    "lane": "flycast",
+    "date": "2023-03-31",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.05,
+    "area": 0.045
+   },
+   {
+    "f": 182,
+    "lane": "flycast",
+    "date": "2023-02-15",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.053,
+    "area": 0.043
+   },
+   {
+    "f": 185,
+    "lane": "flycast",
+    "date": "2023-04-28",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.048,
+    "area": 0.04
+   },
+   {
+    "f": 186,
+    "lane": "flycast",
+    "date": "2023-05-31",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.046,
+    "area": 0.035
+   },
+   {
+    "f": 181,
+    "lane": "flycast",
+    "date": "2023-01-31",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.054,
+    "area": 0.033
+   },
+   {
+    "f": 187,
+    "lane": "flycast",
+    "date": "2023-06-30",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.043,
+    "area": 0.032
+   },
+   {
+    "f": 190,
+    "lane": "reicast",
+    "date": "2023-07-10",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.054,
+    "area": 0.029
+   },
+   {
+    "f": 191,
+    "lane": "flycast",
+    "date": "2023-07-31",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.041,
+    "area": 0.028
+   },
+   {
+    "f": 193,
+    "lane": "flycast",
+    "date": "2023-09-29",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.036,
+    "area": 0.023
+   },
+   {
+    "f": 194,
+    "lane": "flycast",
+    "date": "2023-10-27",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.034,
+    "area": 0.02
+   },
+   {
+    "f": 195,
+    "lane": "flycast",
+    "date": "2023-10-30",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.034,
+    "area": 0.02
+   }
+  ]
+ }
+]

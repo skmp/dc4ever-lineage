@@ -1,0 +1,249 @@
+[
+ {
+  "name": "s8a-notdcps3-fit-5s",
+  "t": 37311,
+  "pres": "clock",
+  "X": 928001,
+  "cam": [
+   920379,
+   2130,
+   68241
+  ],
+  "q": 0,
+  "walls": 57,
+  "stats": {
+   "t3": 7,
+   "t4": 0,
+   "t5": 0,
+   "imp": 6,
+   "inst": 65914,
+   "pendingBake": 0,
+   "wantQueue": 1,
+   "gpuMB": 515
+  },
+  "classes": {
+   "ghost T3": {
+    "n": 7,
+    "area": 3.486
+   },
+   "solid lines": {
+    "n": 1,
+    "area": 0.581
+   },
+   "solid imp-hi": {
+    "n": 1,
+    "area": 0.383
+   },
+   "solid imp-lo": {
+    "n": 1,
+    "area": 0.045
+   },
+   "ghost imp-lo": {
+    "n": 3,
+    "area": 0.166
+   }
+  },
+  "top": [
+   {
+    "f": 352,
+    "lane": "NotDC-PS3",
+    "date": "2026-09-19",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.962,
+    "area": 1
+   },
+   {
+    "f": 354,
+    "lane": "NotDC-PS3",
+    "date": "2026-09-23",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.76,
+    "area": 1
+   },
+   {
+    "f": 361,
+    "lane": "NotDC-PS3",
+    "date": "2026-10-18",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 0.322,
+    "area": 0.581
+   },
+   {
+    "f": 363,
+    "lane": "NotDC-PS3",
+    "date": "2026-10-19",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.315,
+    "area": 0.562
+   },
+   {
+    "f": 364,
+    "lane": "NotDC-PS3",
+    "date": "2026-10-24",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.284,
+    "area": 0.483
+   },
+   {
+    "f": 372,
+    "lane": "NotDC-PS3",
+    "date": "2026-10-29",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.259,
+    "area": 0.423
+   },
+   {
+    "f": 376,
+    "lane": "NotDC-PS3",
+    "date": "2026-11-01",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.245,
+    "area": 0.383
+   },
+   {
+    "f": 392,
+    "lane": "nullDC4WiiU",
+    "date": "2026-11-21",
+    "solid": false,
+    "loaded": false,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.145,
+    "area": 0.057
+   },
+   {
+    "f": 394,
+    "lane": "nullDC4WiiU",
+    "date": "2026-11-22",
+    "solid": false,
+    "loaded": false,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.148,
+    "area": 0.055
+   },
+   {
+    "f": 391,
+    "lane": "nullDC4WiiU",
+    "date": "2026-11-21",
+    "solid": false,
+    "loaded": false,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.149,
+    "area": 0.054
+   },
+   {
+    "f": 386,
+    "lane": "nullDC4WiiU",
+    "date": "2026-11-13",
+    "solid": true,
+    "loaded": false,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.16,
+    "area": 0.045
+   },
+   {
+    "f": 387,
+    "lane": "nullDC4Wii",
+    "date": "2026-11-19",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.137,
+    "area": 0.016
+   }
+  ],
+  "target": {
+   "f": 376,
+   "loaded": true,
+   "imp": "hi"
+  }
+ },
+ {
+  "name": "s8b-notdcps3-read-3s",
+  "t": 40380,
+  "pres": "clock",
+  "X": 928001,
+  "cam": [
+   927883,
+   4027,
+   61054
+  ],
+  "q": 0,
+  "walls": 57,
+  "stats": {
+   "t3": 1,
+   "t4": 0,
+   "t5": 0,
+   "imp": 0,
+   "inst": 2462,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 515
+  },
+  "classes": {
+   "solid lines": {
+    "n": 1,
+    "area": 1
+   },
+   "ghost T3": {
+    "n": 1,
+    "area": 0.031
+   }
+  },
+  "top": [
+   {
+    "f": 376,
+    "lane": "NotDC-PS3",
+    "date": "2026-11-01",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 16,
+    "area": 1
+   },
+   {
+    "f": 387,
+    "lane": "nullDC4Wii",
+    "date": "2026-11-19",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.569,
+    "area": 0.031
+   }
+  ],
+  "target": {
+   "f": 376,
+   "loaded": true,
+   "imp": "hi",
+   "ensure": true
+  }
+ }
+]

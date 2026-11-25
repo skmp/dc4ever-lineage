@@ -1,0 +1,97 @@
+{
+ "date": "2026-11-25T17:34:44.979Z",
+ "size": [
+  2560,
+  1440
+ ],
+ "paths": {
+  "C": {
+   "path": "C",
+   "name": "lane flights",
+   "dur": 15,
+   "frames": 1671,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "fps_mean": 111.4,
+   "fps_1pct_low": 21.6,
+   "frame_ms": {
+    "p50": 2.2,
+    "p95": 21,
+    "p99": 39,
+    "max": 58.6
+   },
+   "cpu_ms": {
+    "p50": 0.7,
+    "p95": 1.4,
+    "p99": 4
+   },
+   "gpu_ms": {
+    "p50": 0.32,
+    "p95": 11.08,
+    "p99": 22.16
+   },
+   "draws_p95": 187,
+   "lines_p95": 120837,
+   "quality_steps": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "frames_over_100ms": 0,
+   "ready_ms": 1142,
+   "skipped_rafs": 640,
+   "baked": 143,
+   "loaded_end": 59,
+   "slowest_frames_cpu_sections": [
+    [
+     67.7,
+     [
+      [
+       "pre",
+       66.4
+      ]
+     ]
+    ],
+    [
+     38.2,
+     [
+      [
+       "pre",
+       36.3
+      ]
+     ]
+    ],
+    [
+     34.1,
+     [
+      [
+       "pre",
+       33
+      ]
+     ]
+    ],
+    [
+     31.5,
+     [
+      [
+       "pre",
+       30.3
+      ]
+     ]
+    ]
+   ]
+  }
+ },
+ "logs": []
+}

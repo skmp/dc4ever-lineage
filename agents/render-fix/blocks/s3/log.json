@@ -1,0 +1,2798 @@
+[
+ {
+  "name": "s3-tour-02.5",
+  "t": 4714,
+  "pres": "clock",
+  "X": 125936,
+  "cam": [
+   165502,
+   28368,
+   21835
+  ],
+  "q": 0,
+  "walls": 2,
+  "stats": {
+   "t3": 0,
+   "t4": 2,
+   "t5": 45,
+   "imp": 0,
+   "inst": 0,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 145
+  },
+  "classes": {
+   "solid T4": {
+    "n": 2,
+    "area": 0.002
+   },
+   "solid T5": {
+    "n": 45,
+    "area": 0
+   }
+  },
+  "top": [
+   {
+    "f": 44,
+    "lane": "reicast",
+    "date": "2014-01-27",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.011,
+    "area": 0.001
+   },
+   {
+    "f": 55,
+    "lane": "reicast",
+    "date": "2014-12-11",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.009,
+    "area": 0.001
+   },
+   {
+    "f": 80,
+    "lane": "reicast",
+    "date": "2018-08-04",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.005,
+    "area": 0
+   },
+   {
+    "f": 83,
+    "lane": "reicast",
+    "date": "2018-09-04",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.005,
+    "area": 0
+   },
+   {
+    "f": 99,
+    "lane": "reicast",
+    "date": "2019-07-14",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.004,
+    "area": 0
+   },
+   {
+    "f": 111,
+    "lane": "reicast",
+    "date": "2020-01-27",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.004,
+    "area": 0
+   },
+   {
+    "f": 131,
+    "lane": "reicast",
+    "date": "2020-04-02",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.004,
+    "area": 0
+   },
+   {
+    "f": 152,
+    "lane": "flycast",
+    "date": "2021-05-28",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.004,
+    "area": 0
+   },
+   {
+    "f": 159,
+    "lane": "flycast",
+    "date": "2021-08-26",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.004,
+    "area": 0
+   },
+   {
+    "f": 163,
+    "lane": "flycast",
+    "date": "2021-12-17",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 170,
+    "lane": "flycast",
+    "date": "2022-04-09",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 176,
+    "lane": "flycast",
+    "date": "2022-08-25",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   }
+  ],
+  "cap": "Dynarec decoder: FPU pairs, quads and the matrix15 lines, first seen in nullDCe 2009-10-16"
+ },
+ {
+  "name": "s3-tour-05.0",
+  "t": 7224,
+  "pres": "clock",
+  "X": 125936,
+  "cam": [
+   122030,
+   2427,
+   33088
+  ],
+  "q": 0,
+  "walls": 2,
+  "stats": {
+   "t3": 0,
+   "t4": 1,
+   "t5": 46,
+   "imp": 1,
+   "inst": 62897,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 154
+  },
+  "classes": {
+   "solid lines": {
+    "n": 1,
+    "area": 0.85
+   },
+   "solid T4": {
+    "n": 1,
+    "area": 0.001
+   },
+   "solid T5": {
+    "n": 46,
+    "area": 0
+   }
+  },
+  "top": [
+   {
+    "f": 14,
+    "lane": "nullDCe",
+    "date": "2009-10-16",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 0.479,
+    "area": 0.85
+   },
+   {
+    "f": 44,
+    "lane": "reicast",
+    "date": "2014-01-27",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.009,
+    "area": 0.001
+   },
+   {
+    "f": 55,
+    "lane": "reicast",
+    "date": "2014-12-11",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.008,
+    "area": 0
+   },
+   {
+    "f": 80,
+    "lane": "reicast",
+    "date": "2018-08-04",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.005,
+    "area": 0
+   },
+   {
+    "f": 83,
+    "lane": "reicast",
+    "date": "2018-09-04",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.004,
+    "area": 0
+   },
+   {
+    "f": 99,
+    "lane": "reicast",
+    "date": "2019-07-14",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.004,
+    "area": 0
+   },
+   {
+    "f": 111,
+    "lane": "reicast",
+    "date": "2020-01-27",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.004,
+    "area": 0
+   },
+   {
+    "f": 131,
+    "lane": "reicast",
+    "date": "2020-04-02",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.004,
+    "area": 0
+   },
+   {
+    "f": 152,
+    "lane": "flycast",
+    "date": "2021-05-28",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 159,
+    "lane": "flycast",
+    "date": "2021-08-26",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 163,
+    "lane": "flycast",
+    "date": "2021-12-17",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 170,
+    "lane": "flycast",
+    "date": "2022-04-09",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   }
+  ],
+  "cap": "Dynarec decoder: FPU pairs, quads and the matrix15 lines, first seen in nullDCe 2009-10-16"
+ },
+ {
+  "name": "s3-tour-07.5",
+  "t": 9720,
+  "pres": "clock",
+  "X": 125936,
+  "cam": [
+   124570,
+   3940,
+   31938
+  ],
+  "q": 0,
+  "walls": 2,
+  "stats": {
+   "t3": 0,
+   "t4": 1,
+   "t5": 46,
+   "imp": 1,
+   "inst": 30635,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 154
+  },
+  "classes": {
+   "solid lines": {
+    "n": 1,
+    "area": 0.625
+   },
+   "solid T4": {
+    "n": 1,
+    "area": 0.001
+   },
+   "solid T5": {
+    "n": 46,
+    "area": 0
+   }
+  },
+  "top": [
+   {
+    "f": 14,
+    "lane": "nullDCe",
+    "date": "2009-10-16",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 1.371,
+    "area": 0.625
+   },
+   {
+    "f": 44,
+    "lane": "reicast",
+    "date": "2014-01-27",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.009,
+    "area": 0.001
+   },
+   {
+    "f": 55,
+    "lane": "reicast",
+    "date": "2014-12-11",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.008,
+    "area": 0
+   },
+   {
+    "f": 80,
+    "lane": "reicast",
+    "date": "2018-08-04",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.005,
+    "area": 0
+   },
+   {
+    "f": 83,
+    "lane": "reicast",
+    "date": "2018-09-04",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.005,
+    "area": 0
+   },
+   {
+    "f": 99,
+    "lane": "reicast",
+    "date": "2019-07-14",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.004,
+    "area": 0
+   },
+   {
+    "f": 111,
+    "lane": "reicast",
+    "date": "2020-01-27",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.004,
+    "area": 0
+   },
+   {
+    "f": 131,
+    "lane": "reicast",
+    "date": "2020-04-02",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.004,
+    "area": 0
+   },
+   {
+    "f": 152,
+    "lane": "flycast",
+    "date": "2021-05-28",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 159,
+    "lane": "flycast",
+    "date": "2021-08-26",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 163,
+    "lane": "flycast",
+    "date": "2021-12-17",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 170,
+    "lane": "flycast",
+    "date": "2022-04-09",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   }
+  ],
+  "cap": "Dynarec decoder: FPU pairs, quads and the matrix15 lines, first seen in nullDCe 2009-10-16"
+ },
+ {
+  "name": "s3-tour-10.0",
+  "t": 12199,
+  "pres": "clock",
+  "X": 125936,
+  "cam": [
+   125849,
+   3145,
+   31362
+  ],
+  "q": 0,
+  "walls": 2,
+  "stats": {
+   "t3": 0,
+   "t4": 1,
+   "t5": 46,
+   "imp": 0,
+   "inst": 4610,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 154
+  },
+  "classes": {
+   "solid lines": {
+    "n": 1,
+    "area": 1
+   },
+   "solid T4": {
+    "n": 1,
+    "area": 0.001
+   },
+   "solid T5": {
+    "n": 46,
+    "area": 0
+   }
+  },
+  "top": [
+   {
+    "f": 14,
+    "lane": "nullDCe",
+    "date": "2009-10-16",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 21.648,
+    "area": 1
+   },
+   {
+    "f": 44,
+    "lane": "reicast",
+    "date": "2014-01-27",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.009,
+    "area": 0.001
+   },
+   {
+    "f": 55,
+    "lane": "reicast",
+    "date": "2014-12-11",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.008,
+    "area": 0
+   },
+   {
+    "f": 80,
+    "lane": "reicast",
+    "date": "2018-08-04",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.005,
+    "area": 0
+   },
+   {
+    "f": 83,
+    "lane": "reicast",
+    "date": "2018-09-04",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.005,
+    "area": 0
+   },
+   {
+    "f": 99,
+    "lane": "reicast",
+    "date": "2019-07-14",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.004,
+    "area": 0
+   },
+   {
+    "f": 111,
+    "lane": "reicast",
+    "date": "2020-01-27",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.004,
+    "area": 0
+   },
+   {
+    "f": 131,
+    "lane": "reicast",
+    "date": "2020-04-02",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.004,
+    "area": 0
+   },
+   {
+    "f": 152,
+    "lane": "flycast",
+    "date": "2021-05-28",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 159,
+    "lane": "flycast",
+    "date": "2021-08-26",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 163,
+    "lane": "flycast",
+    "date": "2021-12-17",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 170,
+    "lane": "flycast",
+    "date": "2022-04-09",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   }
+  ],
+  "cap": "Dynarec decoder: FPU pairs, quads and the matrix15 lines, first seen in nullDCe 2009-10-16"
+ },
+ {
+  "name": "s3-tour-12.5",
+  "t": 14716,
+  "pres": "clock",
+  "X": 125936,
+  "cam": [
+   125839,
+   3138,
+   31385
+  ],
+  "q": 0,
+  "walls": 2,
+  "stats": {
+   "t3": 0,
+   "t4": 1,
+   "t5": 46,
+   "imp": 0,
+   "inst": 4610,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 154
+  },
+  "classes": {
+   "solid lines": {
+    "n": 1,
+    "area": 1
+   },
+   "solid T4": {
+    "n": 1,
+    "area": 0.001
+   },
+   "solid T5": {
+    "n": 46,
+    "area": 0
+   }
+  },
+  "top": [
+   {
+    "f": 14,
+    "lane": "nullDCe",
+    "date": "2009-10-16",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 19.583,
+    "area": 1
+   },
+   {
+    "f": 44,
+    "lane": "reicast",
+    "date": "2014-01-27",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.009,
+    "area": 0.001
+   },
+   {
+    "f": 55,
+    "lane": "reicast",
+    "date": "2014-12-11",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.008,
+    "area": 0
+   },
+   {
+    "f": 80,
+    "lane": "reicast",
+    "date": "2018-08-04",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.005,
+    "area": 0
+   },
+   {
+    "f": 83,
+    "lane": "reicast",
+    "date": "2018-09-04",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.005,
+    "area": 0
+   },
+   {
+    "f": 99,
+    "lane": "reicast",
+    "date": "2019-07-14",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.004,
+    "area": 0
+   },
+   {
+    "f": 111,
+    "lane": "reicast",
+    "date": "2020-01-27",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.004,
+    "area": 0
+   },
+   {
+    "f": 131,
+    "lane": "reicast",
+    "date": "2020-04-02",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.004,
+    "area": 0
+   },
+   {
+    "f": 152,
+    "lane": "flycast",
+    "date": "2021-05-28",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 159,
+    "lane": "flycast",
+    "date": "2021-08-26",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 163,
+    "lane": "flycast",
+    "date": "2021-12-17",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 170,
+    "lane": "flycast",
+    "date": "2022-04-09",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   }
+  ],
+  "cap": "Dynarec decoder: FPU pairs, quads and the matrix15 lines, first seen in nullDCe 2009-10-16"
+ },
+ {
+  "name": "s3-tour-15.0",
+  "t": 17197,
+  "pres": "clock",
+  "X": 125936,
+  "cam": [
+   125824,
+   3130,
+   31407
+  ],
+  "q": 0,
+  "walls": 2,
+  "stats": {
+   "t3": 0,
+   "t4": 1,
+   "t5": 46,
+   "imp": 0,
+   "inst": 4610,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 154
+  },
+  "classes": {
+   "solid lines": {
+    "n": 1,
+    "area": 1
+   },
+   "solid T4": {
+    "n": 1,
+    "area": 0.001
+   },
+   "solid T5": {
+    "n": 46,
+    "area": 0
+   }
+  },
+  "top": [
+   {
+    "f": 14,
+    "lane": "nullDCe",
+    "date": "2009-10-16",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 16.802,
+    "area": 1
+   },
+   {
+    "f": 44,
+    "lane": "reicast",
+    "date": "2014-01-27",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.009,
+    "area": 0.001
+   },
+   {
+    "f": 55,
+    "lane": "reicast",
+    "date": "2014-12-11",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.008,
+    "area": 0
+   },
+   {
+    "f": 80,
+    "lane": "reicast",
+    "date": "2018-08-04",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.005,
+    "area": 0
+   },
+   {
+    "f": 83,
+    "lane": "reicast",
+    "date": "2018-09-04",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.005,
+    "area": 0
+   },
+   {
+    "f": 99,
+    "lane": "reicast",
+    "date": "2019-07-14",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.004,
+    "area": 0
+   },
+   {
+    "f": 111,
+    "lane": "reicast",
+    "date": "2020-01-27",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.004,
+    "area": 0
+   },
+   {
+    "f": 131,
+    "lane": "reicast",
+    "date": "2020-04-02",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.004,
+    "area": 0
+   },
+   {
+    "f": 152,
+    "lane": "flycast",
+    "date": "2021-05-28",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 159,
+    "lane": "flycast",
+    "date": "2021-08-26",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 163,
+    "lane": "flycast",
+    "date": "2021-12-17",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 170,
+    "lane": "flycast",
+    "date": "2022-04-09",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   }
+  ],
+  "cap": "Dynarec decoder: FPU pairs, quads and the matrix15 lines, first seen in nullDCe 2009-10-16"
+ },
+ {
+  "name": "s3-tour-17.5",
+  "t": 19696,
+  "pres": "clock",
+  "X": 125936,
+  "cam": [
+   267968,
+   32850,
+   31757
+  ],
+  "q": 0,
+  "walls": 3,
+  "stats": {
+   "t3": 0,
+   "t4": 2,
+   "t5": 45,
+   "imp": 0,
+   "inst": 0,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 154
+  },
+  "classes": {
+   "solid T4": {
+    "n": 2,
+    "area": 0.005
+   },
+   "solid T5": {
+    "n": 45,
+    "area": 0
+   }
+  },
+  "top": [
+   {
+    "f": 55,
+    "lane": "reicast",
+    "date": "2014-12-11",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.016,
+    "area": 0.003
+   },
+   {
+    "f": 44,
+    "lane": "reicast",
+    "date": "2014-01-27",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.022,
+    "area": 0.002
+   },
+   {
+    "f": 80,
+    "lane": "reicast",
+    "date": "2018-08-04",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.007,
+    "area": 0
+   },
+   {
+    "f": 83,
+    "lane": "reicast",
+    "date": "2018-09-04",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.007,
+    "area": 0
+   },
+   {
+    "f": 99,
+    "lane": "reicast",
+    "date": "2019-07-14",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.006,
+    "area": 0
+   },
+   {
+    "f": 111,
+    "lane": "reicast",
+    "date": "2020-01-27",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.005,
+    "area": 0
+   },
+   {
+    "f": 131,
+    "lane": "reicast",
+    "date": "2020-04-02",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.005,
+    "area": 0
+   },
+   {
+    "f": 152,
+    "lane": "flycast",
+    "date": "2021-05-28",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.005,
+    "area": 0
+   },
+   {
+    "f": 159,
+    "lane": "flycast",
+    "date": "2021-08-26",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.004,
+    "area": 0
+   },
+   {
+    "f": 163,
+    "lane": "flycast",
+    "date": "2021-12-17",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.004,
+    "area": 0
+   },
+   {
+    "f": 170,
+    "lane": "flycast",
+    "date": "2022-04-09",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.004,
+    "area": 0
+   },
+   {
+    "f": 176,
+    "lane": "flycast",
+    "date": "2022-08-25",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.004,
+    "area": 0
+   }
+  ],
+  "cap": "Dynarec decoder: FPU pairs, quads and the matrix15 lines, first seen in nullDCe 2009-10-16"
+ },
+ {
+  "name": "s3-tour-20.0",
+  "t": 22222,
+  "pres": "clock",
+  "X": 827356,
+  "cam": [
+   823450,
+   2427,
+   33088
+  ],
+  "q": 0,
+  "walls": 3,
+  "stats": {
+   "t3": 1,
+   "t4": 15,
+   "t5": 0,
+   "imp": 1,
+   "inst": 67970,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 163
+  },
+  "classes": {
+   "ghost T3": {
+    "n": 1,
+    "area": 0.898
+   },
+   "solid lines": {
+    "n": 1,
+    "area": 0.85
+   },
+   "solid T4": {
+    "n": 15,
+    "area": 0.038
+   }
+  },
+  "top": [
+   {
+    "f": 209,
+    "lane": "nullDCe",
+    "date": "2024-09-26",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.495,
+    "area": 0.898
+   },
+   {
+    "f": 210,
+    "lane": "nullDCe",
+    "date": "2024-09-27",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 0.479,
+    "area": 0.85
+   },
+   {
+    "f": 331,
+    "lane": "flycast",
+    "date": "2026-08-14",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.016,
+    "area": 0.005
+   },
+   {
+    "f": 240,
+    "lane": "nullDC4Wii",
+    "date": "2026-01-21",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.027,
+    "area": 0.004
+   },
+   {
+    "f": 249,
+    "lane": "nullDC4Wii",
+    "date": "2026-03-01",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.025,
+    "area": 0.004
+   },
+   {
+    "f": 259,
+    "lane": "nullDC4Wii",
+    "date": "2026-04-01",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.024,
+    "area": 0.003
+   },
+   {
+    "f": 268,
+    "lane": "nullDC4Wii",
+    "date": "2026-05-01",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.023,
+    "area": 0.003
+   },
+   {
+    "f": 274,
+    "lane": "nullDC4Wii",
+    "date": "2026-06-03",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.022,
+    "area": 0.003
+   },
+   {
+    "f": 292,
+    "lane": "nullDC4Wii",
+    "date": "2026-07-03",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.021,
+    "area": 0.003
+   },
+   {
+    "f": 332,
+    "lane": "nullDC4Wii",
+    "date": "2026-08-21",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.019,
+    "area": 0.002
+   },
+   {
+    "f": 350,
+    "lane": "nullDC4Wii",
+    "date": "2026-09-18",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.019,
+    "area": 0.002
+   },
+   {
+    "f": 361,
+    "lane": "NotDC-PS3",
+    "date": "2026-10-18",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.018,
+    "area": 0.002
+   }
+  ],
+  "cap": "Dynarec decoder: FPU pairs, quads and the matrix15 lines, first seen in nullDCe 2009-10-16"
+ },
+ {
+  "name": "s3-tour-22.5",
+  "t": 24701,
+  "pres": "clock",
+  "X": 827356,
+  "cam": [
+   825800,
+   3984,
+   32024
+  ],
+  "q": 0,
+  "walls": 3,
+  "stats": {
+   "t3": 1,
+   "t4": 14,
+   "t5": 0,
+   "imp": 1,
+   "inst": 37928,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 163
+  },
+  "classes": {
+   "ghost T3": {
+    "n": 1,
+    "area": 0.597
+   },
+   "solid lines": {
+    "n": 1,
+    "area": 0.591
+   },
+   "solid T4": {
+    "n": 14,
+    "area": 0.038
+   }
+  },
+  "top": [
+   {
+    "f": 209,
+    "lane": "nullDCe",
+    "date": "2024-09-26",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 1.312,
+    "area": 0.597
+   },
+   {
+    "f": 210,
+    "lane": "nullDCe",
+    "date": "2024-09-27",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 1.203,
+    "area": 0.591
+   },
+   {
+    "f": 240,
+    "lane": "nullDC4Wii",
+    "date": "2026-01-21",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.028,
+    "area": 0.005
+   },
+   {
+    "f": 331,
+    "lane": "flycast",
+    "date": "2026-08-14",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.016,
+    "area": 0.005
+   },
+   {
+    "f": 249,
+    "lane": "nullDC4Wii",
+    "date": "2026-03-01",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.026,
+    "area": 0.004
+   },
+   {
+    "f": 259,
+    "lane": "nullDC4Wii",
+    "date": "2026-04-01",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.025,
+    "area": 0.004
+   },
+   {
+    "f": 268,
+    "lane": "nullDC4Wii",
+    "date": "2026-05-01",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.024,
+    "area": 0.003
+   },
+   {
+    "f": 274,
+    "lane": "nullDC4Wii",
+    "date": "2026-06-03",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.022,
+    "area": 0.003
+   },
+   {
+    "f": 292,
+    "lane": "nullDC4Wii",
+    "date": "2026-07-03",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.021,
+    "area": 0.003
+   },
+   {
+    "f": 332,
+    "lane": "nullDC4Wii",
+    "date": "2026-08-21",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.02,
+    "area": 0.002
+   },
+   {
+    "f": 350,
+    "lane": "nullDC4Wii",
+    "date": "2026-09-18",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.019,
+    "area": 0.002
+   },
+   {
+    "f": 361,
+    "lane": "NotDC-PS3",
+    "date": "2026-10-18",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.018,
+    "area": 0.002
+   }
+  ],
+  "cap": "Dynarec decoder: FPU pairs, quads and the matrix15 lines, first seen in nullDCe 2009-10-16"
+ },
+ {
+  "name": "s3-tour-25.0",
+  "t": 27194,
+  "pres": "clock",
+  "X": 827356,
+  "cam": [
+   827269,
+   3145,
+   31362
+  ],
+  "q": 0,
+  "walls": 3,
+  "stats": {
+   "t3": 0,
+   "t4": 13,
+   "t5": 0,
+   "imp": 0,
+   "inst": 4612,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 163
+  },
+  "classes": {
+   "solid lines": {
+    "n": 1,
+    "area": 1
+   },
+   "solid T4": {
+    "n": 13,
+    "area": 0.038
+   }
+  },
+  "top": [
+   {
+    "f": 210,
+    "lane": "nullDCe",
+    "date": "2024-09-27",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 21.693,
+    "area": 1
+   },
+   {
+    "f": 240,
+    "lane": "nullDC4Wii",
+    "date": "2026-01-21",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.028,
+    "area": 0.005
+   },
+   {
+    "f": 249,
+    "lane": "nullDC4Wii",
+    "date": "2026-03-01",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.027,
+    "area": 0.004
+   },
+   {
+    "f": 259,
+    "lane": "nullDC4Wii",
+    "date": "2026-04-01",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.025,
+    "area": 0.004
+   },
+   {
+    "f": 268,
+    "lane": "nullDC4Wii",
+    "date": "2026-05-01",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.024,
+    "area": 0.004
+   },
+   {
+    "f": 331,
+    "lane": "flycast",
+    "date": "2026-08-14",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.016,
+    "area": 0.004
+   },
+   {
+    "f": 274,
+    "lane": "nullDC4Wii",
+    "date": "2026-06-03",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.023,
+    "area": 0.003
+   },
+   {
+    "f": 292,
+    "lane": "nullDC4Wii",
+    "date": "2026-07-03",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.022,
+    "area": 0.003
+   },
+   {
+    "f": 332,
+    "lane": "nullDC4Wii",
+    "date": "2026-08-21",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.02,
+    "area": 0.002
+   },
+   {
+    "f": 350,
+    "lane": "nullDC4Wii",
+    "date": "2026-09-18",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.019,
+    "area": 0.002
+   },
+   {
+    "f": 361,
+    "lane": "NotDC-PS3",
+    "date": "2026-10-18",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.018,
+    "area": 0.002
+   },
+   {
+    "f": 369,
+    "lane": "nullDC4Wii",
+    "date": "2026-10-25",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.019,
+    "area": 0.002
+   }
+  ],
+  "cap": "Dynarec decoder: FPU pairs, quads and the matrix15 lines, first seen in nullDCe 2009-10-16"
+ },
+ {
+  "name": "s3-tour-27.5",
+  "t": 29715,
+  "pres": "clock",
+  "X": 827356,
+  "cam": [
+   827260,
+   3138,
+   31384
+  ],
+  "q": 0,
+  "walls": 3,
+  "stats": {
+   "t3": 0,
+   "t4": 13,
+   "t5": 0,
+   "imp": 0,
+   "inst": 4612,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 163
+  },
+  "classes": {
+   "solid lines": {
+    "n": 1,
+    "area": 1
+   },
+   "solid T4": {
+    "n": 13,
+    "area": 0.038
+   }
+  },
+  "top": [
+   {
+    "f": 210,
+    "lane": "nullDCe",
+    "date": "2024-09-27",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 19.628,
+    "area": 1
+   },
+   {
+    "f": 240,
+    "lane": "nullDC4Wii",
+    "date": "2026-01-21",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.028,
+    "area": 0.005
+   },
+   {
+    "f": 249,
+    "lane": "nullDC4Wii",
+    "date": "2026-03-01",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.027,
+    "area": 0.004
+   },
+   {
+    "f": 259,
+    "lane": "nullDC4Wii",
+    "date": "2026-04-01",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.025,
+    "area": 0.004
+   },
+   {
+    "f": 268,
+    "lane": "nullDC4Wii",
+    "date": "2026-05-01",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.024,
+    "area": 0.004
+   },
+   {
+    "f": 331,
+    "lane": "flycast",
+    "date": "2026-08-14",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.016,
+    "area": 0.004
+   },
+   {
+    "f": 274,
+    "lane": "nullDC4Wii",
+    "date": "2026-06-03",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.023,
+    "area": 0.003
+   },
+   {
+    "f": 292,
+    "lane": "nullDC4Wii",
+    "date": "2026-07-03",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.022,
+    "area": 0.003
+   },
+   {
+    "f": 332,
+    "lane": "nullDC4Wii",
+    "date": "2026-08-21",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.02,
+    "area": 0.002
+   },
+   {
+    "f": 350,
+    "lane": "nullDC4Wii",
+    "date": "2026-09-18",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.019,
+    "area": 0.002
+   },
+   {
+    "f": 361,
+    "lane": "NotDC-PS3",
+    "date": "2026-10-18",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.018,
+    "area": 0.002
+   },
+   {
+    "f": 369,
+    "lane": "nullDC4Wii",
+    "date": "2026-10-25",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.019,
+    "area": 0.002
+   }
+  ],
+  "cap": "Dynarec decoder: FPU pairs, quads and the matrix15 lines, first seen in nullDCe 2009-10-16"
+ },
+ {
+  "name": "s3-tour-30.0",
+  "t": 32210,
+  "pres": "clock",
+  "X": 827356,
+  "cam": [
+   831766,
+   8714,
+   35901
+  ],
+  "q": 0,
+  "walls": 4,
+  "stats": {
+   "t3": 1,
+   "t4": 12,
+   "t5": 0,
+   "imp": 0,
+   "inst": 0,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 163
+  },
+  "classes": {
+   "solid T3": {
+    "n": 1,
+    "area": 0.006
+   },
+   "solid T4": {
+    "n": 12,
+    "area": 0.038
+   }
+  },
+  "top": [
+   {
+    "f": 240,
+    "lane": "nullDC4Wii",
+    "date": "2026-01-21",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.031,
+    "area": 0.006
+   },
+   {
+    "f": 249,
+    "lane": "nullDC4Wii",
+    "date": "2026-03-01",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.029,
+    "area": 0.005
+   },
+   {
+    "f": 331,
+    "lane": "flycast",
+    "date": "2026-08-14",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.017,
+    "area": 0.005
+   },
+   {
+    "f": 259,
+    "lane": "nullDC4Wii",
+    "date": "2026-04-01",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.027,
+    "area": 0.004
+   },
+   {
+    "f": 268,
+    "lane": "nullDC4Wii",
+    "date": "2026-05-01",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.026,
+    "area": 0.004
+   },
+   {
+    "f": 274,
+    "lane": "nullDC4Wii",
+    "date": "2026-06-03",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.024,
+    "area": 0.004
+   },
+   {
+    "f": 292,
+    "lane": "nullDC4Wii",
+    "date": "2026-07-03",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.023,
+    "area": 0.003
+   },
+   {
+    "f": 332,
+    "lane": "nullDC4Wii",
+    "date": "2026-08-21",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.021,
+    "area": 0.003
+   },
+   {
+    "f": 350,
+    "lane": "nullDC4Wii",
+    "date": "2026-09-18",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.02,
+    "area": 0.003
+   },
+   {
+    "f": 361,
+    "lane": "NotDC-PS3",
+    "date": "2026-10-18",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.019,
+    "area": 0.002
+   },
+   {
+    "f": 369,
+    "lane": "nullDC4Wii",
+    "date": "2026-10-25",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.019,
+    "area": 0.002
+   },
+   {
+    "f": 386,
+    "lane": "nullDC4WiiU",
+    "date": "2026-11-13",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.018,
+    "area": 0.002
+   }
+  ],
+  "cap": "Dynarec decoder: FPU pairs, quads and the matrix15 lines, first seen in nullDCe 2009-10-16"
+ },
+ {
+  "name": "s3-tour-32.5",
+  "t": 34717,
+  "pres": "clock",
+  "X": 930711,
+  "cam": [
+   914438,
+   4295,
+   118338
+  ],
+  "q": 0,
+  "walls": 9,
+  "stats": {
+   "t3": 4,
+   "t4": 0,
+   "t5": 0,
+   "imp": 3,
+   "inst": 71430,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 274
+  },
+  "classes": {
+   "ghost T3": {
+    "n": 4,
+    "area": 1.719
+   },
+   "solid lines": {
+    "n": 1,
+    "area": 0.526
+   },
+   "solid imp-hi": {
+    "n": 2,
+    "area": 0.205
+   }
+  },
+  "top": [
+   {
+    "f": 335,
+    "lane": "flycast",
+    "date": "2026-08-31",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.344,
+    "area": 0.541
+   },
+   {
+    "f": 331,
+    "lane": "flycast",
+    "date": "2026-08-14",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 0.576,
+    "area": 0.526
+   },
+   {
+    "f": 327,
+    "lane": "flycast",
+    "date": "2026-07-31",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 1.293,
+    "area": 0.491
+   },
+   {
+    "f": 359,
+    "lane": "flycast",
+    "date": "2026-09-28",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.207,
+    "area": 0.413
+   },
+   {
+    "f": 374,
+    "lane": "flycast",
+    "date": "2026-10-31",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.139,
+    "area": 0.274
+   },
+   {
+    "f": 395,
+    "lane": "flycast",
+    "date": "2026-11-22",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.115,
+    "area": 0.202
+   },
+   {
+    "f": 389,
+    "lane": "nulldc3",
+    "date": "2026-11-20",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.078,
+    "area": 0.003
+   }
+  ],
+  "cap": "Dynarec decoder: FPU pairs, quads and the matrix15 lines, first seen in nullDCe 2009-10-16"
+ },
+ {
+  "name": "s3-tour-35.0",
+  "t": 37199,
+  "pres": "clock",
+  "X": 930711,
+  "cam": [
+   920117,
+   6606,
+   119742
+  ],
+  "q": 0,
+  "walls": 9,
+  "stats": {
+   "t3": 2,
+   "t4": 0,
+   "t5": 0,
+   "imp": 1,
+   "inst": 0,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 274
+  },
+  "classes": {
+   "ghost T3": {
+    "n": 2,
+    "area": 0.291
+   },
+   "solid imp-hi": {
+    "n": 1,
+    "area": 0.354
+   }
+  },
+  "top": [
+   {
+    "f": 395,
+    "lane": "flycast",
+    "date": "2026-11-22",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.172,
+    "area": 0.354
+   },
+   {
+    "f": 374,
+    "lane": "flycast",
+    "date": "2026-10-31",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.23,
+    "area": 0.288
+   },
+   {
+    "f": 359,
+    "lane": "flycast",
+    "date": "2026-09-28",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.445,
+    "area": 0.003
+   }
+  ],
+  "cap": "Dynarec decoder: FPU pairs, quads and the matrix15 lines, first seen in nullDCe 2009-10-16"
+ },
+ {
+  "name": "s3-tour-37.5",
+  "t": 39693,
+  "pres": "clock",
+  "X": 930711,
+  "cam": [
+   930625,
+   3139,
+   120670
+  ],
+  "q": 0,
+  "walls": 9,
+  "stats": {
+   "t3": 0,
+   "t4": 0,
+   "t5": 0,
+   "imp": 0,
+   "inst": 2542,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 274
+  },
+  "classes": {
+   "solid lines": {
+    "n": 1,
+    "area": 1
+   }
+  },
+  "top": [
+   {
+    "f": 395,
+    "lane": "flycast",
+    "date": "2026-11-22",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 21.895,
+    "area": 1
+   }
+  ],
+  "cap": "Dynarec decoder: FPU pairs, quads and the matrix15 lines, first seen in nullDCe 2009-10-16"
+ },
+ {
+  "name": "s3-tour-40.0",
+  "t": 42210,
+  "pres": "clock",
+  "X": 930711,
+  "cam": [
+   930617,
+   3131,
+   120692
+  ],
+  "q": 0,
+  "walls": 9,
+  "stats": {
+   "t3": 0,
+   "t4": 0,
+   "t5": 0,
+   "imp": 0,
+   "inst": 2542,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 274
+  },
+  "classes": {
+   "solid lines": {
+    "n": 1,
+    "area": 1
+   }
+  },
+  "top": [
+   {
+    "f": 395,
+    "lane": "flycast",
+    "date": "2026-11-22",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 20.15,
+    "area": 1
+   }
+  ],
+  "cap": "Dynarec decoder: FPU pairs, quads and the matrix15 lines, first seen in nullDCe 2009-10-16"
+ },
+ {
+  "name": "s3-tour-42.5",
+  "t": 44716,
+  "pres": "clock",
+  "X": 930711,
+  "cam": [
+   930567,
+   3328,
+   120480
+  ],
+  "q": 0,
+  "walls": 10,
+  "stats": {
+   "t3": 0,
+   "t4": 0,
+   "t5": 0,
+   "imp": 0,
+   "inst": 4752,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 274
+  },
+  "classes": {
+   "solid lines": {
+    "n": 1,
+    "area": 1
+   }
+  },
+  "top": [
+   {
+    "f": 395,
+    "lane": "flycast",
+    "date": "2026-11-22",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 13.047,
+    "area": 1
+   }
+  ],
+  "cap": "Dynarec decoder: FPU pairs, quads and the matrix15 lines, first seen in nullDCe 2009-10-16"
+ },
+ {
+  "name": "s3-tour-45.0",
+  "t": 47197,
+  "pres": "clock",
+  "X": 928001,
+  "cam": [
+   922250,
+   6626,
+   71727
+  ],
+  "q": 0,
+  "walls": 10,
+  "stats": {
+   "t3": 6,
+   "t4": 0,
+   "t5": 0,
+   "imp": 3,
+   "inst": 26161,
+   "pendingBake": 0,
+   "wantQueue": 1,
+   "gpuMB": 301
+  },
+  "classes": {
+   "solid T3": {
+    "n": 1,
+    "area": 0.027
+   },
+   "ghost T3": {
+    "n": 5,
+    "area": 0.438
+   },
+   "solid lines": {
+    "n": 1,
+    "area": 0.123
+   },
+   "solid imp-hi": {
+    "n": 1,
+    "area": 0.084
+   },
+   "ghost imp-lo": {
+    "n": 1,
+    "area": 0.101
+   }
+  },
+  "top": [
+   {
+    "f": 376,
+    "lane": "NotDC-PS3",
+    "date": "2026-11-01",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 0.298,
+    "area": 0.123
+   },
+   {
+    "f": 372,
+    "lane": "NotDC-PS3",
+    "date": "2026-10-29",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.315,
+    "area": 0.109
+   },
+   {
+    "f": 392,
+    "lane": "nullDC4WiiU",
+    "date": "2026-11-21",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.188,
+    "area": 0.109
+   },
+   {
+    "f": 394,
+    "lane": "nullDC4WiiU",
+    "date": "2026-11-22",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.195,
+    "area": 0.103
+   },
+   {
+    "f": 391,
+    "lane": "nullDC4WiiU",
+    "date": "2026-11-21",
+    "solid": false,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.197,
+    "area": 0.101
+   },
+   {
+    "f": 386,
+    "lane": "nullDC4WiiU",
+    "date": "2026-11-13",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.217,
+    "area": 0.084
+   },
+   {
+    "f": 364,
+    "lane": "NotDC-PS3",
+    "date": "2026-10-24",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.349,
+    "area": 0.079
+   },
+   {
+    "f": 363,
+    "lane": "NotDC-PS3",
+    "date": "2026-10-19",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.39,
+    "area": 0.038
+   },
+   {
+    "f": 361,
+    "lane": "NotDC-PS3",
+    "date": "2026-10-18",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.399,
+    "area": 0.027
+   }
+  ],
+  "cap": "Dynarec decoder: FPU pairs, quads and the matrix15 lines, first seen in nullDCe 2009-10-16"
+ },
+ {
+  "name": "s3-tour-47.5",
+  "t": 49705,
+  "pres": "clock",
+  "X": 928001,
+  "cam": [
+   922221,
+   3374,
+   66635
+  ],
+  "q": 0,
+  "walls": 11,
+  "stats": {
+   "t3": 8,
+   "t4": 0,
+   "t5": 0,
+   "imp": 3,
+   "inst": 145972,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 318
+  },
+  "classes": {
+   "ghost T3": {
+    "n": 8,
+    "area": 4.143
+   },
+   "solid lines": {
+    "n": 2,
+    "area": 1.358
+   },
+   "ghost imp-lo": {
+    "n": 1,
+    "area": 0.015
+   }
+  },
+  "top": [
+   {
+    "f": 352,
+    "lane": "NotDC-PS3",
+    "date": "2026-09-19",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 18.399,
+    "area": 1
+   },
+   {
+    "f": 354,
+    "lane": "NotDC-PS3",
+    "date": "2026-09-23",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 3.029,
+    "area": 1
+   },
+   {
+    "f": 361,
+    "lane": "NotDC-PS3",
+    "date": "2026-10-18",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 0.471,
+    "area": 0.733
+   },
+   {
+    "f": 363,
+    "lane": "NotDC-PS3",
+    "date": "2026-10-19",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.456,
+    "area": 0.727
+   },
+   {
+    "f": 364,
+    "lane": "NotDC-PS3",
+    "date": "2026-10-24",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.394,
+    "area": 0.703
+   },
+   {
+    "f": 372,
+    "lane": "NotDC-PS3",
+    "date": "2026-10-29",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.347,
+    "area": 0.671
+   },
+   {
+    "f": 376,
+    "lane": "NotDC-PS3",
+    "date": "2026-11-01",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 0.324,
+    "area": 0.625
+   },
+   {
+    "f": 392,
+    "lane": "nullDC4WiiU",
+    "date": "2026-11-21",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.149,
+    "area": 0.024
+   },
+   {
+    "f": 394,
+    "lane": "nullDC4WiiU",
+    "date": "2026-11-22",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.152,
+    "area": 0.017
+   },
+   {
+    "f": 391,
+    "lane": "nullDC4WiiU",
+    "date": "2026-11-21",
+    "solid": false,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.153,
+    "area": 0.015
+   },
+   {
+    "f": 387,
+    "lane": "nullDC4Wii",
+    "date": "2026-11-19",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.166,
+    "area": 0.001
+   }
+  ],
+  "cap": "Dynarec decoder: FPU pairs, quads and the matrix15 lines, first seen in nullDCe 2009-10-16"
+ },
+ {
+  "name": "s3-tour-50.0",
+  "t": 52195,
+  "pres": "clock",
+  "X": 928001,
+  "cam": [
+   927848,
+   2685,
+   62495
+  ],
+  "q": 0,
+  "walls": 11,
+  "stats": {
+   "t3": 0,
+   "t4": 0,
+   "t5": 0,
+   "imp": 0,
+   "inst": 6798,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 318
+  },
+  "classes": {
+   "solid lines": {
+    "n": 1,
+    "area": 1
+   }
+  },
+  "top": [
+   {
+    "f": 376,
+    "lane": "NotDC-PS3",
+    "date": "2026-11-01",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 12.319,
+    "area": 1
+   }
+  ],
+  "cap": "Dynarec decoder: FPU pairs, quads and the matrix15 lines, first seen in nullDCe 2009-10-16"
+ },
+ {
+  "name": "s3-tour-52.5",
+  "t": 54696,
+  "pres": "clock",
+  "X": 928001,
+  "cam": [
+   927909,
+   2607,
+   62463
+  ],
+  "q": 0,
+  "walls": 11,
+  "stats": {
+   "t3": 0,
+   "t4": 0,
+   "t5": 0,
+   "imp": 0,
+   "inst": 5080,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 318
+  },
+  "classes": {
+   "solid lines": {
+    "n": 1,
+    "area": 1
+   }
+  },
+  "top": [
+   {
+    "f": 376,
+    "lane": "NotDC-PS3",
+    "date": "2026-11-01",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 20.628,
+    "area": 1
+   }
+  ],
+  "cap": "Dynarec decoder: FPU pairs, quads and the matrix15 lines, first seen in nullDCe 2009-10-16"
+ },
+ {
+  "name": "s3-tour-55.0",
+  "t": 57209,
+  "pres": "clock",
+  "X": 928001,
+  "cam": [
+   927897,
+   2599,
+   62485
+  ],
+  "q": 0,
+  "walls": 11,
+  "stats": {
+   "t3": 0,
+   "t4": 0,
+   "t5": 0,
+   "imp": 0,
+   "inst": 5080,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 318
+  },
+  "classes": {
+   "solid lines": {
+    "n": 1,
+    "area": 1
+   }
+  },
+  "top": [
+   {
+    "f": 376,
+    "lane": "NotDC-PS3",
+    "date": "2026-11-01",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 18.083,
+    "area": 1
+   }
+  ],
+  "cap": "Dynarec decoder: FPU pairs, quads and the matrix15 lines, first seen in nullDCe 2009-10-16"
+ }
+]

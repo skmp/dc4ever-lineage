@@ -1,0 +1,143 @@
+{
+ "date": "2026-11-25T18:30:41.453Z",
+ "size": [
+  2560,
+  1440
+ ],
+ "paths": {
+  "B": {
+   "path": "B",
+   "name": "orbit",
+   "dur": 20,
+   "frames": 2596,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "fps_mean": 129.9,
+   "fps_1pct_low": 43.1,
+   "frame_ms": {
+    "p50": 2.8,
+    "p95": 21.2,
+    "p99": 22.1,
+    "max": 37.4
+   },
+   "cpu_ms": {
+    "p50": 1.4,
+    "p95": 2.3,
+    "p99": 3
+   },
+   "gpu_ms": {
+    "p50": 0.16,
+    "p95": 0.23,
+    "p99": 0.24
+   },
+   "draws_p95": 211,
+   "lines_p95": 0,
+   "quality_steps": [
+    0
+   ],
+   "frames_over_100ms": 0,
+   "ready_ms": 1221,
+   "skipped_rafs": 723,
+   "slowest_frames_cpu_sections": []
+  },
+  "C": {
+   "path": "C",
+   "name": "lane flights",
+   "dur": 20,
+   "frames": 1734,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "fps_mean": 86.7,
+   "fps_1pct_low": 11.6,
+   "frame_ms": {
+    "p50": 4.9,
+    "p95": 25.8,
+    "p99": 56,
+    "max": 230.4
+   },
+   "cpu_ms": {
+    "p50": 1.2,
+    "p95": 4.9,
+    "p99": 7.4
+   },
+   "gpu_ms": {
+    "p50": 1.12,
+    "p95": 9.61,
+    "p99": 36.99
+   },
+   "draws_p95": 297,
+   "lines_p95": 549661,
+   "quality_steps": [
+    0,
+    1
+   ],
+   "frames_over_100ms": 5,
+   "ready_ms": 1254,
+   "skipped_rafs": 768,
+   "slowest_frames_cpu_sections": []
+  },
+  "E": {
+   "path": "E",
+   "name": "live playback",
+   "dur": 20,
+   "frames": 2301,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "fps_mean": 115,
+   "fps_1pct_low": 27.4,
+   "frame_ms": {
+    "p50": 2.8,
+    "p95": 21.1,
+    "p99": 25.6,
+    "max": 43.6
+   },
+   "cpu_ms": {
+    "p50": 0.9,
+    "p95": 2.6,
+    "p99": 3.9
+   },
+   "gpu_ms": {
+    "p50": 0.4,
+    "p95": 0.96,
+    "p99": 1.91
+   },
+   "draws_p95": 269,
+   "lines_p95": 0,
+   "quality_steps": [
+    0
+   ],
+   "frames_over_100ms": 0,
+   "ready_ms": 1203,
+   "skipped_rafs": 786,
+   "slowest_frames_cpu_sections": []
+  }
+ },
+ "logs": []
+}

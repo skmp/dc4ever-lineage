@@ -1,0 +1,10297 @@
+{
+ "shots": {},
+ "log": [],
+ "frames": 678,
+ "p50": 16.7,
+ "p95": 50,
+ "over100": 5,
+ "rec": [
+  {
+   "dt": 33.3,
+   "cpu": 4.1,
+   "gpu": 33,
+   "prof": [
+    [
+     "pre",
+     1.8
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 118451,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 33.4,
+   "cpu": 10.5,
+   "gpu": 0.8,
+   "prof": [
+    [
+     "bake",
+     5.8
+    ],
+    [
+     "titles",
+     2.4
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 139832,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 9.2,
+   "gpu": null,
+   "prof": [
+    [
+     "bake",
+     4.9
+    ],
+    [
+     "titles",
+     2.3
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 158405,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4.8,
+   "gpu": 0.8,
+   "prof": [
+    [
+     "bake",
+     3.3
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 147788,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4.9,
+   "gpu": 1.1,
+   "prof": [
+    [
+     "bake",
+     3
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 169777,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.3,
+   "gpu": 1.1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 177449,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 2.7,
+   "gpu": 1.1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 146653,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 2.7,
+   "gpu": 1.1,
+   "prof": [
+    [
+     "titles",
+     1.2
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 249923,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.7,
+   "gpu": 1.1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 170732,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.1,
+   "gpu": 1.1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 108449,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2,
+   "gpu": 0.9,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.8,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 4.6,
+   "gpu": 0.3,
+   "prof": [
+    [
+     "bake",
+     2.9
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3.1,
+   "gpu": 0.3,
+   "prof": [
+    [
+     "bake",
+     1.6
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 187069,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.2,
+   "gpu": 1.1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 171396,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.5,
+   "gpu": 1.2,
+   "prof": [
+    [
+     "bake",
+     1.1
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 31417,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.2,
+   "gpu": 0.7,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 82729,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 1.8,
+   "gpu": 0.7,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 186511,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.6,
+   "gpu": 1.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 113752,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 2.3,
+   "gpu": 1.1,
+   "prof": [
+    [
+     "bake",
+     1.2
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 22462,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3.1,
+   "gpu": 0.6,
+   "prof": [
+    [
+     "bake",
+     1.3
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.1,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 1,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 2.3,
+   "gpu": 0.3,
+   "prof": [
+    [
+     "bake",
+     1.3
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 80867,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 2.1,
+   "gpu": 0.6,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 192546,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3.1,
+   "gpu": 1.2,
+   "prof": [
+    [
+     "bake",
+     1.7
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 124882,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.5,
+   "gpu": 1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 9870,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 0.9,
+   "gpu": 1.8,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.1,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.2,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 1.4,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.4,
+   "gpu": 0.2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.2,
+   "gpu": 0.2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 0.9,
+   "gpu": 0.2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.9,
+   "gpu": null,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.3,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 89140,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.3,
+   "gpu": 0.7,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 201557,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1,
+   "gpu": 1.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 210667,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1,
+   "gpu": 1.5,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 72155,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.5,
+   "gpu": 0.6,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1,
+   "gpu": 0.2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.8,
+   "gpu": 0.2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.7,
+   "gpu": 0.2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.9,
+   "gpu": 0.2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.4,
+   "gpu": 0.2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 0.8,
+   "gpu": 0.2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.6,
+   "gpu": 0.2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.4,
+   "gpu": 0.2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.5,
+   "gpu": 0.2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.4,
+   "gpu": 0.2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.2,
+   "gpu": 0.2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.6,
+   "gpu": 0.2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.6,
+   "gpu": 0.2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.1,
+   "gpu": 0.2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 1.4,
+   "gpu": 0.2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.2,
+   "gpu": 0.2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.2,
+   "gpu": 0.2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.2,
+   "gpu": 0.2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.3,
+   "gpu": 0.2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.2,
+   "gpu": 0.2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.7,
+   "gpu": 0.2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.6,
+   "gpu": 0.2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.1,
+   "gpu": 0.2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.3,
+   "gpu": 0.2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.7,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.2,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.6,
+   "gpu": null,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.3,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.2,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.6,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.5,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.9,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.5,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.9,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.4,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.3,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.8,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.7,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.8,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.6,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.7,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.2,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 2,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.9,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.2,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.9,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.9,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.2,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.9,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.4,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.4,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.3,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.2,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.1,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.6,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.2,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.6,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.3,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.9,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.5,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.4,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.3,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.1,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 0.9,
+   "gpu": null,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.4,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 1.3,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.1,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.1,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.1,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 3.1,
+   "gpu": 0.3,
+   "prof": [
+    [
+     "titles",
+     1.1
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.1,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 2.3,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.7,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 2,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.8,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.9,
+   "gpu": 0.3,
+   "prof": [
+    [
+     "titles",
+     1.1
+    ]
+   ],
+   "alloc": "far:0",
+   "done": 1,
+   "bl": 46895,
+   "loads": 1,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.9,
+   "gpu": 0.5,
+   "prof": [],
+   "alloc": "far:0 far:0 far:0",
+   "done": 3,
+   "bl": 199302,
+   "loads": 3,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.7,
+   "gpu": null,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.8,
+   "gpu": null,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.7,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 2.6,
+   "gpu": 0.3,
+   "prof": [
+    [
+     "titles",
+     1.2
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.1,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.9,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.3,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.6,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.6,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 2.1,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.1,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.3,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "far:0 far:0 far:0 far:0",
+   "done": 4,
+   "bl": 289348,
+   "loads": 4,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4.6,
+   "gpu": null,
+   "prof": [
+    [
+     "bake",
+     2.2
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.6,
+   "gpu": null,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.1,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.4,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 1.7,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 2.1,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.6,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.8,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.9,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.6,
+   "gpu": 0.4,
+   "prof": [
+    [
+     "bake",
+     1.4
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 2.4,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.3,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "far:0",
+   "done": 1,
+   "bl": 107503,
+   "loads": 1,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.8,
+   "gpu": 0.8,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.9,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 2.1,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.9,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.3,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.1,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.4,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 1.9,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.9,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.4,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.9,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.5,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 0.9,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.8,
+   "gpu": null,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.7,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.5,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4.2,
+   "gpu": 0.3,
+   "prof": [
+    [
+     "bake",
+     2.5
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.6,
+   "gpu": null,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.3,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.7,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.1,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.1,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.2,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.2,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.2,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.3,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "far:0 far:0",
+   "done": 2,
+   "bl": 132760,
+   "loads": 2,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.2,
+   "gpu": null,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.2,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.7,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 91060,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.2,
+   "gpu": 0.8,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 95255,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.4,
+   "gpu": 0.9,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 29465,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 4.9,
+   "gpu": 0.8,
+   "prof": [
+    [
+     "bake",
+     2.6
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 4.6,
+   "gpu": null,
+   "prof": [
+    [
+     "bake",
+     2.8
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3.2,
+   "gpu": 0.6,
+   "prof": [
+    [
+     "bake",
+     2
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3.3,
+   "gpu": 0.8,
+   "prof": [
+    [
+     "bake",
+     2
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4.7,
+   "gpu": 1.1,
+   "prof": [
+    [
+     "bake",
+     2.6
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 3.1,
+   "gpu": 1.1,
+   "prof": [
+    [
+     "bake",
+     2.1
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3.7,
+   "gpu": null,
+   "prof": [
+    [
+     "bake",
+     2.5
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 3.8,
+   "gpu": 0.7,
+   "prof": [
+    [
+     "bake",
+     2.4
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 3.9,
+   "gpu": null,
+   "prof": [
+    [
+     "bake",
+     1.9
+    ]
+   ],
+   "alloc": "far:0 far:0 far:0",
+   "done": 3,
+   "bl": 275993,
+   "loads": 3,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 3.8,
+   "gpu": 0.9,
+   "prof": [
+    [
+     "bake",
+     2.1
+    ]
+   ],
+   "alloc": "far:0 far:0 far:0 far:0",
+   "done": 4,
+   "bl": 366452,
+   "loads": 6,
+   "inst": 49094,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.4,
+   "gpu": null,
+   "prof": [],
+   "alloc": "far:0 far:0 far:0 far:0 far:0",
+   "done": 5,
+   "bl": 463945,
+   "loads": 5,
+   "inst": 79802,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3.1,
+   "gpu": 2.3,
+   "prof": [
+    [
+     "bake",
+     1.7
+    ]
+   ],
+   "alloc": "far:0 far:0 far:0 far:0",
+   "done": 4,
+   "bl": 388750,
+   "loads": 4,
+   "inst": 108335,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 3,
+   "gpu": 2.4,
+   "prof": [
+    [
+     "bake",
+     1.5
+    ]
+   ],
+   "alloc": "far:0 far:0",
+   "done": 2,
+   "bl": 199758,
+   "loads": 2,
+   "inst": 65691,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 2.9,
+   "gpu": 16.4,
+   "prof": [
+    [
+     "bake",
+     1.5
+    ]
+   ],
+   "alloc": "far:0 far:0 far:0 far:0",
+   "done": 4,
+   "bl": 400769,
+   "loads": 4,
+   "inst": 59738,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 33.4,
+   "cpu": 2.1,
+   "gpu": 2.8,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 93974,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 3,
+   "gpu": 1.8,
+   "prof": [
+    [
+     "bake",
+     1.5
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 140534,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4.6,
+   "gpu": 2.6,
+   "prof": [
+    [
+     "bake",
+     1.9
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 160184,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 2.2,
+   "gpu": 1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 143254,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 3.4,
+   "gpu": 1.3,
+   "prof": [
+    [
+     "bake",
+     1.5
+    ]
+   ],
+   "alloc": "far:0 far:0 far:0",
+   "done": 3,
+   "bl": 301614,
+   "loads": 3,
+   "inst": 128014,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 2.6,
+   "gpu": 1.5,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 109997,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.1,
+   "gpu": 1.6,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 107781,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.9,
+   "gpu": 2.7,
+   "prof": [
+    [
+     "bake",
+     1.3
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 97827,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.7,
+   "gpu": 1.1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 158852,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3.4,
+   "gpu": 3.1,
+   "prof": [
+    [
+     "bake",
+     1.6
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 108891,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.4,
+   "gpu": 1.1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 118353,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1,
+   "gpu": 1.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 63732,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 2.5,
+   "gpu": 0.8,
+   "prof": [
+    [
+     "bake",
+     1.3
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 99295,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.3,
+   "gpu": 1.1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 93948,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.3,
+   "gpu": 1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 113595,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.3,
+   "gpu": 1.1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 126856,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.3,
+   "gpu": 1.1,
+   "prof": [],
+   "alloc": "far:0 far:0",
+   "done": 2,
+   "bl": 200036,
+   "loads": 2,
+   "inst": 101138,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.2,
+   "gpu": null,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 125385,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.1,
+   "gpu": 1.1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 64507,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.7,
+   "gpu": 0.8,
+   "prof": [
+    [
+     "bake",
+     1.6
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 99295,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.1,
+   "gpu": 1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 73119,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.2,
+   "gpu": 0.9,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 122517,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.9,
+   "gpu": 1.1,
+   "prof": [
+    [
+     "bake",
+     1.8
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 77042,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.2,
+   "gpu": 1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 106513,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 2.6,
+   "gpu": 1,
+   "prof": [
+    [
+     "bake",
+     1.5
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 72310,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.2,
+   "gpu": 0.8,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 80220,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.2,
+   "gpu": 0.9,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 83802,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.2,
+   "gpu": 0.9,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 61507,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 2.4,
+   "gpu": 0.8,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 26663,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.9,
+   "gpu": 0.8,
+   "prof": [],
+   "alloc": "far:0 far:0 far:0",
+   "done": 3,
+   "bl": 299579,
+   "loads": 3,
+   "inst": 73173,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.6,
+   "gpu": null,
+   "prof": [],
+   "alloc": "far:0 far:0 far:0 far:0",
+   "done": 4,
+   "bl": 405196,
+   "loads": 4,
+   "inst": 70108,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 4.5,
+   "gpu": 2.4,
+   "prof": [
+    [
+     "bake",
+     2.2
+    ]
+   ],
+   "alloc": "far:0 far:0",
+   "done": 2,
+   "bl": 202478,
+   "loads": 2,
+   "inst": 39703,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.2,
+   "gpu": null,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 3.8,
+   "gpu": 2.5,
+   "prof": [
+    [
+     "bake",
+     1.9
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.4,
+   "gpu": 1.5,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.8,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 54779,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.6,
+   "gpu": 0.7,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 80716,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.5,
+   "gpu": 0.9,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 55897,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.8,
+   "gpu": 0.8,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 73050,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 1.8,
+   "gpu": 1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 78495,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 2.2,
+   "gpu": 0.8,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 104436,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.8,
+   "gpu": 1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 90272,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.4,
+   "gpu": 1.1,
+   "prof": [],
+   "alloc": "far:0 far:0",
+   "done": 2,
+   "bl": 201772,
+   "loads": 2,
+   "inst": 55897,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.4,
+   "gpu": null,
+   "prof": [],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 102979,
+   "loads": 1,
+   "inst": 17153,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.8,
+   "gpu": 1.6,
+   "prof": [
+    [
+     "bake",
+     1.6
+    ]
+   ],
+   "alloc": "far:0 far:0 far:0",
+   "done": 3,
+   "bl": 305019,
+   "loads": 3,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 2.6,
+   "gpu": 1.2,
+   "prof": [
+    [
+     "bake",
+     1.3
+    ]
+   ],
+   "alloc": "far:0 far:1 far:0",
+   "done": 3,
+   "bl": 387731,
+   "loads": 3,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.2,
+   "gpu": null,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3.4,
+   "gpu": 1.9,
+   "prof": [
+    [
+     "titles",
+     1.1
+    ]
+   ],
+   "alloc": "far:0 far:0",
+   "done": 2,
+   "bl": 258964,
+   "loads": 2,
+   "inst": 28373,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.8,
+   "gpu": 0.5,
+   "prof": [],
+   "alloc": "lo:3 lo:3",
+   "done": 2,
+   "bl": 200036,
+   "loads": 0,
+   "inst": 129512,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.9,
+   "gpu": null,
+   "prof": [],
+   "alloc": "hi:20",
+   "done": 1,
+   "bl": 100560,
+   "loads": 0,
+   "inst": 128868,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.7,
+   "gpu": 1.7,
+   "prof": [],
+   "alloc": "hi:20",
+   "done": 1,
+   "bl": 99476,
+   "loads": 0,
+   "inst": 100915,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 5.6,
+   "gpu": 2.1,
+   "prof": [
+    [
+     "bake",
+     4.3
+    ]
+   ],
+   "alloc": "hi:20",
+   "done": 1,
+   "bl": 99478,
+   "loads": 0,
+   "inst": 30707,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4.8,
+   "gpu": 15.1,
+   "prof": [
+    [
+     "bake",
+     3.3
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 6.6,
+   "gpu": 14.6,
+   "prof": [
+    [
+     "bake",
+     4.3
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 5.3,
+   "gpu": 22,
+   "prof": [
+    [
+     "bake",
+     3.7
+    ]
+   ],
+   "alloc": "far:1 far:0 far:1 far:0 far:0 far:0",
+   "done": 6,
+   "bl": 783205,
+   "loads": 6,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 7.1,
+   "gpu": 0.5,
+   "prof": [
+    [
+     "bake",
+     4.8
+    ]
+   ],
+   "alloc": "far:0 far:0 far:1 far:0",
+   "done": 4,
+   "bl": 520390,
+   "loads": 4,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3.3,
+   "gpu": 0.5,
+   "prof": [
+    [
+     "bake",
+     1.8
+    ]
+   ],
+   "alloc": "far:1 far:1 far:1 far:1",
+   "done": 4,
+   "bl": 538196,
+   "loads": 4,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 2,
+   "gpu": 15.5,
+   "prof": [],
+   "alloc": "far:0 far:0 far:0 far:0 far:0 far:0 far:0",
+   "done": 7,
+   "bl": 904897,
+   "loads": 7,
+   "inst": 80565,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 50,
+   "cpu": 4.5,
+   "gpu": 2.8,
+   "prof": [
+    [
+     "bake",
+     2.1
+    ]
+   ],
+   "alloc": "far:0 far:0 far:0 far:0 far:0 far:0",
+   "done": 6,
+   "bl": 778116,
+   "loads": 6,
+   "inst": 14599,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 33.4,
+   "cpu": 5.1,
+   "gpu": 13.3,
+   "prof": [
+    [
+     "bake",
+     2.6
+    ]
+   ],
+   "alloc": "far:0 far:0",
+   "done": 2,
+   "bl": 259068,
+   "loads": 2,
+   "inst": 65089,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 33.2,
+   "cpu": 4.9,
+   "gpu": 4.7,
+   "prof": [
+    [
+     "bake",
+     3.2
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 176131,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 33.5,
+   "cpu": 8.2,
+   "gpu": 4.2,
+   "prof": [
+    [
+     "bake",
+     6.4
+    ]
+   ],
+   "alloc": "far:0 far:1",
+   "done": 2,
+   "bl": 292984,
+   "loads": 2,
+   "inst": 406695,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.5,
+   "cpu": 8.1,
+   "gpu": 2,
+   "prof": [
+    [
+     "bake",
+     5.4
+    ]
+   ],
+   "alloc": "far:0 far:1",
+   "done": 2,
+   "bl": 297485,
+   "loads": 2,
+   "inst": 300228,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4.8,
+   "gpu": 1.5,
+   "prof": [
+    [
+     "bake",
+     3.1
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 187111,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 33.4,
+   "cpu": 6.6,
+   "gpu": 3.9,
+   "prof": [
+    [
+     "bake",
+     4.2
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 130063,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 5.6,
+   "gpu": 3.6,
+   "prof": [
+    [
+     "bake",
+     3.7
+    ]
+   ],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 163697,
+   "loads": 1,
+   "inst": 42898,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3.4,
+   "gpu": 2.4,
+   "prof": [
+    [
+     "bake",
+     1.9
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 83422,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 4.6,
+   "gpu": 1.3,
+   "prof": [
+    [
+     "bake",
+     2.3
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 112794,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 3.8,
+   "gpu": 1.6,
+   "prof": [
+    [
+     "bake",
+     1.9
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 74478,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 4.9,
+   "gpu": 1.1,
+   "prof": [
+    [
+     "bake",
+     2.2
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 156480,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3.3,
+   "gpu": 1.2,
+   "prof": [
+    [
+     "bake",
+     2
+    ]
+   ],
+   "alloc": "far:0 far:0 far:0",
+   "done": 3,
+   "bl": 423123,
+   "loads": 3,
+   "inst": 180509,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 5.7,
+   "gpu": 1.1,
+   "prof": [
+    [
+     "bake",
+     4.2
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 227623,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 5.2,
+   "gpu": 1.5,
+   "prof": [
+    [
+     "bake",
+     3.7
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 301864,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 5.2,
+   "gpu": 3.3,
+   "prof": [
+    [
+     "bake",
+     3.7
+    ]
+   ],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 167035,
+   "loads": 1,
+   "inst": 212046,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 5.8,
+   "gpu": 1.9,
+   "prof": [
+    [
+     "bake",
+     4
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 484462,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4.8,
+   "gpu": 2.1,
+   "prof": [
+    [
+     "bake",
+     3.4
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 361616,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 5.1,
+   "gpu": 2.6,
+   "prof": [
+    [
+     "bake",
+     3.2
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 175425,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 4.8,
+   "gpu": 2.7,
+   "prof": [
+    [
+     "bake",
+     3.7
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 66102,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 8.6,
+   "gpu": 3.1,
+   "prof": [
+    [
+     "bake",
+     6.4
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 5.8,
+   "gpu": 4.3,
+   "prof": [
+    [
+     "bake",
+     4.7
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 6.7,
+   "gpu": 1.1,
+   "prof": [
+    [
+     "bake",
+     5.1
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.4,
+   "gpu": 0.6,
+   "prof": [],
+   "alloc": "far:0 far:0 far:1",
+   "done": 3,
+   "bl": 456498,
+   "loads": 3,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 3.2,
+   "gpu": 0.7,
+   "prof": [
+    [
+     "bake",
+     1.8
+    ]
+   ],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 166670,
+   "loads": 1,
+   "inst": 90684,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 11.6,
+   "gpu": 0.8,
+   "prof": [
+    [
+     "lod",
+     1.4
+    ],
+    [
+     "bake",
+     8.3
+    ]
+   ],
+   "alloc": "far:0",
+   "done": 1,
+   "bl": 145469,
+   "loads": 1,
+   "inst": 594508,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 7.2,
+   "gpu": 2.2,
+   "prof": [
+    [
+     "bake",
+     4.2
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 199834,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 6,
+   "gpu": null,
+   "prof": [
+    [
+     "bake",
+     3.9
+    ]
+   ],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 162080,
+   "loads": 1,
+   "inst": 173195,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 5.4,
+   "gpu": 5.3,
+   "prof": [
+    [
+     "bake",
+     3.9
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 195349,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 5.2,
+   "gpu": 1.8,
+   "prof": [
+    [
+     "bake",
+     3.5
+    ]
+   ],
+   "alloc": "far:0",
+   "done": 1,
+   "bl": 145469,
+   "loads": 1,
+   "inst": 77689,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 7.2,
+   "gpu": 2.5,
+   "prof": [
+    [
+     "bake",
+     5.1
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 102517,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3.7,
+   "gpu": 2,
+   "prof": [
+    [
+     "bake",
+     1.8
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 38806,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 8,
+   "gpu": 2.2,
+   "prof": [
+    [
+     "bake",
+     5.8
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 33.4,
+   "cpu": 3.6,
+   "gpu": 1.2,
+   "prof": [
+    [
+     "bake",
+     2.1
+    ]
+   ],
+   "alloc": "far:1 far:1",
+   "done": 2,
+   "bl": 328781,
+   "loads": 2,
+   "inst": 93660,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 3.4,
+   "gpu": 1,
+   "prof": [
+    [
+     "bake",
+     1.8
+    ]
+   ],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 168683,
+   "loads": 1,
+   "inst": 56705,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 3.3,
+   "gpu": 0.7,
+   "prof": [
+    [
+     "bake",
+     1.8
+    ]
+   ],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 169197,
+   "loads": 1,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.1,
+   "gpu": 2.5,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 59985,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 3.7,
+   "gpu": 1.8,
+   "prof": [
+    [
+     "bake",
+     2.1
+    ]
+   ],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 232017,
+   "loads": 1,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.4,
+   "gpu": 1.5,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 2,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 6.4,
+   "gpu": 1,
+   "prof": [
+    [
+     "bake",
+     4.2
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 2.7,
+   "gpu": 1.5,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 8.4,
+   "gpu": 0.6,
+   "prof": [
+    [
+     "bake",
+     5.6
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.1,
+   "gpu": 0.6,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 7,
+   "gpu": 0.6,
+   "prof": [
+    [
+     "bake",
+     4.9
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4.8,
+   "gpu": 0.6,
+   "prof": [
+    [
+     "bake",
+     2.6
+    ]
+   ],
+   "alloc": "far:0 far:1",
+   "done": 2,
+   "bl": 318448,
+   "loads": 2,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.9,
+   "gpu": 0.6,
+   "prof": [],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 173019,
+   "loads": 1,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 6.5,
+   "gpu": 1.9,
+   "prof": [
+    [
+     "bake",
+     4.9
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 3.2,
+   "gpu": 1.3,
+   "prof": [
+    [
+     "bake",
+     1.9
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3.4,
+   "gpu": null,
+   "prof": [
+    [
+     "bake",
+     2
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 2,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.3,
+   "gpu": 0.6,
+   "prof": [],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 188467,
+   "loads": 2,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 5.3,
+   "gpu": null,
+   "prof": [
+    [
+     "bake",
+     2.6
+    ],
+    [
+     "plates",
+     1.4
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.3,
+   "gpu": 6.8,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3.1,
+   "gpu": 1.4,
+   "prof": [
+    [
+     "bake",
+     1.9
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.8,
+   "gpu": 0.6,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3.3,
+   "gpu": 0.6,
+   "prof": [
+    [
+     "bake",
+     1.8
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 3.1,
+   "gpu": 0.7,
+   "prof": [
+    [
+     "bake",
+     1.9
+    ]
+   ],
+   "alloc": "far:1 far:1",
+   "done": 2,
+   "bl": 365730,
+   "loads": 2,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3,
+   "gpu": 0.7,
+   "prof": [
+    [
+     "bake",
+     1.7
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 117488,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 5.2,
+   "gpu": 2.2,
+   "prof": [
+    [
+     "bake",
+     3.5
+    ]
+   ],
+   "alloc": "far:1 far:1",
+   "done": 2,
+   "bl": 396312,
+   "loads": 2,
+   "inst": 108972,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.7,
+   "gpu": 1.3,
+   "prof": [],
+   "alloc": "far:1 far:1",
+   "done": 2,
+   "bl": 396296,
+   "loads": 2,
+   "inst": 53733,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.5,
+   "gpu": null,
+   "prof": [],
+   "alloc": "far:1 far:1",
+   "done": 2,
+   "bl": 397086,
+   "loads": 2,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3.6,
+   "gpu": 2.8,
+   "prof": [
+    [
+     "bake",
+     2.4
+    ]
+   ],
+   "alloc": "far:1 far:1 far:1",
+   "done": 3,
+   "bl": 542989,
+   "loads": 3,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 3.3,
+   "gpu": 2.6,
+   "prof": [
+    [
+     "bake",
+     1.9
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 5.2,
+   "gpu": 2.2,
+   "prof": [
+    [
+     "bake",
+     3.8
+    ]
+   ],
+   "alloc": "far:0",
+   "done": 1,
+   "bl": 145474,
+   "loads": 1,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 3.6,
+   "gpu": 2.8,
+   "prof": [
+    [
+     "bake",
+     2.1
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 3.4,
+   "gpu": 0.6,
+   "prof": [
+    [
+     "bake",
+     2.1
+    ]
+   ],
+   "alloc": "far:0",
+   "done": 1,
+   "bl": 145787,
+   "loads": 1,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4.7,
+   "gpu": 1.2,
+   "prof": [
+    [
+     "bake",
+     2.8
+    ]
+   ],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 195779,
+   "loads": 1,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4.3,
+   "gpu": 0.6,
+   "prof": [
+    [
+     "bake",
+     2.8
+    ]
+   ],
+   "alloc": "far:1 far:0",
+   "done": 2,
+   "bl": 341764,
+   "loads": 2,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4.4,
+   "gpu": 1.2,
+   "prof": [
+    [
+     "bake",
+     2.3
+    ]
+   ],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 193788,
+   "loads": 1,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 5.6,
+   "gpu": 1.4,
+   "prof": [
+    [
+     "bake",
+     2.8
+    ],
+    [
+     "titles",
+     1.3
+    ]
+   ],
+   "alloc": "far:1 far:1",
+   "done": 2,
+   "bl": 365990,
+   "loads": 2,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 33.4,
+   "cpu": 5.8,
+   "gpu": 2,
+   "prof": [
+    [
+     "bake",
+     2.4
+    ],
+    [
+     "titles",
+     1.2
+    ]
+   ],
+   "alloc": "far:1 far:1 far:1 far:1",
+   "done": 4,
+   "bl": 731028,
+   "loads": 4,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 33.2,
+   "cpu": 11.2,
+   "gpu": 1.4,
+   "prof": [
+    [
+     "bake",
+     6.9
+    ],
+    [
+     "titles",
+     1.5
+    ]
+   ],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 189246,
+   "loads": 1,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.7,
+   "gpu": 3.6,
+   "prof": [],
+   "alloc": "far:1 far:1 far:1",
+   "done": 3,
+   "bl": 574187,
+   "loads": 3,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 66.6,
+   "cpu": 2.5,
+   "gpu": null,
+   "prof": [],
+   "alloc": "hi:20 lo:5 far:1 far:1 far:1",
+   "done": 5,
+   "bl": 922486,
+   "loads": 3,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 6.8,
+   "gpu": 1.4,
+   "prof": [
+    [
+     "bake",
+     4.7
+    ]
+   ],
+   "alloc": "hi:39",
+   "done": 1,
+   "bl": 195622,
+   "loads": 3,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 33.4,
+   "cpu": 7.8,
+   "gpu": 2.8,
+   "prof": [
+    [
+     "bake",
+     5.6
+    ]
+   ],
+   "alloc": "hi:39",
+   "done": 1,
+   "bl": 195968,
+   "loads": 3,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 50,
+   "cpu": 9.9,
+   "gpu": 37,
+   "prof": [
+    [
+     "bake",
+     7.1
+    ]
+   ],
+   "alloc": "far:1 far:1 far:1 far:1 far:1 far:1 far:1 far:1",
+   "done": 6,
+   "bl": 1201052,
+   "loads": 5,
+   "inst": 46474,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 83.4,
+   "cpu": 1.7,
+   "gpu": 41.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 2,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 49.9,
+   "cpu": 4.8,
+   "gpu": 33.3,
+   "prof": [
+    [
+     "bake",
+     3.1
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 50,
+   "cpu": 6.6,
+   "gpu": 6,
+   "prof": [
+    [
+     "bake",
+     4.3
+    ]
+   ],
+   "alloc": "far:1 far:1",
+   "done": 2,
+   "bl": 324176,
+   "loads": 0,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 5.7,
+   "gpu": 0.7,
+   "prof": [
+    [
+     "bake",
+     3.9
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 5,
+   "gpu": 0.5,
+   "prof": [
+    [
+     "bake",
+     3
+    ]
+   ],
+   "alloc": "far:1 far:1 far:1",
+   "done": 3,
+   "bl": 402424,
+   "loads": 3,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 6.7,
+   "gpu": 9.5,
+   "prof": [
+    [
+     "bake",
+     4.8
+    ]
+   ],
+   "alloc": "far:1 far:1 far:1 far:1 far:1 far:0 far:0",
+   "done": 7,
+   "bl": 916112,
+   "loads": 8,
+   "inst": 22149,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4.8,
+   "gpu": 0.6,
+   "prof": [
+    [
+     "bake",
+     3.2
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 42880,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 6.6,
+   "gpu": 2.4,
+   "prof": [
+    [
+     "bake",
+     4.1
+    ]
+   ],
+   "alloc": "far:1 far:1 far:0",
+   "done": 3,
+   "bl": 455113,
+   "loads": 4,
+   "inst": 62788,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 66.7,
+   "cpu": 5.2,
+   "gpu": 4.8,
+   "prof": [
+    [
+     "bake",
+     3.6
+    ]
+   ],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 163697,
+   "loads": 1,
+   "inst": 15722,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4.6,
+   "gpu": 1,
+   "prof": [
+    [
+     "bake",
+     3.1
+    ]
+   ],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 165389,
+   "loads": 1,
+   "inst": 49725,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 33.4,
+   "cpu": 6.3,
+   "gpu": 3.1,
+   "prof": [
+    [
+     "bake",
+     4.1
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 65480,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 4.5,
+   "gpu": 9.5,
+   "prof": [
+    [
+     "bake",
+     3
+    ]
+   ],
+   "alloc": "far:1 far:1 far:1",
+   "done": 3,
+   "bl": 499290,
+   "loads": 3,
+   "inst": 94944,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 6.4,
+   "gpu": 1.8,
+   "prof": [
+    [
+     "bake",
+     4.3
+    ]
+   ],
+   "alloc": "far:1 far:0",
+   "done": 2,
+   "bl": 312218,
+   "loads": 2,
+   "inst": 24348,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 3.4,
+   "gpu": 1.2,
+   "prof": [
+    [
+     "bake",
+     1.9
+    ]
+   ],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 167035,
+   "loads": 1,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 33.4,
+   "cpu": 3.6,
+   "gpu": 3.4,
+   "prof": [
+    [
+     "bake",
+     2
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 4.4,
+   "gpu": 2.2,
+   "prof": [
+    [
+     "bake",
+     2.4
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 41696,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4.7,
+   "gpu": 11.5,
+   "prof": [
+    [
+     "bake",
+     2.6
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 1,
+   "inst": 62475,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.4,
+   "gpu": 0.7,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 36347,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3.6,
+   "gpu": 1.1,
+   "prof": [
+    [
+     "bake",
+     2
+    ]
+   ],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 167072,
+   "loads": 1,
+   "inst": 68276,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 5,
+   "gpu": 1.1,
+   "prof": [
+    [
+     "bake",
+     2.9
+    ]
+   ],
+   "alloc": "far:1 far:1",
+   "done": 2,
+   "bl": 332348,
+   "loads": 2,
+   "inst": 48627,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4.4,
+   "gpu": 2.4,
+   "prof": [
+    [
+     "bake",
+     2.7
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 68199,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 4.4,
+   "gpu": null,
+   "prof": [
+    [
+     "bake",
+     2.7
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 61078,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.3,
+   "gpu": 1.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 56725,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 3.3,
+   "gpu": 1.1,
+   "prof": [
+    [
+     "bake",
+     1.7
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 70442,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3.7,
+   "gpu": 1.3,
+   "prof": [
+    [
+     "bake",
+     2
+    ]
+   ],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 164221,
+   "loads": 2,
+   "inst": 43267,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3.9,
+   "gpu": null,
+   "prof": [
+    [
+     "bake",
+     2.3
+    ]
+   ],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 164560,
+   "loads": 1,
+   "inst": 66662,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 2.3,
+   "gpu": null,
+   "prof": [],
+   "alloc": "far:1 far:1",
+   "done": 2,
+   "bl": 337880,
+   "loads": 4,
+   "inst": 42112,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 5.4,
+   "gpu": 2.8,
+   "prof": [
+    [
+     "bake",
+     3.9
+    ]
+   ],
+   "alloc": "far:1 far:1",
+   "done": 2,
+   "bl": 324176,
+   "loads": 2,
+   "inst": 111691,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 9.8,
+   "gpu": 2,
+   "prof": [
+    [
+     "bake",
+     7.7
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 95424,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.2,
+   "gpu": 1.5,
+   "prof": [],
+   "alloc": "lo:5 lo:5 lo:5 lo:5 far:0 far:1",
+   "done": 6,
+   "bl": 995227,
+   "loads": 2,
+   "inst": 59282,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 66.6,
+   "cpu": 2.8,
+   "gpu": null,
+   "prof": [
+    [
+     "bake",
+     1.2
+    ]
+   ],
+   "alloc": "hi:39",
+   "done": 1,
+   "bl": 166828,
+   "loads": 2,
+   "inst": 49730,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 5,
+   "gpu": null,
+   "prof": [
+    [
+     "bake",
+     3.1
+    ]
+   ],
+   "alloc": "hi:39",
+   "done": 1,
+   "bl": 169197,
+   "loads": 0,
+   "inst": 35035,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 7,
+   "gpu": 25.5,
+   "prof": [
+    [
+     "bake",
+     4.9
+    ]
+   ],
+   "alloc": "far:1 far:1 far:1 far:1 far:1",
+   "done": 5,
+   "bl": 839838,
+   "loads": 5,
+   "inst": 16223,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 6.2,
+   "gpu": 21.7,
+   "prof": [
+    [
+     "bake",
+     4.3
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 47082,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 33.4,
+   "cpu": 3.7,
+   "gpu": 24.4,
+   "prof": [
+    [
+     "bake",
+     2.2
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 39473,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 50,
+   "cpu": 5.9,
+   "gpu": 4.6,
+   "prof": [
+    [
+     "bake",
+     4.2
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 22444,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 8.6,
+   "gpu": 1.2,
+   "prof": [
+    [
+     "bake",
+     6.7
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 60033,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.8,
+   "gpu": 1.2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 64224,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 4.2,
+   "gpu": 1.4,
+   "prof": [
+    [
+     "bake",
+     2.7
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 26372,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.6,
+   "gpu": 1.6,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 45037,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 4,
+   "gpu": 1.5,
+   "prof": [
+    [
+     "bake",
+     2.7
+    ]
+   ],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 188629,
+   "loads": 1,
+   "inst": 32141,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 5.7,
+   "gpu": 1.2,
+   "prof": [
+    [
+     "bake",
+     3.6
+    ]
+   ],
+   "alloc": "far:1 far:1",
+   "done": 2,
+   "bl": 377132,
+   "loads": 2,
+   "inst": 54229,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.9,
+   "gpu": 1.1,
+   "prof": [],
+   "alloc": "far:1 far:1 far:1",
+   "done": 3,
+   "bl": 665954,
+   "loads": 3,
+   "inst": 23526,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4.6,
+   "gpu": 2,
+   "prof": [
+    [
+     "bake",
+     2.8
+    ]
+   ],
+   "alloc": "far:1 far:1",
+   "done": 2,
+   "bl": 392207,
+   "loads": 3,
+   "inst": 45096,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 3.9,
+   "gpu": 16.2,
+   "prof": [
+    [
+     "bake",
+     2.5
+    ]
+   ],
+   "alloc": "far:1 far:1 far:1",
+   "done": 3,
+   "bl": 600772,
+   "loads": 3,
+   "inst": 8086,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 33.4,
+   "cpu": 5.5,
+   "gpu": 3.8,
+   "prof": [
+    [
+     "bake",
+     2.8
+    ]
+   ],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 196715,
+   "loads": 1,
+   "inst": 37963,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 5.4,
+   "gpu": 16.6,
+   "prof": [
+    [
+     "bake",
+     3.1
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 73810,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 4.7,
+   "gpu": 3.4,
+   "prof": [
+    [
+     "bake",
+     2.8
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 51225,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4,
+   "gpu": 2.1,
+   "prof": [
+    [
+     "bake",
+     2.3
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 22927,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.3,
+   "gpu": 1.6,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 51391,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 5.2,
+   "gpu": 1.3,
+   "prof": [
+    [
+     "bake",
+     3.3
+    ]
+   ],
+   "alloc": "far:1 far:1",
+   "done": 2,
+   "bl": 361765,
+   "loads": 2,
+   "inst": 22928,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4.1,
+   "gpu": 1.3,
+   "prof": [
+    [
+     "bake",
+     2.4
+    ]
+   ],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 181224,
+   "loads": 1,
+   "inst": 71317,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4.3,
+   "gpu": 1.2,
+   "prof": [
+    [
+     "bake",
+     2.5
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 63118,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 4.2,
+   "gpu": 2.8,
+   "prof": [
+    [
+     "bake",
+     2.3
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 41047,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 2,
+   "gpu": 2.2,
+   "prof": [],
+   "alloc": "far:0",
+   "done": 1,
+   "bl": 145787,
+   "loads": 1,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 5,
+   "gpu": 1.7,
+   "prof": [
+    [
+     "bake",
+     2.9
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 2.1,
+   "gpu": 1.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4.2,
+   "gpu": 1.7,
+   "prof": [
+    [
+     "bake",
+     2.5
+    ]
+   ],
+   "alloc": "",
+   "done": 1,
+   "bl": 163489,
+   "loads": 1,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.4,
+   "gpu": 0.9,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 55744,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 5.9,
+   "gpu": 1,
+   "prof": [
+    [
+     "bake",
+     4.3
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 32879,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.3,
+   "gpu": 1.9,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 83386,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4.4,
+   "gpu": 1.3,
+   "prof": [
+    [
+     "bake",
+     2.8
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 35322,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.5,
+   "gpu": 1.5,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 42920,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 7,
+   "gpu": 1.6,
+   "prof": [
+    [
+     "bake",
+     5.7
+    ]
+   ],
+   "alloc": "far:1 far:1",
+   "done": 2,
+   "bl": 366109,
+   "loads": 2,
+   "inst": 14200,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.4,
+   "gpu": 1.2,
+   "prof": [],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 189246,
+   "loads": 1,
+   "inst": 55338,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 3.7,
+   "gpu": null,
+   "prof": [
+    [
+     "bake",
+     2.5
+    ]
+   ],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 189271,
+   "loads": 1,
+   "inst": 47611,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.1,
+   "gpu": 3.1,
+   "prof": [],
+   "alloc": "lo:5 lo:3",
+   "done": 2,
+   "bl": 334768,
+   "loads": 2,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 5,
+   "gpu": 3.6,
+   "prof": [
+    [
+     "bake",
+     2.9
+    ]
+   ],
+   "alloc": "far:1 far:0",
+   "done": 2,
+   "bl": 341584,
+   "loads": 2,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4.6,
+   "gpu": 2.3,
+   "prof": [
+    [
+     "bake",
+     2.9
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 33.4,
+   "cpu": 5.2,
+   "gpu": 10,
+   "prof": [
+    [
+     "bake",
+     3.8
+    ]
+   ],
+   "alloc": "far:1 far:1",
+   "done": 3,
+   "bl": 584442,
+   "loads": 3,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 5.8,
+   "gpu": 2.4,
+   "prof": [
+    [
+     "bake",
+     4.3
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 3.6,
+   "gpu": 1.3,
+   "prof": [
+    [
+     "bake",
+     2.5
+    ]
+   ],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 200020,
+   "loads": 1,
+   "inst": 28430,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 33.4,
+   "cpu": 6.2,
+   "gpu": 3.7,
+   "prof": [
+    [
+     "bake",
+     4.7
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 42629,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 5.2,
+   "gpu": 1.2,
+   "prof": [
+    [
+     "bake",
+     3.4
+    ]
+   ],
+   "alloc": "far:1 far:1",
+   "done": 2,
+   "bl": 391737,
+   "loads": 2,
+   "inst": 8974,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 3.8,
+   "gpu": 2,
+   "prof": [
+    [
+     "bake",
+     2.5
+    ]
+   ],
+   "alloc": "lo:5 far:1 lo:5",
+   "done": 3,
+   "bl": 587562,
+   "loads": 3,
+   "inst": 37937,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.9,
+   "gpu": 1.2,
+   "prof": [],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 193788,
+   "loads": 1,
+   "inst": 9708,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 5.1,
+   "gpu": 2.9,
+   "prof": [
+    [
+     "bake",
+     3.2
+    ]
+   ],
+   "alloc": "far:0",
+   "done": 1,
+   "bl": 145805,
+   "loads": 1,
+   "inst": 11810,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 50,
+   "cpu": 4.4,
+   "gpu": 32.5,
+   "prof": [
+    [
+     "bake",
+     2.5
+    ]
+   ],
+   "alloc": "far:0",
+   "done": 1,
+   "bl": 146231,
+   "loads": 1,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 5.1,
+   "gpu": 2.2,
+   "prof": [
+    [
+     "bake",
+     3.2
+    ]
+   ],
+   "alloc": "far:0",
+   "done": 1,
+   "bl": 149218,
+   "loads": 1,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4.9,
+   "gpu": 1.9,
+   "prof": [
+    [
+     "bake",
+     3.1
+    ]
+   ],
+   "alloc": "far:0 far:0",
+   "done": 2,
+   "bl": 298457,
+   "loads": 2,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 2.4,
+   "gpu": 2.7,
+   "prof": [],
+   "alloc": "lo:5 lo:5 lo:5 far:0",
+   "done": 4,
+   "bl": 732874,
+   "loads": 1,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 66.6,
+   "cpu": 1.9,
+   "gpu": null,
+   "prof": [],
+   "alloc": "hi:39",
+   "done": 1,
+   "bl": 193788,
+   "loads": 4,
+   "inst": 16433,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.7,
+   "gpu": null,
+   "prof": [],
+   "alloc": "hi:39",
+   "done": 1,
+   "bl": 193870,
+   "loads": 0,
+   "inst": 34790,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 33.4,
+   "cpu": 7.3,
+   "gpu": 27.9,
+   "prof": [
+    [
+     "bake",
+     5.6
+    ]
+   ],
+   "alloc": "far:1 far:1 far:1 far:1 far:1",
+   "done": 5,
+   "bl": 977613,
+   "loads": 5,
+   "inst": 43651,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.6,
+   "gpu": 23.6,
+   "prof": [],
+   "alloc": "lo:5 far:1 far:1 far:1 far:1",
+   "done": 5,
+   "bl": 995268,
+   "loads": 5,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 49.9,
+   "cpu": 4.1,
+   "gpu": null,
+   "prof": [
+    [
+     "bake",
+     3
+    ]
+   ],
+   "alloc": "hi:39",
+   "done": 1,
+   "bl": 198328,
+   "loads": 1,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 50.1,
+   "cpu": 9.4,
+   "gpu": 6.4,
+   "prof": [
+    [
+     "bake",
+     7.3
+    ]
+   ],
+   "alloc": "hi:39",
+   "done": 1,
+   "bl": 200033,
+   "loads": 2,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 50,
+   "cpu": 13.2,
+   "gpu": 5.4,
+   "prof": [
+    [
+     "bake",
+     11.3
+    ]
+   ],
+   "alloc": "far:1 far:0 far:1",
+   "done": 3,
+   "bl": 567814,
+   "loads": 1,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 50,
+   "cpu": 6.4,
+   "gpu": 27.1,
+   "prof": [
+    [
+     "bake",
+     5.2
+    ]
+   ],
+   "alloc": "far:1 far:1 far:1 far:1 far:1",
+   "done": 5,
+   "bl": 1024083,
+   "loads": 5,
+   "inst": 43026,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 49.9,
+   "cpu": 4.9,
+   "gpu": 6.4,
+   "prof": [
+    [
+     "bake",
+     4
+    ]
+   ],
+   "alloc": "far:1 far:1 far:0",
+   "done": 3,
+   "bl": 563407,
+   "loads": 9,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 50,
+   "cpu": 23.7,
+   "gpu": null,
+   "prof": [
+    [
+     "bake",
+     16.9
+    ],
+    [
+     "titles",
+     5.7
+    ]
+   ],
+   "alloc": "far:1 far:1",
+   "done": 2,
+   "bl": 423390,
+   "loads": 2,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 33.4,
+   "cpu": 87,
+   "gpu": 2.8,
+   "prof": [
+    [
+     "pre",
+     78.5
+    ],
+    [
+     "bake",
+     6.1
+    ]
+   ],
+   "alloc": "far:1 far:0",
+   "done": 2,
+   "bl": 367045,
+   "loads": 2,
+   "inst": 18647,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 83.3,
+   "cpu": 7.7,
+   "gpu": null,
+   "prof": [
+    [
+     "bake",
+     5.8
+    ]
+   ],
+   "alloc": "far:0",
+   "done": 1,
+   "bl": 156750,
+   "loads": 9,
+   "inst": 8876,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 8.2,
+   "gpu": null,
+   "prof": [
+    [
+     "bake",
+     6.7
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 40859,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.5,
+   "gpu": 2.5,
+   "prof": [],
+   "alloc": "far:1 far:1",
+   "done": 2,
+   "bl": 424008,
+   "loads": 2,
+   "inst": 5989,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 66.7,
+   "cpu": 5.9,
+   "gpu": 1.5,
+   "prof": [
+    [
+     "bake",
+     4.9
+    ]
+   ],
+   "alloc": "far:1 far:1 far:1",
+   "done": 3,
+   "bl": 633407,
+   "loads": 3,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 5.5,
+   "gpu": 1,
+   "prof": [
+    [
+     "bake",
+     4.2
+    ]
+   ],
+   "alloc": "far:1 far:1",
+   "done": 2,
+   "bl": 437210,
+   "loads": 2,
+   "inst": 29991,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 3.8,
+   "gpu": 2.5,
+   "prof": [
+    [
+     "bake",
+     2.6
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 1,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 50,
+   "cpu": 8.4,
+   "gpu": 18.3,
+   "prof": [
+    [
+     "bake",
+     7
+    ]
+   ],
+   "alloc": "far:0 far:0 far:0 far:0",
+   "done": 4,
+   "bl": 441975,
+   "loads": 9,
+   "inst": 22381,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 49.9,
+   "cpu": 5.9,
+   "gpu": 2.6,
+   "prof": [
+    [
+     "bake",
+     4.4
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 1,
+   "inst": 60827,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 1.4,
+   "gpu": 0.7,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 2,
+   "inst": 40726,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 1.6,
+   "gpu": 1.2,
+   "prof": [],
+   "alloc": "far:1 far:1",
+   "done": 2,
+   "bl": 440362,
+   "loads": 3,
+   "inst": 41587,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 33.4,
+   "cpu": 1.8,
+   "gpu": 0.9,
+   "prof": [],
+   "alloc": "far:1 far:1 far:1 far:1",
+   "done": 4,
+   "bl": 879948,
+   "loads": 4,
+   "inst": 19878,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.3,
+   "gpu": null,
+   "prof": [],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 215487,
+   "loads": 2,
+   "inst": 33986,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.3,
+   "gpu": 2.6,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 1,
+   "inst": 16745,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 50,
+   "cpu": 1.8,
+   "gpu": 4.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.3,
+   "gpu": 1.6,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.2,
+   "gpu": 0.7,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.1,
+   "gpu": 0.6,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1,
+   "gpu": 0.6,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 2,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1,
+   "gpu": 0.5,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 1,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.3,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 34339,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.7,
+   "gpu": 0.7,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 0.8,
+   "gpu": 0.5,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 36039,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 0.8,
+   "gpu": 0.7,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 0.8,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3.6,
+   "gpu": 0.1,
+   "prof": [
+    [
+     "bake",
+     1.9
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 6.4,
+   "gpu": null,
+   "prof": [
+    [
+     "bake",
+     4.6
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 4.9,
+   "gpu": 0.6,
+   "prof": [
+    [
+     "bake",
+     3.5
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 4.8,
+   "gpu": 0.6,
+   "prof": [
+    [
+     "bake",
+     3.7
+    ]
+   ],
+   "alloc": "hi:39",
+   "done": 1,
+   "bl": 195972,
+   "loads": 0,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 4.3,
+   "gpu": 0.7,
+   "prof": [
+    [
+     "bake",
+     3
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 56.9,
+   "gpu": 0.8,
+   "prof": [
+    [
+     "pre",
+     51.5
+    ],
+    [
+     "bake",
+     4.1
+    ]
+   ],
+   "alloc": "lo:4 lo:4",
+   "done": 2,
+   "bl": 291592,
+   "loads": 2,
+   "inst": 28917,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 50,
+   "cpu": 8.6,
+   "gpu": null,
+   "prof": [
+    [
+     "bake",
+     6.4
+    ]
+   ],
+   "alloc": "hi:30 far:1 far:1",
+   "done": 3,
+   "bl": 537543,
+   "loads": 3,
+   "inst": 58166,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 6.9,
+   "gpu": null,
+   "prof": [
+    [
+     "bake",
+     5.3
+    ]
+   ],
+   "alloc": "lo:5",
+   "done": 1,
+   "bl": 195968,
+   "loads": 0,
+   "inst": 59973,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 6.7,
+   "gpu": 24.6,
+   "prof": [
+    [
+     "bake",
+     5.1
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 2,
+   "inst": 25052,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 50,
+   "cpu": 2.2,
+   "gpu": 32,
+   "prof": [],
+   "alloc": "far:0 far:1 far:1 far:1",
+   "done": 4,
+   "bl": 731715,
+   "loads": 4,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 3.6,
+   "gpu": 11.3,
+   "prof": [
+    [
+     "bake",
+     2.2
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.9,
+   "gpu": 1,
+   "prof": [],
+   "alloc": "far:1 far:0",
+   "done": 2,
+   "bl": 344051,
+   "loads": 2,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 50,
+   "cpu": 6,
+   "gpu": 3.6,
+   "prof": [
+    [
+     "bake",
+     3.9
+    ]
+   ],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 201766,
+   "loads": 1,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.3,
+   "gpu": 0.6,
+   "prof": [],
+   "alloc": "far:0",
+   "done": 1,
+   "bl": 94780,
+   "loads": 1,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4,
+   "gpu": 2,
+   "prof": [
+    [
+     "bake",
+     2.7
+    ]
+   ],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 200020,
+   "loads": 1,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.5,
+   "cpu": 1.5,
+   "gpu": 1.5,
+   "prof": [],
+   "alloc": "far:0 far:0",
+   "done": 2,
+   "bl": 249308,
+   "loads": 2,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 1.4,
+   "gpu": 1.1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 3.8,
+   "gpu": 1.5,
+   "prof": [
+    [
+     "bake",
+     2.5
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 33.4,
+   "cpu": 1.3,
+   "gpu": 1.7,
+   "prof": [],
+   "alloc": "far:0 far:0",
+   "done": 2,
+   "bl": 41265,
+   "loads": 2,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3,
+   "gpu": 0.6,
+   "prof": [
+    [
+     "bake",
+     1.6
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.2,
+   "gpu": 2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.3,
+   "gpu": 0.6,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4.2,
+   "gpu": 0.6,
+   "prof": [
+    [
+     "bake",
+     2.7
+    ]
+   ],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 200033,
+   "loads": 1,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.5,
+   "gpu": null,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.9,
+   "gpu": null,
+   "prof": [],
+   "alloc": "far:0",
+   "done": 1,
+   "bl": 94780,
+   "loads": 1,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 8.5,
+   "gpu": 0.6,
+   "prof": [
+    [
+     "bake",
+     6.8
+    ]
+   ],
+   "alloc": "far:0",
+   "done": 1,
+   "bl": 149238,
+   "loads": 1,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4.4,
+   "gpu": 1.4,
+   "prof": [
+    [
+     "bake",
+     2.6
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.5,
+   "gpu": null,
+   "prof": [],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 205818,
+   "loads": 1,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3.8,
+   "gpu": 3.5,
+   "prof": [
+    [
+     "bake",
+     2
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.3,
+   "gpu": 0.6,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.6,
+   "gpu": 0.6,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3.6,
+   "gpu": 0.6,
+   "prof": [
+    [
+     "bake",
+     2.1
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.3,
+   "gpu": 0.7,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.5,
+   "gpu": 0.7,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 3,
+   "gpu": 0.7,
+   "prof": [
+    [
+     "bake",
+     1.9
+    ]
+   ],
+   "alloc": "lo:5 far:0",
+   "done": 2,
+   "bl": 349252,
+   "loads": 2,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 51,
+   "gpu": 16.5,
+   "prof": [
+    [
+     "pre",
+     48.8
+    ]
+   ],
+   "alloc": "far:1 far:1",
+   "done": 2,
+   "bl": 403557,
+   "loads": 2,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 49.9,
+   "cpu": 7.1,
+   "gpu": null,
+   "prof": [
+    [
+     "bake",
+     5.4
+    ]
+   ],
+   "alloc": "far:0 far:1 far:1 far:0 far:1",
+   "done": 5,
+   "bl": 865612,
+   "loads": 5,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 1.1,
+   "gpu": null,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.8,
+   "gpu": 2.2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 50,
+   "cpu": 3.9,
+   "gpu": 4.3,
+   "prof": [
+    [
+     "bake",
+     2.3
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4.4,
+   "gpu": 0.6,
+   "prof": [
+    [
+     "bake",
+     2.7
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 4.5,
+   "gpu": 0.6,
+   "prof": [
+    [
+     "bake",
+     2.8
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 28917,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.5,
+   "gpu": 0.6,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 54030,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.5,
+   "gpu": 0.7,
+   "prof": [],
+   "alloc": "far:0 far:1",
+   "done": 2,
+   "bl": 357503,
+   "loads": 2,
+   "inst": 36804,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 3.7,
+   "gpu": 0.9,
+   "prof": [
+    [
+     "bake",
+     2.5
+    ]
+   ],
+   "alloc": "far:1 far:0 far:1",
+   "done": 3,
+   "bl": 563468,
+   "loads": 3,
+   "inst": 16120,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.3,
+   "gpu": null,
+   "prof": [],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 210446,
+   "loads": 1,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.2,
+   "gpu": 4.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 10.7,
+   "gpu": 3.1,
+   "prof": [
+    [
+     "bake",
+     9.6
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.6,
+   "gpu": 1.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.9,
+   "gpu": 0.5,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 1.5,
+   "gpu": 0.5,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 2.7,
+   "gpu": 0.5,
+   "prof": [
+    [
+     "bake",
+     1.7
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1,
+   "gpu": 0.5,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.6,
+   "gpu": 0.5,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4.1,
+   "gpu": 0.5,
+   "prof": [
+    [
+     "bake",
+     2.9
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.2,
+   "gpu": 0.5,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.6,
+   "gpu": 0.5,
+   "prof": [],
+   "alloc": "far:1 far:1",
+   "done": 2,
+   "bl": 423390,
+   "loads": 2,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1,
+   "gpu": null,
+   "prof": [],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 211965,
+   "loads": 1,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.9,
+   "gpu": null,
+   "prof": [],
+   "alloc": "far:0 far:0 far:0 far:0",
+   "done": 4,
+   "bl": 247506,
+   "loads": 4,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.6,
+   "gpu": 3.3,
+   "prof": [],
+   "alloc": "far:0 far:0 far:0 far:0 far:0 far:0 far:0 far:0 far:0 far:0",
+   "done": 10,
+   "bl": 572552,
+   "loads": 10,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3.4,
+   "gpu": null,
+   "prof": [
+    [
+     "bake",
+     2.4
+    ]
+   ],
+   "alloc": "far:0 far:0 far:0",
+   "done": 3,
+   "bl": 96638,
+   "loads": 3,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.2,
+   "gpu": 2.7,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 33.4,
+   "cpu": 1.7,
+   "gpu": 3.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 50241,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4,
+   "gpu": 1.2,
+   "prof": [
+    [
+     "bake",
+     2.6
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 29131,
+   "q": 4,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1,
+   "gpu": 0.6,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 16136,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 41.4,
+   "gpu": 0.8,
+   "prof": [
+    [
+     "pre",
+     40.2
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 7408,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 3.5,
+   "gpu": null,
+   "prof": [
+    [
+     "bake",
+     2.6
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 35440,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.5,
+   "gpu": null,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 50394,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3.5,
+   "gpu": 1.5,
+   "prof": [
+    [
+     "bake",
+     2.4
+    ]
+   ],
+   "alloc": "far:1 far:1 far:1",
+   "done": 3,
+   "bl": 644620,
+   "loads": 3,
+   "inst": 50886,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.2,
+   "gpu": 1,
+   "prof": [],
+   "alloc": "far:0 far:0",
+   "done": 2,
+   "bl": 308314,
+   "loads": 2,
+   "inst": 45550,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.5,
+   "cpu": 1.1,
+   "gpu": 1.1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 60445,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 33.4,
+   "cpu": 5.2,
+   "gpu": 4.7,
+   "prof": [
+    [
+     "bake",
+     4.3
+    ]
+   ],
+   "alloc": "far:0 far:0 far:0",
+   "done": 3,
+   "bl": 179624,
+   "loads": 3,
+   "inst": 16211,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 33.4,
+   "cpu": 1.1,
+   "gpu": 2.5,
+   "prof": [],
+   "alloc": "far:0",
+   "done": 1,
+   "bl": 73195,
+   "loads": 1,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.1,
+   "gpu": 1.1,
+   "prof": [],
+   "alloc": "far:0 far:0",
+   "done": 2,
+   "bl": 89443,
+   "loads": 2,
+   "inst": 43107,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 4.3,
+   "gpu": 2.1,
+   "prof": [
+    [
+     "bake",
+     3.2
+    ]
+   ],
+   "alloc": "far:0",
+   "done": 1,
+   "bl": 18594,
+   "loads": 1,
+   "inst": 82833,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 1,
+   "gpu": 3.7,
+   "prof": [],
+   "alloc": "far:0",
+   "done": 1,
+   "bl": 184852,
+   "loads": 1,
+   "inst": 92637,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.9,
+   "gpu": null,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 56559,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.2,
+   "gpu": 1.5,
+   "prof": [],
+   "alloc": "far:1 far:1",
+   "done": 2,
+   "bl": 432477,
+   "loads": 2,
+   "inst": 21430,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 3.9,
+   "gpu": 2.1,
+   "prof": [
+    [
+     "bake",
+     3
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1,
+   "gpu": 1.5,
+   "prof": [],
+   "alloc": "far:0 far:0",
+   "done": 2,
+   "bl": 206241,
+   "loads": 2,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 4.6,
+   "gpu": 2.7,
+   "prof": [
+    [
+     "bake",
+     3.5
+    ]
+   ],
+   "alloc": "far:0 far:0 far:0 far:0",
+   "done": 4,
+   "bl": 421576,
+   "loads": 4,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 33.4,
+   "cpu": 5.4,
+   "gpu": 0.6,
+   "prof": [
+    [
+     "bake",
+     2.8
+    ],
+    [
+     "labels",
+     1.5
+    ]
+   ],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 220184,
+   "loads": 1,
+   "inst": 63441,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.2,
+   "gpu": 1.5,
+   "prof": [],
+   "alloc": "far:0 far:0 far:0 far:0",
+   "done": 4,
+   "bl": 96342,
+   "loads": 4,
+   "inst": 57084,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 4.9,
+   "gpu": 2,
+   "prof": [
+    [
+     "bake",
+     4.1
+    ]
+   ],
+   "alloc": "far:0 far:0 far:0 far:0",
+   "done": 4,
+   "bl": 116438,
+   "loads": 4,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 1,
+   "gpu": null,
+   "prof": [],
+   "alloc": "far:0",
+   "done": 1,
+   "bl": 34834,
+   "loads": 2,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.9,
+   "gpu": 1.6,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 1,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 1.4,
+   "gpu": 1.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 27059,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3.1,
+   "gpu": 0.8,
+   "prof": [
+    [
+     "bake",
+     2.2
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 62284,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 0.9,
+   "gpu": 0.6,
+   "prof": [],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 217032,
+   "loads": 1,
+   "inst": 47850,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1,
+   "gpu": 0.7,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 31147,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.8,
+   "gpu": 0.9,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 11825,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.1,
+   "gpu": 1.8,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4.2,
+   "gpu": 0.9,
+   "prof": [
+    [
+     "bake",
+     3.2
+    ]
+   ],
+   "alloc": "far:0",
+   "done": 1,
+   "bl": 109370,
+   "loads": 1,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.5,
+   "cpu": 0.8,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "far:0 far:0 far:0 far:0",
+   "done": 4,
+   "bl": 172950,
+   "loads": 4,
+   "inst": 0,
+   "q": 3,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3.3,
+   "gpu": 1,
+   "prof": [
+    [
+     "bake",
+     2.4
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 0.7,
+   "gpu": null,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 0.7,
+   "gpu": null,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 0.7,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.5,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 3.8,
+   "gpu": 0.4,
+   "prof": [
+    [
+     "bake",
+     2.5
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.4,
+   "gpu": null,
+   "prof": [
+    [
+     "bake",
+     1.4
+    ]
+   ],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 220178,
+   "loads": 1,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.2,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "far:1",
+   "done": 1,
+   "bl": 220178,
+   "loads": 1,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.8,
+   "gpu": 1.4,
+   "prof": [
+    [
+     "bake",
+     2
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3.4,
+   "gpu": 0.4,
+   "prof": [
+    [
+     "bake",
+     2.5
+    ]
+   ],
+   "alloc": "far:0 far:0 far:0 far:0 far:0",
+   "done": 5,
+   "bl": 120222,
+   "loads": 5,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.1,
+   "gpu": null,
+   "prof": [],
+   "alloc": "far:0 far:0 far:0 far:0 far:0",
+   "done": 5,
+   "bl": 187334,
+   "loads": 5,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 0.8,
+   "gpu": null,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.8,
+   "gpu": 1.3,
+   "prof": [
+    [
+     "bake",
+     2
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 33.2,
+   "cpu": 4,
+   "gpu": 1.5,
+   "prof": [
+    [
+     "bake",
+     3.2
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 1,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 0.8,
+   "gpu": null,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 3.7,
+   "gpu": 0.4,
+   "prof": [
+    [
+     "bake",
+     2.7
+    ]
+   ],
+   "alloc": "far:0",
+   "done": 1,
+   "bl": 233307,
+   "loads": 1,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.3,
+   "gpu": null,
+   "prof": [],
+   "alloc": "far:0 far:1",
+   "done": 2,
+   "bl": 464671,
+   "loads": 2,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.7,
+   "gpu": null,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.1,
+   "gpu": 1.8,
+   "prof": [],
+   "alloc": "far:0 far:0 far:0 far:0 far:0",
+   "done": 5,
+   "bl": 282320,
+   "loads": 5,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2,
+   "gpu": 4.6,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 0.6,
+   "gpu": 0.5,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.7,
+   "gpu": 1.8,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.7,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.1,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 0.7,
+   "gpu": 0.5,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.6,
+   "gpu": 0.5,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.2,
+   "gpu": 0.5,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 0.8,
+   "gpu": 0.5,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1,
+   "gpu": 0.6,
+   "prof": [],
+   "alloc": "far:1 far:1",
+   "done": 2,
+   "bl": 442396,
+   "loads": 2,
+   "inst": 48910,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 0.8,
+   "gpu": null,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 89178,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 0.8,
+   "gpu": 0.9,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 63623,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 0.7,
+   "gpu": 0.9,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 44739,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.6,
+   "gpu": 0.8,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 23560,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.7,
+   "gpu": 0.8,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 58598,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 0.6,
+   "gpu": 0.7,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 96274,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1,
+   "gpu": 0.9,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 96043,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 0.6,
+   "gpu": 0.9,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 72382,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.8,
+   "gpu": 0.8,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 47850,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.5,
+   "gpu": 0.6,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 27059,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1,
+   "gpu": 0.6,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 8740,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 0.6,
+   "gpu": 0.5,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.5,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.8,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.5,
+   "cpu": 0.8,
+   "gpu": null,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 0.8,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 0.8,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.9,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.6,
+   "gpu": 0.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 0.7,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.7,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 0.8,
+   "gpu": 0.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 43451,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.6,
+   "gpu": 0.6,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 85604,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1,
+   "gpu": 0.8,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 87690,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 0.6,
+   "gpu": 0.9,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 66241,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 0.6,
+   "gpu": 0.9,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 109082,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.5,
+   "cpu": 0.6,
+   "gpu": 1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 116883,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.7,
+   "gpu": 1.1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 91542,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 0.7,
+   "gpu": 1.2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 57163,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 0.4,
+   "gpu": 0.7,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 32902,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 0.7,
+   "gpu": null,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 18602,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 0.5,
+   "gpu": 0.6,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.5,
+   "cpu": 0.4,
+   "gpu": 0.1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3.4,
+   "gpu": 0.1,
+   "prof": [
+    [
+     "bake",
+     1.9
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.9,
+   "gpu": null,
+   "prof": [
+    [
+     "bake",
+     1.8
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.5,
+   "gpu": 1.2,
+   "prof": [
+    [
+     "bake",
+     1.2
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 2.2,
+   "gpu": 2.1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 2.3,
+   "gpu": 1.2,
+   "prof": [
+    [
+     "bake",
+     1.3
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 2.7,
+   "gpu": 1.8,
+   "prof": [
+    [
+     "bake",
+     1.4
+    ]
+   ],
+   "alloc": "lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2",
+   "done": 8,
+   "bl": 415538,
+   "loads": 8,
+   "inst": 356637,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 3.1,
+   "gpu": 2.4,
+   "prof": [
+    [
+     "bake",
+     1.6
+    ]
+   ],
+   "alloc": "lo:2 hi:16 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2",
+   "done": 9,
+   "bl": 456233,
+   "loads": 8,
+   "inst": 357746,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 4.6,
+   "gpu": null,
+   "prof": [
+    [
+     "bake",
+     2.5
+    ]
+   ],
+   "alloc": "hi:16 hi:16",
+   "done": 2,
+   "bl": 106182,
+   "loads": 7,
+   "inst": 352728,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 50,
+   "cpu": 4.8,
+   "gpu": 25.9,
+   "prof": [
+    [
+     "bake",
+     2.8
+    ]
+   ],
+   "alloc": "lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2",
+   "done": 16,
+   "bl": 894455,
+   "loads": 15,
+   "inst": 372702,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 66.7,
+   "cpu": 4,
+   "gpu": 44.8,
+   "prof": [
+    [
+     "bake",
+     2.2
+    ]
+   ],
+   "alloc": "lo:2 lo:2 lo:2 lo:2 hi:16 lo:2 lo:2 lo:2 lo:2",
+   "done": 9,
+   "bl": 537226,
+   "loads": 2,
+   "inst": 402862,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 50,
+   "cpu": 3.6,
+   "gpu": 32.8,
+   "prof": [
+    [
+     "bake",
+     1.8
+    ]
+   ],
+   "alloc": "hi:16 hi:16",
+   "done": 2,
+   "bl": 115080,
+   "loads": 0,
+   "inst": 473580,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 116.6,
+   "cpu": 66.3,
+   "gpu": 42.3,
+   "prof": [
+    [
+     "bake",
+     64.4
+    ]
+   ],
+   "alloc": "lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2",
+   "done": 16,
+   "bl": 1177699,
+   "loads": 29,
+   "inst": 615310,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 116.7,
+   "cpu": 5.8,
+   "gpu": 29.9,
+   "prof": [
+    [
+     "bake",
+     3.5
+    ]
+   ],
+   "alloc": "lo:2 lo:2 hi:16 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2",
+   "done": 9,
+   "bl": 703368,
+   "loads": 11,
+   "inst": 721350,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 133.3,
+   "cpu": 8.4,
+   "gpu": 65.9,
+   "prof": [
+    [
+     "bake",
+     5.8
+    ]
+   ],
+   "alloc": "lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2",
+   "done": 12,
+   "bl": 1201850,
+   "loads": 12,
+   "inst": 674544,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 5,
+   "gpu": null,
+   "prof": [
+    [
+     "bake",
+     2.8
+    ]
+   ],
+   "alloc": "hi:16 hi:16",
+   "done": 4,
+   "bl": 283965,
+   "loads": 6,
+   "inst": 694678,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 83.4,
+   "cpu": 3.3,
+   "gpu": 55.6,
+   "prof": [
+    [
+     "bake",
+     1.8
+    ]
+   ],
+   "alloc": "hi:16 hi:16 far:0 far:0 far:0 far:0",
+   "done": 6,
+   "bl": 318066,
+   "loads": 4,
+   "inst": 547036,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 99.9,
+   "cpu": 4.9,
+   "gpu": 41.4,
+   "prof": [
+    [
+     "lod",
+     1.2
+    ],
+    [
+     "bake",
+     2.4
+    ]
+   ],
+   "alloc": "hi:16 hi:16",
+   "done": 2,
+   "bl": 179757,
+   "loads": 6,
+   "inst": 485223,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 66.7,
+   "cpu": 4.1,
+   "gpu": 35.2,
+   "prof": [
+    [
+     "bake",
+     2.3
+    ]
+   ],
+   "alloc": "hi:16 hi:16",
+   "done": 2,
+   "bl": 189790,
+   "loads": 0,
+   "inst": 389141,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 66.6,
+   "cpu": 3.9,
+   "gpu": 49.7,
+   "prof": [
+    [
+     "bake",
+     2.3
+    ]
+   ],
+   "alloc": "hi:16 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2",
+   "done": 9,
+   "bl": 832306,
+   "loads": 0,
+   "inst": 406737,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 66.7,
+   "cpu": 5.4,
+   "gpu": 36.9,
+   "prof": [
+    [
+     "bake",
+     2.8
+    ]
+   ],
+   "alloc": "hi:16 hi:16 far:0 far:0 far:0 far:0",
+   "done": 6,
+   "bl": 325932,
+   "loads": 8,
+   "inst": 455718,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 50,
+   "cpu": 4.1,
+   "gpu": 33.9,
+   "prof": [
+    [
+     "bake",
+     2.1
+    ]
+   ],
+   "alloc": "hi:16 hi:16",
+   "done": 2,
+   "bl": 110746,
+   "loads": 0,
+   "inst": 552043,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 83.3,
+   "cpu": 4.7,
+   "gpu": 61.9,
+   "prof": [
+    [
+     "lod",
+     1.1
+    ],
+    [
+     "bake",
+     2.4
+    ]
+   ],
+   "alloc": "hi:16 hi:16",
+   "done": 2,
+   "bl": 199200,
+   "loads": 0,
+   "inst": 946827,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 66.7,
+   "cpu": 3.8,
+   "gpu": 45.8,
+   "prof": [
+    [
+     "lod",
+     1.1
+    ],
+    [
+     "bake",
+     1.7
+    ]
+   ],
+   "alloc": "lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2",
+   "done": 16,
+   "bl": 1000617,
+   "loads": 0,
+   "inst": 1229434,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 4.6,
+   "gpu": 34.9,
+   "prof": [
+    [
+     "lod",
+     1.1
+    ],
+    [
+     "bake",
+     2.2
+    ]
+   ],
+   "alloc": "hi:16 hi:16",
+   "done": 2,
+   "bl": 159349,
+   "loads": 0,
+   "inst": 1571445,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 50,
+   "cpu": 4.9,
+   "gpu": 35.5,
+   "prof": [
+    [
+     "lod",
+     1.8
+    ],
+    [
+     "bake",
+     2
+    ]
+   ],
+   "alloc": "hi:16 hi:16",
+   "done": 2,
+   "bl": 211999,
+   "loads": 0,
+   "inst": 1995534,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 116.7,
+   "cpu": 4.8,
+   "gpu": 70.8,
+   "prof": [
+    [
+     "lod",
+     1.6
+    ],
+    [
+     "bake",
+     2.1
+    ]
+   ],
+   "alloc": "hi:16 hi:16",
+   "done": 2,
+   "bl": 161589,
+   "loads": 0,
+   "inst": 2216212,
+   "q": 0,
+   "sk": 0
+  },
+  {
+   "dt": 66.6,
+   "cpu": 4.8,
+   "gpu": 40.8,
+   "prof": [
+    [
+     "lod",
+     1.4
+    ],
+    [
+     "bake",
+     2.3
+    ]
+   ],
+   "alloc": "hi:16 hi:16",
+   "done": 2,
+   "bl": 116722,
+   "loads": 0,
+   "inst": 2029385,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 50,
+   "cpu": 4.4,
+   "gpu": 45.2,
+   "prof": [
+    [
+     "bake",
+     2.5
+    ]
+   ],
+   "alloc": "hi:16 hi:16",
+   "done": 2,
+   "bl": 118933,
+   "loads": 2,
+   "inst": 1505531,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 100,
+   "cpu": 3.3,
+   "gpu": 53.3,
+   "prof": [
+    [
+     "bake",
+     1.8
+    ]
+   ],
+   "alloc": "hi:16 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2 lo:2",
+   "done": 8,
+   "bl": 769978,
+   "loads": 0,
+   "inst": 1104160,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 50.1,
+   "cpu": 3.4,
+   "gpu": 44.9,
+   "prof": [
+    [
+     "bake",
+     2.1
+    ]
+   ],
+   "alloc": "lo:2",
+   "done": 1,
+   "bl": 110344,
+   "loads": 0,
+   "inst": 715419,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 66.6,
+   "cpu": 3.5,
+   "gpu": 51.2,
+   "prof": [
+    [
+     "bake",
+     2.2
+    ]
+   ],
+   "alloc": "hi:16",
+   "done": 1,
+   "bl": 67521,
+   "loads": 0,
+   "inst": 398589,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 100.1,
+   "cpu": 3.2,
+   "gpu": 73,
+   "prof": [
+    [
+     "bake",
+     2.2
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 379701,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 33.2,
+   "cpu": 3.4,
+   "gpu": 8.1,
+   "prof": [
+    [
+     "bake",
+     2.3
+    ]
+   ],
+   "alloc": "hi:16 hi:16",
+   "done": 2,
+   "bl": 153201,
+   "loads": 0,
+   "inst": 557453,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 3.5,
+   "gpu": 25.7,
+   "prof": [
+    [
+     "bake",
+     2.4
+    ]
+   ],
+   "alloc": "hi:16 hi:16",
+   "done": 2,
+   "bl": 159192,
+   "loads": 0,
+   "inst": 797392,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.8,
+   "cpu": 3.2,
+   "gpu": 4.4,
+   "prof": [
+    [
+     "bake",
+     2.4
+    ]
+   ],
+   "alloc": "hi:16 hi:16",
+   "done": 2,
+   "bl": 162803,
+   "loads": 0,
+   "inst": 899630,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 49.9,
+   "cpu": 4.2,
+   "gpu": 37.4,
+   "prof": [
+    [
+     "bake",
+     2.9
+    ]
+   ],
+   "alloc": "hi:16 hi:16",
+   "done": 2,
+   "bl": 166432,
+   "loads": 0,
+   "inst": 1132442,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 66.7,
+   "cpu": 4.5,
+   "gpu": 39.6,
+   "prof": [
+    [
+     "bake",
+     3.1
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 1075293,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 50,
+   "cpu": 2.7,
+   "gpu": 41.4,
+   "prof": [
+    [
+     "bake",
+     1.4
+    ]
+   ],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 814002,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 66.6,
+   "cpu": 1.4,
+   "gpu": 42.8,
+   "prof": [],
+   "alloc": "hi:16",
+   "done": 1,
+   "bl": 85211,
+   "loads": 0,
+   "inst": 545764,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.3,
+   "gpu": 8.2,
+   "prof": [],
+   "alloc": "hi:16",
+   "done": 1,
+   "bl": 86700,
+   "loads": 0,
+   "inst": 435462,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 33.4,
+   "cpu": 1.5,
+   "gpu": 6.9,
+   "prof": [],
+   "alloc": "hi:16 hi:16",
+   "done": 2,
+   "bl": 177355,
+   "loads": 0,
+   "inst": 383450,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 1.3,
+   "gpu": 18.6,
+   "prof": [],
+   "alloc": "hi:16 hi:16",
+   "done": 2,
+   "bl": 174921,
+   "loads": 0,
+   "inst": 327314,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 0.9,
+   "gpu": 17.8,
+   "prof": [],
+   "alloc": "hi:16",
+   "done": 1,
+   "bl": 93018,
+   "loads": 0,
+   "inst": 320696,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 50.1,
+   "cpu": 1,
+   "gpu": 28.9,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 363986,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 1.2,
+   "gpu": 27.8,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 396434,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 1.2,
+   "gpu": 15.1,
+   "prof": [],
+   "alloc": "hi:16 hi:16",
+   "done": 2,
+   "bl": 199857,
+   "loads": 0,
+   "inst": 488277,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.1,
+   "gpu": 3.6,
+   "prof": [],
+   "alloc": "hi:16",
+   "done": 1,
+   "bl": 100457,
+   "loads": 0,
+   "inst": 518728,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.8,
+   "gpu": 3.1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 551898,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 0.9,
+   "gpu": 29.6,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 602851,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 33.3,
+   "cpu": 1,
+   "gpu": 15.1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 586511,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.8,
+   "gpu": 4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 565894,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.8,
+   "gpu": 4.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 534024,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.8,
+   "gpu": 4.5,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 501821,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1,
+   "gpu": 4.3,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 458282,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.9,
+   "gpu": 3.8,
+   "prof": [],
+   "alloc": "hi:16",
+   "done": 1,
+   "bl": 103782,
+   "loads": 0,
+   "inst": 423761,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.1,
+   "gpu": null,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 380918,
+   "q": 1,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.5,
+   "gpu": 14.7,
+   "prof": [],
+   "alloc": "hi:16",
+   "done": 1,
+   "bl": 104008,
+   "loads": 0,
+   "inst": 338797,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.1,
+   "gpu": 3.4,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 302221,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.9,
+   "gpu": null,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 260950,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 1.1,
+   "gpu": 3.6,
+   "prof": [],
+   "alloc": "hi:16",
+   "done": 1,
+   "bl": 107594,
+   "loads": 0,
+   "inst": 217487,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.8,
+   "gpu": 3.1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 178570,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1.2,
+   "gpu": null,
+   "prof": [],
+   "alloc": "hi:16",
+   "done": 1,
+   "bl": 104405,
+   "loads": 0,
+   "inst": 151859,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 0.9,
+   "gpu": 2.7,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 123552,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.7,
+   "gpu": null,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 99959,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.5,
+   "gpu": 2.2,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 76337,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 0.7,
+   "gpu": 1.6,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 49576,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.9,
+   "gpu": 1.7,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 27210,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.8,
+   "gpu": 1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 17160,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 1,
+   "gpu": 0.6,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 10238,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 0.6,
+   "gpu": 0.6,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 6142,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.7,
+   "gpu": 0.6,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 0.6,
+   "gpu": 0.1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.5,
+   "gpu": 0.1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.6,
+   "cpu": 0.4,
+   "gpu": 0.1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.5,
+   "gpu": 0.1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.6,
+   "gpu": 0.1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  },
+  {
+   "dt": 16.7,
+   "cpu": 0.5,
+   "gpu": 0.1,
+   "prof": [],
+   "alloc": "",
+   "done": 0,
+   "bl": 0,
+   "loads": 0,
+   "inst": 0,
+   "q": 2,
+   "sk": 0
+  }
+ ]
+}
+18.4s closed

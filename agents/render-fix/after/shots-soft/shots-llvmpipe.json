@@ -1,0 +1,19 @@
+{
+ "size": [
+  1280,
+  720
+ ],
+ "views": {
+  "rec": {
+   "file": "agents/render-fix/after/shots-soft/shots/rec-llvmpipe-1280x720.png",
+   "ready_ms": 503,
+   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)"
+  },
+  "now": {
+   "file": "agents/render-fix/after/shots-soft/shots/now-llvmpipe-1280x720.png",
+   "ready_ms": 201,
+   "renderer": "ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 20.1.2 256 bits) (0x00000000)), llvmpipe)"
+  }
+ },
+ "logs": []
+}

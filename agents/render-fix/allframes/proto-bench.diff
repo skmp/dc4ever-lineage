@@ -1,0 +1,44 @@
+--- ../../../../viewer/src/bench.js	2026-11-25 16:52:15.094085349 +0200
++++ viewer/src/bench.js	2026-11-25 19:34:25.043602576 +0200
+@@ -48,7 +48,7 @@
+     } else if (name === 'hero') {   // og:image: Gallery (every frame solid), walls from ?heroy= (default 2016) on, wide oblique shot
+       const y0 = Q.get('heroy') || '2016', dir = (Q.get('herodir') || '0.55,-0.42,0.72').split(',').map(Number);
+       const fs = WALLS.filter(w => (F.frames[w.i].date || '') >= y0).map(w => w.i);
+-      V.presMode = 'gallery'; V.setX(V.xMax + U); const v = V.fitBox(V.wallsBox(fs), dir);
++      V.presMode = (Q.get('allf') === '1' || Q.get('cclock') === '1') ? 'clock' : 'gallery'; V.setX(V.xMax + U); const v = V.fitBox(V.wallsBox(fs), dir);
+       const bb = V.wallsBox(fs), C = [0, 1, 2].map(i => (bb[0][i] + bb[1][i]) / 2), z = +(Q.get('herozoom') || 1);   // zoom > 1: closer
+       V.cam.p = v.p.map((c, i) => C[i] + (c - C[i]) / z); V.setLook(v.dir);
+     } else if (name.startsWith('lanes:')) {   // lanes:A+B+...: each lane's last frame in Clock at the end, oblique from above
+@@ -85,11 +85,11 @@
+   async function pathA() {   // a famous file through the frames that hold it (gallery)
+     const it = (V.attract.items || []).find(i => i.kind === 'file' && /interpreter/.test(i.title)) || V.attract.items.find(i => i.kind === 'file');
+     const keys = it.stops.map(([f, ident]) => { const w = W[f]; return V.slotView(w, V.slotOf(w, ident), 0, 9).p; });
+-    V.presMode = 'gallery'; V.setX(V.xMax + U);
++    V.presMode = (Q.get('allf') === '1' || Q.get('cclock') === '1') ? 'clock' : 'gallery'; V.setX(V.xMax + U);
+     return t => { const x = t * (keys.length - 1), i = Math.min(keys.length - 2, Math.floor(x)), f = smooth(x - i); V.cam.p = lerp(keys[i], keys[i + 1], f); V.setLook([1, -0.05, 0.03]); };
+   }
+-  const pathB = async () => { V.presMode = 'gallery'; V.setX(V.xMax + U); return t => { const a = t * Math.PI * 2, c = [(V.xMin + V.xMax) / 2, 0, zMax / 2]; lookAt([c[0] - Math.cos(a) * 520000, 260000, c[2] + Math.sin(a) * 300000], c); }; };
+-  const pathC = async () => { V.presMode = 'gallery'; V.setX(V.xMax + U); const lanes = ['nullDC', 'reicast', 'flycast', 'nulldc3', 'nullDC4Wii'].map(laneByName);
++  const pathB = async () => { V.presMode = (Q.get('allf') === '1' || Q.get('cclock') === '1') ? 'clock' : 'gallery'; V.setX(V.xMax + U); return t => { const a = t * Math.PI * 2, c = [(V.xMin + V.xMax) / 2, 0, zMax / 2]; lookAt([c[0] - Math.cos(a) * 520000, 260000, c[2] + Math.sin(a) * 300000], c); }; };
++  const pathC = async () => { V.presMode = (Q.get('allf') === '1' || Q.get('cclock') === '1') ? 'clock' : 'gallery'; V.setX(V.xMax + U); const lanes = ['nullDC', 'reicast', 'flycast', 'nulldc3', 'nullDC4Wii'].map(laneByName);
+     return t => { const passes = lanes.length, x = t * passes, i = Math.min(passes - 1, Math.floor(x)), f = x - i, L = lanes[i];
+       V.cam.p = [L.xs[0] - 6000 + f * (L.xs.at(-1) - L.xs[0] + 8000), 3000, L.z0 + L.L.width / 2 - 1500]; V.setLook([1, -0.06, 0.02]); }; };
+   const pathD = async () => { const w = W[lastFrame('nulldc3')]; V.presMode = 'clock'; V.setX(V.xMax + U); const d = V.readDist(12);
+@@ -104,7 +104,7 @@
+     V.fixedQuality = Q.get('fixed') === '1';
+     const step = await PATHS[name]();
+     step(0); const readyMs = await V.whenReady({ timeout: 60000 });
+-    const rec = []; let t0 = null; V.prof.worst.length = 0; V.bench = true; let lastGpuN = V.stats.gpuN || 0; const sk0 = V.stats.skipped;
++    const rec = []; let t0 = null; V.prof.worst.length = 0; V.bench = true; let lastGpuN = V.stats.gpuN || 0; const sk0 = V.stats.skipped, bk0 = V.stats.baked || 0;
+     await new Promise(res => {
+       const tick = () => {
+         const now = performance.now(); if (t0 === null) t0 = now;
+@@ -124,7 +124,7 @@
+       frame_ms: { p50: pc(dt, .5), p95: pc(dt, .95), p99: pc(dt, .99), max: pc(dt, 1) }, cpu_ms: { p50: pc(cpu, .5), p95: pc(cpu, .95), p99: pc(cpu, .99) },
+       gpu_ms: gpu.length ? { p50: pc(gpu, .5), p95: pc(gpu, .95), p99: pc(gpu, .99) } : null,
+       draws_p95: pc(col(3), .95), lines_p95: pc(col(4), .95), quality_steps: [...new Set(col(5))], frames_over_100ms: dt.filter(v => v > 100).length, ready_ms: Math.round(readyMs),
+-      skipped_rafs: V.stats.skipped - sk0, slowest_frames_cpu_sections: V.prof.worst.slice(), frames_csv: rec.map(r => r.map(v => v == null ? '' : +(+v).toFixed(3)).join(',')).join('\n') };
++      skipped_rafs: V.stats.skipped - sk0, baked: (V.stats.baked || 0) - bk0, loaded_end: V.WALLS.filter(w => w.loaded).length, slowest_frames_cpu_sections: V.prof.worst.slice(), frames_csv: rec.map(r => r.map(v => v == null ? '' : +(+v).toFixed(3)).join(',')).join('\n') };
+     window.__bench = out;
+     return out;
+   };

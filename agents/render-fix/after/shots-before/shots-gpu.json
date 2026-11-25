@@ -1,0 +1,59 @@
+{
+ "size": [
+  1920,
+  1080
+ ],
+ "views": {
+  "far": {
+   "file": "agents/render-fix/after/shots-before/shots/far-gpu-1920x1080.png",
+   "ready_ms": 605,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)"
+  },
+  "read": {
+   "file": "agents/render-fix/after/shots-before/shots/read-gpu-1920x1080.png",
+   "ready_ms": 101,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)"
+  },
+  "read-mid": {
+   "file": "agents/render-fix/after/shots-before/shots/read-mid-gpu-1920x1080.png",
+   "ready_ms": 100,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)"
+  },
+  "morph": {
+   "file": "agents/render-fix/after/shots-before/shots/morph-gpu-1920x1080.png",
+   "ready_ms": 200,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)"
+  },
+  "now": {
+   "file": "agents/render-fix/after/shots-before/shots/now-gpu-1920x1080.png",
+   "ready_ms": 100,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)"
+  },
+  "fork": {
+   "file": "agents/render-fix/after/shots-before/shots/fork-gpu-1920x1080.png",
+   "ready_ms": 102,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)"
+  },
+  "fpgadc": {
+   "file": "agents/render-fix/after/shots-before/shots/fpgadc-gpu-1920x1080.png",
+   "ready_ms": 302,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)"
+  },
+  "rec": {
+   "file": "agents/render-fix/after/shots-before/shots/rec-gpu-1920x1080.png",
+   "ready_ms": 101,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)"
+  },
+  "hero": {
+   "file": "agents/render-fix/after/shots-before/shots/hero-gpu-1920x1080.png",
+   "ready_ms": 100,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)"
+  },
+  "attract": {
+   "file": "agents/render-fix/after/shots-before/shots/attract-gpu-1920x1080.png",
+   "ready_ms": 102,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)"
+  }
+ },
+ "logs": []
+}

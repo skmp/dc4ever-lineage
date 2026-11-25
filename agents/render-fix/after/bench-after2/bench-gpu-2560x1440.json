@@ -1,0 +1,247 @@
+{
+ "date": "2026-11-25T18:03:58.674Z",
+ "size": [
+  2560,
+  1440
+ ],
+ "paths": {
+  "A": {
+   "path": "A",
+   "name": "file street",
+   "dur": 20,
+   "frames": 2114,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "fps_mean": 105.7,
+   "fps_1pct_low": 17.8,
+   "frame_ms": {
+    "p50": 3.1,
+    "p95": 22.2,
+    "p99": 40.8,
+    "max": 96.9
+   },
+   "cpu_ms": {
+    "p50": 1.1,
+    "p95": 3.5,
+    "p99": 6.1
+   },
+   "gpu_ms": {
+    "p50": 0.74,
+    "p95": 2.6,
+    "p99": 22.6
+   },
+   "draws_p95": 433,
+   "lines_p95": 250559,
+   "quality_steps": [
+    0,
+    1
+   ],
+   "frames_over_100ms": 0,
+   "ready_ms": 1216,
+   "skipped_rafs": 798,
+   "slowest_frames_cpu_sections": []
+  },
+  "B": {
+   "path": "B",
+   "name": "orbit",
+   "dur": 20,
+   "frames": 2673,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "fps_mean": 133.7,
+   "fps_1pct_low": 44.8,
+   "frame_ms": {
+    "p50": 2.7,
+    "p95": 21,
+    "p99": 21.8,
+    "max": 23.3
+   },
+   "cpu_ms": {
+    "p50": 1.3,
+    "p95": 2.1,
+    "p99": 2.7
+   },
+   "gpu_ms": {
+    "p50": 0.16,
+    "p95": 0.23,
+    "p99": 0.24
+   },
+   "draws_p95": 211,
+   "lines_p95": 0,
+   "quality_steps": [
+    0
+   ],
+   "frames_over_100ms": 0,
+   "ready_ms": 1185,
+   "skipped_rafs": 727,
+   "slowest_frames_cpu_sections": []
+  },
+  "C": {
+   "path": "C",
+   "name": "lane flights",
+   "dur": 20,
+   "frames": 1823,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "fps_mean": 91.2,
+   "fps_1pct_low": 11.8,
+   "frame_ms": {
+    "p50": 4.5,
+    "p95": 23.6,
+    "p99": 42,
+    "max": 231.4
+   },
+   "cpu_ms": {
+    "p50": 1.2,
+    "p95": 4.7,
+    "p99": 7.1
+   },
+   "gpu_ms": {
+    "p50": 1.02,
+    "p95": 7.68,
+    "p99": 25.31
+   },
+   "draws_p95": 492,
+   "lines_p95": 452772,
+   "quality_steps": [
+    0,
+    1,
+    2
+   ],
+   "frames_over_100ms": 4,
+   "ready_ms": 1174,
+   "skipped_rafs": 748,
+   "slowest_frames_cpu_sections": [
+    [
+     74.9,
+     [
+      [
+       "bake",
+       72.9
+      ]
+     ]
+    ]
+   ]
+  },
+  "D": {
+   "path": "D",
+   "name": "close reading",
+   "dur": 20,
+   "frames": 2701,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "fps_mean": 135,
+   "fps_1pct_low": 44.9,
+   "frame_ms": {
+    "p50": 1.8,
+    "p95": 20,
+    "p99": 20.7,
+    "max": 37.9
+   },
+   "cpu_ms": {
+    "p50": 0.5,
+    "p95": 0.7,
+    "p99": 0.9
+   },
+   "gpu_ms": {
+    "p50": 0.45,
+    "p95": 0.57,
+    "p99": 0.65
+   },
+   "draws_p95": 9,
+   "lines_p95": 8714,
+   "quality_steps": [
+    0
+   ],
+   "frames_over_100ms": 0,
+   "ready_ms": 1298,
+   "skipped_rafs": 866,
+   "slowest_frames_cpu_sections": []
+  },
+  "E": {
+   "path": "E",
+   "name": "live playback",
+   "dur": 20,
+   "frames": 2204,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "fps_mean": 110.2,
+   "fps_1pct_low": 24.4,
+   "frame_ms": {
+    "p50": 3.1,
+    "p95": 21.4,
+    "p99": 37.7,
+    "max": 58.1
+   },
+   "cpu_ms": {
+    "p50": 1,
+    "p95": 2.8,
+    "p99": 4
+   },
+   "gpu_ms": {
+    "p50": 0.32,
+    "p95": 0.65,
+    "p99": 1.91
+   },
+   "draws_p95": 347,
+   "lines_p95": 0,
+   "quality_steps": [
+    0
+   ],
+   "frames_over_100ms": 0,
+   "ready_ms": 1207,
+   "skipped_rafs": 789,
+   "slowest_frames_cpu_sections": []
+  }
+ },
+ "logs": [
+  "EXCEPTION: TypeError: Cannot destructure property 'tex' of 'impBin[bi]' as it is undefined.\n    at bake (http://WSLHOST:8743/src/main.js:904:23)\n    at frame (http://WSLHOST:8743/src/main.js:1160:124)",
+  "EXCEPTION: TypeError: Cannot destructure property 'tex' of 'impBin[bi]' as it is undefined.\n    at bake (http://WSLHOST:8743/src/main.js:904:23)\n    at frame (http://WSLHOST:8743/src/main.js:1160:124)",
+  "EXCEPTION: TypeError: Cannot destructure property 'tex' of 'impBin[bi]' as it is undefined.\n    at bake (http://WSLHOST:8743/src/main.js:904:23)\n    at frame (http://WSLHOST:8743/src/main.js:1160:124)"
+ ]
+}

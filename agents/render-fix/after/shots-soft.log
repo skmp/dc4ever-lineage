@@ -1,0 +1,11 @@
+0.4s open
+1.3s opened
+1.3s view rec
+2.5s ready
+2.7s shot
+rec -> agents/render-fix/after/shots-soft/shots/rec-llvmpipe-1280x720.png 503 ms
+2.7s view now
+3.4s ready
+3.5s shot
+now -> agents/render-fix/after/shots-soft/shots/now-llvmpipe-1280x720.png 201 ms
+3.5s closed

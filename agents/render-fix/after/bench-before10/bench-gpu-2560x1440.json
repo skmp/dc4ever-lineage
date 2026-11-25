@@ -1,0 +1,338 @@
+{
+ "date": "2026-11-25T18:34:35.222Z",
+ "size": [
+  2560,
+  1440
+ ],
+ "paths": {
+  "A": {
+   "path": "A",
+   "name": "file street",
+   "dur": 20,
+   "frames": 1721,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "fps_mean": 86.1,
+   "fps_1pct_low": 7.7,
+   "frame_ms": {
+    "p50": 3.3,
+    "p95": 26.2,
+    "p99": 81.2,
+    "max": 281.7
+   },
+   "cpu_ms": {
+    "p50": 1,
+    "p95": 4.1,
+    "p99": 9.5
+   },
+   "gpu_ms": {
+    "p50": 0.78,
+    "p95": 12.98,
+    "p99": 62.83
+   },
+   "draws_p95": 429,
+   "lines_p95": 131415,
+   "quality_steps": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "frames_over_100ms": 9,
+   "ready_ms": 1606,
+   "skipped_rafs": 828,
+   "slowest_frames_cpu_sections": []
+  },
+  "B": {
+   "path": "B",
+   "name": "orbit",
+   "dur": 20,
+   "frames": 2528,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "fps_mean": 126.4,
+   "fps_1pct_low": 41,
+   "frame_ms": {
+    "p50": 2.7,
+    "p95": 21,
+    "p99": 22.1,
+    "max": 38.9
+   },
+   "cpu_ms": {
+    "p50": 1,
+    "p95": 1.8,
+    "p99": 2.5
+   },
+   "gpu_ms": {
+    "p50": 0.19,
+    "p95": 0.29,
+    "p99": 0.3
+   },
+   "draws_p95": 211,
+   "lines_p95": 0,
+   "quality_steps": [
+    0
+   ],
+   "frames_over_100ms": 0,
+   "ready_ms": 1399,
+   "skipped_rafs": 774,
+   "slowest_frames_cpu_sections": []
+  },
+  "C": {
+   "path": "C",
+   "name": "lane flights",
+   "dur": 20,
+   "frames": 1344,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "fps_mean": 67.2,
+   "fps_1pct_low": 6.6,
+   "frame_ms": {
+    "p50": 5.5,
+    "p95": 47,
+    "p99": 114.9,
+    "max": 253.5
+   },
+   "cpu_ms": {
+    "p50": 1.1,
+    "p95": 5.9,
+    "p99": 12.3
+   },
+   "gpu_ms": {
+    "p50": 0.71,
+    "p95": 42.08,
+    "p99": 85.97
+   },
+   "draws_p95": 475,
+   "lines_p95": 55919,
+   "quality_steps": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "frames_over_100ms": 16,
+   "ready_ms": 1326,
+   "skipped_rafs": 826,
+   "slowest_frames_cpu_sections": [
+    [
+     151.7,
+     [
+      [
+       "pre",
+       148.6
+      ]
+     ]
+    ],
+    [
+     63.1,
+     [
+      [
+       "pre",
+       52.2
+      ],
+      [
+       "bake",
+       9.5
+      ]
+     ]
+    ],
+    [
+     55.4,
+     [
+      [
+       "pre",
+       53.8
+      ]
+     ]
+    ],
+    [
+     49.8,
+     [
+      [
+       "pre",
+       48.3
+      ]
+     ]
+    ],
+    [
+     46,
+     [
+      [
+       "pre",
+       42.6
+      ]
+     ]
+    ],
+    [
+     43.4,
+     [
+      [
+       "pre",
+       42.1
+      ]
+     ]
+    ],
+    [
+     38.7,
+     [
+      [
+       "pre",
+       36
+      ],
+      [
+       "bake",
+       2.1
+      ]
+     ]
+    ],
+    [
+     36.6,
+     [
+      [
+       "pre",
+       34
+      ]
+     ]
+    ],
+    [
+     33.7,
+     [
+      [
+       "pre",
+       33.2
+      ]
+     ]
+    ],
+    [
+     33.3,
+     [
+      [
+       "pre",
+       32.5
+      ]
+     ]
+    ]
+   ]
+  },
+  "D": {
+   "path": "D",
+   "name": "close reading",
+   "dur": 20,
+   "frames": 2788,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "fps_mean": 139.4,
+   "fps_1pct_low": 47.3,
+   "frame_ms": {
+    "p50": 1.8,
+    "p95": 20.1,
+    "p99": 20.7,
+    "max": 22.9
+   },
+   "cpu_ms": {
+    "p50": 0.4,
+    "p95": 0.8,
+    "p99": 1
+   },
+   "gpu_ms": {
+    "p50": 0.6,
+    "p95": 0.75,
+    "p99": 0.84
+   },
+   "draws_p95": 9,
+   "lines_p95": 8592,
+   "quality_steps": [
+    0
+   ],
+   "frames_over_100ms": 0,
+   "ready_ms": 1366,
+   "skipped_rafs": 849,
+   "slowest_frames_cpu_sections": []
+  },
+  "E": {
+   "path": "E",
+   "name": "live playback",
+   "dur": 20,
+   "frames": 2513,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)",
+   "soft": false,
+   "viewport": [
+    2560,
+    1440
+   ],
+   "dpr": 1,
+   "canvas": [
+    2560,
+    1440
+   ],
+   "fps_mean": 125.6,
+   "fps_1pct_low": 34.3,
+   "frame_ms": {
+    "p50": 2.1,
+    "p95": 20.5,
+    "p99": 22.4,
+    "max": 45.3
+   },
+   "cpu_ms": {
+    "p50": 0.6,
+    "p95": 2.3,
+    "p99": 3.6
+   },
+   "gpu_ms": {
+    "p50": 0.21,
+    "p95": 0.38,
+    "p99": 0.89
+   },
+   "draws_p95": 96,
+   "lines_p95": 0,
+   "quality_steps": [
+    0,
+    1
+   ],
+   "frames_over_100ms": 0,
+   "ready_ms": 1379,
+   "skipped_rafs": 820,
+   "slowest_frames_cpu_sections": []
+  }
+ },
+ "logs": []
+}

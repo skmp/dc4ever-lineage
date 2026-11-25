@@ -1,0 +1,1211 @@
+[
+ {
+  "name": "s1a-start-clock",
+  "t": 3661,
+  "pres": "clock",
+  "X": 217678,
+  "cam": [
+   212333,
+   2151,
+   9713
+  ],
+  "q": 0,
+  "walls": 1,
+  "stats": {
+   "t3": 6,
+   "t4": 2,
+   "t5": 45,
+   "imp": 1,
+   "inst": 95331,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 145
+  },
+  "classes": {
+   "ghost T3": {
+    "n": 6,
+    "area": 1.268
+   },
+   "solid lines": {
+    "n": 1,
+    "area": 0.546
+   },
+   "solid T4": {
+    "n": 2,
+    "area": 0.003
+   },
+   "solid T5": {
+    "n": 45,
+    "area": 0
+   }
+  },
+  "top": [
+   {
+    "f": 27,
+    "lane": "nullDC",
+    "date": "2011-08-21",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.832,
+    "area": 1
+   },
+   {
+    "f": 28,
+    "lane": "nullDC",
+    "date": "2011-09-14",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "lines",
+    "ppl": 0.35,
+    "area": 0.546
+   },
+   {
+    "f": 29,
+    "lane": "nulldc-360",
+    "date": "2011-10-15",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.169,
+    "area": 0.079
+   },
+   {
+    "f": 30,
+    "lane": "nulldc-360",
+    "date": "2011-10-16",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.168,
+    "area": 0.079
+   },
+   {
+    "f": 31,
+    "lane": "nulldc-360",
+    "date": "2011-11-28",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.116,
+    "area": 0.054
+   },
+   {
+    "f": 32,
+    "lane": "nulldc-360",
+    "date": "2011-12-18",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.1,
+    "area": 0.039
+   },
+   {
+    "f": 33,
+    "lane": "nulldc-360",
+    "date": "2012-02-27",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.068,
+    "area": 0.017
+   },
+   {
+    "f": 44,
+    "lane": "reicast",
+    "date": "2014-01-27",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.014,
+    "area": 0.002
+   },
+   {
+    "f": 55,
+    "lane": "reicast",
+    "date": "2014-12-11",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.011,
+    "area": 0.001
+   },
+   {
+    "f": 80,
+    "lane": "reicast",
+    "date": "2018-08-04",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.006,
+    "area": 0
+   },
+   {
+    "f": 83,
+    "lane": "reicast",
+    "date": "2018-09-04",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.006,
+    "area": 0
+   },
+   {
+    "f": 99,
+    "lane": "reicast",
+    "date": "2019-07-14",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.005,
+    "area": 0
+   }
+  ]
+ },
+ {
+  "name": "s1b-overview-clock-3s",
+  "t": 6726,
+  "pres": "clock",
+  "X": 217678,
+  "cam": [
+   189807,
+   244522,
+   544935
+  ],
+  "q": 0,
+  "walls": 1,
+  "stats": {
+   "t3": 0,
+   "t4": 0,
+   "t5": 55,
+   "imp": 1,
+   "inst": 0,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 145
+  },
+  "classes": {
+   "ghost T5": {
+    "n": 8,
+    "area": 0
+   },
+   "solid imp-hi": {
+    "n": 1,
+    "area": 0
+   },
+   "solid T5": {
+    "n": 47,
+    "area": 0
+   }
+  },
+  "top": [
+   {
+    "f": 25,
+    "lane": "nullDC",
+    "date": "2011-05-22",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 26,
+    "lane": "nullDC",
+    "date": "2011-06-04",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 27,
+    "lane": "nullDC",
+    "date": "2011-08-21",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 28,
+    "lane": "nullDC",
+    "date": "2011-09-14",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 29,
+    "lane": "nulldc-360",
+    "date": "2011-10-15",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 30,
+    "lane": "nulldc-360",
+    "date": "2011-10-16",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 31,
+    "lane": "nulldc-360",
+    "date": "2011-11-28",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 32,
+    "lane": "nulldc-360",
+    "date": "2011-12-18",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 33,
+    "lane": "nulldc-360",
+    "date": "2012-02-27",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 44,
+    "lane": "reicast",
+    "date": "2014-01-27",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.004,
+    "area": 0
+   },
+   {
+    "f": 55,
+    "lane": "reicast",
+    "date": "2014-12-11",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.004,
+    "area": 0
+   },
+   {
+    "f": 80,
+    "lane": "reicast",
+    "date": "2018-08-04",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   }
+  ]
+ },
+ {
+  "name": "s1c-overview-gallery-3s",
+  "t": 9791,
+  "pres": "gallery",
+  "X": 217678,
+  "cam": [
+   189807,
+   244522,
+   544935
+  ],
+  "q": 0,
+  "walls": 1,
+  "stats": {
+   "t3": 0,
+   "t4": 0,
+   "t5": 370,
+   "imp": 1,
+   "inst": 0,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 145
+  },
+  "classes": {
+   "solid T5": {
+    "n": 370,
+    "area": 0
+   },
+   "solid imp-hi": {
+    "n": 1,
+    "area": 0
+   }
+  },
+  "top": [
+   {
+    "f": 25,
+    "lane": "nullDC",
+    "date": "2011-05-22",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 26,
+    "lane": "nullDC",
+    "date": "2011-06-04",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 27,
+    "lane": "nullDC",
+    "date": "2011-08-21",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 28,
+    "lane": "nullDC",
+    "date": "2011-09-14",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 29,
+    "lane": "nulldc-360",
+    "date": "2011-10-15",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 30,
+    "lane": "nulldc-360",
+    "date": "2011-10-16",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 31,
+    "lane": "nulldc-360",
+    "date": "2011-11-28",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 32,
+    "lane": "nulldc-360",
+    "date": "2011-12-18",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 33,
+    "lane": "nulldc-360",
+    "date": "2012-02-27",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 34,
+    "lane": "nullDC",
+    "date": "2012-03-20",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 35,
+    "lane": "nullDC",
+    "date": "2012-04-10",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 36,
+    "lane": "nulldc-360",
+    "date": "2012-05-19",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   }
+  ]
+ },
+ {
+  "name": "s1d-overview-gallery-11s",
+  "t": 17857,
+  "pres": "gallery",
+  "X": 217678,
+  "cam": [
+   189807,
+   244522,
+   544935
+  ],
+  "q": 0,
+  "walls": 1,
+  "stats": {
+   "t3": 0,
+   "t4": 0,
+   "t5": 370,
+   "imp": 1,
+   "inst": 0,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 145
+  },
+  "classes": {
+   "solid T5": {
+    "n": 370,
+    "area": 0
+   },
+   "solid imp-hi": {
+    "n": 1,
+    "area": 0
+   }
+  },
+  "top": [
+   {
+    "f": 25,
+    "lane": "nullDC",
+    "date": "2011-05-22",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 26,
+    "lane": "nullDC",
+    "date": "2011-06-04",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 27,
+    "lane": "nullDC",
+    "date": "2011-08-21",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 28,
+    "lane": "nullDC",
+    "date": "2011-09-14",
+    "solid": true,
+    "loaded": true,
+    "imp": "hi",
+    "tier": "imp-hi",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 29,
+    "lane": "nulldc-360",
+    "date": "2011-10-15",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 30,
+    "lane": "nulldc-360",
+    "date": "2011-10-16",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 31,
+    "lane": "nulldc-360",
+    "date": "2011-11-28",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 32,
+    "lane": "nulldc-360",
+    "date": "2011-12-18",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 33,
+    "lane": "nulldc-360",
+    "date": "2012-02-27",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 34,
+    "lane": "nullDC",
+    "date": "2012-03-20",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 35,
+    "lane": "nullDC",
+    "date": "2012-04-10",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   },
+   {
+    "f": 36,
+    "lane": "nulldc-360",
+    "date": "2012-05-19",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T5",
+    "ppl": 0.003,
+    "area": 0
+   }
+  ]
+ },
+ {
+  "name": "s1e-flycast-oblique-gallery-4s",
+  "t": 21930,
+  "pres": "gallery",
+  "X": 217678,
+  "cam": [
+   740710,
+   20000,
+   74352
+  ],
+  "q": 0,
+  "walls": 8,
+  "stats": {
+   "t3": 7,
+   "t4": 192,
+   "t5": 3,
+   "imp": 7,
+   "inst": 0,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 177
+  },
+  "classes": {
+   "solid imp-lo": {
+    "n": 7,
+    "area": 0.274
+   },
+   "solid T3": {
+    "n": 7,
+    "area": 0.158
+   },
+   "solid T4": {
+    "n": 192,
+    "area": 0.497
+   },
+   "solid T5": {
+    "n": 3,
+    "area": 0
+   }
+  },
+  "top": [
+   {
+    "f": 183,
+    "lane": "flycast",
+    "date": "2023-02-28",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.053,
+    "area": 0.049
+   },
+   {
+    "f": 184,
+    "lane": "flycast",
+    "date": "2023-03-31",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.05,
+    "area": 0.045
+   },
+   {
+    "f": 182,
+    "lane": "flycast",
+    "date": "2023-02-15",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.053,
+    "area": 0.043
+   },
+   {
+    "f": 185,
+    "lane": "flycast",
+    "date": "2023-04-28",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.048,
+    "area": 0.04
+   },
+   {
+    "f": 186,
+    "lane": "flycast",
+    "date": "2023-05-31",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.046,
+    "area": 0.035
+   },
+   {
+    "f": 181,
+    "lane": "flycast",
+    "date": "2023-01-31",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.054,
+    "area": 0.033
+   },
+   {
+    "f": 187,
+    "lane": "flycast",
+    "date": "2023-06-30",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.043,
+    "area": 0.032
+   },
+   {
+    "f": 190,
+    "lane": "reicast",
+    "date": "2023-07-10",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.054,
+    "area": 0.029
+   },
+   {
+    "f": 191,
+    "lane": "flycast",
+    "date": "2023-07-31",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.041,
+    "area": 0.028
+   },
+   {
+    "f": 193,
+    "lane": "flycast",
+    "date": "2023-09-29",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.036,
+    "area": 0.023
+   },
+   {
+    "f": 194,
+    "lane": "flycast",
+    "date": "2023-10-27",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.034,
+    "area": 0.02
+   },
+   {
+    "f": 195,
+    "lane": "flycast",
+    "date": "2023-10-30",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.034,
+    "area": 0.02
+   }
+  ]
+ },
+ {
+  "name": "s1f-flycast-oblique-gallery-12s",
+  "t": 30005,
+  "pres": "gallery",
+  "X": 217678,
+  "cam": [
+   740710,
+   20000,
+   74352
+  ],
+  "q": 0,
+  "walls": 8,
+  "stats": {
+   "t3": 7,
+   "t4": 192,
+   "t5": 3,
+   "imp": 7,
+   "inst": 0,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 177
+  },
+  "classes": {
+   "solid imp-lo": {
+    "n": 7,
+    "area": 0.274
+   },
+   "solid T3": {
+    "n": 7,
+    "area": 0.158
+   },
+   "solid T4": {
+    "n": 192,
+    "area": 0.497
+   },
+   "solid T5": {
+    "n": 3,
+    "area": 0
+   }
+  },
+  "top": [
+   {
+    "f": 183,
+    "lane": "flycast",
+    "date": "2023-02-28",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.053,
+    "area": 0.049
+   },
+   {
+    "f": 184,
+    "lane": "flycast",
+    "date": "2023-03-31",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.05,
+    "area": 0.045
+   },
+   {
+    "f": 182,
+    "lane": "flycast",
+    "date": "2023-02-15",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.053,
+    "area": 0.043
+   },
+   {
+    "f": 185,
+    "lane": "flycast",
+    "date": "2023-04-28",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.048,
+    "area": 0.04
+   },
+   {
+    "f": 186,
+    "lane": "flycast",
+    "date": "2023-05-31",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.046,
+    "area": 0.035
+   },
+   {
+    "f": 181,
+    "lane": "flycast",
+    "date": "2023-01-31",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.054,
+    "area": 0.033
+   },
+   {
+    "f": 187,
+    "lane": "flycast",
+    "date": "2023-06-30",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.043,
+    "area": 0.032
+   },
+   {
+    "f": 190,
+    "lane": "reicast",
+    "date": "2023-07-10",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.054,
+    "area": 0.029
+   },
+   {
+    "f": 191,
+    "lane": "flycast",
+    "date": "2023-07-31",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.041,
+    "area": 0.028
+   },
+   {
+    "f": 193,
+    "lane": "flycast",
+    "date": "2023-09-29",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.036,
+    "area": 0.023
+   },
+   {
+    "f": 194,
+    "lane": "flycast",
+    "date": "2023-10-27",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.034,
+    "area": 0.02
+   },
+   {
+    "f": 195,
+    "lane": "flycast",
+    "date": "2023-10-30",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.034,
+    "area": 0.02
+   }
+  ]
+ },
+ {
+  "name": "s1g-flycast-oblique-clock-4s",
+  "t": 34078,
+  "pres": "clock",
+  "X": 790711,
+  "cam": [
+   740710,
+   20000,
+   74352
+  ],
+  "q": 0,
+  "walls": 8,
+  "stats": {
+   "t3": 7,
+   "t4": 39,
+   "t5": 0,
+   "imp": 2,
+   "inst": 0,
+   "pendingBake": 0,
+   "wantQueue": 0,
+   "gpuMB": 177
+  },
+  "classes": {
+   "solid imp-lo": {
+    "n": 2,
+    "area": 0.072
+   },
+   "ghost T3": {
+    "n": 5,
+    "area": 0.121
+   },
+   "ghost T4": {
+    "n": 6,
+    "area": 0.073
+   },
+   "solid T4": {
+    "n": 33,
+    "area": 0.073
+   },
+   "solid T3": {
+    "n": 2,
+    "area": 0.037
+   }
+  },
+  "top": [
+   {
+    "f": 182,
+    "lane": "flycast",
+    "date": "2023-02-15",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.053,
+    "area": 0.043
+   },
+   {
+    "f": 187,
+    "lane": "flycast",
+    "date": "2023-06-30",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.043,
+    "area": 0.032
+   },
+   {
+    "f": 190,
+    "lane": "reicast",
+    "date": "2023-07-10",
+    "solid": true,
+    "loaded": true,
+    "imp": "lo",
+    "tier": "imp-lo",
+    "ppl": 0.054,
+    "area": 0.029
+   },
+   {
+    "f": 191,
+    "lane": "flycast",
+    "date": "2023-07-31",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.041,
+    "area": 0.028
+   },
+   {
+    "f": 193,
+    "lane": "flycast",
+    "date": "2023-09-29",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.036,
+    "area": 0.023
+   },
+   {
+    "f": 194,
+    "lane": "flycast",
+    "date": "2023-10-27",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.034,
+    "area": 0.02
+   },
+   {
+    "f": 195,
+    "lane": "flycast",
+    "date": "2023-10-30",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.034,
+    "area": 0.02
+   },
+   {
+    "f": 196,
+    "lane": "flycast",
+    "date": "2023-11-29",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.032,
+    "area": 0.018
+   },
+   {
+    "f": 197,
+    "lane": "flycast",
+    "date": "2023-12-22",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T3",
+    "ppl": 0.031,
+    "area": 0.017
+   },
+   {
+    "f": 198,
+    "lane": "flycast",
+    "date": "2024-01-29",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.029,
+    "area": 0.015
+   },
+   {
+    "f": 199,
+    "lane": "flycast",
+    "date": "2024-02-29",
+    "solid": false,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.028,
+    "area": 0.014
+   },
+   {
+    "f": 200,
+    "lane": "flycast",
+    "date": "2024-03-15",
+    "solid": true,
+    "loaded": false,
+    "imp": null,
+    "tier": "T4",
+    "ppl": 0.027,
+    "area": 0.013
+   }
+  ]
+ }
+]

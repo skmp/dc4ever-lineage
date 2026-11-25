@@ -1,0 +1,1411 @@
+{
+ "log": [
+  {
+   "name": "b1-boot-view",
+   "t": 3745,
+   "pres": "clock",
+   "cam": [
+    212333,
+    2151,
+    9713
+   ],
+   "q": 0,
+   "walls": 1,
+   "t3area": 0.38,
+   "stats": {
+    "t3": 6,
+    "t4": 2,
+    "t5": 45,
+    "imp": 1,
+    "inst": 95331,
+    "draws": 65,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 145
+   },
+   "classes": {
+    "faded T3": {
+     "n": 6,
+     "area": 0.381
+    },
+    "solid lines": {
+     "n": 1,
+     "area": 0.546
+    },
+    "solid T4": {
+     "n": 2,
+     "area": 0.003
+    },
+    "solid T5": {
+     "n": 45,
+     "area": 0
+    }
+   },
+   "top": [
+    {
+     "f": 27,
+     "lane": "nullDC",
+     "date": "2011-08-21",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.832,
+     "area": 1
+    },
+    {
+     "f": 28,
+     "lane": "nullDC",
+     "date": "2011-09-14",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.35,
+     "area": 0.546
+    },
+    {
+     "f": 29,
+     "lane": "nulldc-360",
+     "date": "2011-10-15",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.169,
+     "area": 0.079
+    },
+    {
+     "f": 30,
+     "lane": "nulldc-360",
+     "date": "2011-10-16",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.168,
+     "area": 0.079
+    },
+    {
+     "f": 31,
+     "lane": "nulldc-360",
+     "date": "2011-11-28",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.116,
+     "area": 0.054
+    },
+    {
+     "f": 32,
+     "lane": "nulldc-360",
+     "date": "2011-12-18",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.1,
+     "area": 0.039
+    },
+    {
+     "f": 33,
+     "lane": "nulldc-360",
+     "date": "2012-02-27",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.068,
+     "area": 0.017
+    },
+    {
+     "f": 44,
+     "lane": "reicast",
+     "date": "2014-01-27",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.014,
+     "area": 0.002
+    }
+   ],
+   "leaks": {
+    "titles": 2,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDC  2011-08  0a284d8",
+      "leakFrac": 0,
+      "sticky": true
+     },
+     {
+      "title": "nullDC  2011-09  c563e07",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.74,
+   "cpu_ms": 0.93,
+   "labels": 0,
+   "titlesShown": 2
+  },
+  {
+   "name": "b2-notdcps3-fit",
+   "t": 5526,
+   "pres": "clock",
+   "cam": [
+    920379,
+    2130,
+    68241
+   ],
+   "q": 0,
+   "walls": 4,
+   "t3area": 1.1,
+   "stats": {
+    "t3": 10,
+    "t4": 0,
+    "t5": 0,
+    "imp": 3,
+    "inst": 65914,
+    "draws": 28,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 190
+   },
+   "classes": {
+    "faded T3": {
+     "n": 10,
+     "area": 1.096
+    },
+    "solid lines": {
+     "n": 1,
+     "area": 0.581
+    },
+    "solid imp-hi": {
+     "n": 2,
+     "area": 0.428
+    }
+   },
+   "top": [
+    {
+     "f": 352,
+     "lane": "NotDC-PS3",
+     "date": "2026-09-19",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.962,
+     "area": 1
+    },
+    {
+     "f": 354,
+     "lane": "NotDC-PS3",
+     "date": "2026-09-23",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.76,
+     "area": 1
+    },
+    {
+     "f": 361,
+     "lane": "NotDC-PS3",
+     "date": "2026-10-18",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 0.322,
+     "area": 0.581
+    },
+    {
+     "f": 363,
+     "lane": "NotDC-PS3",
+     "date": "2026-10-19",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.315,
+     "area": 0.562
+    },
+    {
+     "f": 364,
+     "lane": "NotDC-PS3",
+     "date": "2026-10-24",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.284,
+     "area": 0.483
+    },
+    {
+     "f": 372,
+     "lane": "NotDC-PS3",
+     "date": "2026-10-29",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.259,
+     "area": 0.423
+    },
+    {
+     "f": 376,
+     "lane": "NotDC-PS3",
+     "date": "2026-11-01",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.245,
+     "area": 0.383
+    },
+    {
+     "f": 392,
+     "lane": "nullDC4WiiU",
+     "date": "2026-11-21",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.145,
+     "area": 0.057
+    }
+   ],
+   "leaks": {
+    "titles": 3,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "NotDC-PS3  2026-09  5a32b94",
+      "leakFrac": 0,
+      "sticky": true
+     },
+     {
+      "title": "NotDC-PS3  2026-09  24873d0",
+      "leakFrac": 0,
+      "sticky": true
+     },
+     {
+      "title": "NotDC-PS3  0.8  2026-10  60576d2",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.81,
+   "cpu_ms": 0.73,
+   "labels": 0,
+   "titlesShown": 3
+  },
+  {
+   "name": "b3-glide-1.7s",
+   "t": 7887,
+   "pres": "clock",
+   "cam": [
+    762207,
+    96902,
+    169671
+   ],
+   "q": 0,
+   "walls": 4,
+   "t3area": 0,
+   "stats": {
+    "t3": 0,
+    "t4": 125,
+    "t5": 4,
+    "imp": 3,
+    "inst": 0,
+    "draws": 171,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 190
+   },
+   "classes": {
+    "solid T4": {
+     "n": 31,
+     "area": 0.028
+    },
+    "faded T4": {
+     "n": 94,
+     "area": 0.009
+    },
+    "solid imp-hi": {
+     "n": 3,
+     "area": 0.002
+    },
+    "solid T5": {
+     "n": 1,
+     "area": 0
+    },
+    "faded T5": {
+     "n": 3,
+     "area": 0
+    }
+   },
+   "top": [
+    {
+     "f": 238,
+     "lane": "flycast",
+     "date": "2026-01-07",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.012,
+     "area": 0.004
+    },
+    {
+     "f": 272,
+     "lane": "flycast",
+     "date": "2026-05-29",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.011,
+     "area": 0.003
+    },
+    {
+     "f": 286,
+     "lane": "flycast",
+     "date": "2026-06-26",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.01,
+     "area": 0.003
+    },
+    {
+     "f": 327,
+     "lane": "flycast",
+     "date": "2026-07-31",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.01,
+     "area": 0.003
+    },
+    {
+     "f": 331,
+     "lane": "flycast",
+     "date": "2026-08-14",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.01,
+     "area": 0.003
+    },
+    {
+     "f": 335,
+     "lane": "flycast",
+     "date": "2026-08-31",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.01,
+     "area": 0.003
+    },
+    {
+     "f": 359,
+     "lane": "flycast",
+     "date": "2026-09-28",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.01,
+     "area": 0.003
+    },
+    {
+     "f": 269,
+     "lane": "nulldc3",
+     "date": "2026-05-10",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T4",
+     "ppl": 0.011,
+     "area": 0.002
+    }
+   ],
+   "leaks": {
+    "titles": 9,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "flycast  v2.6  2026-01  392a429",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nullDC4Wii  nulldc  2026-01  3b4c398",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nullDC4Wii  alpha0.14  2026-04  a3595ca",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2026-05  8492a4e",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "nullDC4Wii  2026-06  8bb026d",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "minicast  DreamSTer r6b  2026-10  9185ab8",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.26,
+   "cpu_ms": 0.71,
+   "labels": 6,
+   "titlesShown": 13
+  },
+  {
+   "name": "b3-glide-2.2s",
+   "t": 8450,
+   "pres": "clock",
+   "cam": [
+    914455,
+    11830,
+    69858
+   ],
+   "q": 0,
+   "walls": 7,
+   "t3area": 0.04,
+   "stats": {
+    "t3": 10,
+    "t4": 0,
+    "t5": 0,
+    "imp": 3,
+    "inst": 0,
+    "draws": 25,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 222
+   },
+   "classes": {
+    "faded T3": {
+     "n": 10,
+     "area": 0.043
+    },
+    "solid imp-hi": {
+     "n": 3,
+     "area": 0.033
+    }
+   },
+   "top": [
+    {
+     "f": 392,
+     "lane": "nullDC4WiiU",
+     "date": "2026-11-21",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.097,
+     "area": 0.029
+    },
+    {
+     "f": 394,
+     "lane": "nullDC4WiiU",
+     "date": "2026-11-22",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.099,
+     "area": 0.027
+    },
+    {
+     "f": 391,
+     "lane": "nullDC4WiiU",
+     "date": "2026-11-21",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.1,
+     "area": 0.026
+    },
+    {
+     "f": 386,
+     "lane": "nullDC4WiiU",
+     "date": "2026-11-13",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.105,
+     "area": 0.02
+    },
+    {
+     "f": 387,
+     "lane": "nullDC4Wii",
+     "date": "2026-11-19",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.09,
+     "area": 0.017
+    },
+    {
+     "f": 385,
+     "lane": "nullDC4Wii",
+     "date": "2026-11-13",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.093,
+     "area": 0.012
+    },
+    {
+     "f": 384,
+     "lane": "nullDC4Wii",
+     "date": "2026-11-12",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.093,
+     "area": 0.011
+    },
+    {
+     "f": 376,
+     "lane": "NotDC-PS3",
+     "date": "2026-11-01",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-hi",
+     "ppl": 0.12,
+     "area": 0.01
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "nullDC4WiiU  v0.800-U2.1  2026-11  8d0c254",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.95,
+   "cpu_ms": 0.89,
+   "labels": 1,
+   "titlesShown": 2
+  },
+  {
+   "name": "b3-glide-end",
+   "t": 11004,
+   "pres": "clock",
+   "cam": [
+    927883,
+    4027,
+    61054
+   ],
+   "q": 0,
+   "walls": 7,
+   "t3area": 0.01,
+   "stats": {
+    "t3": 1,
+    "t4": 0,
+    "t5": 0,
+    "imp": 0,
+    "inst": 2462,
+    "draws": 10,
+    "pendingBake": 0,
+    "wantQueue": 0,
+    "gpuMB": 222
+   },
+   "classes": {
+    "solid lines": {
+     "n": 1,
+     "area": 1
+    },
+    "faded T3": {
+     "n": 1,
+     "area": 0.009
+    }
+   },
+   "top": [
+    {
+     "f": 376,
+     "lane": "NotDC-PS3",
+     "date": "2026-11-01",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "lines",
+     "ppl": 16,
+     "area": 1
+    },
+    {
+     "f": 387,
+     "lane": "nullDC4Wii",
+     "date": "2026-11-19",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.569,
+     "area": 0.031
+    }
+   ],
+   "leaks": {
+    "titles": 1,
+    "leaking": 0,
+    "worst": [
+     {
+      "title": "NotDC-PS3  0.8.3  2026-11  5d81924",
+      "leakFrac": 0,
+      "sticky": true
+     }
+    ]
+   },
+   "gpu_ms": 0.4,
+   "cpu_ms": 0.55,
+   "labels": 0,
+   "titlesShown": 1
+  },
+  {
+   "name": "b4-flycast-oblique-after-session",
+   "t": 40174,
+   "pres": "gallery",
+   "cam": [
+    740710,
+    20000,
+    74352
+   ],
+   "q": 0,
+   "walls": 81,
+   "t3area": 0.35,
+   "stats": {
+    "t3": 12,
+    "t4": 147,
+    "t5": 3,
+    "imp": 47,
+    "inst": 0,
+    "draws": 420,
+    "pendingBake": 0,
+    "wantQueue": 6,
+    "gpuMB": 528
+   },
+   "classes": {
+    "solid T3": {
+     "n": 12,
+     "area": 0.351
+    },
+    "solid imp-lo": {
+     "n": 29,
+     "area": 0.105
+    },
+    "solid T4": {
+     "n": 147,
+     "area": 0.438
+    },
+    "solid imp-hi": {
+     "n": 18,
+     "area": 0.035
+    },
+    "solid T5": {
+     "n": 3,
+     "area": 0
+    }
+   },
+   "top": [
+    {
+     "f": 183,
+     "lane": "flycast",
+     "date": "2023-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-lo",
+     "ppl": 0.053,
+     "area": 0.049
+    },
+    {
+     "f": 184,
+     "lane": "flycast",
+     "date": "2023-03-31",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.05,
+     "area": 0.045
+    },
+    {
+     "f": 182,
+     "lane": "flycast",
+     "date": "2023-02-15",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.053,
+     "area": 0.043
+    },
+    {
+     "f": 185,
+     "lane": "flycast",
+     "date": "2023-04-28",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.048,
+     "area": 0.04
+    },
+    {
+     "f": 186,
+     "lane": "flycast",
+     "date": "2023-05-31",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.046,
+     "area": 0.035
+    },
+    {
+     "f": 181,
+     "lane": "flycast",
+     "date": "2023-01-31",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.054,
+     "area": 0.033
+    },
+    {
+     "f": 187,
+     "lane": "flycast",
+     "date": "2023-06-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-lo",
+     "ppl": 0.043,
+     "area": 0.032
+    },
+    {
+     "f": 190,
+     "lane": "reicast",
+     "date": "2023-07-10",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.054,
+     "area": 0.029
+    }
+   ],
+   "leaks": {
+    "titles": 23,
+    "leaking": 13,
+    "worst": [
+     {
+      "title": "flycast  V2.1  2023-02  a21b79c",
+      "leakFrac": 0.41,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2023-02  a1472fb",
+      "leakFrac": 0.37,
+      "sticky": false
+     },
+     {
+      "title": "flycast  v2.5  2025-05  5f4eefa",
+      "leakFrac": 0.26,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2024-04  8e96590",
+      "leakFrac": 0.15,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2023-11  bd25c14",
+      "leakFrac": 0.11,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2024-11  b91f82c",
+      "leakFrac": 0.11,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.68,
+   "cpu_ms": 1.14,
+   "labels": 8,
+   "titlesShown": 23
+  },
+  {
+   "name": "b4-flycast-oblique-after-session-10s",
+   "t": 46257,
+   "pres": "gallery",
+   "cam": [
+    740710,
+    20000,
+    74352
+   ],
+   "q": 0,
+   "walls": 81,
+   "t3area": 0.35,
+   "stats": {
+    "t3": 12,
+    "t4": 147,
+    "t5": 3,
+    "imp": 47,
+    "inst": 0,
+    "draws": 420,
+    "pendingBake": 0,
+    "wantQueue": 6,
+    "gpuMB": 528
+   },
+   "classes": {
+    "solid T3": {
+     "n": 12,
+     "area": 0.351
+    },
+    "solid imp-lo": {
+     "n": 29,
+     "area": 0.105
+    },
+    "solid T4": {
+     "n": 147,
+     "area": 0.438
+    },
+    "solid imp-hi": {
+     "n": 18,
+     "area": 0.035
+    },
+    "solid T5": {
+     "n": 3,
+     "area": 0
+    }
+   },
+   "top": [
+    {
+     "f": 183,
+     "lane": "flycast",
+     "date": "2023-02-28",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-lo",
+     "ppl": 0.053,
+     "area": 0.049
+    },
+    {
+     "f": 184,
+     "lane": "flycast",
+     "date": "2023-03-31",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.05,
+     "area": 0.045
+    },
+    {
+     "f": 182,
+     "lane": "flycast",
+     "date": "2023-02-15",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.053,
+     "area": 0.043
+    },
+    {
+     "f": 185,
+     "lane": "flycast",
+     "date": "2023-04-28",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.048,
+     "area": 0.04
+    },
+    {
+     "f": 186,
+     "lane": "flycast",
+     "date": "2023-05-31",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.046,
+     "area": 0.035
+    },
+    {
+     "f": 181,
+     "lane": "flycast",
+     "date": "2023-01-31",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.054,
+     "area": 0.033
+    },
+    {
+     "f": 187,
+     "lane": "flycast",
+     "date": "2023-06-30",
+     "solid": true,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-lo",
+     "ppl": 0.043,
+     "area": 0.032
+    },
+    {
+     "f": 190,
+     "lane": "reicast",
+     "date": "2023-07-10",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.054,
+     "area": 0.029
+    }
+   ],
+   "leaks": {
+    "titles": 23,
+    "leaking": 13,
+    "worst": [
+     {
+      "title": "flycast  V2.1  2023-02  a21b79c",
+      "leakFrac": 0.41,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2023-02  a1472fb",
+      "leakFrac": 0.37,
+      "sticky": false
+     },
+     {
+      "title": "flycast  v2.5  2025-05  5f4eefa",
+      "leakFrac": 0.26,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2024-04  8e96590",
+      "leakFrac": 0.15,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2023-11  bd25c14",
+      "leakFrac": 0.11,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2024-11  b91f82c",
+      "leakFrac": 0.11,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.6,
+   "cpu_ms": 1.09,
+   "labels": 8,
+   "titlesShown": 23
+  },
+  {
+   "name": "b4-clock-same-camera",
+   "t": 50317,
+   "pres": "clock",
+   "cam": [
+    740710,
+    20000,
+    74352
+   ],
+   "q": 0,
+   "walls": 81,
+   "t3area": 0.14,
+   "stats": {
+    "t3": 8,
+    "t4": 25,
+    "t5": 0,
+    "imp": 15,
+    "inst": 0,
+    "draws": 90,
+    "pendingBake": 0,
+    "wantQueue": 2,
+    "gpuMB": 528
+   },
+   "classes": {
+    "solid T3": {
+     "n": 4,
+     "area": 0.109
+    },
+    "faded imp-lo": {
+     "n": 1,
+     "area": 0.009
+    },
+    "faded T4": {
+     "n": 6,
+     "area": 0.023
+    },
+    "faded T3": {
+     "n": 4,
+     "area": 0.027
+    },
+    "solid T4": {
+     "n": 19,
+     "area": 0.063
+    },
+    "solid imp-lo": {
+     "n": 12,
+     "area": 0.006
+    },
+    "solid imp-hi": {
+     "n": 2,
+     "area": 0.004
+    }
+   },
+   "top": [
+    {
+     "f": 182,
+     "lane": "flycast",
+     "date": "2023-02-15",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.053,
+     "area": 0.043
+    },
+    {
+     "f": 187,
+     "lane": "flycast",
+     "date": "2023-06-30",
+     "solid": false,
+     "A": 1,
+     "loaded": true,
+     "tier": "imp-lo",
+     "ppl": 0.043,
+     "area": 0.032
+    },
+    {
+     "f": 190,
+     "lane": "reicast",
+     "date": "2023-07-10",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.054,
+     "area": 0.029
+    },
+    {
+     "f": 191,
+     "lane": "flycast",
+     "date": "2023-07-31",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.041,
+     "area": 0.028
+    },
+    {
+     "f": 193,
+     "lane": "flycast",
+     "date": "2023-09-29",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.036,
+     "area": 0.023
+    },
+    {
+     "f": 194,
+     "lane": "flycast",
+     "date": "2023-10-27",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.034,
+     "area": 0.02
+    },
+    {
+     "f": 195,
+     "lane": "flycast",
+     "date": "2023-10-30",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.034,
+     "area": 0.02
+    },
+    {
+     "f": 196,
+     "lane": "flycast",
+     "date": "2023-11-29",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.032,
+     "area": 0.018
+    }
+   ],
+   "leaks": {
+    "titles": 14,
+    "leaking": 1,
+    "worst": [
+     {
+      "title": "flycast  2024-05  95de834",
+      "leakFrac": 0.15,
+      "sticky": false
+     },
+     {
+      "title": "flycast  V2.1  2023-02  a21b79c",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2023-06  a870fb7",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "reicast  2023-07  6cdb605",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2023-07  92a10ba",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  v2.2  2023-10  c1f0a5a",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.19,
+   "cpu_ms": 0.64,
+   "labels": 10,
+   "titlesShown": 14
+  },
+  {
+   "name": "b5-now-8s",
+   "t": 119468,
+   "pres": "now",
+   "cam": [
+    769490,
+    6000,
+    98352
+   ],
+   "q": 0,
+   "walls": 80,
+   "t3area": 0.48,
+   "stats": {
+    "t3": 13,
+    "t4": 9,
+    "t5": 0,
+    "imp": 11,
+    "inst": 0,
+    "draws": 65,
+    "pendingBake": 0,
+    "wantQueue": 4,
+    "gpuMB": 531
+   },
+   "classes": {
+    "faded T3": {
+     "n": 9,
+     "area": 0.248
+    },
+    "solid imp-lo": {
+     "n": 11,
+     "area": 0.013
+    },
+    "solid T3": {
+     "n": 4,
+     "area": 0.229
+    },
+    "solid T4": {
+     "n": 9,
+     "area": 0.03
+    }
+   },
+   "top": [
+    {
+     "f": 191,
+     "lane": "flycast",
+     "date": "2023-07-31",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.278,
+     "area": 0.168
+    },
+    {
+     "f": 193,
+     "lane": "flycast",
+     "date": "2023-09-29",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.157,
+     "area": 0.152
+    },
+    {
+     "f": 194,
+     "lane": "flycast",
+     "date": "2023-10-27",
+     "solid": true,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.122,
+     "area": 0.121
+    },
+    {
+     "f": 195,
+     "lane": "flycast",
+     "date": "2023-10-30",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.12,
+     "area": 0.12
+    },
+    {
+     "f": 196,
+     "lane": "flycast",
+     "date": "2023-11-29",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.098,
+     "area": 0.097
+    },
+    {
+     "f": 197,
+     "lane": "flycast",
+     "date": "2023-12-22",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.085,
+     "area": 0.082
+    },
+    {
+     "f": 198,
+     "lane": "flycast",
+     "date": "2024-01-29",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.07,
+     "area": 0.065
+    },
+    {
+     "f": 199,
+     "lane": "flycast",
+     "date": "2024-02-29",
+     "solid": false,
+     "A": 1,
+     "loaded": false,
+     "tier": "T3",
+     "ppl": 0.061,
+     "area": 0.055
+    }
+   ],
+   "leaks": {
+    "titles": 13,
+    "leaking": 1,
+    "worst": [
+     {
+      "title": "flycast  2023-10  51089c5",
+      "leakFrac": 0.26,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2023-07  92a10ba",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2023-09  e8e3823",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  v2.2  2023-10  c1f0a5a",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2023-11  bd25c14",
+      "leakFrac": 0,
+      "sticky": false
+     },
+     {
+      "title": "flycast  2023-12  4a0ace5",
+      "leakFrac": 0,
+      "sticky": false
+     }
+    ]
+   },
+   "gpu_ms": 0.34,
+   "cpu_ms": 1.02,
+   "labels": 4,
+   "titlesShown": 13,
+   "extra": {
+    "ticks": 482,
+    "t3Ticks": 413,
+    "liveFrames": 18,
+    "framesShownAsT3": 15
+   }
+  }
+ ]
+}
