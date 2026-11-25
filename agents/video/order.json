@@ -1,0 +1,5245 @@
+[
+{
+"f": 0,
+"lane": "dc4ever",
+"epoch": 1082812831.0,
+"stamp": "2004-04-24 15:20:31 +0200",
+"approx": true,
+"commit": "0cb19dda",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 476
+},
+{
+"f": 1,
+"lane": "dc4ever",
+"epoch": 1085152150.0,
+"stamp": "2004-05-21 17:09:10 +0200",
+"approx": true,
+"commit": "247ccb50",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 533
+},
+{
+"f": 2,
+"lane": "dc4ever",
+"epoch": 1098221102.0,
+"stamp": "2004-10-19 23:25:02 +0200",
+"approx": true,
+"commit": "e58f53e1",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 7244
+},
+{
+"f": 3,
+"lane": "dc4ever",
+"epoch": 1099483518.0,
+"stamp": "2004-11-03 13:05:18 +0100",
+"approx": true,
+"commit": "9da47399",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 7303
+},
+{
+"f": 4,
+"lane": "dc4ever",
+"epoch": 1104440593.0,
+"stamp": "2004-12-30 22:03:13 +0100",
+"approx": true,
+"commit": "105f112b",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 7316
+},
+{
+"f": 5,
+"lane": "dc4ever",
+"epoch": 1105275460.0,
+"stamp": "2005-01-09 13:57:40 +0100",
+"approx": true,
+"commit": "62769ac4",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 7565
+},
+{
+"f": 6,
+"lane": "dc4ever",
+"epoch": 1108168521.0,
+"stamp": "2005-02-12 01:35:21 +0100",
+"approx": true,
+"commit": "cc15ed92",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 7579
+},
+{
+"f": 7,
+"lane": "dc4ever",
+"epoch": 1111881242.0,
+"stamp": "2005-03-27 00:54:02 +0100",
+"approx": true,
+"commit": "e987e24f",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 10018
+},
+{
+"f": 8,
+"lane": "dc4ever",
+"epoch": 1113745544.0,
+"stamp": "2005-04-17 15:45:44 +0200",
+"approx": true,
+"commit": "06f3c91d",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 10127
+},
+{
+"f": 9,
+"lane": "dc4ever",
+"epoch": 1119786214.0,
+"stamp": "2005-06-26 13:43:34 +0200",
+"approx": true,
+"commit": "32061546",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 22431
+},
+{
+"f": 10,
+"lane": "dc4ever",
+"epoch": 1120863814.0,
+"stamp": "2005-07-09 01:03:34 +0200",
+"approx": true,
+"commit": "48d24f5e",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 22431
+},
+{
+"f": 11,
+"lane": "dc4ever",
+"epoch": 1123845408.0,
+"stamp": "2005-08-12 13:16:48 +0200",
+"approx": true,
+"commit": "71eed0ea",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 22425
+},
+{
+"f": 12,
+"lane": "dc4ever",
+"epoch": 1126819572.0,
+"stamp": "2005-09-15 23:26:12 +0200",
+"approx": true,
+"commit": "d9a82c6e",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 25494
+},
+{
+"f": 14,
+"lane": "nullDCe",
+"epoch": 1255694400.0,
+"stamp": "2009-10-16",
+"approx": true,
+"commit": "39c05500",
+"tags": null,
+"kinds": [
+"month",
+"fork"
+],
+"lines": 62897
+},
+{
+"f": 15,
+"lane": "nullDC",
+"epoch": 1273421197.0,
+"stamp": "2010-05-09 16:06:37 +0000",
+"approx": false,
+"commit": "761dc87d",
+"tags": null,
+"kinds": [
+"import"
+],
+"lines": 89587
+},
+{
+"f": 16,
+"lane": "nullDC",
+"epoch": 1275342284.0,
+"stamp": "2010-05-31 21:44:44 +0000",
+"approx": false,
+"commit": "c87acf94",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 96828
+},
+{
+"f": 17,
+"lane": "nullDC",
+"epoch": 1277001754.0,
+"stamp": "2010-06-20 02:42:34 +0000",
+"approx": false,
+"commit": "7bb2b373",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 97659
+},
+{
+"f": 18,
+"lane": "nullDC",
+"epoch": 1279897653.0,
+"stamp": "2010-07-23 15:07:33 +0000",
+"approx": false,
+"commit": "dd6b6677",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 97753
+},
+{
+"f": 19,
+"lane": "nullDC",
+"epoch": 1283296042.0,
+"stamp": "2010-08-31 23:07:22 +0000",
+"approx": false,
+"commit": "4ca4a023",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 97862
+},
+{
+"f": 20,
+"lane": "nullDC",
+"epoch": 1285760809.0,
+"stamp": "2010-09-29 11:46:49 +0000",
+"approx": false,
+"commit": "608af33b",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 101774
+},
+{
+"f": 21,
+"lane": "nullDC",
+"epoch": 1287984319.0,
+"stamp": "2010-10-25 05:25:19 +0000",
+"approx": false,
+"commit": "2ebb1189",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 101922
+},
+{
+"f": 22,
+"lane": "nullDC",
+"epoch": 1291131828.0,
+"stamp": "2010-11-30 15:43:48 +0000",
+"approx": false,
+"commit": "c38e3fd3",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 102350
+},
+{
+"f": 23,
+"lane": "nullDC",
+"epoch": 1293657589.0,
+"stamp": "2010-12-29 21:19:49 +0000",
+"approx": false,
+"commit": "7708112c",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 104341
+},
+{
+"f": 24,
+"lane": "nullDC",
+"epoch": 1294467084.0,
+"stamp": "2011-01-08 06:11:24 +0000",
+"approx": false,
+"commit": "0f57aadb",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 104332
+},
+{
+"f": 25,
+"lane": "nullDC",
+"epoch": 1306072032.0,
+"stamp": "2011-05-22 13:47:12 +0000",
+"approx": false,
+"commit": "6377ab02",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 104339
+},
+{
+"f": 26,
+"lane": "nullDC",
+"epoch": 1307176252.0,
+"stamp": "2011-06-04 08:30:52 +0000",
+"approx": false,
+"commit": "467bdd4e",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 104356
+},
+{
+"f": 27,
+"lane": "nullDC",
+"epoch": 1313910211.0,
+"stamp": "2011-08-21 07:03:31 +0000",
+"approx": false,
+"commit": "0a284d82",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 104355
+},
+{
+"f": 28,
+"lane": "nullDC",
+"epoch": 1315976151.0,
+"stamp": "2011-09-14 04:55:51 +0000",
+"approx": false,
+"commit": "c563e075",
+"tags": null,
+"kinds": [
+"month",
+"fork"
+],
+"lines": 106127
+},
+{
+"f": 29,
+"lane": "nulldc-360",
+"epoch": 1318674783.0,
+"stamp": "2011-10-15 12:33:03 +0200",
+"approx": false,
+"commit": "03302923",
+"tags": null,
+"kinds": [
+"import"
+],
+"lines": 53378
+},
+{
+"f": 30,
+"lane": "nulldc-360",
+"epoch": 1318774060.0,
+"stamp": "2011-10-16 16:07:40 +0200",
+"approx": false,
+"commit": "c2d01d50",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 67999
+},
+{
+"f": 31,
+"lane": "nulldc-360",
+"epoch": 1322439415.0,
+"stamp": "2011-11-28 01:16:55 +0100",
+"approx": false,
+"commit": "a181694f",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 69134
+},
+{
+"f": 32,
+"lane": "nulldc-360",
+"epoch": 1324214442.0,
+"stamp": "2011-12-18 14:20:42 +0100",
+"approx": false,
+"commit": "4d3717f8",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 69230
+},
+{
+"f": 33,
+"lane": "nulldc-360",
+"epoch": 1330367187.0,
+"stamp": "2012-02-27 19:26:27 +0100",
+"approx": false,
+"commit": "4c84334c",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 69319
+},
+{
+"f": 34,
+"lane": "nullDC",
+"epoch": 1332238052.0,
+"stamp": "2012-03-20 10:07:32 +0000",
+"approx": false,
+"commit": "ffd64f5d",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 106158
+},
+{
+"f": 35,
+"lane": "nullDC",
+"epoch": 1334058832.0,
+"stamp": "2012-04-10 11:53:52 +0000",
+"approx": false,
+"commit": "e4476f3f",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 106160
+},
+{
+"f": 36,
+"lane": "nulldc-360",
+"epoch": 1337421810.0,
+"stamp": "2012-05-19 12:03:30 +0200",
+"approx": false,
+"commit": "4e8e313c",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 69342
+},
+{
+"f": 37,
+"lane": "nulldc-360",
+"epoch": 1346440965.0,
+"stamp": "2012-08-31 21:22:45 +0200",
+"approx": false,
+"commit": "c5a32c02",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 73167
+},
+{
+"f": 38,
+"lane": "nulldc-360",
+"epoch": 1348302181.0,
+"stamp": "2012-09-22 10:23:01 +0200",
+"approx": false,
+"commit": "14e80581",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 85977
+},
+{
+"f": 39,
+"lane": "nullDC",
+"epoch": 1359634577.0,
+"stamp": "2013-01-31 12:16:17 +0000",
+"approx": false,
+"commit": "6137f59a",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 107629
+},
+{
+"f": 40,
+"lane": "nullDC",
+"epoch": 1360598557.0,
+"stamp": "2013-02-11 16:02:37 +0000",
+"approx": false,
+"commit": "22446c7e",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 107487
+},
+{
+"f": 41,
+"lane": "nullDC",
+"epoch": 1362890297.0,
+"stamp": "2013-03-10 04:38:17 +0000",
+"approx": false,
+"commit": "7598aa86",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 107500
+},
+{
+"f": 42,
+"lane": "reicast",
+"epoch": 1387473014.0,
+"stamp": "2013-12-19 19:10:14 +0200",
+"approx": false,
+"commit": "1c16baeb",
+"tags": null,
+"kinds": [
+"import"
+],
+"lines": 72911
+},
+{
+"f": 43,
+"lane": "reicast",
+"epoch": 1388496743.0,
+"stamp": "2013-12-31 05:32:23 -0800",
+"approx": false,
+"commit": "1a4801b5",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 74844
+},
+{
+"f": 44,
+"lane": "reicast",
+"epoch": 1390847004.0,
+"stamp": "2014-01-27 13:23:24 -0500",
+"approx": false,
+"commit": "382f2e5c",
+"tags": [
+"r6"
+],
+"kinds": [
+"tag"
+],
+"lines": 78783
+},
+{
+"f": 45,
+"lane": "reicast",
+"epoch": 1391110422.0,
+"stamp": "2014-01-30 11:33:42 -0800",
+"approx": false,
+"commit": "c4dc18f1",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 79389
+},
+{
+"f": 46,
+"lane": "reicast",
+"epoch": 1393471493.0,
+"stamp": "2014-02-26 22:24:53 -0500",
+"approx": false,
+"commit": "b95826d4",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 84860
+},
+{
+"f": 47,
+"lane": "reicast",
+"epoch": 1395935471.0,
+"stamp": "2014-03-27 11:51:11 -0400",
+"approx": false,
+"commit": "164b93be",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 87496
+},
+{
+"f": 48,
+"lane": "reicast",
+"epoch": 1398445110.0,
+"stamp": "2014-04-25 19:58:30 +0300",
+"approx": false,
+"commit": "207a063f",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 88470
+},
+{
+"f": 49,
+"lane": "reicast",
+"epoch": 1401107741.0,
+"stamp": "2014-05-26 15:35:41 +0300",
+"approx": false,
+"commit": "2bd1c4c9",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 90939
+},
+{
+"f": 50,
+"lane": "reicast",
+"epoch": 1403708158.0,
+"stamp": "2014-06-25 17:55:58 +0300",
+"approx": false,
+"commit": "43def486",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 91110
+},
+{
+"f": 51,
+"lane": "reicast",
+"epoch": 1406364798.0,
+"stamp": "2014-07-26 11:53:18 +0300",
+"approx": false,
+"commit": "3ba9170e",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 91269
+},
+{
+"f": 52,
+"lane": "reicast",
+"epoch": 1410693166.0,
+"stamp": "2014-09-14 14:12:46 +0300",
+"approx": false,
+"commit": "aa33d230",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 91618
+},
+{
+"f": 53,
+"lane": "reicast",
+"epoch": 1414723437.0,
+"stamp": "2014-10-30 22:43:57 -0400",
+"approx": false,
+"commit": "dbc6f5a4",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 91990
+},
+{
+"f": 54,
+"lane": "reicast",
+"epoch": 1416607667.0,
+"stamp": "2014-11-21 17:07:47 -0500",
+"approx": false,
+"commit": "f13d12a0",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 92385
+},
+{
+"f": 55,
+"lane": "reicast",
+"epoch": 1418264773.0,
+"stamp": "2014-12-11 03:26:13 +0100",
+"approx": false,
+"commit": "22e95de2",
+"tags": [
+"r7-rc1"
+],
+"kinds": [
+"tag"
+],
+"lines": 92405
+},
+{
+"f": 56,
+"lane": "reicast",
+"epoch": 1419488371.0,
+"stamp": "2014-12-25 01:19:31 -0500",
+"approx": false,
+"commit": "8e5f530f",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 91839
+},
+{
+"f": 57,
+"lane": "reicast",
+"epoch": 1422107645.0,
+"stamp": "2015-01-24 08:54:05 -0500",
+"approx": false,
+"commit": "d24e15da",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 92394
+},
+{
+"f": 58,
+"lane": "reicast",
+"epoch": 1424929154.0,
+"stamp": "2015-02-25 21:39:14 -0800",
+"approx": false,
+"commit": "e82d6a8c",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 93310
+},
+{
+"f": 59,
+"lane": "reicast",
+"epoch": 1427770940.0,
+"stamp": "2015-03-31 05:02:20 +0200",
+"approx": false,
+"commit": "ebabdee8",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 93556
+},
+{
+"f": 60,
+"lane": "reicast",
+"epoch": 1428871711.0,
+"stamp": "2015-04-12 22:48:31 +0200",
+"approx": false,
+"commit": "330a60bc",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 93575
+},
+{
+"f": 61,
+"lane": "reicast",
+"epoch": 1431953815.0,
+"stamp": "2015-05-18 14:56:55 +0200",
+"approx": false,
+"commit": "a9fc0f5a",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 96666
+},
+{
+"f": 62,
+"lane": "reicast",
+"epoch": 1435444291.0,
+"stamp": "2015-06-27 18:31:31 -0400",
+"approx": false,
+"commit": "28a6d1d9",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 96758
+},
+{
+"f": 63,
+"lane": "reicast",
+"epoch": 1438135666.0,
+"stamp": "2015-07-29 04:07:46 +0200",
+"approx": false,
+"commit": "4b94e2fe",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 96584
+},
+{
+"f": 64,
+"lane": "reicast",
+"epoch": 1440682812.0,
+"stamp": "2015-08-27 15:40:12 +0200",
+"approx": false,
+"commit": "1a751e3b",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 98742
+},
+{
+"f": 65,
+"lane": "reicast",
+"epoch": 1443490488.0,
+"stamp": "2015-09-29 03:34:48 +0200",
+"approx": false,
+"commit": "915d6b26",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 99879
+},
+{
+"f": 66,
+"lane": "reicast",
+"epoch": 1447456942.0,
+"stamp": "2015-11-14 00:22:22 +0100",
+"approx": false,
+"commit": "f5f3332b",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 99879
+},
+{
+"f": 67,
+"lane": "reicast",
+"epoch": 1450394097.0,
+"stamp": "2015-12-18 00:14:57 +0100",
+"approx": false,
+"commit": "0e4949e7",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 100189
+},
+{
+"f": 68,
+"lane": "reicast",
+"epoch": 1454175950.0,
+"stamp": "2016-01-30 18:45:50 +0100",
+"approx": false,
+"commit": "45deafc9",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 100189
+},
+{
+"f": 69,
+"lane": "reicast",
+"epoch": 1458171022.0,
+"stamp": "2016-03-17 01:30:22 +0200",
+"approx": false,
+"commit": "0a1689cb",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 100189
+},
+{
+"f": 70,
+"lane": "reicast",
+"epoch": 1463936692.0,
+"stamp": "2016-05-22 19:04:52 +0200",
+"approx": false,
+"commit": "73e2691c",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 100202
+},
+{
+"f": 71,
+"lane": "reicast",
+"epoch": 1474831833.0,
+"stamp": "2016-09-25 15:30:33 -0400",
+"approx": false,
+"commit": "d8a7212d",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 100538
+},
+{
+"f": 72,
+"lane": "reicast",
+"epoch": 1479710398.0,
+"stamp": "2016-11-21 01:39:58 -0500",
+"approx": false,
+"commit": "aca9cb69",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 100538
+},
+{
+"f": 73,
+"lane": "reicast",
+"epoch": 1483184822.0,
+"stamp": "2016-12-31 13:47:02 +0200",
+"approx": false,
+"commit": "ca837e19",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 100538
+},
+{
+"f": 74,
+"lane": "reicast",
+"epoch": 1495103395.0,
+"stamp": "2017-05-18 12:29:55 +0200",
+"approx": false,
+"commit": "6eb48808",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 100560
+},
+{
+"f": 75,
+"lane": "reicast",
+"epoch": 1497719262.0,
+"stamp": "2017-06-17 13:07:42 -0400",
+"approx": false,
+"commit": "8a680202",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 99476
+},
+{
+"f": 76,
+"lane": "reicast",
+"epoch": 1522184486.0,
+"stamp": "2018-03-27 23:01:26 +0200",
+"approx": false,
+"commit": "c832df6d",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 99478
+},
+{
+"f": 77,
+"lane": "reicast",
+"epoch": 1524349021.0,
+"stamp": "2018-04-22 00:17:01 +0200",
+"approx": false,
+"commit": "a50861b2",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 100020
+},
+{
+"f": 78,
+"lane": "reicast",
+"epoch": 1529937214.0,
+"stamp": "2018-06-25 10:33:34 -0400",
+"approx": false,
+"commit": "e6afd22f",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 100081
+},
+{
+"f": 79,
+"lane": "reicast",
+"epoch": 1532992204.0,
+"stamp": "2018-07-31 01:10:04 +0200",
+"approx": false,
+"commit": "25ec591e",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 100391
+},
+{
+"f": 80,
+"lane": "reicast",
+"epoch": 1533396233.0,
+"stamp": "2018-08-04 17:23:53 +0200",
+"approx": false,
+"commit": "3d594567",
+"tags": [
+"r7"
+],
+"kinds": [
+"tag"
+],
+"lines": 100603
+},
+{
+"f": 81,
+"lane": "reicast",
+"epoch": 1535573522.0,
+"stamp": "2018-08-29 16:12:02 -0400",
+"approx": false,
+"commit": "a8711e2c",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 101224
+},
+{
+"f": 82,
+"lane": "reicast",
+"epoch": 1535979937.0,
+"stamp": "2018-09-03 15:05:37 +0200",
+"approx": false,
+"commit": "239e1782",
+"tags": null,
+"kinds": [
+"fork"
+],
+"lines": 102978
+},
+{
+"f": 83,
+"lane": "reicast",
+"epoch": 1536092703.0,
+"stamp": "2018-09-04 22:25:03 +0200",
+"approx": false,
+"commit": "00ecf2f1",
+"tags": [
+"r8"
+],
+"kinds": [
+"tag"
+],
+"lines": 101239
+},
+{
+"f": 84,
+"lane": "reicast",
+"epoch": 1536749006.0,
+"stamp": "2018-09-12 13:43:26 +0300",
+"approx": false,
+"commit": "1a09ccb5",
+"tags": [
+"r8.1"
+],
+"kinds": [
+"tag"
+],
+"lines": 101239
+},
+{
+"f": 85,
+"lane": "reicast",
+"epoch": 1538322202.0,
+"stamp": "2018-09-30 11:43:22 -0400",
+"approx": false,
+"commit": "4b24d223",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 100528
+},
+{
+"f": 86,
+"lane": "flycast",
+"epoch": 1540036273.0,
+"stamp": "2018-10-20 13:51:13 +0200",
+"approx": false,
+"commit": "84ab237b",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 102979
+},
+{
+"f": 87,
+"lane": "reicast",
+"epoch": 1540753853.0,
+"stamp": "2018-10-28 15:10:53 -0400",
+"approx": false,
+"commit": "75d319ea",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 101244
+},
+{
+"f": 88,
+"lane": "reicast",
+"epoch": 1543435440.0,
+"stamp": "2018-11-28 15:04:00 -0500",
+"approx": false,
+"commit": "3ab2eefb",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 101334
+},
+{
+"f": 89,
+"lane": "reicast",
+"epoch": 1547833568.0,
+"stamp": "2019-01-18 18:46:08 +0100",
+"approx": false,
+"commit": "55a22610",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 101388
+},
+{
+"f": 90,
+"lane": "reicast",
+"epoch": 1551182684.0,
+"stamp": "2019-02-26 13:04:44 +0100",
+"approx": false,
+"commit": "2b3a052a",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 102297
+},
+{
+"f": 91,
+"lane": "reicast",
+"epoch": 1553948865.0,
+"stamp": "2019-03-30 13:27:45 +0100",
+"approx": false,
+"commit": "26f02e22",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 128393
+},
+{
+"f": 92,
+"lane": "flycast",
+"epoch": 1555359289.0,
+"stamp": "2019-04-15 22:14:49 +0200",
+"approx": false,
+"commit": "cf1a924f",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 130515
+},
+{
+"f": 93,
+"lane": "reicast",
+"epoch": 1556473923.0,
+"stamp": "2019-04-28 13:52:03 -0400",
+"approx": false,
+"commit": "1e04de06",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 128823
+},
+{
+"f": 94,
+"lane": "reicast",
+"epoch": 1558088107.0,
+"stamp": "2019-05-17 12:15:07 +0200",
+"approx": false,
+"commit": "a6b773a2",
+"tags": null,
+"kinds": [
+"fork"
+],
+"lines": 129314
+},
+{
+"f": 95,
+"lane": "reicast",
+"epoch": 1558965280.0,
+"stamp": "2019-05-27 15:54:40 +0200",
+"approx": false,
+"commit": "605e00e7",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 129650
+},
+{
+"f": 96,
+"lane": "flycast",
+"epoch": 1559239765.0,
+"stamp": "2019-05-30 20:09:25 +0200",
+"approx": false,
+"commit": "97eab1be",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 129379
+},
+{
+"f": 97,
+"lane": "reicast",
+"epoch": 1560905058.0,
+"stamp": "2019-06-19 03:44:18 +0300",
+"approx": false,
+"commit": "0cdd7d83",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 129783
+},
+{
+"f": 98,
+"lane": "flycast",
+"epoch": 1561120162.0,
+"stamp": "2019-06-21 14:29:22 +0200",
+"approx": false,
+"commit": "aa36a65d",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 129381
+},
+{
+"f": 99,
+"lane": "reicast",
+"epoch": 1563069416.0,
+"stamp": "2019-07-14 04:56:56 +0300",
+"approx": false,
+"commit": "154e2244",
+"tags": [
+"r19.07"
+],
+"kinds": [
+"tag"
+],
+"lines": 131409
+},
+{
+"f": 100,
+"lane": "reicast",
+"epoch": 1563158839.0,
+"stamp": "2019-07-15 05:47:19 +0300",
+"approx": false,
+"commit": "1c7b5e6b",
+"tags": [
+"r19.07.1"
+],
+"kinds": [
+"tag"
+],
+"lines": 131578
+},
+{
+"f": 101,
+"lane": "reicast",
+"epoch": 1563188942.0,
+"stamp": "2019-07-15 13:09:02 +0200",
+"approx": false,
+"commit": "23b86393",
+"tags": [
+"r19.07.3"
+],
+"kinds": [
+"tag"
+],
+"lines": 131675
+},
+{
+"f": 102,
+"lane": "reicast",
+"epoch": 1564527269.0,
+"stamp": "2019-07-31 00:54:29 +0200",
+"approx": false,
+"commit": "29e1c8ea",
+"tags": [
+"r19.07.4"
+],
+"kinds": [
+"tag"
+],
+"lines": 129325
+},
+{
+"f": 103,
+"lane": "reicast",
+"epoch": 1564535212.0,
+"stamp": "2019-07-31 03:06:52 +0200",
+"approx": false,
+"commit": "5db946e6",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 129327
+},
+{
+"f": 104,
+"lane": "flycast",
+"epoch": 1564603736.0,
+"stamp": "2019-07-31 22:08:56 +0200",
+"approx": false,
+"commit": "e162f3ac",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 133898
+},
+{
+"f": 105,
+"lane": "reicast",
+"epoch": 1567150497.0,
+"stamp": "2019-08-30 10:34:57 +0300",
+"approx": false,
+"commit": "d350e68e",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 127840
+},
+{
+"f": 106,
+"lane": "flycast",
+"epoch": 1567282209.0,
+"stamp": "2019-08-31 22:10:09 +0200",
+"approx": false,
+"commit": "61f4cd4e",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 133777
+},
+{
+"f": 107,
+"lane": "flycast",
+"epoch": 1569863686.0,
+"stamp": "2019-09-30 20:14:46 +0300",
+"approx": false,
+"commit": "8eac8448",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 134749
+},
+{
+"f": 108,
+"lane": "flycast",
+"epoch": 1572174727.0,
+"stamp": "2019-10-27 12:12:07 +0100",
+"approx": false,
+"commit": "b9970fc3",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 134750
+},
+{
+"f": 109,
+"lane": "flycast",
+"epoch": 1573415289.0,
+"stamp": "2019-11-10 20:48:09 +0100",
+"approx": false,
+"commit": "8f86be37",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 134920
+},
+{
+"f": 110,
+"lane": "reicast",
+"epoch": 1577793327.0,
+"stamp": "2019-12-31 13:55:27 +0200",
+"approx": false,
+"commit": "17582044",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 127840
+},
+{
+"f": 111,
+"lane": "reicast",
+"epoch": 1580098523.0,
+"stamp": "2020-01-27 06:15:23 +0200",
+"approx": false,
+"commit": "2c2fba08",
+"tags": [
+"r20.01"
+],
+"kinds": [
+"tag"
+],
+"lines": 129374
+},
+{
+"f": 112,
+"lane": "reicast",
+"epoch": 1580146402.0,
+"stamp": "2020-01-27 19:33:22 +0200",
+"approx": false,
+"commit": "52504d44",
+"tags": [
+"r20.01b"
+],
+"kinds": [
+"tag"
+],
+"lines": 129387
+},
+{
+"f": 113,
+"lane": "reicast",
+"epoch": 1580158669.0,
+"stamp": "2020-01-27 22:57:49 +0200",
+"approx": false,
+"commit": "f0520b1f",
+"tags": [
+"r20.01c"
+],
+"kinds": [
+"tag"
+],
+"lines": 129389
+},
+{
+"f": 114,
+"lane": "reicast",
+"epoch": 1580162256.0,
+"stamp": "2020-01-27 23:57:36 +0200",
+"approx": false,
+"commit": "77471f06",
+"tags": [
+"r20.01d"
+],
+"kinds": [
+"tag"
+],
+"lines": 129403
+},
+{
+"f": 115,
+"lane": "reicast",
+"epoch": 1580176229.0,
+"stamp": "2020-01-28 03:50:29 +0200",
+"approx": false,
+"commit": "48cdb5ab",
+"tags": [
+"r20.01e"
+],
+"kinds": [
+"tag"
+],
+"lines": 129403
+},
+{
+"f": 116,
+"lane": "reicast",
+"epoch": 1580309349.0,
+"stamp": "2020-01-29 16:49:09 +0200",
+"approx": false,
+"commit": "7ddc8d8f",
+"tags": [
+"r20.01f"
+],
+"kinds": [
+"tag"
+],
+"lines": 129453
+},
+{
+"f": 117,
+"lane": "reicast",
+"epoch": 1580320768.0,
+"stamp": "2020-01-29 19:59:28 +0200",
+"approx": false,
+"commit": "23f3c366",
+"tags": [
+"r20.01g"
+],
+"kinds": [
+"tag"
+],
+"lines": 129481
+},
+{
+"f": 118,
+"lane": "reicast",
+"epoch": 1580348072.0,
+"stamp": "2020-01-30 03:34:32 +0200",
+"approx": false,
+"commit": "33de904f",
+"tags": [
+"r20.01h"
+],
+"kinds": [
+"tag"
+],
+"lines": 129632
+},
+{
+"f": 119,
+"lane": "reicast",
+"epoch": 1580356851.0,
+"stamp": "2020-01-30 06:00:51 +0200",
+"approx": false,
+"commit": "0790e255",
+"tags": [
+"r20.01i"
+],
+"kinds": [
+"tag"
+],
+"lines": 129629
+},
+{
+"f": 120,
+"lane": "reicast",
+"epoch": 1580362735.0,
+"stamp": "2020-01-30 07:38:55 +0200",
+"approx": false,
+"commit": "b0dac1d2",
+"tags": [
+"r20.01j"
+],
+"kinds": [
+"tag"
+],
+"lines": 129665
+},
+{
+"f": 121,
+"lane": "reicast",
+"epoch": 1580410202.0,
+"stamp": "2020-01-30 20:50:02 +0200",
+"approx": false,
+"commit": "3813d4d0",
+"tags": [
+"r20.01k"
+],
+"kinds": [
+"tag"
+],
+"lines": 129750
+},
+{
+"f": 122,
+"lane": "reicast",
+"epoch": 1580476669.0,
+"stamp": "2020-01-31 15:17:49 +0200",
+"approx": false,
+"commit": "6251df8a",
+"tags": [
+"r20.01l"
+],
+"kinds": [
+"tag"
+],
+"lines": 129808
+},
+{
+"f": 123,
+"lane": "reicast",
+"epoch": 1580501064.0,
+"stamp": "2020-01-31 22:04:24 +0200",
+"approx": false,
+"commit": "436c0b98",
+"tags": [
+"r20.01m"
+],
+"kinds": [
+"month",
+"tag"
+],
+"lines": 129809
+},
+{
+"f": 124,
+"lane": "flycast",
+"epoch": 1580511072.0,
+"stamp": "2020-01-31 23:51:12 +0100",
+"approx": false,
+"commit": "b79c0744",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 163234
+},
+{
+"f": 125,
+"lane": "reicast",
+"epoch": 1580524027.0,
+"stamp": "2020-02-01 04:27:07 +0200",
+"approx": false,
+"commit": "77b6b970",
+"tags": [
+"r20.02"
+],
+"kinds": [
+"tag"
+],
+"lines": 129880
+},
+{
+"f": 126,
+"lane": "reicast",
+"epoch": 1580676219.0,
+"stamp": "2020-02-02 22:43:39 +0200",
+"approx": false,
+"commit": "333b7c53",
+"tags": [
+"r20.02-beta1",
+"r20.02b"
+],
+"kinds": [
+"tag"
+],
+"lines": 129928
+},
+{
+"f": 127,
+"lane": "reicast",
+"epoch": 1582942084.0,
+"stamp": "2020-02-29 04:08:04 +0200",
+"approx": false,
+"commit": "8d0f7fbc",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 135009
+},
+{
+"f": 128,
+"lane": "flycast",
+"epoch": 1582975166.0,
+"stamp": "2020-02-29 12:19:26 +0100",
+"approx": false,
+"commit": "93bedb91",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 162476
+},
+{
+"f": 129,
+"lane": "reicast",
+"epoch": 1585361528.0,
+"stamp": "2020-03-28 04:12:08 +0200",
+"approx": false,
+"commit": "12154b25",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 138797
+},
+{
+"f": 130,
+"lane": "flycast",
+"epoch": 1585681782.0,
+"stamp": "2020-03-31 21:09:42 +0200",
+"approx": false,
+"commit": "320d0a5c",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 163697
+},
+{
+"f": 131,
+"lane": "reicast",
+"epoch": 1585835276.0,
+"stamp": "2020-04-02 16:47:56 +0300",
+"approx": false,
+"commit": "046d94d4",
+"tags": [
+"r20.04"
+],
+"kinds": [
+"tag"
+],
+"lines": 139129
+},
+{
+"f": 132,
+"lane": "reicast",
+"epoch": 1587606068.0,
+"stamp": "2020-04-22 20:41:08 -0500",
+"approx": false,
+"commit": "d68f5809",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 145197
+},
+{
+"f": 133,
+"lane": "flycast",
+"epoch": 1588243796.0,
+"stamp": "2020-04-30 12:49:56 +0200",
+"approx": false,
+"commit": "d75d4400",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 165389
+},
+{
+"f": 134,
+"lane": "flycast",
+"epoch": 1590861478.0,
+"stamp": "2020-05-30 19:57:58 +0200",
+"approx": false,
+"commit": "002a05f8",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 165566
+},
+{
+"f": 135,
+"lane": "reicast",
+"epoch": 1590939815.0,
+"stamp": "2020-05-31 18:43:35 +0300",
+"approx": false,
+"commit": "971d6149",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 145464
+},
+{
+"f": 136,
+"lane": "flycast",
+"epoch": 1593459097.0,
+"stamp": "2020-06-29 21:31:37 +0200",
+"approx": false,
+"commit": "42cb8805",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 166670
+},
+{
+"f": 137,
+"lane": "flycast",
+"epoch": 1596190570.0,
+"stamp": "2020-07-31 12:16:10 +0200",
+"approx": false,
+"commit": "125c1ff3",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 167054
+},
+{
+"f": 138,
+"lane": "reicast",
+"epoch": 1598338560.0,
+"stamp": "2020-08-25 09:56:00 +0300",
+"approx": false,
+"commit": "2712a007",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 145468
+},
+{
+"f": 139,
+"lane": "flycast",
+"epoch": 1598903613.0,
+"stamp": "2020-08-31 21:53:33 +0200",
+"approx": false,
+"commit": "d7b1ad61",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 167021
+},
+{
+"f": 140,
+"lane": "flycast",
+"epoch": 1599510442.0,
+"stamp": "2020-09-07 22:27:22 +0200",
+"approx": false,
+"commit": "a9f1a896",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 167035
+},
+{
+"f": 141,
+"lane": "reicast",
+"epoch": 1603020168.0,
+"stamp": "2020-10-18 14:22:48 +0300",
+"approx": false,
+"commit": "0bd6ea37",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 145469
+},
+{
+"f": 142,
+"lane": "flycast",
+"epoch": 1603546554.0,
+"stamp": "2020-10-24 15:35:54 +0200",
+"approx": false,
+"commit": "621083c0",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 167072
+},
+{
+"f": 143,
+"lane": "flycast",
+"epoch": 1606769953.0,
+"stamp": "2020-11-30 21:59:13 +0100",
+"approx": false,
+"commit": "8905410a",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 165520
+},
+{
+"f": 144,
+"lane": "flycast",
+"epoch": 1609261326.0,
+"stamp": "2020-12-29 18:02:06 +0100",
+"approx": false,
+"commit": "62a1e296",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 166828
+},
+{
+"f": 145,
+"lane": "flycast",
+"epoch": 1612112747.0,
+"stamp": "2021-01-31 18:05:47 +0100",
+"approx": false,
+"commit": "d98462b1",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 164221
+},
+{
+"f": 146,
+"lane": "flycast",
+"epoch": 1614506617.0,
+"stamp": "2021-02-28 11:03:37 +0100",
+"approx": false,
+"commit": "8845f4eb",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 164560
+},
+{
+"f": 147,
+"lane": "flycast",
+"epoch": 1617210091.0,
+"stamp": "2021-03-31 19:01:31 +0200",
+"approx": false,
+"commit": "4d815570",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 168683
+},
+{
+"f": 148,
+"lane": "flycast",
+"epoch": 1619805431.0,
+"stamp": "2021-04-30 19:57:11 +0200",
+"approx": false,
+"commit": "6dfa9f77",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 169197
+},
+{
+"f": 150,
+"lane": "flycast",
+"epoch": 1622190944.0,
+"stamp": "2021-05-28 10:35:44 +0200",
+"approx": false,
+"commit": "d6e15544",
+"tags": [
+"v1.0"
+],
+"kinds": [
+"tag"
+],
+"lines": 162080
+},
+{
+"f": 149,
+"lane": "nulldc-360",
+"epoch": 1622200553.0,
+"stamp": "2021-05-28 13:15:53 +0200",
+"approx": false,
+"commit": "f9d1610f",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 85982
+},
+{
+"f": 151,
+"lane": "flycast",
+"epoch": 1622496283.0,
+"stamp": "2021-05-31 23:24:43 +0200",
+"approx": false,
+"commit": "4a9c51a6",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 162096
+},
+{
+"f": 152,
+"lane": "flycast",
+"epoch": 1624791234.0,
+"stamp": "2021-06-27 12:53:54 +0200",
+"approx": false,
+"commit": "14360bea",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 162382
+},
+{
+"f": 153,
+"lane": "flycast",
+"epoch": 1627666507.0,
+"stamp": "2021-07-30 19:35:07 +0200",
+"approx": false,
+"commit": "fcef404f",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 165698
+},
+{
+"f": 154,
+"lane": "flycast",
+"epoch": 1629977423.0,
+"stamp": "2021-08-26 13:30:23 +0200",
+"approx": false,
+"commit": "a51f310e",
+"tags": [
+"v1.1"
+],
+"kinds": [
+"tag"
+],
+"lines": 165760
+},
+{
+"f": 155,
+"lane": "flycast",
+"epoch": 1633005389.0,
+"stamp": "2021-09-30 14:36:29 +0200",
+"approx": false,
+"commit": "23d1f6b5",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 172979
+},
+{
+"f": 156,
+"lane": "flycast",
+"epoch": 1638006129.0,
+"stamp": "2021-11-27 10:42:09 +0100",
+"approx": false,
+"commit": "ef3af9aa",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 173019
+},
+{
+"f": 157,
+"lane": "flycast",
+"epoch": 1639738517.0,
+"stamp": "2021-12-17 11:55:17 +0100",
+"approx": false,
+"commit": "7555263e",
+"tags": [
+"v1.2"
+],
+"kinds": [
+"tag"
+],
+"lines": 232017
+},
+{
+"f": 158,
+"lane": "reicast",
+"epoch": 1640190740.0,
+"stamp": "2021-12-22 18:32:20 +0200",
+"approx": false,
+"commit": "95b67369",
+"tags": null,
+"kinds": [
+"month",
+"fork"
+],
+"lines": 145469
+},
+{
+"f": 159,
+"lane": "flycast",
+"epoch": 1640989245.0,
+"stamp": "2021-12-31 22:20:45 +0000",
+"approx": false,
+"commit": "a52977d1",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 245159
+},
+{
+"f": 160,
+"lane": "flycast",
+"epoch": 1643471908.0,
+"stamp": "2022-01-29 16:58:28 +0100",
+"approx": false,
+"commit": "4e21391f",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 188467
+},
+{
+"f": 161,
+"lane": "nulldc-360",
+"epoch": 1644612596.0,
+"stamp": "2022-02-11 21:49:56 +0100",
+"approx": false,
+"commit": "7b0bd50a",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 85988
+},
+{
+"f": 162,
+"lane": "flycast",
+"epoch": 1646029490.0,
+"stamp": "2022-02-28 07:24:50 +0100",
+"approx": false,
+"commit": "830ffd05",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 188629
+},
+{
+"f": 163,
+"lane": "flycast",
+"epoch": 1648397678.0,
+"stamp": "2022-03-27 18:14:38 +0200",
+"approx": false,
+"commit": "0c46ea13",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 188665
+},
+{
+"f": 164,
+"lane": "flycast",
+"epoch": 1649498777.0,
+"stamp": "2022-04-09 12:06:17 +0200",
+"approx": false,
+"commit": "3d5fd612",
+"tags": [
+"v1.3"
+],
+"kinds": [
+"tag"
+],
+"lines": 188778
+},
+{
+"f": 165,
+"lane": "flycast",
+"epoch": 1651334712.0,
+"stamp": "2022-04-30 18:05:12 +0200",
+"approx": false,
+"commit": "c348f4cc",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 195898
+},
+{
+"f": 166,
+"lane": "flycast",
+"epoch": 1652522510.0,
+"stamp": "2022-05-14 12:01:50 +0200",
+"approx": false,
+"commit": "658e111e",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 196309
+},
+{
+"f": 167,
+"lane": "flycast",
+"epoch": 1656273876.0,
+"stamp": "2022-06-26 22:04:36 +0200",
+"approx": false,
+"commit": "b5b08752",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 200003
+},
+{
+"f": 168,
+"lane": "flycast",
+"epoch": 1659084519.0,
+"stamp": "2022-07-29 10:48:39 +0200",
+"approx": false,
+"commit": "a6ac753c",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 200398
+},
+{
+"f": 169,
+"lane": "flycast",
+"epoch": 1661166596.0,
+"stamp": "2022-08-22 13:09:56 +0200",
+"approx": false,
+"commit": "e0d87eb0",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 200371
+},
+{
+"f": 170,
+"lane": "flycast",
+"epoch": 1661448863.0,
+"stamp": "2022-08-25 19:34:23 +0200",
+"approx": false,
+"commit": "aa97a6d6",
+"tags": [
+"v2.0"
+],
+"kinds": [
+"tag"
+],
+"lines": 196715
+},
+{
+"f": 171,
+"lane": "flycast",
+"epoch": 1664040518.0,
+"stamp": "2022-09-24 19:28:38 +0200",
+"approx": false,
+"commit": "1858cf3b",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 180544
+},
+{
+"f": 172,
+"lane": "flycast",
+"epoch": 1667130459.0,
+"stamp": "2022-10-30 12:47:39 +0100",
+"approx": false,
+"commit": "c88cdde9",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 181221
+},
+{
+"f": 173,
+"lane": "flycast",
+"epoch": 1667583283.0,
+"stamp": "2022-11-04 18:34:43 +0100",
+"approx": false,
+"commit": "19204882",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 181224
+},
+{
+"f": 174,
+"lane": "flycast",
+"epoch": 1672501988.0,
+"stamp": "2022-12-31 16:53:08 +0100",
+"approx": false,
+"commit": "7372df3a",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 182198
+},
+{
+"f": 175,
+"lane": "flycast",
+"epoch": 1675166323.0,
+"stamp": "2023-01-31 12:58:43 +0100",
+"approx": false,
+"commit": "5875eda4",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 182809
+},
+{
+"f": 176,
+"lane": "flycast",
+"epoch": 1676483984.0,
+"stamp": "2023-02-15 18:59:44 +0100",
+"approx": false,
+"commit": "a21b79cf",
+"tags": [
+"V2.1"
+],
+"kinds": [
+"tag"
+],
+"lines": 182921
+},
+{
+"f": 177,
+"lane": "flycast",
+"epoch": 1677604965.0,
+"stamp": "2023-02-28 18:22:45 +0100",
+"approx": false,
+"commit": "a1472fb1",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 182981
+},
+{
+"f": 178,
+"lane": "flycast",
+"epoch": 1680301148.0,
+"stamp": "2023-03-31 22:19:08 +0000",
+"approx": false,
+"commit": "9d6bfd47",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 183009
+},
+{
+"f": 179,
+"lane": "flycast",
+"epoch": 1682704783.0,
+"stamp": "2023-04-28 19:59:43 +0200",
+"approx": false,
+"commit": "5f161df0",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 183100
+},
+{
+"f": 180,
+"lane": "flycast",
+"epoch": 1685545400.0,
+"stamp": "2023-05-31 17:03:20 +0200",
+"approx": false,
+"commit": "c0a28653",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 189246
+},
+{
+"f": 181,
+"lane": "flycast",
+"epoch": 1688141573.0,
+"stamp": "2023-06-30 18:12:53 +0200",
+"approx": false,
+"commit": "a870fb7f",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 189271
+},
+{
+"f": 182,
+"lane": "nulldc3",
+"epoch": 1688721108.0,
+"stamp": "2023-07-07 12:11:48 +0300",
+"approx": false,
+"commit": "038f7ef3",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 145787
+},
+{
+"f": 183,
+"lane": "nullDC",
+"epoch": 1688966630.0,
+"stamp": "2023-07-10 08:23:50 +0300",
+"approx": false,
+"commit": "1611c3cf",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 107503
+},
+{
+"f": 184,
+"lane": "reicast",
+"epoch": 1688966862.0,
+"stamp": "2023-07-10 08:27:42 +0300",
+"approx": false,
+"commit": "6cdb605d",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 145474
+},
+{
+"f": 185,
+"lane": "flycast",
+"epoch": 1690812733.0,
+"stamp": "2023-07-31 16:12:13 +0200",
+"approx": false,
+"commit": "92a10ba0",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 189294
+},
+{
+"f": 186,
+"lane": "nulldc3",
+"epoch": 1692359755.0,
+"stamp": "2023-08-18 14:55:55 +0300",
+"approx": false,
+"commit": "0de09b9a",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 145805
+},
+{
+"f": 187,
+"lane": "flycast",
+"epoch": 1696025956.0,
+"stamp": "2023-09-29 22:19:16 +0000",
+"approx": false,
+"commit": "e8e38237",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 195622
+},
+{
+"f": 188,
+"lane": "flycast",
+"epoch": 1698445194.0,
+"stamp": "2023-10-27 22:19:54 +0000",
+"approx": false,
+"commit": "c1f0a5a1",
+"tags": [
+"v2.2"
+],
+"kinds": [
+"tag"
+],
+"lines": 195778
+},
+{
+"f": 189,
+"lane": "flycast",
+"epoch": 1698684439.0,
+"stamp": "2023-10-30 17:47:19 +0100",
+"approx": false,
+"commit": "51089c5e",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 195779
+},
+{
+"f": 190,
+"lane": "flycast",
+"epoch": 1701257490.0,
+"stamp": "2023-11-29 12:31:30 +0100",
+"approx": false,
+"commit": "bd25c14c",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 195959
+},
+{
+"f": 191,
+"lane": "flycast",
+"epoch": 1703283569.0,
+"stamp": "2023-12-22 22:19:29 +0000",
+"approx": false,
+"commit": "4a0ace5d",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 195968
+},
+{
+"f": 192,
+"lane": "flycast",
+"epoch": 1706521908.0,
+"stamp": "2024-01-29 10:51:48 +0100",
+"approx": false,
+"commit": "57c88e07",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 195972
+},
+{
+"f": 193,
+"lane": "flycast",
+"epoch": 1709233119.0,
+"stamp": "2024-02-29 19:58:39 +0100",
+"approx": false,
+"commit": "f63a82af",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 193788
+},
+{
+"f": 194,
+"lane": "flycast",
+"epoch": 1710541171.0,
+"stamp": "2024-03-15 22:19:31 +0000",
+"approx": false,
+"commit": "966ff376",
+"tags": [
+"v2.3"
+],
+"kinds": [
+"tag"
+],
+"lines": 193870
+},
+{
+"f": 195,
+"lane": "flycast",
+"epoch": 1711750769.0,
+"stamp": "2024-03-29 22:19:29 +0000",
+"approx": false,
+"commit": "ed78eb4d",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 193883
+},
+{
+"f": 196,
+"lane": "flycast",
+"epoch": 1714170005.0,
+"stamp": "2024-04-26 22:20:05 +0000",
+"approx": false,
+"commit": "8e965900",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 193909
+},
+{
+"f": 197,
+"lane": "flycast",
+"epoch": 1715439991.0,
+"stamp": "2024-05-11 17:06:31 +0200",
+"approx": false,
+"commit": "f13d7ad2",
+"tags": [
+"v2.3.2"
+],
+"kinds": [
+"tag"
+],
+"lines": 194197
+},
+{
+"f": 198,
+"lane": "flycast",
+"epoch": 1717169671.0,
+"stamp": "2024-05-31 17:34:31 +0200",
+"approx": false,
+"commit": "95de8343",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 197804
+},
+{
+"f": 199,
+"lane": "flycast",
+"epoch": 1719134134.0,
+"stamp": "2024-06-23 11:15:34 +0200",
+"approx": false,
+"commit": "7d645541",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 197820
+},
+{
+"f": 200,
+"lane": "nulldc3",
+"epoch": 1720571993.0,
+"stamp": "2024-07-10 03:39:53 +0300",
+"approx": false,
+"commit": "d5d4eae1",
+"tags": null,
+"kinds": [
+"month",
+"fork"
+],
+"lines": 145805
+},
+{
+"f": 201,
+"lane": "flycast",
+"epoch": 1722264312.0,
+"stamp": "2024-07-29 16:45:12 +0200",
+"approx": false,
+"commit": "45bf218d",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 198328
+},
+{
+"f": 202,
+"lane": "flycast",
+"epoch": 1725056434.0,
+"stamp": "2024-08-30 22:20:34 +0000",
+"approx": false,
+"commit": "9691fe96",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 198400
+},
+{
+"f": 203,
+"lane": "nullDCe",
+"epoch": 1727381790.0,
+"stamp": "2024-09-26 23:16:30 +0300",
+"approx": false,
+"commit": "bad8d6a9",
+"tags": null,
+"kinds": [
+"fork"
+],
+"lines": 64790
+},
+{
+"f": 204,
+"lane": "nullDCe",
+"epoch": 1727470098.0,
+"stamp": "2024-09-27 23:48:18 +0300",
+"approx": false,
+"commit": "c3e0c9bf",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 67970
+},
+{
+"f": 205,
+"lane": "flycast",
+"epoch": 1727620958.0,
+"stamp": "2024-09-29 16:42:38 +0200",
+"approx": false,
+"commit": "2dd4cbe3",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 198487
+},
+{
+"f": 206,
+"lane": "flycast",
+"epoch": 1729519980.0,
+"stamp": "2024-10-21 16:13:00 +0200",
+"approx": false,
+"commit": "8108e639",
+"tags": [
+"v2.4"
+],
+"kinds": [
+"tag"
+],
+"lines": 200020
+},
+{
+"f": 207,
+"lane": "flycast",
+"epoch": 1730219932.0,
+"stamp": "2024-10-29 17:38:52 +0100",
+"approx": false,
+"commit": "742090bb",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 200033
+},
+{
+"f": 208,
+"lane": "flycast",
+"epoch": 1732968413.0,
+"stamp": "2024-11-30 13:06:53 +0100",
+"approx": false,
+"commit": "b91f82c7",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 200033
+},
+{
+"f": 209,
+"lane": "nulldc3",
+"epoch": 1734036569.0,
+"stamp": "2024-12-12 20:49:29 +0000",
+"approx": false,
+"commit": "bc3ae0cb",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 146231
+},
+{
+"f": 210,
+"lane": "flycast",
+"epoch": 1735665727.0,
+"stamp": "2024-12-31 18:22:07 +0100",
+"approx": false,
+"commit": "e18ada72",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 201766
+},
+{
+"f": 211,
+"lane": "minicast",
+"epoch": 1737366971.0,
+"stamp": "2025-01-20 10:56:11 +0100",
+"approx": false,
+"commit": "580d7b86",
+"tags": null,
+"kinds": [
+"import"
+],
+"lines": 94780
+},
+{
+"f": 212,
+"lane": "minicast",
+"epoch": 1737450312.0,
+"stamp": "2025-01-21 11:05:12 +0200",
+"approx": false,
+"commit": "568f7405",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 100090
+},
+{
+"f": 213,
+"lane": "nulldc3",
+"epoch": 1737992026.0,
+"stamp": "2025-01-27 16:33:46 +0100",
+"approx": false,
+"commit": "47a2e2c2",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 149218
+},
+{
+"f": 214,
+"lane": "flycast",
+"epoch": 1738362031.0,
+"stamp": "2025-01-31 22:20:31 +0000",
+"approx": false,
+"commit": "431d71de",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 201791
+},
+{
+"f": 215,
+"lane": "nulldc3",
+"epoch": 1739904360.0,
+"stamp": "2025-02-18 18:46:00 +0000",
+"approx": false,
+"commit": "2d70c783",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 149219
+},
+{
+"f": 216,
+"lane": "flycast",
+"epoch": 1740781282.0,
+"stamp": "2025-02-28 22:21:22 +0000",
+"approx": false,
+"commit": "9e0573aa",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 205171
+},
+{
+"f": 217,
+"lane": "nulldc3",
+"epoch": 1742905873.0,
+"stamp": "2025-03-25 14:31:13 +0200",
+"approx": false,
+"commit": "02c07733",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 149238
+},
+{
+"f": 218,
+"lane": "flycast",
+"epoch": 1743156750.0,
+"stamp": "2025-03-28 11:12:30 +0100",
+"approx": false,
+"commit": "130675aa",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 205187
+},
+{
+"f": 219,
+"lane": "nulldc3",
+"epoch": 1743929485.0,
+"stamp": "2025-04-06 11:51:25 +0300",
+"approx": false,
+"commit": "4fb5d247",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 149244
+},
+{
+"f": 220,
+"lane": "flycast",
+"epoch": 1746024025.0,
+"stamp": "2025-04-30 16:40:25 +0200",
+"approx": false,
+"commit": "57cc7b4a",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 205920
+},
+{
+"f": 221,
+"lane": "flycast",
+"epoch": 1746554651.0,
+"stamp": "2025-05-06 20:04:11 +0200",
+"approx": false,
+"commit": "5f4eefab",
+"tags": [
+"v2.5"
+],
+"kinds": [
+"tag"
+],
+"lines": 206014
+},
+{
+"f": 223,
+"lane": "nulldc3",
+"epoch": 1748561810.0,
+"stamp": "2025-05-30 02:36:50 +0300",
+"approx": false,
+"commit": "aa461b9c",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 151489
+},
+{
+"f": 222,
+"lane": "flycast",
+"epoch": 1748643699.0,
+"stamp": "2025-05-30 22:21:39 +0000",
+"approx": false,
+"commit": "a1a782df",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 206100
+},
+{
+"f": 224,
+"lane": "flycast",
+"epoch": 1751062914.0,
+"stamp": "2025-06-27 22:21:54 +0000",
+"approx": false,
+"commit": "3f79b6ba",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 205818
+},
+{
+"f": 225,
+"lane": "nulldc3",
+"epoch": 1753904092.0,
+"stamp": "2025-07-30 22:34:52 +0300",
+"approx": false,
+"commit": "2fc0945d",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 151503
+},
+{
+"f": 226,
+"lane": "flycast",
+"epoch": 1756506049.0,
+"stamp": "2025-08-29 22:20:49 +0000",
+"approx": false,
+"commit": "0243f81c",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 205865
+},
+{
+"f": 227,
+"lane": "devtools",
+"epoch": 1760473711.0,
+"stamp": "2025-10-14 23:28:31 +0300",
+"approx": false,
+"commit": "aa789641",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 19470
+},
+{
+"f": 228,
+"lane": "flycast",
+"epoch": 1761043719.0,
+"stamp": "2025-10-21 12:48:39 +0200",
+"approx": false,
+"commit": "bf2bd7ef",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 210446
+},
+{
+"f": 229,
+"lane": "flycast",
+"epoch": 1763807676.0,
+"stamp": "2025-11-22 11:34:36 +0100",
+"approx": false,
+"commit": "1666eb08",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 211428
+},
+{
+"f": 230,
+"lane": "devtools",
+"epoch": 1763900795.0,
+"stamp": "2025-11-23 14:26:35 +0200",
+"approx": false,
+"commit": "fe56167f",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 21795
+},
+{
+"f": 231,
+"lane": "flycast",
+"epoch": 1767036015.0,
+"stamp": "2025-12-29 20:20:15 +0100",
+"approx": false,
+"commit": "4886dcb1",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 211962
+},
+{
+"f": 232,
+"lane": "flycast",
+"epoch": 1767792512.0,
+"stamp": "2026-01-07 14:28:32 +0100",
+"approx": false,
+"commit": "392a429e",
+"tags": [
+"v2.6"
+],
+"kinds": [
+"tag"
+],
+"lines": 211965
+},
+{
+"f": 233,
+"lane": "nullDC4Wii",
+"epoch": 1768987965.0,
+"stamp": "2026-01-21 10:32:45 +0100",
+"approx": false,
+"commit": "e812c582",
+"tags": null,
+"kinds": [
+"import"
+],
+"lines": 64790
+},
+{
+"f": 234,
+"lane": "nullDC4Wii",
+"epoch": 1769010916.0,
+"stamp": "2026-01-21 16:55:16 +0100",
+"approx": false,
+"commit": "3b4c3985",
+"tags": [
+"nulldc"
+],
+"kinds": [
+"tag"
+],
+"lines": 65876
+},
+{
+"f": 235,
+"lane": "nullDC4Wii",
+"epoch": 1769084898.0,
+"stamp": "2026-01-22 13:28:18 +0100",
+"approx": false,
+"commit": "6478d633",
+"tags": [
+"0.02"
+],
+"kinds": [
+"tag"
+],
+"lines": 49518
+},
+{
+"f": 236,
+"lane": "nullDC4Wii",
+"epoch": 1769344954.0,
+"stamp": "2026-01-25 13:42:34 +0100",
+"approx": false,
+"commit": "c8ba2953",
+"tags": [
+"alpha0.03"
+],
+"kinds": [
+"tag"
+],
+"lines": 49599
+},
+{
+"f": 237,
+"lane": "flycast",
+"epoch": 1769594373.0,
+"stamp": "2026-01-28 10:59:33 +0100",
+"approx": false,
+"commit": "21eb24f8",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 212043
+},
+{
+"f": 238,
+"lane": "nullDC4Wii",
+"epoch": 1769869629.0,
+"stamp": "2026-01-31 15:27:09 +0100",
+"approx": false,
+"commit": "bed0ebbe",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 50290
+},
+{
+"f": 239,
+"lane": "nullDC4Wii",
+"epoch": 1770201457.0,
+"stamp": "2026-02-04 11:37:37 +0100",
+"approx": false,
+"commit": "a5ab0f1c",
+"tags": [
+"alpha0.04"
+],
+"kinds": [
+"tag"
+],
+"lines": 50307
+},
+{
+"f": 240,
+"lane": "nullDC4Wii",
+"epoch": 1771187294.0,
+"stamp": "2026-02-15 21:28:14 +0100",
+"approx": false,
+"commit": "8c74682a",
+"tags": [
+"alpha0.05"
+],
+"kinds": [
+"tag"
+],
+"lines": 43030
+},
+{
+"f": 241,
+"lane": "flycast",
+"epoch": 1772230955.0,
+"stamp": "2026-02-27 22:22:35 +0000",
+"approx": false,
+"commit": "94e9b349",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 217096
+},
+{
+"f": 242,
+"lane": "nullDC4Wii",
+"epoch": 1772303817.0,
+"stamp": "2026-02-28 19:36:57 +0100",
+"approx": false,
+"commit": "7ae82b6c",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 42128
+},
+{
+"f": 243,
+"lane": "nullDC4Wii",
+"epoch": 1772364932.0,
+"stamp": "2026-03-01 12:35:32 +0100",
+"approx": false,
+"commit": "59ef5bc0",
+"tags": [
+"alpha0.06"
+],
+"kinds": [
+"tag"
+],
+"lines": 42128
+},
+{
+"f": 244,
+"lane": "nullDC4Wii",
+"epoch": 1772733164.0,
+"stamp": "2026-03-05 18:52:44 +0100",
+"approx": false,
+"commit": "01434d96",
+"tags": [
+"alpha0.07"
+],
+"kinds": [
+"tag"
+],
+"lines": 53420
+},
+{
+"f": 245,
+"lane": "nullDC4Wii",
+"epoch": 1773098667.0,
+"stamp": "2026-03-10 00:24:27 +0100",
+"approx": false,
+"commit": "f5fbb30c",
+"tags": [
+"alpha0.08"
+],
+"kinds": [
+"tag"
+],
+"lines": 53076
+},
+{
+"f": 246,
+"lane": "nullDC4Wii",
+"epoch": 1773346728.0,
+"stamp": "2026-03-12 21:18:48 +0100",
+"approx": false,
+"commit": "84ef6ed4",
+"tags": [
+"alpha0.09"
+],
+"kinds": [
+"tag"
+],
+"lines": 53106
+},
+{
+"f": 247,
+"lane": "nullDC4Wii",
+"epoch": 1773563682.0,
+"stamp": "2026-03-15 09:34:42 +0100",
+"approx": false,
+"commit": "0740bbf3",
+"tags": [
+"alpha0.10"
+],
+"kinds": [
+"tag"
+],
+"lines": 53035
+},
+{
+"f": 248,
+"lane": "nullDC4Wii",
+"epoch": 1773571784.0,
+"stamp": "2026-03-15 11:49:44 +0100",
+"approx": false,
+"commit": "1ac7a182",
+"tags": [
+"alpha0.11"
+],
+"kinds": [
+"tag"
+],
+"lines": 53049
+},
+{
+"f": 249,
+"lane": "nullDC4Wii",
+"epoch": 1773782774.0,
+"stamp": "2026-03-17 22:26:14 +0100",
+"approx": false,
+"commit": "b1272ee1",
+"tags": [
+"alpha0.12"
+],
+"kinds": [
+"tag"
+],
+"lines": 53135
+},
+{
+"f": 250,
+"lane": "nullDC4Wii",
+"epoch": 1773967503.0,
+"stamp": "2026-03-20 01:45:03 +0100",
+"approx": false,
+"commit": "299015e5",
+"tags": [
+"alpha0.13"
+],
+"kinds": [
+"tag"
+],
+"lines": 53156
+},
+{
+"f": 251,
+"lane": "nullDC4Wii",
+"epoch": 1774908663.0,
+"stamp": "2026-03-31 00:11:03 +0200",
+"approx": false,
+"commit": "f7c70c37",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 54282
+},
+{
+"f": 252,
+"lane": "flycast",
+"epoch": 1774962608.0,
+"stamp": "2026-03-31 15:10:08 +0200",
+"approx": false,
+"commit": "a5f4ec63",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 215481
+},
+{
+"f": 253,
+"lane": "nullDC4Wii",
+"epoch": 1775037240.0,
+"stamp": "2026-04-01 11:54:00 +0200",
+"approx": false,
+"commit": "a3595ca3",
+"tags": [
+"alpha0.14"
+],
+"kinds": [
+"tag"
+],
+"lines": 54551
+},
+{
+"f": 254,
+"lane": "nullDC4Wii",
+"epoch": 1775088832.0,
+"stamp": "2026-04-02 02:13:52 +0200",
+"approx": false,
+"commit": "ddf26202",
+"tags": [
+"alpha0.15"
+],
+"kinds": [
+"tag"
+],
+"lines": 54627
+},
+{
+"f": 255,
+"lane": "nullDC4Wii",
+"epoch": 1775129878.0,
+"stamp": "2026-04-02 13:37:58 +0200",
+"approx": false,
+"commit": "940db51d",
+"tags": [
+"alpha0.16"
+],
+"kinds": [
+"tag"
+],
+"lines": 54704
+},
+{
+"f": 256,
+"lane": "nullDC4Wii",
+"epoch": 1775298458.0,
+"stamp": "2026-04-04 12:27:38 +0200",
+"approx": false,
+"commit": "8a0dea30",
+"tags": [
+"alpha0.17"
+],
+"kinds": [
+"tag"
+],
+"lines": 54933
+},
+{
+"f": 257,
+"lane": "nullDC4Wii",
+"epoch": 1775904693.0,
+"stamp": "2026-04-11 12:51:33 +0200",
+"approx": false,
+"commit": "c6fedcf8",
+"tags": [
+"alpha0.18"
+],
+"kinds": [
+"tag"
+],
+"lines": 55058
+},
+{
+"f": 258,
+"lane": "nullDC4Wii",
+"epoch": 1776968850.0,
+"stamp": "2026-04-23 20:27:30 +0200",
+"approx": false,
+"commit": "3c1c144d",
+"tags": [
+"alpha0.19"
+],
+"kinds": [
+"tag"
+],
+"lines": 55321
+},
+{
+"f": 259,
+"lane": "flycast",
+"epoch": 1777069657.0,
+"stamp": "2026-04-24 22:27:37 +0000",
+"approx": false,
+"commit": "acb4966f",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 215487
+},
+{
+"f": 260,
+"lane": "nullDC4Wii",
+"epoch": 1777071057.0,
+"stamp": "2026-04-25 00:50:57 +0200",
+"approx": false,
+"commit": "955ae48a",
+"tags": [
+"alpha0.20"
+],
+"kinds": [
+"tag"
+],
+"lines": 55425
+},
+{
+"f": 261,
+"lane": "nullDC4Wii",
+"epoch": 1777581446.0,
+"stamp": "2026-04-30 22:37:26 +0200",
+"approx": false,
+"commit": "f0fa2c21",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 55540
+},
+{
+"f": 262,
+"lane": "nullDC4Wii",
+"epoch": 1777592174.0,
+"stamp": "2026-05-01 01:36:14 +0200",
+"approx": false,
+"commit": "22c299d6",
+"tags": [
+"alpha0.21"
+],
+"kinds": [
+"tag"
+],
+"lines": 55540
+},
+{
+"f": 263,
+"lane": "nulldc3",
+"epoch": 1778427026.0,
+"stamp": "2026-05-10 17:30:26 +0200",
+"approx": false,
+"commit": "a1944d60",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 151564
+},
+{
+"f": 264,
+"lane": "nullDC4Wii",
+"epoch": 1778671356.0,
+"stamp": "2026-05-13 13:22:36 +0200",
+"approx": false,
+"commit": "b4ad2544",
+"tags": [
+"alpha0.22"
+],
+"kinds": [
+"tag"
+],
+"lines": 55567
+},
+{
+"f": 265,
+"lane": "nullDC4Wii",
+"epoch": 1779050392.0,
+"stamp": "2026-05-17 22:39:52 +0200",
+"approx": false,
+"commit": "f1626611",
+"tags": [
+"alpha0.23"
+],
+"kinds": [
+"tag"
+],
+"lines": 57105
+},
+{
+"f": 266,
+"lane": "flycast",
+"epoch": 1780094647.0,
+"stamp": "2026-05-29 22:44:07 +0000",
+"approx": false,
+"commit": "8492a4e5",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 216990
+},
+{
+"f": 267,
+"lane": "nullDC4Wii",
+"epoch": 1780264266.0,
+"stamp": "2026-05-31 23:51:06 +0200",
+"approx": false,
+"commit": "9a41fb0a",
+"tags": [
+"alpha0.24"
+],
+"kinds": [
+"tag"
+],
+"lines": 57499
+},
+{
+"f": 268,
+"lane": "nullDC4Wii",
+"epoch": 1780442095.0,
+"stamp": "2026-06-03 01:14:55 +0200",
+"approx": false,
+"commit": "119a924e",
+"tags": [
+"alpha0.25"
+],
+"kinds": [
+"tag"
+],
+"lines": 57581
+},
+{
+"f": 269,
+"lane": "nullDC4Wii",
+"epoch": 1781045718.0,
+"stamp": "2026-06-10 00:55:18 +0200",
+"approx": false,
+"commit": "0ec330d9",
+"tags": [
+"alpha0.26"
+],
+"kinds": [
+"tag"
+],
+"lines": 57915
+},
+{
+"f": 270,
+"lane": "nullDC4Wii",
+"epoch": 1781104898.0,
+"stamp": "2026-06-10 17:21:38 +0200",
+"approx": false,
+"commit": "e7f3675c",
+"tags": [
+"alpha0.27"
+],
+"kinds": [
+"tag"
+],
+"lines": 58807
+},
+{
+"f": 271,
+"lane": "nullDC4Wii",
+"epoch": 1781123682.0,
+"stamp": "2026-06-10 22:34:42 +0200",
+"approx": false,
+"commit": "3fee51fb",
+"tags": [
+"alpha0.28"
+],
+"kinds": [
+"tag"
+],
+"lines": 59203
+},
+{
+"f": 272,
+"lane": "nullDC4Wii",
+"epoch": 1781806324.0,
+"stamp": "2026-06-18 20:12:04 +0200",
+"approx": false,
+"commit": "2baa412f",
+"tags": [
+"alpha0.29"
+],
+"kinds": [
+"tag"
+],
+"lines": 59730
+},
+{
+"f": 273,
+"lane": "nullDC4Wii",
+"epoch": 1782076429.0,
+"stamp": "2026-06-21 23:13:49 +0200",
+"approx": false,
+"commit": "d8354c29",
+"tags": [
+"alpha0.30"
+],
+"kinds": [
+"tag"
+],
+"lines": 60110
+},
+{
+"f": 274,
+"lane": "nullDC4Wii",
+"epoch": 1782226330.0,
+"stamp": "2026-06-23 16:52:10 +0200",
+"approx": false,
+"commit": "c82a953f",
+"tags": [
+"alpha0.31"
+],
+"kinds": [
+"tag"
+],
+"lines": 60148
+},
+{
+"f": 275,
+"lane": "nulldc3",
+"epoch": 1782255265.0,
+"stamp": "2026-06-24 01:54:25 +0300",
+"approx": false,
+"commit": "dec138bc",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 156750
+},
+{
+"f": 276,
+"lane": "nullDC4Wii",
+"epoch": 1782375192.0,
+"stamp": "2026-06-25 10:13:12 +0200",
+"approx": false,
+"commit": "1fb55e41",
+"tags": [
+"alpha0.32"
+],
+"kinds": [
+"tag"
+],
+"lines": 60218
+},
+{
+"f": 277,
+"lane": "nullDC4Wii",
+"epoch": 1782415444.0,
+"stamp": "2026-06-25 21:24:04 +0200",
+"approx": false,
+"commit": "0b052774",
+"tags": [
+"alpha0.33"
+],
+"kinds": [
+"tag"
+],
+"lines": 60501
+},
+{
+"f": 278,
+"lane": "nullDC4Wii",
+"epoch": 1782485195.0,
+"stamp": "2026-06-26 16:46:35 +0200",
+"approx": false,
+"commit": "b9207021",
+"tags": [
+"alpha0.34"
+],
+"kinds": [
+"tag"
+],
+"lines": 60658
+},
+{
+"f": 279,
+"lane": "nullDC4Wii",
+"epoch": 1782505710.0,
+"stamp": "2026-06-26 22:28:30 +0200",
+"approx": false,
+"commit": "78ae9548",
+"tags": [
+"alpha0.35"
+],
+"kinds": [
+"tag"
+],
+"lines": 60698
+},
+{
+"f": 280,
+"lane": "flycast",
+"epoch": 1782513585.0,
+"stamp": "2026-06-26 22:39:45 +0000",
+"approx": false,
+"commit": "7ec978e8",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 217032
+},
+{
+"f": 281,
+"lane": "nullDC4Wii",
+"epoch": 1782582257.0,
+"stamp": "2026-06-27 19:44:17 +0200",
+"approx": false,
+"commit": "6c0eda26",
+"tags": [
+"alpha0.36"
+],
+"kinds": [
+"tag"
+],
+"lines": 61000
+},
+{
+"f": 282,
+"lane": "nullDC4Wii",
+"epoch": 1782656348.0,
+"stamp": "2026-06-28 16:19:08 +0200",
+"approx": false,
+"commit": "68684313",
+"tags": [
+"alpha0.37",
+"alpha0.37wince"
+],
+"kinds": [
+"tag"
+],
+"lines": 61101
+},
+{
+"f": 283,
+"lane": "nullDC4Wii",
+"epoch": 1782772938.0,
+"stamp": "2026-06-30 00:42:18 +0200",
+"approx": false,
+"commit": "38834f00",
+"tags": [
+"alpha0.38"
+],
+"kinds": [
+"tag"
+],
+"lines": 61092
+},
+{
+"f": 284,
+"lane": "nullDC4Wii",
+"epoch": 1782850310.0,
+"stamp": "2026-06-30 22:11:50 +0200",
+"approx": false,
+"commit": "8bb026dd",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 61160
+},
+{
+"f": 285,
+"lane": "nullDC4Wii",
+"epoch": 1782916933.0,
+"stamp": "2026-07-01 16:42:13 +0200",
+"approx": false,
+"commit": "0759ebee",
+"tags": [
+"alpha0.39"
+],
+"kinds": [
+"tag"
+],
+"lines": 61277
+},
+{
+"f": 286,
+"lane": "nullDC4Wii",
+"epoch": 1783097364.0,
+"stamp": "2026-07-03 18:49:24 +0200",
+"approx": false,
+"commit": "21a6ca9e",
+"tags": [
+"alpha0.40"
+],
+"kinds": [
+"tag"
+],
+"lines": 60922
+},
+{
+"f": 287,
+"lane": "nullDC4Wii",
+"epoch": 1783336690.0,
+"stamp": "2026-07-06 13:18:10 +0200",
+"approx": false,
+"commit": "0f064f7b",
+"tags": [
+"alpha0.41"
+],
+"kinds": [
+"tag"
+],
+"lines": 61906
+},
+{
+"f": 288,
+"lane": "nullDC4Wii",
+"epoch": 1783442969.0,
+"stamp": "2026-07-07 18:49:29 +0200",
+"approx": false,
+"commit": "84583d83",
+"tags": [
+"alpha0.42"
+],
+"kinds": [
+"tag"
+],
+"lines": 67436
+},
+{
+"f": 289,
+"lane": "nullDC4Wii",
+"epoch": 1783447488.0,
+"stamp": "2026-07-07 20:04:48 +0200",
+"approx": false,
+"commit": "37f7ba12",
+"tags": [
+"alpha0.43"
+],
+"kinds": [
+"tag"
+],
+"lines": 67521
+},
+{
+"f": 290,
+"lane": "nullDC4Wii",
+"epoch": 1783449939.0,
+"stamp": "2026-07-07 20:45:39 +0200",
+"approx": false,
+"commit": "84fe0db6",
+"tags": [
+"alpha0.44"
+],
+"kinds": [
+"tag"
+],
+"lines": 67706
+},
+{
+"f": 291,
+"lane": "nullDC4Wii",
+"epoch": 1783608911.0,
+"stamp": "2026-07-09 16:55:11 +0200",
+"approx": false,
+"commit": "15928ea3",
+"tags": [
+"alpha0.45"
+],
+"kinds": [
+"tag"
+],
+"lines": 67785
+},
+{
+"f": 292,
+"lane": "nullDC4Wii",
+"epoch": 1783727852.0,
+"stamp": "2026-07-11 01:57:32 +0200",
+"approx": false,
+"commit": "24ff2782",
+"tags": [
+"alpha0.46"
+],
+"kinds": [
+"tag"
+],
+"lines": 68057
+},
+{
+"f": 293,
+"lane": "nullDC4Wii",
+"epoch": 1783776247.0,
+"stamp": "2026-07-11 15:24:07 +0200",
+"approx": false,
+"commit": "59fd43ad",
+"tags": [
+"alpha0.47"
+],
+"kinds": [
+"tag"
+],
+"lines": 68383
+},
+{
+"f": 294,
+"lane": "nullDC4Wii",
+"epoch": 1783816378.0,
+"stamp": "2026-07-12 02:32:58 +0200",
+"approx": false,
+"commit": "ae9288b6",
+"tags": [
+"alpha0.48"
+],
+"kinds": [
+"tag"
+],
+"lines": 68756
+},
+{
+"f": 295,
+"lane": "nullDC4Wii",
+"epoch": 1783898655.0,
+"stamp": "2026-07-13 01:24:15 +0200",
+"approx": false,
+"commit": "6683aa94",
+"tags": [
+"alpha0.49"
+],
+"kinds": [
+"tag"
+],
+"lines": 68917
+},
+{
+"f": 296,
+"lane": "nullDC4Wii",
+"epoch": 1783902284.0,
+"stamp": "2026-07-13 02:24:44 +0200",
+"approx": false,
+"commit": "ec3c34d3",
+"tags": [
+"alpha0.50"
+],
+"kinds": [
+"tag"
+],
+"lines": 71506
+},
+{
+"f": 297,
+"lane": "nullDC4Wii",
+"epoch": 1784046891.0,
+"stamp": "2026-07-14 18:34:51 +0200",
+"approx": false,
+"commit": "bd614f22",
+"tags": [
+"alpha0.51"
+],
+"kinds": [
+"tag"
+],
+"lines": 71644
+},
+{
+"f": 298,
+"lane": "nullDC4Wii",
+"epoch": 1784212007.0,
+"stamp": "2026-07-16 16:26:47 +0200",
+"approx": false,
+"commit": "fe2f17d3",
+"tags": [
+"alpha0.52"
+],
+"kinds": [
+"tag"
+],
+"lines": 71989
+},
+{
+"f": 299,
+"lane": "nullDC4Wii",
+"epoch": 1784216845.0,
+"stamp": "2026-07-16 17:47:25 +0200",
+"approx": false,
+"commit": "7fb93e8c",
+"tags": [
+"alpha0.53"
+],
+"kinds": [
+"tag"
+],
+"lines": 72116
+},
+{
+"f": 305,
+"lane": "polly2",
+"epoch": 1784274574.0,
+"stamp": "2026-07-17 10:49:34 +0300",
+"approx": false,
+"commit": "be391dbb",
+"tags": [
+"DreamSTer r1"
+],
+"kinds": [
+"pin"
+],
+"lines": 23497
+},
+{
+"f": 302,
+"lane": "minicast",
+"epoch": 1784282183.0,
+"stamp": "2026-07-17 12:56:23 +0300",
+"approx": false,
+"commit": "697f5658",
+"tags": [
+"DreamSTer r1"
+],
+"kinds": [
+"pin"
+],
+"lines": 102999
+},
+{
+"f": 306,
+"lane": "polly2",
+"epoch": 1784286785.0,
+"stamp": "2026-07-17 14:13:05 +0300",
+"approx": false,
+"commit": "7a70d245",
+"tags": [
+"DreamSTer r2"
+],
+"kinds": [
+"pin"
+],
+"lines": 23583
+},
+{
+"f": 303,
+"lane": "minicast",
+"epoch": 1784290314.0,
+"stamp": "2026-07-17 15:11:54 +0300",
+"approx": false,
+"commit": "6fcc0e1d",
+"tags": [
+"DreamSTer r2",
+"DreamSTer r2b"
+],
+"kinds": [
+"pin"
+],
+"lines": 102973
+},
+{
+"f": 307,
+"lane": "polly2",
+"epoch": 1784293864.0,
+"stamp": "2026-07-17 16:11:04 +0300",
+"approx": false,
+"commit": "635ec791",
+"tags": [
+"DreamSTer r2b"
+],
+"kinds": [
+"pin"
+],
+"lines": 23880
+},
+{
+"f": 300,
+"lane": "nullDC4Wii",
+"epoch": 1784301993.0,
+"stamp": "2026-07-17 17:26:33 +0200",
+"approx": false,
+"commit": "7f2d51ee",
+"tags": [
+"alpha0.54"
+],
+"kinds": [
+"tag"
+],
+"lines": 73020
+},
+{
+"f": 304,
+"lane": "polly2",
+"epoch": 1784307801.0,
+"stamp": "2026-07-17 20:03:21 +0300",
+"approx": false,
+"commit": "436372f4",
+"tags": [
+"DreamSTer r3"
+],
+"kinds": [
+"pin"
+],
+"lines": 24210
+},
+{
+"f": 301,
+"lane": "minicast",
+"epoch": 1784308037.0,
+"stamp": "2026-07-17 20:07:17 +0300",
+"approx": false,
+"commit": "585205bc",
+"tags": [
+"DreamSTer r3"
+],
+"kinds": [
+"pin"
+],
+"lines": 102977
+},
+{
+"f": 309,
+"lane": "polly2",
+"epoch": 1784334829.0,
+"stamp": "2026-07-18 03:33:49 +0300",
+"approx": false,
+"commit": "c22506c4",
+"tags": [
+"DreamSTer r4",
+"DreamSTer r5"
+],
+"kinds": [
+"pin"
+],
+"lines": 25052
+},
+{
+"f": 308,
+"lane": "minicast",
+"epoch": 1784339871.0,
+"stamp": "2026-07-18 04:57:51 +0300",
+"approx": false,
+"commit": "0998288e",
+"tags": [
+"DreamSTer r4",
+"DreamSTer r5"
+],
+"kinds": [
+"pin"
+],
+"lines": 103264
+},
+{
+"f": 310,
+"lane": "nullDC4Wii",
+"epoch": 1784469138.0,
+"stamp": "2026-07-19 15:52:18 +0200",
+"approx": false,
+"commit": "df92b476",
+"tags": [
+"alpha0.55"
+],
+"kinds": [
+"tag"
+],
+"lines": 73252
+},
+{
+"f": 311,
+"lane": "nullDC4Wii",
+"epoch": 1784509332.0,
+"stamp": "2026-07-20 03:02:12 +0200",
+"approx": false,
+"commit": "41272b77",
+"tags": [
+"alpha0.56"
+],
+"kinds": [
+"tag"
+],
+"lines": 73607
+},
+{
+"f": 312,
+"lane": "nullDC4Wii",
+"epoch": 1784595882.0,
+"stamp": "2026-07-21 03:04:42 +0200",
+"approx": false,
+"commit": "8533dab4",
+"tags": [
+"alpha0.57"
+],
+"kinds": [
+"tag"
+],
+"lines": 73618
+},
+{
+"f": 314,
+"lane": "nullDC4Wii",
+"epoch": 1784678696.0,
+"stamp": "2026-07-22 02:04:56 +0200",
+"approx": false,
+"commit": "496c1e6f",
+"tags": [
+"alpha0.58"
+],
+"kinds": [
+"tag"
+],
+"lines": 75028
+},
+{
+"f": 313,
+"lane": "nullDC4Wii",
+"epoch": 1784752928.0,
+"stamp": "2026-07-22 22:42:08 +0200",
+"approx": false,
+"commit": "43dd99a0",
+"tags": [
+"alpha0.59"
+],
+"kinds": [
+"tag"
+],
+"lines": 75553
+},
+{
+"f": 315,
+"lane": "nullDC4Wii",
+"epoch": 1784794725.0,
+"stamp": "2026-07-23 10:18:45 +0200",
+"approx": false,
+"commit": "c3641874",
+"tags": [
+"alpha0.60"
+],
+"kinds": [
+"tag"
+],
+"lines": 76686
+},
+{
+"f": 316,
+"lane": "nullDC4Wii",
+"epoch": 1784887584.0,
+"stamp": "2026-07-24 12:06:24 +0200",
+"approx": false,
+"commit": "2d32393b",
+"tags": [
+"alpha0.61"
+],
+"kinds": [
+"tag"
+],
+"lines": 77230
+},
+{
+"f": 317,
+"lane": "nullDC4Wii",
+"epoch": 1785105387.0,
+"stamp": "2026-07-27 00:36:27 +0200",
+"approx": false,
+"commit": "793926a2",
+"tags": [
+"alpha0.62"
+],
+"kinds": [
+"tag"
+],
+"lines": 78173
+},
+{
+"f": 320,
+"lane": "polly2",
+"epoch": 1785409607.0,
+"stamp": "2026-07-30 14:06:47 +0300",
+"approx": false,
+"commit": "a37f92cb",
+"tags": [
+"DreamSTer r6"
+],
+"kinds": [
+"pin"
+],
+"lines": 30754
+},
+{
+"f": 318,
+"lane": "nullDC4Wii",
+"epoch": 1785415297.0,
+"stamp": "2026-07-30 14:41:37 +0200",
+"approx": false,
+"commit": "94734eb9",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 78188
+},
+{
+"f": 319,
+"lane": "minicast",
+"epoch": 1785435865.0,
+"stamp": "2026-07-30 21:24:25 +0300",
+"approx": false,
+"commit": "450eb491",
+"tags": [
+"DreamSTer r6"
+],
+"kinds": [
+"month",
+"pin"
+],
+"lines": 107802
+},
+{
+"f": 322,
+"lane": "polly2",
+"epoch": 1785472622.0,
+"stamp": "2026-07-31 07:37:02 +0300",
+"approx": false,
+"commit": "49c3b2ff",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 30776
+},
+{
+"f": 321,
+"lane": "flycast",
+"epoch": 1785539653.0,
+"stamp": "2026-07-31 23:14:13 +0000",
+"approx": false,
+"commit": "d4fc0774",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 220178
+},
+{
+"f": 323,
+"lane": "minicast",
+"epoch": 1785563559.0,
+"stamp": "2026-08-01 08:52:39 +0300",
+"approx": false,
+"commit": "934b374f",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 107802
+},
+{
+"f": 324,
+"lane": "polly2",
+"epoch": 1785732868.0,
+"stamp": "2026-08-03 07:54:28 +0300",
+"approx": false,
+"commit": "602651d4",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 31028
+},
+{
+"f": 325,
+"lane": "flycast",
+"epoch": 1786747058.0,
+"stamp": "2026-08-14 22:37:38 +0000",
+"approx": false,
+"commit": "5aa091fd",
+"tags": [
+"v2.7"
+],
+"kinds": [
+"tag"
+],
+"lines": 220178
+},
+{
+"f": 326,
+"lane": "nullDC4Wii",
+"epoch": 1787334662.0,
+"stamp": "2026-08-21 19:51:02 +0200",
+"approx": false,
+"commit": "b4b2347f",
+"tags": [
+"alpha0.63"
+],
+"kinds": [
+"tag"
+],
+"lines": 78872
+},
+{
+"f": 327,
+"lane": "nullDC4Wii",
+"epoch": 1787702562.0,
+"stamp": "2026-08-26 02:02:42 +0200",
+"approx": false,
+"commit": "bbd294d7",
+"tags": [
+"alpha0.64"
+],
+"kinds": [
+"tag"
+],
+"lines": 80320
+},
+{
+"f": 328,
+"lane": "nullDC4Wii",
+"epoch": 1788135209.0,
+"stamp": "2026-08-31 02:13:29 +0200",
+"approx": false,
+"commit": "92a10d1e",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 80961
+},
+{
+"f": 329,
+"lane": "flycast",
+"epoch": 1788157021.0,
+"stamp": "2026-08-31 08:17:01 +0200",
+"approx": false,
+"commit": "149e651d",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 220184
+},
+{
+"f": 330,
+"lane": "nullDC4Wii",
+"epoch": 1788275334.0,
+"stamp": "2026-09-01 17:08:54 +0200",
+"approx": false,
+"commit": "992a0721",
+"tags": [
+"alpha0.65"
+],
+"kinds": [
+"tag"
+],
+"lines": 81842
+},
+{
+"f": 331,
+"lane": "nullDC4Wii",
+"epoch": 1788437079.0,
+"stamp": "2026-09-03 14:04:39 +0200",
+"approx": false,
+"commit": "7cb66501",
+"tags": [
+"alpha0.66"
+],
+"kinds": [
+"tag"
+],
+"lines": 82629
+},
+{
+"f": 332,
+"lane": "nullDC4Wii",
+"epoch": 1788520746.0,
+"stamp": "2026-09-04 13:19:06 +0200",
+"approx": false,
+"commit": "00f245de",
+"tags": [
+"alpha0.67"
+],
+"kinds": [
+"tag"
+],
+"lines": 83803
+},
+{
+"f": 333,
+"lane": "polly2",
+"epoch": 1788695503.0,
+"stamp": "2026-09-06 14:51:43 +0300",
+"approx": false,
+"commit": "52339afc",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 34834
+},
+{
+"f": 334,
+"lane": "nullDC4Wii",
+"epoch": 1788741037.0,
+"stamp": "2026-09-07 02:30:37 +0200",
+"approx": false,
+"commit": "59497275",
+"tags": [
+"alpha0.68"
+],
+"kinds": [
+"tag"
+],
+"lines": 85211
+},
+{
+"f": 335,
+"lane": "nullDC4Wii",
+"epoch": 1788792712.0,
+"stamp": "2026-09-07 16:51:52 +0200",
+"approx": false,
+"commit": "52cce566",
+"tags": [
+"alpha0.69",
+"alpha0.695"
+],
+"kinds": [
+"tag"
+],
+"lines": 85675
+},
+{
+"f": 336,
+"lane": "nullDC4Wii",
+"epoch": 1788827337.0,
+"stamp": "2026-09-08 02:28:57 +0200",
+"approx": false,
+"commit": "3cf688ab",
+"tags": [
+"alpha0.70"
+],
+"kinds": [
+"tag"
+],
+"lines": 86700
+},
+{
+"f": 337,
+"lane": "nullDC4Wii",
+"epoch": 1788907987.0,
+"stamp": "2026-09-09 00:53:07 +0200",
+"approx": false,
+"commit": "b11b2c35",
+"tags": [
+"alpha0.71"
+],
+"kinds": [
+"tag"
+],
+"lines": 88121
+},
+{
+"f": 338,
+"lane": "nullDC4Wii",
+"epoch": 1789067250.0,
+"stamp": "2026-09-10 21:07:30 +0200",
+"approx": false,
+"commit": "68d4bda7",
+"tags": [
+"alpha0.72"
+],
+"kinds": [
+"tag"
+],
+"lines": 89234
+},
+{
+"f": 339,
+"lane": "nullDC4Wii",
+"epoch": 1789079427.0,
+"stamp": "2026-09-11 00:30:27 +0200",
+"approx": false,
+"commit": "2ea208c4",
+"tags": [
+"alpha0.725"
+],
+"kinds": [
+"tag"
+],
+"lines": 89246
+},
+{
+"f": 340,
+"lane": "nullDC4Wii",
+"epoch": 1789229763.0,
+"stamp": "2026-09-12 18:16:03 +0200",
+"approx": false,
+"commit": "68251270",
+"tags": [
+"alpha0.73"
+],
+"kinds": [
+"tag"
+],
+"lines": 90511
+},
+{
+"f": 341,
+"lane": "nullDC4Wii",
+"epoch": 1789419122.0,
+"stamp": "2026-09-14 22:52:02 +0200",
+"approx": false,
+"commit": "2c94d65f",
+"tags": [
+"alpha0.74"
+],
+"kinds": [
+"tag"
+],
+"lines": 92350
+},
+{
+"f": 342,
+"lane": "nullDC4Wii",
+"epoch": 1789677261.0,
+"stamp": "2026-09-17 22:34:21 +0200",
+"approx": false,
+"commit": "f2c04528",
+"tags": [
+"alpha0.75"
+],
+"kinds": [
+"tag"
+],
+"lines": 93018
+},
+{
+"f": 343,
+"lane": "nullDC4Wii",
+"epoch": 1789694955.0,
+"stamp": "2026-09-18 03:29:15 +0200",
+"approx": false,
+"commit": "96595061",
+"tags": null,
+"kinds": [
+"fork"
+],
+"lines": 93066
+},
+{
+"f": 344,
+"lane": "nullDC4Wii",
+"epoch": 1789734863.0,
+"stamp": "2026-09-18 14:34:23 +0200",
+"approx": false,
+"commit": "4f29abd5",
+"tags": [
+"alpha0.76"
+],
+"kinds": [
+"tag"
+],
+"lines": 93321
+},
+{
+"f": 345,
+"lane": "nullDC4Wii",
+"epoch": 1789820707.0,
+"stamp": "2026-09-19 14:25:07 +0200",
+"approx": false,
+"commit": "d20e7615",
+"tags": [
+"alpha0.77"
+],
+"kinds": [
+"tag"
+],
+"lines": 94456
+},
+{
+"f": 346,
+"lane": "NotDC-PS3",
+"epoch": 1789846135.0,
+"stamp": "2026-09-19 21:28:55 +0200",
+"approx": false,
+"commit": "5a32b94b",
+"tags": null,
+"kinds": [
+"import"
+],
+"lines": 100497
+},
+{
+"f": 347,
+"lane": "nullDC4Wii",
+"epoch": 1789918507.0,
+"stamp": "2026-09-20 17:35:07 +0200",
+"approx": false,
+"commit": "8f0f1a4c",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 96469
+},
+{
+"f": 348,
+"lane": "NotDC-PS3",
+"epoch": 1790188437.0,
+"stamp": "2026-09-23 20:33:57 +0200",
+"approx": false,
+"commit": "24873d02",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 110344
+},
+{
+"f": 351,
+"lane": "wren7",
+"epoch": 1790231025.0,
+"stamp": "2026-09-24 09:23:45 +0300",
+"approx": false,
+"commit": "2c430b4d",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 5461
+},
+{
+"f": 349,
+"lane": "caique",
+"epoch": 1790257950.0,
+"stamp": "2026-09-24 16:52:30 +0300",
+"approx": false,
+"commit": "5aa2376b",
+"tags": null,
+"kinds": [
+"fork"
+],
+"lines": 26608
+},
+{
+"f": 350,
+"lane": "caique",
+"epoch": 1790280608.0,
+"stamp": "2026-09-24 23:10:08 +0300",
+"approx": false,
+"commit": "ec916b1b",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 30412
+},
+{
+"f": 352,
+"lane": "shrike4",
+"epoch": 1790518181.0,
+"stamp": "2026-09-27 17:09:41 +0300",
+"approx": false,
+"commit": "99b2d642",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 18594
+},
+{
+"f": 353,
+"lane": "flycast",
+"epoch": 1790596146.0,
+"stamp": "2026-09-28 13:49:06 +0200",
+"approx": false,
+"commit": "e36e9df2",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 220562
+},
+{
+"f": 354,
+"lane": "nullDC4Wii",
+"epoch": 1792067477.0,
+"stamp": "2026-10-15 14:31:17 +0200",
+"approx": false,
+"commit": "ee0cec24",
+"tags": [
+"alpha0.78"
+],
+"kinds": [
+"tag"
+],
+"lines": 96469
+},
+{
+"f": 355,
+"lane": "NotDC-PS3",
+"epoch": 1792341110.0,
+"stamp": "2026-10-18 18:31:50 +0200",
+"approx": false,
+"commit": "60576d26",
+"tags": [
+"0.8"
+],
+"kinds": [
+"tag"
+],
+"lines": 108148
+},
+{
+"f": 356,
+"lane": "nullDC4Wii",
+"epoch": 1792365684.0,
+"stamp": "2026-10-19 01:21:24 +0200",
+"approx": false,
+"commit": "c58d5556",
+"tags": [
+"alpha0.79"
+],
+"kinds": [
+"tag"
+],
+"lines": 98203
+},
+{
+"f": 357,
+"lane": "NotDC-PS3",
+"epoch": 1792369393.0,
+"stamp": "2026-10-19 02:23:13 +0200",
+"approx": false,
+"commit": "d785f628",
+"tags": [
+"0.8.1"
+],
+"kinds": [
+"tag"
+],
+"lines": 108148
+},
+{
+"f": 361,
+"lane": "polly2",
+"epoch": 1792845004.0,
+"stamp": "2026-10-24 15:30:04 +0300",
+"approx": false,
+"commit": "95fc3ba0",
+"tags": [
+"DreamSTer r6b"
+],
+"kinds": [
+"pin"
+],
+"lines": 35127
+},
+{
+"f": 360,
+"lane": "polly2",
+"epoch": 1792845047.0,
+"stamp": "2026-10-24 15:30:47 +0300",
+"approx": false,
+"commit": "2806e9fc",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 35127
+},
+{
+"f": 358,
+"lane": "NotDC-PS3",
+"epoch": 1792847916.0,
+"stamp": "2026-10-24 15:18:36 +0200",
+"approx": false,
+"commit": "97baf9e2",
+"tags": [
+"0.8.2"
+],
+"kinds": [
+"tag"
+],
+"lines": 107061
+},
+{
+"f": 359,
+"lane": "minicast",
+"epoch": 1792855321.0,
+"stamp": "2026-10-24 18:22:01 +0300",
+"approx": false,
+"commit": "9185ab88",
+"tags": [
+"DreamSTer r6b"
+],
+"kinds": [
+"month",
+"pin"
+],
+"lines": 109370
+},
+{
+"f": 362,
+"lane": "devtools",
+"epoch": 1792868057.0,
+"stamp": "2026-10-24 21:54:17 +0300",
+"approx": false,
+"commit": "42231c6f",
+"tags": [
+"v3.0.0-pre"
+],
+"kinds": [
+"month",
+"tag"
+],
+"lines": 73195
+},
+{
+"f": 363,
+"lane": "nullDC4Wii",
+"epoch": 1792928313.0,
+"stamp": "2026-10-25 12:38:33 +0100",
+"approx": false,
+"commit": "7b3d5918",
+"tags": [
+"alpha0.800"
+],
+"kinds": [
+"tag"
+],
+"lines": 99592
+},
+{
+"f": 364,
+"lane": "nulldc3",
+"epoch": 1792961145.0,
+"stamp": "2026-10-25 22:45:45 +0200",
+"approx": false,
+"commit": "4e773df2",
+"tags": [
+"v3.0.0-pre"
+],
+"kinds": [
+"month",
+"tag"
+],
+"lines": 233307
+},
+{
+"f": 365,
+"lane": "NotDC-PS3",
+"epoch": 1793313844.0,
+"stamp": "2026-10-29 23:44:04 +0100",
+"approx": false,
+"commit": "3be774c1",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 108023
+},
+{
+"f": 367,
+"lane": "flycast",
+"epoch": 1793410415.0,
+"stamp": "2026-10-31 01:33:35 +0000",
+"approx": false,
+"commit": "7adbf3ca",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 221166
+},
+{
+"f": 366,
+"lane": "nullDC4Wii",
+"epoch": 1793455768.0,
+"stamp": "2026-10-31 15:09:28 +0100",
+"approx": false,
+"commit": "ef0d3f9f",
+"tags": [
+"alpha0.801"
+],
+"kinds": [
+"month",
+"tag"
+],
+"lines": 100249
+},
+{
+"f": 368,
+"lane": "shrike4",
+"epoch": 1793455932.0,
+"stamp": "2026-10-31 16:12:12 +0200",
+"approx": false,
+"commit": "5843f0cc",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 184852
+},
+{
+"f": 371,
+"lane": "wren7",
+"epoch": 1793530215.0,
+"stamp": "2026-11-01 12:50:15 +0200",
+"approx": false,
+"commit": "95988ea4",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 6970
+},
+{
+"f": 370,
+"lane": "caique",
+"epoch": 1793549306.0,
+"stamp": "2026-11-01 18:08:26 +0200",
+"approx": false,
+"commit": "2d9898f3",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 32197
+},
+{
+"f": 369,
+"lane": "NotDC-PS3",
+"epoch": 1793551819.0,
+"stamp": "2026-11-01 17:50:19 +0100",
+"approx": false,
+"commit": "5d81924e",
+"tags": [
+"0.8.3"
+],
+"kinds": [
+"month",
+"tag"
+],
+"lines": 108526
+},
+{
+"f": 372,
+"lane": "nullDC4Wii",
+"epoch": 1794069424.0,
+"stamp": "2026-11-07 17:37:04 +0100",
+"approx": false,
+"commit": "75d4ab5a",
+"tags": [
+"alpha0.802"
+],
+"kinds": [
+"tag"
+],
+"lines": 100457
+},
+{
+"f": 373,
+"lane": "nullDC4Wii",
+"epoch": 1794392955.0,
+"stamp": "2026-11-11 11:29:15 +0100",
+"approx": false,
+"commit": "54ab40fc",
+"tags": [
+"alpha0.803"
+],
+"kinds": [
+"tag"
+],
+"lines": 103782
+},
+{
+"f": 374,
+"lane": "nullDC4Wii",
+"epoch": 1794509564.0,
+"stamp": "2026-11-12 19:52:44 +0100",
+"approx": false,
+"commit": "ae081591",
+"tags": [
+"alpha0.804"
+],
+"kinds": [
+"tag"
+],
+"lines": 104008
+},
+{
+"f": 375,
+"lane": "nullDC4Wii",
+"epoch": 1794601855.0,
+"stamp": "2026-11-13 21:30:55 +0100",
+"approx": false,
+"commit": "1df14e49",
+"tags": [
+"alpha0.805"
+],
+"kinds": [
+"tag"
+],
+"lines": 107594
+},
+{
+"f": 376,
+"lane": "nullDC4Wii",
+"epoch": 1795049904.0,
+"stamp": "2026-11-19 01:58:24 +0100",
+"approx": false,
+"commit": "ad015e23",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 104405
+},
+{
+"f": 377,
+"lane": "nulldc3",
+"epoch": 1795172306.0,
+"stamp": "2026-11-20 12:58:26 +0200",
+"approx": false,
+"commit": "4f3efe15",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 244109
+},
+{
+"f": 378,
+"lane": "dreamcast-tests",
+"epoch": 1795172382.0,
+"stamp": "2026-11-20 12:59:42 +0200",
+"approx": false,
+"commit": "a9329805",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 59942
+},
+{
+"f": 379,
+"lane": "polly2-r8",
+"epoch": 1795290330.0,
+"stamp": "2026-11-21 21:45:30 +0200",
+"approx": false,
+"commit": "3800f9fe",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 29501
+},
+{
+"f": 380,
+"lane": "flycast",
+"epoch": 1795359046.0,
+"stamp": "2026-11-22 15:50:46 +0100",
+"approx": false,
+"commit": "105342d5",
+"tags": null,
+"kinds": [
+"month"
+],
+"lines": 221230
+}
+]

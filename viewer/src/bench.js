@@ -57,6 +57,22 @@ export function initBench(V) {
     return { ms, renderer: V.RENDERER, cam: V.cam.p, X: V.X, stats: { draws: V.stats.draws, inst: V.stats.inst, walls: V.load.walls } };
   };
 
+  // ---- video stills (tools/verify/run.mjs seq): one frame's wall, whole, in Clock mode at that frame
+  V.framesByDate = () => F.frames.map((fr, i) => [fr.date || '', i]).filter(([, i]) => W[i]).sort((a, b) => a[0].localeCompare(b[0]) || a[1] - b[1]).map(([, i]) => i);
+  V.showFrame = async (f) => {
+    if (!V.load.meta) await new Promise(r => V.on('meta', r));
+    V.fixedQuality = true; V.setQualityStep(0); V.flight = null; V.setMarks(null); V.attract && V.attract.stop();
+    document.getElementById('caption').classList.add('hidden');
+    const w = W[f]; V.soloFrame = f; V.presMode = 'clock'; V.setPlaying(false); V.setX(w.x + 1, { follow: false });
+    await V.ensureWall(f, 60000);
+    // straight on, centred, the wall (z0 .. z0 + cols * 128 wide, 0 .. 4300 high) at 90 % of the tighter screen dimension
+    const th = Math.tan(V.FOV / 2), asp = innerWidth / innerHeight, wid = w.cols * 128, hgt = 4300;
+    const dist = Math.max(hgt / 2 / th, wid / 2 / (th * asp)) / 0.9;
+    V.cam.p = [w.x - dist, hgt / 2, w.z0 + wid / 2]; V.setLook([1, 0, 0]);
+    await V.whenReady({ timeout: 90000 }); await wait(250);
+    const fr = F.frames[f]; return { f, lane: fr.lane, date: fr.date, commit: fr.commit, tags: fr.tags || null };
+  };
+
   // ---- scripted paths
   async function pathA() {   // a famous file through the frames that hold it (gallery)
     const it = (V.attract.items || []).find(i => i.kind === 'file' && /interpreter/.test(i.title)) || V.attract.items.find(i => i.kind === 'file');

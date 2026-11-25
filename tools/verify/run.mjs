@@ -113,6 +113,18 @@ try {
     }
     fs.writeFileSync(path.join(OUT, `shots-${tag}.json`), JSON.stringify({ size: [VW, VH], views: res, logs: b.logs.slice(-30) }, null, 1));
     if (b.logs.length) console.log(b.logs.slice(-10).join('\n'));
+  } else if (cmd === 'seq') {   // seq --dir OUT [--order FILE] [--from N] [--to M]: video stills, every frame by date -> OUT/00000.png + OUT/frames.json
+    const dir = path.resolve(opt('dir')); fs.mkdirSync(dir, { recursive: true });
+    await open(b, '?shots=1&clean=1&tour=0' + (process.env.EXTRA || ''));
+    const order = opt('order', false) ? JSON.parse(fs.readFileSync(path.resolve(opt('order')))).map(r => r.f) : await b.evalJS('window.viewer.framesByDate()');   // --order FILE: [{f}, ...]
+    const from = +opt('from', 0), to = Math.min(order.length, +opt('to', order.length)), meta = [];
+    for (let k = from; k < to; k++) {
+      const info = await b.evalJS(`window.viewer.showFrame(${order[k]})`, 180000);
+      const shot = await b.send('Page.captureScreenshot', { format: 'png' });
+      fs.writeFileSync(path.join(dir, String(k).padStart(5, '0') + '.png'), Buffer.from(shot.data, 'base64'));
+      meta.push({ k, ...info }); console.log(k, info.lane, info.date);
+    }
+    fs.writeFileSync(path.join(dir, `frames-${from}-${to}.json`), JSON.stringify(meta, null, 1));
   } else if (cmd === 'eval') {   // eval --js FILE (an async function body; `V` is the viewer) [--shot NAME]
     await open(b, '?shots=1' + (process.env.EXTRA || ''));
     await b.evalJS('window.viewer.whenReady({timeout: 90000})');

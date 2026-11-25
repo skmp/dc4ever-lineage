@@ -17,3 +17,9 @@ agents/viewer2/.chrome-*
 agents/viewer2/mkatlas
 agents/viewer2/*.wav
 agents/viewer2/score/*.wav
+agents/**/.chrome-*
+agents/video/stills*/
+agents/video/*.mp4
+agents/video/*.wav
+agents/video/*.log
+agents/attract/shards/
