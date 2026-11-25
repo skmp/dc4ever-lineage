@@ -1,0 +1,324 @@
+{
+ "dropped": [
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    371544,
+    11,
+    371545,
+    371546,
+    371547,
+    371548,
+    371549,
+    371550,
+    371551
+   ],
+   "title": "Why 0xDEADC0D3 had to die",
+   "note": "nullDC4Wii: unmapped reads returned 0xDEADC0D3; a game added an offset and wrote to 0xDEADE5F3"
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    445197,
+    445198,
+    445199,
+    445200,
+    445201,
+    445202,
+    445203,
+    445204,
+    445205,
+    445206,
+    445207,
+    445208,
+    445209,
+    445210,
+    445211
+   ],
+   "title": "pack(4), not pack(1): Broadway's load-hit-store",
+   "note": "Wii PowerPC: pack(1) made every TA float bounce through the stack, a load-hit-store stall per read"
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    566671,
+    566672,
+    566673,
+    566133,
+    566674,
+    566675,
+    566676,
+    566677,
+    566678,
+    566679,
+    566680,
+    566681,
+    566682,
+    566683,
+    566684,
+    566685,
+    566686
+   ],
+   "title": "IDLE_KAMUI: skipping the Kamui2 vsync wait",
+   "note": "Detects the Kamui2 vsync wait loop at compile time; on PS3, Ikaruga went from 77.2% to 87.3% speed"
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    413915,
+    413916,
+    413917,
+    413918,
+    413919,
+    413920,
+    413921,
+    413922,
+    413923
+   ],
+   "title": "RENDER_DELAY: why MvC2 needs slow interrupts",
+   "note": "Raising TA/render IRQs instantly breaks MvC2's frame pacing, so the delays copy real hardware timing"
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    441342,
+    441343,
+    441344,
+    441345,
+    441346,
+    441347,
+    441348,
+    441349,
+    441350,
+    441351
+   ],
+   "title": "Dreamcast RAM written over IOS's buffers",
+   "note": "MEM2 bump allocs ran past Arena2Hi; whether a USB drive was mounted decided if a game died"
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    566689,
+    566690,
+    566691,
+    566692,
+    566693,
+    566694,
+    566695,
+    566696,
+    566697,
+    566698,
+    566699,
+    566700,
+    566701,
+    566702,
+    566703,
+    566704
+   ],
+   "title": "IDLE_SHINOBI: paying off the idle task's debt",
+   "note": "A JIT rule spots the Shinobi library's idle task walk; PS3 tests took Garou fights to 60 fps"
+  }
+ ],
+ "added": [
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    762151,
+    762152,
+    762153,
+    495555,
+    762154,
+    762155,
+    762156,
+    762157
+   ],
+   "title": "Why the VMU saves came out empty",
+   "note": "Wii U port: devices are set up twice, so a file held open made the second open fail and saves were 0 bytes"
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    762206,
+    762207,
+    762208,
+    762209,
+    27781,
+    762210,
+    762211,
+    2926,
+    371582,
+    371583,
+    1013
+   ],
+   "title": "64-bit reads: which word goes first",
+   "note": "Swapped words in 64-bit fmov copies turned the BIOS soft-reset code into garbage (MvC2 after game over)"
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    762687,
+    762688,
+    762689,
+    762690,
+    762691,
+    762692,
+    762693,
+    762694,
+    762695
+   ],
+   "title": "Slower and lower instead of stuttering",
+   "note": "Wii U sound bends its resampling to the emulator's real speed; stop-and-restart at ~76% was unbearable"
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    738234,
+    738235,
+    738236,
+    738237,
+    738238,
+    738239,
+    738240,
+    738241,
+    738242,
+    738243,
+    738244,
+    738245,
+    738246,
+    738247,
+    738248,
+    738249,
+    738250,
+    738251,
+    738252
+   ],
+   "title": "HarissaDC writes its own flash",
+   "note": "No Sega BIOS: the HLE BIOS formats the flash, writes '00000Dreamcast' and counts the clock from 1950"
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    738615,
+    738616,
+    738617,
+    738618,
+    738619,
+    738620,
+    738621,
+    738622,
+    738623,
+    738624,
+    738625,
+    738626,
+    11,
+    738627,
+    738628,
+    738629,
+    738630,
+    738631,
+    738632,
+    738633,
+    738634,
+    738635,
+    738636,
+    738637,
+    738638,
+    738639,
+    738640,
+    738641,
+    738642,
+    738643
+   ],
+   "title": "Booting with no BIOS",
+   "note": "HarissaDC's HLE BIOS points the system call vectors at traps and sets the SH4 registers by hand"
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    624947,
+    624948,
+    624949,
+    624950,
+    624951,
+    624952,
+    624953
+   ],
+   "title": "Sprite atlases and the 0xDEADBEEF sentinel",
+   "note": "Texture caches checked one sentinel word; SF3 and Guilty Gear redraw atlas tiles, so stale tiles stayed"
+  }
+ ],
+ "notes": [
+  {
+   "old": "Early nullDC plugin header vents at MSVC warnings; the outburst still ships in 9 lineages",
+   "new": "Early nullDC plugin header vents at MSVC warnings; the outburst still ships in 10 lineages"
+  },
+  {
+   "old": "nullDC's AICA register map pads out to the far registers; the comment reached 9 lineages, even TS devtools",
+   "new": "nullDC's AICA register map pads out to the far registers; the comment reached 10 lineages, even TS devtools"
+  },
+  {
+   "old": "Keeping x86 and SH4 float rounding modes in sync: a trick early nullDC used, still in 9 lineages",
+   "new": "Keeping x86 and SH4 float rounding modes in sync: a trick early nullDC used, still in 10 lineages"
+  },
+  {
+   "old": "Above a list of Holly error interrupt bits, nullDC asks whether some are missing; still asked in 9 lineages",
+   "new": "Above a list of Holly error interrupt bits, nullDC asks whether some are missing; still asked in 10 lineages"
+  },
+  {
+   "old": "GD-ROM ATA soft reset: the DRV bit is preserved, and nobody knows what it does. Same line in 7 lineages",
+   "new": "GD-ROM ATA soft reset: the DRV bit is preserved, and nobody knows what it does. Same line in 8 lineages"
+  },
+  {
+   "old": "End of the Logitech G-series block inside the maple device code; from nullDCe 2009, now in 7 lineages",
+   "new": "End of the Logitech G-series block inside the maple device code; from nullDCe 2009, now in 8 lineages"
+  },
+  {
+   "old": "Config docs still use \"nullDC v1.0.0 Private Beta 2\" as the example version string, in 7 lineages",
+   "new": "Config docs still use \"nullDC v1.0.0 Private Beta 2\" as the example version string, in 8 lineages"
+  },
+  {
+   "old": "No internet and bored, so AICA HLE work began. This line lived on in 5 lineages, NotDC-PS3 among them",
+   "new": "No internet and bored, so AICA HLE work began. This line lived on in 6 lineages, NotDC-PS3 among them"
+  },
+  {
+   "old": "Early nullDC wonders if a decoded switch list would be much faster. Asked again in 6 lineages",
+   "new": "Early nullDC wonders if a decoded switch list would be much faster. Asked again in 7 lineages"
+  },
+  {
+   "old": "Maple DMA: 'kinda wrong .. but meh'. Held in 267 snapshots, from nullDCe to flycast",
+   "new": "Maple DMA: 'kinda wrong .. but meh'. Held in 272 snapshots, from nullDCe to flycast"
+  },
+  {
+   "old": "AICA hack found in Roadsters (also Toy cmd): 'too tired to debug'. 2005-2008 code, kept in five lineages",
+   "new": "AICA hack found in Roadsters (also Toy cmd): 'too tired to debug'. 2005-2008 code, kept in six lineages"
+  },
+  {
+   "old": "Inside the drkPvr TA FIFO splitter: early nullDC venting at C++, kept in 5 lineages",
+   "new": "Inside the drkPvr TA FIFO splitter: early nullDC venting at C++, kept in 6 lineages"
+  },
+  {
+   "old": "TA polygon strips split across FIFO writes, from pre-2008 drkPvr, shared by four lineages",
+   "new": "TA polygon strips split across FIFO writes, from pre-2008 drkPvr, shared by five lineages"
+  },
+  {
+   "old": "MDS image reader: don't load the whole file before checking, 'can be deadly for .nrg/.iso'. In 4 lineages",
+   "new": "MDS image reader: don't load the whole file before checking, 'can be deadly for .nrg/.iso'. In 5 lineages"
+  },
+  {
+   "old": "'hack Katana wait': EmptyAICA fakes a value games wait on (found in Roadsters, Toy Cmd). 5 lineages",
+   "new": "'hack Katana wait': EmptyAICA fakes a value games wait on (found in Roadsters, Toy Cmd). 6 lineages"
+  }
+ ]
+}

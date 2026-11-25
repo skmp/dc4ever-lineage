@@ -1,0 +1,2257 @@
+##### u300 nullDC4WiiU wiiu/present_gx2.cpp 38
+    GX2SetShaderMode(GX2_SHADER_MODE_UNIFORM_REGISTER);
+    GX2SetFetchShader(&geo.fetchShader);
+    GX2SetVertexShader(geo.vertexShader);
+    GX2SetPixelShader(geo.pixelShader);
+    if (u_screen_vs_loc != ~0u)
+        GX2SetVertexUniformReg(u_screen_vs_loc, 4, (u32 *)draw_screen);
+    if (u_screen_ps_loc != ~0u)
+        GX2SetPixelUniformReg(u_screen_ps_loc, 4, (u32 *)draw_screen);
+    GX2RSetAttributeBuffer(vbuf, 0, sizeof(GpuVertex), 0);
+    GX2SetPixelTexture(&tex, tex0_loc);
+    GX2SetPixelSampler(&sampler, tex0_loc);
+    GX2SetPixelTexture(&fog_tex, fog_table_loc);
+    GX2SetPixelSampler(&fog_sampler, fog_table_loc);
+    auto rgb = [](u32 c, float *v) { v[0] = ((c >> 16) & 0xFF) / 255.0f; v[1] = ((c >> 8) & 0xFF) / 255.0f; v[2] = (c & 0xFF) / 255.0f; };
+    float fc[3], fv[3];
+    rgb(fog_col_ram, fc);
+    rgb(fog_col_vert, fv);
+    set_uniform(u_fog_col_loc, fc[0], fc[1], fc[2], 1.0f);
+    set_uniform(u_fog_vcol_loc, fv[0], fv[1], fv[2], 1.0f);
+    auto argb = [](u32 c, float *v) { v[0] = ((c >> 16) & 0xFF) / 255.0f; v[1] = ((c >> 8) & 0xFF) / 255.0f; v[2] = (c & 0xFF) / 255.0f; v[3] = (c >> 24) / 255.0f; };
+    float cmin[4], cmax[4];
+    argb(fog_clamp_min, cmin);
+    argb(fog_clamp_max, cmax);
+    set_uniform(u_clamp_min_loc, cmin[0], cmin[1], cmin[2], cmin[3]);
+    set_uniform(u_clamp_max_loc, cmax[0], cmax[1], cmax[2], cmax[3]);
+    GX2SetCullOnlyControl(GX2_FRONT_FACE_CCW, FALSE, FALSE);
+    // depth starts at 0 (far): written by the full-screen quad (depth 0), s
+##### u301 nullDC4WiiU wiiu/render_gx2.cpp 36
+    // barycentric weights of each corner against the triangle, extended over its whole plane
+    float den = (t[1].y - t[2].y) * (t[0].x - t[2].x) + (t[2].x - t[1].x) * (t[0].y - t[2].y);
+    if (den == 0.0f)
+        den = 1e-6f;
+    // the corners of the canvas, or of the window a render-to-texture pass writes
+    const float cw = build->rtt ? (float)build->rtt_w : build->canvas_w, ch = build->rtt ? (float)build->rtt_h : build->canvas_h;
+    const float corner[4][2] = { { 0, 0 }, { 0, ch }, { cw, 0 }, { cw, ch } };
+    WiiuStrip st;
+    st.first = 0;   // set when it's appended after the decoded geometry
+    st.count = 4;
+    st.list = WIIU_LIST_BACKGROUND;
+    st.clip = 0;
+    PCW pcw; pcw.full = 0;
+    pcw.Texture = isp.Texture;
+    pcw.Offset = isp.Offset;
+    st.pcw = pcw.full;
+    st.isp = isp.full;
+    st.tsp = tsp.full;
+    st.tcw = tcw.full;
+    for (u32 i = 0; i < 4; i++)
+    {
+        const float px = corner[i][0], py = corner[i][1];
+        const float w0 = ((t[1].y - t[2].y) * (px - t[2].x) + (t[2].x - t[1].x) * (py - t[2].y)) / den;
+        const float w1 = ((t[2].y - t[0].y) * (px - t[2].x) + (t[0].x - t[2].x) * (py - t[2].y)) / den;
+        const float w2 = 1.0f - w0 - w1;
+        auto lerp = [&](float a, float b, float c) { return a * w0 + b * w1 + c * w2; };
+        auto byte = [&](float a, float b, float c) { float f = lerp(a, b, c); return f <= 0 ? 0u : f >= 255 ? 255u : (u32)f; };
+        WiiuVertex &v = build->bg_v[i];
+        v.x = px;
+        v.y = py
+##### u302 nullDC4WiiU wiiu/texture_gx2.cpp 28
+    memset(&e.tex, 0, sizeof(e.tex));
+    e.tex.surface.width = w;
+    e.tex.surface.height = h;
+    e.tex.surface.depth = 1;
+    e.tex.surface.mipLevels = levels;
+    e.tex.surface.dim = GX2_SURFACE_DIM_TEXTURE_2D;
+    e.tex.surface.format = GX2_SURFACE_FORMAT_UNORM_R8_G8_B8_A8;
+    e.tex.surface.tileMode = GX2_TILE_MODE_LINEAR_ALIGNED;
+    e.tex.viewNumSlices = 1;
+    e.tex.viewNumMips = levels;
+    e.tex.compMap = 0x00010203;
+    GX2CalcSurfaceSizeAndAlignment(&e.tex.surface);
+    GX2InitTextureRegs(&e.tex);
+    // plain memory, written from either core: the mip chain follows the base level at mipLevelOffset[0]
+    GX2Surface &sf = e.tex.surface;
+    e.bytes = levels > 1 ? sf.mipLevelOffset[0] + sf.mipmapSize : sf.imageSize;
+    sf.image = MEMAllocFromDefaultHeapEx(e.bytes, sf.alignment);
+    sf.mipmaps = levels > 1 && sf.image ? (u8 *)sf.image + sf.mipLevelOffset[0] : nullptr;
+    e.valid = sf.image != nullptr;
+    e.img[0] = sf.image;
+    e.img[1] = e.img[2] = e.img[3] = nullptr;
+    e.cur = 0;
+    e.fresh_decode = true;
+    e.scene_mark = ~0u;
+    // an entry without memory is drawn untextured (white): say so, a few times
+    static u32 failures;
+    if (!e.valid && failures++ < 8)
+        printf("[tex] no memory for a %ux%u texture (%u levels, %u bytes), %u failures so far\n", w, h, levels, e.bytes,
+##### u303 nullDC4WiiU wiiu/wiiu_frame.h 25
+    WiiuVertex v[WIIU_MAX_VERTICES];
+    WiiuStrip s[WIIU_MAX_STRIPS];
+    u32 nv, ns;
+    float max_invw;
+    WiiuMvVertex mv[WIIU_MAX_MV_TRIS * 3];
+    WiiuModVol mp[WIIU_MAX_MV_PARAMS];
+    u32 n_mv_tris, n_mp;
+    u32 fpu_shad_scale;   // bit 8: volumes shade (intensity in bits 7..0) rather than select a second parameter set
+    u32 isp_feed_cfg;   // bit 0: translucent polygons come pre-sorted
+    // render to texture (FB_W_SOF1 bit 24): the frame's pixels go to VRAM at rtt_addr (64-bit texture layout) in
+    // FB_W_CTRL's format, rtt_stride bytes per line, instead of to the screen
+    u32 rtt, rtt_addr, rtt_ctrl, rtt_stride, rtt_w, rtt_h;
+    // the screen-space canvas the geometry was submitted in: 640x480, or as the video mode and scalers make it
+    float canvas_w, canvas_h;
+    // fog state at StartRender
+    u16 fog_table[128];
+    u32 fog_col_ram, fog_col_vert, fog_clamp_min, fog_clamp_max;
+    float fog_density;
+    // The TA blocks as the game sent them since its list init, and the list continue / soft reset register
+    // writes among them (before block ta_ev[i].at). The emulator thread only collects these (decoding them there
+    // would take a large share of its time); wiiu_ta_decode turns them into v, s, mv and mp above.
+    u32 ta[WIIU_MAX_TA_BLOCKS][8] __attribute__((aligned(32)));   // one cache line each (wiiu_ta_input)
+    u32 n_ta;
+    struct { u32 at, what; } ta_ev[WIIU_MAX_TA_EVENTS];
+    u32 n_ta_ev;
+##### u304 nullDC4WiiU wiiu/picker_wiiu.cpp 24
+    { "render", "3D resolution",
+      "640x480 is the Dreamcast's own: half the GPU work, so heavy 3D games (Soulcalibur) show more frames, a "
+      "little softer.", sizes, 2, 0 },
+    { "slow_sound", "Sound when slow",
+      "When a game runs below full speed, its sound either slows down with it (smooth, lower pitch) or keeps "
+      "its pitch (short gaps).", slow_sound, 2, 1 },
+    // the console-tested speed settings (main_wiiu.cpp's defaults); wiiu.cfg still overrides any of them
+    { "gfx_core", "Graphics on own core",
+      "Graphics on a core of its own, away from the emulated CPU: the biggest speedup (Soulcalibur fights 97% to "
+      "131%). Next start.", on_off, 2, 0 },
+    { "sound_core", "Sound on own core",
+      "Sound mixing on a core of its own: about 12% faster. Turn it off if sounds or music go missing (the "
+      "Dreamcast chime, streamed music). Next start.", on_off, 2, 0 },
+    { "jit_fast", "Faster CPU code",
+      "Speedups in the emulated CPU's translated code (memory addressing, vector maths, block lookup, store "
+      "queue). Turn it off if a game behaves oddly. Next start.", on_off, 2, 0 },
+    { "smooth", "Smooth frames",
+      "Lets two finished frames wait to be shown, so fewer are dropped when frames arrive in bursts. Adds one "
+      "frame of delay. Next start.", on_off, 2, 0 },
+    { "code_check", "Reloaded code check",
+      "Catches games that load new code over old (fixes Marvel vs. Capcom 2's crash in attract mode). Costs "
+     
+##### u305 nullDC4WiiU wiiu/picker_wiiu.cpp 24
+    static std::string data_dir;
+    data_dir = home;
+    while (data_dir.size() > 1 && data_dir.back() == '/')
+        data_dir.pop_back();
+    static const char *const exts[] = { "gdi", "cdi", "mds", "elf", nullptr };
+    static const char *const skip[] = { "data", nullptr };
+    static const picker_entry extras[] = { { "Dreamcast menu (no disc): memory cards, settings", "" } };
+    static picker_cfg cfg;
+    cfg.app_name = "nullDC";
+    cfg.content_noun = "disc";
+    cfg.data_dir = data_dir.c_str();
+    cfg.content_default = data_dir.c_str();   // discs sit in folders of their own under the data folder
+    cfg.exts = exts;
+    cfg.scan_depth = 2;
+    cfg.skip_dirs = skip;
+    cfg.extras = extras;
+    cfg.n_extras = 1;
+    // the Dreamcast BIOS is what other emulators call the core's system files: without it nothing boots
+    static std::string bios_help, warning;
+    bios_help = "Dreamcast BIOS: dc_boot.bin and dc_flash.bin in " + data_dir + "/data/. Memory cards A1-D2 are "
+                "vmu_save_*.bin there too; the Dreamcast menu's File screen copies and deletes saves.";
+    cfg.help_extra = bios_help.c_str();
+    std::string boot = data_dir + "/data/dc_boot.bin";
+    if (FILE *f = fopen(boot.c_str(), "rb"))
+##### u306 nullDC4WiiU wiiu/present_gx2.cpp 22
+static WHBGfxShaderGroup group, geo;
+struct GpuVertex { float x, y, z, w; u32 col, spc; float u, v; };
+// four frame slots (vertices, indices, scene): one the GPU draws, up to two ready, one the intake thread fills
+static const int SLOTS = 4;
+static GX2RBuffer geo_buf[SLOTS], rtt_buf;
+// each strip as an indexed triangle list (convert_frame), so draw_scene can send a run of strips with the same
+// state as one draw (Soulcalibur has ~3000 strips a frame: one draw each is too many for 60 Hz)
+static const u32 IDX_MAX = WIIU_MAX_VERTICES * 3;
+static GX2RBuffer idx_buf[SLOTS], rtt_idx_buf;
+static struct GpuVertex *slot_v[SLOTS];
+static u32 *slot_i[SLOTS];
+static u32 strip_idx[WIIU_MAX_STRIPS];   // a strip's first index; it has (count - 2) * 3
+static u16 draw_strip_tex[WIIU_MAX_STRIPS];   // the committed scene's strip -> texture table index
+static GX2Texture *draw_tex;                  // and its table (inside the scene, which isn't rewritten while drawn)
+static GX2Texture white_tex;                  // for a textured strip whose texture didn't fit (drawn white)
+static u32 draw_calls, draw_strips;      // for the perf report: how well strips batch
+enum { BRK_CLIP, BRK_TEX, BRK_SMP, BRK_DEPTH, BRK_CULL, BRK_BLEND, BRK_MODE, BRK_SHADE, BRK_CLAMP, BRK_GAP, BRK_COUNT };
+static u32 run_breaks[BRK_COUNT];        // what ended each run of strips
+static u32 strip_idx_owner;              // which index buffer strip_idx[] describes (its address), and how many
+static u32 strip_idx_count;   
+##### u307 nullDC4WiiU wiiu/present_gx2.cpp 23
+    const u32 w = f->rtt_w < RTT_MAX ? f->rtt_w : RTT_MAX, h = f->rtt_h < RTT_MAX ? f->rtt_h : RTT_MAX;
+    // built and drawn here, holding the builders' lock throughout: the intake thread can't change the texture
+    // cache under it, and the GPU is done with the scene before anyone else builds
+    OSFastMutex_Lock(&decode_lock);
+    build_scene(f, (GpuVertex *)GX2RLockBufferEx(&rtt_buf, (GX2RResourceFlags)0),
+                (u32 *)GX2RLockBufferEx(&rtt_idx_buf, (GX2RResourceFlags)0), (float)w, (float)h, &rtt_scene);
+    GX2RUnlockBufferEx(&rtt_buf, (GX2RResourceFlags)0);
+    GX2RUnlockBufferEx(&rtt_idx_buf, (GX2RResourceFlags)0);
+    invalidate_textures(rtt_scene);
+    committed = nullptr;
+    commit(&rtt_scene);
+    // everything the write-back needs, while the frame is certainly still ours
+    const RttTarget target = { f->rtt_addr, f->rtt_ctrl, f->rtt_stride, w, h };
+    OSFastMutex_Unlock(&frame_lock);
+
+    draw_scene(&rtt_color, &rtt_depth, w, h, &rtt_buf, &rtt_idx_buf, 32.0f, 32.0f);
+    GX2DrawDone();
+    OSFastMutex_Unlock(&decode_lock);
+    DCInvalidateRange(rtt_color.surface.image, rtt_color.surface.imageSize);
+    rtt_write_back(&target);
+    static u32 rtt_frames;
+    if (++rtt_frames == 1 || rtt_frames % 300 == 0)
+        printf("[gx2] render to texture %u: %ux%u to %06x, format %u, stride %u\n", rtt_frames, w, h, target.addr,
+##### u308 nullDC4WiiU wiiu/present_gx2.cpp 22
+    wiiu_gx2_stage = "begin render (vsync wait)";
+    const OSTime tb = OSGetSystemTime();
+    WHBGfxBeginRender();   // waits for the previous frame's flip
+    perf.flip += OSGetSystemTime() - tb;
+    perf_report();
+    // the intake thread built the newest frame's scene when it was published: draw that one
+    OSTime t = OSGetSystemTime(), t1;
+    const u32 seq_before = drawn_frame_seq;
+    wiiu_gx2_stage = "take 3D frame";
+    adopt_scene();
+    perf.convert += (t1 = OSGetSystemTime()) - t;
+    t = t1;
+    wiiu_gx2_stage = "render to texture";
+    process_rtt();
+    perf.rtt += (t1 = OSGetSystemTime()) - t;
+    t = t1;
+    perf.vsyncs++;
+    if (drawn_frame_seq != seq_before)
+        perf.new_frames++;
+    const bool show_3d = have_3d && wiiu_vblanks - last_3d_vblank < 60;
+    fb_wanted = !show_3d;
+    static u32 converted_seq;
+##### u309 nullDC4WiiU wiiu/shaders/geo.frag 22
+#version 330
+in vec4 v_col;
+in vec4 v_spc;
+flat in vec4 f_col;
+flat in vec4 f_spc;
+in vec2 v_uv;
+in float v_w;
+in float v_iw;
+out vec4 color;
+uniform sampler2D tex0;
+// 128 x 2 lookup-table fog: each entry's high byte in row 1, low byte in row 0
+uniform sampler2D fog_table;
+// x: textured, y: punch-through alpha reference (< 0 = no test), z: use vertex alpha, w: ignore texture alpha
+uniform vec4 u_mode;
+// x: TSP shading instruction (0 decal, 1 modulate, 2 decal alpha, 3 modulate alpha), y: TSP fog control
+// (0 table, 1 vertex, 2 none, 3 table mode 2), z: FOG_DENSITY, w: Gouraud shading (else flat)
+uniform vec4 u_shade;
+uniform vec4 u_fog_col;    // FOG_COL_RAM, for the table modes
+uniform vec4 u_fog_vcol;   // FOG_COL_VERT, for vertex fog
+uniform vec4 u_clamp_min;  // FOG_CLAMP_MIN and FOG_CLAMP_MAX: the final colour of polygons with TSP colour
+uniform vec4 u_clamp_max;  // clamping is limited to them (u_clamp_on.x)
+uniform vec4 u_clamp_on;
+##### u310 nullDC4WiiU wiiu/main_wiiu.cpp 22
+    load_wiiu_cfg();
+    if (wiiu_exp_gx2_core)
+    {
+        // exp_gx2_core (1: core 0, 2: core 2): GX2 lives on another thread, which does its init too, and this thread
+        // only runs ProcUI. It takes the GX2 thread's share off core 1, the JIT's core
+        static OSThread app;
+        const u32 size = 1024 * 1024;
+        u8 *stack = (u8 *)memalign(16, size);
+        OSCreateThread(&app, app_thread, 0, nullptr, stack + size, size, OSGetThreadPriority(OSGetCurrentThread()),
+                       wiiu_exp_gx2_core == 2 ? OS_THREAD_ATTRIB_AFFINITY_CPU2 : OS_THREAD_ATTRIB_AFFINITY_CPU0);
+        OSSetThreadName(&app, "nullDC GX2");
+        OSResumeThread(&app);
+        while (WHBProcIsRunning())
+            OSSleepTicks(OSMillisecondsToTicks(10));
+        proc_running = false;
+        printf("[wiiu] exit: ProcUI says exit\n");
+        // no OSJoinThread: if the GX2 thread doesn't finish, leave after 3 s anyway rather than stay stuck on the way
+        // back to the menu
+        for (int i = 0; i < 3000 && !app_done; i++)
+            OSSleepTicks(OSMillisecondsToTicks(1));
+        printf("[wiiu] exit: GX2 thread %s\n", app_done ? "finished" : "NOT FINISHED, leaving anyway");
+        WHBProcShutdown();
+##### u311 nullDC4WiiU wiiu/shaders/geo.vert 21
+#version 330
+// PVR polygons. The release build uses only clip mode (u_screen.x = 0); the others are kept for testing.
+// Clip mode: position is already in clip space (computed on the CPU from screen x/y and 1/w).
+// Screen mode (u_screen.x > 0.5, as Flycast): position is the screen position with w = 1 and the depth, a_pos.w
+// carries 1/w; colours and UVs are interpolated as value * 1/w and divided per pixel, so the GPU only clips flat
+// triangles, as the PVR draws them (near-camera vertices with screen coordinates in the millions, MvC2's sky).
+// Raw mode (u_screen.x 2, or 3 for half-range depth): a_pos is the TA's screen x, y and 1/w as decoded, and this
+// does the screen and depth scaling (u_screen.yzw: 2 / width, 2 / height, depth scale), not the CPU
+layout(location = 0) in vec4 a_pos;
+layout(location = 1) in vec4 a_col;
+layout(location = 2) in vec4 a_spc;
+layout(location = 3) in vec2 a_uv;
+uniform vec4 u_screen;
+out vec4 v_col;
+out vec4 v_spc;
+// the same colours unblended, for polygons without Gouraud shading (the last vertex of each triangle wins)
+flat out vec4 f_col;
+flat out vec4 f_spc;
+out vec2 v_uv;
+out float v_w;    // clip mode: W, the eye distance; perspective-correct interpolation of it gives the per-pixel value
+out float v_iw;   // screen mode: 1/W, interpolated linearly; the attributes above are pre-multiplied by it
+##### u312 nullDC4WiiU wiiu/audio_wiiu.cpp 20
+        AXVoiceBegin(voice[ch]);
+        AXSetVoiceType(voice[ch], 0);
+        AXVoiceVeData ve = { 0x8000, 0 };
+        AXSetVoiceVe(voice[ch], &ve);
+        // left voice to channel 0, right to channel 1, on the TV and the GamePad
+        AXVoiceDeviceMixData mix[6] = {};
+        mix[ch].bus[0].volume = 0x8000;
+        AXSetVoiceDeviceMix(voice[ch], AX_DEVICE_TYPE_TV, 0, mix);
+        AXSetVoiceDeviceMix(voice[ch], AX_DEVICE_TYPE_DRC, 0, mix);
+        AXVoiceOffsets o = {};
+        o.dataType = AX_VOICE_FORMAT_LPCM16;
+        o.loopingEnabled = AX_VOICE_LOOP_ENABLED;
+        o.loopOffset = 0;
+        o.endOffset = RING - 1;
+        o.currentOffset = 0;
+        o.data = ring[ch];
+        AXSetVoiceOffsets(voice[ch], &o);
+        AXSetVoiceSrcType(voice[ch], AX_VOICE_SRC_TYPE_LINEAR);
+        AXSetVoiceSrcRatio(voice[ch], 44100.0f / 48000.0f);
+        AXSetVoiceState(voice[ch], AX_VOICE_STATE_STOPPED);
+##### u313 nullDC4WiiU wiiu/present_gx2.cpp 20
+                            tsp.IgnoreTexA ? 1.0f : 0.0f);
+            last_mode = mode_key;
+            // Gouraud from the parameter control word, as the TA does (it copies PCW's shading bits into the ISP word);
+            // the ISP word's own bit, which games may leave clear, flat-shaded Shenmue's faces and MSR's buildings
+            const u32 fog = pass == WIIU_LIST_BACKGROUND ? 2 : tsp.FogCtrl,
+                      gouraud = pass == WIIU_LIST_BACKGROUND || pcw.Gouraud;
+            const u32 shade_key = tsp.ShadInstr | fog << 2 | gouraud << 4;
+            if (shade_key != last_shade)
+                flush(BRK_SHADE);
+            if (shade_key != last_shade)
+                set_uniform(u_shade_loc, (float)tsp.ShadInstr, (float)fog, fog_density, gouraud ? 1.0f : 0.0f);
+            last_shade = shade_key;
+            const u32 clamp = pass != WIIU_LIST_BACKGROUND && tsp.ColorClamp;
+            if (clamp != last_clamp)
+                flush(BRK_CLAMP);
+            if (clamp != last_clamp)
+                set_uniform(u_clamp_on_loc, clamp ? 1.0f : 0.0f, 0.0f, 0.0f, 0.0f);
+            last_clamp = clamp;
+            const u32 first = strip_idx[si], n_idx = (st.count - 2) * 3;
+            draw_strips++;
+##### u314 nullDC4WiiU plugs/nullAICA/aica.cpp 19
+extern int g_exp_aica_thread;
+void aica_cdda_prefetch();
+// The mixer stays close behind the emulator: the game's sound driver reads channel state back (is a voice playing?),
+// and with a lag of a few hundred samples a voice it had just keyed on still looks idle (MvC2's voices and music go
+// silent). Its priority is above the GX2 thread's on the shared core, so it keeps up.
+u32 g_aica_ahead = 128;   // how far the emulator may run ahead of the mixer, in samples
+int g_aica_prio = 15;     // the mixing thread's priority (the GX2 thread on the same core is 16; lower runs first)
+u32 g_aica_lag_max, g_aica_lag_sum, g_aica_lag_n;   // the mixer's lag behind the emulator, for the [audio] line
+static const u32 AICA_OPS = 8192;
+void aica_clear_looped_now(u32 chan);
+// reg 0xFFFF: clear the channel's loop flag
+static struct { u32 sample; u16 chan, reg; u32 data; } aica_ops[AICA_OPS];
+static volatile u32 ops_w, ops_r;
+static volatile u32 aica_pending, aica_done;
+static volatile bool aica_stop, aica_started;
+static OSThread aica_thread;
+static u8 mixer_regs[0x2000] __attribute__((aligned(32)));   // the mixer's copy of the channel registers
+void aica_mixer_regs(u8 *base);       // sgc_if.cpp
+void aica_clear_live_kyonex(u32 chan);
+##### u315 nullDC4WiiU wiiu/main_wiiu.cpp 17
+// Files live in sd:/wiiu/nulldc/: data/dc_boot.bin and data/dc_flash.bin (required by the core), nullDC.cfg,
+// config.txt (the picker's options) and wiiu.cfg (optional), read once at start:
+//   file=<path>       disc image or .elf to boot instead of showing the game picker (relative to sd:/wiiu/nulldc/)
+//   picker=0          boot the BIOS (the Dreamcast menu) when no file= is given, instead of showing the game picker
+//   fastmem=0|1       fast memory access, overriding the options page
+//   rt_width=<n>      the 3D render target's width, 4:3 (default 960; 640 is the Dreamcast's own)
+//   audio_buffer=<ms> the sound queue's target, overriding the options page
+//   exp_*             the speed switches the options page sets: exp_gx2_core and exp_aica_thread take a core
+//                     (0: the emulator's own, 1: core 0, 2: core 2), the others 0|1 (see README-WiiU.md)
+//   g_<name>=<int>    override any int preset from wii/main.cpp, e.g. g_dynarec_preset=0 for the interpreter
+//   sdlog=1           write the log to sd:/wiiu/nulldc/log.txt as well
+// Output (stdout/stderr) goes to OSReport; the SD card gets one summary line per run in last_run.txt.
+// The emulator runs on the codegen core, where the SH4 JIT's code has to execute.
+#include <coreinit/codegen.h>
+#include <coreinit/core.h>
+#include <coreinit/debug.h>
+#include <coreinit/exception.h>
+##### u316 nullDC4WiiU wiiu/present_gx2.cpp 18
+    // shading inside volumes multiplies by the intensity: black drawn over with alpha 1 - intensity
+    sc->shad_scale = f->fpu_shad_scale;
+    static const float corners[4][2] = { { -1, 1 }, { -1, -1 }, { 1, 1 }, { 1, -1 } };
+    for (u32 i = 0; i < 4; i++)
+        out[sc->quad_base + i] = { corners[i][0], corners[i][1], -1.0f, 1.0f, 255u - (sc->shad_scale & 0xFF), 0, 0.0f, 0.0f };
+    sc->modvol_count = f->n_mp;
+    memcpy(sc->modvols, f->mp, f->n_mp * sizeof(WiiuModVol));
+    sc->strip_count = f->ns;
+    memcpy(sc->strips, f->s, f->ns * sizeof(WiiuStrip));
+    // every other triangle of a strip has its first two vertices swapped, as the GPU does, so the winding (and
+    // the culling) stays what the strip had
+    lap(3);
+    u32 ni = 0;
+    sc->idx_owner = (u32)(uintptr_t)idx;
+    for (u32 i = 0; i < f->ns; i++)
+    {
+        const u32 first = f->s[i].first, tris = f->s[i].count - 2;
+        sc->strip_idx[i] = ni;
+##### u317 nullDC4WiiU wiiu/picker_wiiu.cpp 16
+        // libogc bits: Wii Remote up 0x0800, down 0x0400, A 0x0008, 1 0x0002, plus 0x1000, minus 0x0010;
+        // Classic/Pro up 0x0001, down 0x4000, A 0x0010, Y 0x0020, X 0x0008, plus 0x0400, minus 0x1000; Wii Remote 2 0x0001
+        const bool classic = p.ext == 2;
+        if ((p.core & 0x0800) || (classic && (p.exp & 0x0001)) || p.ly > 0.6f)
+            b |= PICKER_BTN_UP;
+        if ((p.core & 0x0400) || (classic && (p.exp & 0x4000)) || p.ly < -0.6f)
+            b |= PICKER_BTN_DOWN;
+        if ((p.core & 0x0008) || (classic && (p.exp & 0x0010)))
+            b |= PICKER_BTN_ACCEPT;
+        if ((p.core & 0x0002) || (classic && (p.exp & 0x0020)))
+            b |= PICKER_BTN_HELP;
+        if ((p.core & 0x0001) || (classic && (p.exp & 0x0008)))
+            b |= PICKER_BTN_OPTIONS;
+        if ((p.core & 0x0004) || (classic && (p.exp & 0x0040)))   // B: Wii Remote 0x0004, Classic/Pro 0x0040
+            b |= PICKER_BTN_BACK;
+        if (((p.core & 0x1010) == 0x1010) || (classic && (p.exp & 0x1400) == 0x1400))
+##### u318 nullDC4WiiU wiiu/fastmem_wiiu.cpp 15
+// Fastmem on Wii U: the Wii's FASTMEM (wii/wii_fastmem.cpp builds its own page table and DSI handler, which needs
+// supervisor mode) redone with what a user-mode Cafe OS app has, checked on a console with a test app:
+//   * a 512 MB, 512 MB-aligned block of virtual space (OSAllocVirtAddr) stands for the Dreamcast's 29-bit physical
+//     space; the JIT turns an address into window + (addr & 0x1FFFFFFF) (fm_ea in wii_driver.cpp)
+//   * the guest RAM and VRAM arrays are mapped into it with OSMapMemory at their Dreamcast offsets, mirrors included,
+//     as aliases of the same physical memory (main RAM x4 at 0x0C000000, VRAM 64-bit x2 at 0x04000000 and 0x06000000)
+//   * everything else stays unmapped, area 0 above all (store queue addresses mask onto it, see wii_fastmem.h); an
+//     access there takes a DSI, and main_wiiu.cpp's DSI callback hands it to wiiu_fastmem_dsi, which has
+//     rec_fastmem_patch rewrite the site into a branch to a slow-path trampoline and retries it
+// On by default (the options page; fastmem= in wiiu.cfg overrides it); it self-tests the window and stays off if
+// anything fails. fastmem=2 is the Cemu
+// test mode (Cemu neither aliases mapped memory nor raises DSIs): no window, and every site gets its trampoline as it
+// is compiled, so the decoder and trampolines run on every memory access the game makes.
+#include <coreinit/context.h>
+#include <coreinit/memorymap.h>
+##### u319 nullDC4WiiU wiiu/gen_presets.py 15
+# Generates wiiu/presets_generated.cpp from wii/main.cpp: every preset global with its default, and every
+# one-line get_*() getter, so the Wii U build reads the same settings as the Wii frontend without its menu.
+# usage: python3 wiiu/gen_presets.py   (rerun after merging upstream)
+import re, os
+root = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+src = open(os.path.join(root, 'wii', 'main.cpp'), encoding='latin-1').read()
+var_re = re.compile(r'^(?:volatile\s+)?(int|bool|u32|s32|float|unsigned int|u8|u16)\s+(g_\w+)\s*=\s*([^;]+);', re.M)
+get_re = re.compile(r'(int|bool|u32|s32|float|unsigned int)\s+(get_\w+)\s*\(\s*(?:void)?\s*\)\s*\{\s*return\s+([^;]+);\s*\}')
+# enum constants used as defaults (e.g. SPECIAL_LAYOUT_OFF) resolve to their value in main.cpp
+consts = {}
+for body in re.findall(r'enum\s*\w*\s*\{([^}]*)\}', src):
+    value = -1
+    for item in body.split(','):
+        item = re.sub(r'//.*', '', item).strip()
+        m = re.match(r'([A-Z_][A-Z0-9_]*)\s*(?:=\s*(-?\w+))?', item)
+##### u320 nullDC4WiiU wiiu/main_wiiu.cpp 15
+    marker("main");
+    WHBProcInit();
+    marker("procui");
+    devoptab_list[STD_OUT] = &log_devoptab;
+    devoptab_list[STD_ERR] = &log_devoptab;
+    setvbuf(stdout, nullptr, _IONBF, 0);
+    // the Shinobi idle-loop rule stalls the BIOS on its boot logo with the JIT (seen in Cemu); wiiu.cfg can
+    // turn it back on with g_idle_shinobi_preset=1
+    g_idle_shinobi_preset = 0;
+    // Threads and cores (console; in Cemu the codegen core is 0, so cores 0 and 2 swap):
+    //   core 1, the codegen core: the emulator (SH4 JIT), and the main thread, which only runs ProcUI
+    //   core 0: the GX2 thread, the AICA mixer, the vertex convert helper and the disc reader
+    //   core 2: TA intake (decode, convert, textures), the GX2 worker and the watchdog
+    // GX2 work is kept off the JIT core because it took a large share of it. These are the speed options' defaults;
+    // the options page can turn them off (config.txt, read here because the threads start before the picker runs),
+##### u321 nullDC4WiiU wiiu/texture_gx2.cpp 15
+    u32 tcw, size, sampled_sum, full_sum;
+    u32 decoded_seq, used_seq;
+    bool fresh;   // created but not decoded yet
+    s16 next;     // next entry in the same hash bucket, -1 at the end
+    u32 bytes;    // of the surface, mip chain included
+    GX2Texture tex;
+    bool valid;
+    // Up to four scenes can be in flight (drawing, two ready, being built), and a game may change a texture every
+    // frame (MvC2's character sprites): a change is decoded into the next of four images, so a scene in flight
+    // keeps the one its descriptor copy points at. Allocated on the first change.
+    void *img[4];
+    u8 cur;
+    u32 scene_mark;   // the scene whose texture table has this entry, at scene_idx
+    u16 scene_idx;
+    bool linked;      // in a hash bucket
+##### u322 nullDC4WiiU wiiu/main_wiiu.cpp 14
+    marker("emulator thread");
+    // the JIT's code may only run on the codegen core, so the whole emulator runs there
+    static OSThread thread;
+    const u32 stack_size = 4 * 1024 * 1024;
+    u8 *stack = (u8 *)memalign(16, stack_size);
+    u32 core = OSGetCodegenCore();
+    OSThreadAttributes affinity = core == 0 ? OS_THREAD_ATTRIB_AFFINITY_CPU0 :
+                                  core == 2 ? OS_THREAD_ATTRIB_AFFINITY_CPU2 : OS_THREAD_ATTRIB_AFFINITY_CPU1;
+    emu_running = true;
+    // one step below the thread starting it (the GX2 thread, or with the graphics core off the main thread on the
+    // codegen core): the emulator never yields, and CafeOS doesn't time-slice threads of equal priority, so at the same
+    // priority a thread sharing its core would never run again. The others mostly wait, so the emulator gets the core.
+    const int emu_priority = OSGetThreadPriority(OSGetCurrentThread()) + 1;
+    printf("[wiiu] emulator thread priority %d (main %d)\n", emu_priority, emu_priority - 1);
+##### u323 nullDC4WiiU wiiu/main_wiiu.cpp 14
+    // HOME -> Close (or the request above) ends up here
+    if (!done)
+        write_summary((int)OSTicksToSeconds(OSGetSystemTime() - start));
+    stop_emulator(&thread);
+    printf("[wiiu] exit: emulator stopped\n");
+    wiiu_audio_shutdown();
+    printf("[wiiu] exit: audio down\n");
+    wiiu_gx2_shutdown();
+    printf("[wiiu] exit: graphics down\n");
+    if (log_file)
+        fclose(log_file);
+    app_done = true;
+    if (!wiiu_exp_gx2_core)
+        WHBProcShutdown();
+##### u324 nullDC4WiiU wiiu/present_gx2.cpp 13
+static u32 strip_count, drawn_frame_seq, last_3d_vblank;
+// translucent strips in drawing order: as submitted when the game pre-sorts them, else far to near
+static u32 trans_order[WIIU_MAX_STRIPS], trans_count;
+static float trans_key[WIIU_MAX_STRIPS];
+static bool have_3d;
+static float canvas_w = 640.0f, canvas_h = 480.0f;   // of the screen frame being drawn
+// a new screen frame was converted and isn't in the render target yet; without one the target keeps the last
+// picture and only the blits run
+static bool scene_dirty;
+static u32 u_screen_vs_loc = ~0u, u_screen_ps_loc = ~0u;
+static float draw_screen[4];        // the committed scene's u_screen (the geo shaders' mode word; 0: clip-space positions)
+static inline u32 vertex_bytes() { return sizeof(GpuVertex); }
+static u32 u_mode_loc, u_shade_loc, u_fog_col_loc, u_fog_vcol_loc, u_clamp_min_loc, u_clamp_max_loc, u_clamp_on_loc, tex0_loc,
+##### u325 nullDC4WiiU wiiu/present_gx2.cpp 13
+    const float hw = width * 0.5f, hh = height * 0.5f;
+    const float scale = f->max_invw > 0.0f ? 1.0f / f->max_invw : 1.0f;
+    OSTime c0 = OSGetSystemTime(), c1;
+    const auto lap = [&](int k) { c1 = OSGetSystemTime(); conv_ticks[k] += c1 - c0; c0 = c1; };
+    conv_vertices += f->nv;
+    conv_strips += f->ns;
+    lap(0);
+    // exp_split_convert (the "graphics core" option): this is the intake core's biggest stage, and each vertex stands
+    // alone, so the helper core takes the second half
+    sc->screen[0] = 0.0f;
+    sc->screen[1] = 1.0f / hw;
+    sc->screen[2] = 1.0f / hh;
+    sc->screen[3] = scale;
+##### u326 nullDC4WiiU wiiu/present_gx2.cpp 13
+        // consecutive strips mostly share state: only send what changed (keys reset per pass, as the volume
+        // passes above change state behind them)
+        GX2Texture *last_tex = nullptr;
+        GX2Sampler *last_smp = nullptr;
+        u32 last_depth = ~0u, last_cull = ~0u, last_blend = ~0u, last_mode = ~0u, last_shade = ~0u, last_clamp = ~0u;
+        const bool blend = pass == 2;
+        GX2SetColorControl(GX2_LOGIC_OP_COPY, blend ? 0xFF : 0x00, FALSE, TRUE);
+        // strips are drawn in runs: a strip whose indices follow the pending run's and that changes no state
+        // joins it; anything that sets state sends the run first
+        u32 run_first = 0, run_count = 0, run_strips = 0, run_vfirst = 0, run_vcount = 0;
+        auto flush = [&](u32 why) {
+            if (run_count && why < BRK_COUNT)
+                run_breaks[why]++;
+##### u327 nullDC4WiiU wii/dc/sh4/rec_v2/wii_driver_fastmem.inc 13
+#if defined(__WIIU__)
+// Wii U (wiiu/fastmem_wiiu.cpp): the pool has to be in the codegen area to execute, and the window is a 512 MB-aligned
+// block of virtual space, not EA 0, so every shape ORs its base in after the mask (fm_ea). fastmem=2 (Cemu, which can
+// neither alias memory nor raise DSIs) gives every site its trampoline at compile time, as if each had faulted:
+// a much bigger pool, and blocks stop compiling (cache clear) before it runs out.
+static u8* s_fm_pool = 0;
+static u32 FM_POOL_SIZE = 512*1024;    // fastmem=2: 4 MB (the console's codegen area is 32 MB, Cemu's 16)
+extern u32 g_wiiu_fm_window;
+extern int g_wiiu_fm_prepatch;
+#define FM_WINDOW g_wiiu_fm_window
+#define FM_SITES_MAX 512
+static u32* s_fm_sites[FM_SITES_MAX];    // this block's fault sites, for fastmem=2
+static u32 s_fm_sites_n;
+##### u328 nullDC4WiiU wiiu/main_wiiu.cpp 12
+            // quit from the picker (+ and -) or HOME, Close: ask for the Wii U Menu if nobody has yet, then keep serving
+            // ProcUI (the HOME and release handling need GX2 up) until it says exit. Shutting GX2 down at once, with
+            // nothing asking for the menu, would leave the app frozen and HOME dead
+            printf("[wiiu] exit: left the picker, asking for the Wii U Menu\n");
+            if (wiiu_app_running())
+                request_exit();
+            while (wiiu_app_running())
+                OSSleepTicks(OSMillisecondsToTicks(10));
+            wiiu_gx2_shutdown();
+            app_done = true;
+            if (!wiiu_exp_gx2_core)
+                WHBProcShutdown();
+##### u329 nullDC4WiiU wiiu/present_gx2.cpp 12
+    OSFastMutex_Lock(&snap_lock);
+    const FbRegs r = fb_regs;
+    u32 bpp, w, h, stride;
+    fb_geometry(r, bpp, w, h, stride);
+    const u32 depth = r.depth;
+    const u8 *vram = vram_snap ? vram_snap : PVRPARAMS.vram;
+    // FB_R_SIZE gives one field: interlaced modes weave the second (FB_R_SOF2) between its lines, and the
+    // line- and pixel-doubled modes (240p, 320 wide) show each line or pixel twice
+    // (judged by size: fbtest sets pixel double on a 640-wide framebuffer)
+    const u32 ys = r.interlace || h <= 288 ? 2 : 1, xs = w <= 320 ? 2 : 1;
+    const u32 cw = w * xs < FB_MAX_W ? w * xs : FB_MAX_W, ch = h * ys < FB_MAX_H ? h * ys : FB_MAX_H;
+    static u32 logged;
+##### u330 nullDC4WiiU wiiu/present_gx2.cpp 13
+    u16 fog_table[128];
+    u32 fog_col_ram, fog_col_vert, fog_clamp_min, fog_clamp_max;
+    float fog_density;
+    // each textured strip's texture: an index into tex, copies of the descriptors as built (0xFFFF: none)
+    u16 strip_tex[WIIU_MAX_STRIPS];
+    GX2Texture tex[1024];
+    u32 n_tex;
+    WiiuTexInval inv[1024];   // images decoded for this scene: their GPU copies are invalidated before drawing
+    u32 n_inv;
+    bool inv_all;             // inv overflowed: invalidate the whole texture cache instead
+    u32 seq, frame_seq;       // scene number (texture versions), and the emulator frame it was built from
+    float canvas_w, canvas_h;
+};
+##### u331 nullDC4WiiU wiiu/present_gx2.cpp 12
+    // 4:3 inside 16:9 (both outputs are 16:9)
+    static const float pos[] = { -0.75f, -1.0f, 0.75f, -1.0f, 0.75f, 1.0f, -0.75f, 1.0f };
+    static const float uv[] = { 0, 1, 1, 1, 1, 0, 0, 0 };
+    pos_buf.flags = uv_buf.flags = GX2R_RESOURCE_BIND_VERTEX_BUFFER | GX2R_RESOURCE_USAGE_CPU_READ |
+                                   GX2R_RESOURCE_USAGE_CPU_WRITE | GX2R_RESOURCE_USAGE_GPU_READ;
+    pos_buf.elemSize = uv_buf.elemSize = 8;
+    pos_buf.elemCount = uv_buf.elemCount = 4;
+    GX2RCreateBuffer(&pos_buf);
+    GX2RCreateBuffer(&uv_buf);
+    memcpy(GX2RLockBufferEx(&pos_buf, (GX2RResourceFlags)0), pos, sizeof(pos));
+    GX2RUnlockBufferEx(&pos_buf, (GX2RResourceFlags)0);
+    memcpy(GX2RLockBufferEx(&uv_buf, (GX2RResourceFlags)0), uv, sizeof(uv));
+##### u332 nullDC4WiiU wiiu/audio_wiiu.cpp 11
+static const u32 RING = 8192;            // samples per channel in each voice's loop (186 ms), a power of two
+static u32 MAX_QUEUED = 3072;      // the emulator keeps at most this much unplayed (70 ms)
+static u32 TARGET_QUEUED = 2048;   // what the rate steering aims for (46 ms)
+static const u32 MIN_QUEUED = 256;       // below this (6 ms, two AX frames) the voices stop
+static u32 START_QUEUED = 768;     // and start again from this much (17 ms)
+static const float BASE_RATIO = 44100.0f / 48000.0f;
+// playback speed as a fraction of nominal: from 60% (the emulator that slow still sounds continuous) to just
+// over 100% (when the emulator runs ahead the full ring paces it, and this keeps the queue from sitting full)
+// The picker's "Sound when slow" option sets the floor: 0.97 keeps the pitch and lets the queue run dry instead (gaps)
+float wiiu_audio_min_speed = 0.60f;
+static const float MAX_SPEED = 1.005f;
+##### u333 nullDC4WiiU wiiu/picker_wiiu.cpp 11
+        warning = "BIOS NOT FOUND: nothing will boot until dc_boot.bin and dc_flash.bin are in data/";
+    cfg.warning = warning.empty() ? nullptr : warning.c_str();
+    // the core's mapping (plugs/drkMapleDevices): by position, the bottom button is the Dreamcast's A
+    static const char *const controls[] = {
+        "Controls",
+        "GamePad, Pro Controller, Classic:",
+        "  B A Y X = Dreamcast A B X Y",
+        "  + = Start   L/ZL R/ZR = triggers",
+        "  D-pad, left stick = D-pad, stick",
+        "Wii Remote alone:",
+        "  A B 2 1 = A B X Y   - + = triggers",
+##### u334 nullDC4WiiU wiiu/present_gx2.cpp 11
+// Video output on the Wii U. Threads (main_wiiu.cpp has the whole map): the SH4 JIT runs on the codegen core (1 on a
+// console) and everything here keeps off it. The GX2 thread owns GX2 (wiiu_gx2_*; on core 0 with the "graphics core"
+// option, else the main thread on the codegen core). The intake thread on core 2 turns each published frame into a
+// scene (TA decode, vertex conversion with a helper on core 0, textures); the GX2 thread only draws scenes. In Cemu the
+// codegen core is 0, so cores 0 and 2 swap.
+// The GX2 thread renders the latest 3D frame the emulator thread published (wiiu_frame_publish, built from the TA by
+// render_gx2.cpp) once, into a 960x720 off-screen
+// target, and shows that, 4:3 pillarboxed, on the TV and the GamePad; when the game hasn't rendered in 3D for a
+// second it shows the scanned-out framebuffer (wiiu_fb_capture) instead. Textures come from texture_gx2.cpp.
+// Modifier volumes from the opaque modifier list shade the opaque and punch-through polygons that ask for it
+// (through the stencil buffer); translucent modifier volumes and two-parameter-set polygons are not done.
+##### u335 nullDC4WiiU wiiu/present_gx2.cpp 11
+            OSFastMutex_Lock(&slot_lock);
+            int s = 0;
+            while (s == slot_drawing || (n_ready > 0 && s == ready_q[0]) || (n_ready > 1 && s == ready_q[1]))
+                s++;
+            // the oldest scene that may still be drawn: surfaces dropped after it was built are kept until then
+            u32 oldest = ~0u;
+            for (int i = 0; i < n_ready; i++)
+                if (scenes[ready_q[i]].seq < oldest)
+                    oldest = scenes[ready_q[i]].seq;
+            if (slot_drawing >= 0 && scenes[slot_drawing].seq < oldest)
+                oldest = scenes[slot_drawing].seq;
+##### u336 nullDC4WiiU wiiu/present_gx2.cpp 11
+            Scene *sc = &scenes[s];
+            OSFastMutex_Lock(&decode_lock);
+            wiiu_textures_collect(oldest);
+            build_scene(f, slot_v[s], slot_i[s], f->canvas_w, f->canvas_h, sc);
+            OSFastMutex_Unlock(&decode_lock);
+            sc->frame_seq = seq;
+            // flushed by this core (the GX2 thread's flush may not reach lines still in this core's cache)
+            DCFlushRange(slot_v[s], (sc->quad_base + 4) * vertex_bytes());
+            DCFlushRange(slot_i[s], sc->idx_count * sizeof(u32));
+            static u32 built;
+            if (++built % 300 == 0 || built == 30)
+##### u337 nullDC4WiiU wiiu/present_gx2.cpp 12
+    sc->idx_count = ni;
+    conv_indices += ni;
+    lap(4);
+    // the PVR sorts translucent polygons by depth itself unless pre-sort mode is on; approximate that per strip,
+    // smallest (farthest) first, keeping submission order for ties. The key is the strip's smallest 1/w, its
+    // farthest point, as Flycast keys each triangle: a mean let MvC2's cloud layer, which runs from the horizon to
+    // right in front of the camera, sort as nearest and draw over the character tiles
+    sc->trans_count = 0;
+    for (u32 i = 0; i < f->ns; i++)
+    {
+        const WiiuStrip &st = f->s[i];
+        if (st.list != 2)
+##### u338 nullDC4WiiU wiiu/present_gx2.cpp 11
+            // volumes are drawn unculled: they may leave out the faces culling would drop
+            GX2SetCullOnlyControl(GX2_FRONT_FACE_CCW, FALSE, FALSE);
+            // GREATER passes where the volume surface is in front of the scene. A closed volume flips bit 0x01 (an odd
+            // count of faces in front: inside); an open one or a quad (PCW Volume bit clear on a header with a mode) sets
+            // it wherever any face is in front, as Flycast does. Parity on Soulcalibur's open shadow volumes tore them
+            const bool open = !m.last && (m.mode == 1 || m.mode == 2);
+            const GX2StencilFunction op = open ? GX2_STENCIL_FUNCTION_REPLACE : GX2_STENCIL_FUNCTION_INV;
+            GX2SetDepthStencilControl(TRUE, FALSE, GX2_COMPARE_FUNC_GREATER, TRUE, TRUE, GX2_COMPARE_FUNC_ALWAYS,
+                                      op, GX2_STENCIL_FUNCTION_KEEP, GX2_STENCIL_FUNCTION_KEEP,
+                                      GX2_COMPARE_FUNC_ALWAYS, op, GX2_STENCIL_FUNCTION_KEEP, GX2_STENCIL_FUNCTION_KEEP);
+            GX2SetStencilMask(0xFF, 0x01, 0x01, 0xFF, 0x01, 0x01);
+##### u339 nullDC4WiiU wiiu/render_gx2.cpp 11
+    static void StartList(u32 list_type) { list = list_type; }   // counted by the scanner (wiiu_ta_lists)
+    static void EndList(u32 list_type) {}
+    static void ListCont() {}
+    // a frame's geometry is emptied once, before its replay (wiiu_ta_decode): like gxRend.cpp, a list init or soft
+    // reset in the middle keeps what came before it (the BIOS intro starts several lists per frame, its logo first)
+    static void ListInit() { clip_mode = 0; }
+    static void SoftReset() { clip_mode = 0; }
+    static void SetTileClip(u32 xmin, u32 ymin, u32 xmax, u32 ymax) { clip_rect = xmin << 18 | ymin << 12 | xmax << 6 | ymax; }
+    // only polygon headers that start a group change it
+    static void TileClipMode(u32 mode) { clip_mode = mode; }
+    static void StartPolyStrip() { cur.first = dec->nv; }
+##### u340 nullDC4WiiU wiiu/texture_gx2.cpp 11
+    const OSTime t0 = OSGetSystemTime();
+    TCW tcw; tcw.full = e->tcw;
+    const u32 w = e->tex.surface.width, h = e->tex.surface.height, levels = e->tex.surface.mipLevels;
+    TSP tsp; tsp.full = 0;
+    tsp.TexU = e->size >> 3;
+    tsp.TexV = e->size & 7;
+    // the sampled sum every frame; the full one when that changed, on fresh entries, and on every 16th frame
+    // (staggered across entries) to catch writes the samples miss
+    const u32 sampled = checksum(tcw, tsp, w, h, false);
+    bool changed = e->fresh || sampled != e->sampled_sum;
+    u32 full = e->full_sum;
+##### u341 nullDC4WiiU wiiu/present_gx2.cpp 10
+// decode_lock covers everything one builder uses at a time (the TA parser, the texture cache, convert_frame's
+// scratch): the intake thread, and the GX2 thread for render-to-texture frames, which it builds and draws itself.
+static OSFastMutex decode_lock, slot_lock;
+// Smooth frames (exp_frame_queue): the emulator renders in bursts (it paces on the audio queue), so two scenes can
+// finish within one vsync; with one waiting slot the first would be thrown away. Two can wait instead
+int wiiu_exp_frame_queue;
+static int ready_q[2], n_ready;
+static int slot_drawing = -1;   // under slot_lock; the intake thread fills any other slot
+static u32 scene_counter;                         // under decode_lock
+static u32 intake_taken_seq;
+##### u342 nullDC4WiiU wiiu/render_gx2.cpp 10
+    for (u32 i = 0; i < f->ns; i++)
+        if (f->s[i].count >= 3)
+            for (u32 k = f->s[i].first; k < f->s[i].first + f->s[i].count && k < f->nv; k++)
+                if (f->v[k].z > m && f->v[k].z < 1e30f)
+                    m = f->v[k].z;
+    // modifier volumes left out: Jet Grind Radio's run to 1/w 100000 toward the camera. Their nearer vertices
+    // clamp to the nearest depth, still in front of every polygon (the 5% headroom), which is all the volume
+    // test asks of them
+    m *= 1.05f;
+    static u32 logged;
+##### u343 nullDC4WiiU wiiu/texture_gx2.cpp 10
+        // always a new surface: one a scene in flight still draws with is freed later (deferred_frees)
+        if (e->valid)
+            destroy(*e);
+        create(*e, w, h, levels);
+        e->linked = true;
+        e->tcw = tcw_full;
+        e->size = size;
+        e->next = buckets[b];
+        buckets[b] = (s16)(e - cache);
+        e->decoded_seq = frame_seq - 1;
+##### u344 nullDC4WiiU dc/maple/maple_devs.cpp 18
+        u8* root=&flash_data[255*512];
+        memset(root,0x55,16);
+        const u8 bcd_time[8]={0x20,0x26,0x11,0x04,0x12,0x00,0x00,0x03};   // a fixed date; games only display it
+        memcpy(root+0x30,bcd_time,8);
+        auto le16=[](u8* at,u16 v){ at[0]=(u8)v; at[1]=(u8)(v>>8); };
+        le16(root+0x46,254);   // FAT location
+        le16(root+0x48,1);     // FAT size
+        le16(root+0x4a,253);   // directory location
+        le16(root+0x4c,13);    // directory size
+        le16(root+0x4e,0);     // icon shape
+        le16(root+0x50,200);   // user blocks
+        u8* fat=&flash_data[254*512];
+        for (u32 b=0;b<256;b++)
+            le16(fat+b*2,0xfffc);                   // free
+        for (u32 b=253;b>241;b--)
+            le16(fat+b*2,(u16)(b-1));               // directory chain 253 -> 241
+        le16(fat+241*2,0xfffa);
+        le16(fat+254*2,0xfffa);                     // the FAT itself
+##### u345 nullDC4WiiU plugs/nullAICA/aica.cpp 9
+        static u8 stack[64 * 1024] __attribute__((aligned(16)));
+        memcpy(mixer_regs, aica_reg, sizeof(mixer_regs));
+        aica_mixer_regs(mixer_regs);
+        aica_started = true;
+        // above the GX2 thread (g_aica_prio): CafeOS doesn't time-slice, so the mixer must preempt it to keep up
+        OSCreateThread(&aica_thread, aica_main, 0, nullptr, stack + sizeof(stack), sizeof(stack), g_aica_prio,
+                       g_exp_aica_thread == 2 ? OS_THREAD_ATTRIB_AFFINITY_CPU2 : OS_THREAD_ATTRIB_AFFINITY_CPU0);
+        OSSetThreadName(&aica_thread, "nullDC AICA");
+        OSResumeThread(&aica_thread);
+##### u346 nullDC4WiiU wiiu/audio_wiiu.cpp 9
+// Sound on the Wii U: the AICA's 44.1 kHz stereo output (wii_audio_push_sample, emulator thread) played by two
+// AX voices, left and right, each looping over a ring of 16-bit samples that AX resamples to 48 kHz and sends
+// to the TV and the GamePad. The emulator writes ahead of the play position in small cache-flushed blocks.
+// The AX frame callback (every 3 ms) tracks the play position and steers the resampling ratio by how much is
+// queued, so playback follows the rate the emulator really produces: below full speed the sound runs a little
+// slower and lower instead of stuttering (stop-and-restart at ~76% speed was unbearable on a console). Only a
+// real stall (a disc load) empties the ring; the voices then stop and start again once some sound is back.
+// A full ring makes the emulator wait, which is what holds it to real speed (on a console it otherwise ran at
+// about 170%); it never waits long, so a stalled voice can't hang it.
+##### u347 nullDC4WiiU wiiu/main_wiiu.cpp 9
+        const char *stage = (const char *)wiiu_gx2_stage;
+        const u32 frames = wiiu_gx2_frames_done, vb = wiiu_vblanks;
+        same = (frames == last_frames && stage == last_stage) ? same + 1 : 0;
+        // every second for the first 30 s, then every 10 s unless something stopped
+        if (t < 30 || t % 10 == 0 || same > 0 || vb == last_vblanks)
+            WLOG("[watch] t=%d gx2: %s, %u frames%s | emu: vblanks %u renders %u pc %08x | audio queued %u", t, stage, frames,
+                   same ? " (stuck)" : "", vb, wiiu_renders, (u32)next_pc, wiiu_audio_queued());
+        last_stage = stage;
+        last_frames = frames;
+##### u348 nullDC4WiiU wiiu/main_wiiu.cpp 18
+        else if (!strcmp(key, "audio_buffer"))
+            audio_buffer_ms = atoi(value);
+        else if (!strcmp(key, "exp_sq_fast"))
+            g_exp_sq_fast = atoi(value);
+        else if (!strcmp(key, "exp_aica_thread"))
+            g_exp_aica_thread = atoi(value);
+        else if (!strcmp(key, "exp_gx2_core"))
+            wiiu_exp_gx2_core = atoi(value);
+        else if (!strcmp(key, "exp_frame_queue"))
+            wiiu_exp_frame_queue = atoi(value);
+        else if (!strcmp(key, "exp_split_convert"))
+            wiiu_exp_split_convert = atoi(value);
+        else if (!strcmp(key, "exp_fm_x"))
+            g_exp_fm_x = atoi(value);
+        else if (!strcmp(key, "exp_ps_ftrv"))
+            g_exp_ps_ftrv = atoi(value);
+        else if (!strcmp(key, "sdlog") && atoi(value))
+            log_file = fopen(NULLDC_HOME "log.txt", "w");   // full log on the SD card too (many small writes)
+##### u349 nullDC4WiiU wiiu/present_gx2.cpp 9
+static void start_intake();
+static void start_conv_helper();
+static void init_white_texture();
+static int geo_cur;
+static WiiuStrip strips[WIIU_MAX_STRIPS];
+// modifier volumes of the current frame: their triangles start at mv_base in the vertex buffer, followed by a
+// full-screen quad at quad_base for the stencil passes
+static WiiuModVol modvols[WIIU_MAX_MV_PARAMS];
+static u32 modvol_count, mv_base, quad_base, shad_scale;
+##### u350 nullDC4WiiU wiiu/texture_gx2.cpp 9
+        // palettised, always twiddled
+        const u32 bits = fmt == 5 ? 4 : 8;
+        if (mip)
+            addr += other_mip_point[log2w] * bits / 8;
+        const u32 pal = fmt == 5 ? tcw.PAL.PalSelect << 4 : (tcw.PAL.PalSelect >> 4) << 8;
+        u32 colors[256];
+        for (u32 i = 0; i < (bits == 4 ? 16u : 256u); i++)
+            colors[i] = palette_entry(pal | i);
+        twiddle_tables(w, h);
+##### u351 nullDC4WiiU wii/dc/sh4/rec_v2/wii_driver_emit.inc 11
+    ppc_bx(offs,0,LK);
+}
+
+#if defined(__WIIU__)
+// exp_fm_x (on with the "faster code" option): the fastmem window base lives in r12, so scalar accesses are rlwinm +
+// an indexed load/store. r12 is volatile and nothing in the JIT uses it, so it is reloaded after every call into C.
+// Not after calls to the JIT's own stubs: their sites have a fixed layout, and the stubs reach C through ppc_call.
+extern "C" { int g_exp_fm_x; }
+// exp_ps_ftrv (on with the "faster code" option): FTRV with paired singles, in single precision (shop_ftrv below)
+extern "C" { int g_exp_ps_ftrv; }
+extern u32 g_wiiu_fm_window;
+##### u352 nullDC4WiiU wiiu/present_gx2.cpp 17
+    tex.surface.width = FB_MAX_W;
+    tex.surface.height = FB_MAX_H;
+    tex.surface.depth = 1;
+    tex.surface.mipLevels = 1;
+    tex.surface.dim = GX2_SURFACE_DIM_TEXTURE_2D;
+    tex.surface.format = GX2_SURFACE_FORMAT_UNORM_R8_G8_B8_A8;
+    tex.surface.tileMode = GX2_TILE_MODE_LINEAR_ALIGNED;
+    tex.viewNumSlices = 1;
+    tex.compMap = 0x00010203;
+    GX2CalcSurfaceSizeAndAlignment(&tex.surface);
+    GX2InitTextureRegs(&tex);
+    GX2RCreateSurface(&tex.surface, GX2R_RESOURCE_BIND_TEXTURE | GX2R_RESOURCE_USAGE_CPU_WRITE | GX2R_RESOURCE_USAGE_GPU_READ);
+    u32 *px = (u32 *)GX2RLockSurfaceEx(&tex.surface, 0, (GX2RResourceFlags)0);
+    memset(px, 0, tex.surface.imageSize);
+    GX2RUnlockSurfaceEx(&tex.surface, 0, (GX2RResourceFlags)0);
+    GX2InitSampler(&sampler, GX2_TEX_CLAMP_MODE_CLAMP, GX2_TEX_XY_FILTER_MODE_LINEAR);
+    gx2_ready = true;
+##### u353 nullDC4WiiU wiiu/audio_wiiu.cpp 8
+    // a voice that plays but no longer moves (seen once in Cemu, emulator stuck waiting for room): count it as
+    // an underrun, so the writer restarts both voices
+    static u32 still;
+    still = playing && pos == play_pos ? still + 1 : 0;
+    play_pos = pos;
+    const u32 q = queued();
+    if (still >= 30)
+        stat_stalls++;
+##### u354 nullDC4WiiU wiiu/audio_wiiu.cpp 8
+    // proportional steering toward TARGET_QUEUED, smoothed (SPEED_GLIDE) so the pitch glides rather than wobbles:
+    // an emulator at 76% settles with the queue near 1000 samples and the voices at 76%
+    float want = 1.0f + 0.5f * ((float)q - (float)TARGET_QUEUED) / (float)TARGET_QUEUED;
+    want = want < wiiu_audio_min_speed ? wiiu_audio_min_speed : want > MAX_SPEED ? MAX_SPEED : want;
+    // speed always moves; the voices only hear about it once it has moved a little (a threshold on each step
+    // instead left playback stuck at 98% with the emulator paced to match)
+    static float applied = 1.0f;
+    speed += (want - speed) * SPEED_GLIDE;
+##### u355 nullDC4WiiU wiiu/kpad_wiiu.cpp 8
+    case WPAD_EXT_CLASSIC:
+    case WPAD_EXT_MPLUS_CLASSIC:
+        // wut's classic bits are libogc's shifted down by 16
+        pad->ext = 2;
+        pad->core = core_buttons(st.hold);
+        pad->exp = st.classic.hold & 0xFFFF;
+        pad->lx = st.classic.leftStick.x;
+        pad->ly = st.classic.leftStick.y;
+##### u356 nullDC4WiiU wiiu/main_wiiu.cpp 8
+static FILE *log_file;
+static int fastmem = -1;   // wiiu.cfg fastmem=: 0 off, 1 on; -1: the picker's option decides
+static bool controller_type_set;   // wiiu.cfg set g_controller_type: it wins over the picker's light gun option
+extern int wiiu_rt_width;   // present_gx2.cpp
+void wiiu_disc_stats();     // disc_cache_wiiu.cpp
+// exp_gx2_core: the emulator parks here, between frames, before the foreground is released, so GX2 can shut down
+// cleanly (with the emulator running flat out, HOME could hang otherwise)
+static volatile bool emu_pause_req, emu_paused;
+##### u357 nullDC4WiiU wiiu/picker/picker_core.c 8
+    if (g_view.help) {
+        /* help steps through the pages and back to the list; accept goes back to the list (with nothing at all to
+           list, it leaves, as FBNeo's picker returns NULL) */
+        if (pressed & PICKER_BTN_HELP)
+            g_view.help = g_view.help < picker_core_help_pages() ? g_view.help + 1 : (g_count ? 0 : 1);
+        else if (pressed & PICKER_BTN_ACCEPT) {
+            if (!g_count)
+                return PICKER_QUIT;
+##### u358 nullDC4WiiU wiiu/present_gx2.cpp 16
+        const GX2UniformVar &u = geo.pixelShader->uniformVars[i];
+        if (!strcmp(u.name, "u_mode"))
+            u_mode_loc = u.offset;
+        else if (!strcmp(u.name, "u_shade"))
+            u_shade_loc = u.offset;
+        else if (!strcmp(u.name, "u_fog_col"))
+            u_fog_col_loc = u.offset;
+        else if (!strcmp(u.name, "u_fog_vcol"))
+            u_fog_vcol_loc = u.offset;
+        else if (!strcmp(u.name, "u_clamp_min"))
+            u_clamp_min_loc = u.offset;
+        else if (!strcmp(u.name, "u_clamp_max"))
+            u_clamp_max_loc = u.offset;
+        else if (!strcmp(u.name, "u_clamp_on"))
+            u_clamp_on_loc = u.offset;
+        else if (!strcmp(u.name, "u_screen"))
+##### u359 nullDC4WiiU wiiu/present_gx2.cpp 8
+            last_depth = depth_key;
+            // culling 2 drops polygons that are counter-clockwise on screen, 3 clockwise ones (1, small ones, isn't
+            // done); the y flip into clip space keeps the on-screen winding, so CCW is GX2's front face
+            const u32 cull = pass == WIIU_LIST_BACKGROUND ? 0 : isp.CullMode;
+            if (cull != last_cull)
+                flush(BRK_CULL);
+            if (cull != last_cull)
+                GX2SetCullOnlyControl(GX2_FRONT_FACE_CCW, cull == 2, cull == 3);
+##### u1061 HarissaDC src/platform/xbox360/xb_display.cpp 40
+static const char s_psSrc[] =
+    "sampler t0 : register(s0);\n"
+    "float4 rcp : register(c0);\n"
+    "float4 prm : register(c1);\n"
+    "float4 prm2 : register(c2);\n"
+    "float luma(float3 c) { return dot(c, float3(0.299, 0.587, 0.114)); }\n"
+    "float3 tap(float2 uv) { return tex2D(t0, clamp(uv, 0.5 * rcp.xy, 1.0 - 0.5 * rcp.xy)).rgb; }\n"
+    "float3 base(float2 uv) {\n"
+    "#if SMOOTH\n"
+    "  uv = clamp(uv, 0.5 * rcp.xy, 1.0 - 0.5 * rcp.xy);\n"
+    "  float3 rgbM = tex2D(t0, uv).rgb;\n"
+    "  float lNW = luma(tap(uv + float2(-0.5, -0.5) * rcp.xy));\n"
+    "  float lNE = luma(tap(uv + float2( 0.5, -0.5) * rcp.xy));\n"
+    "  float lSW = luma(tap(uv + float2(-0.5,  0.5) * rcp.xy));\n"
+    "  float lSE = luma(tap(uv + float2( 0.5,  0.5) * rcp.xy));\n"
+    "  float lM = luma(rgbM);\n"
+    "  float lMin = min(lM, min(min(lNW, lNE), min(lSW, lSE)));\n"
+    "  float lMax = max(lM, max(max(lNW, lNE), max(lSW, lSE)));\n"
+    "  float2 dir = float2(-((lNW + lNE) - (lSW + lSE)), (lNW + lSW) - (lNE + lSE));\n"
+    "  float reduce = max((lNW + lNE + lSW + lSE) * (0.25 / 8.0), 1.0 / 128.0);\n"
+    "  float rcpMin = 1.0 / (min(abs(dir.x), abs(dir.y)) + reduce);\n"
+    "  dir = clamp(dir * rcpMin, -8.0, 8.0) * rcp.xy;\n"
+    "  float3 a = 0.5 * (tap(uv + dir * (1.0 / 3.0 - 0.5)) + tap(uv + dir * (2.0 / 3.0 - 0.5)));\n"
+    "  float3 b = a * 0.5 + 0.25 * (tap(uv - dir * 0.5) + tap(uv + dir * 0.5));\n"
+    "  float lB = luma(b);\n"
+    "  return (lB < lMin || lB > lMax) ? a : b;\n
+##### u1062 HarissaDC src/platform/xbox360/xb_display.cpp 40
+    "  float3 amp = sqrt(saturate(min(mn, 1.0 - mx) / max(mx, 0.0001)));\n"
+    "  float3 wt = amp * (SHARPEN == 1 ? -0.125 : -0.2);\n"
+    "  c = saturate((c + wt * (n + so + w + e)) / (1.0 + 4.0 * wt));\n"
+    "#endif\n"
+    "  return c;\n"
+    "}\n"
+    "float4 main(float2 tc : TEXCOORD0) : COLOR {\n"
+    "  float2 n = tc;\n"
+    "#if SCREEN == 3\n"
+    "  float2 cc = n * 2.0 - 1.0;\n"
+    "  cc *= 1.0 + float2(0.045, 0.06) * (cc.yx * cc.yx);\n"
+    "  n = cc * 0.5 + 0.5;\n"
+    "  float2 edge = saturate((0.5 - abs(n - 0.5)) * float2(80.0, 60.0));\n"
+    "  if (edge.x * edge.y <= 0.0) return float4(0.0, 0.0, 0.0, 1.0);\n"
+    "#endif\n"
+    "  float2 uv = n;\n"
+    "#if SCREEN == 2 || SCREEN == 3\n"
+    "  float lines = prm2.x;\n"
+    "  float y = n.y * lines - 0.5;\n"
+    "  float y0 = floor(y), f = y - y0;\n"
+    "  float2 px = float2(0.5 / prm.z, 0.0);\n"
+    "  float2 uA = float2(uv.x, (y0 + 0.5) / lines);\n"
+    "  float2 uB = float2(uv.x, (y0 + 1.5) / lines);\n"
+    "  float3 cA = 0.25 * (tap(uA - px) + tap(uA + px)) + 0.5 * tap(uA);\n"
+    "  float3 cB = 0.25 * (tap(uB - px) + tap(uB + px)) + 0.5 * tap(uB);\n"
+    "  float kA = lerp(18.0, 6.0, luma(cA)), kB = lerp(18.0, 6.0, luma(cB));\n"
+    "  float3 c = cA * exp(-f * f * kA) + cB * exp(-(1.0 - f) * (1.0 - f) * kB);\n"
+    "  float3 glow = 0.25 * (tap(uv + float2(4.0, 0.0) * rcp.xy) + tap(uv - float2(4.0, 0.0) * rcp.xy) + tap(uv + float2(0.0, 4.0) * rcp.xy) + tap(uv - float2(0.0, 4.0) * rcp.xy));\n"
+    "  c = c *
+##### u1063 HarissaDC src/sh4/sh4_mmr.cpp 40
+    case 0xFF000000: return g_ccn.pteh;
+    case 0xFF000004: return g_ccn.ptel;
+    case 0xFF000008: return g_ccn.ttb;
+    case 0xFF00000C: return g_ccn.tea;
+    case 0xFF000010: return g_ccn.mmucr;
+    case 0xFF000014: return g_ccn.basra;
+    case 0xFF000018: return g_ccn.basrb;
+    case 0xFF00001C: return g_ccn.ccr;
+    case 0xFF000020: return g_ccn.tra;
+    case 0xFF000024: return g_ccn.expevt;
+    case 0xFF000028: return g_ccn.intevt;
+    case 0xFF000030: return 0x040205C1u;
+    case 0xFF000034: return g_ccn.ptea;
+    case 0xFF000038: return g_ccn.qacr0;
+    case 0xFF00003C: return g_ccn.qacr1;
+    case 0xFF800000: return s_bcr1;
+    case 0xFF800004: return reg_lane_read(s_bcr2, addr, size);
+    case 0xFF800008: return s_wcr1;
+    case 0xFF80000C: return s_wcr2;
+    case 0xFF800010: return s_wcr3;
+    case 0xFF800014: return s_mcr;
+    case 0xFF800018: return s_pcr;
+    case 0xFF80001C: return s_rtcsr;
+    case 0xFF800020: return s_rtcnt;
+    case 0xFF800024: return s_rtcor;
+    case 0xFF800028: return (u32)(sched_now_exact() >> 12) & 0x3FF;
+    case 0xFF80002C: return s_pctra;
+    case 0xFF800030: return read_pdtra();
+    case 0xFF800040: return s_pctrb;
+    case 0xFF800044: return s_pdtrb;
+    case 0xFF800048: return s_gpioic;
+    case 0xFFA00040: return g_dmac.dmaor;
+    case 0xFFC00000: return s_frqcr;
+    case 0xFFC00004: return s_stbcr;
+    case 0xFFC00008: return s_wtcnt;
+    case 0xFFC0000C: return s_wtcsr;
+    case 0xFFC00010: return s_stbcr2;
+    case 0xFFD00000
+##### u1064 HarissaDC src/sh4/sh4_optable.cpp 40
+#define OPS(X) \
+    X(mov, "0110nnnnmmmm0011", "mov Rm,Rn") \
+    X(mov_imm, "1110nnnniiiiiiii", "mov #imm,Rn") \
+    X(movw_pc, "1001nnnndddddddd", "mov.w @(disp,PC),Rn") \
+    X(movl_pc, "1101nnnndddddddd", "mov.l @(disp,PC),Rn") \
+    X(mova, "11000111dddddddd", "mova @(disp,PC),R0") \
+    X(movb_st, "0010nnnnmmmm0000", "mov.b Rm,@Rn") \
+    X(movw_st, "0010nnnnmmmm0001", "mov.w Rm,@Rn") \
+    X(movl_st, "0010nnnnmmmm0010", "mov.l Rm,@Rn") \
+    X(movb_ld, "0110nnnnmmmm0000", "mov.b @Rm,Rn") \
+    X(movw_ld, "0110nnnnmmmm0001", "mov.w @Rm,Rn") \
+    X(movl_ld, "0110nnnnmmmm0010", "mov.l @Rm,Rn") \
+    X(movb_dec, "0010nnnnmmmm0100", "mov.b Rm,@-Rn") \
+    X(movw_dec, "0010nnnnmmmm0101", "mov.w Rm,@-Rn") \
+    X(movl_dec, "0010nnnnmmmm0110", "mov.l Rm,@-Rn") \
+    X(movb_inc, "0110nnnnmmmm0100", "mov.b @Rm+,Rn") \
+    X(movw_inc, "0110nnnnmmmm0101", "mov.w @Rm+,Rn") \
+    X(movl_inc, "0110nnnnmmmm0110", "mov.l @Rm+,Rn") \
+    X(movb_st_r0disp, "10000000nnnndddd", "mov.b R0,@(disp,Rn)") \
+    X(movw_st_r0disp, "10000001nnnndddd", "mov.w R0,@(disp,Rn)") \
+    X(movl_st_disp, "0001nnnnmmmmdddd", "mov.l Rm,@(disp,Rn)") \
+    X(movb_ld_r0disp, "10000100mmmmdddd", "mov.b @(disp,Rm),R0") \
+    X(movw_ld_r0disp, "10000101mmmmdddd", "mov.w @(disp,Rm),R0") \
+    X(movl_ld_disp, "0101nnnnmmmmdddd", "mov.l @(disp,Rm),Rn") \
+    X(movb_st_r0, "0000nnnnmmmm0100", "mov.b Rm,@(R0,Rn)") \
+    X(movw_st_r0, "0000nnnnmmmm0101", "mov.w Rm,@(R0,Rn)") \
+    X(movl_st_r0, "0000nnnnmmmm0110", "mo
+##### u1065 HarissaDC src/sh4/sh4_optable.cpp 40
+    X(add, "0011nnnnmmmm1100", "add Rm,Rn") \
+    X(add_imm, "0111nnnniiiiiiii", "add #imm,Rn") \
+    X(addc, "0011nnnnmmmm1110", "addc Rm,Rn") \
+    X(addv, "0011nnnnmmmm1111", "addv Rm,Rn") \
+    X(cmpeq_imm, "10001000iiiiiiii", "cmp/eq #imm,R0") \
+    X(cmpeq, "0011nnnnmmmm0000", "cmp/eq Rm,Rn") \
+    X(cmphs, "0011nnnnmmmm0010", "cmp/hs Rm,Rn") \
+    X(cmpge, "0011nnnnmmmm0011", "cmp/ge Rm,Rn") \
+    X(cmphi, "0011nnnnmmmm0110", "cmp/hi Rm,Rn") \
+    X(cmpgt, "0011nnnnmmmm0111", "cmp/gt Rm,Rn") \
+    X(cmppl, "0100nnnn00010101", "cmp/pl Rn") \
+    X(cmppz, "0100nnnn00010001", "cmp/pz Rn") \
+    X(cmpstr, "0010nnnnmmmm1100", "cmp/str Rm,Rn") \
+    X(div0s, "0010nnnnmmmm0111", "div0s Rm,Rn") \
+    X(div0u, "0000000000011001", "div0u") \
+    X(div1, "0011nnnnmmmm0100", "div1 Rm,Rn") \
+    X(dmuls, "0011nnnnmmmm1101", "dmuls.l Rm,Rn") \
+    X(dmulu, "0011nnnnmmmm0101", "dmulu.l Rm,Rn") \
+    X(dt, "0100nnnn00010000", "dt Rn") \
+    X(extsb, "0110nnnnmmmm1110", "exts.b Rm,Rn") \
+    X(extsw, "0110nnnnmmmm1111", "exts.w Rm,Rn") \
+    X(extub, "0110nnnnmmmm1100", "extu.b Rm,Rn") \
+    X(extuw, "0110nnnnmmmm1101", "extu.w Rm,Rn") \
+    X(macl, "0000nnnnmmmm1111", "mac.l @Rm+,@Rn+") \
+    X(macw, "0100nnnnmmmm1111", "mac.w @Rm+,@Rn+") \
+    X(mull, "0000nnnnmmmm0111", "mul.l Rm,Rn") \
+    X(mulsw, "0010nnnnmmmm1111", "muls.w Rm,Rn") \
+    X(muluw, "0010nnnnmmmm1110", "mulu.w Rm,Rn") \
+    X(neg, "0110nnnnmmmm1011", "neg Rm,Rn") \
+    X(negc, "0110nnnnmmmm1010", "negc Rm,Rn") \
+   
+##### u1066 HarissaDC src/sh4/sh4_optable.cpp 40
+    X(tasb, "0100nnnn00011011", "tas.b @Rn") \
+    X(tst, "0010nnnnmmmm1000", "tst Rm,Rn") \
+    X(tst_imm, "11001000iiiiiiii", "tst #imm,R0") \
+    X(tstb, "11001100iiiiiiii", "tst.b #imm,@(R0,GBR)") \
+    X(xor_, "0010nnnnmmmm1010", "xor Rm,Rn") \
+    X(xor_imm, "11001010iiiiiiii", "xor #imm,R0") \
+    X(xorb, "11001110iiiiiiii", "xor.b #imm,@(R0,GBR)") \
+    X(rotl, "0100nnnn00000100", "rotl Rn") \
+    X(rotr, "0100nnnn00000101", "rotr Rn") \
+    X(rotcl, "0100nnnn00100100", "rotcl Rn") \
+    X(rotcr, "0100nnnn00100101", "rotcr Rn") \
+    X(shad, "0100nnnnmmmm1100", "shad Rm,Rn") \
+    X(shal, "0100nnnn00100000", "shal Rn") \
+    X(shar, "0100nnnn00100001", "shar Rn") \
+    X(shld, "0100nnnnmmmm1101", "shld Rm,Rn") \
+    X(shll, "0100nnnn00000000", "shll Rn") \
+    X(shlr, "0100nnnn00000001", "shlr Rn") \
+    X(shll2, "0100nnnn00001000", "shll2 Rn") \
+    X(shlr2, "0100nnnn00001001", "shlr2 Rn") \
+    X(shll8, "0100nnnn00011000", "shll8 Rn") \
+    X(shlr8, "0100nnnn00011001", "shlr8 Rn") \
+    X(shll16, "0100nnnn00101000", "shll16 Rn") \
+    X(shlr16, "0100nnnn00101001", "shlr16 Rn") \
+    X(bf, "10001011dddddddd", "bf disp") \
+    X(bfs, "10001111dddddddd", "bf/s disp") \
+    X(bt, "10001001dddddddd", "bt disp") \
+    X(bts, "10001101dddddddd", "bt/s disp") \
+    X(bra, "1010dddddddddddd", "bra disp") \
+    X(braf, "0000nnnn00100011", "braf Rn") \
+    X(bsr, "1011dddddddddddd", "bsr disp") \
+    X(bsrf, "0000nnnn00000011", "bsrf Rn") \
+    X(jmp, "0100nnnn00101011", "jmp 
+##### u1067 HarissaDC src/sh4/sh4_optable.cpp 40
+    X(sleep, "0000000000011011", "sleep") \
+    X(ldtlb, "0000000000111000", "ldtlb") \
+    X(trapa, "11000011iiiiiiii", "trapa #imm") \
+    X(ldc_sr, "0100nnnn00001110", "ldc Rm,SR") \
+    X(ldc_gbr, "0100nnnn00011110", "ldc Rm,GBR") \
+    X(ldc_vbr, "0100nnnn00101110", "ldc Rm,VBR") \
+    X(ldc_ssr, "0100nnnn00111110", "ldc Rm,SSR") \
+    X(ldc_spc, "0100nnnn01001110", "ldc Rm,SPC") \
+    X(ldc_dbr, "0100nnnn11111010", "ldc Rm,DBR") \
+    X(ldc_bank, "0100nnnn1bbb1110", "ldc Rm,Rn_BANK") \
+    X(ldcl_sr, "0100nnnn00000111", "ldc.l @Rm+,SR") \
+    X(ldcl_gbr, "0100nnnn00010111", "ldc.l @Rm+,GBR") \
+    X(ldcl_vbr, "0100nnnn00100111", "ldc.l @Rm+,VBR") \
+    X(ldcl_ssr, "0100nnnn00110111", "ldc.l @Rm+,SSR") \
+    X(ldcl_spc, "0100nnnn01000111", "ldc.l @Rm+,SPC") \
+    X(ldcl_dbr, "0100nnnn11110110", "ldc.l @Rm+,DBR") \
+    X(ldcl_bank, "0100nnnn1bbb0111", "ldc.l @Rm+,Rn_BANK") \
+    X(lds_mach, "0100nnnn00001010", "lds Rm,MACH") \
+    X(lds_macl, "0100nnnn00011010", "lds Rm,MACL") \
+    X(lds_pr, "0100nnnn00101010", "lds Rm,PR") \
+    X(ldsl_mach, "0100nnnn00000110", "lds.l @Rm+,MACH") \
+    X(ldsl_macl, "0100nnnn00010110", "lds.l @Rm+,MACL") \
+    X(ldsl_pr, "0100nnnn00100110", "lds.l @Rm+,PR") \
+    X(stc_sr, "0000nnnn00000010", "stc SR,Rn") \
+    X(stc_gbr, "0000nnnn00010010", "stc GBR,Rn") \
+    X(stc_vbr, "0000nnnn00100010", "stc VBR,Rn") \
+    X(stc_ssr, "0000nnnn00110010", "stc SSR,Rn") \
+    X(stc_spc, "0000nnnn01000010", "stc SPC,Rn") \
+    X(stc_sgr, "0000nnnn001110
+##### u1068 HarissaDC src/sh4/sh4_optable.cpp 40
+    X(sts_macl, "0000nnnn00011010", "sts MACL,Rn") \
+    X(sts_pr, "0000nnnn00101010", "sts PR,Rn") \
+    X(stsl_mach, "0100nnnn00000010", "sts.l MACH,@-Rn") \
+    X(stsl_macl, "0100nnnn00010010", "sts.l MACL,@-Rn") \
+    X(stsl_pr, "0100nnnn00100010", "sts.l PR,@-Rn") \
+    X(pref, "0000nnnn10000011", "pref @Rn") \
+    X(ocbi, "0000nnnn10010011", "ocbi @Rn") \
+    X(ocbp, "0000nnnn10100011", "ocbp @Rn") \
+    X(ocbwb, "0000nnnn10110011", "ocbwb @Rn") \
+    X(movcal, "0000nnnn11000011", "movca.l R0,@Rn") \
+    X(fmov, "1111nnnnmmmm1100", "fmov FRm,FRn") \
+    X(fmov_load, "1111nnnnmmmm1000", "fmov.s @Rm,FRn") \
+    X(fmov_store, "1111nnnnmmmm1010", "fmov.s FRm,@Rn") \
+    X(fmov_inc, "1111nnnnmmmm1001", "fmov.s @Rm+,FRn") \
+    X(fmov_dec, "1111nnnnmmmm1011", "fmov.s FRm,@-Rn") \
+    X(fmov_load_r0, "1111nnnnmmmm0110", "fmov.s @(R0,Rm),FRn") \
+    X(fmov_store_r0, "1111nnnnmmmm0111", "fmov.s FRm,@(R0,Rn)") \
+    X(fldi0, "1111nnnn10001101", "fldi0 FRn") \
+    X(fldi1, "1111nnnn10011101", "fldi1 FRn") \
+    X(flds, "1111nnnn00011101", "flds FRm,FPUL") \
+    X(fsts, "1111nnnn00001101", "fsts FPUL,FRn") \
+    X(fabs_, "1111nnnn01011101", "fabs FRn") \
+    X(fneg, "1111nnnn01001101", "fneg FRn") \
+    X(fadd, "1111nnnnmmmm0000", "fadd FRm,FRn") \
+    X(fsub, "1111nnnnmmmm0001", "fsub FRm,FRn") \
+    X(fmul, "1111nnnnmmmm0010", "fmul FRm,FRn") \
+    X(fdiv, "1111nnnnmmmm0011", "fdiv FRm,FRn") \
+    X(fcmpeq, "1111nnnnmmmm0100", "fcmp/eq FRm,FRn") \
+    X(fcmpgt, "1111nnnnmmmm0101"
+##### u1069 HarissaDC src/platform/xbox360/tools/gen_lang.py 36
+FORMS = {
+    0x0621: (0xFE80, None, None, None),
+    0x0622: (0xFE81, 0xFE82, None, None),
+    0x0623: (0xFE83, 0xFE84, None, None),
+    0x0624: (0xFE85, 0xFE86, None, None),
+    0x0625: (0xFE87, 0xFE88, None, None),
+    0x0626: (0xFE89, 0xFE8A, 0xFE8B, 0xFE8C),
+    0x0627: (0xFE8D, 0xFE8E, None, None),
+    0x0628: (0xFE8F, 0xFE90, 0xFE91, 0xFE92),
+    0x0629: (0xFE93, 0xFE94, None, None),
+    0x062A: (0xFE95, 0xFE96, 0xFE97, 0xFE98),
+    0x062B: (0xFE99, 0xFE9A, 0xFE9B, 0xFE9C),
+    0x062C: (0xFE9D, 0xFE9E, 0xFE9F, 0xFEA0),
+    0x062D: (0xFEA1, 0xFEA2, 0xFEA3, 0xFEA4),
+    0x062E: (0xFEA5, 0xFEA6, 0xFEA7, 0xFEA8),
+    0x062F: (0xFEA9, 0xFEAA, None, None),
+    0x0630: (0xFEAB, 0xFEAC, None, None),
+    0x0631: (0xFEAD, 0xFEAE, None, None),
+    0x0632: (0xFEAF, 0xFEB0, None, None),
+    0x0633: (0xFEB1, 0xFEB2, 0xFEB3, 0xFEB4),
+    0x0634: (0xFEB5, 0xFEB6, 0xFEB7, 0xFEB8),
+    0x0635: (0xFEB9, 0xFEBA, 0xFEBB, 0xFEBC),
+    0x0636: (0xFEBD, 0xFEBE, 0xFEBF, 0xFEC0),
+    0x0637: (0xFEC1, 0xFEC2, 0xFEC3, 0xFEC4),
+    0x0638: (0xFEC5, 0xFEC6, 0xFEC7, 0xFEC8),
+    0x0639: (0xFEC9, 0xFECA, 0xFECB, 0xFECC),
+    0x063A: (0xFECD, 0xFECE, 0xFECF, 0xFED0),
+    0x0641: (0xFED1, 0xFED2, 0xFED3, 0xFED4),
+    0x0642: (0xFED5, 0xFED6, 0xFED7, 0xFED8),
+    0x0643: (0xFED9, 0xFEDA, 0xFEDB, 0xFEDC),
+    0x0644: (0xFEDD, 0xFEDE, 0xFEDF, 0xFEE0),
+    0x0645: (0xFEE1, 0xFEE2, 0xFEE3, 0xFEE4),
+    0x0646: (0xFEE5, 0xFEE6, 0xFEE7, 0xFEE8),
+    0x0647: (0xFEE9, 0xFEEA, 0xFEEB, 0xFEEC),
+    0x0648: (0xFEE
+##### u1070 HarissaDC src/bios/hle_bios.cpp 30
+    for (i = 0; i < 0x10000; i += 4) mem_write32(0x8C000000u + i, 0xFFFFFFFFu);
+    set_vector(VEC_SYSINFO, TRAP_SYSINFO);
+    set_vector(VEC_FONT, TRAP_FONT);
+    set_vector(VEC_FLASH, TRAP_FLASH);
+    set_vector(VEC_GDROM, TRAP_GDROM);
+    set_vector(VEC_GDROM2, TRAP_GDROM2);
+    set_vector(VEC_MISC, TRAP_MISC);
+    mem_write16(TRAP_IDLE, SH4_HLE_TRAP_OPCODE);
+    write_sysinfo();
+    memset(&s_gd, 0, sizeof(s_gd));
+    s_gd.curFad = 150;
+    reset_mode();
+
+    sh4_set_sr(0x400000F0u);
+    g_sh4.t = 1;
+    sh4_set_fpscr(0x00040001u);
+    R[15] = 0x8D000000u;
+    g_sh4.gbr = 0x8C000000u;
+    g_sh4.vbr = 0x8C000000u;
+    g_sh4.ssr = 0x40000001u;
+    g_sh4.spc = 0x8C000776u;
+    g_sh4.sgr = 0x8D000000u;
+    g_sh4.dbr = 0x8C000010u;
+    g_sh4.pr = 0xAC00043Cu;
+    g_sh4.fpul = 0;
+    g_dmac.dmaor = 0x8201;
+    mem_write32(0xA070289Cu, 0x48);
+    mem_write32(0xA07028A8u, 0x18);
+    mem_write32(0xA07028ACu, 0x50);
+    mem_write32(0xA07028B0u, 0x08);
+##### u1071 HarissaDC src/sh4/ppc_emit.h 29
+static inline u32 ppc_a(u32 op, u32 frt, u32 fra, u32 frb, u32 frc, u32 xo) { return (op << 26) | (frt << 21) | (fra << 16) | (frb << 11) | (frc << 6) | (xo << 1); }
+static inline void ppc_lfs(PpcCode *c, u32 frt, s32 d, u32 ra) { ppc_put(c, ppc_d(48, frt, ra, (u32)d)); }
+static inline void ppc_lfd(PpcCode *c, u32 frt, s32 d, u32 ra) { ppc_put(c, ppc_d(50, frt, ra, (u32)d)); }
+static inline void ppc_stfs(PpcCode *c, u32 frs, s32 d, u32 ra) { ppc_put(c, ppc_d(52, frs, ra, (u32)d)); }
+static inline void ppc_stfd(PpcCode *c, u32 frs, s32 d, u32 ra) { ppc_put(c, ppc_d(54, frs, ra, (u32)d)); }
+static inline void ppc_stfiwx(PpcCode *c, u32 frs, u32 ra, u32 rb) { ppc_put(c, ppc_x(frs, ra, rb, 983, 0)); }
+static inline void ppc_lfsx(PpcCode *c, u32 frt, u32 ra, u32 rb) { ppc_put(c, ppc_x(frt, ra, rb, 535, 0)); }
+static inline void ppc_lfdx(PpcCode *c, u32 frt, u32 ra, u32 rb) { ppc_put(c, ppc_x(frt, ra, rb, 599, 0)); }
+static inline void ppc_stfsx(PpcCode *c, u32 frs, u32 ra, u32 rb) { ppc_put(c, ppc_x(frs, ra, rb, 663, 0)); }
+static inline void ppc_stfdx(PpcCode *c, u32 frs, u32 ra, u32 rb) { ppc_put(c, ppc_x(frs, ra, rb, 727, 0)); }
+static inline void ppc_fadds(PpcCode *c, u32 t, u32 a, u32 b) { ppc_put(c, ppc_a(59, t, a, b, 0, 21)); }
+static inline void ppc_fsubs(PpcCode *c, u32 t, u32 a, u32 b) { ppc_put(c, ppc_a(59, t, a, b, 0, 20)); }
+static inline void ppc_fmuls(PpcCode *c, u32 t, u32 a, u32 b) { ppc_put(c, ppc_a(59, t, a, 0, b, 25)); }
+static inline void ppc_fdivs(PpcCode *c,
+##### u1072 HarissaDC src/platform/xbox360/xb_display.cpp 26
+    vp.X = 0; vp.Y = 0; vp.Width = UI_WIDTH; vp.Height = UI_HEIGHT; vp.MinZ = 0.0f; vp.MaxZ = 1.0f;
+    dev->SetViewport(&vp);
+    dev->SetVertexDeclaration(s_decl);
+    dev->SetVertexShader(s_vs);
+    dev->SetPixelShader(ps);
+    c[0] = 1.0f / td.Width; c[1] = 1.0f / td.Height; c[2] = (float)td.Width; c[3] = (float)td.Height;
+    dev->SetPixelShaderConstantF(0, c, 1);
+    c[0] = 1.0f; c[1] = 1.0f; c[2] = (float)srcW; c[3] = (float)srcLines;
+    dev->SetPixelShaderConstantF(1, c, 1);
+    c[0] = (float)(srcLines > 300 ? srcLines / 2 : srcLines);
+    c[1] = bright[cfg->brightness >= 0 && cfg->brightness <= 2 ? cfg->brightness : 0];
+    c[2] = c[3] = 0.0f;
+    dev->SetPixelShaderConstantF(2, c, 1);
+    dev->SetTexture(0, tex);
+    dev->SetSamplerState(0, D3DSAMP_ADDRESSU, D3DTADDRESS_CLAMP);
+    dev->SetSamplerState(0, D3DSAMP_ADDRESSV, D3DTADDRESS_CLAMP);
+    dev->SetSamplerState(0, D3DSAMP_MINFILTER, cfg->smooth || crt ? D3DTEXF_LINEAR : D3DTEXF_POINT);
+    dev->SetSamplerState(0, D3DSAMP_MAGFILTER, cfg->smooth || crt ? D3DTEXF_LINEAR : D3DTEXF_POINT);
+    dev->SetSamplerState(0, D3DSAMP_MIPFILTER, D3DTEXF_NONE);
+    dev->SetRenderState(D3DRS_ZENABLE, FALSE);
+    dev->SetRenderState(D3DRS_ZWRITEENABLE, FALSE);
+    dev->SetRenderState(D3DRS_ALPHABLENDENABLE, FALSE);
+    dev->SetRenderState(D3DRS_ALPHATESTENABLE, FALSE);
+    dev->SetRenderState(D3DRS_SCISSORTESTENABLE, FALSE);
+    dev->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
+    dev->DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2,
+##### u1073 HarissaDC src/sh4/sh4.h 26
+    u32 r[16];
+    u32 rbank[8];
+    u32 sr;
+    u32 t;
+    u32 gbr, vbr, ssr, spc, sgr, dbr;
+    u32 mach, macl, pr;
+    u32 pc;
+    u32 fpscr, fpul;
+    u32 fr[16];
+    u32 xf[16];
+    int sleeping;
+    s32 cycles;
+    u8 *jitRam;
+    u8 *jitCode;
+    u32 jitTemp[4];
+    u64 jitTemp64;
+    f32 jitFloatMin;
+    f32 jitFloatZero;
+    f32 jitFloatOne;
+    int irqReady;
+    int breakSlice;
+    int jitWrote;
+    u32 jitWhy;
+    u32 jitWhyKey[3];
+    u32 jitAsidTag;
+    u32 jitSqKey;
+##### u1074 HarissaDC src/render/soft_render.cpp 25
+    u32 sizeBits = tsp & 0x3F, w = 8u << ((tsp >> 3) & 7), h = 8u << (tsp & 7);
+    u32 fmt = (tcw >> 27) & 7, palKey = 0, i;
+    TexDesc d;
+    TexEntry *e;
+    static u32 palette[1024];
+    if (fmt >= 5) palKey = pvr_reg(0x005F8108) & 3;
+    for (i = 0; i < s_texCount; i++)
+        if (s_tex[i].tcw == tcw && s_tex[i].sizeBits == sizeBits && s_tex[i].palKey == palKey) return &s_tex[i];
+    if (s_texCount >= TEX_MAX || s_texPoolUsed + w * h > TEX_POOL / 4) return NULL;
+    e = &s_tex[s_texCount++];
+    e->tcw = tcw;
+    e->sizeBits = sizeBits;
+    e->palKey = palKey;
+    e->w = w;
+    e->h = h;
+    e->pixels = s_texPool + s_texPoolUsed;
+    s_texPoolUsed += w * h;
+    d.tcw = tcw;
+    d.width = w;
+    d.height = h;
+    d.strideWidth = (pvr_reg(0x005F80E4) & 31) * 32;
+    d.palFormat = palKey;
+    if (fmt >= 5)
+        for (i = 0; i < 1024; i++) palette[i] = pvr_reg(0x005F9000 + i * 4);
+    tex_decode(&d, g_vram, palette, e->pixels);
+##### u1075 HarissaDC src/sh4/sh4_jit_gen.cpp 25
+    PpcCode *c = g->c;
+    u32 t = getT(g), rn;
+    if (!g->srInR5) ppc_lwz(c, 5, OFF_SR, R_CTX);
+    ppc_rlwinm(c, 6, 5, 24, 31, 31);
+    ppc_rlwinm(c, 7, 5, 23, 31, 31);
+    ppc_xor(c, 6, 6, 7);
+    ppc_xori(c, 6, 6, 1);
+    ppc_neg(c, 6, 6);
+    ppc_clrldi(c, 8, get(g, m), 32);
+    ppc_xor(c, 8, 8, 6);
+    ppc_subf(c, 8, 6, 8);
+    rn = rw(g, n);
+    ppc_rlwinm(c, 9, rn, 1, 31, 31);
+    ppc_rlwinm(c, 10, rn, 1, 0, 30);
+    ppc_or(c, 10, 10, t);
+    ppc_clrldi(c, 10, 10, 32);
+    ppc_add(c, 10, 10, 8);
+    ppc_rldicl(c, 12, 10, 32, 63);
+    ppc_mr(c, rn, 10);
+    ppc_xor(c, 9, 9, 12);
+    ppc_xori(c, defT(g), 9, 1);
+    ppc_xor(c, 9, 9, 7);
+    ppc_rlwimi(c, 5, 9, 8, 23, 23);
+    ppc_stw(c, 5, OFF_SR, R_CTX);
+    g->srInR5 = 1;
+##### u1076 HarissaDC src/bios/hle_bios.cpp 23
+    static const char regionChar[3] = { '0', '1', '2' };
+    u8 factory[16], syscfg[FLASH_BLOCK];
+    u32 i, now;
+    for (i = 0; i < FLASH_SIZE; i++) buf_w8(g_flash, i, 0xFF);
+    memcpy(factory, "00000Dreamcast  ", 16);
+    factory[2] = (u8)regionChar[s_region];
+    factory[3] = '0';
+    flash_write_bytes(0x1A000, factory, 16);
+    flash_write_bytes(0x1A0A0, factory, 16);
+    for (i = 0; i < 8; i++) buf_w8(g_flash, 0x1A056 + i, (u8)(0x10 + i * 0x11));
+    format_partition(2);
+    format_partition(3);
+    format_partition(4);
+    memset(syscfg, 0xFF, sizeof(syscfg));
+    now = host_time() + 631152000u;
+    syscfg[2] = (u8)now;
+    syscfg[3] = (u8)(now >> 8);
+    syscfg[4] = (u8)(now >> 16);
+    syscfg[5] = (u8)(now >> 24);
+    syscfg[6] = 0;
+    syscfg[7] = (u8)s_language;
+    syscfg[8] = 0;
+    syscfg[9] = 1;
+##### u1077 HarissaDC src/hw/dreamcast.cpp 23
+        u64 now = sched_now(), next = sched_next();
+        s32 slice = s_sliceMax, executed, budget;
+        if (next != SCHED_NEVER && next > now && next - now < (u64)slice) slice = (s32)(next - now);
+        if (next != SCHED_NEVER && next <= now) slice = 1;
+        g_sh4_idle = 0;
+        budget = s_cpuPercent == 100 ? slice : (s32)((s64)slice * s_cpuPercent / 100);
+        if (budget < 1) budget = 1;
+        s_slice = budget;
+        sched_slice_end(now + (u64)slice);
+        if (sh4_jit_active()) sh4_jit_run(budget);
+        else sh4_run(budget);
+        sched_slice_end(SCHED_NEVER);
+        executed = budget - g_sh4.cycles;
+        if (executed < 1) executed = 1;
+        if (s_cpuPercent != 100) executed = executed >= budget ? slice : (s32)((s64)executed * 100 / s_cpuPercent);
+        if (executed < 1) executed = 1;
+        next = sched_next();
+        if (g_sh4_idle && next != SCHED_NEVER && next > now + (u64)executed)
+            executed = (s32)(next - now > 0x10000000u ? 0x10000000u : next - now);
+        if (!sound_thread_on()) run_arm(executed);
+        sched_advance((u32)executed);
+        sched_run_due();
+        sound_thread_advance(sched_now());
+##### u1078 HarissaDC src/sh4/sh4_jit.cpp 23
+    b = &s_blocks[s_blockCount];
+    b->pc = pc;
+    b->off = off;
+    b->code = s_mem + startPos;
+    b->words = words;
+    b->pure = info.pure;
+    b->headPure = info.pure || is_head_pure(ops, n);
+    b->fpMode = fpMode;
+    b->nextVersion = s_ramBlock[off >> 1] && s_blocks[s_ramBlock[off >> 1] - 1].pc == pc ? s_ramBlock[off >> 1] : 0;
+    b->firstLink = startLink;
+    b->endLink = s_linkCount;
+    b->idleFails = 0;
+    b->idleHit = 0;
+    b->countdown = 0;
+    b->cdReg = -1;
+    b->cdOff = CD_NO_COPY;
+    b->cdTurn = 0;
+    b->writeTurns = 0;
+    b->promoted = 0;
+    b->samples = 0;
+    b->tier2 = (u16)tier2;
+    s_blockCount++;
+    s_ramBlock[off >> 1] = s_blockCount;
+##### u1079 HarissaDC src/core/config.h 22
+    int taSkip;
+    int audioMs;
+    int audioStretch;
+    int slice;
+    int selfTest;
+    int toneHz;
+    int useJit;
+    int gpuRender;
+    int soundThread;
+    int armJit;
+    int fastFpu;
+    int jitSplit;
+    int jitSkips;
+    int fpuBench;
+    char xinput[512];
+    char lang[8];
+    char uiLang[8];
+    int fastMem;
+    int sh4Clock;
+    int idleSkip;
+    int transSort;
+    int modVols;
+##### u1080 HarissaDC src/hw/arm7_jit.cpp 22
+#if SH4_JIT_CAN_RUN
+    PpcCode c;
+    u32 *enter;
+    if (!execMem || size < (256u << 10)) return -1;
+    if (!s_blocks) s_blocks = (ArmBlock *)calloc(MAX_BLOCKS, sizeof(ArmBlock));
+    if (!s_blockAt) s_blockAt = (u32 *)calloc(ARAM_WORDS, sizeof(u32));
+    if (!s_blocks || !s_blockAt) return -1;
+    s_mem = (u32 *)execMem;
+    s_memWords = size / 4;
+    s_flush = flushIcache;
+    c.buf = s_mem;
+    c.pos = 0;
+    c.cap = s_memWords;
+    c.overflow = 0;
+    if (arm7_jit_gen_trampoline(&c, &enter, &s_exit) != 0) return -1;
+    s_firstBlockWord = (c.pos + 15) & ~15u;
+    if (s_flush) s_flush(s_mem, c.pos * 4);
+#if defined(SH4_JIT_ABI_ELFV1)
+    s_enterDesc.entry = (u64)(uintptr_t)enter;
+    s_enterDesc.toc = ((const u64 *)(const void *)&arm7_jit_init)[1];
+    s_enterDesc.env = 0;
+    s_enter = (EnterFn)(void *)&s_enterDesc;
+##### u1081 HarissaDC src/sh4/ppc_emit.h 22
+static inline void ppc_lbz(PpcCode *c, u32 rt, s32 d, u32 ra) { ppc_put(c, ppc_d(34, rt, ra, (u32)d)); }
+static inline void ppc_lhz(PpcCode *c, u32 rt, s32 d, u32 ra) { ppc_put(c, ppc_d(40, rt, ra, (u32)d)); }
+static inline void ppc_lha(PpcCode *c, u32 rt, s32 d, u32 ra) { ppc_put(c, ppc_d(42, rt, ra, (u32)d)); }
+static inline void ppc_lwz(PpcCode *c, u32 rt, s32 d, u32 ra) { ppc_put(c, ppc_d(32, rt, ra, (u32)d)); }
+static inline void ppc_lwa(PpcCode *c, u32 rt, s32 d, u32 ra) { ppc_put(c, ppc_ds(58, rt, ra, d, 2)); }
+static inline void ppc_ld(PpcCode *c, u32 rt, s32 d, u32 ra) { ppc_put(c, ppc_ds(58, rt, ra, d, 0)); }
+static inline void ppc_stb(PpcCode *c, u32 rs, s32 d, u32 ra) { ppc_put(c, ppc_d(38, rs, ra, (u32)d)); }
+static inline void ppc_sth(PpcCode *c, u32 rs, s32 d, u32 ra) { ppc_put(c, ppc_d(44, rs, ra, (u32)d)); }
+static inline void ppc_stw(PpcCode *c, u32 rs, s32 d, u32 ra) { ppc_put(c, ppc_d(36, rs, ra, (u32)d)); }
+static inline void ppc_stwu(PpcCode *c, u32 rs, s32 d, u32 ra) { ppc_put(c, ppc_d(37, rs, ra, (u32)d)); }
+static inline void ppc_std(PpcCode *c, u32 rs, s32 d, u32 ra) { ppc_put(c, ppc_ds(62, rs, ra, d, 0)); }
+static inline void ppc_stdu(PpcCode *c, u32 rs, s32 d, u32 ra) { ppc_put(c, ppc_ds(62, rs, ra, d, 1)); }
+static inline void ppc_lbzx(PpcCode *c, u32 rt, u32 ra, u32 rb) { ppc_put(c, ppc_x(rt, ra, rb, 87, 0)); }
+static inline void ppc_lhzx(PpcCode *c, u32 rt, u32 ra, u32 rb) { ppc_put(c, ppc_x(rt, ra, rb, 279, 0)); }
+static inline void ppc_lhax(Pp
+##### u1082 HarissaDC src/sh4/sh4_mmr.cpp 22
+    case 0xFFD0000C: return g_intc.iprc;
+    case 0xFFD00010: return g_intc.iprd;
+    case 0xFFD80000: return s_tocr;
+    case 0xFFD80004: return s_tstr;
+    case 0xFFD80008: return s_tmu[0].tcor;
+    case 0xFFD8000C: return tmu_read(0);
+    case 0xFFD80010: return s_tmu[0].tcr;
+    case 0xFFD80014: return s_tmu[1].tcor;
+    case 0xFFD80018: return tmu_read(1);
+    case 0xFFD8001C: return s_tmu[1].tcr;
+    case 0xFFD80020: return s_tmu[2].tcor;
+    case 0xFFD80024: return tmu_read(2);
+    case 0xFFD80028: return s_tmu[2].tcr;
+    case 0xFFD8002C: return s_tcpr2;
+    case 0xFFE80000: return s_scsmr2;
+    case 0xFFE80004: return s_scbrr2;
+    case 0xFFE80008: return s_scscr2;
+    case 0xFFE80010: return 0x0060;
+    case 0xFFE80014: return 0;
+    case 0xFFE80018: return s_scfcr2;
+    case 0xFFE8001C: return 0;
+    case 0xFFE80020: return s_scsptr2;
+##### u1083 HarissaDC src/hw/holly.h 21
+    HOLLY_RENDER_DONE_VIDEO = 0,
+    HOLLY_RENDER_DONE_ISP = 1,
+    HOLLY_RENDER_DONE_TSP = 2,
+    HOLLY_VBLANK_IN = 3,
+    HOLLY_VBLANK_OUT = 4,
+    HOLLY_HBLANK = 5,
+    HOLLY_YUV_DONE = 6,
+    HOLLY_OPAQUE_END = 7,
+    HOLLY_OPAQUE_MOD_END = 8,
+    HOLLY_TRANS_END = 9,
+    HOLLY_TRANS_MOD_END = 10,
+    HOLLY_PVR_DMA_END = 11,
+    HOLLY_MAPLE_DMA_END = 12,
+    HOLLY_MAPLE_VBLANK_OVER = 13,
+    HOLLY_GDROM_DMA_END = 14,
+    HOLLY_AICA_DMA_END = 15,
+    HOLLY_EXT1_DMA_END = 16,
+    HOLLY_EXT2_DMA_END = 17,
+    HOLLY_DEV_DMA_END = 18,
+    HOLLY_CH2_DMA_END = 19,
+    HOLLY_SORT_DMA_END = 20,
+##### u1084 HarissaDC src/platform/xbox360/xb_menu.cpp 21
+    PrepareUi *p = (PrepareUi *)user;
+    const float w = 760, h = 250, x = (UI_WIDTH - w) / 2, y = (UI_HEIGHT - h) / 2, bx = x + 48, bw = w - 96;
+    DWORD now = GetTickCount();
+    char buf[160], fit[160];
+    float f = total ? (float)((double)done / (double)total) : 0.0f;
+    if (now - p->last < 60 && done < total) return 1;
+    p->last = now;
+    if (UiInputPoll(&p->in) & XINPUT_GAMEPAD_B) return 0;
+    begin_frame(p->dev, p->background, p->user);
+    UiDim();
+    UiPanel(x, y, w, h, 22);
+    UiText(UI_BOLD, 30, bx, y + 62, UI_COL_TEXT, Tr(T_UNPACKING), UI_LEFT);
+    UiTextFit(UI_REGULAR, 19, bw, p->name, fit, sizeof(fit));
+    UiText(UI_REGULAR, 19, bx, y + 100, UI_COL_TEXT2, fit, UI_LEFT);
+    UiRoundRect(bx, y + 128, bw, 12, 6, D3DCOLOR_ARGB(40, 255, 255, 255), D3DCOLOR_ARGB(40, 255, 255, 255));
+    if (f > 0) UiRoundRect(bx, y + 128, bw * f < 12 ? 12 : bw * f, 12, 6, UI_COL_ACCENT_HI, UI_COL_ACCENT);
+    _snprintf(buf, sizeof(buf), Tr(T_UNPACK_PROGRESS), (u32)(done >> 20), (u32)(total >> 20));
+    buf[sizeof(buf) - 1] = 0;
+    UiText(UI_REGULAR, 17, bx, y + 168, UI_COL_TEXT3, buf, UI_LEFT);
+    UiFooter(bx, y + h - 42, Tr(T_FOOT_CANCEL));
+    end_frame(p->dev);
+##### u1085 HarissaDC src/core/config.h 20
+    int lightGun;
+    int rotate;
+    int artDownload;
+    int aspect;
+    int widescreen;
+    int smooth;
+    int fxaa;
+    int sharpen;
+    int blur;
+    int screen;
+    int brightness;
+    int zoom;
+    int posX, posY;
+    u32 padMap[PAD_PLAYERS][PADIN_COUNT];
+    int padStick[PAD_PLAYERS];
+    int padDead[PAD_PLAYERS];
+    int padRange[PAD_PLAYERS];
+    int padInvert[PAD_PLAYERS];
+    char lastGame[CONFIG_PATH_MAX];
+    int autoBoot;
+##### u1086 HarissaDC src/hw/arm7_jit_gen.cpp 20
+    same = ppc_bc_fwd(c, 12, 0, PPC_EQ);
+    ppc_rlwinm(c, 7, 3, 0, 8, 31);
+    ppc_subf(c, 7, sp, 7);
+    ppc_addi(c, 7, 7, 512);
+    ppc_rlwinm(c, 7, 7, 0, 0, 31);
+    ppc_cmplwi(c, 0, 7, 1024);
+    near = ppc_bc_fwd(c, 12, 0, PPC_LT);
+    ppc_li(c, 7, 1);
+    ppc_stw(c, 7, OFF_WROTE, R_CTX);
+    ppc_patch_here(c, same);
+    ppc_patch_here(c, near);
+    if (size == 4) ppc_stwx(c, rv, 5, 4);
+    else if (size == 2) ppc_sthx(c, rv, 5, 4);
+    else ppc_stbx(c, rv, 5, 4);
+    done = ppc_b_fwd(c);
+    ppc_patch_here(c, slow);
+    ppc_patch_here(c, slow2);
+    ppc_mr(c, 4, rv);
+    ppc_mr(c, 5, sp);
+    ppc_call(c, size == 4 ? (const void *)arm7_jit_write32 : size == 2 ? (const void *)arm7_jit_write16 : (const void *)arm7_jit_write8);
+##### u1087 HarissaDC src/platform/xbox360/xb_pvr.cpp 20
+    "  t.a = 1.0;\n"
+    "#endif\n"
+    "#if SHADING == 0\n"
+    "  c = t;\n"
+    "#elif SHADING == 1\n"
+    "  c = float4(t.rgb * c.rgb, t.a);\n"
+    "#elif SHADING == 2\n"
+    "  c = float4(lerp(c.rgb, t.rgb, t.a), c.a);\n"
+    "#else\n"
+    "  c = t * c;\n"
+    "#endif\n"
+    "#if OFFSET\n"
+    "  c.rgb = saturate(c.rgb + offs.rgb);\n"
+    "#endif\n"
+    "#endif\n"
+    "#if FOG == 0\n"
+    "  c.rgb = lerp(c.rgb, fogColRam.rgb, fog_lut(fw));\n"
+    "#elif FOG == 1 && OFFSET\n"
+    "  c.rgb = lerp(c.rgb, fogColVert.rgb, offs.a);\n"
+    "#endif\n"
+##### u1088 HarissaDC src/sh4/sh4_jit_internal.h 20
+    u32 fpMode;
+    int pure;
+    int link;
+    const u32 *exit;
+    int tier2;
+    int dry;
+    int busy;
+    u32 initDirty;
+    u32 initDirtyFr;
+    u32 sqRegs;
+    u32 ocRegs;
+    int mirror;
+    u32 coldPos, coldCap;
+    u32 *nearRefill[2][2];
+    struct Sh4JitGenOut *out;
+    int mmu;
+    u32 physStart;
+    u32 linkMmu;
+    int fpAny;
+    int md;
+##### u1089 HarissaDC src/core/config.cpp 19
+    ConfigParse *p = (ConfigParse *)user;
+    Config *c = p->c;
+    (void)section;
+    if (ini_key_is(key, "loglevel")) c->logLevel = ini_int(value, c->logLevel);
+    else if (ini_key_is(key, "biosdir")) copy_path(c->biosDir, value);
+    else if (ini_key_is(key, "bios"))
+        c->biosMode = ini_key_is(value, "real") ? BIOS_REAL : ini_key_is(value, "auto") ? BIOS_AUTO : BIOS_HLE;
+    else if (ini_key_is(key, "forceregion"))
+        c->region = ini_key_is(value, "jp") ? 0 : ini_key_is(value, "us") ? 1 : ini_key_is(value, "eu") ? 2 : -1;
+    else if (ini_key_is(key, "region")) {}
+    else if (ini_key_is(key, "gamesdir")) copy_path(c->gamesDir, value);
+    else if (ini_key_is(key, "mountdrives")) c->mountDrives = ini_bool(value, c->mountDrives);
+    else if (ini_key_is(key, "showlog")) c->showLog = ini_bool(value, c->showLog);
+    else if (ini_key_is(key, "diag")) c->diag = ini_int(value, c->diag);
+    else if (ini_key_is(key, "exitafter")) c->exitAfter = ini_int(value, c->exitAfter);
+    else if (ini_key_is(key, "savestateat")) c->saveStateAt = ini_int(value, c->saveStateAt);
+    else if (ini_key_is(key, "loadstate")) c->loadState = ini_int(value, c->loadState);
+    else if (ini_key_is(key, "tracefield")) c->traceField = ini_int(value, c->traceField);
+    else if (ini_key_is(key, "sampler")) c->sampler = ini_bool(value, c->sampler);
+##### u1090 HarissaDC src/hw/arm7_jit.cpp 19
+    PpcCode c;
+    Arm7JitGenInfo info;
+    u32 end, a;
+    if (s_memWords - s_pos < BLOCK_ROOM || s_blockCount >= MAX_BLOCKS) arm7_jit_flush();
+    c.buf = s_mem + s_pos;
+    c.pos = 0;
+    c.cap = s_memWords - s_pos;
+    c.overflow = 0;
+    info.exit = s_exit;
+    info.codePages = s_codePages;
+    info.fallbacks = 0;
+    end = arm7_jit_gen_block(&c, pc, &info);
+    if (!end || c.overflow) return NULL;
+    if (s_flush) s_flush(c.buf, c.pos * 4);
+    s_blocks[s_blockCount].pc = pc;
+    s_blocks[s_blockCount].code = c.buf;
+    s_blockCount++;
+    s_blockAt[(pc & (ARAM_SIZE - 1)) >> 2] = s_blockCount;
+    for (a = pc & ~1023u; a < end; a += 1024) s_codePages[(a & (ARAM_SIZE - 1)) >> 10] = 1;
+##### u1091 HarissaDC src/platform/xbox360/xb_menu.cpp 19
+#define PU(v) ((v) * s)
+    UiRoundRect(ox + PU(12), oy + PU(-6), PU(24), PU(13), PU(3), pad_rgb(150, 152, 162), pad_rgb(120, 122, 132));
+    UiRoundRect(ox + PU(64), oy + PU(-6), PU(24), PU(13), PU(3), pad_rgb(150, 152, 162), pad_rgb(120, 122, 132));
+    UiText(UI_BOLD, PU(4.2f), ox + PU(24), oy + PU(-0.6f), pad_rgb(60, 62, 70), "L", UI_CENTER);
+    UiText(UI_BOLD, PU(4.2f), ox + PU(76), oy + PU(-0.6f), pad_rgb(60, 62, 70), "R", UI_CENTER);
+    UiShadow(ox + PU(2), oy + PU(6), PU(96), PU(64), PU(16), 22, UI_COL_SHADOW);
+    UiRoundRect(ox + PU(5), oy + PU(28), PU(32), PU(44), PU(16), shell, shell2);
+    UiRoundRect(ox + PU(63), oy + PU(28), PU(32), PU(44), PU(16), shell, shell2);
+    UiRoundRect(ox + PU(26), oy + PU(28), PU(48), PU(30), PU(12), shell, shell2);
+    UiRoundRect(ox + PU(2), oy + PU(5), PU(96), PU(42), PU(18), shell, pad_rgb(214, 214, 220));
+    UiRoundRect(ox + PU(39), oy + PU(9), PU(22), PU(25), PU(3), pad_rgb(88, 90, 100), pad_rgb(70, 72, 82));
+    UiRoundRect(ox + PU(42), oy + PU(12), PU(16), PU(11), PU(1.5f), pad_rgb(120, 140, 120), pad_rgb(96, 116, 98));
+    UiCircle(ox + PU(24), oy + PU(21), PU(7.5f), pad_rgb(150, 152, 160));
+    UiCircle(ox + PU(24), oy + PU(21), PU(5.5f), dark);
+    UiCircle(ox + PU(24), oy + PU(21), PU(4.0f), pad_rgb(84, 86, 96));
+    UiRoundRect(ox + PU(17.5f), oy + PU(41.8f), PU(13), PU(4.4f), PU(1), dark, dark);
+    UiRoundRect(ox + PU(21.8f), oy + PU(37.5f), PU(4.4f), PU(13), PU(1), dark, dark);
+    UiCircle(ox + PU(50), oy + PU(45
+##### u1092 HarissaDC src/render/ta_scene.cpp 19
+    TaStrip *st = add_strip(s);
+    f32 ax = fl(p[1]), ay = fl(p[2]), az = fl(p[3]), bx = fl(p[4]), by = fl(p[5]), bz = fl(p[6]);
+    f32 cx = fl(p[7]), cy = fl(p[8]), cz = fl(p[9]), dx = fl(p[10]), dy = fl(p[11]);
+    f32 au = fl(p[13] & 0xFFFF0000u), av = fl(p[13] << 16), bu = fl(p[14] & 0xFFFF0000u), bv = fl(p[14] << 16);
+    f32 cu = fl(p[15] & 0xFFFF0000u), cv = fl(p[15] << 16);
+    TaVertex *v;
+    if (!st) return;
+    st->isp = h->isp;
+    st->tsp = h->tsp;
+    st->tcw = h->tcw;
+    st->pcw = h->pcw;
+    st->list = h->list;
+    st->clip = h->clip;
+    st->pass = h->pass;
+    st->first = s->vertCount;
+    st->count = 4;
+#define SPRITE_VERTEX(X, Y, Z, U, V) \
+    v = add_vertex(s); \
+    if (!v) return; \
+##### u1093 HarissaDC src/sh4/sh4_jit_gen.cpp 19
+            u32 p1;
+            ppc_rlwinm(c, 4, 3, 2, 30, 31);
+            ppc_cmplwi(c, 0, 4, 2);
+            p1 = ppc_bc_fwd(c, 12, 0, PPC_EQ);
+            slow[6] = ppc_bc_fwd(c, 12, 0, PPC_GT);
+            ppc_rlwinm(c, 4, 3, 27, 15, 26);
+            ppc_load_ptr_const(c, 5, ppc_addr_of(sh4_mmu_tc()));
+            ppc_add(c, 5, 5, 4);
+            ppc_lwz(c, 6, MMU_TC_OFF_TAG_READ, 5);
+            ppc_rlwinm(c, 12, 3, 23, 9, 30);
+            ppc_addi(c, 12, 12, md + 1);
+            ppc_lwz(c, 0, OFF_ASIDTAG, R_CTX);
+            ppc_or(c, 12, 12, 0);
+            ppc_cmplw(c, 0, 6, 12);
+            slow[7] = ppc_bc_fwd(c, 4, 0, PPC_EQ);
+            ppc_lwz(c, 6, MMU_TC_OFF_RAM_DELTA, 5);
+            ppc_add(c, 4, 3, 6);
+            ppc_rlwinm(c, 4, 4, 1, 7, 29);
+            ram = ppc_b_fwd(c);
+##### u1094 HarissaDC src/sh4/sh4_jit_gen.cpp 19
+            const u8 *e = (const u8 *)sh4_mmu_tc() + ((target >> 10) & 4095) * MMU_TC_ENTRY;
+            u32 tag0 = (((target >> 10) << 1) | (u32)g->info->md) + 1;
+            u32 delta0 = ((phys & 0x00FFFFFFu) & ~0x3FFu) - (target & ~0x3FFu), guard[2], *site;
+            reload(g);
+            ppc_load_ptr_const(c, 4, ppc_addr_of(e));
+            ppc_lwz(c, 6, MMU_TC_OFF_TAG_READ, 4);
+            ppc_lwz(c, 0, OFF_ASIDTAG, R_CTX);
+            ppc_lwz(c, 5, MMU_TC_OFF_RAM_DELTA, 4);
+            ppc_li32(c, 12, tag0);
+            ppc_or(c, 12, 12, 0);
+            ppc_cmplw(c, 0, 6, 12);
+            guard[0] = ppc_bc_fwd(c, 4, 0, PPC_EQ);
+            ppc_li32(c, 12, delta0);
+            ppc_cmplw(c, 0, 5, 12);
+            guard[1] = ppc_bc_fwd(c, 4, 0, PPC_EQ);
+            site = c->buf + c->pos;
+            ppc_put(c, ppc_b_word(site, site + 1));
+            if (!c->overflow) sh4_jit_add_link(site, site + 1, target, phys, link_mode(g), 0);
+            ppc_patch_here(c, guard[0]);
+##### u1095 HarissaDC src/sh4/sh4_jit_gen.cpp 19
+    slow = ram_check(g);
+    ppc_rlwinm(c, 4, 3, 0, 8, size == 4 ? 29 : size == 2 ? 30 : 31);
+    ppc_rlwinm(c, 6, 4, 28, 4, 31);
+    ppc_load_ptr(c, 5, OFF_JCODE, R_CTX);
+    ppc_lbzx(c, 6, 5, 6);
+    ppc_rlwinm(c, 0, 4, 31, 29, 31);
+    ppc_srw(c, 6, 6, 0);
+    ppc_rlwinm(c, 6, 6, 0, size == 4 ? 30 : 31, 31);
+    ppc_cmplwi(c, 0, 6, 0);
+    slow2 = ppc_bc_fwd(c, 4, 0, PPC_EQ);
+    if (size == 1) ppc_xori(c, 4, 4, 3);
+    else if (size == 2) ppc_xori(c, 4, 4, 2);
+    ppc_load_ptr(c, 5, OFF_JRAM, R_CTX);
+    if (size == 4) ppc_stwx(c, rs, 5, 4);
+    else if (size == 2) ppc_sthx(c, rs, 5, 4);
+    else ppc_stbx(c, rs, 5, 4);
+    add_cold(g, slow, COLD_STORE_OTHER, size, rs);
+    add_cold(g, slow2, COLD_STORE_CODE, size, rs);
+    if (sq) ppc_patch_here(c, sq);
+##### u1096 HarissaDC src/bios/hle_bios.cpp 18
+    u8 q[100];
+    u32 fad = cdda_fad(), rel, i, n = format == 0 ? 100 : 14;
+    DiscTrack *t = disc() ? disc_track_at(disc(), fad) : NULL;
+    memset(q, 0, sizeof(q));
+    rel = t && fad >= t->startFad ? fad - t->startFad : 0;
+    q[1] = (u8)cdda_status();
+    q[2] = (u8)(n >> 8);
+    q[3] = (u8)n;
+    q[4] = (u8)(((t ? t->ctrl : 4) << 4) | 1);
+    q[5] = (u8)(t ? t->number : 1);
+    q[6] = 1;
+    q[7] = (u8)(rel >> 16);
+    q[8] = (u8)(rel >> 8);
+    q[9] = (u8)rel;
+    q[11] = (u8)(fad >> 16);
+    q[12] = (u8)(fad >> 8);
+    q[13] = (u8)fad;
+    if (size < n) n = size;
+##### u1097 HarissaDC src/platform/xbox360/tools/gen_lang.py 18
+            v = t[k]
+            if re.findall(r"%[a-z]", v) != re.findall(r"%[a-z]", en[k]) or v.count("%%") != en[k].count("%%"):
+                fail("%s: %s must keep %s in the same order: %r" % (name, k, re.findall(r"%[a-z]", en[k]), v))
+            if k.startswith("FOOT_"):
+                eb = [it.split(":", 1)[0] for it in en[k].split("|")]
+                vb = [it.split(":", 1)[0] for it in v.split("|")]
+                if eb != vb:
+                    fail("%s: %s must keep the buttons %s: %r" % (name, k, eb, v))
+                for it in v.split("|"):
+                    if it.count(":") > 1:
+                        fail("%s: %s: a label holds ':' (%r)" % (name, k, it))
+        if code == "ar":
+            t = dict((k, shape_arabic(v)) for k, v in t.items())
+        for k, v in t.items():
+            for ch in v:
+                if ch != "\n" and ord(ch) not in adv[0]:
+                    fail("%s: %s: %r (U+%04X) is not in the menu font" % (name, k, ch, ord(ch)))
+        langs[code] = t
+##### u1098 HarissaDC src/platform/xbox360/xb_pvr.cpp 18
+    s_dev->GetRenderState(D3DRS_HALFPIXELOFFSET, &halfPixel);
+    s_dev->SetRenderTarget(0, s_rt);
+    s_dev->SetDepthStencilSurface(s_depth);
+    vp.X = 0; vp.Y = 0; vp.Width = rtW; vp.Height = rtH; vp.MinZ = 0.0f; vp.MaxZ = 1.0f;
+    s_dev->SetViewport(&vp);
+    s_dev->SetRenderState(D3DRS_HALFPIXELOFFSET, TRUE);
+    s_dev->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
+    s_dev->SetRenderState(D3DRS_SCISSORTESTENABLE, FALSE);
+    s_dev->SetRenderState(D3DRS_ZENABLE, D3DZB_TRUE);
+    s_dev->SetRenderState(D3DRS_BLENDOP, D3DBLENDOP_ADD);
+    s_dev->SetVertexDeclaration(s_decl);
+    s_dev->SetVertexShader(s_vs);
+    s_transAutosort = g_xb_trans_sort && !(jreg(0x005F8098) & 1);
+    s_modVols = 0;
+    if (g_xb_mod_vols)
+        for (i = 0; i < s_scene.modVolCount && !s_modVols; i++)
+            s_modVols = s_scene.modVols[i].list == TA_LIST_OPAQUE_MOD && s_scene.modVols[i].count;
+    fog_setup();
+##### u1099 HarissaDC src/sh4/sh4.h 18
+    SH4_IRQ_IRL9,
+    SH4_IRQ_IRL11,
+    SH4_IRQ_IRL13,
+    SH4_IRQ_TMU0,
+    SH4_IRQ_TMU1,
+    SH4_IRQ_TMU2,
+    SH4_IRQ_RTC_ATI,
+    SH4_IRQ_RTC_PRI,
+    SH4_IRQ_RTC_CUI,
+    SH4_IRQ_DMTE0,
+    SH4_IRQ_DMTE1,
+    SH4_IRQ_DMTE2,
+    SH4_IRQ_DMTE3,
+    SH4_IRQ_DMAE,
+    SH4_IRQ_SCIF_ERI,
+    SH4_IRQ_SCIF_RXI,
+    SH4_IRQ_SCIF_BRI,
+    SH4_IRQ_SCIF_TXI,
+##### u1100 HarissaDC src/sh4/sh4_intc.cpp 18
+static const IrqInfo s_info[SH4_IRQ_COUNT] = {
+    { 0x320, -1, 6 },
+    { 0x360, -1, 4 },
+    { 0x3A0, -1, 2 },
+    { 0x400, 0, 12 },
+    { 0x420, 0, 8 },
+    { 0x440, 0, 4 },
+    { 0x480, 0, 0 },
+    { 0x4A0, 0, 0 },
+    { 0x4C0, 0, 0 },
+    { 0x640, 2, 8 },
+    { 0x660, 2, 8 },
+    { 0x680, 2, 8 },
+    { 0x6A0, 2, 8 },
+    { 0x6C0, 2, 8 },
+    { 0x700, 2, 4 },
+    { 0x720, 2, 4 },
+    { 0x740, 2, 4 },
+##### u1101 HarissaDC src/sh4/sh4_jit.cpp 18
+    u32 pc;
+    u32 off;
+    u32 *code;
+    u32 words;
+    int pure;
+    int headPure;
+    u32 fpMode;
+    u32 nextVersion;
+    u32 firstLink, endLink;
+    u16 idleFails;
+    u16 idleHit;
+    u16 writeTurns;
+    u16 promoted;
+    u16 samples;
+    u16 tier2;
+    u16 countdown;
+    s8 cdReg;
+    s16 cdOff;
+##### u1102 HarissaDC src/sh4/sh4_jit_gen.cpp 18
+    ColdStub st;
+    u32 k;
+    memset(&st, 0, sizeof(st));
+    st.at = br[0];
+    for (k = 1; k < nb; k++) st.atMore[k - 1] = br[k];
+    st.atCount = nb;
+    st.site = ~0u;
+    st.back = g->c->pos;
+    st.kind = (u8)kind;
+    st.size = (u8)size;
+    st.reg = (u8)reg;
+    memcpy(st.sreg, g->reg, sizeof(st.sreg));
+    memcpy(st.sfr, g->fr, sizeof(st.sfr));
+    if (kind == COLD_MMU_LOAD && reg >= 14 && reg < 30 && g->lastDef == reg - 14) st.sreg[reg - 14] = g->lastDefPrev;
+    st.st = g->t;
+    st.instPc = g->inSlot ? g->pc - 2 : g->pc;
+    if (g->coldCount < MAX_COLD)
+        g->cold[g->coldCount++] = st;
+##### u1103 HarissaDC src/core/config.cpp 17
+    else if (ini_key_is(key, "taskip")) c->taSkip = ini_bool(value, c->taSkip);
+    else if (ini_key_is(key, "audioms")) c->audioMs = ini_int(value, c->audioMs);
+    else if (ini_key_is(key, "audiostretch")) c->audioStretch = ini_bool(value, c->audioStretch);
+    else if (ini_key_is(key, "slice")) c->slice = ini_int(value, c->slice);
+    else if (ini_key_is(key, "fastfpu")) c->fastFpu = ini_bool(value, c->fastFpu);
+    else if (ini_key_is(key, "jitsplit")) c->jitSplit = ini_bool(value, c->jitSplit);
+    else if (ini_key_is(key, "jitskips")) c->jitSkips = ini_bool(value, c->jitSkips);
+    else if (pad_key(c, key, value)) {}
+    else if (ini_key_is(key, "fxaa")) c->fxaa = ini_bool(value, c->fxaa);
+    else if (ini_key_is(key, "sharpen")) c->sharpen = ini_int(value, c->sharpen) & 3;
+    else if (ini_key_is(key, "blur")) c->blur = ini_int(value, c->blur) & 3;
+    else if (ini_key_is(key, "screen")) c->screen = ini_int(value, c->screen);
+    else if (ini_key_is(key, "brightness")) c->brightness = ini_int(value, c->brightness);
+    else if (ini_key_is(key, "zoom")) c->zoom = ini_int(value, c->zoom);
+    else if (ini_key_is(key, "posx")) c->posX = ini_int(value, c->posX);
+    else if (ini_key_is(key, "posy")) c->posY = ini_int(value, c->posY);
+    else if (ini_key_is(key, "fpubench")) c->fpuBench = ini_bool(value, c->fpuBench);
+##### u1104 HarissaDC src/disc/archive7z.cpp 17
+    FILE *f = s->a->file.f;
+    u8 *in = (u8 *)malloc(IN_SIZE), *out = (u8 *)malloc(OUT_SIZE);
+    CLzmaDec lzma;
+    CLzma2Dec lzma2;
+    size_t inLen = 0, inPos = 0;
+    int r = -1;
+    SRes res = SZ_OK;
+    LzmaDec_Construct(&lzma);
+    Lzma2Dec_Construct(&lzma2);
+    if (!in || !out) goto fail_mem;
+    if (seek64(f, (s64)packPos, SEEK_SET) != 0) goto fail_read;
+    if (method == METHOD_LZMA) res = LzmaDec_Allocate(&lzma, props, propsSize, &s_alloc);
+    else if (method == METHOD_LZMA2) res = propsSize == 1 ? Lzma2Dec_Allocate(&lzma2, props[0], &s_alloc) : SZ_ERROR_UNSUPPORTED;
+    if (res == SZ_ERROR_MEM) goto fail_dict;
+    if (res != SZ_OK) goto fail_data;
+    if (method == METHOD_LZMA) LzmaDec_Init(&lzma);
+    if (method == METHOD_LZMA2) Lzma2Dec_Init(&lzma2);
+##### u1105 HarissaDC src/disc/chd.cpp 17
+        u8 head[16], *comp, *raw;
+        u32 mapBytes, lastSelf = 0, rep = 0;
+        u64 cur, lastParent = 0;
+        int lengthBits, selfBits, parentBits, last = 0;
+        Huffman h;
+        BitReader b;
+        u16 crc;
+        if (read_at(c, c->mapOffset, head, 16)) return -1;
+        mapBytes = be32(head);
+        cur = be48(head + 4);
+        crc = (u16)((head[10] << 8) | head[11]);
+        lengthBits = head[12];
+        selfBits = head[13];
+        parentBits = head[14];
+        if (mapBytes > c->fileSize || lengthBits > 32 || selfBits > 32 || parentBits > 32) return -1;
+        comp = (u8 *)malloc(mapBytes + 4);
+        raw = (u8 *)calloc(c->hunkCount ? c->hunkCount : 1, 12);
+##### u1106 HarissaDC src/platform/xbox360/xb_pvr.cpp 17
+    u32 cull = (s->isp >> 27) & 3, gouraud = (s->pcw >> 1) & 1;
+    const TaVertex *v = &s_scene.verts[s->first + k];
+    const TaVertex *a = (k & 1) ? &v[1] : &v[0], *b = (k & 1) ? &v[0] : &v[1], *c = &v[2];
+    f32 area = (b->x - a->x) * (c->y - a->y) - (c->x - a->x) * (b->y - a->y);
+    XVtx *o;
+    if (area == 0 || (cull == 2 && area < 0) || (cull == 3 && area > 0)) return;
+    if (s_batchN + 3 > BATCH_VERTICES) flush();
+    o = &s_batch[s_batchN];
+    s_midU = (a->u + b->u + c->u) * (1.0f / 3.0f);
+    s_midV = (a->v + b->v + c->v) * (1.0f / 3.0f);
+    put_vertex(&o[0], a, gouraud ? a : c);
+    put_vertex(&o[1], b, gouraud ? b : c);
+    put_vertex(&o[2], c, c);
+    s_idx[s_idxN] = (u16)s_batchN;
+    s_idx[s_idxN + 1] = (u16)(s_batchN + 1);
+    s_idx[s_idxN + 2] = (u16)(s_batchN + 2);
+    s_idxN += 3;
+##### u1107 HarissaDC src/platform/xbox360/xb_pvr.cpp 18
+    s_dev->SetRenderState(D3DRS_COLORWRITEENABLE, D3DCOLORWRITEENABLE_ALL);
+    s_dev->SetRenderState(D3DRS_ZENABLE, D3DZB_FALSE);
+    s_dev->SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
+    s_dev->SetRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
+    s_dev->SetRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
+    s_dev->SetRenderState(D3DRS_STENCILFUNC, D3DCMP_EQUAL);
+    s_dev->SetRenderState(D3DRS_STENCILREF, 0x81);
+    s_dev->SetRenderState(D3DRS_STENCILMASK, 0x81);
+    s_dev->SetRenderState(D3DRS_STENCILWRITEMASK, 3);
+    s_dev->SetRenderState(D3DRS_STENCILPASS, D3DSTENCILOP_ZERO);
+    s_dev->SetRenderState(D3DRS_STENCILFAIL, D3DSTENCILOP_ZERO);
+    memset(q, 0, sizeof(q));
+    q[0].x = q[2].x = g_xb_widescreen ? -(f32)w / 6 : 0.0f;
+    q[1].x = q[3].x = g_xb_widescreen ? (f32)w * 7 / 6 : (f32)w;
+    q[2].y = q[3].y = (f32)h;
+    for (i = 0; i < 4; i++)
+    {
+        q[i].z = 1.0f;
+##### u1108 HarissaDC src/sh4/sh4_jit.cpp 17
+    if (!s_ramBlock) return;
+    memset(s_ramBlock, 0, (RAM_SIZE / 2) * sizeof(u32));
+    memset(s_pages, 0, sizeof(s_pages));
+    sh4_mmu_code_changed(~0u);
+    memset(s_spills, 0, sizeof(s_spills));
+    memset(s_codeBits, 0, sizeof(s_codeBits));
+    memset(s_insnBits, 0, sizeof(s_insnBits));
+    memset(s_busyBits, 0, sizeof(s_busyBits));
+    memset(s_loopBits, 0, sizeof(s_loopBits));
+    memset(s_libWaitBits, 0, sizeof(s_libWaitBits));
+    memset(s_libPollBits, 0, sizeof(s_libPollBits));
+    memset(s_litWritten, 0, sizeof(s_litWritten));
+    memset(s_pageLinks, 0, sizeof(s_pageLinks));
+    s_blockCount = 0;
+    s_linkCount = 0;
+    s_pos = s_firstBlockWord;
+    s_hotEnd = s_coldPos = s_pairEnd = s_pos;
+##### u1109 HarissaDC src/sh4/sh4_jit_gen.cpp 18
+    for (n = 0; n < 16; n++)
+        if (g->reg[n] != RS_NONE) ppc_lwz(c, H(n), OFF_R(n), R_CTX);
+    ppc_lwz(c, R_T, OFF_T, R_CTX);
+    quiet = ppc_b_fwd(c);
+    ppc_patch_here(c, fast);
+    ppc_stw(c, 4, OFF_SR, R_CTX);
+    ppc_li32(c, 7, SR_BL | SR_IMASK);
+    ppc_and(c, 7, 6, 7);
+    ppc_cmplwi(c, 0, 7, 0);
+    ppc_rlwinm(c, R_T, rm, 0, 31, 31);
+    ppc_stw(c, R_T, OFF_T, R_CTX);
+    n = ppc_bc_fwd(c, 12, 0, PPC_EQ);
+    call_c(c, (const void *)sh4_irq_update);
+    ppc_patch_here(c, n);
+    ppc_patch_here(c, quiet);
+    g->t = RS_CLEAN;
+    g->wrote = 1;
+}
+##### u1110 HarissaDC src/disc/chd.cpp 16
+    char path[260];
+    u64 fileSize;
+    u32 codecs[4];
+    u64 logicalBytes, mapOffset, metaOffset;
+    u32 hunkBytes, unitBytes, hunkCount;
+    ChdMapEntry *map;
+    ChdDecoder dec;
+    u8 *cache;
+    u32 cacheHunk;
+    Mutex *lock;
+    Event *wake;
+    Thread *worker;
+    ChdDecoder bg;
+    ChdSlot slots[CHD_SLOTS];
+    u32 clock, aheadFrom, aheadTo, lastHunk;
+    u64 waitTicks;
+##### u1111 HarissaDC src/hw/dreamcast.cpp 16
+    sched_state(io);
+    mem_state(io);
+    sh4_state(io);
+    sh4_mmr_state(io);
+    holly_state(io);
+    pvr_state(io);
+    gdrom_state(io);
+    aica_state(io);
+    arm7_state(io);
+    flash_state(io);
+    hle_bios_state(io);
+    STATE(io, s_armFraction);
+    state_tag(io, "END ");
+    if (!io->loading || io->pos < h.total) sh4_mmu_state(io);
+    else sh4_mmu_reset();
+    if (!io->loading || io->pos < h.total) cdda_state(io);
+##### u1112 HarissaDC src/platform/xbox360/xb_diag.cpp 16
+    static const float vals[2] = { 1.0f, 2.0f };
+    PpcCode c;
+    u32 loop, skip;
+    BenchFn fn;
+    LARGE_INTEGER f, t0, t1;
+    c.buf = xb_codemem_base() + 64;
+    c.pos = 0;
+    c.cap = 900;
+    c.overflow = 0;
+    ppc_lfs(&c, 1, 0, 3);
+    ppc_lfs(&c, 2, 4, 3);
+    ppc_li(&c, 8, 1);
+    ppc_li(&c, 9, 2);
+    ppc_li(&c, 7, 0);
+    ppc_mtctr(&c, 4);
+    loop = c.pos;
+##### u1113 HarissaDC src/platform/xbox360/xb_display.cpp 16
+    int key = (smooth ? 1 : 0) | (sharpen << 1) | (blur << 3) | (screen << 5);
+    char v[4][8];
+    D3DXMACRO defs[5];
+    LPD3DXBUFFER code;
+    if (key >= PS_KEYS) return NULL;
+    if (s_ps[key] || s_psFailed[key]) return s_ps[key];
+    sprintf(v[0], "%d", smooth ? 1 : 0);
+    sprintf(v[1], "%d", sharpen);
+    sprintf(v[2], "%d", blur);
+    sprintf(v[3], "%d", screen);
+    defs[0].Name = "SMOOTH"; defs[0].Definition = v[0];
+    defs[1].Name = "SHARPEN"; defs[1].Definition = v[1];
+    defs[2].Name = "BLUR"; defs[2].Definition = v[2];
+    defs[3].Name = "SCREEN"; defs[3].Definition = v[3];
+    defs[4].Name = NULL; defs[4].Definition = NULL;
+    code = compile(s_psSrc, "ps_3_0", defs);
+##### u1114 HarissaDC src/platform/xbox360/xb_menu.cpp 16
+    UiInput in;
+    int sel = 0, top = 0, i, lastSel = -1;
+    float selAt = 0;
+    char all[CONFIG_PATH_MAX], msg[256];
+    DWORD msgAt = 0;
+    msg[0] = 0;
+    scan_games(c);
+    ArtStart();
+    ArtSetNetwork(c->artDownload);
+    ArtPause(0);
+    if (c->artAll && s_gameCount) art_bulk();
+    if (c->updateCheck) UpdateCheckStart(c->updateCheck == 2 ? "0.0.0" : EMU_VERSION);
+    for (i = 0; i < s_gameCount; i++)
+        if (!_stricmp(s_games[i].path, c->lastGame)) sel = i;
+    SettingsPaths(NULL, all, NULL, sizeof(all));
+    UiInputInit(&in);
+##### u1115 HarissaDC src/sh4/sh4_core.cpp 16
+        s_abortArmed = 1; \
+        g_sh4_inst_pc = instPc; \
+        { u32 pa = sh4_va(addr, MMU_WRITE); g_sh4_jit_mmu_slow[slow_kind(pa, 1)]++; fn(pa, (type)value); } \
+        s_abortArmed = 0; \
+        g_sh4_jit_phase = SH4_PHASE_CODE; \
+    } \
+    void name(u32 addr, u32 value, u32 instPc) \
+    { \
+        u32 qa; \
+        g_sh4_jit_mmu_abort = 0; \
+        if (sh4_mmu_translate_quiet(addr, MMU_WRITE, &qa)) \
+        { \
+            g_sh4_inst_pc = instPc; \
+            g_sh4_jit_mmu_slow[slow_kind(qa, 1)]++; \
+            fn(qa, (type)value); \
+            return; \
+##### u1116 HarissaDC src/sh4/sh4_jit.cpp 16
+    u32 page, idx;
+    LinkSite *l;
+    if (s_linkCount >= MAX_LINKS) return;
+    off &= RAM_SIZE - 1;
+    page = off >> 12;
+    l = &s_links[s_linkCount];
+    l->site = site;
+    l->exit = exit;
+    l->target = target;
+    l->off = off;
+    l->fpMode = fpMode;
+    l->deferred = deferred && !BUSY_BIT(off);
+    if (l->deferred) s_loopBits[off >> 4] |= (u8)(1u << ((off >> 1) & 7));
+    l->next = s_pageLinks[page];
+    s_pageLinks[page] = ++s_linkCount;
+    idx = l->deferred ? 0 : find_block_at(off, target, fpMode);
+##### u1117 HarissaDC src/sh4/sh4_jit.cpp 16
+    g_sh4.jitRam = g_ram;
+    g_sh4.jitFloatMin = 1.17549435e-38f;
+    g_sh4.jitFloatZero = 0.0f;
+    g_sh4.jitFloatOne = 1.0f;
+    g_sh4.jitCode = s_codeBits;
+    g_sh4.cycles = cycles;
+    g_sh4.TAKEN_CYCLES = 0;
+    g_sh4.jitAsidTag = g_ccn.pteh << 24;
+    g_sh4.jitSqKey = (g_ccn.mmucr & 0x200u) ? ~0u : 0x38u;
+    g_sh4.jitSq = &g_sq[0][0];
+    s_stats.slices++;
+    g_sh4_break = 0;
+    s_running = 1;
+    if (g_sh4_jit_mark_blocks) g_sh4_jit_phase = SH4_PHASE_DISPATCH;
+    s_idlePc = 0;
+    if (g_sh4_irq_ready) sh4_irq_check();
+##### u1118 HarissaDC src/sh4/sh4_jit_gen.cpp 16
+            u32 miss;
+            out[store][md] = c->buf + c->pos;
+            ppc_rlwinm(c, 4, 3, 27, 15, 26);
+            ppc_load_ptr_const(c, 5, ppc_addr_of(sh4_mmu_tc()));
+            ppc_add(c, 5, 5, 4);
+            ppc_lwz(c, 6, store ? MMU_TC_OFF_TAG_WRITE : MMU_TC_OFF_TAG_READ, 5);
+            ppc_rlwinm(c, 12, 3, 23, 9, 30);
+            ppc_addi(c, 12, 12, md + 1);
+            ppc_lwz(c, 0, OFF_ASIDTAG, R_CTX);
+            ppc_or(c, 12, 12, 0);
+            ppc_cmplw(c, 0, 6, 12);
+            miss = ppc_bc_fwd(c, 4, 0, PPC_EQ);
+            ppc_lwz(c, R_TC_DELTA, MMU_TC_OFF_RAM_DELTA, 5);
+            ppc_rlwinm(c, R_TC_PAGE, 3, 0, 0, 21);
+            if (store) ppc_ori(c, R_TC_PAGE, R_TC_PAGE, 1);
+            ppc_patch_here(c, miss);
+##### u1119 HarissaDC src/sh4/sh4_jit_gen.cpp 16
+    for (r = 14; r < 32; r++) ppc_std(c, r, SAVE_SLOT(r), 1);
+    for (r = 14; r < 32; r++) ppc_stfd(c, r, FSAVE_SLOT(r), 1);
+    ppc_load_ptr_const(c, R_CTX, ppc_addr_of(&g_sh4));
+    for (r = 0; r < 16; r++) ppc_lwz(c, H(r), OFF_R(r), R_CTX);
+    ppc_lwz(c, R_T, OFF_T, R_CTX);
+    for (r = 0; r < 16; r++) ppc_lfs(c, FH(r), OFF_FR(r), R_CTX);
+    ppc_lwz(c, R_CYC, OFF_CYCLES, R_CTX);
+    ppc_li(c, R_TC_PAGE, -1);
+    ppc_lfs(c, 30, OFF_FMIN, R_CTX);
+    ppc_lfs(c, 31, OFF_FZERO, R_CTX);
+    ppc_mtctr(c, 3);
+    ppc_bctr(c);
+    *exit = c->buf + c->pos;
+    ppc_stw(c, R_CYC, OFF_CYCLES, R_CTX);
+    for (r = 14; r < 32; r++) ppc_ld(c, r, SAVE_SLOT(r), 1);
+    for (r = 14; r < 32; r++) ppc_lfd(c, r, FSAVE_SLOT(r), 1);
+##### u1120 HarissaDC src/sh4/sh4_jit_gen.cpp 16
+    PpcCode *c = g->c;
+    u32 rm = get(g, N), fast, same, quiet, n;
+    writeback(g);
+    fwd_clear(g);
+    g->known &= ~0xFFu;
+    ppc_li32(c, 4, SR_MASK & ~SR_T);
+    ppc_and(c, 4, rm, 4);
+    ppc_lwz(c, 5, OFF_SR, R_CTX);
+    ppc_xor(c, 6, 4, 5);
+    ppc_rlwinm(c, 0, 6, 0, 1, 2);
+    ppc_cmplwi(c, 0, 0, 0);
+    fast = ppc_bc_fwd(c, 12, 0, PPC_EQ);
+    ppc_li32(c, 3, g->pc + 2);
+    ppc_stw(c, 3, OFF_PC, R_CTX);
+    ppc_li32(c, 3, op);
+    call_c(c, g_sh4_jit_fallbacks ? (const void *)sh4_jit_counted_op : (const void *)g_sh4_ops[op]);

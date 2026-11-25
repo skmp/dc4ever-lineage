@@ -1,0 +1,242 @@
+===== nullDC4WiiU
+764749 plugs/nullAICA/aica.cpp | // The mixer stays close behind the emulator: the game's sound driver reads channel state back (is a voice playing?),
+764968 wii/dc/sh4/rec_v2/wii_driver_fastmem.inc | // for the crash report (normal context): why the last patch was refused
+765725 wiiu/fastmem_wiiu.cpp | printf("[fastmem] no mappable virtual range (Cemu?): off\n");
+766790 wiiu/picker/picker_core.h | *     for (;;) {
+764553 dc/dc.cpp | // the BIOS asks for the date when the RTC is far past the time in its flash (wiiu/flash_wiiu.cpp)
+764557 dc/maple/maple_devs.cpp | // a freshly formatted card (mc.pp.se/dc/vms/flashmem.html): root block 255, FAT in 254, a 13-block
+764583 dc/maple/maple_devs.cpp | // The devices get set up twice and the first set is never freed, so a file held open here made the
+764584 dc/maple/maple_devs.cpp | // second open fail on a console (Cemu allows it), leaving empty 0-byte saves. Read it and close it;
+764589 dc/maple/maple_devs.cpp | // an all-zero file is unformatted: format it (Soulcalibur reports no free space otherwise)
+764594 dc/maple/maple_devs.cpp | printf("vmu save file \"%s\": %s, writing a freshly formatted one\n",path,!f ? "missing" : blank ? "blank" : "short");
+764602 dc/maple/maple_devs.cpp | // The gun, as Flycast does it (works with The House of the Dead 2): it answers as a controller (MFID_0_Input with
+764603 dc/maple/maple_devs.cpp | // the gun function), and its position isn't in that answer. In light-gun mode (maple DMA pattern 2) the PVR latches
+764604 dc/maple/maple_devs.cpp | // the beam position into SPG_TRIGGER_POS at the line the gun sees, and raises the maple V-blank-over interrupt.
+764619 dc/maple/maple_devs.h | // maple light-gun mode (DMA pattern 2): latch the gun's screen position; false if this isn't a gun
+764620 dc/maple/maple_if.cpp | // light-gun mode (pattern 2): the DMA's end interrupt waits for the next V-blank, as Flycast's SDCKBOccupied; the
+764635 dc/mem/_vmem.cpp | // the Wii U loader refuses an RPX whose .bss needs 64 KB alignment (error 160-2203 at launch);
+764636 dc/mem/_vmem.cpp | // the JIT adds the low half of the address when it isn't zero, so 32 bytes only costs an addi
+764638 dc/mem/_vmem.cpp | // 64-bit: two consecutive 32-bit reads, in the order the direct path below gives. On a big-endian
+764639 dc/mem/_vmem.cpp | // host that puts the word at addr in the high half (the JIT takes it as the first register of the
+764640 dc/mem/_vmem.cpp | // pair); the little-endian order here swapped every pair of words that a 64-bit fmov copied from the
+764641 dc/mem/_vmem.cpp | // boot ROM, and the BIOS's soft-reset code, copied that way, ran as garbage (MvC2 after game over).
+764654 dc/sh4/rec_v2/decoder.cpp | // Soulcalibur (USA) fights: call a hook, wait for the frame counter to pass a target or a flag to clear.
+764659 dc/sh4/rec_v2/driver.cpp | // generated code must live in the codegen area (and stay within branch reach of the app's code)
+764669 dc/sh4/rec_v2/driver.cpp | // the codegen area is executable (read-only) here, as the ARM7 JIT left it: a store faults on a console
+764704 plugs/drkMapleDevices/drkMapleLightGun.cpp | // the GamePad works alongside the gun on player 1: Start (+) and the D-pad for menus, A/ZR as the trigger
+764712 plugs/drkPvr/SPG.cpp | // The light gun, as Flycast (core/hw/pvr/spg.cpp): maple light-gun mode asks where the beam will be when it passes
+764713 plugs/drkPvr/SPG.cpp | // x, y (640x480). The latch sets SPG_TRIGGER_POS and ends the maple DMA (SB_MDST = 0) without an interrupt; the DMA's
+764714 plugs/drkPvr/SPG.cpp | // end interrupt comes at the next V-blank (maple_if.cpp). Off screen, nothing latches and SB_MDST clears at V-blank in.
+764739 plugs/drkPvr/ta.h | // emulator thread's scanner raised the interrupt as the block arrived, wiiu/render_gx2.cpp)
+764742 plugs/nullAICA/aica.cpp | // The sound thread (the "sound core" option, exp_aica_thread; 1: core 0, 2: core 2): mixing runs on another core, at
+764743 plugs/nullAICA/aica.cpp | // most g_aica_ahead samples behind. Timers and interrupts stay here. The mixer is the only thread that changes channel
+764744 plugs/nullAICA/aica.cpp | // state: a channel register write stores its value at once (reads must see it) and queues its processing, tagged with
+764745 plugs/nullAICA/aica.cpp | // the sample it belongs to, so voices key on and off at the same sample as without the thread. Reads of channel
+764750 plugs/nullAICA/aica.cpp | // and with a lag of a few hundred samples a voice it had just keyed on still looks idle (MvC2's voices and music go
+764768 plugs/nullAICA/aica.cpp | // the queued op and the register values written before it, as the emulator's core published them (its
+764769 plugs/nullAICA/aica.cpp | // sync orders the writes; on the console this core must not read them from before ops_w moved)
+764790 plugs/nullAICA/aica.cpp | // the register's word as it is now goes with the op (the mixer applies it to its copy in order); whole words,
+764812 plugs/nullAICA/aica.cpp | // above the GX2 thread (g_aica_prio): CafeOS doesn't time-slice, so the mixer must preempt it to keep up
+764840 plugs/nullAICA/sgc_if.cpp | // The sound thread (exp_aica_thread): the mixer reads its own copy of the channel registers, updated in queue order,
+764841 plugs/nullAICA/sgc_if.cpp | // never the live block, so a queued write sees the values written with it, not later ones (KYONB changed after a
+764845 plugs/nullAICA/sgc_if.cpp | // the live block's KYONEX reads back as 0 once written, as the mixer's copy is cleared when it acts on it
+764848 plugs/nullAICA/sgc_if.cpp | // The sound thread (exp_aica_thread): disc access stays on the emulator thread, sectors reach the mixer through a small
+764879 plugs/vbaARM/arm7_jit.cpp | // the per-site return cache keeps miss counters in the code itself, which the emitted miss stub updates; the
+764880 plugs/vbaARM/arm7_jit.cpp | // Wii U's codegen area is read-only while executable, so that store faults (seen on a console). The rest of
+764883 plugs/vbaARM/arm7_jit.cpp | // the census keeps per-block counters in the code (code[-4]) that emitted code bumps: the same read-only-code
+764884 plugs/vbaARM/arm7_jit.cpp | // fault as the return cache (it crashed the census build at start-up on a console); the SH4 census still runs
+764888 wii/dc/sh4/rec_v2/wii_driver_emit.inc | // on the Wii U, system library code can be out of reach of the codegen area: go through a veneer
+764893 wii/dc/sh4/rec_v2/wii_driver_emit.inc | // exp_fm_x (on with the "faster code" option): the fastmem window base lives in r12, so scalar accesses are rlwinm +
+764894 wii/dc/sh4/rec_v2/wii_driver_emit.inc | // an indexed load/store. r12 is volatile and nothing in the JIT uses it, so it is reloaded after every call into C.
+764895 wii/dc/sh4/rec_v2/wii_driver_emit.inc | // Not after calls to the JIT's own stubs: their sites have a fixed layout, and the stubs reach C through ppc_call.
+764897 wii/dc/sh4/rec_v2/wii_driver_emit.inc | // exp_ps_ftrv (on with the "faster code" option): FTRV with paired singles, in single precision (shop_ftrv below)
+764932 wii/dc/sh4/rec_v2/wii_driver_fastmem.inc | // Wii U (wiiu/fastmem_wiiu.cpp): the pool has to be in the codegen area to execute, and the window is a 512 MB-aligned
+764933 wii/dc/sh4/rec_v2/wii_driver_fastmem.inc | // block of virtual space, not EA 0, so every shape ORs its base in after the mask (fm_ea). fastmem=2 (Cemu, which can
+764934 wii/dc/sh4/rec_v2/wii_driver_fastmem.inc | // neither alias memory nor raise DSIs) gives every site its trampoline at compile time, as if each had faulted:
+764946 wii/dc/sh4/rec_v2/wii_driver_fastmem.inc | // The address part of every fastmem shape: rD = window + (addr & 0x1FFFFFFF). `before` is the number of instructions
+764947 wii/dc/sh4/rec_v2/wii_driver_fastmem.inc | // the caller emits between this and the access (the sub-word xori), so fastmem=2 knows where the fault site lands.
+764954 wii/dc/sh4/rec_v2/wii_driver_fastmem.inc | // calls into the app: on a console its code sits ~170 MB from the codegen area, past bl's +-32 MB, so call
+764966 wii/dc/sh4/rec_v2/wii_driver_fastmem.inc | // wiiu/fastmem_wiiu.cpp's DSI callback (DAR comes from the exception context: mfspr DAR is privileged there)
+764971 wii/dc/sh4/rec_v2/wii_driver_fastmem.inc | // rD = (window EA & 0x1FFFFFFF) + 4: the masked Dreamcast address of a pair's second word
+764981 wii/dc/sh4/rec_v2/wii_driver_fastmem.inc | // exp_fm_x: an indexed access off r12 is the same site as its D-form; rB holds the masked address
+764989 wii/dc/sh4/rec_v2/wii_driver_fastmem.inc | // fastmem=2 never runs the window accesses, so prove r12 here: trap unless it holds the window base
+765000 wii/dc/sh4/rec_v2/wii_driver_compile.inc | // nor in the trampoline pool: a site that can't get a trampoline when it faults is a crash, so clear the cache
+765001 wii/dc/sh4/rec_v2/wii_driver_compile.inc | // (and the pool with it) first; fastmem=2 gives a whole block's sites trampolines at once
+765016 wii/dc/sh4/rec_v2/wii_driver_compile.inc | // SH4 dynamic shifts with a branch on the amount's sign, which is the same every time at most sites. Going right
+765017 wii/dc/sh4/rec_v2/wii_driver_compile.inc | // the amount is (~r2 & 0x1F) + 1, 1..32, and srw/sraw treat 32 properly (0 / the sign), so the zero case the
+765031 wii/dc/sh4/rec_v2/wii_driver_compile.inc | // the input vector where it is: pinned FRs are read in place (rd aliases it, but the results only
+765040 wii/dc/sh4/rec_v2/wii_driver_compile.inc | // paired singles: the matrix rows two floats at a time, out[0,1] in f4 and out[2,3] in f5. Single
+765041 wii/dc/sh4/rec_v2/wii_driver_compile.inc | // precision throughout, so not bit-identical to the default (jit_fipr keeps double). GQR0 must be
+765042 wii/dc/sh4/rec_v2/wii_driver_compile.inc | // 0, plain floats; the 12-bit displacement holds because xf[] sits at the start of the context.
+765062 wii/dc/sh4/rec_v2/wii_driver_compile.inc | // The four output chains interleaved (accumulators f4..f7, this step's matrix column in f0..f3): each
+765063 wii/dc/sh4/rec_v2/wii_driver_compile.inc | // fmadd depends on the one four instructions back instead of the previous one, so the FPU pipeline
+765064 wii/dc/sh4/rec_v2/wii_driver_compile.inc | // stays full. Every chain still does the same operations in the same order, so the results are
+765065 wii/dc/sh4/rec_v2/wii_driver_compile.inc | // bit-identical to the serial form below, and the stash move is gone (f4..f7 are the stash).
+765080 wii/dc/sh4/rec_v2/wii_driver_compile.inc | // fastmem=2: every site gets its trampoline now, as if it had faulted at a Dreamcast address in area 0 (so writes
+765093 wii/dc/sh4/rec_v2/wii_driver_link.inc | printf("[fastmem] trampoline pool %p, %u KB%s\n", s_fm_pool, FM_POOL_SIZE/1024, s_fm_pool ? "" : ": fastmem off");
+765095 wii/dc/sh4/rec_v2/wii_driver_link.inc | // the Wii U build returns from here when the CPU is stopped (exit path below), so the non-volatile
+765096 wii/dc/sh4/rec_v2/wii_driver_link.inc | // FPRs the JIT pins SH4 registers in are saved too: f14-f31 at sp+8, the GPRs at the top as before
+765119 wiiu/audio_wiiu.cpp | // Sound on the Wii U: the AICA's 44.1 kHz stereo output (wii_audio_push_sample, emulator thread) played by two
+765120 wiiu/audio_wiiu.cpp | // AX voices, left and right, each looping over a ring of 16-bit samples that AX resamples to 48 kHz and sends
+765121 wiiu/audio_wiiu.cpp | // to the TV and the GamePad. The emulator writes ahead of the play position in small cache-flushed blocks.
+765122 wiiu/audio_wiiu.cpp | // The AX frame callback (every 3 ms) tracks the play position and steers the resampling ratio by how much is
+765123 wiiu/audio_wiiu.cpp | // queued, so playback follows the rate the emulator really produces: below full speed the sound runs a little
+765124 wiiu/audio_wiiu.cpp | // slower and lower instead of stuttering (stop-and-restart at ~76% speed was unbearable on a console). Only a
+765125 wiiu/audio_wiiu.cpp | // real stall (a disc load) empties the ring; the voices then stop and start again once some sound is back.
+765126 wiiu/audio_wiiu.cpp | // A full ring makes the emulator wait, which is what holds it to real speed (on a console it otherwise ran at
+765134 wiiu/audio_wiiu.cpp | // playback speed as a fraction of nominal: from 60% (the emulator that slow still sounds continuous) to just
+765135 wiiu/audio_wiiu.cpp | // over 100% (when the emulator runs ahead the full ring paces it, and this keeps the queue from sitting full)
+765136 wiiu/audio_wiiu.cpp | // The picker's "Sound when slow" option sets the floor: 0.97 keeps the pitch and lets the queue run dry instead (gaps)
+765170 wiiu/audio_wiiu.cpp | // a voice that plays but no longer moves (seen once in Cemu, emulator stuck waiting for room): count it as
+765187 wiiu/audio_wiiu.cpp | // proportional steering toward TARGET_QUEUED, smoothed (SPEED_GLIDE) so the pitch glides rather than wobbles:
+765191 wiiu/audio_wiiu.cpp | // speed always moves; the voices only hear about it once it has moved a little (a threshold on each step
+765260 wiiu/audio_wiiu.cpp | // with exp_aica_thread the writer is on another core: voices restart from the frame callback, where they stop
+765268 wiiu/audio_wiiu.cpp | // wait for room, a frame callback at a time, but never long: a stopped voice frees nothing, and an
+765269 wiiu/audio_wiiu.cpp | // output that drains far below the sample rate (Cemu's, when its audio device stalls; the steering never
+765295 wiiu/audio_wiiu.cpp | printf("[audio] 1 s of samples: peak %u, queued %u, playing %d, underruns %u, dropped blocks %u, waits %u ms, "
+765319 wiiu/codegen_wiiu.cpp | printf("[wiiu] codegen: no room for %s (%u bytes; area %p, %u bytes left)\n", who, size, area,
+765364 wiiu/compat/gccore.h | /* Wii U stand-in for libogc's <gccore.h>: just the parts nullDC's core uses, mapped onto CafeOS (wut). */
+765380 wiiu/compat/ogc/ios.h | /* Wii U stand-in for libogc's IOS calls: there is no IOS to query or reload from a Wii U app. */
+765383 wiiu/compat/ogc/lwp_watchdog.h | /* Wii U stand-in for libogc's <ogc/lwp_watchdog.h>: time base reads and tick conversions.
+765384 wiiu/compat/ogc/lwp_watchdog.h | * The Wii U time base runs at 62.15625 MHz (libogc's Wii value is 60.75 MHz); OSTime is the same counter. */
+765387 wiiu/compat/ogc/lwp_watchdog.h | // The time base read inline, for the profiling counters that run per sample: OSGetSystemTime is a library call
+765388 wiiu/compat/ogc/lwp_watchdog.h | // (and in Cemu a slow HLE one: 176,000 a second slowed the BIOS to 18%). Only differences mean anything.
+765402 wiiu/compat/ogc/machine/processor.h | static inline uint32_t PPCMftb(void) { uint32_t t; __asm__ volatile("mftb %0" : "=r"(t)); return t; }
+765406 wiiu/compat/ogc/pad.h | /* Wii U stand-in for libogc's <ogc/pad.h> (GameCube pads); values match libogc, functions report none. */
+765430 wiiu/compat/ogc/system.h | /* Wii U stand-in for libogc's <ogc/system.h>. The MEM2 arena is a block from the CafeOS heap
+765445 wiiu/compat/wiiu_codegen.h | /* JIT code memory on the Wii U. Generated code may only run from the codegen area and only on the codegen
+765446 wiiu/compat/wiiu_codegen.h | * core, and the area is either writable or executable, never both (OSSwitchSecCodeGenMode). Writers call
+765447 wiiu/compat/wiiu_codegen.h | * wiiu_codegen_write_begin() before storing code; wiiu_codegen_executable() then flushes the data cache,
+765448 wiiu/compat/wiiu_codegen.h | * switches the area back to executable and invalidates the instruction cache for the range.
+765453 wiiu/compat/wiiu_codegen.h | // a stub in the codegen area that jumps to target (lis/ori r12, mtctr, bctr), for branches whose target is
+765460 wiiu/compat/wiiuse/wpad.h | /* Wii U stand-in for libogc's <wiiuse/wpad.h>: the types and constants nullDC's controller code uses.
+765520 wiiu/disc_cache_wiiu.cpp | // GD-ROM image reads on the Wii U, through a cache of 64-sector chunks that a thread on core 0 fills ahead of
+765521 wiiu/disc_cache_wiiu.cpp | // the game. On a console the emulator read the image a sector at a time (one seek and one read each, about
+765522 wiiu/disc_cache_wiiu.cpp | // 450 SD round trips in a 120 ms menu frame), which is what made the sound stutter at every load. Now a miss
+765523 wiiu/disc_cache_wiiu.cpp | // reads its whole chunk in one go, and every chunk the game touches queues the next two for the reader thread,
+765524 wiiu/disc_cache_wiiu.cpp | // which has its own file handles. Raw sectors are cached; iso9660.cpp converts them as before.
+765552 wiiu/disc_cache_wiiu.cpp | // an empty slot, or the least recently used ready one (never one being loaded); under the lock
+765630 wiiu/disc_cache_wiiu.cpp | // the raw sector index-th of the track into out (its sector size); false: read it the old way.
+765663 wiiu/fastmem_wiiu.cpp | // Fastmem on Wii U: the Wii's FASTMEM (wii/wii_fastmem.cpp builds its own page table and DSI handler, which needs
+765664 wiiu/fastmem_wiiu.cpp | // supervisor mode) redone with what a user-mode Cafe OS app has, checked on a console with a test app:
+===== HarissaDC
+745185 src/platform/xbox360/xb_art.cpp | static const char s_dbPath[] = "/libretro/libretro-database/master/metadat/redump/Sega%20-%20Dreamcast.dat";
+747050 src/platform/xbox360/xb_emu.cpp | LOG_INFO("[emu] dispatcher entries with the MMU, why per field: no page tag %u, no block %u, another address %u, "
+748534 src/platform/xbox360/xb_lang_table.h | "SH-4 to PowerPC dynamic recompiler.\nARM7 and AICA, GD-ROM, Maple.\nPowerVR2 on the Xenos GPU. No Sega BIOS needed (high-level BIOS).",
+748711 src/platform/xbox360/xb_lang_table.h | "Recompilador din\xC3\xA1mico de SH-4 a PowerPC.\nARM7 y AICA, GD-ROM, Maple.\nPowerVR2 en la GPU Xenos. Sin BIOS de Sega (BIOS de alto nivel).",
+748884 src/platform/xbox360/xb_lang_table.h | "Dynamischer Recompiler von SH-4 nach PowerPC.\nARM7 und AICA, GD-ROM, Maple.\nPowerVR2 auf der Xenos-GPU. Kein Sega-BIOS n\xC3\xB6tig (High-Level-BIO
+749057 src/platform/xbox360/xb_lang_table.h | "Recompilateur dynamique SH-4 vers PowerPC.\nARM7 et AICA, GD-ROM, Maple.\nPowerVR2 sur le GPU Xenos. Pas besoin du BIOS Sega (BIOS de haut niveau).",
+749075 src/platform/xbox360/xb_lang_table.h | "A:Jouer|LB/RB:Page|LT/RT:Lettre|B:Favori|Y:R\xC3\xA9glages|X:\xC3\x80 propos|BACK:Tableau de bord",
+749113 src/platform/xbox360/xb_lang_table.h | "Sans le BIOS de Sega, il n'y a pas de menu \xC3\xA0 afficher : choisissez un jeu dans la liste.",
+749235 src/platform/xbox360/xb_lang_table.h | "\xEF\xBA\x8D\xEF\xBB\x9F\xEF\xBB\x8C\xEF\xBB\xAE\xEF\xBA\xA9\xEF\xBA\x93 \xEF\xBA\x87\xEF\xBB\x9F\xEF\xBB\xB0 \xEF\xBB\x9F\xEF\xBB\xAE\xEF\xBA\xA3\xE
+749302 src/platform/xbox360/xb_lang_table.h | "\xEF\xBA\x8D\xEF\xBB\xB7\xEF\xBB\x8F\xEF\xBB\xA0\xEF\xBB\x94\xEF\xBA\x94: \xEF\xBB\xBB \xEF\xBB\xB3\xEF\xBB\xAE\xEF\xBA\x9F\xEF\xBA\xAA \xEF\xBA\x8D\
+749395 src/platform/xbox360/xb_lang_table.h | "Recompilador din\xC3\xA2mico de SH-4 para PowerPC.\nARM7 e AICA, GD-ROM, Maple.\nPowerVR2 na GPU Xenos. Sem BIOS da Sega (BIOS de alto n\xC3\xADvel).
+749411 src/platform/xbox360/xb_lang_table.h | "A:Jogar|LB/RB:P\xC3\xA1gina|LT/RT:Letra|B:Favorito|Y:Configura\xC3\xA7\xC3\xB5" "es|X:Sobre|BACK:Painel",
+749496 src/platform/xbox360/xb_lang_table.h | "\xD0\x92\xD1\x8B\xD0\xB1\xD0\xB5\xD1\x80\xD0\xB8\xD1\x82\xD0\xB5 \xD1\x8F\xD0\xB7\xD1\x8B\xD0\xBA",
+749498 src/platform/xbox360/xb_lang_table.h | "A:\xD0\x92\xD1\x8B\xD0\xB1\xD1\x80\xD0\xB0\xD1\x82\xD1\x8C|B:\xD0\x9D\xD0\xB0\xD0\xB7\xD0\xB0\xD0\xB4",
+749500 src/platform/xbox360/xb_lang_table.h | "A:\xD0\x92\xD1\x8B\xD0\xB1\xD1\x80\xD0\xB0\xD1\x82\xD1\x8C|DPAD:\xD0\x98\xD0\xB7\xD0\xBC\xD0\xB5\xD0\xBD\xD0\xB8\xD1\x82\xD1\x8C|B:\xD0\x9D\xD0\xB0\x
+749501 src/platform/xbox360/xb_lang_table.h | "\xD0\x9F\xD1\x80\xD0\xBE\xD1\x86\xD0\xB5\xD1\x81\xD1\x81\xD0\xBE\xD1\x80 (\xD0\xBF\xD1\x80\xD0\xB8 \xD1\x81\xD0\xBB\xD0\xB5\xD0\xB4. \xD0\xB7\xD0\xB0
+749502 src/platform/xbox360/xb_lang_table.h | "\xD0\xA0\xD0\xB5\xD0\xBA\xD0\xBE\xD0\xBC\xD0\xBF\xD0\xB8\xD0\xBB\xD1\x8F\xD1\x82\xD0\xBE\xD1\x80",
+749503 src/platform/xbox360/xb_lang_table.h | "\xD0\x98\xD0\xBD\xD1\x82\xD0\xB5\xD1\x80\xD0\xBF\xD1\x80\xD0\xB5\xD1\x82\xD0\xB0\xD1\x82\xD0\xBE\xD1\x80",
+749504 src/platform/xbox360/xb_lang_table.h | "\xD0\x93\xD1\x80\xD0\xB0\xD1\x84\xD0\xB8\xD0\xBA\xD0\xB0 (\xD0\xBF\xD1\x80\xD0\xB8 \xD1\x81\xD0\xBB\xD0\xB5\xD0\xB4. \xD0\xB7\xD0\xB0\xD0\xBF\xD1\x83
+749505 src/platform/xbox360/xb_lang_table.h | "\xD0\x9F\xD1\x80\xD0\xBE\xD0\xB3\xD1\x80\xD0\xB0\xD0\xBC\xD0\xBC\xD0\xBD\xD0\xB0\xD1\x8F",
+749512 src/platform/xbox360/xb_lang_table.h | "\xD0\xA1\xD0\xBE\xD1\x85\xD1\x80\xD0\xB0\xD0\xBD\xD0\xB8\xD1\x82\xD1\x8C \xD0\xB4\xD0\xBB\xD1\x8F \xD0\xB2\xD1\x81\xD0\xB5\xD1\x85 \xD0\xB8\xD0\xB3\x
+749513 src/platform/xbox360/xb_lang_table.h | "\xD0\xA1\xD0\xBE\xD1\x85\xD1\x80\xD0\xB0\xD0\xBD\xD0\xB8\xD1\x82\xD1\x8C \xD1\x82\xD0\xBE\xD0\xBB\xD1\x8C\xD0\xBA\xD0\xBE \xD0\xB4\xD0\xBB\xD1\x8F \x
+749517 src/platform/xbox360/xb_lang_table.h | "\xD0\xA1\xD0\xBE\xD1\x85\xD1\x80\xD0\xB0\xD0\xBD\xD0\xB5\xD0\xBD\xD0\xBE \xD0\xB4\xD0\xBB\xD1\x8F \xD0\xB2\xD1\x81\xD0\xB5\xD1\x85 \xD0\xB8\xD0\xB3\x
+749518 src/platform/xbox360/xb_lang_table.h | "\xD0\xA1\xD0\xBE\xD1\x85\xD1\x80\xD0\xB0\xD0\xBD\xD0\xB5\xD0\xBD\xD0\xBE \xD0\xB4\xD0\xBB\xD1\x8F \xD1\x8D\xD1\x82\xD0\xBE\xD0\xB9 \xD0\xB8\xD0\xB3\x
+749519 src/platform/xbox360/xb_lang_table.h | "\xD0\x9D\xD0\xB5 \xD1\x83\xD0\xB4\xD0\xB0\xD0\xBB\xD0\xBE\xD1\x81\xD1\x8C \xD1\x81\xD0\xBE\xD1\x85\xD1\x80\xD0\xB0\xD0\xBD\xD0\xB8\xD1\x82\xD1\x8C \x
+749525 src/platform/xbox360/xb_lang_table.h | "\xD0\xA1\xD0\xBE\xD0\xBE\xD1\x82\xD0\xBD\xD0\xBE\xD1\x88\xD0\xB5\xD0\xBD\xD0\xB8\xD0\xB5 \xD1\x81\xD1\x82\xD0\xBE\xD1\x80\xD0\xBE\xD0\xBD",
+749527 src/platform/xbox360/xb_lang_table.h | "\xD0\xA0\xD0\xB0\xD0\xB7\xD0\xBC\xD0\xB5\xD1\x80 \xD0\xB8\xD0\xB7\xD0\xBE\xD0\xB1\xD1\x80\xD0\xB0\xD0\xB6\xD0\xB5\xD0\xBD\xD0\xB8\xD1\x8F",
+749528 src/platform/xbox360/xb_lang_table.h | "\xD0\x98\xD0\xB7\xD0\xBE\xD0\xB1\xD1\x80\xD0\xB0\xD0\xB6\xD0\xB5\xD0\xBD\xD0\xB8\xD0\xB5 \xD0\xB2\xD0\xBB\xD0\xB5\xD0\xB2\xD0\xBE / \xD0\xB2\xD0\xBF\
+749529 src/platform/xbox360/xb_lang_table.h | "\xD0\x98\xD0\xB7\xD0\xBE\xD0\xB1\xD1\x80\xD0\xB0\xD0\xB6\xD0\xB5\xD0\xBD\xD0\xB8\xD0\xB5 \xD0\xB2\xD0\xB2\xD0\xB5\xD1\x80\xD1\x85 / \xD0\xB2\xD0\xBD\
+749533 src/platform/xbox360/xb_lang_table.h | "\xD0\x9D\xD0\xB0\xD0\xBC\xD0\xBD\xD0\xBE\xD0\xB3\xD0\xBE \xD1\x81\xD0\xB2\xD0\xB5\xD1\x82\xD0\xBB\xD0\xB5\xD0\xB5",
+749534 src/platform/xbox360/xb_lang_table.h | "\xD0\x9F\xD0\xBB\xD0\xB0\xD0\xB2\xD0\xBD\xD0\xBE\xD0\xB5 \xD0\xBC\xD0\xB0\xD1\x81\xD1\x88\xD1\x82\xD0\xB0\xD0\xB1\xD0\xB8\xD1\x80\xD0\xBE\xD0\xB2\xD0
+749535 src/platform/xbox360/xb_lang_table.h | "\xD0\xA1\xD0\xB3\xD0\xBB\xD0\xB0\xD0\xB6\xD0\xB8\xD0\xB2\xD0\xB0\xD0\xBD\xD0\xB8\xD0\xB5 \xD0\xBA\xD1\x80\xD0\xB0\xD1\x91\xD0\xB2 (FXAA)",
+749542 src/platform/xbox360/xb_lang_table.h | "\xD0\xAD\xD1\x84\xD1\x84\xD0\xB5\xD0\xBA\xD1\x82 \xD1\x8D\xD0\xBA\xD1\x80\xD0\xB0\xD0\xBD\xD0\xB0",
+749544 src/platform/xbox360/xb_lang_table.h | "\xD0\xA1\xD1\x82\xD1\x80\xD0\xBE\xD0\xBA\xD0\xB8 \xD1\x80\xD0\xB0\xD0\xB7\xD0\xB2\xD1\x91\xD1\x80\xD1\x82\xD0\xBA\xD0\xB8",
+749545 src/platform/xbox360/xb_lang_table.h | "\xD0\x92\xD1\x8B\xD0\xBF\xD1\x83\xD0\xBA\xD0\xBB\xD1\x8B\xD0\xB9 \xD0\xAD\xD0\x9B\xD0\xA2",
+749547 src/platform/xbox360/xb_lang_table.h | "\xD0\x9B\xD1\x91\xD0\xB3\xD0\xBA\xD0\xB8\xD0\xB5 \xD1\x81\xD1\x82\xD1\x80\xD0\xBE\xD0\xBA\xD0\xB8",
+749550 src/platform/xbox360/xb_lang_table.h | "\xD0\x90\xD0\xBD\xD0\xB0\xD0\xBB\xD0\xBE\xD0\xB3\xD0\xBE\xD0\xB2\xD1\x8B\xD0\xB9 \xD1\x81\xD1\x82\xD0\xB8\xD0\xBA Dreamcast",
+749553 src/platform/xbox360/xb_lang_table.h | "\xD0\xA1\xD1\x82\xD0\xB0\xD0\xBD\xD0\xB4\xD0\xB0\xD1\x80\xD1\x82\xD0\xBD\xD0\xBE\xD0\xB5 \xD1\x83\xD0\xBF\xD1\x80\xD0\xB0\xD0\xB2\xD0\xBB\xD0\xB5\xD0
+749554 src/platform/xbox360/xb_lang_table.h | "\xD0\x9D\xD0\xB0\xD0\xB6\xD0\xB0\xD1\x82\xD0\xB8\xD0\xB5 \xD0\xBB\xD0\xB5\xD0\xB2\xD0\xBE\xD0\xB3\xD0\xBE \xD1\x81\xD1\x82\xD0\xB8\xD0\xBA\xD0\xB0",
+749555 src/platform/xbox360/xb_lang_table.h | "\xD0\x9D\xD0\xB0\xD0\xB6\xD0\xB0\xD1\x82\xD0\xB8\xD0\xB5 \xD0\xBF\xD1\x80\xD0\xB0\xD0\xB2\xD0\xBE\xD0\xB3\xD0\xBE \xD1\x81\xD1\x82\xD0\xB8\xD0\xBA\xD
+749559 src/platform/xbox360/xb_lang_table.h | "\xD0\xAD\xD0\xBC\xD1\x83\xD0\xBB\xD1\x8F\xD1\x82\xD0\xBE\xD1\x80 Dreamcast \xD0\xB4\xD0\xBB\xD1\x8F Xbox 360",
+749562 src/platform/xbox360/xb_lang_table.h | "\xD0\x94\xD0\xB8\xD0\xBD\xD0\xB0\xD0\xBC\xD0\xB8\xD1\x87\xD0\xB5\xD1\x81\xD0\xBA\xD0\xB8\xD0\xB9 \xD1\x80\xD0\xB5\xD0\xBA\xD0\xBE\xD0\xBC\xD0\xBF\xD0
+749563 src/platform/xbox360/xb_lang_table.h | "\xD0\x91\xD0\x9B\xD0\x90\xD0\x93\xD0\x9E\xD0\x94\xD0\x90\xD0\xA0\xD0\x9D\xD0\x9E\xD0\xA1\xD0\xA2\xD0\x98",
+749564 src/platform/xbox360/xb_lang_table.h | "\xD0\x94\xD0\xBE\xD0\xBA\xD1\x83\xD0\xBC\xD0\xB5\xD0\xBD\xD1\x82\xD0\xB0\xD1\x86\xD0\xB8\xD1\x8F \xD0\xBF\xD0\xBE \xD0\xB6\xD0\xB5\xD0\xBB\xD0\xB5\xD
+749566 src/platform/xbox360/xb_lang_table.h | "\xD0\x92\xD0\xB5\xD1\x80\xD0\xBD\xD1\x83\xD1\x82\xD1\x8C\xD1\x81\xD1\x8F \xD0\xB2 \xD0\xB3\xD0\xBB\xD0\xB0\xD0\xB2\xD0\xBD\xD0\xBE\xD0\xB5 \xD0\xBC\x
+749569 src/platform/xbox360/xb_lang_table.h | "\xD0\xA0\xD0\xB0\xD1\x81\xD0\xBF\xD0\xB0\xD0\xBA\xD0\xBE\xD0\xB2\xD0\xBA\xD0\xB0 \xD0\xB8\xD0\xB3\xD1\x80\xD1\x8B",
+749570 src/platform/xbox360/xb_lang_table.h | "%u / %u \xD0\x9C\xD0\x91   (\xD1\x82\xD0\xBE\xD0\xBB\xD1\x8C\xD0\xBA\xD0\xBE \xD0\xBE\xD0\xB4\xD0\xB8\xD0\xBD \xD1\x80\xD0\xB0\xD0\xB7: \xD0\xB4\xD0\
+749573 src/platform/xbox360/xb_lang_table.h | "\xD0\x90\xD1\x80\xD1\x85\xD0\xB8\xD0\xB2 7z: \xD1\x80\xD0\xB0\xD1\x81\xD0\xBF\xD0\xB0\xD0\xBA\xD0\xBE\xD0\xB2\xD1\x8B\xD0\xB2\xD0\xB0\xD0\xB5\xD1\x82
+749574 src/platform/xbox360/xb_lang_table.h | "\xD0\x92 \xD1\x8D\xD1\x82\xD0\xBE\xD0\xBC \xD0\xBE\xD0\xB1\xD1\x80\xD0\xB0\xD0\xB7\xD0\xB5 \xD0\xBD\xD0\xB5\xD1\x82 \xD0\xB7\xD0\xB0\xD0\xB3\xD0\xBE\
+749578 src/platform/xbox360/xb_lang_table.h | "\xD0\x98\xD0\xB3\xD1\x80\xD1\x8B \xD0\xBD\xD0\xB5 \xD0\xBD\xD0\xB0\xD0\xB9\xD0\xB4\xD0\xB5\xD0\xBD\xD1\x8B",
+749579 src/platform/xbox360/xb_lang_table.h | "\xD0\xA1\xD0\xBA\xD0\xBE\xD0\xBF\xD0\xB8\xD1\x80\xD1\x83\xD0\xB9\xD1\x82\xD0\xB5 \xD0\xB8\xD0\xB3\xD1\x80\xD1\x8B .gdi, .cue, .chd \xD0\xB8\xD0\xBB\x
+749580 src/platform/xbox360/xb_lang_table.h | "\xD0\xB2 %s (\xD0\xBF\xD0\xBE \xD0\xBF\xD0\xB0\xD0\xBF\xD0\xBA\xD0\xB5 \xD0\xBD\xD0\xB0 \xD0\xB8\xD0\xB3\xD1\x80\xD1\x83)",
+749581 src/platform/xbox360/xb_lang_table.h | "A:\xD0\x98\xD0\xB3\xD1\x80\xD0\xB0\xD1\x82\xD1\x8C|LB/RB:\xD0\xA1\xD1\x82\xD1\x80\xD0\xB0\xD0\xBD\xD0\xB8\xD1\x86\xD0\xB0|LT/RT:\xD0\x91\xD1\x83\xD0\
+749582 src/platform/xbox360/xb_lang_table.h | "Y:\xD0\x9D\xD0\xB0\xD1\x81\xD1\x82\xD1\x80\xD0\xBE\xD0\xB9\xD0\xBA\xD0\xB8|X:\xD0\x9E \xD0\xBF\xD1\x80\xD0\xBE\xD0\xB3\xD1\x80\xD0\xB0\xD0\xBC\xD0\xB
+749586 src/platform/xbox360/xb_lang_table.h | "\xD0\x9F\xD0\xB5\xD1\x80\xD0\xB5\xD0\xB7\xD0\xB0\xD0\xBF\xD1\x83\xD1\x81\xD1\x82\xD0\xB8\xD1\x82\xD1\x8C \xD0\xB8\xD0\xB3\xD1\x80\xD1\x83",
+749587 src/platform/xbox360/xb_lang_table.h | "\xD0\xA1\xD0\xBE\xD1\x85\xD1\x80\xD0\xB0\xD0\xBD\xD0\xB8\xD1\x82\xD1\x8C \xD1\x81\xD0\xBE\xD1\x81\xD1\x82\xD0\xBE\xD1\x8F\xD0\xBD\xD0\xB8\xD0\xB5",
+749588 src/platform/xbox360/xb_lang_table.h | "\xD0\x97\xD0\xB0\xD0\xB3\xD1\x80\xD1\x83\xD0\xB7\xD0\xB8\xD1\x82\xD1\x8C \xD1\x81\xD0\xBE\xD1\x81\xD1\x82\xD0\xBE\xD1\x8F\xD0\xBD\xD0\xB8\xD0\xB5",
+749589 src/platform/xbox360/xb_lang_table.h | "\xD0\xA1\xD0\xBC\xD0\xB5\xD0\xBD\xD0\xB8\xD1\x82\xD1\x8C \xD0\xB4\xD0\xB8\xD1\x81\xD0\xBA",
+749592 src/platform/xbox360/xb_lang_table.h | "\xD0\x92 \xD0\xB3\xD0\xBB\xD0\xB0\xD0\xB2\xD0\xBD\xD0\xBE\xD0\xB5 \xD0\xBC\xD0\xB5\xD0\xBD\xD1\x8E Xbox",
+749595 src/platform/xbox360/xb_lang_table.h | "A:\xD0\x92\xD1\x81\xD1\x82\xD0\xB0\xD0\xB2\xD0\xB8\xD1\x82\xD1\x8C|B:\xD0\x9D\xD0\xB0\xD0\xB7\xD0\xB0\xD0\xB4",
+749601 src/platform/xbox360/xb_lang_table.h | "BACK: \xD0\xBC\xD0\xB5\xD0\xBD\xD1\x8E    BACK+RB: \xD1\x81\xD0\xBE\xD1\x85\xD1\x80\xD0\xB0\xD0\xBD\xD0\xB8\xD1\x82\xD1\x8C    BACK+LB: \xD0\xB7\xD0\
+749602 src/platform/xbox360/xb_lang_table.h | "\xD0\x94\xD0\xBB\xD1\x8F \xD1\x8D\xD1\x82\xD0\xBE\xD0\xB3\xD0\xBE \xD0\xB4\xD0\xB8\xD1\x81\xD0\xBA\xD0\xB0 \xD0\xBD\xD0\xB5\xD1\x82 \xD1\x81\xD0\xBE\
+749603 src/platform/xbox360/xb_lang_table.h | "\xD0\xA1\xD0\xBE\xD1\x81\xD1\x82\xD0\xBE\xD1\x8F\xD0\xBD\xD0\xB8\xD0\xB5 \xD1\x81\xD0\xBE\xD1\x85\xD1\x80\xD0\xB0\xD0\xBD\xD0\xB5\xD0\xBD\xD0\xBE \xD
+749604 src/platform/xbox360/xb_lang_table.h | "\xD0\xA1\xD0\xBE\xD1\x81\xD1\x82\xD0\xBE\xD1\x8F\xD0\xBD\xD0\xB8\xD0\xB5 \xD0\xB7\xD0\xB0\xD0\xB3\xD1\x80\xD1\x83\xD0\xB6\xD0\xB5\xD0\xBD\xD0\xBE \xD
+749605 src/platform/xbox360/xb_lang_table.h | "\xD0\xAF\xD1\x87\xD0\xB5\xD0\xB9\xD0\xBA\xD0\xB0 %d (\xD0\xB7\xD0\xB0\xD0\xBD\xD1\x8F\xD1\x82\xD0\xB0)",
+749606 src/platform/xbox360/xb_lang_table.h | "\xD0\xAF\xD1\x87\xD0\xB5\xD0\xB9\xD0\xBA\xD0\xB0 %d (\xD0\xBF\xD1\x83\xD1\x81\xD1\x82\xD0\xBE)",
+749607 src/platform/xbox360/xb_lang_table.h | "\xD0\x9D\xD0\xB5\xD0\xB4\xD0\xBE\xD1\x81\xD1\x82\xD0\xB0\xD1\x82\xD0\xBE\xD1\x87\xD0\xBD\xD0\xBE \xD0\xBF\xD0\xB0\xD0\xBC\xD1\x8F\xD1\x82\xD0\xB8 \xD
+749608 src/platform/xbox360/xb_lang_table.h | "\xD0\x9D\xD0\xB5 \xD1\x83\xD0\xB4\xD0\xB0\xD0\xBB\xD0\xBE\xD1\x81\xD1\x8C \xD0\xB7\xD0\xB0\xD0\xBF\xD0\xB8\xD1\x81\xD0\xB0\xD1\x82\xD1\x8C %s.",
+749609 src/platform/xbox360/xb_lang_table.h | "\xD0\x92 \xD1\x8F\xD1\x87\xD0\xB5\xD0\xB9\xD0\xBA\xD0\xB5 %d \xD0\xBD\xD0\xB5\xD1\x82 \xD1\x81\xD0\xBE\xD1\x85\xD1\x80\xD0\xB0\xD0\xBD\xD0\xB5\xD0\xB
+749610 src/platform/xbox360/xb_lang_table.h | "\xD0\xA1\xD0\xBE\xD1\x85\xD1\x80\xD0\xB0\xD0\xBD\xD0\xB5\xD0\xBD\xD0\xB8\xD0\xB5 \xD1\x81\xD0\xB4\xD0\xB5\xD0\xBB\xD0\xB0\xD0\xBD\xD0\xBE \xD0\xB4\xD
+749611 src/platform/xbox360/xb_lang_table.h | "\xD0\xA1\xD0\xBE\xD1\x85\xD1\x80\xD0\xB0\xD0\xBD\xD0\xB5\xD0\xBD\xD0\xB8\xD0\xB5 \xD1\x81\xD0\xB4\xD0\xB5\xD0\xBB\xD0\xB0\xD0\xBD\xD0\xBE \xD1\x81 \x
+749612 src/platform/xbox360/xb_lang_table.h | "\xD0\x9D\xD0\xB5 \xD1\x83\xD0\xB4\xD0\xB0\xD0\xBB\xD0\xBE\xD1\x81\xD1\x8C \xD0\xB7\xD0\xB0\xD0\xB3\xD1\x80\xD1\x83\xD0\xB7\xD0\xB8\xD1\x82\xD1\x8C \x
+749613 src/platform/xbox360/xb_lang_table.h | "\xD0\x9E\xD1\x88\xD0\xB8\xD0\xB1\xD0\xBA\xD0\xB0 \xD0\xB4\xD0\xB8\xD1\x81\xD0\xBA\xD0\xB0",
+749614 src/platform/xbox360/xb_lang_table.h | "\xD0\x9D\xD0\xB5 \xD1\x83\xD0\xB4\xD0\xB0\xD0\xBB\xD0\xBE\xD1\x81\xD1\x8C \xD0\xBE\xD1\x82\xD0\xBA\xD1\x80\xD1\x8B\xD1\x82\xD1\x8C \xD0\xBE\xD0\xB1\x
+749615 src/platform/xbox360/xb_lang_table.h | "\xD0\x9D\xD0\xB5 \xD1\x83\xD0\xB4\xD0\xB0\xD0\xBB\xD0\xBE\xD1\x81\xD1\x8C \xD1\x80\xD0\xB0\xD1\x81\xD0\xBF\xD0\xB0\xD0\xBA\xD0\xBE\xD0\xB2\xD0\xB0\xD
+749616 src/platform/xbox360/xb_lang_table.h | "\xD0\x9D\xD0\xB5\xD0\xB4\xD0\xBE\xD1\x81\xD1\x82\xD0\xB0\xD1\x82\xD0\xBE\xD1\x87\xD0\xBD\xD0\xBE \xD0\xBF\xD0\xB0\xD0\xBC\xD1\x8F\xD1\x82\xD0\xB8",
+749617 src/platform/xbox360/xb_lang_table.h | "\xD0\x9D\xD0\xB5 \xD1\x83\xD0\xB4\xD0\xB0\xD0\xBB\xD0\xBE\xD1\x81\xD1\x8C \xD0\xB2\xD1\x8B\xD0\xB4\xD0\xB5\xD0\xBB\xD0\xB8\xD1\x82\xD1\x8C \xD0\xBF\x
+749620 src/platform/xbox360/xb_lang_table.h | "\xD0\x91\xD0\xB5\xD0\xB7 BIOS Sega \xD0\xBD\xD0\xB5\xD1\x87\xD0\xB5\xD0\xB3\xD0\xBE \xD0\xBF\xD0\xBE\xD0\xBA\xD0\xB0\xD0\xB7\xD0\xB0\xD1\x82\xD1\x8C:
+749621 src/platform/xbox360/xb_lang_table.h | "\xD0\xAD\xD0\xBC\xD1\x83\xD0\xBB\xD1\x8F\xD1\x86\xD0\xB8\xD1\x8F \xD0\xBE\xD1\x81\xD1\x82\xD0\xB0\xD0\xBD\xD0\xBE\xD0\xB2\xD0\xB8\xD0\xBB\xD0\xB0\xD1
+749622 src/platform/xbox360/xb_lang_table.h | "\xD0\x9D\xD0\xB5 \xD1\x83\xD0\xB4\xD0\xB0\xD0\xBB\xD0\xBE\xD1\x81\xD1\x8C \xD0\xB7\xD0\xB0\xD0\xBF\xD1\x83\xD1\x81\xD1\x82\xD0\xB8\xD1\x82\xD1\x8C",
+749623 src/platform/xbox360/xb_lang_table.h | "\xD0\x94\xD0\xB8\xD1\x81\xD0\xBA \xD0\xBD\xD0\xB5 \xD0\xB7\xD0\xB0\xD0\xBF\xD1\x83\xD1\x81\xD0\xBA\xD0\xB0\xD0\xB5\xD1\x82\xD1\x81\xD1\x8F (\xD0\xBD\
+749624 src/platform/xbox360/xb_lang_table.h | "\xD0\x97\xD0\xB0\xD0\xB3\xD1\x80\xD1\x83\xD0\xB7\xD0\xBA\xD0\xB0 \xD0\xBE\xD0\xB1\xD0\xBB\xD0\xBE\xD0\xB6\xD0\xB5\xD0\xBA",
+749625 src/platform/xbox360/xb_lang_table.h | "\xD0\x9E\xD0\xB1\xD0\xBB\xD0\xBE\xD0\xB6\xD0\xBA\xD0\xB8 \xD0\xB4\xD0\xBB\xD1\x8F \xD0\xB2\xD1\x81\xD0\xB5\xD1\x85 \xD0\xB8\xD0\xB3\xD1\x80",
+749628 src/platform/xbox360/xb_lang_table.h | "\xD0\x9E\xD0\xB1\xD0\xBB\xD0\xBE\xD0\xB6\xD0\xBA\xD0\xB8: \xD0\xBF\xD0\xBE\xD0\xB4\xD0\xBA\xD0\xBB\xD1\x8E\xD1\x87\xD0\xB5\xD0\xBD\xD0\xB8\xD0\xB5\xE
+749629 src/platform/xbox360/xb_lang_table.h | "\xD0\x97\xD0\xB0\xD0\xB3\xD1\x80\xD1\x83\xD0\xB7\xD0\xBA\xD0\xB8 \xD0\xB7\xD0\xB4\xD0\xB5\xD1\x81\xD1\x8C \xD0\xBD\xD0\xB5\xD0\xB4\xD0\xBE\xD1\x81\xD
+749630 src/platform/xbox360/xb_lang_table.h | "\xD0\x97\xD0\xB0\xD0\xB3\xD1\x80\xD1\x83\xD0\xB7\xD0\xBA\xD0\xB0 \xD0\xBE\xD0\xB1\xD0\xBB\xD0\xBE\xD0\xB6\xD0\xB5\xD0\xBA \xD0\xB4\xD0\xBB\xD1\x8F \x
+749631 src/platform/xbox360/xb_lang_table.h | "\xD0\x9E\xD0\xB1\xD0\xBB\xD0\xBE\xD0\xB6\xD0\xBA\xD0\xB8: \xD0\xB5\xD1\x81\xD1\x82\xD1\x8C \xD1\x83 %d \xD0\xB8\xD0\xB3\xD1\x80 \xD0\xB8\xD0\xB7 %d",
+749632 src/platform/xbox360/xb_lang_table.h | "\xD0\x9E\xD0\xB1\xD0\xBB\xD0\xBE\xD0\xB6\xD0\xBA\xD0\xB8: \xD0\xB5\xD1\x81\xD1\x82\xD1\x8C \xD1\x83 %d \xD0\xB8\xD0\xB3\xD1\x80 \xD0\xB8\xD0\xB7 %d (
+749633 src/platform/xbox360/xb_lang_table.h | "\xD0\x9E\xD0\xB1\xD0\xBB\xD0\xBE\xD0\xB6\xD0\xBA\xD0\xB8: \xD0\xBD\xD0\xB5\xD1\x82 \xD0\xBF\xD0\xBE\xD0\xB4\xD0\xBA\xD0\xBB\xD1\x8E\xD1\x87\xD0\xB5\x
+749634 src/platform/xbox360/xb_lang_table.h | "\xD0\x94\xD0\xBE\xD0\xB1\xD0\xB0\xD0\xB2\xD0\xBB\xD0\xB5\xD0\xBD\xD0\xBE \xD0\xB2 \xD0\xB8\xD0\xB7\xD0\xB1\xD1\x80\xD0\xB0\xD0\xBD\xD0\xBD\xD0\xBE\xD
+749635 src/platform/xbox360/xb_lang_table.h | "\xD0\xA3\xD0\xB4\xD0\xB0\xD0\xBB\xD0\xB5\xD0\xBD\xD0\xBE \xD0\xB8\xD0\xB7 \xD0\xB8\xD0\xB7\xD0\xB1\xD1\x80\xD0\xB0\xD0\xBD\xD0\xBD\xD0\xBE\xD0\xB3\xD
+749636 src/platform/xbox360/xb_lang_table.h | "HarissaDC %s \xD0\xB4\xD0\xBE\xD1\x81\xD1\x82\xD1\x83\xD0\xBF\xD0\xBD\xD0\xB0 \xD0\xBD\xD0\xB0 GitHub",
+749638 src/platform/xbox360/xb_lang_table.h | "\xD0\x90\xD0\x9D\xD0\x90\xD0\x9B\xD0\x9E\xD0\x93\xD0\x9E\xD0\x92\xD0\xAB\xD0\x99 \xD0\xA1\xD0\xA2\xD0\x98\xD0\x9A",
+749641 src/platform/xbox360/xb_lang_table.h | "\xD0\xA0\xD0\xB0\xD0\xB1\xD0\xBE\xD1\x82\xD0\xB0\xD0\xB5\xD1\x82, \xD0\xBA\xD0\xBE\xD0\xB3\xD0\xB4\xD0\xB0 \xD0\xBF\xD0\xBE\xD0\xB4\xD0\xBA\xD0\xBB\x
+749643 src/platform/xbox360/xb_lang_table.h | "\xD0\x9D\xD0\xB0\xD0\xB6\xD0\xBC\xD0\xB8\xD1\x82\xD0\xB5 \xD0\xBA\xD0\xBD\xD0\xBE\xD0\xBF\xD0\xBA\xD1\x83 \xD0\xB4\xD0\xBB\xD1\x8F %s",
+749644 src/platform/xbox360/xb_lang_table.h | "A:\xD0\x97\xD0\xB0\xD0\xB4\xD0\xB0\xD1\x82\xD1\x8C|Y:\xD0\x95\xD1\x89\xD1\x91|X:\xD0\xA1\xD0\xB1\xD1\x80\xD0\xBE\xD1\x81|LB/RB:\xD0\x98\xD0\xB3\xD1\x
+749645 src/platform/xbox360/xb_lang_table.h | "A:\xD0\x92\xD1\x8B\xD0\xB1\xD1\x80\xD0\xB0\xD1\x82\xD1\x8C|DPAD:\xD0\x98\xD0\xB7\xD0\xBC\xD0\xB5\xD0\xBD\xD0\xB8\xD1\x82\xD1\x8C|LB/RB:\xD0\x98\xD0\x
+749647 src/platform/xbox360/xb_lang_table.h | "\xD0\x9D\xD0\xB8\xD1\x87\xD0\xB5\xD0\xB3\xD0\xBE \xD0\xBD\xD0\xB5 \xD0\xBD\xD0\xB0\xD0\xB6\xD0\xB0\xD1\x82\xD0\xBE: \xD0\xB1\xD0\xB5\xD0\xB7 \xD0\xB8
+749653 src/platform/xbox360/xb_lang_table.h | "\xD0\x9A\xD1\x80\xD0\xB5\xD1\x81\xD1\x82\xD0\xBE\xD0\xB2\xD0\xB8\xD0\xBD\xD0\xB0 \xD0\xB3\xD0\xB5\xD0\xB9\xD0\xBC\xD0\xBF\xD0\xB0\xD0\xB4\xD0\xB0 Xbo
+749658 src/platform/xbox360/xb_lang_table.h | "\xD0\x9A\xD1\x80\xD0\xB5\xD1\x81\xD1\x82. \xD0\xB2\xD0\xBF\xD1\x80\xD0\xB0\xD0\xB2\xD0\xBE",
+749665 src/platform/xbox360/xb_lang_table.h | "\xD0\xA4\xD0\xB8\xD0\xBB\xD1\x8C\xD1\x82\xD1\x80 \xD1\x82\xD0\xB5\xD0\xBA\xD1\x81\xD1\x82\xD1\x83\xD1\x80",
+749668 src/platform/xbox360/xb_lang_table.h | "\xD0\x9C\xD1\x91\xD1\x80\xD1\x82\xD0\xB2\xD0\xB0\xD1\x8F \xD0\xB7\xD0\xBE\xD0\xBD\xD0\xB0",
+749669 src/platform/xbox360/xb_lang_table.h | "\xD0\xA7\xD1\x83\xD0\xB2\xD1\x81\xD1\x82\xD0\xB2\xD0\xB8\xD1\x82\xD0\xB5\xD0\xBB\xD1\x8C\xD0\xBD\xD0\xBE\xD1\x81\xD1\x82\xD1\x8C",
+755160 src/sh4/sh4_jit.cpp | LOG_INFO("[jit] lookup to %08X wanted mode %08X, found %08X (block's first version %08X)", g_sh4.jitWhyKey[2],
+748902 src/platform/xbox360/xb_lang_table.h | "A:Spielen|LB/RB:Seite|LT/RT:Buchstabe|B:Favorit|Y:Einstellungen|X:Info|BACK:Dashboard",
+749526 src/platform/xbox360/xb_lang_table.h | "16:9 \xD1\x80\xD0\xB0\xD1\x81\xD1\x82\xD1\x8F\xD0\xBD\xD1\x83\xD1\x82\xD1\x8B\xD0\xB9",
+749446 src/platform/xbox360/xb_lang_table.h | "Sem a BIOS da Sega n\xC3\xA3o h\xC3\xA1 menu para mostrar: escolha um jogo na lista.",
+749506 src/platform/xbox360/xb_lang_table.h | "\xD0\x9F\xD0\xBE\xD0\xBA\xD0\xB0\xD0\xB7\xD1\x8B\xD0\xB2\xD0\xB0\xD1\x82\xD1\x8C FPS",
+748730 src/platform/xbox360/xb_lang_table.h | "A:Jugar|LB/RB:P\xC3\xA1gina|LT/RT:Letra|B:Favorito|Y:Ajustes|X:Acerca de|BACK:Panel",
+748940 src/platform/xbox360/xb_lang_table.h | "Ohne das Sega-BIOS gibt es kein Men\xC3\xBC: w\xC3\xA4hle ein Spiel aus der Liste.",
+749591 src/platform/xbox360/xb_lang_table.h | "\xD0\x9A \xD1\x81\xD0\xBF\xD0\xB8\xD1\x81\xD0\xBA\xD1\x83 \xD0\xB8\xD0\xB3\xD1\x80",
+749655 src/platform/xbox360/xb_lang_table.h | "\xD0\x9A\xD1\x80\xD0\xB5\xD1\x81\xD1\x82. \xD0\xB2\xD0\xB2\xD0\xB5\xD1\x80\xD1\x85",
+749657 src/platform/xbox360/xb_lang_table.h | "\xD0\x9A\xD1\x80\xD0\xB5\xD1\x81\xD1\x82. \xD0\xB2\xD0\xBB\xD0\xB5\xD0\xB2\xD0\xBE",
+749552 src/platform/xbox360/xb_lang_table.h | "\xD0\x9F\xD1\x80\xD0\xB0\xD0\xB2\xD1\x8B\xD0\xB9 \xD1\x81\xD1\x82\xD0\xB8\xD0\xBA",
+749508 src/platform/xbox360/xb_lang_table.h | "\xD0\xA3\xD0\xBF\xD1\x80\xD0\xB0\xD0\xB2\xD0\xBB\xD0\xB5\xD0\xBD\xD0\xB8\xD0\xB5",
+749522 src/platform/xbox360/xb_lang_table.h | "\xD0\xA3\xD0\xBB\xD1\x83\xD1\x87\xD1\x88\xD0\xB5\xD0\xBD\xD0\xBD\xD1\x8B\xD0\xB9",
+749585 src/platform/xbox360/xb_lang_table.h | "\xD0\x9F\xD1\x80\xD0\xBE\xD0\xB4\xD0\xBE\xD0\xBB\xD0\xB6\xD0\xB8\xD1\x82\xD1\x8C",
+749639 src/platform/xbox360/xb_lang_table.h | "\xD0\x9A\xD0\xA0\xD0\x95\xD0\xA1\xD0\xA2\xD0\x9E\xD0\x92\xD0\x98\xD0\x9D\xD0\x90",
+749667 src/platform/xbox360/xb_lang_table.h | "\xD0\x91\xD0\xB8\xD0\xBB\xD0\xB8\xD0\xBD\xD0\xB5\xD0\xB9\xD0\xBD\xD1\x8B\xD0\xB9",
+739650 src/disc/archive7z.cpp | set_error(s->error, s->errorSize, "cannot write the extracted file (disk full?)");

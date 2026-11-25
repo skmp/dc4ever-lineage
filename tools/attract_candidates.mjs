@@ -80,9 +80,11 @@ const sw = fs.createWriteStream(path.join(OUT, 'segs.jsonl'));
 segs.slice(0, SN).forEach((g, k) => sw.write(JSON.stringify({ sid: k, frame: g.f, lane: F.frames[g.f].lane, ident: g.ident, line: g.line, n: g.n, path: g.path, origin: orig(g.ids.find(x => !trivial(text[x] || ''))), min_frames: g.minF, lanes: lanesOf(g.lanesAll), ids: g.ids, body: g.body }) + '\n'));
 sw.end();
 // ---- unique: lines and segments held by exactly one lane (one lineage), long-lived within it
+// long-lived: in >= 6 frames, or in every frame of a lane with fewer (young lanes such as nullDC4WiiU / HarissaDC)
+const laneN = F.lanes.map(l => l.frames.length), uMin = m => Math.min(6, laneN[31 - Math.clz32(m)]);
 const ul = [], seenU = new Set();
 for (let id = 0; id < N; id++) {
-  if (pop(laneM[id]) !== 1 || nFr[id] < 6) continue; const t = (text[id] || '').replace(/\t/g, '    ').trim();
+  if (pop(laneM[id]) !== 1 || nFr[id] < uMin(laneM[id])) continue; const t = (text[id] || '').replace(/\t/g, '    ').trim();
   if (t.length < 16 || NOISE.test(t) || seenU.has(t) || /^#\s*(include|define|endif|pragma|if|else)/.test(t)) continue;
   if (!(isComment(id) || /"[^"]{6,}"/.test(t))) continue;
   seenU.add(t); ul.push({ id, s: Math.log2(1 + nFr[id]) + (/[!?:;][)(DPp]|xD|lol|hack|fixme|todo|wtf|ugly|magic|why|evil|dirty|shit|damn|crap|sega|hmm/i.test(t) ? 3 : 0) + Math.min(3, t.length / 30) });
@@ -95,7 +97,7 @@ for (const { id } of ULN) { const w = where.get(id); let ctx = null, p = null;
   if (w) { const [, , l, file] = w; p = file.path; ctx = [-2, -1, 1, 2].map(d => file.ids[l + d]).map(x => x === undefined ? '' : (text[x] || '').replace(/\t/g, '    ').trimEnd()); }
   uw.write(JSON.stringify({ id, text: text[id].replace(/\t/g, '    ').trim(), path: p, before: ctx && ctx.slice(0, 2), after: ctx && ctx.slice(2), origin: orig(id), frames: nFr[id], lanes: lanesOf(laneM[id]) }) + '\n'); }
 uw.end();
-const us = [], seenUS = new Set(), uniq = id => !!id && pop(laneM[id]) === 1 && nFr[id] >= 6;
+const us = [], seenUS = new Set(), uniq = id => !!id && pop(laneM[id]) === 1 && nFr[id] >= uMin(laneM[id]);
 for (const [f, st] of lastState) for (const [ident, file] of st) {
   const ids = file.ids; let a = 0;
   while (a < ids.length) {
