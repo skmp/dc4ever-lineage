@@ -144,18 +144,38 @@ def tree_files(repo, sha):
         r.append((p, m[2].decode(), int(m[3])))
     return r
 
+GEN_CHECK = 200   # a file entry with at least this churn is checked against is_generated / binary (the frame rule)
 def churn(repo, tip):
-    """{sha: (counted churn, counted lines before the commit)} along the first-parent chain (numstat vs first parent)"""
+    """{sha: (counted churn, counted lines before the commit)} along the first-parent chain (numstat vs first parent).
+    Counted like the frames: no vendored files, no binaries, and no generated files (is_generated on the blob at the
+    commit, or before it for a deletion); a path found generated in any checked version is left out everywhere."""
     out = git(repo, 'log', '--first-parent', '--reverse', '--no-renames', '--numstat', '--format=@%H', tip).decode('utf-8', 'replace')
-    res = {}; tot = 0; cur = None; c = 0
+    ents = []; cur = None
     for l in out.split('\n'):
-        if l.startswith('@'):
-            if cur: res[cur] = (c, before)
-            cur = l[1:]; c = 0; before = tot
+        if l.startswith('@'): cur = l[1:]; ents.append((cur, None, 0, 0))
         elif l and cur:
             a, r, p = l.split('\t', 2)
             if a == '-' or not lang_of(p, repo) or is_vendored(repo, p): continue
-            c += int(a) + int(r); tot += int(a) - int(r)
+            ents.append((cur, p, int(a), int(r)))
+    big = [(c, p) for c, p, a, r in ents if p and a + r >= GEN_CHECK]
+    gen = set()
+    if big:
+        inp = b''.join(f'{c}:{p}\n{c}^:{p}\n'.encode() for c, p in big)
+        o = git(repo, 'cat-file', '--batch', inp=inp); k = 0
+        for c, p in big:
+            for _ in range(2):
+                e = o.index(b'\n', k); hdr = o[k:e].split(); k = e + 1
+                if hdr[-1] == b'missing': continue
+                n = int(hdr[2]); data = o[k:k + n]; k += n + 1
+                lines = data.count(b'\n') + (1 if data and not data.endswith(b'\n') else 0)
+                if b'\0' in data[:8000] or is_generated(repo, p, n, lines, data[:600]): gen.add(p)
+    res = {}; tot = 0; cur = None; c = 0; before = 0
+    for sha, p, a, r in ents:
+        if p is None:
+            if cur: res[cur] = (c, before)
+            cur = sha; c = 0; before = tot
+        elif p not in gen:
+            c += a + r; tot += a - r
     if cur: res[cur] = (c, before)
     return res
 

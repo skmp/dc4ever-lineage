@@ -207,6 +207,6 @@ export function timeMaps(layout) {
     if (x >= K.at(-1)[1]) { const [ma, xa] = K.at(-1); return ma + (x - xa) / U; }
     const i = seg(x, 1), [ma, xa] = K[i], [mb, xb] = K[i + 1]; return ma + (mb - ma) * (x - xa) / Math.max(1e-9, xb - xa); };
   const monthOfDate = d => { const [y, m, dd] = d.split('-').map(Number); return (y - y0) * 12 + (m - m0) + ((dd || 1) - 1) / 31; };
-  const dateOfMonth = mm => { const t = Math.floor(mm + 1e-6), y = y0 + Math.floor((m0 - 1 + t) / 12), m = ((m0 - 1 + t) % 12 + 12) % 12 + 1; return `${y}-${String(m).padStart(2, '0')}`; };
+  const dateOfMonth = mm => { const t = Math.floor(mm + 1e-3)   /* walls sit at rounded x: up to half a unit left of their date */, y = y0 + Math.floor((m0 - 1 + t) / 12), m = ((m0 - 1 + t) % 12 + 12) % 12 + 1; return `${y}-${String(m).padStart(2, '0')}`; };
   return { xOfMonth, monthOfX, monthOfDate, dateOfMonth, xOfDate: d => xOfMonth(monthOfDate(d)) };
 }

@@ -1,0 +1,2 @@
+Counter({('ok', True): 2327, ('virtual', True): 55})
+stops 2218 whose file date differs from the frame date 1315

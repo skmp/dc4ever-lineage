@@ -1,0 +1,50 @@
+nullDC4Wii: frames 135 kinds {'import': 1, 'big': 40, 'tag': 86, 'month': 8, 'fork': 2}; big commits (lane-local) 17, not frames 0
+   pred missing ('e812c5828334b6309776da6f25f695051c1be093', 67058, 1500) 339cbba60 True
+   pred missing ('32e5684f596deecb205108ed68c6ee0bcc87ae63', 16358, 2044) 2afc60f31 True
+   pred missing ('d3b917b8fd3bf07fbcb1a0735c0864d2e667bf7b', 2210, 1795) 41426e4ca True
+   pred missing ('3f91bdd6c03a130696555b02b5736ba34e0d71ed', 2934, 2138) fa83b6c44 True
+   big commits whose predecessor is not a frame: 4
+   frames off the first-parent chain: [('3b4c3985b', ['tag'], ['nulldc']), ('496c1e6f4', ['tag'], ['alpha0.58'])]
+   frame list in chain order: True; largest steps (churn, from, to, kinds, commits in step):
+      (16358, '1c8d8fd0f', '32e5684f5', ['big'], 3)
+      (8265, 'dc32a12f4', '82ce64b4e', ['big'], 1)
+      (5425, '0f064f7b2', 'cec40dd8f', ['big'], 1)
+      (5381, '940f04dfd', '223fa44ec', ['big'], 1)
+      (3783, '1ac7a1827', 'cfecbfbcc', ['big'], 1)
+      (3571, '75d4ab5ab', '55348a319', ['big'], 10)
+reicast: frames 140 kinds {'import': 1, 'big': 58, 'month': 57, 'tag': 25, 'fork': 3}; big commits (lane-local) 25, not frames 0
+   pred missing ('75c2ae1e551e0c96a59a9bd1431433e43b9b47dd', 4070, 2382) 036be4085 True
+   pred missing ('1ce7dd3bde74a19d4c5750e93627dd59e5b136de', 5320, 3946) 4b0fce262 True
+   big commits whose predecessor is not a frame: 2
+   frames off the first-parent chain: [('382f2e5c1', ['tag'], ['r6']), ('22e95de2d', ['tag'], ['r7-rc1']), ('239e17822', ['fork'], [])]
+   frame list in chain order: True; largest steps (churn, from, to, kinds, commits in step):
+      (257127, '40971b6e8', '3bc91425e', ['big'], 1)
+      (143532, '8f694405f', 'f5d29677b', ['big'], 1)
+      (52651, '69ab16ad9', '2cf59b42b', ['big'], 1)
+      (20685, '17582044b', 'd08cb584a', ['big'], 1)
+      (20083, 'edaec54f9', '03170fc0e', ['big'], 1)
+      (19919, '9beb87ef6', '405fffeda', ['big'], 1)
+flycast: frames 148 kinds {'month': 86, 'big': 51, 'tag': 13}; big commits (lane-local) 28, not frames 5
+   big not a frame ('ddc2e84e4516d51ea6e930e8ebbeda4ed46f7ef1', 59953, 5190)
+   big not a frame ('503cc7ea9790a1de6f03187c0955108e163038eb', 34921, 7356)
+   big not a frame ('d417237e64da1ccc2dda0234a851fbdfaea5f8d8', 37078, 7232)
+   big not a frame ('b37e6dc28d227f816552baf1aa86b9432c93bbdf', 14769, 7436)
+   big not a frame ('44fa364f36c43bed19b055096600f075c656f78c', 14814, 8008)
+   pred missing ('f23a3d3756349ea80db434cd77578fee009d5bfa', 20055, 3881) a4eb9c22b True
+   pred missing ('889fc8256d720ae15484c8517537e1b19152bf6d', 5726, 5004) 6d96981dc True
+   pred missing ('f7abe3bb34455c1683dd9a02c1563e1e18abf291', 22965, 4975) baa0ac44c True
+   pred missing ('ddc2e84e4516d51ea6e930e8ebbeda4ed46f7ef1', 59953, 5190) a050a61f2 True
+   pred missing ('503cc7ea9790a1de6f03187c0955108e163038eb', 34921, 7356) 7f41847c5 True
+   pred missing ('d417237e64da1ccc2dda0234a851fbdfaea5f8d8', 37078, 7232) 648f33473 True
+   pred missing ('b37e6dc28d227f816552baf1aa86b9432c93bbdf', 14769, 7436) 8cd6a94e2 True
+   pred missing ('44fa364f36c43bed19b055096600f075c656f78c', 14814, 8008) 7029e1615 True
+   pred missing ('8edd8fc447fef631f5ac8f9d3a50e8e592f68aa3', 12526, 8776) fd654614a True
+   big commits whose predecessor is not a frame: 9
+   frames off the first-parent chain: [('aa97a6d64', ['tag'], ['v2.0'])]
+   frame list in chain order: True; largest steps (churn, from, to, kinds, commits in step):
+      (60550, 'bf87f7ba8', '8740141a9', ['big'], 1)
+      (60246, 'ef3af9aad', '7555263e3', ['tag'], 14)
+      (50592, '84ab237b0', 'cf1a924f5', ['month', 'big'], 1)
+      (41763, '19204882c', '13f3c8281', ['big'], 31)
+      (41589, '8f86be37f', '4973c5a27', ['big'], 1)
+      (37016, 'b92b7a3ec', 'ee806bc03', ['big'], 1)

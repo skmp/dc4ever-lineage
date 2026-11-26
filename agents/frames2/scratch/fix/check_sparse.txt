@@ -1,0 +1,18 @@
+dc4ever          source-changing  102 frames  102 missing 0 extra 0 (extra kinds: Counter()) extra-droppable 0
+nullDC           source-changing  133 frames  133 missing 0 extra 0 (extra kinds: Counter()) extra-droppable 0
+nulldc-360       source-changing  119 frames  119 missing 0 extra 0 (extra kinds: Counter()) extra-droppable 0
+HarissaDC        source-changing    4 frames    5 missing 0 extra 1 (extra kinds: Counter({('commit', 'tag'): 1})) extra-droppable 0
+nullDCe          source-changing    7 frames    7 missing 0 extra 0 (extra kinds: Counter()) extra-droppable 0
+nullDCe-PSP      source-changing   13 frames   13 missing 0 extra 0 (extra kinds: Counter()) extra-droppable 0
+NotDC-PS3        source-changing  101 frames  102 missing 0 extra 1 (extra kinds: Counter({('commit', 'tag'): 1})) extra-droppable 0
+nullDC4WiiU      source-changing   55 frames   57 missing 0 extra 2 (extra kinds: Counter({('commit', 'tag'): 2})) extra-droppable 0
+nulldc3          source-changing  104 frames  105 missing 0 extra 1 (extra kinds: Counter({('commit', 'fork', 'month'): 1})) extra-droppable 0
+minicast         source-changing   33 frames   35 missing 0 extra 2 (extra kinds: Counter({('pin',): 2})) extra-droppable 0
+polly2           source-changing  177 frames  183 missing 0 extra 6 (extra kinds: Counter({('pin',): 6})) extra-droppable 0
+polly2-r8        source-changing   10 frames   10 missing 0 extra 0 (extra kinds: Counter()) extra-droppable 0
+devtools         source-changing   50 frames   50 missing 0 extra 0 (extra kinds: Counter()) extra-droppable 0
+dreamcast-tests  source-changing  103 frames  103 missing 0 extra 0 (extra kinds: Counter()) extra-droppable 0
+shrike4          source-changing   10 frames   10 missing 0 extra 0 (extra kinds: Counter()) extra-droppable 0
+caique           source-changing   11 frames   11 missing 0 extra 0 (extra kinds: Counter()) extra-droppable 0
+wren7            source-changing    4 frames    4 missing 0 extra 0 (extra kinds: Counter()) extra-droppable 0
+problems 0

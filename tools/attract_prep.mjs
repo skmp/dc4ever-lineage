@@ -159,7 +159,9 @@ segs.forEach((g, k) => {
 famous.forEach((fm, k) => {
   if (!fileStops[k].length) return;
   const st = fileStops[k], lanes = [...new Set(st.map(s => laneOf(s[0])))];
-  out.items.push({ kind: 'file', title: fm.title, frames: st.length, lanes, first_frame_date: dateOf(st[0][0]), first_file: fileChange(st[0][0], pathAt.get(st[0][0] + ':' + st[0][1])), stops: thin(st) });
+  // first in time, not first in lane order (fileStops is filled lane by lane)
+  const s0 = st.reduce((a, b) => (dateOf(b[0]).localeCompare(dateOf(a[0])) || b[0] - a[0]) < 0 ? b : a);
+  out.items.push({ kind: 'file', title: fm.title, frames: st.length, lanes, first_frame_date: dateOf(s0[0]), first_file: fileChange(s0[0], pathAt.get(s0[0] + ':' + s0[1])), stops: thin(st) });
   const L = out.items.at(-1); L.stop_files = stopFiles(L.stops);
 });
 const noOrigin = out.items.filter(i => i.kind !== 'file' && !i.origin_file);

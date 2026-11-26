@@ -1,9 +1,12 @@
 # dc4ever lineage viewer
 
-A WebGL2 fly-through of the dc4ever family through time: 395 frames in 20 lanes, from dc4ever (2004) to nullDC 3, the
-ports and the fpgadc hardware re-creation (2026). A frame is the last commit of a month with commits, or a release,
-tag, DreamSTer pin, fork or import point (`agents/frames/FORMAT.md`). Each frame is a wall of readable code; X is
-time (4000 units per month), lanes are repos, and a file keeps the same place in every frame of its lane.
+A WebGL2 fly-through of the dc4ever family through time: 1,472 frames in 20 lanes, from dc4ever (2004) to nullDC 3,
+the ports and the fpgadc hardware re-creation (2026). In most lanes a frame is every commit that changes counted
+source; in the three busiest lanes (nullDC4Wii, reicast, flycast) it is the last commit of a month with commits plus
+every big commit (counted churn >= max(1500 lines, 3 % of the lane's lines)); in every lane also a release, tag,
+DreamSTer pin, fork or import point (`tools/frames.py`, `agents/frames/FORMAT.md`). Each frame is a wall of readable
+code; X is time (4000 units per month, stretched where a lane has frames closer than 1/8 month apart; the knots are in
+`layout.time.knots`), lanes are repos, and a file keeps the same place in every frame of its lane.
 
 ## Run
 

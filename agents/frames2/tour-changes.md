@@ -30,7 +30,7 @@ the one above. "Held in N snapshots" is the only stated frame count.
 
 | old | new |
 |---|---|
-| Maple DMA: 'kinda wrong .. but meh'. Held in 278 snapshots, from nullDCe to flycast | Maple DMA: 'kinda wrong .. but meh'. Held in 571 snapshots, from nullDCe to flycast |
+| Maple DMA: 'kinda wrong .. but meh'. Held in 278 snapshots, from nullDCe to flycast | Maple DMA: 'kinda wrong .. but meh'. Held in 571 snapshots, from nullDCe to flycast (568 after the fix round, see below) |
 
 ## "First seen" corrected for one segment
 
@@ -58,3 +58,11 @@ includes "any later version".
 Every caption date is now the last change of the file holding the item as of that frame. 2,218 stop dates in the
 built tour (all items), 1,315 of them differ from the frame date; 215 take an override date range (nullDCe 39c0550
 2008-2010, reicast 1c16baeb0 2012-2013) and 52 are dc4ever approximate dates. Examples are in REPORT.md.
+
+## Fix round
+
+The big-commit churn now leaves out generated files (frames 1,475 -> 1,472, all changes in flycast / reicast /
+nullDC4Wii). Picks remapped again by text (`scratch/remap_picks.py`): 142 items, 27 ids remapped, 0 missing;
+`compare_tour.py`: 142 / 142 picks, 100 shared / 42 unique, no text, unique or lane-list changes. Maple DMA note
+571 -> 568 snapshots (its item's frame count). File items' "first:" date is now the earliest stop in time ("the
+PowerVR renderer interface": nullDCe, file last changed 2008-2010 (dated 2009-10-16), was nullDC 2010-05-09).

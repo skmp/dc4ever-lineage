@@ -1,0 +1,166 @@
+segment "shil: one header, three jobs": anchor "/*" has no origin (trivial line) or is not in its origin frame; first seen from "This is a header file that can create"
+file last-change dates: 1443 git queries
+line 608 frames, 9 lanes, 18 stops: {//ToDo : Check This [26/4/05]
+line 994 frames, 11 lanes, 22 stops: //and here are the new ones :D
+line 547 frames, 6 lanes, 12 stops: //Time to emulate that stuff correctly ;)
+line 995 frames, 12 lanes, 24 stops: // asic9a /sh4 external holly normal [internal]
+line 1002 frames, 11 lanes, 22 stops: //quite a bit padding here :)
+line 994 frames, 11 lanes, 22 stops: //bit 0 ~ 27 : interrupt source 27:0. 0 = lowest level, 27 = highest level.
+line 992 frames, 11 lanes, 22 stops: //convert our nice toc struct to dc's native one :)
+line 683 frames, 10 lanes, 20 stops: printf("-config : invalid parameter %s, format is section:key=value\n",arg[1]);
+line 742 frames, 9 lanes, 18 stops: const char* maple_sega_controller_name = "Dreamcast Controller";
+line 742 frames, 9 lanes, 18 stops: //Called when a block check failed, and the block needs to be invalidated
+line 607 frames, 9 lanes, 18 stops: //no operation xD XD .. i just love this opcode ..
+line 458 frames, 6 lanes, 12 stops: if (stricmp( &file[len-4],".gdi")==0)
+line 436 frames, 5 lanes, 10 stops: //shop_setpeq //set if any pair of bytes is equal
+line 434 frames, 5 lanes, 10 stops: //this isn't always true for gdroms, depends on area look @ the get-toc code
+line 401 frames, 5 lanes, 10 stops: printf("Size: %-6ld  ",track.length);
+line 124 frames, 5 lanes, 10 stops: //iNimp("mov.w R0,@(<disp>,GBR)");
+line 863 frames, 11 lanes, 22 stops: //SHUT UP M$ COMPILER !@#!@$#
+line 850 frames, 11 lanes, 22 stops: //DC : 16 mb ram, 8 mb vram, 2 mb aram, 2 mb bios, 128k flash
+line 1002 frames, 11 lanes, 22 stops: //some other misc shit FAR away is here :p
+line 603 frames, 9 lanes, 18 stops: //phew .. that was lota asm code ;) lets go back to C :D
+line 891 frames, 11 lanes, 22 stops: memcpy(&p_area_text[4],"For JAPAN,TAIWAN,PHILIPINES.",28);
+line 866 frames, 11 lanes, 22 stops: //make x86 and sh4 float status registers match ;)
+line 604 frames, 9 lanes, 18 stops: //0x0-0xD : 7 times the normal memmap mirrors :)
+line 677 frames, 9 lanes, 18 stops: //ddt/etc are just hacked for wince to work
+line 720 frames, 9 lanes, 18 stops: //gah , ccn emulation
+line 721 frames, 9 lanes, 18 stops: //16 bits -> misstype on manual ? RTSCR vs RTCSR...
+line 717 frames, 9 lanes, 18 stops: //cosine(x) = sine(pi/2 + x).
+line 680 frames, 9 lanes, 18 stops: const char* maple_sega_dreameye_name_1 = "Dreamcast Camera Flash  Devic";
+line 640 frames, 9 lanes, 18 stops: //wtf ? not inited
+line 928 frames, 11 lanes, 22 stops: //missing quite a few ehh ?
+line 612 frames, 8 lanes, 16 stops: --x86 is such a fucked cpu arch--
+line 547 frames, 6 lanes, 12 stops: //54 mhz pixel clock :)
+line 718 frames, 8 lanes, 16 stops: // *FIXME* CHECK FOR DMA, Diff Settings !?!@$#!@%
+line 692 frames, 9 lanes, 18 stops: //DRV -> preserved -> wtf is it anyway ?
+line 493 frames, 7 lanes, 14 stops: //DIV32U was perfectly matched :)
+line 540 frames, 7 lanes, 14 stops: //remove the full underflows (possible because we only check every 448 cycles)
+line 715 frames, 9 lanes, 18 stops: //if not Interrupted , we must rexecute the sleep
+line 604 frames, 9 lanes, 18 stops: //upper 32mb mirror lower 32 mb
+line 569 frames, 6 lanes, 12 stops: //What should i do to emulate 'nothing' ?
+line 594 frames, 8 lanes, 16 stops: //Logitech G series stuff end
+line 609 frames, 9 lanes, 17 stops: emu:FullName    : str,returns the emulator's name + version string (ex."nullDC v1.0.0 Private Beta 2 built on {datetime}")
+line 462 frames, 7 lanes, 14 stops: //there is no break here by design
+line 680 frames, 9 lanes, 18 stops: //bleh stupid windoze header
+line 564 frames, 6 lanes, 12 stops: //there were at least 4 gdrom implementations, ZGDROM, HLE, gdromv1 (never worked), gdromv2 (first release)
+line 563 frames, 7 lanes, 14 stops: //since i got no internet , and im bored , im starting to work on some aica hle code :)
+line 730 frames, 10 lanes, 20 stops: //how bout a decoded switch list ? could that _much_ faster ?
+line 679 frames, 6 lanes, 12 stops: //SPG emulation; Scanline/Raster beam registers & interrupts
+line 568 frames, 7 lanes, 14 stops: //this is kinda wrong .. but meh
+line 557 frames, 7 lanes, 14 stops: //Value to be returned when the block manager failed to find a block,
+line 457 frames, 4 lanes, 10 stops: // Command 71 seems to trigger some sort of authentication check(?).
+line 449 frames, 6 lanes, 12 stops: //we want to make sure mix* is *At least* 23 bits wide here, so 64 bit mul !
+line 426 frames, 4 lanes, 10 stops: //SQ fast remap , mainly hackish , assumes 1MB pages
+line 537 frames, 6 lanes, 12 stops: //Naomi : 32 mb ram, 16 mb vram, 8 mb aram, 2 mb bios, ? flash
+line 418 frames, 7 lanes, 14 stops: //transfer 22kb chunks (or less) [704 x 32] (22528)
+line 266 frames, 6 lanes, 12 stops: printf("OH CRAP %d\n",op->op);
+line 563 frames, 7 lanes, 14 stops: // im too tired to debug and find the actualy relation but it is
+line 564 frames, 7 lanes, 14 stops: //Yep , C++ IS lame & limited
+line 410 frames, 6 lanes, 12 stops: //Yay for mono =P
+line 306 frames, 4 lanes, 10 stops: //shouldn't really get here (?) -> works on dc :D need to handle lmmodes
+line 318 frames, 4 lanes, 10 stops: //TODO : Check Me [26/4/05]  | Check DELAY SLOT [28/1/06]
+line 318 frames, 6 lanes, 12 stops: //strip didnt finish at once.. continue it later :P
+line 367 frames, 6 lanes, 12 stops: //do NOT load hole file to memory before checking ... cna be deadly for .nrg/.iso/ anything :p
+line 361 frames, 6 lanes, 12 stops: //TODO: Implement this (needed for SOTB)
+line 254 frames, 5 lanes, 10 stops: //do the matrix mult !
+line 209 frames, 4 lanes, 10 stops: // FIXME if the discarded render is a RTT we'll have a texture missing. But waiting for the current frame to finish kills performance...
+line 398 frames, 5 lanes, 10 stops: //This ram seems to be visible on the pci address space, however it is _not_ cotnained on the chip itself.
+line 250 frames, 4 lanes, 10 stops: // *cough* ignore it :p
+line 79 frames, 1 lanes, 10 stops: //Note : This is just to prove that Fast emulation is possible with
+line 98 frames, 1 lanes, 10 stops: ! "we still have 32 bytes left to fill and we are seriously running out of ideas" - .the .256b. ;P
+line 132 frames, 1 lanes, 10 stops: swprintf(fpsStr,256,L"%s/%c - %4.2f%% - VPS: %4.2f(%s%s%4.2f) RPS: %4.2f Vert: %4.2f%c Sh4: %4.2f mhz",
+line 127 frames, 1 lanes, 10 stops: // Actually set that crap! D:
+line 132 frames, 1 lanes, 10 stops: strcatf(text,L" |- %d blocks staticaly linked , ratio %.2f%%\r\n",ndcpi.Dynarec.Runtime.Execution.TotalBlocks-ndcpi.Dynarec.Runtime.Lookups.LookupDelta-ndcpi.Dy
+line 86 frames, 1 lanes, 10 stops: // Per-game hack for ChuChu Rocket's echoey 16-bit sounds; also mutes music/voices.
+line 102 frames, 1 lanes, 10 stops: // Sega Dreamcast Controller. No error checking of any kind, but works just fine.
+line 102 frames, 1 lanes, 10 stops: // Sprite corners A,B,C arrive with UVs; D is sent without z or UV, so it completes the parallelogram.
+line 50 frames, 1 lanes, 10 stops: // d3dx9_24.dll is found in the Feb 2005 (!) release of the DirectX SDK so I doubt it will work but let's try
+line 120 frames, 1 lanes, 10 stops: // This hack allows WebTV to connect although the correct fix would
+line 26 frames, 1 lanes, 10 stops: // This file is a major hack to get decoupled mtta done fast
+line 34 frames, 1 lanes, 10 stops: // ============================ WHY THERE IS NO ALIAS LIVELOCK ============================
+line 90 frames, 1 lanes, 10 stops: // WHY is raster IDLE? Partition RS_IDLE by top `st`. %% is of the IDLE total.
+line 102 frames, 1 lanes, 10 stops: // Rez reads the status after this vendor command to gate its streamer; a stale value stalls it.
+line 19 frames, 1 lanes, 10 stops: printf("Configures the ADV7513 for 1920x1080 (VIC 16) RGB444 as produced by SPG.sv.\n");
+line 95 frames, 1 lanes, 10 stops: // I'm not sure why that is. it's exhibited on PVR1 and PVR3 hardware too
+line 117 frames, 1 lanes, 10 stops: //    strcpy(irsettings.DefaultImage,"sda:/dcisos/sonic/Sonic Adventure International v1.003 (1999)(Sega)(NTSC)(JP)(M5)[!].gdi");
+line 319 frames, 4 lanes, 10 stops: //    verify(dsp.regs_init.MADRS); //THAT WAS not real, MEM_ADDR is the deal ;p
+line 563 frames, 7 lanes, 14 stops: //hack Katana wait
+segment 820 frames, 9 lanes, 18 stops: GD-ROM command 0x70: a guess in the comments
+segment 673 frames, 9 lanes, 18 stops: SH4 carry into the T bit, from dc4ever
+segment 903 frames, 10 lanes, 20 stops: The AICA memory map in four lines
+segment 620 frames, 8 lanes, 16 stops: AICA channel register writes
+segment 809 frames, 10 lanes, 20 stops: AICA interrupt bits, documented inline
+segment 612 frames, 8 lanes, 16 stops: x86 emitter: 'we do need some more info on this :P'
+segment 643 frames, 9 lanes, 18 stops: Dynarec decoder: FPU pairs, quads and the matrix
+segment 426 frames, 4 lanes, 10 stops: FSCA and FIPR in the opcode list
+segment 292 frames, 4 lanes, 10 stops: NAOMI ROM PIO offset
+segment 724 frames, 9 lanes, 18 stops: The Dreamcast Area 0 memory map
+segment 540 frames, 6 lanes, 12 stops: The modem register that only works as u8
+segment 820 frames, 9 lanes, 18 stops: GD-ROM: command finished !
+segment 367 frames, 7 lanes, 14 stops: shil: one header, three jobs
+segment 196 frames, 4 lanes, 10 stops: SH4 carry ops on ARM64
+segment 857 frames, 10 lanes, 20 stops: AICA DSP memory: should be 0x15C8
+segment 568 frames, 8 lanes, 16 stops: Unhandled gdrom state ...
+segment 820 frames, 9 lanes, 18 stops: GD-ROM: the ATA packet command
+segment 302 frames, 6 lanes, 12 stops: armwreck: the ARM code emitter
+segment 319 frames, 4 lanes, 10 stops: Recompiling the AICA sound DSP to x86
+segment 993 frames, 11 lanes, 22 stops: Holly's interrupt map
+segment 563 frames, 7 lanes, 14 stops: A Rez hack that never worked
+segment 725 frames, 9 lanes, 18 stops: TA polygon type 3, from 2004
+segment 994 frames, 11 lanes, 22 stops: The GD-ROM state machine
+segment 339 frames, 4 lanes, 10 stops: SH4 FPU ops on the ARM64 dynarec
+segment 339 frames, 4 lanes, 10 stops: Naomi JVS I/O board replies
+segment 555 frames, 7 lanes, 14 stops: Hack the KOS command queue
+segment 952 frames, 10 lanes, 20 stops: AICA register map, hopefully
+segment 319 frames, 4 lanes, 10 stops: MEM_ADDR is the deal
+segment 376 frames, 6 lanes, 12 stops: TA list decoder: end of list
+segment 237 frames, 4 lanes, 10 stops: This is faster. Why?
+segment 266 frames, 6 lanes, 12 stops: Hoping the round mode is right
+segment 608 frames, 9 lanes, 18 stops: shll, to be checked since 2005
+segment 585 frames, 8 lanes, 16 stops: VMU media info
+segment 335 frames, 4 lanes, 10 stops: Two address spaces for the JIT
+segment 564 frames, 7 lanes, 14 stops: TA list types, worked out by hand
+segment 182 frames, 4 lanes, 10 stops: GD-ROM subcode Q, mostly guessed
+segment 724 frames, 9 lanes, 18 stops: SH4 address space in 17 lines
+segment 253 frames, 3 lanes, 10 stops: Where does the block go next?
+segment 684 frames, 9 lanes, 18 stops: Texture twiddling, bit by bit
+segment 289 frames, 6 lanes, 12 stops: VRAM's 64-bit bus, explained
+segment 569 frames, 6 lanes, 12 stops: Reverse-engineering the NAOMI DIMM board
+segment 564 frames, 7 lanes, 14 stops: Reset? *couh* right ...
+segment 475 frames, 7 lanes, 14 stops: SHAD, the SH4 dynamic shift
+segment 345 frames, 4 lanes, 10 stops: Area 3: main RAM and its mirrors
+segment 132 frames, 1 lanes, 10 stops: The PowerVR Texture Control Word
+segment 289 frames, 5 lanes, 10 stops: Background plane vertex math :p
+segment 150 frames, 3 lanes, 10 stops: Optimizer: disabled to be on the safe side
+segment 101 frames, 1 lanes, 10 stops: dc4ever's 2004 block builder, in C#
+segment 101 frames, 1 lanes, 10 stops: bubble-sorting the block cache
+segment 101 frames, 1 lanes, 10 stops: Round-to-nearest skips the boot animation
+segment 85 frames, 1 lanes, 10 stops: a hand-encoded Xenon dot product
+segment 83 frames, 1 lanes, 10 stops: Elan: NAOMI 2's T&L chip registers
+segment 99 frames, 1 lanes, 10 stops: the small-n-simple idle loop detector
+segment 99 frames, 1 lanes, 10 stops: div0s: VERY NASTY
+segment 53 frames, 1 lanes, 10 stops: punch-through's feedback channel
+segment 27 frames, 1 lanes, 10 stops: The TA ring: one barrier per batch
+segment 27 frames, 1 lanes, 10 stops: Dreamcast memory map, FPGA edition
+segment 60 frames, 1 lanes, 10 stops: UseAlpha=0 and the black BIOS background
+segment 43 frames, 1 lanes, 10 stops: polly2's video out: 1080p at the DC's 59.94
+segment 27 frames, 1 lanes, 10 stops: Serializing TA control events without a lock
+segment 86 frames, 1 lanes, 10 stops: PowerVR VRAM's 64-bit interleave
+segment 119 frames, 1 lanes, 10 stops: drkPvr's accuracy-vs-speed menus
+segment 86 frames, 1 lanes, 10 stops: Pushing the background plane back
+segment 83 frames, 1 lanes, 10 stops: Widescreen cheats: Code Veronica's black bars
+segment 252 frames, 2 lanes, 10 stops: An SH4 opcode with a 2005 ToDo
+segment 57 frames, 1 lanes, 10 stops: Why the VMU saves came out empty
+segment 57 frames, 1 lanes, 10 stops: 64-bit reads: which word goes first
+segment 57 frames, 1 lanes, 10 stops: Slower and lower instead of stuttering
+segment 5 frames, 1 lanes, 5 stops: HarissaDC writes its own flash
+segment 5 frames, 1 lanes, 5 stops: Booting with no BIOS
+segment 9 frames, 1 lanes, 9 stops: Sprite atlases and the 0xDEADBEEF sentinel
+segment 12 frames, 1 lanes, 10 stops: One VFPU instruction for the vertex transform
+file 251 frames, 2 lanes, 10 stops: the SH4 dynarec (rec_v1 driver, nullDC 2006)
+file 314 frames, 5 lanes, 10 stops: the SH4 dynarec v2 (nullDCe rec_v2)
+file 428 frames, 4 lanes, 10 stops: the SH4 interpreter opcodes
+file 428 frames, 4 lanes, 10 stops: spg.cpp: PowerVR video timing
+file 992 frames, 11 lanes, 22 stops: the PowerVR renderer interface
+file 118 frames, 2 lanes, 10 stops: refsw: the reference PowerVR software renderer
