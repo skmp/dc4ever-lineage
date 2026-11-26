@@ -23,3 +23,4 @@ agents/video/*.mp4
 agents/video/*.wav
 agents/video/*.log
 agents/attract/shards/
+agents/frames2/scratch/data-before/

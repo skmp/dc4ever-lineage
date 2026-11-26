@@ -1,1992 +1,1992 @@
 {
-"note": "tour picks: curated by the lineage-tour-curation workflow (agents/attract/), verified; pool unique = one lineage only",
-"items": [
-{
-"pool": "shared",
-"kind": "line",
-"id": 38344,
-"note": "Early nullDC plugin header vents at MSVC warnings; the outburst still ships in several lineages"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 28020,
-"note": "The Dreamcast in one line: 16 MB RAM, 8 MB VRAM, 2 MB sound RAM, 2 MB BIOS, 128 KB flash"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 59913,
-"note": "nullDC's AICA register map pads out to the far registers; the comment reached several lineages, even TS devtools"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 14376,
-"note": "Relief after the hand-written asm memory handlers in nullDC's _vmem, still found in several lineages"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 28651,
-"note": "The GD-ROM image reader rewrites the boot sector's region text so any disc boots on any console"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 22744,
-"note": "Keeping x86 and SH4 float rounding modes in sync: a trick early nullDC used, still in several lineages"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 16978,
-"note": "The SH4 address space mirrors the same memory map 7 times, set up in a loop since early nullDC"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 14111,
-"note": "nullDCe's maple DMA admits it was hacked until Windows CE games worked, carried into reicast and flycast"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 17925,
-"note": "A one-word sigh opens the SH4 cache and TLB controller emulation"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 17417,
-"note": "Was it RTSCR or RTCSR? Early nullDC suspected a typo in the hardware manual"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 21726,
-"note": "FSCA's cosine is sine shifted by pi/2: an SH4 FPU note from early nullDC, still in several lineages"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 13720,
-"note": "The Dreameye camera's device name, cut off at a fixed field width, kept as is from nullDCe to nulldc3"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 17243,
-"note": "Found the YUV decoder not set up? Set it up quietly and move on"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 27737,
-"note": "Above a list of Holly error interrupt bits, nullDC asks whether some are missing; still asked in several lineages"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 27114,
-"note": "The x86 emitter's verdict on its target, from early nullDC; carried along into reicast, flycast and nulldc3."
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 55325,
-"note": "SPG timing starts from the PowerVR's 54 MHz pixel clock; kept from nullDC 2010 through nulldc3 and minicast"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 13185,
-"note": "The GD-ROM CD_READ handler, cursing in comic-strip symbols since pre-2008 nullDC; still in flycast"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 13147,
-"note": "GD-ROM ATA soft reset: the DRV bit is preserved, and nobody knows what it does. Same line in several lineages"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 45370,
-"note": "rec_v1 pattern-matches SH4's unrolled div1 sequences into one DIV32U; copied on to reicast and nulldc3"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 22916,
-"note": "The SH4 timer (TMU) is only checked every 448 cycles, so several underflows can pile up in between"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 21254,
-"note": "SH4 SLEEP: with no interrupt, back up the PC and run sleep again. In several lineages"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 16933,
-"note": "Dreamcast memory map: the upper 32 MB mirrors the lower 32 MB, set up the same way in several lineages"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 50610,
-"note": "NAOMI board emulation asks a philosophical question; still in reicast, flycast, nulldc3 and minicast"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 14036,
-"note": "End of the Logitech G-series block inside the maple device code; from nullDCe 2009, now in several lineages"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 12182,
-"note": "Config docs still use \"nullDC v1.0.0 Private Beta 2\" as the example version string, in several lineages"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 19258,
-"note": "rec_v2 decoder: after a delay slot the switch falls through to the next op on purpose"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 28465,
-"note": "A Windows-plugin era grumble that ported itself to PSP, Wii, PS3 and on into reicast/flycast"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 41894,
-"note": "Four GD-ROM implementations, one surviving: a history lesson kept in several lineages, nullDC to minicast"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 28227,
-"note": "No internet and bored, so AICA HLE work began. This line lived on in several lineages, NotDC-PS3 among them"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 22306,
-"note": "Early nullDC wonders if a decoded switch list would be much faster. Asked again in several lineages"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 55317,
-"note": "SPG: the scanline/raster beam and its interrupts. This opening comment crossed several lineages, nullDC to minicast"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 14152,
-"note": "Maple DMA: 'kinda wrong .. but meh'. Held in 278 snapshots, from nullDCe to flycast"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 19539,
-"note": "Dynarec contract: when the block manager can't find a block, compile it and jump. nullDCe through flycast"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 75566,
-"note": "GD-ROM command 71 seems to trigger an authentication check. A 2010 nullDC guess that reached flycast"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 62147,
-"note": "AICA mixer: make sure mix is at least 23 bits wide, so 64-bit multiply! nullDC to flycast"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 118005,
-"note": "Store-queue fast remap, 'mainly hackish, assumes 1MB pages'. reicast 2013 hack still in nulldc3 and minicast"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 51749,
-"note": "NAOMI in one line: 32 MB RAM, 16 MB VRAM, 8 MB ARAM, 2 MB BIOS. Shared by several lineages"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 18217,
-"note": "SH4 DMAC moves data in 22 KB chunks [704 x 32]. Early nullDC code that reached flycast"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 35284,
-"note": "PSP dynarec hits an unknown opcode: printf(\"OH CRAP\"). From nullDCe's PSP port into nulldc3"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 28136,
-"note": "AICA hack found in Roadsters (also Toy cmd): 'too tired to debug'. 2005-2008 code, kept in several lineages"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 33552,
-"note": "Inside the drkPvr TA FIFO splitter: early nullDC venting at C++, kept in several lineages"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 62143,
-"note": "nullAICA's mono downmix, 2010. It reached nulldc-360, nullDC4Wii, reicast and flycast"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 117129,
-"note": "TA writes to VRAM: 'works on dc :D'. Held by reicast, flycast, nulldc3 and minicast"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 117933,
-"note": "SH4 interpreter TODO stamped 26/4/05 and 28/1/06, still in nulldc3 and minicast two decades on"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 33727,
-"note": "TA polygon strips split across FIFO writes, from pre-2008 drkPvr, shared by several lineages"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 29366,
-"note": "MDS image reader: don't load the whole file before checking, 'can be deadly for .nrg/.iso'. In several lineages"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 22756,
-"note": "SH4 register TODO naming one game ('SOTB'), from nullDCe 2009 and carried into reicast"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 39587,
-"note": "FTRV in the x86 rec_v2 dynarec: the SH4 4x4 matrix multiply done with SSE mulps, now in nulldc3"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 145635,
-"note": "Frame skip versus render-to-texture: the tradeoff as reicast described it in 2018, held in four lineages"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 64754,
-"note": "Broadband Adapter notes: its RAM sits on the PCI space but not on the chip. From nullDC 2010, in several lineages"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 136692,
-"note": "An unsupported Object List Set (NAOMI Virtual On) gets skipped with a cough, shared by four lineages"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-13207,
-13208,
-13209
-],
-"title": "GD-ROM command 0x70: a guess in the comments",
-"note": "GD-ROM cmd 0x70: 'some kind of reset/unlock ??' A pre-2008 guess still in nullDC, reicast and flycast"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-20619,
-20447,
-6961,
-20448,
-11,
-20620,
-20447,
-239
-],
-"title": "SH4 carry into the T bit, from dc4ever",
-"note": "SH4 carry-to-T-bit logic. Origin is dc4ever (2005), and it still lives in nulldc3 and minicast"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-76108,
-76109,
-76110,
-76111
-],
-"title": "The AICA memory map in four lines",
-"note": "The ARM7's view of AICA: sound RAM, then channel, common and DSP regs. Shared by several lineages"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-61628,
-61629,
-61630,
-61631,
-61632,
-11827,
-11,
-61633,
-61634,
-61635,
-11827,
-11,
-61636,
-61637,
-61618,
-61635,
-11827,
-11,
-61638,
-61639,
-61640,
-61635,
-61651,
-11827
-],
-"title": "AICA channel register writes",
-"note": "AICA register writes: loop points, envelope, pitch, each one updating its own slice of channel state"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-59969,
-120,
-17611,
-125,
-59970,
-59971,
-59972,
-59973,
-59974,
-59975,
-59976,
-59977,
-59978,
-59979,
-59980,
-59981,
-59982,
-59983,
-59984,
-59985,
-59986,
-59987,
-59988
-],
-"title": "AICA interrupt bits, documented inline",
-"note": "AICA interrupt sources, one per bit: MIDI, DMA end, SCPU, timers A/B/C"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-27049,
-27058,
-27051,
-27059,
-27060,
-27061,
-11866,
-239
-],
-"title": "x86 emitter: 'we do need some more info on this :P'",
-"note": "nullDC's x86 emitter always uses rel32 because relocation blocks a one-pass shrink. ':P' included"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-19088,
-19089,
-12491,
-11,
-19090,
-19091,
-12491,
-11,
-19092,
-19093,
-12491,
-11,
-19094,
-19095,
-12491
-],
-"title": "Dynarec decoder: FPU pairs, quads and the matrix",
-"note": "The SH4 dynarec decoder maps DR pairs, FV quads and XMTRX. Came from nullDCe in 2009, still in flycast"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-21932,
-21933,
-21765,
-21935,
-21773,
-21937,
-21779,
-21939
-],
-"title": "FSCA and FIPR in the opcode list",
-"note": "SH4 opcode list entries for FSCA, FCNVDS/SD and FIPR, from pre-2008 nullDC, still in several lineages"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-50595,
-50596,
-50657,
-50658,
-7040,
-11,
-50598,
-50659,
-50660,
-7040
-],
-"title": "NAOMI ROM PIO offset",
-"note": "NAOMI cart ROM PIO offset registers, noted as 'known to be valid on normal ROMs and DIMM board'"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-16046,
-16047,
-16048,
-16049,
-16050,
-16051,
-16052,
-16053,
-16054,
-16055,
-16056,
-16057,
-16058,
-16059,
-16060,
-16061,
-16062,
-16063
-],
-"title": "The Dreamcast Area 0 memory map",
-"note": "Boot ROM, flash, Maple, GD-ROM, PVR, modem, AICA: Area 0 at a glance, from early nullDC to flycast"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-65328,
-76129,
-12942,
-173,
-65330,
-65331,
-65332,
-65333,
-65234,
-65334,
-65335
-],
-"title": "The modem register that only works as u8",
-"note": "Modem bitfield puzzle: \"anything else exept u8 breaks it ? WTFH ?\", from nullDC into reicast and minicast"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-13071,
-13072,
-13019,
-13037,
-11,
-13073,
-13074,
-13041,
-13075,
-13043,
-11,
-13076,
-13077,
-11827
-],
-"title": "GD-ROM: command finished !",
-"note": "GD-ROM command done: set DRDY, clear BSY, raise the HOLLY GD-ROM IRQ. Early nullDC code in several lineages"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-5538,
-11,
-19696,
-19697,
-19698,
-19699
-],
-"title": "shil: one header, three jobs",
-"note": "shil_canonical.h generates opcode enums, portable C versions and the routing table, kept by several lineages"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-160672,
-160673,
-160674,
-160675,
-4410,
-160676,
-160677,
-160678,
-160679,
-4410,
-11,
-160680,
-160681,
-160682,
-160683,
-160684,
-4410,
-160685,
-160686,
-160687,
-160688,
-4410
-],
-"title": "SH4 carry ops on ARM64",
-"note": "reicast's 2013 ARM64 dynarec maps SH4 addc/subc/rotcr onto ARM flags, kept by flycast, nulldc3 and minicast"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-59943,
-59944,
-120,
-59945,
-59946,
-11,
-59947,
-59948,
-165,
-59949,
-59950,
-11,
-59951,
-59952,
-165,
-59953,
-59954
-],
-"title": "AICA DSP memory: should be 0x15C8",
-"note": "AICA DSP memory layout (COEF, MADRS, MPRO) with \"should be 0x15C8 in size\", shared from nullDC to minicast"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-13080,
-13081,
-11827,
-13082,
-13083,
-11827,
-238,
-239
-],
-"title": "Unhandled gdrom state ...",
-"note": "End of the GD-ROM state machine: \"end pio transfer ;)\" and a die() for any state it does not know"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-13152,
-13153,
-13154,
-12491
-],
-"title": "GD-ROM: the ATA packet command",
-"note": "GD-ROM ATA_SPI_PACKET: the drive switches to waiting for a packet. Pre-2008 nullDC code, in several lineages"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-37238,
-37239,
-37240,
-37241,
-37242,
-37243
-],
-"title": "armwreck: the ARM code emitter",
-"note": "nullDCe's ARM emitter 'armwreck' (2009) encodes Rn/Rd fields; it reached reicast, flycast, nulldc3, minicast"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-12494,
-60711,
-60712,
-60713,
-12491,
-11,
-55436,
-60714,
-60712,
-60715,
-12491,
-238,
-11,
-60716,
-60717,
-60718,
-60719,
-60720,
-60721
-],
-"title": "Recompiling the AICA sound DSP to x86",
-"note": "AICA DSP x86 recompiler: \"maby it has overflow protection ?\" ... \"so it works just fine :)\""
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-27710,
-51104,
-10839,
-27711,
-27712,
-27713,
-11,
-27714,
-27715,
-27716,
-51105,
-27717,
-27718,
-27719,
-290,
-27720,
-27721,
-27722,
-27723,
-11,
-27724,
-27725,
-27726,
-290
-],
-"title": "Holly's interrupt map",
-"note": "Holly's interrupt bits: render done, vblank, TA list ends, PVR/Maple/GD/AICA DMA, kept since early nullDC"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-28140,
-28141,
-28142,
-28143
-],
-"title": "A Rez hack that never worked",
-"note": "Game-specific hack for Rez, commented out: \"not realy working tho\""
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-33954,
-120,
-30469,
-30470,
-11,
-33955,
-30471,
-30472,
-11,
-33956,
-33957,
-33958,
-11,
-33913,
-33914,
-33915,
-11672
-],
-"title": "TA polygon type 3, from 2004",
-"note": "TA polygon type 3 (two volumes): one TSP/TCW pair per volume. From dc4ever 2004, still in nullDC and reicast"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-12885,
-120,
-12886,
-12887,
-12888,
-12889,
-12890,
-12891,
-12892,
-12893,
-12894,
-11,
-12895,
-12896,
-12897,
-12898,
-11672
-],
-"title": "The GD-ROM state machine",
-"note": "GD-ROM drive states: wait for a command, ATA, packet, PIO/DMA sector reads"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-160769,
-160770,
-4410,
-160771,
-160772,
-4410,
-160773,
-160774,
-4410,
-11,
-160775,
-160776,
-4410,
-11,
-160777,
-160778,
-160779,
-160780,
-4410
-],
-"title": "SH4 FPU ops on the ARM64 dynarec",
-"note": "ARM64 dynarec: SH4 fmac becomes Fmadd, and FSRRA becomes Fsqrt, then 1.0 divided by the result"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-151649,
-151650,
-151650,
-151651,
-12491,
-11,
-151652,
-151650,
-151650,
-151653,
-12491,
-11,
-151654,
-151650,
-151650,
-151655,
-12491
-],
-"title": "Naomi JVS I/O board replies",
-"note": "Naomi JVS I/O board: reports command format 1.1, JAMMA video 2.0, communication 1.0"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-28110,
-28111,
-28190,
-28191
-],
-"title": "Hack the KOS command queue",
-"note": "EmptyAICA's aica_hax.cpp: fake the sound CPU's command queue. 'seems to fix everything ^^'"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-59829,
-165,
-59913,
-59914,
-11,
-59915
-],
-"title": "AICA register map, hopefully",
-"note": "AICA register struct padding: 'some other misc shit FAR away is here :p' then '+400, hopefully :p'"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-60550,
-60551,
-60552,
-60553,
-60554,
-60555,
-60556,
-60557
-],
-"title": "MEM_ADDR is the deal",
-"note": "AICA DSP init checks, from nullDC 2010 to flycast: 'THAT WAS not real, MEM_ADDR is the deal ;p'"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-33532,
-33533,
-546,
-11,
-33534,
-33535,
-33536,
-33537,
-33538,
-33539,
-162,
-3949,
-33540,
-33541,
-159,
-33542,
-33543,
-33539,
-162,
-33544
-],
-"title": "TA list decoder: end of list",
-"note": "Tile Accelerator decoder: End_Of_List raises the list-end IRQ; tile clip gets '*couh* ignore it :p'"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-18899,
-110062,
-110063,
-137555,
-160320,
-137556,
-2926,
-137557,
-1013
-],
-"title": "This is faster. Why?",
-"note": "ARM32 dynarec block lookup: '//this is faster //why ? (Icache ?)', in reicast, flycast, nulldc3, minicast"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-35262,
-35263,
-35264
-],
-"title": "Hoping the round mode is right",
-"note": "Dynarec int-to-float convert: 'i hope that the round mode bit is set properly here :p', shared by several lineages"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-20648,
-21021,
-20650,
-20423,
-18962,
-11,
-20651,
-20571,
-239
-],
-"title": "shll, to be checked since 2005",
-"note": "SH4 interpreter shll: 'ToDo : Check This [26/4/05]', still carried by nulldc-360, nullDCe, reicast"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-13904,
-138,
-13905,
-13906,
-156,
-13907,
-159,
-13908,
-4065,
-13909,
-13910,
-13911,
-13912,
-13913,
-13914,
-13915,
-13916,
-13917,
-13918,
-13919,
-13920,
-13921,
-13922
-],
-"title": "VMU media info",
-"note": "Maple VMU GetMediaInfo: the memory card's layout, written byte by byte: FAT at block 0xFE, file info at 0xFD"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-170902,
-170903,
-170904,
-170905,
-170906
-],
-"title": "Two address spaces for the JIT",
-"note": "FEAT_NO_RWX_PAGES: emitter writes through an RW mapping, code runs from a separate RX one"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-33356,
-33357,
-33358,
-33359,
-33360,
-33361,
-33362,
-33363,
-11,
-33364,
-33365,
-11,
-33366,
-33367,
-33368,
-33369
-],
-"title": "TA list types, worked out by hand",
-"note": "\"as it sems, bit 1,2 are type, bit 0 is mod volume :p\": PowerVR TA list IDs, carried by nullDC, 360, Wii"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-189972,
-189973,
-189974,
-189975,
-189976,
-189977,
-189978,
-189979,
-189980,
-189981,
-189982,
-213862,
-189984,
-189985,
-189986,
-189987,
-189988,
-189989,
-189990,
-189991,
-189992,
-189993
-],
-"title": "GD-ROM subcode Q, mostly guessed",
-"note": "Faked CDDA subchannel Q: \"Track number .. dunno whats it :P gotta parse toc xD ;p\". Since dc4ever 2004"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-16955,
-16956,
-16957,
-16958,
-16959,
-16960,
-16961,
-16962,
-16960,
-16963,
-16964,
-16960,
-16965,
-16966,
-16960,
-16967,
-16968
-],
-"title": "SH4 address space in 17 lines",
-"note": "SH4 memory map in a nutshell: U0/P0-P3 mirror the normal map, P4 0xE... is the on-chip area"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-135378,
-135379,
-135380,
-11827,
-11,
-135381,
-135382,
-135383,
-1931,
-135384,
-11827,
-11,
-135385,
-135386,
-135383,
-1931,
-135384,
-11827,
-11,
-135387,
-135388,
-135389,
-135390,
-11827
-],
-"title": "Where does the block go next?",
-"note": "Dynarec block-end types: static, conditional and dynamic exits pick next_pc. rec_cpp backend"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-34096,
-125,
-34097,
-173,
-34098,
-34099,
-11,
-34100,
-34101,
-34102,
-171,
-34103,
-173,
-34104,
-34099,
-11,
-34105,
-34106,
-34102,
-171,
-238,
-11866,
-239
-],
-"title": "Texture twiddling, bit by bit",
-"note": "PowerVR twiddled-texture address: interleave Y and X bits. Shared by nullDC, 360, Wii, reicast"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-17136,
-17137,
-17138,
-17139
-],
-"title": "VRAM's 64-bit bus, explained",
-"note": "VRAM 64-bit bus: two banks interleaved every 32 bits, bank 0 mapped at 0x400000. In several lineages"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-50543,
-50544,
-11,
-50545,
-50546,
-50547,
-50548,
-50549,
-50550,
-50551,
-50552,
-50553,
-11,
-50554,
-50555,
-50556,
-293,
-11,
-50557,
-50558,
-50559,
-50560,
-50561,
-50562
-],
-"title": "Reverse-engineering the NAOMI DIMM board",
-"note": "Field notes from probing NAOMI 1/2 BIOS handshakes with the DIMM board, all question marks intact"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-33686,
-173,
-33687,
-171,
-33688,
-32269,
-173,
-33689,
-33681,
-33690,
-11,
-33691,
-171
-],
-"title": "Reset? *couh* right ...",
-"note": "drkPvr TA code: an empty Reset with a sarcastic cough, beside the real SoftReset"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-19854,
-19855,
-19838,
-19801,
-19856,
-19848,
-19849,
-19850,
-19851,
-125,
-19857,
-238,
-6961,
-19852,
-19759
-],
-"title": "SHAD, the SH4 dynamic shift",
-"note": "SHIL canonical for SH4 shad: negative counts shift right arithmetically; -32 fills with the sign bit"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-42795,
-42796,
-42797,
-42798,
-42799
-],
-"title": "Area 3: main RAM and its mirrors",
-"note": "Dreamcast memory map in a nutshell: 16 MB main RAM at 0x0C000000, mirrored three times up to 0x10000000"
-},
-{
-"pool": "unique",
-"kind": "segment",
-"ids": [
-33878,
-33879,
-120,
-17611,
-125,
-33880,
-33881,
-33882,
-33883,
-33884,
-33885,
-33886,
-33887,
-17611,
-125,
-33888,
-33889,
-33890,
-33885,
-33891,
-33892,
-17647,
-11672
-],
-"title": "The PowerVR Texture Control Word",
-"note": "PVR2 TCW: 21-bit texture address, pixel format, VQ, mipmap bits, with or without a palette"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-32029,
-32030,
-32031,
-11,
-32032,
-173,
-32033,
-171,
-32034,
-32035,
-32036,
-32037
-],
-"title": "Background plane vertex math :p",
-"note": "drkPvr's GX renderer finds the BG strip vertex: '2x the size needed :p' when shadow volumes are on"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-19582,
-114387,
-19583,
-19584,
-11,
-19585,
-19586,
-125,
-19587,
-19588,
-19589,
-173,
-19590,
-3974,
-171,
-11,
-19591,
-19592,
-19593,
-11,
-19594,
-19595,
-238
-],
-"title": "Optimizer: disabled to be on the safe side",
-"note": "A SHIL block optimizer that starts with return; and leaves the whole pass below commented out"
-},
-{
-"pool": "unique",
-"kind": "line",
-"id": 2900,
-"note": "dc4ever's mission statement: proving fast emulation is possible in C# / .NET"
-},
-{
-"pool": "unique",
-"kind": "line",
-"id": 116,
-"note": "dc4ever's 256-byte SH4 test: 'we still have 32 bytes left to fill... running out of ideas'"
-},
-{
-"pool": "unique",
-"kind": "segment",
-"ids": [
-142,
-143,
-144,
-138,
-145,
-146,
-147,
-148,
-149,
-150,
-151,
-152,
-153,
-154,
-155,
-156,
-157,
-158,
-159,
-160,
-161,
-162,
-163
-],
-"title": "dc4ever's 2004 block builder, in C#",
-"note": "The C# precursor from 2004 collects SH4 opcodes until a branch, with each bit pattern spelled out"
-},
-{
-"pool": "unique",
-"kind": "segment",
-"ids": [
-219,
-173,
-220,
-221,
-222,
-223,
-138,
-224,
-225,
-226,
-156,
-227,
-159,
-228,
-229,
-230,
-231,
-162,
-164,
-141,
-171
-],
-"title": "bubble-sorting the block cache",
-"note": "DC4Ever's block cache gets bubble-sorted by call count, with the VB-style comments left in"
-},
-{
-"pool": "unique",
-"kind": "line",
-"id": 55389,
-"note": "nullDC's speed readout, built in SPG.cpp: VPS, RPS, vertex rate and SH4 MHz"
-},
-{
-"pool": "unique",
-"kind": "line",
-"id": 70670,
-"note": "nullDC's XMaple plugin drives Xbox 360 pad rumble for the PuruPuru pack: 'Actually set that crap! D:'"
-},
-{
-"pool": "unique",
-"kind": "line",
-"id": 63988,
-"note": "nullDC's dynarec stats window: how many blocks were statically linked vs looked up"
-},
-{
-"pool": "unique",
-"kind": "line",
-"id": 457978,
-"note": "A per-game AICA hack for ChuChu Rocket's echoey 16-bit sounds, only in NotDC-PS3."
-},
-{
-"pool": "unique",
-"kind": "line",
-"id": 450294,
-"note": "NotDC-PS3's maple controller: \"No error checking of any kind, but works just fine.\""
-},
-{
-"pool": "unique",
-"kind": "segment",
-"ids": [
-450456,
-450457,
-450458,
-450459,
-450460
-],
-"title": "Round-to-nearest skips the boot animation",
-"note": "On the PS3's Cell CPU, the BIOS must run in round-to-zero mode or the boot animation gets skipped"
-},
-{
-"pool": "unique",
-"kind": "line",
-"id": 451129,
-"note": "PowerVR sprites: corners A,B,C carry UVs, D arrives bare and completes the parallelogram."
-},
-{
-"pool": "unique",
-"kind": "segment",
-"ids": [
-84973,
-165,
-84974,
-120,
-84975,
-165,
-84976,
-84977,
-84978,
-84979,
-84980,
-84981,
-84982
-],
-"title": "a hand-encoded Xenon dot product",
-"note": "nulldc-360 emits the VMX128 vmsum4fp128 dot product as a raw .long word inside inline asm"
-},
-{
-"pool": "unique",
-"kind": "line",
-"id": 328768,
-"note": "flycast's DX9 path looks for d3dx9_24.dll from Feb 2005 (!): 'I doubt it will work but let's try'"
-},
-{
-"pool": "unique",
-"kind": "line",
-"id": 226823,
-"note": "flycast networking: a hack lets WebTV connect because picotcp lacks VJ compression"
-},
-{
-"pool": "unique",
-"kind": "segment",
-"ids": [
-293267,
-293268,
-293269,
-293270,
-293271,
-293272,
-293273,
-293274,
-293275,
-293276,
-293277,
-293278,
-293279,
-293280,
-293281,
-293282,
-293283,
-293284,
-293285,
-293286
-],
-"title": "Elan: NAOMI 2's T&L chip registers",
-"note": "flycast-only Elan emulation: register notes incl. SDRAM config and the macro tiler bit layout"
-},
-{
-"pool": "unique",
-"kind": "segment",
-"ids": [
-337464,
-337465,
-138,
-337466,
-156,
-337467,
-337468,
-164,
-11,
-337469,
-156,
-337467,
-337470,
-164,
-141,
-11,
-337471,
-337472,
-138,
-337473,
-156,
-337467,
-337474,
-337475
-],
-"title": "the small-n-simple idle loop detector",
-"note": "nulldc3's SH4 decoder spots spin loops and BIOS/ip.bin code, then multiplies their cycle cost to skip ahead"
-},
-{
-"pool": "unique",
-"kind": "segment",
-"ids": [
-337391,
-337392,
-337393,
-11,
-337394,
-337395,
-11,
-337396,
-337397,
-11,
-337391,
-337398,
-337399,
-337400,
-11,
-337392,
-337401,
-337402,
-337400,
-11,
-337393,
-337403,
-337404
-],
-"title": "div0s: VERY NASTY",
-"note": "nulldc3 emits DIV0S as IR ops, setting SR.Q, SR.M and T by hand: 'VERY NASTY', no temp reg"
-},
-{
-"pool": "unique",
-"kind": "segment",
-"ids": [
-347967,
-11,
-347968,
-347969,
-347970,
-347971,
-347972,
-347973
-],
-"title": "punch-through's feedback channel",
-"note": "refsw2 in nulldc3: a failed alpha test copies depth back and asks for another punch-through pass"
-},
-{
-"pool": "unique",
-"kind": "line",
-"id": 398308,
-"note": "minicast's honest header in lxdream's TA core: 'a major hack to get decoupled mtta done fast'"
-},
-{
-"pool": "unique",
-"kind": "segment",
-"ids": [
-398649,
-11,
-398650,
-398651,
-398652,
-11,
-398653,
-398654,
-11,
-398655,
-398656,
-398657,
-398658,
-398659,
-398660,
-398661,
-398662,
-11,
-398663,
-398664,
-398665
-],
-"title": "The TA ring: one barrier per batch",
-"note": "minicast only: SPSC TA ring on a Cortex-A9; a dmb ish per 32-byte block cost too much, so it is batched"
-},
-{
-"pool": "unique",
-"kind": "segment",
-"ids": [
-398501,
-398502,
-398503,
-398504,
-398505,
-398506,
-398507,
-398508,
-398509,
-398510,
-398511
-],
-"title": "Dreamcast memory map, FPGA edition",
-"note": "minicast's DC memory map: VRAM is mapped from /dev/mem at the FPGA VRAM offset; AICA RAM wraps"
-},
-{
-"pool": "unique",
-"kind": "line",
-"id": 427244,
-"note": "polly2's PVR texture cache: a whole banner explaining why 4-corner bilinear fetches can't livelock."
-},
-{
-"pool": "unique",
-"kind": "segment",
-"ids": [
-410099,
-410100,
-410101,
-410102,
-410103,
-410104,
-410105
-],
-"title": "UseAlpha=0 and the black BIOS background",
-"note": "In polly2's shader RTL, UseAlpha=0 forces alpha to 255; without it the BIOS background blends to black"
-},
-{
-"pool": "unique",
-"kind": "segment",
-"ids": [
-413691,
-413692,
-413693,
-429690,
-429691,
-429692,
-429693,
-429694,
-429695,
-429696,
-429697,
-429698,
-429699,
-429700,
-429701,
-429702,
-429703
-],
-"title": "polly2's video out: 1080p at the DC's 59.94",
-"note": "An FPGA scanout runs 1080p at 59.94 Hz, the Dreamcast VGA rate, and doubles the 640-wide framebuffer"
-},
-{
-"pool": "unique",
-"kind": "line",
-"id": 405795,
-"note": "polly2 RTL asks itself \"WHY is raster IDLE?\" and splits idle cycles by state for profiling."
-},
-{
-"pool": "unique",
-"kind": "segment",
-"ids": [
-398617,
-11,
-398618,
-398619,
-398620,
-398621,
-398622,
-398623,
-398624
-],
-"title": "Serializing TA control events without a lock",
-"note": "minicast: ListInit/SoftReset drain the ring and fence with DMB ISH, no mutex needed"
-},
-{
-"pool": "unique",
-"kind": "line",
-"id": 450277,
-"note": "GD-ROM detail: Rez reads drive status after a vendor command, and a stale value stalls its streamer."
-},
-{
-"pool": "unique",
-"kind": "segment",
-"ids": [
-459,
-477,
-138,
-468,
-141,
-478,
-138,
-461,
-462,
-463,
-464,
-465,
-479
-],
-"title": "PowerVR VRAM's 64-bit interleave",
-"note": "DC4Ever translates 64-bit VRAM addresses: bit 2 picks the 4 MB bank, the rest shifts down by one"
-},
-{
-"pool": "unique",
-"kind": "line",
-"id": 400131,
-"note": "minicast help text: configures the ADV7513 HDMI chip for 1920x1080 (VIC 16) RGB444 as produced by SPG.sv"
-},
-{
-"pool": "unique",
-"kind": "segment",
-"ids": [
-81322,
-11,
-81323,
-58067,
-11,
-81324,
-81325,
-81326,
-81327,
-81328,
-11,
-81329,
-11,
-81330,
-58075,
-11,
-81331,
-81332,
-81333,
-81334,
-81335
-],
-"title": "drkPvr's accuracy-vs-speed menus",
-"note": "nulldc-360 drkPvr: modifier volume and Z-buffer modes, from 'Slowest, highest accuracy' to 'Buggy still'"
-},
-{
-"pool": "unique",
-"kind": "segment",
-"ids": [
-460407,
-460408,
-460409,
-451333,
-451334,
-460410,
-460411
-],
-"title": "Pushing the background plane back",
-"note": "NotDC-PS3 reads ISP_BACKGND_D as a 1/W float and pushes it back by 1e-6 for the Xtreme Sports skybox"
-},
-{
-"pool": "unique",
-"kind": "segment",
-"ids": [
-183857,
-183858,
-291568,
-183860,
-183861,
-183858,
-291569,
-183860,
-183863,
-291570,
-183860,
-183865,
-183858,
-306632,
-291572,
-183860
-],
-"title": "Widescreen cheats: Code Veronica's black bars",
-"note": "flycast widescreen cheat table: codes 1-4 remove Code Veronica's FMV letterbox bars"
-},
-{
-"pool": "unique",
-"kind": "line",
-"id": 251196,
-"note": "flycast's VGA shader fakes an RGB565 precision drop: 'I'm not sure why... exhibited on PVR1 and PVR3 hardware too'"
-},
-{
-"pool": "unique",
-"kind": "line",
-"id": 80976,
-"note": "nulldc-360 ImgReader's commented-out test discs, here Sonic Adventure (JP) from an sda:/dcisos folder"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 60553,
-"note": "AICA DSP register check that got corrected, from nullAICA 2010 and kept in reicast and flycast"
-},
-{
-"pool": "shared",
-"kind": "line",
-"id": 28132,
-"note": "'hack Katana wait': EmptyAICA fakes a value games wait on (found in Roadsters, Toy Cmd). several lineages"
-},
-{
-"pool": "shared",
-"kind": "segment",
-"ids": [
-21028,
-20657,
-20423,
-18962,
-20658,
-20659,
-239
-],
-"title": "An SH4 opcode with a 2005 ToDo",
-"note": "SH4 shlr interpreter op with a 2005 \"ToDo : Check This\" note that several lineages kept"
-},
-{
-"pool": "unique",
-"kind": "segment",
-"ids": [
-766097,
-766098,
-766099,
-499509,
-766100,
-766101,
-766102,
-766103
-],
-"title": "Why the VMU saves came out empty",
-"note": "Wii U port: devices are set up twice, so a file held open made the second open fail and saves were 0 bytes"
-},
-{
-"pool": "unique",
-"kind": "segment",
-"ids": [
-766152,
-766153,
-766154,
-766155,
-27781,
-766156,
-766157,
-2926,
-375597,
-375598,
-1013
-],
-"title": "64-bit reads: which word goes first",
-"note": "Swapped words in 64-bit fmov copies turned the BIOS soft-reset code into garbage (MvC2 after game over)"
-},
-{
-"pool": "unique",
-"kind": "segment",
-"ids": [
-766633,
-766634,
-766635,
-766636,
-766637,
-766638,
-766639,
-766640,
-766641
-],
-"title": "Slower and lower instead of stuttering",
-"note": "Wii U sound bends its resampling to the emulator's real speed; stop-and-restart at ~76% was unbearable"
-},
-{
-"pool": "unique",
-"kind": "segment",
-"ids": [
-742181,
-742182,
-742183,
-742184,
-742185,
-742186,
-742187,
-742188,
-742189,
-742190,
-742191,
-742192,
-742193,
-742194,
-742195,
-742196,
-742197,
-742198,
-742199
-],
-"title": "HarissaDC writes its own flash",
-"note": "No Sega BIOS: the HLE BIOS formats the flash, writes '00000Dreamcast' and counts the clock from 1950"
-},
-{
-"pool": "unique",
-"kind": "segment",
-"ids": [
-742562,
-742563,
-742564,
-742565,
-742566,
-742567,
-742568,
-742569,
-742570,
-742571,
-742572,
-742573,
-11,
-742574,
-742575,
-742576,
-742577,
-742578,
-742579,
-742580,
-742581,
-742582,
-742583,
-742584,
-742585,
-742586,
-742587,
-742588,
-742589,
-742590
-],
-"title": "Booting with no BIOS",
-"note": "HarissaDC's HLE BIOS points the system call vectors at traps and sets the SH4 registers by hand"
-},
-{
-"pool": "unique",
-"kind": "segment",
-"ids": [
-628894,
-628895,
-628896,
-628897,
-628898,
-628899,
-628900
-],
-"title": "Sprite atlases and the 0xDEADBEEF sentinel",
-"note": "Texture caches checked one sentinel word; SF3 and Guilty Gear redraw atlas tiles, so stale tiles stayed"
-},
-{
-"pool": "unique",
-"kind": "segment",
-"ids": [
-233561,
-233562,
-233563,
-233564,
-233565,
-233566,
-233567
-],
-"title": "One VFPU instruction for the vertex transform",
-"note": "The 2021 restoration swapped nullDCe's four-line C matrix-vector multiply for one PSP VFPU op, vtfm4.q"
-}
-]
+ "note": "tour picks: curated by the lineage-tour-curation workflow (agents/attract/), verified; pool unique = one lineage only",
+ "items": [
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 38947,
+   "note": "Early nullDC plugin header vents at MSVC warnings; the outburst still ships in several lineages"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 28624,
+   "note": "The Dreamcast in one line: 16 MB RAM, 8 MB VRAM, 2 MB sound RAM, 2 MB BIOS, 128 KB flash"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 59767,
+   "note": "nullDC's AICA register map pads out to the far registers; the comment reached several lineages, even TS devtools"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 14982,
+   "note": "Relief after the hand-written asm memory handlers in nullDC's _vmem, still found in several lineages"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 29255,
+   "note": "The GD-ROM image reader rewrites the boot sector's region text so any disc boots on any console"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 23348,
+   "note": "Keeping x86 and SH4 float rounding modes in sync: a trick early nullDC used, still in several lineages"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 17584,
+   "note": "The SH4 address space mirrors the same memory map 7 times, set up in a loop since early nullDC"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 14717,
+   "note": "nullDCe's maple DMA admits it was hacked until Windows CE games worked, carried into reicast and flycast"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 18531,
+   "note": "A one-word sigh opens the SH4 cache and TLB controller emulation"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 18023,
+   "note": "Was it RTSCR or RTCSR? Early nullDC suspected a typo in the hardware manual"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 22330,
+   "note": "FSCA's cosine is sine shifted by pi/2: an SH4 FPU note from early nullDC, still in several lineages"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 14327,
+   "note": "The Dreameye camera's device name, cut off at a fixed field width, kept as is from nullDCe to nulldc3"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 17849,
+   "note": "Found the YUV decoder not set up? Set it up quietly and move on"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 28341,
+   "note": "Above a list of Holly error interrupt bits, nullDC asks whether some are missing; still asked in several lineages"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 27718,
+   "note": "The x86 emitter's verdict on its target, from early nullDC; carried along into reicast, flycast and nulldc3."
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 55176,
+   "note": "SPG timing starts from the PowerVR's 54 MHz pixel clock; kept from nullDC 2010 through nulldc3 and minicast"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 13792,
+   "note": "The GD-ROM CD_READ handler, cursing in comic-strip symbols since pre-2008 nullDC; still in flycast"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 13754,
+   "note": "GD-ROM ATA soft reset: the DRV bit is preserved, and nobody knows what it does. Same line in several lineages"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 45972,
+   "note": "rec_v1 pattern-matches SH4's unrolled div1 sequences into one DIV32U; copied on to reicast and nulldc3"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 23520,
+   "note": "The SH4 timer (TMU) is only checked every 448 cycles, so several underflows can pile up in between"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 21858,
+   "note": "SH4 SLEEP: with no interrupt, back up the PC and run sleep again. In several lineages"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 17539,
+   "note": "Dreamcast memory map: the upper 32 MB mirrors the lower 32 MB, set up the same way in several lineages"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 51213,
+   "note": "NAOMI board emulation asks a philosophical question; still in reicast, flycast, nulldc3 and minicast"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 14642,
+   "note": "End of the Logitech G-series block inside the maple device code; from nullDCe 2009, now in several lineages"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 12790,
+   "note": "Config docs still use \"nullDC v1.0.0 Private Beta 2\" as the example version string, in several lineages"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 19864,
+   "note": "rec_v2 decoder: after a delay slot the switch falls through to the next op on purpose"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 29069,
+   "note": "A Windows-plugin era grumble that ported itself to PSP, Wii, PS3 and on into reicast/flycast"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 42496,
+   "note": "Four GD-ROM implementations, one surviving: a history lesson kept in several lineages, nullDC to minicast"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 28831,
+   "note": "No internet and bored, so AICA HLE work began. This line lived on in several lineages, NotDC-PS3 among them"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 22910,
+   "note": "Early nullDC wonders if a decoded switch list would be much faster. Asked again in several lineages"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 55168,
+   "note": "SPG: the scanline/raster beam and its interrupts. This opening comment crossed several lineages, nullDC to minicast"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 14758,
+   "note": "Maple DMA: 'kinda wrong .. but meh'. Held in 571 snapshots, from nullDCe to flycast"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 20145,
+   "note": "Dynarec contract: when the block manager can't find a block, compile it and jump. nullDCe through flycast"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 76580,
+   "note": "GD-ROM command 71 seems to trigger an authentication check. A 2010 nullDC guess that reached flycast"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 62002,
+   "note": "AICA mixer: make sure mix is at least 23 bits wide, so 64-bit multiply! nullDC to flycast"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 120384,
+   "note": "Store-queue fast remap, 'mainly hackish, assumes 1MB pages'. reicast 2013 hack still in nulldc3 and minicast"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 52352,
+   "note": "NAOMI in one line: 32 MB RAM, 16 MB VRAM, 8 MB ARAM, 2 MB BIOS. Shared by several lineages"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 18823,
+   "note": "SH4 DMAC moves data in 22 KB chunks [704 x 32]. Early nullDC code that reached flycast"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 35887,
+   "note": "PSP dynarec hits an unknown opcode: printf(\"OH CRAP\"). From nullDCe's PSP port into nulldc3"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 28740,
+   "note": "AICA hack found in Roadsters (also Toy cmd): 'too tired to debug'. 2005-2008 code, kept in several lineages"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 34156,
+   "note": "Inside the drkPvr TA FIFO splitter: early nullDC venting at C++, kept in several lineages"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 61998,
+   "note": "nullAICA's mono downmix, 2010. It reached nulldc-360, nullDC4Wii, reicast and flycast"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 119512,
+   "note": "TA writes to VRAM: 'works on dc :D'. Held by reicast, flycast, nulldc3 and minicast"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 120312,
+   "note": "SH4 interpreter TODO stamped 26/4/05 and 28/1/06, still in nulldc3 and minicast two decades on"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 34331,
+   "note": "TA polygon strips split across FIFO writes, from pre-2008 drkPvr, shared by several lineages"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 29970,
+   "note": "MDS image reader: don't load the whole file before checking, 'can be deadly for .nrg/.iso'. In several lineages"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 23360,
+   "note": "SH4 register TODO naming one game ('SOTB'), from nullDCe 2009 and carried into reicast"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 40190,
+   "note": "FTRV in the x86 rec_v2 dynarec: the SH4 4x4 matrix multiply done with SSE mulps, now in nulldc3"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 151959,
+   "note": "Frame skip versus render-to-texture: the tradeoff as reicast described it in 2018, held in four lineages"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 64611,
+   "note": "Broadband Adapter notes: its RAM sits on the PCI space but not on the chip. From nullDC 2010, in several lineages"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 140998,
+   "note": "An unsupported Object List Set (NAOMI Virtual On) gets skipped with a cough, shared by four lineages"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    13814,
+    13815,
+    13816
+   ],
+   "title": "GD-ROM command 0x70: a guess in the comments",
+   "note": "GD-ROM cmd 0x70: 'some kind of reset/unlock ??' A pre-2008 guess still in nullDC, reicast and flycast"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    21223,
+    21053,
+    8369,
+    21054,
+    1,
+    21224,
+    21053,
+    18
+   ],
+   "title": "SH4 carry into the T bit, from dc4ever",
+   "note": "SH4 carry-to-T-bit logic. Origin is dc4ever (2005), and it still lives in nulldc3 and minicast"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    76616,
+    76617,
+    76618,
+    76619
+   ],
+   "title": "The AICA memory map in four lines",
+   "note": "The ARM7's view of AICA: sound RAM, then channel, common and DSP regs. Shared by several lineages"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    61483,
+    61484,
+    61485,
+    61486,
+    61487,
+    12435,
+    1,
+    61488,
+    61489,
+    61490,
+    12435,
+    1,
+    61491,
+    61492,
+    61473,
+    61490,
+    12435,
+    1,
+    61493,
+    61494,
+    61495,
+    61490,
+    61506,
+    12435
+   ],
+   "title": "AICA channel register writes",
+   "note": "AICA register writes: loop points, envelope, pitch, each one updating its own slice of channel state"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    59823,
+    3,
+    18217,
+    8,
+    59824,
+    59825,
+    59826,
+    59827,
+    59828,
+    59829,
+    59830,
+    59831,
+    59832,
+    59833,
+    59834,
+    59835,
+    59836,
+    59837,
+    59838,
+    59839,
+    59840,
+    59841,
+    59842
+   ],
+   "title": "AICA interrupt bits, documented inline",
+   "note": "AICA interrupt sources, one per bit: MIDI, DMA end, SCPU, timers A/B/C"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    27653,
+    27662,
+    27655,
+    27663,
+    27664,
+    27665,
+    12474,
+    18
+   ],
+   "title": "x86 emitter: 'we do need some more info on this :P'",
+   "note": "nullDC's x86 emitter always uses rel32 because relocation blocks a one-pass shrink. ':P' included"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    19694,
+    19695,
+    13099,
+    1,
+    19696,
+    19697,
+    13099,
+    1,
+    19698,
+    19699,
+    13099,
+    1,
+    19700,
+    19701,
+    13099
+   ],
+   "title": "Dynarec decoder: FPU pairs, quads and the matrix",
+   "note": "The SH4 dynarec decoder maps DR pairs, FV quads and XMTRX. Came from nullDCe in 2009, still in flycast"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    22536,
+    22537,
+    22369,
+    22539,
+    22377,
+    22541,
+    22383,
+    22543
+   ],
+   "title": "FSCA and FIPR in the opcode list",
+   "note": "SH4 opcode list entries for FSCA, FCNVDS/SD and FIPR, from pre-2008 nullDC, still in several lineages"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    51198,
+    51199,
+    51260,
+    51261,
+    8451,
+    1,
+    51201,
+    51262,
+    51263,
+    8451
+   ],
+   "title": "NAOMI ROM PIO offset",
+   "note": "NAOMI cart ROM PIO offset registers, noted as 'known to be valid on normal ROMs and DIMM board'"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    16652,
+    16653,
+    16654,
+    16655,
+    16656,
+    16657,
+    16658,
+    16659,
+    16660,
+    16661,
+    16662,
+    16663,
+    16664,
+    16665,
+    16666,
+    16667,
+    16668,
+    16669
+   ],
+   "title": "The Dreamcast Area 0 memory map",
+   "note": "Boot ROM, flash, Maple, GD-ROM, PVR, modem, AICA: Area 0 at a glance, from early nullDC to flycast"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    65185,
+    76632,
+    13550,
+    65,
+    65187,
+    65188,
+    65189,
+    65190,
+    65091,
+    65191,
+    65192
+   ],
+   "title": "The modem register that only works as u8",
+   "note": "Modem bitfield puzzle: \"anything else exept u8 breaks it ? WTFH ?\", from nullDC into reicast and minicast"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    13678,
+    13679,
+    13627,
+    13645,
+    1,
+    13680,
+    13681,
+    13649,
+    13682,
+    13651,
+    1,
+    13683,
+    13684,
+    12435
+   ],
+   "title": "GD-ROM: command finished !",
+   "note": "GD-ROM command done: set DRDY, clear BSY, raise the HOLLY GD-ROM IRQ. Early nullDC code in several lineages"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    5223,
+    1,
+    20302,
+    20303,
+    20304,
+    20305
+   ],
+   "title": "shil: one header, three jobs",
+   "note": "shil_canonical.h generates opcode enums, portable C versions and the routing table, kept by several lineages"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    166696,
+    166697,
+    166698,
+    166699,
+    3991,
+    166700,
+    166701,
+    166702,
+    166703,
+    3991,
+    1,
+    166704,
+    166705,
+    166706,
+    166707,
+    166708,
+    3991,
+    166709,
+    166710,
+    166711,
+    166712,
+    3991
+   ],
+   "title": "SH4 carry ops on ARM64",
+   "note": "reicast's 2013 ARM64 dynarec maps SH4 addc/subc/rotcr onto ARM flags, kept by flycast, nulldc3 and minicast"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    59797,
+    59798,
+    3,
+    59799,
+    59800,
+    1,
+    59801,
+    59802,
+    58,
+    59803,
+    59804,
+    1,
+    59805,
+    59806,
+    58,
+    59807,
+    59808
+   ],
+   "title": "AICA DSP memory: should be 0x15C8",
+   "note": "AICA DSP memory layout (COEF, MADRS, MPRO) with \"should be 0x15C8 in size\", shared from nullDC to minicast"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    13687,
+    13688,
+    12435,
+    13689,
+    13690,
+    12435,
+    17,
+    18
+   ],
+   "title": "Unhandled gdrom state ...",
+   "note": "End of the GD-ROM state machine: \"end pio transfer ;)\" and a die() for any state it does not know"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    13759,
+    13760,
+    13761,
+    13099
+   ],
+   "title": "GD-ROM: the ATA packet command",
+   "note": "GD-ROM ATA_SPI_PACKET: the drive switches to waiting for a packet. Pre-2008 nullDC code, in several lineages"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    37841,
+    37842,
+    37843,
+    37844,
+    37845,
+    37846
+   ],
+   "title": "armwreck: the ARM code emitter",
+   "note": "nullDCe's ARM emitter 'armwreck' (2009) encodes Rn/Rd fields; it reached reicast, flycast, nulldc3, minicast"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    13102,
+    60565,
+    60566,
+    60567,
+    13099,
+    1,
+    55287,
+    60568,
+    60566,
+    60569,
+    13099,
+    17,
+    1,
+    60570,
+    60571,
+    60572,
+    60573,
+    60574,
+    60575
+   ],
+   "title": "Recompiling the AICA sound DSP to x86",
+   "note": "AICA DSP x86 recompiler: \"maby it has overflow protection ?\" ... \"so it works just fine :)\""
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    28314,
+    51707,
+    11448,
+    28315,
+    28316,
+    28317,
+    1,
+    28318,
+    28319,
+    28320,
+    51708,
+    28321,
+    28322,
+    28323,
+    173,
+    28324,
+    28325,
+    28326,
+    28327,
+    1,
+    28328,
+    28329,
+    28330,
+    173
+   ],
+   "title": "Holly's interrupt map",
+   "note": "Holly's interrupt bits: render done, vblank, TA list ends, PVR/Maple/GD/AICA DMA, kept since early nullDC"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    28744,
+    28745,
+    28746,
+    28747
+   ],
+   "title": "A Rez hack that never worked",
+   "note": "Game-specific hack for Rez, commented out: \"not realy working tho\""
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    34558,
+    3,
+    31073,
+    31074,
+    1,
+    34559,
+    31075,
+    31076,
+    1,
+    34560,
+    34561,
+    34562,
+    1,
+    34517,
+    34518,
+    34519,
+    12280
+   ],
+   "title": "TA polygon type 3, from 2004",
+   "note": "TA polygon type 3 (two volumes): one TSP/TCW pair per volume. From dc4ever 2004, still in nullDC and reicast"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    13493,
+    3,
+    13494,
+    13495,
+    13496,
+    13497,
+    13498,
+    13499,
+    13500,
+    13501,
+    13502,
+    1,
+    13503,
+    13504,
+    13505,
+    13506,
+    12280
+   ],
+   "title": "The GD-ROM state machine",
+   "note": "GD-ROM drive states: wait for a command, ATA, packet, PIO/DMA sector reads"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    166795,
+    166796,
+    3991,
+    166797,
+    166798,
+    3991,
+    166799,
+    166800,
+    3991,
+    1,
+    166801,
+    166802,
+    3991,
+    1,
+    166803,
+    166804,
+    166805,
+    166806,
+    3991
+   ],
+   "title": "SH4 FPU ops on the ARM64 dynarec",
+   "note": "ARM64 dynarec: SH4 fmac becomes Fmadd, and FSRRA becomes Fsqrt, then 1.0 divided by the result"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    157767,
+    157768,
+    157768,
+    157769,
+    13099,
+    1,
+    157770,
+    157768,
+    157768,
+    157771,
+    13099,
+    1,
+    157772,
+    157768,
+    157768,
+    157773,
+    13099
+   ],
+   "title": "Naomi JVS I/O board replies",
+   "note": "Naomi JVS I/O board: reports command format 1.1, JAMMA video 2.0, communication 1.0"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    28714,
+    28715,
+    28794,
+    28795
+   ],
+   "title": "Hack the KOS command queue",
+   "note": "EmptyAICA's aica_hax.cpp: fake the sound CPU's command queue. 'seems to fix everything ^^'"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    59683,
+    58,
+    59767,
+    59768,
+    1,
+    59769
+   ],
+   "title": "AICA register map, hopefully",
+   "note": "AICA register struct padding: 'some other misc shit FAR away is here :p' then '+400, hopefully :p'"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    60404,
+    60405,
+    60406,
+    60407,
+    60408,
+    60409,
+    60410,
+    60411
+   ],
+   "title": "MEM_ADDR is the deal",
+   "note": "AICA DSP init checks, from nullDC 2010 to flycast: 'THAT WAS not real, MEM_ADDR is the deal ;p'"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    34136,
+    34137,
+    421,
+    1,
+    34138,
+    34139,
+    34140,
+    34141,
+    34142,
+    34143,
+    55,
+    3799,
+    34144,
+    34145,
+    52,
+    34146,
+    34147,
+    34143,
+    55,
+    34148
+   ],
+   "title": "TA list decoder: end of list",
+   "note": "Tile Accelerator decoder: End_Of_List raises the list-end IRQ; tile clip gets '*couh* ignore it :p'"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    19505,
+    112368,
+    112369,
+    142222,
+    166364,
+    142223,
+    2940,
+    142224,
+    889
+   ],
+   "title": "This is faster. Why?",
+   "note": "ARM32 dynarec block lookup: '//this is faster //why ? (Icache ?)', in reicast, flycast, nulldc3, minicast"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    35865,
+    35866,
+    35867
+   ],
+   "title": "Hoping the round mode is right",
+   "note": "Dynarec int-to-float convert: 'i hope that the round mode bit is set properly here :p', shared by several lineages"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    21252,
+    21625,
+    21254,
+    21029,
+    19568,
+    1,
+    21255,
+    21175,
+    18
+   ],
+   "title": "shll, to be checked since 2005",
+   "note": "SH4 interpreter shll: 'ToDo : Check This [26/4/05]', still carried by nulldc-360, nullDCe, reicast"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    14511,
+    31,
+    14512,
+    14513,
+    49,
+    14514,
+    52,
+    14515,
+    7079,
+    14516,
+    14517,
+    14518,
+    14519,
+    14520,
+    14521,
+    14522,
+    14523,
+    14524,
+    14525,
+    14526,
+    14527,
+    14528,
+    14529
+   ],
+   "title": "VMU media info",
+   "note": "Maple VMU GetMediaInfo: the memory card's layout, written byte by byte: FAT at block 0xFE, file info at 0xFD"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    177015,
+    177016,
+    177017,
+    177018,
+    177019
+   ],
+   "title": "Two address spaces for the JIT",
+   "note": "FEAT_NO_RWX_PAGES: emitter writes through an RW mapping, code runs from a separate RX one"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    33960,
+    33961,
+    33962,
+    33963,
+    33964,
+    33965,
+    33966,
+    33967,
+    1,
+    33968,
+    33969,
+    1,
+    33970,
+    33971,
+    33972,
+    33973
+   ],
+   "title": "TA list types, worked out by hand",
+   "note": "\"as it sems, bit 1,2 are type, bit 0 is mod volume :p\": PowerVR TA list IDs, carried by nullDC, 360, Wii"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    207712,
+    207713,
+    207714,
+    207715,
+    207716,
+    207717,
+    207718,
+    207719,
+    207720,
+    207721,
+    207722,
+    224938,
+    207724,
+    207725,
+    207726,
+    207727,
+    207728,
+    207729,
+    207730,
+    207731,
+    207732,
+    207733
+   ],
+   "title": "GD-ROM subcode Q, mostly guessed",
+   "note": "Faked CDDA subchannel Q: \"Track number .. dunno whats it :P gotta parse toc xD ;p\". Since dc4ever 2004"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    17561,
+    17562,
+    17563,
+    17564,
+    17565,
+    17566,
+    17567,
+    17568,
+    17566,
+    17569,
+    17570,
+    17566,
+    17571,
+    17572,
+    17566,
+    17573,
+    17574
+   ],
+   "title": "SH4 address space in 17 lines",
+   "note": "SH4 memory map in a nutshell: U0/P0-P3 mirror the normal map, P4 0xE... is the on-chip area"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    140293,
+    140294,
+    140295,
+    12435,
+    1,
+    140296,
+    140297,
+    140298,
+    1268,
+    140299,
+    12435,
+    1,
+    140300,
+    140301,
+    140298,
+    1268,
+    140299,
+    12435,
+    1,
+    140302,
+    140303,
+    140304,
+    140305,
+    12435
+   ],
+   "title": "Where does the block go next?",
+   "note": "Dynarec block-end types: static, conditional and dynamic exits pick next_pc. rec_cpp backend"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    34700,
+    8,
+    34701,
+    65,
+    34702,
+    34703,
+    1,
+    34704,
+    34705,
+    34706,
+    14,
+    34707,
+    65,
+    34708,
+    34703,
+    1,
+    34709,
+    34710,
+    34706,
+    14,
+    17,
+    12474,
+    18
+   ],
+   "title": "Texture twiddling, bit by bit",
+   "note": "PowerVR twiddled-texture address: interleave Y and X bits. Shared by nullDC, 360, Wii, reicast"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    17742,
+    17743,
+    17744,
+    17745
+   ],
+   "title": "VRAM's 64-bit bus, explained",
+   "note": "VRAM 64-bit bus: two banks interleaved every 32 bits, bank 0 mapped at 0x400000. In several lineages"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    51146,
+    51147,
+    1,
+    51148,
+    51149,
+    51150,
+    51151,
+    51152,
+    51153,
+    51154,
+    51155,
+    51156,
+    1,
+    51157,
+    51158,
+    51159,
+    293,
+    1,
+    51160,
+    51161,
+    51162,
+    51163,
+    51164,
+    51165
+   ],
+   "title": "Reverse-engineering the NAOMI DIMM board",
+   "note": "Field notes from probing NAOMI 1/2 BIOS handshakes with the DIMM board, all question marks intact"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    34290,
+    65,
+    34291,
+    14,
+    34292,
+    32873,
+    65,
+    34293,
+    34285,
+    34294,
+    1,
+    34295,
+    14
+   ],
+   "title": "Reset? *couh* right ...",
+   "note": "drkPvr TA code: an empty Reset with a sarcastic cough, beside the real SoftReset"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    20460,
+    20461,
+    20444,
+    20407,
+    20462,
+    20454,
+    20455,
+    20456,
+    20457,
+    8,
+    20463,
+    17,
+    8369,
+    20458,
+    20365
+   ],
+   "title": "SHAD, the SH4 dynamic shift",
+   "note": "SHIL canonical for SH4 shad: negative counts shift right arithmetically; -32 fills with the sign bit"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    43397,
+    43398,
+    43399,
+    43400,
+    43401
+   ],
+   "title": "Area 3: main RAM and its mirrors",
+   "note": "Dreamcast memory map in a nutshell: 16 MB main RAM at 0x0C000000, mirrored three times up to 0x10000000"
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    34482,
+    34483,
+    3,
+    18217,
+    8,
+    34484,
+    34485,
+    34486,
+    34487,
+    34488,
+    34489,
+    34490,
+    34491,
+    18217,
+    8,
+    34492,
+    34493,
+    34494,
+    34489,
+    34495,
+    34496,
+    18253,
+    12280
+   ],
+   "title": "The PowerVR Texture Control Word",
+   "note": "PVR2 TCW: 21-bit texture address, pixel format, VQ, mipmap bits, with or without a palette"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    32633,
+    32634,
+    32635,
+    1,
+    32636,
+    65,
+    32637,
+    14,
+    32638,
+    32639,
+    32640,
+    32641
+   ],
+   "title": "Background plane vertex math :p",
+   "note": "drkPvr's GX renderer finds the BG strip vertex: '2x the size needed :p' when shadow volumes are on"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    20188,
+    116692,
+    20189,
+    20190,
+    1,
+    20191,
+    20192,
+    8,
+    20193,
+    20194,
+    20195,
+    65,
+    20196,
+    6997,
+    14,
+    1,
+    20197,
+    20198,
+    20199,
+    1,
+    20200,
+    20201,
+    17
+   ],
+   "title": "Optimizer: disabled to be on the safe side",
+   "note": "A SHIL block optimizer that starts with return; and leaves the whole pass below commented out"
+  },
+  {
+   "pool": "unique",
+   "kind": "line",
+   "id": 2920,
+   "note": "dc4ever's mission statement: proving fast emulation is possible in C# / .NET"
+  },
+  {
+   "pool": "unique",
+   "kind": "line",
+   "id": 289,
+   "note": "dc4ever's 256-byte SH4 test: 'we still have 32 bytes left to fill... running out of ideas'"
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    35,
+    36,
+    37,
+    31,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56
+   ],
+   "title": "dc4ever's 2004 block builder, in C#",
+   "note": "The C# precursor from 2004 collects SH4 opcodes until a branch, with each bit pattern spelled out"
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    111,
+    65,
+    112,
+    113,
+    114,
+    115,
+    31,
+    116,
+    117,
+    118,
+    49,
+    119,
+    52,
+    120,
+    121,
+    122,
+    123,
+    55,
+    57,
+    34,
+    14
+   ],
+   "title": "bubble-sorting the block cache",
+   "note": "DC4Ever's block cache gets bubble-sorted by call count, with the VB-style comments left in"
+  },
+  {
+   "pool": "unique",
+   "kind": "line",
+   "id": 55240,
+   "note": "nullDC's speed readout, built in SPG.cpp: VPS, RPS, vertex rate and SH4 MHz"
+  },
+  {
+   "pool": "unique",
+   "kind": "line",
+   "id": 71052,
+   "note": "nullDC's XMaple plugin drives Xbox 360 pad rumble for the PuruPuru pack: 'Actually set that crap! D:'"
+  },
+  {
+   "pool": "unique",
+   "kind": "line",
+   "id": 63845,
+   "note": "nullDC's dynarec stats window: how many blocks were statically linked vs looked up"
+  },
+  {
+   "pool": "unique",
+   "kind": "line",
+   "id": 485727,
+   "note": "A per-game AICA hack for ChuChu Rocket's echoey 16-bit sounds, only in NotDC-PS3."
+  },
+  {
+   "pool": "unique",
+   "kind": "line",
+   "id": 475077,
+   "note": "NotDC-PS3's maple controller: \"No error checking of any kind, but works just fine.\""
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    475239,
+    475240,
+    475241,
+    475242,
+    475243
+   ],
+   "title": "Round-to-nearest skips the boot animation",
+   "note": "On the PS3's Cell CPU, the BIOS must run in round-to-zero mode or the boot animation gets skipped"
+  },
+  {
+   "pool": "unique",
+   "kind": "line",
+   "id": 475911,
+   "note": "PowerVR sprites: corners A,B,C carry UVs, D arrives bare and completes the parallelogram."
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    86945,
+    58,
+    86946,
+    3,
+    86947,
+    58,
+    86948,
+    86949,
+    86950,
+    86951,
+    86952,
+    86953,
+    86954
+   ],
+   "title": "a hand-encoded Xenon dot product",
+   "note": "nulldc-360 emits the VMX128 vmsum4fp128 dot product as a raw .long word inside inline asm"
+  },
+  {
+   "pool": "unique",
+   "kind": "line",
+   "id": 337499,
+   "note": "flycast's DX9 path looks for d3dx9_24.dll from Feb 2005 (!): 'I doubt it will work but let's try'"
+  },
+  {
+   "pool": "unique",
+   "kind": "line",
+   "id": 234324,
+   "note": "flycast networking: a hack lets WebTV connect because picotcp lacks VJ compression"
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    301935,
+    301936,
+    301937,
+    301938,
+    301939,
+    301940,
+    301941,
+    301942,
+    301943,
+    301944,
+    301945,
+    301946,
+    301947,
+    301948,
+    301949,
+    301950,
+    301951,
+    301952,
+    301953,
+    301954
+   ],
+   "title": "Elan: NAOMI 2's T&L chip registers",
+   "note": "flycast-only Elan emulation: register notes incl. SDRAM config and the macro tiler bit layout"
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    346449,
+    346450,
+    31,
+    346451,
+    49,
+    346452,
+    346453,
+    57,
+    1,
+    346454,
+    49,
+    346452,
+    346455,
+    57,
+    34,
+    1,
+    346456,
+    346457,
+    31,
+    346458,
+    49,
+    346452,
+    346459,
+    346460
+   ],
+   "title": "the small-n-simple idle loop detector",
+   "note": "nulldc3's SH4 decoder spots spin loops and BIOS/ip.bin code, then multiplies their cycle cost to skip ahead"
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    346376,
+    346377,
+    346378,
+    1,
+    346379,
+    346380,
+    1,
+    346381,
+    346382,
+    1,
+    346376,
+    346383,
+    346384,
+    346385,
+    1,
+    346377,
+    346386,
+    346387,
+    346385,
+    1,
+    346378,
+    346388,
+    346389
+   ],
+   "title": "div0s: VERY NASTY",
+   "note": "nulldc3 emits DIV0S as IR ops, setting SR.Q, SR.M and T by hand: 'VERY NASTY', no temp reg"
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    357615,
+    1,
+    356626,
+    356627,
+    356628,
+    356629,
+    356630,
+    356631
+   ],
+   "title": "punch-through's feedback channel",
+   "note": "refsw2 in nulldc3: a failed alpha test copies depth back and asks for another punch-through pass"
+  },
+  {
+   "pool": "unique",
+   "kind": "line",
+   "id": 438844,
+   "note": "minicast's honest header in lxdream's TA core: 'a major hack to get decoupled mtta done fast'"
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    436407,
+    1,
+    436408,
+    436409,
+    436410,
+    1,
+    436411,
+    436412,
+    1,
+    436413,
+    436414,
+    436415,
+    436416,
+    436417,
+    436418,
+    436419,
+    436420,
+    1,
+    436421,
+    436422,
+    436423
+   ],
+   "title": "The TA ring: one barrier per batch",
+   "note": "minicast only: SPSC TA ring on a Cortex-A9; a dmb ish per 32-byte block cost too much, so it is batched"
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    436279,
+    436280,
+    436281,
+    436282,
+    436283,
+    436284,
+    436285,
+    436286,
+    436287,
+    436288,
+    436289
+   ],
+   "title": "Dreamcast memory map, FPGA edition",
+   "note": "minicast's DC memory map: VRAM is mapped from /dev/mem at the FPGA VRAM offset; AICA RAM wraps"
+  },
+  {
+   "pool": "unique",
+   "kind": "line",
+   "id": 452734,
+   "note": "polly2's PVR texture cache: a whole banner explaining why 4-corner bilinear fetches can't livelock."
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    438807,
+    438808,
+    438809,
+    438810,
+    438811,
+    438812,
+    438813
+   ],
+   "title": "UseAlpha=0 and the black BIOS background",
+   "note": "In polly2's shader RTL, UseAlpha=0 forces alpha to 255; without it the BIOS background blends to black"
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    442680,
+    442681,
+    442682,
+    449677,
+    449678,
+    449679,
+    449680,
+    449681,
+    449682,
+    449683,
+    449684,
+    449685,
+    449686,
+    449687,
+    449688,
+    449689,
+    449690
+   ],
+   "title": "polly2's video out: 1080p at the DC's 59.94",
+   "note": "An FPGA scanout runs 1080p at 59.94 Hz, the Dreamcast VGA rate, and doubles the 640-wide framebuffer"
+  },
+  {
+   "pool": "unique",
+   "kind": "line",
+   "id": 430271,
+   "note": "polly2 RTL asks itself \"WHY is raster IDLE?\" and splits idle cycles by state for profiling."
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    436381,
+    1,
+    436382,
+    436383,
+    436384,
+    436385,
+    436386,
+    436387,
+    436388
+   ],
+   "title": "Serializing TA control events without a lock",
+   "note": "minicast: ListInit/SoftReset drain the ring and fence with DMB ISH, no mutex needed"
+  },
+  {
+   "pool": "unique",
+   "kind": "line",
+   "id": 475060,
+   "note": "GD-ROM detail: Rez reads drive status after a vendor command, and a stale value stalls its streamer."
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    2085,
+    2103,
+    31,
+    2094,
+    34,
+    2104,
+    31,
+    2087,
+    2088,
+    2089,
+    2090,
+    2091,
+    2105
+   ],
+   "title": "PowerVR VRAM's 64-bit interleave",
+   "note": "DC4Ever translates 64-bit VRAM addresses: bit 2 picks the 4 MB bank, the rest shifts down by one"
+  },
+  {
+   "pool": "unique",
+   "kind": "line",
+   "id": 441580,
+   "note": "minicast help text: configures the ADV7513 HDMI chip for 1920x1080 (VIC 16) RGB444 as produced by SPG.sv"
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    82784,
+    1,
+    82785,
+    57920,
+    1,
+    82786,
+    82787,
+    82788,
+    82789,
+    82790,
+    1,
+    82791,
+    1,
+    82792,
+    57928,
+    1,
+    82793,
+    82794,
+    82795,
+    82796,
+    82797
+   ],
+   "title": "drkPvr's accuracy-vs-speed menus",
+   "note": "nulldc-360 drkPvr: modifier volume and Z-buffer modes, from 'Slowest, highest accuracy' to 'Buggy still'"
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    486071,
+    486072,
+    484425,
+    476115,
+    476116,
+    486073,
+    486074
+   ],
+   "title": "Pushing the background plane back",
+   "note": "NotDC-PS3 reads ISP_BACKGND_D as a 1/W float and pushes it back by 1e-6 for the Xtreme Sports skybox"
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    191204,
+    191205,
+    300352,
+    191207,
+    191208,
+    191205,
+    300353,
+    191207,
+    191210,
+    300354,
+    191207,
+    191212,
+    191205,
+    315675,
+    306211,
+    191207
+   ],
+   "title": "Widescreen cheats: Code Veronica's black bars",
+   "note": "flycast widescreen cheat table: codes 1-4 remove Code Veronica's FMV letterbox bars"
+  },
+  {
+   "pool": "unique",
+   "kind": "line",
+   "id": 258660,
+   "note": "flycast's VGA shader fakes an RGB565 precision drop: 'I'm not sure why... exhibited on PVR1 and PVR3 hardware too'"
+  },
+  {
+   "pool": "unique",
+   "kind": "line",
+   "id": 82438,
+   "note": "nulldc-360 ImgReader's commented-out test discs, here Sonic Adventure (JP) from an sda:/dcisos folder"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 60407,
+   "note": "AICA DSP register check that got corrected, from nullAICA 2010 and kept in reicast and flycast"
+  },
+  {
+   "pool": "shared",
+   "kind": "line",
+   "id": 28736,
+   "note": "'hack Katana wait': EmptyAICA fakes a value games wait on (found in Roadsters, Toy Cmd). several lineages"
+  },
+  {
+   "pool": "shared",
+   "kind": "segment",
+   "ids": [
+    21632,
+    21261,
+    21029,
+    19568,
+    21262,
+    21263,
+    18
+   ],
+   "title": "An SH4 opcode with a 2005 ToDo",
+   "note": "SH4 shlr interpreter op with a 2005 \"ToDo : Check This\" note that several lineages kept"
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    828585,
+    828586,
+    828587,
+    679823,
+    828588,
+    828589,
+    828590,
+    840362
+   ],
+   "title": "Why the VMU saves came out empty",
+   "note": "Wii U port: devices are set up twice, so a file held open made the second open fail and saves were 0 bytes"
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    828613,
+    828614,
+    828615,
+    828616,
+    28385,
+    828617,
+    828618,
+    2940,
+    390014,
+    390015,
+    889
+   ],
+   "title": "64-bit reads: which word goes first",
+   "note": "Swapped words in 64-bit fmov copies turned the BIOS soft-reset code into garbage (MvC2 after game over)"
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    829267,
+    829268,
+    829269,
+    829270,
+    829271,
+    829272,
+    829273,
+    829274,
+    829275
+   ],
+   "title": "Slower and lower instead of stuttering",
+   "note": "Wii U sound bends its resampling to the emulator's real speed; stop-and-restart at ~76% was unbearable"
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    809768,
+    809769,
+    809770,
+    809771,
+    809772,
+    809773,
+    809774,
+    809775,
+    809776,
+    809777,
+    809778,
+    809779,
+    809780,
+    809781,
+    809782,
+    809783,
+    809784,
+    809785,
+    809786
+   ],
+   "title": "HarissaDC writes its own flash",
+   "note": "No Sega BIOS: the HLE BIOS formats the flash, writes '00000Dreamcast' and counts the clock from 1950"
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    810149,
+    810150,
+    810151,
+    810152,
+    810153,
+    810154,
+    810155,
+    810156,
+    810157,
+    810158,
+    810159,
+    810160,
+    1,
+    810161,
+    810162,
+    810163,
+    810164,
+    810165,
+    810166,
+    810167,
+    810168,
+    810169,
+    810170,
+    810171,
+    810172,
+    810173,
+    810174,
+    810175,
+    810176,
+    810177
+   ],
+   "title": "Booting with no BIOS",
+   "note": "HarissaDC's HLE BIOS points the system call vectors at traps and sets the SH4 registers by hand"
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    804026,
+    804027,
+    804028,
+    804029,
+    804030,
+    804031,
+    804032
+   ],
+   "title": "Sprite atlases and the 0xDEADBEEF sentinel",
+   "note": "Texture caches checked one sentinel word; SF3 and Guilty Gear redraw atlas tiles, so stale tiles stayed"
+  },
+  {
+   "pool": "unique",
+   "kind": "segment",
+   "ids": [
+    240701,
+    240702,
+    240703,
+    240704,
+    240705,
+    240706,
+    240707
+   ],
+   "title": "One VFPU instruction for the vertex transform",
+   "note": "The 2021 restoration swapped nullDCe's four-line C matrix-vector multiply for one PSP VFPU op, vtfm4.q"
+  }
+ ]
 }

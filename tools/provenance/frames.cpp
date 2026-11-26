@@ -306,7 +306,7 @@ int main(int argc, char** argv) {
             if (old) oldraw = &blobraw[old->blob]; else if (match[i] >= 0) oldraw = &blobraw[base_tab[match[i]].blob];
             vector<pair<u8,int>> sc;
             if (oldraw) myers(oldraw->data(), oldraw->size(), rawv.data(), rawv.size(), sc); else sc.push_back({2, (int)rawv.size()});
-            if (rawv.empty()) sc.clear();
+            if (rawv.empty()) { sc.clear(); if (oldraw && !oldraw->empty()) sc.push_back({1, (int)oldraw->size()}); }   // emptied file: remove every old line
             int x = 0, y = 0;
             for (auto& s : sc) { if (s.first == 0) { op.kept += s.second;
                     for (int q = 0; q < s.second; q++) { if (old) nfile.ln.push_back(old->ln[x + q]); else { nfile.ln.push_back({rawv[y + q], 0}); newpos[i].push_back(nfile.ln.size() - 1); } }

@@ -4,6 +4,14 @@
 A lane is one line of development (a repo branch). Its frames are:
   - month : the last commit of every calendar month in which the lane's first-parent chain has commits
             (committer date); a month whose counted source equals the previous frame's is dropped;
+  - commit: sparse lanes (every lane not in DENSE): every lane-local first-parent commit; a commit whose counted
+            source equals the previous frame's is dropped, so these are the commits that change counted source;
+  - big   : dense lanes (DENSE: nullDC4Wii, reicast, flycast), on top of the month frames: every commit whose counted
+            churn (lines added + removed in counted, non-vendored files, git numstat against the first parent) is
+            >= big_threshold(lines) (BIG_MIN lines or BIG_PCT of the lane's counted lines at that point, whichever is
+            larger) together with the commit before it, so that step is the big commit alone; and a commit where the
+            churn accumulated since the previous frame candidate reaches that threshold. Dropped like month frames when
+            the counted source equals the previous frame's;
   - tag   : every release / tag of the lane (kept even when the source did not change);
   - pin   : DreamSTer release pins (polly2-rtl and minicast submodule commits of each DreamSTer tag);
   - fork  : commits another lane was forked / imported from, so a child's parent state is an exact frame;
@@ -48,6 +56,11 @@ LANES = [
     ('caique', 'skmp_caique-rtl', 'main', {}),
     ('wren7', 'skmp_wren7-rtl', 'main', {}),
 ]
+# dense lanes (> 250 source-changing lane-local commits): months + marked + big-churn frames; every other lane: every commit
+DENSE = {'nullDC4Wii', 'reicast', 'flycast'}
+BIG_MIN, BIG_PCT = 1500, 0.03
+def big_threshold(lines): return max(BIG_MIN, BIG_PCT * lines)
+DROPPABLE = {'month', 'commit', 'big'}   # kinds whose frame is dropped when its counted source equals the previous frame's
 # fork / import points: (lane, commit, label). The child lane's first frame inherits this frame (LANE_EDGES).
 FORKS = [
     ('nullDC', 'c563e07', 'nulldc-360 / reicast import base'),
@@ -131,6 +144,21 @@ def tree_files(repo, sha):
         r.append((p, m[2].decode(), int(m[3])))
     return r
 
+def churn(repo, tip):
+    """{sha: (counted churn, counted lines before the commit)} along the first-parent chain (numstat vs first parent)"""
+    out = git(repo, 'log', '--first-parent', '--reverse', '--no-renames', '--numstat', '--format=@%H', tip).decode('utf-8', 'replace')
+    res = {}; tot = 0; cur = None; c = 0
+    for l in out.split('\n'):
+        if l.startswith('@'):
+            if cur: res[cur] = (c, before)
+            cur = l[1:]; c = 0; before = tot
+        elif l and cur:
+            a, r, p = l.split('\t', 2)
+            if a == '-' or not lang_of(p, repo) or is_vendored(repo, p): continue
+            c += int(a) + int(r); tot += int(a) - int(r)
+    if cur: res[cur] = (c, before)
+    return res
+
 def lane_frames(cfg):
     lane, repo, tip, opt = cfg
     t0 = time.time()
@@ -151,6 +179,8 @@ def lane_frames(cfg):
     bymonth = collections.OrderedDict()
     for s, d in ch: bymonth[d[:7]] = s
     for m, s in bymonth.items(): add(s, 'month')
+    if lane not in DENSE:
+        for s, d in ch: add(s, 'commit')
     if opt.get('tags'):
         for l in git(repo, 'for-each-ref', '--format=%(refname:short) %(objectname)', 'refs/tags').decode().split('\n'):
             if not l: continue
@@ -166,6 +196,17 @@ def lane_frames(cfg):
     for r in RELEASES:
         for ln, c in (('polly2', r[3]), ('minicast', r[4])):
             if ln == lane: add(resolve(repo, c), 'pin', 'DreamSTer ' + r[0])
+    if lane in DENSE:   # big commits (and the state before each), and accumulated churn
+        cs = churn(repo, tip); acc = 0; nbig = nacc = 0
+        for q, (s, d) in enumerate(ch):
+            c, before = cs[s]; T = big_threshold(before)
+            if c >= T:
+                if q > 0 and ch[q - 1][0] not in cand: add(ch[q - 1][0], 'big')
+                add(s, 'big', None, f'big commit: {c:,} counted lines changed'); nbig += 1; acc = 0; continue
+            acc += c
+            if acc >= T and s not in cand: add(s, 'big'); nacc += 1
+            if s in cand: acc = 0
+        print(f'{lane}: {nbig} big commits, {nacc} accumulated-churn frames (threshold max({BIG_MIN}, {BIG_PCT:.0%} of lines))', file=sys.stderr)
     # dates: committer date unless overridden (imports with a known real date)
     frames = []
     for s, e in cand.items():
@@ -199,7 +240,7 @@ def lane_frames(cfg):
             own.append((path, b))
         own.sort()
         fs = frozenset(own)
-        keep = (set(f['kinds']) - {'month'}) or prevset is None or fs != prevset
+        keep = (set(f['kinds']) - DROPPABLE) or prevset is None or fs != prevset
         if not own and not nonempty: keep = False          # nothing counted yet (README-only start)
         if keep:
             f['files'] = len(own); f['_own'] = own; out.append(f); prevset = fs; nonempty = nonempty or bool(own)

@@ -1,6 +1,7 @@
 # Frame data format (data/, format 2)
 
-FOLLOWUP item 0: every lane has a frame per calendar month with commits plus every release / tag, stored as
+FOLLOWUP item 0: every lane has a frame per source-changing commit (the three busiest lanes: per calendar month plus
+every big change) plus every release / tag, stored as
 per-lane deltas with periodic keyframes. The 48-snapshot data (format 1) is kept in `data-v1/` until the viewer
 is switched; nothing in `data/` refers to it.
 
@@ -23,6 +24,11 @@ A lane is one line of development: a repo and a tip ref (`tools/frames.py` LANES
 
 - `month`: the last commit (first-parent chain of the tip, committer date) of every month with commits. A month
   whose counted source equals the previous frame's is dropped: the lane holds its previous state.
+- `commit`: every lane except nullDC4Wii, reicast and flycast (`DENSE`): every lane-local first-parent commit;
+  dropped like a month when its counted source equals the previous frame's, so these are the source-changing commits.
+- `big`: the DENSE lanes: every commit whose counted churn (numstat vs the first parent, counted non-vendored files)
+  is >= max(1500 lines, 3 % of the lane's counted lines), plus the commit before it (so that step is the big commit
+  alone), and the commit where the churn accumulated since the previous frame candidate reaches that threshold.
 - `tag`: every release tag of the lane (kept even when the source did not change).
 - `pin`: DreamSTer release pins (the polly2-rtl / minicast submodule commits of DreamSTer r1 .. r6b).
 - `fork`: a commit another lane was forked or imported from, so the child's parent state is an exact frame.
@@ -103,7 +109,7 @@ An op is an array:
     file's previous version (raw-line Myers diff); `from`: source identity of a copy / import, else -1.
 
 Binary, per frame at byte `off`: `u32 script[nw]`, `u32 line[nl]`, `u16 origin[nl]`, `u16 keep[nl]` (little
-endian; 4-byte aligned). Ops consume, in order, `ns` script words and `ni` lines each.
+endian; no padding: `keep` starts right after `origin`). Ops consume, in order, `ns` script words and `ni` lines each.
 
 Script word: `op << 30 | count`, op 0 = keep `count` lines of the old version, 1 = drop `count` old lines,
 2 = insert the next `count` carried lines. Applying the script to the old version gives exactly the new version;
@@ -140,8 +146,9 @@ As format 1 with frames for snapshots:
   `slots` [identity, 0, col, row, cap] over every identity the lane ever holds (cap = longest version: a file stays
   in place in every frame), districts.
 - `walls[]`: {frame, lane, x}. X is time: `unit.month` = 4000 units per month; stretches of more than 6 months
-  without any frame are compressed to 6 months (`time.gaps`, `ruler` gap entries); same-day frames of a lane step
-  month / 8. `time.knots` give x(date).
+  without any frame are compressed to 6 months (`time.gaps`, `ruler` gap entries); where frames are dense the axis is
+  stretched so the walls of every lane are >= month / 8 apart (the j-th of n same-day frames of a lane sits at
+  day + j / n; `ruler` entries with `month` mark months drawn wider than 2 months). `time.knots` give x(date).
 - `ruler`, `brackets` (date ranges: nullDCe 2008-2010, reicast import 2012-2013, dc4ever approx, nullDC closed
   2005-2010), `edges` {from, to (frames), from_lane, to_lane, kind: import / git-fork / git-merge / copy / concept,
   label, lines}, `marks` (tag / pin / fork / import frames; `release` for tags and pins), `releases` (DreamSTer,

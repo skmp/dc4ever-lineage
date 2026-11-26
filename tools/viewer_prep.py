@@ -83,37 +83,86 @@ for L in man['lanes']:
 orig_rgb[VIRT] = oklch(0.70, 0.05, 75)   # nullDC-pre2008: desaturated amber
 lane_rgb = {ln: oklch(0.74, LANE_INFO[ln][1], LANE_INFO[ln][0]) for ln in LANES}
 
-# ---------- time axis: months, long empty stretches compressed ----------
+# ---------- time axis: months, long empty stretches compressed, dense stretches expanded ----------
+# 1. base: MONTH units per month; a stretch of more than GAPMAX + 1 months without frames is drawn as GAPMAX months
+#    (gap knots). 2. every frame gets a time t: its date (day resolution), and the j-th of n frames a lane has on one
+#    day sits at date + j / n day. 3. expansion: walking all knot times in order, x grows by the base step, or more where
+#    a lane's next wall would be closer than WMIN to its previous one. The result is one monotone piecewise-linear map
+#    (knots [month, x], the viewer's core.timeMaps) that holds every wall at its own time, in order, >= WMIN apart.
+WMIN = MONTH / 8      # minimum distance between two walls of a lane (the old same-day step)
 def mnum(d):   # months since 2000-01 as a float (day resolution)
     y, m, dd = map(int, d.split('-')); return (y - 2000) * 12 + (m - 1) + (dd - 1) / 31
 fmonths = sorted({int(mnum(f['date'])) for f in FR})
-knots = []; gaps = []; x = 0.0; prev = None
+bknots = []; gaps0 = []; x = 0.0; prev = None
 for m in fmonths:
-    if prev is None: knots.append((m, 0.0))
+    if prev is None: bknots.append((m, 0.0))
     elif m - prev > GAPMAX + 1:
-        x += MONTH; gx = x + (GAPMAX / 2) * MONTH; gaps.append((prev + 1, m, gx)); x += GAPMAX * MONTH; knots.append((m, x))
-    else: x += (m - prev) * MONTH; knots.append((m, x))
+        bknots.append((prev + 1, x + MONTH)); x += MONTH; gaps0.append((prev + 1, m)); x += GAPMAX * MONTH; bknots.append((m, x))
+    else:
+        for q in range(prev + 1, m + 1): x += MONTH; bknots.append((q, x))
     prev = m
+bknots.append((fmonths[-1] + 1, x + MONTH))
+def interp(K, v):
+    if v <= K[0][0]: return K[0][1] + (v - K[0][0]) * MONTH
+    lo, hi = 0, len(K) - 1
+    if v >= K[hi][0]: return K[hi][1] + (v - K[hi][0]) * MONTH
+    while hi - lo > 1:
+        mid = (lo + hi) // 2
+        if K[mid][0] <= v: lo = mid
+        else: hi = mid
+    (ma, xa), (mb, xb) = K[lo], K[hi]
+    return xa + (xb - xa) * (v - ma) / (mb - ma)
+xbase = lambda v: interp(bknots, v)
+byday = collections.defaultdict(list)
+for f in FR:
+    if not f.get('virtual'): byday[(f['lane'], f['date'])].append(f)
+ftime = {}
+for (ln, d), fs in byday.items():
+    fs.sort(key=lambda f: f['k'])
+    for j, f in enumerate(fs): ftime[f['i']] = mnum(d) + j / len(fs) / 31
+pts = collections.defaultdict(list)   # time -> lanes with a wall at that time
+for f in FR:
+    if not f.get('virtual'): pts[ftime[f['i']]].append(f['lane'])
+for m, xx in bknots: pts.setdefault(float(m), [])
+knots = []; lastx = {}; px = pv = None
+for v in sorted(pts):
+    xb = xbase(v)
+    xx = xb if px is None else px + (xb - xbase(pv))
+    for ln in pts[v]:
+        if ln in lastx: xx = max(xx, lastx[ln] + WMIN)
+    for ln in pts[v]: lastx[ln] = xx
+    knots.append((v, xx)); px, pv = xx, v
+# drop knots that lie on the straight line through their neighbours (the viewer scans them)
+kk = [knots[0]]
+for a, b in zip(knots[1:], knots[2:]):
+    (m0, x0), (m1, x1) = kk[-1], a
+    if abs((x1 - x0) / (m1 - m0) - (b[1] - x1) / (b[0] - m1)) > 1e-6 * MONTH: kk.append(a)
+kk.append(knots[-1]); knots = kk
 def x_of(d):
-    v = mnum(d) if isinstance(d, str) else d; mi = int(math.floor(v))
-    for g0, g1, gx in gaps:
-        if g0 <= v < g1: return gx - (GAPMAX / 2) * MONTH + (v - g0) / (g1 - g0) * GAPMAX * MONTH
-    best = None
-    for m, xx in knots:
-        if m <= mi: best = (m, xx)
-    if best is None: return knots[0][1] - (knots[0][0] - v) * MONTH
-    return best[1] + (v - best[0]) * MONTH
-# walls: same-day frames of a lane step 1/8 month apart so they do not coincide
-walls = []; seen = collections.Counter()
+    return interp(knots, mnum(d) if isinstance(d, str) else d)
+gaps = [(g0, g1, (x_of(g0) + x_of(g1)) / 2) for g0, g1 in gaps0]
+walls = []
 for f in FR:
     if f.get('virtual'): continue
-    key = (f['lane'], f['date']); xx = x_of(f['date']) + seen[key] * MONTH / 8; seen[key] += 1
-    walls.append({'frame': f['i'], 'lane': LI[f['lane']], 'x': round(xx)})
+    walls.append({'frame': f['i'], 'lane': LI[f['lane']], 'x': round(x_of(ftime[f['i']]))})
+for ln in LANES:   # walls of a lane: in time order, >= WMIN apart
+    xs = [w['x'] for w in walls if w['lane'] == LI[ln]]
+    assert all(b - a >= WMIN - 1 for a, b in zip(xs, xs[1:])), ln
+extent = (min(w['x'] for w in walls), max(w['x'] for w in walls))
+stretched = []   # months drawn wider than 2 base months: a month tick on the ruler
+for m in range(fmonths[0], fmonths[-1] + 1):
+    if any(g0 <= m < g1 for g0, g1 in gaps0): continue
+    w = x_of(m + 1) - x_of(m)
+    if w >= 2 * MONTH: stretched.append((m, w))
+print(f'time axis: walls x {extent[0]} .. {extent[1]} ({(extent[1] - extent[0]) / MONTH:.1f} months of x), {len(knots)} knots, '
+      f'{len(stretched)} stretched months (max x{max([w for m, w in stretched] or [MONTH]) / MONTH:.1f})', file=sys.stderr)
 ruler = []
 for y in range(2002, 2027):
     m = (y - 2000) * 12
     if any(g0 <= m < g1 for g0, g1, gx in gaps) or m < fmonths[0] - 12 or m > fmonths[-1] + 1: continue
     ruler.append({'x': round(x_of(f'{y}-01-01')), 'year': y})
+for m, w in stretched:
+    ruler.append({'x': round(x_of(m)), 'month': f'{2000 + m // 12}-{m % 12 + 1:02d}', 'stretch': round(w / MONTH, 1)})
 for g0, g1, gx in gaps:
     ruler.append({'x': round(gx), 'gap': f'{(g1 - g0) / 12:.1f} years without frames', 'from': f'{2000 + g0 // 12}-{g0 % 12 + 1:02d}', 'to': f'{2000 + g1 // 12}-{g1 % 12 + 1:02d}'})
 brackets = []
@@ -258,9 +307,11 @@ layout = {
     'unit': {'char': 1, 'line': 2, 'colPitch': PITCH, 'textCols': TEXT, 'H': H, 'month': MONTH, 'hdr': HDR, 'gap': GAP},
     'lanes': lanes_out, 'walls': walls, 'ruler': ruler, 'brackets': brackets, 'edges': edges, 'marks': marks,
     'releases': releases, 'origin_rgb': orig_rgb,
-    'time': {'month0': '2000-01', 'knots': [[m, round(xx)] for m, xx in knots], 'gaps': [[g0, g1, round(gx)] for g0, g1, gx in gaps],
+    'time': {'month0': '2000-01', 'knots': [[round(m, 6), round(xx)] for m, xx in knots], 'gaps': [[g0, g1, round(gx)] for g0, g1, gx in gaps],
              'note': f'x(date): months since 2000-01 (day resolution), piecewise linear through knots [month, x]; a gap [m0, m1, x] '
-                     f'stands for months m0..m1 drawn as {GAPMAX} months centred on x; same-day walls of a lane step month/8'},
+                     f'stands for months m0..m1 drawn as {GAPMAX} months centred on x; months with many frames are stretched so '
+                     f'the walls of every lane are >= {WMIN:g} apart (the j-th of n same-day frames of a lane at day + j/n); '
+                     f'ruler entries with "month" mark stretched months'},
     'fpgadc': {'z0': lanes_out[LI[FPGA_FIRST]]['z0'], 'title': 'fpgadc: hardware re-creation, 2023-2026'},
 }
 with gzip.open(os.path.join(D, 'layout.json.gz'), 'wt', compresslevel=9) as f:

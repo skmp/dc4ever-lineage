@@ -19,7 +19,6 @@ const tq = gl.getExtension('EXT_disjoint_timer_query_webgl2');
 const aniso = gl.getExtension('EXT_texture_filter_anisotropic');
 const FOV = 60 * Math.PI / 180, H = core.H;
 const t0Boot = performance.now();
-const NONE = 1021, CLOCK = 1022;
 
 // ------------------------------------------------------------------ state
 export const V = {
@@ -52,6 +51,7 @@ const [F, layoutBytes, story, metrics, sdf, attractList] = await Promise.all([
   getJSON('data/attract.json').catch(() => ({ items: [] }))]);
 const layout = JSON.parse(new TextDecoder().decode(layoutBytes));
 const NF = F.frames.length, U = layout.unit.month;
+const NONE = NF, CLOCK = NF + 1;   // wall ids of static geometry and of the clock (after the frames; see wallArr)
 const tm = core.timeMaps(layout);
 Object.assign(V, { F, layout, story, attractList, NF, tm, U });
 V.load.boot = performance.now() - t0Boot;
@@ -98,17 +98,17 @@ if (aniso) gl.texParameterf(gl.TEXTURE_2D, aniso.TEXTURE_MAX_ANISOTROPY_EXT, Mat
 const ATLASM = [metrics.cellW / metrics.width, metrics.cellH / metrics.height, metrics.spread, metrics.cellW];
 const MORPHW = 4096, MORPHH = SOFT ? 64 : 128;
 const morphTex = G.tex2D(gl, MORPHW, MORPHH, gl.RGBA32UI, gl.RGBA_INTEGER, gl.UNSIGNED_INT);
-const wallArr = new Float32Array(1024 * 4);
+const WTH = Math.ceil((NF + 2) / 1024), wallArr = new Float32Array(1024 * WTH * 4);   // wall texture: 1024 x WTH (frames + NONE + CLOCK)
 // a ring of 4: rewriting a texture that queued frames still read makes the driver wait for them (or copy it)
-const wallTexRing = [0, 1, 2, 3].map(() => G.tex2D(gl, 1024, 1, gl.RGBA32F, gl.RGBA, gl.FLOAT, wallArr));
+const wallTexRing = [0, 1, 2, 3].map(() => G.tex2D(gl, 1024, WTH, gl.RGBA32F, gl.RGBA, gl.FLOAT, wallArr));
 let wallTex = wallTexRing[0], wallTexI = 0;
-const uploadWallTex = () => { gl.bindTexture(gl.TEXTURE_2D, wallTex); gl.texSubImage2D(gl.TEXTURE_2D, 0, 0, 0, 1024, 1, gl.RGBA, gl.FLOAT, wallArr); };
+const uploadWallTex = () => { gl.bindTexture(gl.TEXTURE_2D, wallTex); gl.texSubImage2D(gl.TEXTURE_2D, 0, 0, 0, 1024, WTH, gl.RGBA, gl.FLOAT, wallArr); };
 let gpuBytes = POOLW * POOLH * 8 + LW * LH * 7 + 4096 * 4096 * TEXLAYERS + metrics.width * metrics.height * 1.34 + MORPHW * MORPHH * 16;
 
 // palette rows: 0 origin, 1 age, 2 repo of origin, 3 survival ramp (64)
 const srgb = c => c.map(v => Math.round(Math.max(0, Math.min(1, v)) * 255));
 const hex = rgb => '#' + rgb.map(v => v.toString(16).padStart(2, '0')).join('');
-const PALW = 512, palArr = new Uint8Array(PALW * 4 * 4);
+const PALW = Math.max(512, 1 << Math.ceil(Math.log2(NF + 1))), palArr = new Uint8Array(PALW * 4 * 4);
 const setPal = (row, i, rgb) => { const o = (row * PALW + i) * 4; palArr[o] = rgb[0]; palArr[o + 1] = rgb[1]; palArr[o + 2] = rgb[2]; palArr[o + 3] = 255; };
 const laneIdx = new Map(F.lanes.map((l, i) => [l.name, i]));
 const laneOfOrigin = o => laneIdx.get(F.frames[o].lane) ?? 1;
@@ -203,7 +203,7 @@ for (const w of WALLS) {
   plateRange.set(w.i, [a, plates.count - a]);
   // ghost outline: a thin frame around the wall
   pinsR.add(w.z0 - 4, w.z0 + w.cols * 128, -6, 4102, 0, 0, [...ln.rgb, 90], w.i, K_OUTLINE | PUSH1);
-  const fr = w.fr, tags = (fr.tags || []).join(', '), what = tags || (fr.kinds || []).filter(k => k !== 'month').join(', ');
+  const fr = w.fr, tags = (fr.tags || []).join(', '), what = tags || (fr.kinds || []).filter(k => k !== 'month' && k !== 'commit' && k !== 'big').join(', ');
   const date = fr.date_range ? `${fr.date_range} (dated ${fr.date})` : fr.date + (fr.approx ? ' (approx.)' : '');
   w.title = `${ln.L.title} | ${date}${what ? ' | ' + what : ''} | ${fr.files} files, ${fr.lines.toLocaleString('en')} lines`;
   if (fr.date_note) labs.add(trunc(fr.date_note, 160), w.z0, 4096 + 80, 0, w.i, [0, 0, 14], [0, 18, 0], [220, 190, 120, 255], 0, 0, 30);
@@ -267,6 +267,9 @@ for (const r of layout.ruler) {
     floor.add(zR0, zR1, -6, -6, r.x - 25, r.x + 25, [120, 130, 150, 255], NONE, K_FLOOR);
     labs.add(String(r.year), zR0 + 300, 1500, r.x - 1, NONE, [0, 0, 380], [0, 420, 0], [190, 200, 220, 255], 13, 0, 60);
     seg([zR1, -6, 0, r.x, NONE, NONE, [120, 130, 150, 90]], [zTop, -6, 0, r.x, NONE, NONE, [120, 130, 150, 30]]);
+  } else if (r.month) {   // a month the axis stretches (many frames): a small tick and its name
+    floor.add(zR0 + 2500, zR1, -6, -6, r.x - 10, r.x + 10, [100, 110, 130, 255], NONE, K_FLOOR);
+    labs.add(r.month, zR0 + 2600, 700, r.x - 1, NONE, [0, 0, 160], [0, 180, 0], [150, 160, 180, 255], 11, 0, 40);
   } else {
     floor.add(zR0, zTop, -9, -9, r.x - 1200, r.x + 1200, [40, 36, 30, 255], NONE, K_FLOOR);
     labs.add(`${r.gap} (${r.from} to ${r.to})`, zR0 + 300, 400, r.x - 1000, NONE, [0, 0, 120], [0, 150, 0], [170, 160, 140, 255], 10, 0, 35);
@@ -1401,7 +1404,7 @@ V.pick = (mx, my) => {
   const l = Pp - sl.L[s] - core.HDR; if (l >= res.n) return { ...res, kind: 'filegap' };
   res.line = l + 1; res.kind = 'line';
   const j = w.fileStart[k] + l; res.j = j; const w0 = w.inst[2 * j], w1 = w.inst[2 * j + 1];
-  res.id = w0 & 0xFFFFF; res.origin = (w0 >>> 20) & 511; res.flags = w0 >>> 29; res.keep = (w1 >>> 20) & 511;
+  res.id = w0 & 0xFFFFF; res.origin = (w0 >>> 20) & 2047; res.flags = w1 >>> 30; res.keep = ((w1 >>> 20) & 1023) | ((w0 >>> 31) << 10);
   return res;
 };
 // line index (1-based) of the first line of file k in wall w whose text contains grep
