@@ -1,0 +1,52 @@
+{
+ "text": "GD-ROM command 0x70: a guess in the comments",
+ "k": 0,
+ "stop_file": {
+  "commit": "39c055006291",
+  "date": "2009-10-16",
+  "path": "dc/gdrom/gdromv3.cpp",
+  "range": "2008-2010",
+  "label": "2008-2010 (dated 2009-10-16)"
+ },
+ "frame": {
+  "i": 103,
+  "lane": "nullDCe",
+  "k": 0,
+  "date": "2009-10-16",
+  "commit": "39c055006291",
+  "kinds": [
+   "month",
+   "commit",
+   "fork"
+  ],
+  "labels": [
+   "reicast import base"
+  ],
+  "date_range": "2008-2010",
+  "date_note": "recovered archive committed 2017-11-20; latest in-source date 2009-10-16",
+  "commit_date": "2017-11-20",
+  "key": true,
+  "chunk": 0,
+  "files": 236,
+  "lines": 62897,
+  "d": [
+   0,
+   62897,
+   0
+  ],
+  "by_lane": {
+   "dc4ever": 446,
+   "nullDCe": 18733,
+   "nullDC-pre2008": 23848
+  },
+  "by_year": {
+   "2004": 176,
+   "2005": 270,
+   "2008": 23848,
+   "2009": 18733
+  }
+ },
+ "caption": "GD-ROM command 0x70: a guess in the comments\n3 lines, first seen in nullDC-pre2008, file last changed 2005-2008; held by 820 frames in 9 lanes (nullDC, nulldc-360, nullDCe, nullDCe-PSP, nullDC4Wii, NotDC-PS3, nullDC4WiiU, reicast, flycast)\nGD-ROM cmd 0x70: 'some kind of reset/unlock ??' A pre-2008 guess still in nullDC, reicast and flycast\nnow: nullDCe, file last changed 2008-2010 (dated 2009-10-16)"
+}
+shot ./agents/frames2/verify3/out/shots/cap-nullDCe-override-gpu-1920x1080.png
+5.2s closed

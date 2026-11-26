@@ -1,0 +1,79 @@
+{
+ "load": {
+  "boot": 92.80000001192093,
+  "firstFrame": 478,
+  "walls": 14,
+  "text": 13,
+  "meta": 842.1000000238419,
+  "warmupMs": 82.19999998807907,
+  "meta2": 524.1999999880791,
+  "allText": 1577.800000011921
+ },
+ "walls": 395,
+ "heapAfterLoadGC": 95,
+ "gpuAtLoad": 188,
+ "polly2Low5k": {
+  "n": 893,
+  "p50": 16.7,
+  "p95": 17.9,
+  "p99": 18.7,
+  "max": 74,
+  "over33": 2,
+  "heapMax": 91,
+  "gpuMB": 344
+ },
+ "fpgaHigh5k": {
+  "n": 886,
+  "p50": 16.7,
+  "p95": 18.1,
+  "p99": 22.8,
+  "max": 51,
+  "over33": 6,
+  "heapMax": 121,
+  "gpuMB": 571
+ },
+ "reicastLow5k": {
+  "n": 886,
+  "p50": 16.7,
+  "p95": 18.5,
+  "p99": 24.1,
+  "max": 64,
+  "over33": 6,
+  "heapMax": 245,
+  "gpuMB": 642
+ },
+ "dc4everLow3k": {
+  "n": 896,
+  "p50": 16.7,
+  "p95": 17.9,
+  "p99": 18.8,
+  "max": 42,
+  "over33": 2,
+  "heapMax": 205,
+  "gpuMB": 687
+ },
+ "overview": {
+  "n": 479,
+  "p50": 16.7,
+  "p95": 17.9,
+  "p99": 18.5,
+  "max": 20,
+  "over33": 0,
+  "heapMax": 207,
+  "gpuMB": 687
+ },
+ "polly2LowTimed": {
+  "n": 897,
+  "p50": 16.7,
+  "p95": 17.9,
+  "p99": 18.8,
+  "max": 50,
+  "over33": 1,
+  "heapMax": 226,
+  "gpuMB": 678
+ },
+ "heapEndGC": 85,
+ "gpuEnd": 678,
+ "loadedWalls": 65
+}
+77.8s closed

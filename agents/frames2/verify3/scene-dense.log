@@ -1,0 +1,13 @@
+{
+ "n": 103,
+ "first": [
+  1311578,
+  "2026-11-17"
+ ],
+ "last": [
+  1365091,
+  "2026-11-20"
+ ]
+}
+shot ./agents/frames2/verify3/out/shots/scene-dense-gpu-1920x1080.png
+6.8s closed

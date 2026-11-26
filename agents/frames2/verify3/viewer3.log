@@ -1,0 +1,46 @@
+{
+ "errs": [
+  "dup titles in dc4ever: 8",
+  "dup titles in nullDC: 6",
+  "dup titles in nulldc-360: 5",
+  "dup titles in nullDCe: 1",
+  "dup titles in nullDCe-PSP: 1",
+  "dup titles in nullDC4Wii: 1",
+  "dup titles in NotDC-PS3: 2",
+  "dup titles in nullDC4WiiU: 4",
+  "dup titles in reicast: 1",
+  "dup titles in nulldc3: 9",
+  "dup titles in minicast: 3",
+  "dup titles in polly2: 4",
+  "dup titles in devtools: 5",
+  "dup titles in dreamcast-tests: 4"
+ ],
+ "walls": 1472,
+ "hud": [
+  "dreamcast-tests 2026-11-17 -> 2026-11 (every frame; the clock picks the frame in focus) alpha0.804, alpha0.805",
+  "dreamcast-tests 2026-11-18 -> 2026-11 (every frame; the clock picks the frame in focus)",
+  "dreamcast-tests 2026-11-20 -> 2026-11 (every frame; the clock picks the frame in focus)",
+  "polly2 2026-07-11 -> 2026-07 (every frame; the clock picks the frame in focus)",
+  "dc4ever 2005-03-19 -> 2005-03 (every frame; the clock picks the frame in focus)"
+ ],
+ "titles": [
+  "dreamcast-tests | 2026-11-18 | 181 files, 28,820 lines",
+  "dc4ever (C#) | 2004-04-20 (approx.) | 4 files, 330 lines",
+  "polly2-rtl main (PowerVR2 FPGA core, r1..r6b) | 2026-07-11 | 173 files, 29,126 lines"
+ ],
+ "search": "2 distinct lines in 233 ms",
+ "searchFirst": "//this is kinda wrong .. but meh",
+ "searchFly": {
+  "moved": 697769,
+  "stat": "nullDCe 2024-09-27"
+ },
+ "pathSearch": "40 files in the frames at the clock",
+ "pick": {
+  "n": 30,
+  "hit": 30
+ },
+ "tip": "first seen in nullDC-pre2008, file last changed 2005-2008; held by 928 frames in 11 lanes (nullDC, nulldc-360, nullDCe, nullDCe-PSP, nullDC4Wii, NotDC-PS3, nullDC4WiiU, reicast, flycast, nulldc3, minicast)",
+ "heapMB": 136
+}
+shot ./agents/frames2/verify3/out/shots/tip-gpu-1920x1080.png
+23.9s closed

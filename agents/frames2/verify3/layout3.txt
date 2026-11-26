@@ -1,0 +1,29 @@
+knots 592 strict months True strict x True
+walls 1472 frames in frames.json 1473 lanes 20
+  dc4ever          walls  102 gap min 500 max 18710
+  nullDC           walls  133 gap min 500 max 508962
+  nulldc-360       walls  119 gap min 500 max 428043
+  HarissaDC        walls    5 gap min 500 max 58065
+  nullDCe          walls    7 gap min 500 max 819511
+  nullDCe-PSP      walls   13 gap min 500 max 19726
+  nullDC4Wii       walls  135 gap min 500 max 40930
+  NotDC-PS3        walls  102 gap min 500 max 3624
+  nullDC4WiiU      walls   57 gap min 500 max 40930
+  reicast          walls  140 gap min 500 max 76403
+  flycast          walls  148 gap min 500 max 90973
+  nulldc3          walls  105 gap min 500 max 123929
+  minicast         walls   35 gap min 500 max 193566
+  polly2           walls  183 gap min 500 max 58170
+  polly2-r8        walls   10 gap min 500 max 5003
+  devtools         walls   50 gap min 500 max 202083
+  dreamcast-tests  walls  103 gap min 500 max 996
+  shrike4          walls   10 gap min 500 max 35726
+  caique           walls   11 gap min 500 max 46430
+  wren7            walls    4 gap min 1509 max 46930
+total walls in lanes 1472
+ gap {'x': 121409, 'gap': '3.2 years without frames', 'from': '2005-10', 'to': '2008-12'} x month 2007-05 walls dated strictly inside 0
+ gap {'x': 149409, 'gap': '0.8 years without frames', 'from': '2009-01', 'to': '2009-10'} x month 2009-05 walls dated strictly inside 0
+ gap {'x': 428280, 'gap': '0.7 years without frames', 'from': '2013-04', 'to': '2013-12'} x month 2013-08 walls dated strictly inside 0
+ gap {'x': 632473, 'gap': '0.7 years without frames', 'from': '2017-07', 'to': '2018-03'} x month 2017-11 walls dated strictly inside 0
+extent 1032 1376584 months 343.9
+ERRORS 0

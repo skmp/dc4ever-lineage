@@ -1,0 +1,208 @@
+stop15  item   4 line    frame 1245 devtools        2026-10-24 42231c6fb experiments/aica_dsp_playground/dsp/dsp.h -> got 2025-10-05 / 475d5431f399 ; expect 2025-10-05  475d5431f399 adate 2025-10-05 content True
+stop3   item   5 line    frame  351 reicast         2013-12-19 1c16baeb0 newdc/hw/sh4/sh4_interrupts.cpp -> got 2012-2013 (dated 2013-12-19) / 1c16baeb0eae ; expect 2013-12-19 2012-2013 1c16baeb0eae adate 2013-12-19 content True
+stop11  item   7 line    frame  644 minicast        2025-01-20 580d7b86a libswirl/cfg/cl.cpp -> got 2025-01-20 / 580d7b86a142 ; expect 2025-01-20  580d7b86a142 adate 2025-01-20 content True
+stop10  item   9 line    frame 1099 NotDC-PS3       2026-09-19 5a32b94be dc/sh4/rec_v2/ngen.h -> got 2026-09-19 / 5a32b94bee23 ; expect 2026-09-19  5a32b94bee23 adate 2026-09-19 content True
+stop17  item   9 line    frame 1472 flycast         2026-11-22 105342d53 core/hw/sh4/dyna/ngen.h -> got 2026-02-16 / ba5b3c71ecc9 ; expect 2026-02-16  ba5b3c71ecc9 adate 2026-02-16 content True
+stop3   item  10 line    frame  351 reicast         2013-12-19 1c16baeb0 newdc/hw/sh4/interpr/sh4_opcodes.cpp -> got 2012-2013 (dated 2013-12-19) / 1c16baeb0eae ; expect 2013-12-19 2012-2013 1c16baeb0eae adate 2013-12-19 content True
+stop5   item  10 line    frame  526 nullDCe-PSP     2021-02-04 e13f07c78 dc/sh4/sh4_cpu_logic.h -> got 2021-02-04 / e13f07c78a41 ; expect 2021-02-04  e13f07c78a41 adate 2021-02-04 content True
+stop10  item  10 line    frame  598 nullDC          2023-07-10 1611c3cf0 nulldc/nullDC/dc/sh4/sh4_cpu_logic.h -> got 2010-05-09 / 1fe9c6dffd7b ; expect 2010-05-09  1fe9c6dffd7b adate 2010-05-09 content True
+stop9   item  12 line    frame 1472 flycast         2026-11-22 105342d53 core/hw/sh4/dyna/shil_canonical.h -> got 2025-02-18 / 0bf9c64b1b29 ; expect 2025-02-18  0bf9c64b1b29 adate 2025-02-18 content True
+stop4   item  13 line    frame  595 nulldc3         2023-07-07 f2300244a libswirl/imgread/imgread.h -> got 2020-02-04 / 11a02e571b37 ; expect 2020-02-04  11a02e571b37 adate 2020-02-04 content True
+stop6   item  13 line    frame  644 minicast        2025-01-20 580d7b86a libswirl/imgread/imgread.h -> got 2025-01-20 / 580d7b86a142 ; expect 2025-01-20  580d7b86a142 adate 2025-01-20 content True
+stop5   item  14 line    frame  599 reicast         2023-07-10 6cdb605dd libswirl/imgread/cdi.cpp -> got 2020-03-21 / 37dba034a9fd ; expect 2020-03-21  37dba034a9fd adate 2020-03-21 content True
+stop9   item  14 line    frame 1434 nulldc3         2026-11-20 4f3efe15f libswirl/imgread/cdi.cpp -> got 2020-03-21 / 37dba034a9fd ; expect 2020-03-21  37dba034a9fd adate 2020-03-21 content True
+stop7   item  15 line    frame  632 nullDCe         2024-09-27 c3e0c9bf0 dc/sh4/sh4_cpu_movs.h -> got 2008-2010 (dated 2009-10-16) / 39c055006291 ; expect 2009-10-16 2008-2010 39c055006291 adate 2017-11-20 content True
+stop17  item  16 line    frame 1256 NotDC-PS3       2026-11-01 5d81924ec types.h -> got 2026-09-19 / 5a32b94bee23 ; expect 2026-09-19  5a32b94bee23 adate 2026-09-19 content True
+stop18  item  16 line    frame 1265 nullDC4WiiU     2026-11-07 75bc844cc types.h -> got 2026-09-19 / 5d3359d6cadd ; expect 2026-09-19  5d3359d6cadd adate 2026-09-19 content True
+stop6   item  17 line    frame  527 nullDCe-PSP     2021-02-04 d04a8e2fa plugins/plugin_types.h -> got 2021-02-04 / d04a8e2faa7e ; expect 2021-02-04  d04a8e2faa7e adate 2021-02-04 content True
+stop11  item  18 line    frame  712 devtools        2025-10-05 475d5431f experiments/aica_dsp_playground/dsp/dsp.h -> got 2025-10-05 / 475d5431f399 ; expect 2025-10-05  475d5431f399 adate 2025-10-05 content True
+stop15  item  18 line    frame 1245 devtools        2026-10-24 42231c6fb experiments/aica_dsp_playground/dsp/dsp.h -> got 2025-10-05 / 475d5431f399 ; expect 2025-10-05  475d5431f399 adate 2025-10-05 content True
+stop1   item  19 line    frame  104 nullDC          2010-05-09 1fe9c6dff nulldc/nullDC/dc/mem/_vmem.cpp -> got 2010-05-09 / 1fe9c6dffd7b ; expect 2010-05-09  1fe9c6dffd7b adate 2010-05-09 content True
+stop0   item  20 line    frame  103 nullDCe         2009-10-16 39c055006 plugs/ImgReader/common.cpp -> got 2008-2010 (dated 2009-10-16) / 39c055006291 ; expect 2009-10-16 2008-2010 39c055006291 adate 2017-11-20 content True
+stop5   item  20 line    frame  527 nullDCe-PSP     2021-02-04 d04a8e2fa plugs/ImgReader/common.cpp -> got 2021-02-04 / d04a8e2faa7e ; expect 2021-02-04  d04a8e2faa7e adate 2021-02-04 content True
+stop17  item  20 line    frame 1256 NotDC-PS3       2026-11-01 5d81924ec plugs/ImgReader/common.cpp -> got 2026-11-01 / 5d81924ec3fe ; expect 2026-11-01  5d81924ec3fe adate 2026-11-01 content True
+stop19  item  20 line    frame 1375 nullDC4Wii      2026-11-19 5f324d8aa plugs/ImgReader/common.cpp -> got 2026-11-09 / d7fe09931051 ; expect 2026-11-09  d7fe09931051 adate 2026-11-09 content True
+stop11  item  21 line    frame  599 reicast         2023-07-10 6cdb605dd libswirl/hw/sh4/sh4_core_regs.cpp -> got 2020-03-21 / 37dba034a9fd ; expect 2020-03-21  37dba034a9fd adate 2020-03-21 content True
+stop3   item  22 line    frame  351 reicast         2013-12-19 1c16baeb0 newdc/hw/sh4/sh4_mem.cpp -> got 2012-2013 (dated 2013-12-19) / 1c16baeb0eae ; expect 2013-12-19 2012-2013 1c16baeb0eae adate 2013-12-19 content True
+stop4   item  22 line    frame  434 flycast         2018-10-20 84ab237b0 core/hw/sh4/sh4_mem.cpp -> got 2015-09-02 / e9beb8606934 ; expect 2015-09-02  e9beb8606934 adate 2015-09-02 content True
+stop10  item  22 line    frame  598 nullDC          2023-07-10 1611c3cf0 nulldc/nullDC/dc/mem/sh4_mem.cpp -> got 2010-12-12 / 1568526c66a5 ; expect 2010-12-12  1568526c66a5 adate 2010-12-12 content True
+stop0   item  23 line    frame  103 nullDCe         2009-10-16 39c055006 dc/maple/maple_if.cpp -> got 2008-2010 (dated 2009-10-16) / 39c055006291 ; expect 2009-10-16 2008-2010 39c055006291 adate 2017-11-20 content True
+stop8   item  23 line    frame  644 minicast        2025-01-20 580d7b86a libswirl/hw/maple/maple_if.cpp -> got 2025-01-20 / 580d7b86a142 ; expect 2025-01-20  580d7b86a142 adate 2025-01-20 content True
+stop4   item  24 line    frame  434 flycast         2018-10-20 84ab237b0 core/hw/sh4/modules/ccn.cpp -> got 2015-08-12 / 71c2cb4512d9 ; expect 2015-08-12  71c2cb4512d9 adate 2015-08-12 content True
+stop14  item  26 line    frame  781 nullDC4Wii      2026-02-15 8c74682a6 dc/sh4/sh4_fpu.cpp -> got 2026-01-21 / e812c5828334 ; expect 2026-01-21  e812c5828334 adate 2026-01-21 content True
+stop8   item  27 line    frame  632 nullDCe         2024-09-27 c3e0c9bf0 dc/maple/maple_devs.cpp -> got 2008-2010 (dated 2009-10-16) / 39c055006291 ; expect 2009-10-16 2008-2010 39c055006291 adate 2017-11-20 content True
+stop0   item  28 line    frame  103 nullDCe         2009-10-16 39c055006 dc/pvr/pvr_if.cpp -> got 2008-2010 (dated 2009-10-16) / 39c055006291 ; expect 2009-10-16 2008-2010 39c055006291 adate 2017-11-20 content True
+stop3   item  28 line    frame  351 reicast         2013-12-19 1c16baeb0 newdc/hw/pvr/pvr_mem.cpp -> got 2012-2013 (dated 2013-12-19) / 1c16baeb0eae ; expect 2013-12-19 2012-2013 1c16baeb0eae adate 2013-12-19 content True
+stop7   item  29 line    frame  566 nulldc-360      2022-02-11 bd0bfaeef nullDC/plugins/plugin_header.h -> got 2012-09-09 / 82e620d7d478 ; expect 2012-09-09  82e620d7d478 adate 2012-09-09 content True
+stop1   item  30 line    frame  106 nullDC          2010-05-09 18f58525c emitter/x86_op_encoder.h -> got 2010-05-09 / 18f58525cc22 ; expect 2010-05-09  18f58525cc22 adate 2010-05-09 content True
+stop3   item  32 line    frame  351 reicast         2013-12-19 1c16baeb0 newdc/hw/gdrom/gdromv3.cpp -> got 2012-2013 (dated 2013-12-19) / 1c16baeb0eae ; expect 2013-12-19 2012-2013 1c16baeb0eae adate 2013-12-19 content True
+stop2   item  33 line    frame  224 nulldc-360      2011-10-15 03302923d nullDC/dc/gdrom/gdromv3.cpp -> got 2011-10-15 / 03302923daf3 ; expect 2011-10-15  03302923daf3 adate 2011-10-15 content True
+stop11  item  34 line    frame  622 nulldc3         2024-07-10 d5d4eae1f libswirl/hw/sh4/dyna/decoder.cpp -> got 2020-03-21 / 37dba034a9fd ; expect 2020-03-21  37dba034a9fd adate 2020-03-21 content True
+stop10  item  39 line    frame 1240 minicast        2026-10-24 9185ab882 libswirl/hw/maple/maple_devs.cpp -> got 2026-10-24 / de31a4ce5d2d ; expect 2026-10-24  de31a4ce5d2d adate 2026-10-24 content True
+stop4   item  42 line    frame  434 flycast         2018-10-20 84ab237b0 core/hw/pvr/drkPvr.h -> got 2013-12-28 / f5d29677b324 ; expect 2013-12-28  f5d29677b324 adate 2013-12-28 content True
+stop7   item  42 line    frame  527 nullDCe-PSP     2021-02-04 d04a8e2fa plugs/ImgReader/ImgReader.h -> got 2021-02-04 / d04a8e2faa7e ; expect 2021-02-04  d04a8e2faa7e adate 2021-02-04 content True
+stop11  item  42 line    frame  632 nullDCe         2024-09-27 c3e0c9bf0 plugs/ImgReader/ImgReader.h -> got 2008-2010 (dated 2009-10-16) / 39c055006291 ; expect 2009-10-16 2008-2010 39c055006291 adate 2017-11-20 content True
+stop10  item  44 line    frame 1256 NotDC-PS3       2026-11-01 5d81924ec plugs/EmptyAICA/aica_hle.cpp -> got 2026-09-19 / 5a32b94bee23 ; expect 2026-09-19  5a32b94bee23 adate 2026-09-19 content True
+stop0   item  50 line    frame  105 nullDC          2010-05-09 398dab4cb nulldc/plugins/nullAICA/sgc_if.cpp -> got 2010-05-09 / 398dab4cbef4 ; expect 2010-05-09  398dab4cbef4 adate 2010-05-09 content True
+stop2   item  53 line    frame  224 nulldc-360      2011-10-15 03302923d nullDC/dc/sh4/dmac.cpp -> got 2011-10-15 / 03302923daf3 ; expect 2011-10-15  03302923daf3 adate 2011-10-15 content True
+stop3   item  53 line    frame  351 reicast         2013-12-19 1c16baeb0 newdc/hw/sh4/modules/dmac.cpp -> got 2012-2013 (dated 2013-12-19) / 1c16baeb0eae ; expect 2013-12-19 2012-2013 1c16baeb0eae adate 2013-12-19 content True
+stop8   item  53 line    frame  557 nullDCe-PSP     2021-10-17 d6f177467 dc/sh4/dmac.cpp -> got 2021-08-19 / 7fe5a441d1db ; expect 2021-08-19  7fe5a441d1db adate 2021-08-19 content True
+stop1   item  54 line    frame  351 reicast         2013-12-19 1c16baeb0 newdc/windows/win86_il.cpp -> got 2012-2013 (dated 2013-12-19) / 1c16baeb0eae ; expect 2013-12-19 2012-2013 1c16baeb0eae adate 2013-12-19 content True
+stop2   item  55 line    frame  224 nulldc-360      2011-10-15 03302923d plugins/EmptyAICA/aica_hax.cpp -> got 2011-10-15 / 03302923daf3 ; expect 2011-10-15  03302923daf3 adate 2011-10-15 content True
+stop11  item  55 line    frame 1265 nullDC4WiiU     2026-11-07 75bc844cc plugs/EmptyAICA/aica_hax.cpp -> got 2026-06-09 / 735913509220 ; expect 2026-06-09  735913509220 adate 2026-06-09 content True
+stop10  item  61 line    frame 1375 nullDC4Wii      2026-11-19 5f324d8aa plugs/ImgReader/mds_reader.cpp -> got 2026-03-22 / 3b7982ca10be ; expect 2026-03-22  3b7982ca10be adate 2026-03-22 content True
+stop0   item  63 line    frame  103 nullDCe         2009-10-16 39c055006 win-x86/dc/sh4/rec_v2/win86_driver.cpp -> got 2008-2010 (dated 2009-10-16) / 39c055006291 ; expect 2009-10-16 2008-2010 39c055006291 adate 2017-11-20 content True
+stop8   item  64 line    frame 1240 minicast        2026-10-24 9185ab882 libswirl/hw/pvr/ta_ctx.cpp -> got 2025-01-20 / 580d7b86a142 ; expect 2025-01-20  580d7b86a142 adate 2025-01-20 content True
+stop2   item  67 line    frame   30 dc4ever         2005-01-02 c4c7b7d75 DC/Bios/bios.cs -> got 2004-11-03 (approx.) / a4f480393af6 ; expect 2004-11-03  a4f480393af6 adate 2004-11-03 content True
+stop5   item  67 line    frame   60 dc4ever         2005-06-15 723ddfc0c DC/Bios/bios.cs -> got 2005-06-14 (approx.) / f9fe2591bddb ; expect 2005-06-14  f9fe2591bddb adate 2005-06-14 content True
+stop3   item  78 line    frame 1055 polly2          2026-07-30 bec6ff4a7 polly2-core/rtl/tsp/tex/tex_cache_4p_1c.sv -> got 2026-07-29 / 2b0bc06c402c ; expect 2026-07-29  2b0bc06c402c adate 2026-07-29 content True
+stop4   item  78 line    frame 1058 polly2          2026-07-30 a37f92cb9 polly2-core/rtl/tsp/tex/tex_cache_4p_1c.sv -> got 2026-07-29 / 2b0bc06c402c ; expect 2026-07-29  2b0bc06c402c adate 2026-07-29 content True
+stop9   item  79 line    frame 1244 polly2          2026-10-24 95fc3ba03 polly2-core/rtl/peel_core.sv -> got 2026-10-24 / 95fc3ba0362b ; expect 2026-10-24  95fc3ba0362b adate 2026-10-24 content True
+stop0   item  81 line    frame 1000 minicast        2026-07-17 585205bc5 setup_hdmi/main.cpp -> got 2026-07-17 / 585205bc5aac ; expect 2026-07-17  585205bc5aac adate 2026-07-17 content True
+stop7   item  81 line    frame 1053 minicast        2026-07-30 5ccdf186d setup_hdmi/main.cpp -> got 2026-07-17 / 585205bc5aac ; expect 2026-07-17  585205bc5aac adate 2026-07-17 content True
+stop4   item  83 line    frame  262 nulldc-360      2011-11-22 3743e8897 plugins/ImgReader/ImgReader.cpp -> got 2011-11-19 / 0b0711480345 ; expect 2011-11-19  0b0711480345 adate 2011-11-19 content True
+stop6   item  85 line    frame  598 nullDC          2023-07-10 1611c3cf0 nulldc/plugins/EmptyAICA/aica_hax.cpp -> got 2010-05-09 / 398dab4cbef4 ; expect 2010-05-09  398dab4cbef4 adate 2010-05-09 content True
+stop8   item  85 line    frame  763 nullDC4Wii      2026-01-21 e812c5828 plugs/EmptyAICA/aica_hax.cpp -> got 2026-01-21 / e812c5828334 ; expect 2026-01-21  e812c5828334 adate 2026-01-21 content True
+stop10  item  85 line    frame 1256 NotDC-PS3       2026-11-01 5d81924ec plugs/EmptyAICA/aica_hax.cpp -> got 2026-09-19 / 5a32b94bee23 ; expect 2026-09-19  5a32b94bee23 adate 2026-09-19 content True
+stop12  item  87 segment frame  640 flycast         2024-12-27 32d8d9a8c core/hw/sh4/interpr/sh4_opcodes.cpp -> got 2024-07-11 / 39e04b07b824 ; expect 2024-07-11  39e04b07b824 adate 2024-07-11 content True
+stop17  item  88 segment frame 1434 nulldc3         2026-11-20 4f3efe15f libswirl/hw/arm7/SoundCPU.cpp -> got 2026-10-24 / b9738a105bdb ; expect 2026-10-24  b9738a105bdb adate 2026-10-24 content True
+stop3   item  90 segment frame  434 flycast         2018-10-20 84ab237b0 core/hw/aica/aica.h -> got 2013-12-28 / f5d29677b324 ; expect 2013-12-28  f5d29677b324 adate 2013-12-28 content True
+stop12  item  90 segment frame  796 nullDC4Wii      2026-03-02 2b5eeeb8d plugs/nullAICA/aica.h -> got 2026-03-02 / 2b5eeeb8d5ef ; expect 2026-03-02  2b5eeeb8d5ef adate 2026-03-02 content True
+stop1   item  91 segment frame  106 nullDC          2010-05-09 18f58525c emitter/x86_matcher.h -> got 2010-05-09 / 18f58525cc22 ; expect 2010-05-09  18f58525cc22 adate 2010-05-09 content True
+stop12  item  92 segment frame 1240 minicast        2026-10-24 9185ab882 libswirl/hw/sh4/dyna/decoder.cpp -> got 2026-10-24 / f585f5289589 ; expect 2026-10-24  f585f5289589 adate 2026-10-24 content True
+stop2   item  93 segment frame  434 flycast         2018-10-20 84ab237b0 core/hw/sh4/interpr/sh4_opcodes.h -> got 2013-12-28 / f5d29677b324 ; expect 2013-12-28  f5d29677b324 adate 2013-12-28 content True
+stop8   item  95 segment frame  595 nulldc3         2023-07-07 f2300244a libswirl/hw/holly/sh4_mem_area0.cpp -> got 2020-04-07 / b9b28b0d063d ; expect 2020-04-07  b9b28b0d063d adate 2020-04-07 content True
+stop9   item  96 segment frame  644 minicast        2025-01-20 580d7b86a libswirl/hw/modem/modem_regs.h -> got 2025-01-20 / 580d7b86a142 ; expect 2025-01-20  580d7b86a142 adate 2025-01-20 content True
+stop3   item  97 segment frame  351 reicast         2013-12-19 1c16baeb0 newdc/hw/gdrom/gdromv3.cpp -> got 2012-2013 (dated 2013-12-19) / 1c16baeb0eae ; expect 2013-12-19 2012-2013 1c16baeb0eae adate 2013-12-19 content True
+stop4   item  97 segment frame  434 flycast         2018-10-20 84ab237b0 core/hw/gdrom/gdromv3.cpp -> got 2018-07-10 / 527628d3666a ; expect 2018-07-10  527628d3666a adate 2018-07-10 content True
+stop18  item 100 segment frame 1434 nulldc3         2026-11-20 4f3efe15f libswirl/hw/aica/aica.h -> got 2026-10-16 / 165775e5e05c ; expect 2026-10-16  165775e5e05c adate 2026-10-16 content True
+stop19  item 100 segment frame 1471 nullDC4WiiU     2026-11-22 c934dc334 plugs/vbaARM/arm_aica.h -> got 2026-03-02 / 82ce64b4e56c ; expect 2026-03-02  82ce64b4e56c adate 2026-03-02 content True
+stop0   item 101 segment frame  103 nullDCe         2009-10-16 39c055006 dc/gdrom/gdromv3.cpp -> got 2008-2010 (dated 2009-10-16) / 39c055006291 ; expect 2009-10-16 2008-2010 39c055006291 adate 2017-11-20 content True
+stop6   item 101 segment frame  557 nullDCe-PSP     2021-10-17 d6f177467 dc/gdrom/gdromv3.cpp -> got 2021-06-26 / 36b350ade6db ; expect 2021-06-26  36b350ade6db adate 2021-06-26 content True
+stop10  item 101 segment frame  763 nullDC4Wii      2026-01-21 e812c5828 dc/gdrom/gdromv3.cpp -> got 2026-01-21 / e812c5828334 ; expect 2026-01-21  e812c5828334 adate 2026-01-21 content True
+stop11  item 101 segment frame 1099 NotDC-PS3       2026-09-19 5a32b94be dc/gdrom/gdromv3.cpp -> got 2026-09-19 / 5a32b94bee23 ; expect 2026-09-19  5a32b94bee23 adate 2026-09-19 content True
+stop10  item 102 segment frame  632 nullDCe         2024-09-27 c3e0c9bf0 dc/gdrom/gdromv3.cpp -> got 2024-09-27 / 510657b25c97 ; expect 2024-09-27  510657b25c97 adate 2024-09-27 content True
+stop14  item 102 segment frame 1265 nullDC4WiiU     2026-11-07 75bc844cc dc/gdrom/gdromv3.cpp -> got 2026-10-19 / a0de52c9ffa7 ; expect 2026-10-19  a0de52c9ffa7 adate 2026-10-19 content True
+stop8   item 104 segment frame  566 nulldc-360      2022-02-11 bd0bfaeef plugins/nullAICA/dsp.cpp -> got 2012-08-19 / 1237308313a5 ; expect 2012-08-19  1237308313a5 adate 2012-08-19 content True
+stop11  item 107 segment frame  632 nullDCe         2024-09-27 c3e0c9bf0 plugs/drkPvr/ta_structs.h -> got 2008-2010 (dated 2009-10-16) / 39c055006291 ; expect 2009-10-16 2008-2010 39c055006291 adate 2017-11-20 content True
+stop16  item 107 segment frame 1434 nulldc3         2026-11-20 4f3efe15f libswirl/hw/pvr/ta_structs.h -> got 2020-02-20 / 40ec99ffedae ; expect 2020-02-20  40ec99ffedae adate 2020-02-20 content True
+stop20  item 108 segment frame 1471 nullDC4WiiU     2026-11-22 c934dc334 dc/gdrom/gdromv3.cpp -> got 2026-11-21 / 362f8d1dc8b9 ; expect 2026-11-21  362f8d1dc8b9 adate 2026-11-20 content True
+stop4   item 110 segment frame  595 nulldc3         2023-07-07 f2300244a libswirl/hw/maple/maple_devs.cpp -> got 2020-03-21 / 37dba034a9fd ; expect 2020-03-21  37dba034a9fd adate 2020-03-21 content True
+stop1   item 111 segment frame  105 nullDC          2010-05-09 398dab4cb nulldc/plugins/EmptyAICA/aica_hax.cpp -> got 2010-05-09 / 398dab4cbef4 ; expect 2010-05-09  398dab4cbef4 adate 2010-05-09 content True
+stop13  item 111 segment frame 1471 nullDC4WiiU     2026-11-22 c934dc334 plugs/EmptyAICA/aica_hax.cpp -> got 2026-06-09 / 735913509220 ; expect 2026-06-09  735913509220 adate 2026-06-09 content True
+stop3   item 112 segment frame  434 flycast         2018-10-20 84ab237b0 core/hw/aica/aica.h -> got 2013-12-28 / f5d29677b324 ; expect 2013-12-28  f5d29677b324 adate 2013-12-28 content True
+stop11  item 117 segment frame  599 reicast         2023-07-10 6cdb605dd libswirl/hw/sh4/interpr/sh4_opcodes.cpp -> got 2020-03-21 / 37dba034a9fd ; expect 2020-03-21  37dba034a9fd adate 2020-03-21 content True
+stop15  item 117 segment frame  780 nullDC4Wii      2026-02-15 3b52eaaff dc/sh4/sh4_cpu.cpp -> got 2026-01-26 / c402e548c9e0 ; expect 2026-01-26  c402e548c9e0 adate 2026-01-26 content True
+stop3   item 119 segment frame  595 nulldc3         2023-07-07 f2300244a libswirl/hw/sh4/dyna/ngen.h -> got 2020-02-04 / 11a02e571b37 ; expect 2020-02-04  11a02e571b37 adate 2020-02-04 content True
+stop0   item 120 segment frame  103 nullDCe         2009-10-16 39c055006 plugs/drkPvr/ta.h -> got 2008-2010 (dated 2009-10-16) / 39c055006291 ; expect 2009-10-16 2008-2010 39c055006291 adate 2017-11-20 content True
+stop6   item 120 segment frame  598 nullDC          2023-07-10 1611c3cf0 nulldc/plugins/drkPvr/ta.h -> got 2013-02-06 / ae819ee0059b ; expect 2013-02-06  ae819ee0059b adate 2013-02-06 content True
+stop6   item 121 segment frame  622 nulldc3         2024-07-10 d5d4eae1f libswirl/hw/gdrom/gdromv3.cpp -> got 2020-03-21 / 37dba034a9fd ; expect 2020-03-21  37dba034a9fd adate 2020-03-21 content True
+stop7   item 122 segment frame  566 nulldc-360      2022-02-11 bd0bfaeef nullDC/dc/mem/sh4_mem.cpp -> got 2022-02-11 / 0ef5d01b2ca8 ; expect 2022-02-11  0ef5d01b2ca8 adate 2022-02-11 content True
+stop6   item 123 segment frame  595 nulldc3         2023-07-07 f2300244a libswirl/jit/backend/cpp/rec_cpp.cpp -> got 2020-02-07 / 31a0b734f2d7 ; expect 2020-02-07  31a0b734f2d7 adate 2020-02-07 content True
+stop11  item 126 segment frame 1434 nulldc3         2026-11-20 4f3efe15f libswirl/hw/naomi/naomi.cpp -> got 2020-02-05 / c0eaa4a003e5 ; expect 2020-02-05  c0eaa4a003e5 adate 2020-02-05 content True
+stop3   item 128 segment frame  526 nullDCe-PSP     2021-02-04 e13f07c78 dc/sh4/rec_v2/shil_canonical.h -> got 2021-02-04 / e13f07c78a41 ; expect 2021-02-04  e13f07c78a41 adate 2021-02-04 content True
+stop3   item 129 segment frame  224 nulldc-360      2011-10-15 03302923d nullDC/dc/mem/_vmem.cpp -> got 2011-10-15 / 03302923daf3 ; expect 2011-10-15  03302923daf3 adate 2011-10-15 content True
+stop0   item 133 segment frame    1 dc4ever         2004-04-15 b6507f2d5 DC/SH4.7091/cachedInt.cs -> got 2004-04-15 (approx.) / b6507f2d5229 ; expect 2004-04-15  b6507f2d5229 adate 2004-04-15 content True
+stop6   item 134 segment frame   63 dc4ever         2005-06-16 19acc802b DC/SH4.7091/cachedInt.cs -> got 2004-04-15 (approx.) / b6507f2d5229 ; expect 2004-04-15  b6507f2d5229 adate 2004-04-15 content True
+stop0   item 142 segment frame  985 minicast        2026-07-13 918f74282 libswirl/hw/mem/_vmem.cpp -> got 2026-07-13 / 918f742820ba ; expect 2026-07-13  918f742820ba adate 2026-07-13 content True
+stop0   item 145 segment frame  985 minicast        2026-07-13 918f74282 libswirl/hw/pvr/ta.cpp -> got 2026-07-13 / 918f742820ba ; expect 2026-07-13  918f742820ba adate 2026-07-13 content True
+stop6   item 145 segment frame 1053 minicast        2026-07-30 5ccdf186d libswirl/hw/pvr/ta.cpp -> got 2026-07-15 / 437d558b2afc ; expect 2026-07-15  437d558b2afc adate 2026-07-15 content True
+stop1   item 150 segment frame  105 nullDC          2010-05-09 398dab4cb nulldc/nullDC/dc/sh4/sh4_cpu.cpp -> got 2010-05-09 / 1fe9c6dffd7b ; expect 2010-05-09  1fe9c6dffd7b adate 2010-05-09 content True
+stop0   item 154 segment frame 1260 HarissaDC       2026-11-03 37fa91cbb src/bios/hle_bios.cpp -> got 2026-11-03 / 37fa91cbbf1f ; expect 2026-11-03  37fa91cbbf1f adate 2026-11-03 content True
+stop0   item 155 segment frame 1260 HarissaDC       2026-11-03 37fa91cbb src/bios/hle_bios.cpp -> got 2026-11-03 / 37fa91cbbf1f ; expect 2026-11-03  37fa91cbbf1f adate 2026-11-03 content True
+stop2   item 155 segment frame 1262 HarissaDC       2026-11-05 bf379efaf src/bios/hle_bios.cpp -> got 2026-11-03 / 37fa91cbbf1f ; expect 2026-11-03  37fa91cbbf1f adate 2026-11-03 content True
+stop5   item 158 file    frame  225 nulldc-360      2011-10-15 a5c3eac47 nullDC/dc/sh4/rec_v1/driver.cpp -> got 2011-10-15 / a5c3eac47b2c ; expect 2011-10-15  a5c3eac47b2c adate 2011-10-15 content True
+stop1   item 161 file    frame  430 reicast         2018-09-03 239e17822 core/hw/pvr/spg.cpp -> got 2018-07-06 / 3cac9134ce18 ; expect 2018-07-06  3cac9134ce18 adate 2018-07-06 content True
+stop5   item 161 file    frame  599 reicast         2023-07-10 6cdb605dd libswirl/hw/pvr/spg.cpp -> got 2020-03-21 / 37dba034a9fd ; expect 2020-03-21  37dba034a9fd adate 2020-03-21 content True
+stop5   item 162 file    frame  527 nullDCe-PSP     2021-02-04 d04a8e2fa plugs/drkPvr/Renderer_if.cpp -> got 2021-02-04 / d04a8e2faa7e ; expect 2021-02-04  d04a8e2faa7e adate 2021-02-04 content True
+stop8   item 162 file    frame  595 nulldc3         2023-07-07 f2300244a libswirl/hw/pvr/Renderer_if.cpp -> got 2020-10-18 / 0bd6ea371e02 ; expect 2020-10-18  0bd6ea371e02 adate 2020-10-18 content True
+stop13  item 162 file    frame  763 nullDC4Wii      2026-01-21 e812c5828 plugs/drkPvr/Renderer_if.cpp -> got 2026-01-21 / e812c5828334 ; expect 2026-01-21  e812c5828334 adate 2026-01-21 content True
+stop15  item 162 file    frame 1240 minicast        2026-10-24 9185ab882 libswirl/hw/pvr/Renderer_if.cpp -> got 2025-01-20 / 290f8375eb00 ; expect 2025-01-20  290f8375eb00 adate 2025-01-20 content True
+stop1   item 163 file    frame  493 reicast         2020-02-29 8d0f7fbc9 libswirl/rend/soft/refsw.cpp -> got 2020-02-25 / 49046aecd9e8 ; expect 2020-02-25  49046aecd9e8 adate 2020-02-25 content True
+stop6   item 163 file    frame  660 nulldc3         2025-01-23 176a1fa7b libswirl/rend/soft/refsw.cpp -> got 2024-12-08 / 4c6a519b3d37 ; expect 2024-12-08  4c6a519b3d37 adate 2024-12-08 content True
+stop8   item 163 file    frame 1399 nulldc3         2026-11-19 176a44644 libswirl/rend/soft/refsw.cpp -> got 2026-11-18 / 542d586c8396 ; expect 2026-11-18  542d586c8396 adate 2026-11-18 content True
+origin  item   4 line    frame  105 nullDC          2010-05-09 398dab4cb nulldc/plugins/nullAICA/aica.h -> got 2010-05-09 / 398dab4cbef4 ; expect 2010-05-09  398dab4cbef4 adate 2010-05-09 content True
+origin  item   5 line    frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item   7 line    frame  103 nullDCe         2009-10-16 39c055006 cl/cl.cpp -> got 2008-2010 (dated 2009-10-16) / 39c055006291 ; expect 2009-10-16 2008-2010 39c055006291 adate 2017-11-20 content True
+origin  item   9 line    frame  103 nullDCe         2009-10-16 39c055006 dc/sh4/rec_v2/ngen.h -> got 2008-2010 (dated 2009-10-16) / 39c055006291 ; expect 2009-10-16 2008-2010 39c055006291 adate 2017-11-20 content True
+origin  item  10 line    frame   51 dc4ever         2005-06-14 7057e6262 DC/SH4.7091/disasm.cs -> got 2005-06-14 (approx.) / 7057e6262d37 ; expect 2005-06-14  7057e6262d37 adate 2005-06-14 content True
+origin  item  12 line    frame  351 reicast         2013-12-19 1c16baeb0 newdc/hw/sh4/dyna/shil_canonical.h -> got 2012-2013 (dated 2013-12-19) / 1c16baeb0eae ; expect 2013-12-19 2012-2013 1c16baeb0eae adate 2013-12-19 content True
+origin  item  13 line    frame  353 reicast         2013-12-23 4e5edefa9 newdc/imgread/common.h -> got 2013-12-23 / 4e5edefa9688 ; expect 2013-12-23  4e5edefa9688 adate 2013-12-23 content True
+origin  item  14 line    frame  351 reicast         2013-12-19 1c16baeb0 newdc/imgread/cdi.cpp -> got 2012-2013 (dated 2013-12-19) / 1c16baeb0eae ; expect 2013-12-19 2012-2013 1c16baeb0eae adate 2013-12-19 content True
+origin  item  15 line    frame   81 dc4ever         2005-06-25 a06cfd49f DC/SH4.7091/sh4imp.cs -> got 2005-06-25 (approx.) / a06cfd49f84d ; expect 2005-06-25  a06cfd49f84d adate 2005-06-25 content True
+origin  item  16 line    frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item  17 line    frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item  18 line    frame  105 nullDC          2010-05-09 398dab4cb nulldc/plugins/nullAICA/aica.h -> got 2010-05-09 / 398dab4cbef4 ; expect 2010-05-09  398dab4cbef4 adate 2010-05-09 content True
+origin  item  19 line    frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item  20 line    frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item  21 line    frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item  22 line    frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item  23 line    frame  103 nullDCe         2009-10-16 39c055006 dc/maple/maple_if.cpp -> got 2008-2010 (dated 2009-10-16) / 39c055006291 ; expect 2009-10-16 2008-2010 39c055006291 adate 2017-11-20 content True
+origin  item  24 line    frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item  26 line    frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item  27 line    frame  103 nullDCe         2009-10-16 39c055006 dc/maple/maple_devs.cpp -> got 2008-2010 (dated 2009-10-16) / 39c055006291 ; expect 2009-10-16 2008-2010 39c055006291 adate 2017-11-20 content True
+origin  item  28 line    frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item  29 line    frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item  30 line    frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item  32 line    frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item  33 line    frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item  34 line    frame  104 nullDC          2010-05-09 1fe9c6dff nulldc/nullDC/dc/sh4/rec_v1/sh4_cpu_shil.cpp -> got 2010-05-09 / 1fe9c6dffd7b ; expect 2010-05-09  1fe9c6dffd7b adate 2010-05-09 content True
+origin  item  39 line    frame  103 nullDCe         2009-10-16 39c055006 dc/maple/maple_devs.cpp -> got 2008-2010 (dated 2009-10-16) / 39c055006291 ; expect 2009-10-16 2008-2010 39c055006291 adate 2017-11-20 content True
+origin  item  42 line    frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item  44 line    frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item  50 line    frame  105 nullDC          2010-05-09 398dab4cb nulldc/plugins/nullAICA/sgc_if.cpp -> got 2010-05-09 / 398dab4cbef4 ; expect 2010-05-09  398dab4cbef4 adate 2010-05-09 content True
+origin  item  53 line    frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item  54 line    frame  103 nullDCe         2009-10-16 39c055006 psp/dc/sh4/rec_v2/psp_driver.cpp -> got 2008-2010 (dated 2009-10-16) / 39c055006291 ; expect 2009-10-16 2008-2010 39c055006291 adate 2017-11-20 content True
+origin  item  55 line    frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item  61 line    frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item  63 line    frame  103 nullDCe         2009-10-16 39c055006 win-x86/dc/sh4/rec_v2/win86_driver.cpp -> got 2008-2010 (dated 2009-10-16) / 39c055006291 ; expect 2009-10-16 2008-2010 39c055006291 adate 2017-11-20 content True
+origin  item  64 line    frame  430 reicast         2018-09-03 239e17822 core/hw/pvr/ta_ctx.cpp -> got 2018-07-19 / 71d7f908580e ; expect 2018-07-19  71d7f908580e adate 2018-07-19 content True
+origin  item  67 line    frame   23 dc4ever         2004-11-03 7a6683f40 DC/SH4.7091/backup.cs -> got 2004-11-03 (approx.) / 7a6683f402e6 ; expect 2004-11-03  7a6683f402e6 adate 2004-11-03 content True
+origin  item  78 line    frame 1042 polly2          2026-07-28 564b53383 polly2-core/rtl/tsp/tex/tex_cache_4p_1c.sv -> got 2026-07-28 / 564b53383de0 ; expect 2026-07-28  564b53383de0 adate 2026-07-28 content True
+origin  item  79 line    frame  955 polly2          2026-07-11 4c11a003d rtl/tsp/peel_core.sv -> got 2026-07-11 / 4c11a003d090 ; expect 2026-07-11  4c11a003d090 adate 2026-07-05 content True
+origin  item  81 line    frame 1000 minicast        2026-07-17 585205bc5 setup_hdmi/main.cpp -> got 2026-07-17 / 585205bc5aac ; expect 2026-07-17  585205bc5aac adate 2026-07-17 content True
+origin  item  83 line    frame  224 nulldc-360      2011-10-15 03302923d plugins/ImgReader/ImgReader.cpp -> got 2011-10-15 / 03302923daf3 ; expect 2011-10-15  03302923daf3 adate 2011-10-15 content True
+origin  item  85 line    frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item  87 segment frame   66 dc4ever         2005-06-16 b6ce2405d DC/SH4.7091/sh4imp.cs -> got 2005-06-16 (approx.) / b6ce2405d7dc ; expect 2005-06-16  b6ce2405d7dc adate 2005-06-16 content True
+origin  item  88 segment frame  154 nullDC          2010-09-06 97b08a37e nulldc/plugins/nullAICA/mem.cpp -> got 2010-09-06 / 97b08a37ec2f ; expect 2010-09-06  97b08a37ec2f adate 2010-09-06 content True
+origin  item  90 segment frame  105 nullDC          2010-05-09 398dab4cb nulldc/plugins/nullAICA/aica.h -> got 2010-05-09 / 398dab4cbef4 ; expect 2010-05-09  398dab4cbef4 adate 2010-05-09 content True
+origin  item  91 segment frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item  92 segment frame  103 nullDCe         2009-10-16 39c055006 dc/sh4/rec_v2/decoder.cpp -> got 2008-2010 (dated 2009-10-16) / 39c055006291 ; expect 2009-10-16 2008-2010 39c055006291 adate 2017-11-20 content True
+origin  item  93 segment frame   13 dc4ever         2004-10-12 dc12419a4 DC/SH4.7091/sh4imp.cs -> got 2004-10-12 (approx.) / dc12419a4721 ; expect 2004-10-12  dc12419a4721 adate 2004-10-12 content 4/8 lines missing  <<< MISMATCH
+origin  item  95 segment frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item  96 segment frame  105 nullDC          2010-05-09 398dab4cb nulldc/plugins/nullExtDev/modem.cpp -> got 2010-05-09 / 398dab4cbef4 ; expect 2010-05-09  398dab4cbef4 adate 2010-05-09 content True
+origin  item  97 segment frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item 100 segment frame  105 nullDC          2010-05-09 398dab4cb nulldc/plugins/nullAICA/aica.h -> got 2010-05-09 / 398dab4cbef4 ; expect 2010-05-09  398dab4cbef4 adate 2010-05-09 content True
+origin  item 101 segment frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item 102 segment frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item 104 segment frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item 107 segment frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item 108 segment frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item 110 segment frame  440 reicast         2019-03-27 2cf59b42b core/hw/maple/maple_devs.cpp -> got 2019-03-27 / 2cf59b42bb9b ; expect 2019-03-27  2cf59b42bb9b adate 2019-03-27 content True
+origin  item 111 segment frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item 112 segment frame  105 nullDC          2010-05-09 398dab4cb nulldc/plugins/nullAICA/aica.h -> got 2010-05-09 / 398dab4cbef4 ; expect 2010-05-09  398dab4cbef4 adate 2010-05-09 content True
+origin  item 117 segment frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item 119 segment frame  444 reicast         2019-05-17 a6b773a23 core/hw/sh4/dyna/ngen.h -> got 2019-05-15 / 83a6c0ee7127 ; expect 2019-05-15  83a6c0ee7127 adate 2019-05-15 content True
+origin  item 120 segment frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item 121 segment frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item 122 segment frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item 123 segment frame  103 nullDCe         2009-10-16 39c055006 psp/dc/sh4/rec_v2/psp_driver.cpp -> got 2008-2010 (dated 2009-10-16) / 39c055006291 ; expect 2009-10-16 2008-2010 39c055006291 adate 2017-11-20 content 8/15 lines missing  <<< MISMATCH
+origin  item 126 segment frame  104 nullDC          2010-05-09 1fe9c6dff nulldc/nullDC/naomi/naomi.cpp -> got 2010-05-09 / 1fe9c6dffd7b ; expect 2010-05-09  1fe9c6dffd7b adate 2010-05-09 content True
+origin  item 128 segment frame  103 nullDCe         2009-10-16 39c055006 dc/sh4/rec_v2/shil_canonical.h -> got 2008-2010 (dated 2009-10-16) / 39c055006291 ; expect 2009-10-16 2008-2010 39c055006291 adate 2017-11-20 content True
+origin  item 129 segment frame  104 nullDC          2010-05-09 1fe9c6dff nulldc/nullDC/dc/mem/_vmem.cpp -> got 2010-05-09 / 1fe9c6dffd7b ; expect 2010-05-09  1fe9c6dffd7b adate 2010-05-09 content True
+origin  item 133 segment frame    1 dc4ever         2004-04-15 b6507f2d5 DC/SH4.7091/cachedInt.cs -> got 2004-04-15 (approx.) / b6507f2d5229 ; expect 2004-04-15  b6507f2d5229 adate 2004-04-15 content True
+origin  item 134 segment frame    1 dc4ever         2004-04-15 b6507f2d5 DC/SH4.7091/cachedInt.cs -> got 2004-04-15 (approx.) / b6507f2d5229 ; expect 2004-04-15  b6507f2d5229 adate 2004-04-15 content True
+origin  item 142 segment frame  985 minicast        2026-07-13 918f74282 libswirl/hw/mem/_vmem.cpp -> got 2026-07-13 / 918f742820ba ; expect 2026-07-13  918f742820ba adate 2026-07-13 content True
+origin  item 145 segment frame  985 minicast        2026-07-13 918f74282 libswirl/hw/pvr/ta.cpp -> got 2026-07-13 / 918f742820ba ; expect 2026-07-13  918f742820ba adate 2026-07-13 content True
+origin  item 150 segment frame  102 nullDC          2008-12-31  None -> got 2005-2008 / None ; expect 2005-2008   adate  content True
+origin  item 154 segment frame 1260 HarissaDC       2026-11-03 37fa91cbb src/bios/hle_bios.cpp -> got 2026-11-03 / 37fa91cbbf1f ; expect 2026-11-03  37fa91cbbf1f adate 2026-11-03 content True
+origin  item 155 segment frame 1260 HarissaDC       2026-11-03 37fa91cbb src/bios/hle_bios.cpp -> got 2026-11-03 / 37fa91cbbf1f ; expect 2026-11-03  37fa91cbbf1f adate 2026-11-03 content True
+first  item 158 2010-05-09 {'commit': '1fe9c6dffd7b', 'date': '2010-05-09', 'path': 'nulldc/nullDC/dc/sh4/rec_v1/driver.cpp', 'label': '2010-05-09'} frame in stops
+first   item 158 file    frame  104 nullDC          2010-05-09 1fe9c6dff nulldc/nullDC/dc/sh4/rec_v1/driver.cpp -> got 2010-05-09 / 1fe9c6dffd7b ; expect 2010-05-09  1fe9c6dffd7b adate 2010-05-09 content True
+first  item 161 2013-12-19 {'commit': '1c16baeb0eae', 'date': '2013-12-19', 'path': 'newdc/hw/pvr/spg.cpp', 'range': '2012-2013', 'label': '2012-2013 (dated 2013-12-19)'} frame in stops
+first   item 161 file    frame  351 reicast         2013-12-19 1c16baeb0 newdc/hw/pvr/spg.cpp -> got 2012-2013 (dated 2013-12-19) / 1c16baeb0eae ; expect 2013-12-19 2012-2013 1c16baeb0eae adate 2013-12-19 content True
+first  item 162 2009-10-16 {'commit': '39c055006291', 'date': '2009-10-16', 'path': 'plugs/drkPvr/Renderer_if.cpp', 'range': '2008-2010', 'label': '2008-2010 (dated 2009-10-16)'} frame in stops
+first   item 162 file    frame  103 nullDCe         2009-10-16 39c055006 plugs/drkPvr/Renderer_if.cpp -> got 2008-2010 (dated 2009-10-16) / 39c055006291 ; expect 2009-10-16 2008-2010 39c055006291 adate 2017-11-20 content True
+first  item 163 2020-02-25 {'commit': '49046aecd9e8', 'date': '2020-02-25', 'path': 'libswirl/rend/soft/refsw.cpp', 'label': '2020-02-25'} frame in stops
+first   item 163 file    frame  492 reicast         2020-02-25 49046aecd libswirl/rend/soft/refsw.cpp -> got 2020-02-25 / 49046aecd9e8 ; expect 2020-02-25  49046aecd9e8 adate 2020-02-25 content True
+checked 203: 2 mismatches; lanes 15 ['HarissaDC', 'NotDC-PS3', 'dc4ever', 'devtools', 'flycast', 'minicast', 'nullDC', 'nullDC4Wii', 'nullDC4WiiU', 'nullDCe', 'nullDCe-PSP', 'nulldc-360', 'nulldc3', 'polly2', 'reicast']; kinds ['file', 'line', 'segment']

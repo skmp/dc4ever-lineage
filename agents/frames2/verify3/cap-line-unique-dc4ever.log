@@ -1,0 +1,40 @@
+{
+ "text": "//Note : This is just to prove that Fast emulation is possib",
+ "k": 0,
+ "stop_file": {
+  "commit": "7a6683f402e6",
+  "date": "2004-11-03",
+  "path": "DC/SH4.7091/backup.cs",
+  "label": "2004-11-03 (approx.)",
+  "approx": true
+ },
+ "frame": {
+  "i": 23,
+  "lane": "dc4ever",
+  "k": 23,
+  "date": "2004-11-03",
+  "commit": "7a6683f402e6",
+  "kinds": [
+   "commit"
+  ],
+  "approx": true,
+  "key": false,
+  "chunk": 4,
+  "files": 18,
+  "lines": 7254,
+  "d": [
+   7244,
+   10,
+   0
+  ],
+  "by_lane": {
+   "dc4ever": 5420
+  },
+  "by_year": {
+   "2004": 5420
+  }
+ },
+ "caption": "unique: only ever in dc4ever\n//Note : This is just to prove that Fast emulation is possible with\nfirst seen in dc4ever, file last changed 2004-11-03 (approx.); held by 79 frames\ndc4ever's mission statement: proving fast emulation is possible in C# / .NET\nnow: dc4ever, file last changed 2004-11-03 (approx.)"
+}
+shot ./agents/frames2/verify3/out/shots/cap-line-unique-dc4ever-gpu-1920x1080.png
+2.5s closed

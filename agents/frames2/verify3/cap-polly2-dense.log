@@ -1,0 +1,44 @@
+{
+ "text": "// ============================ WHY THERE IS NO ALIAS LIVELO",
+ "k": 0,
+ "stop_file": {
+  "commit": "564b53383de0",
+  "date": "2026-07-28",
+  "path": "polly2-core/rtl/tsp/tex/tex_cache_4p_1c.sv",
+  "label": "2026-07-28"
+ },
+ "frame": {
+  "i": 1042,
+  "lane": "polly2",
+  "k": 149,
+  "date": "2026-07-28",
+  "commit": "564b53383de0",
+  "kinds": [
+   "commit"
+  ],
+  "key": false,
+  "chunk": 6,
+  "files": 181,
+  "lines": 28880,
+  "d": [
+   28564,
+   316,
+   660
+  ],
+  "by_lane": {
+   "nullDCe": 9,
+   "reicast": 1,
+   "polly2": 25285,
+   "nullDC-pre2008": 14
+  },
+  "by_year": {
+   "2008": 14,
+   "2009": 9,
+   "2019": 1,
+   "2026": 25285
+  }
+ },
+ "caption": "unique: only ever in polly2\n// ============================ WHY THERE IS NO ALIAS LIVELOCK ============================\nfirst seen in polly2, file last changed 2026-07-28; held by 34 frames\npolly2's PVR texture cache: a whole banner explaining why 4-corner bilinear fetches can't livelock.\nnow: polly2, file last changed 2026-07-28"
+}
+shot ./agents/frames2/verify3/out/shots/cap-polly2-dense-gpu-1920x1080.png
+5.8s closed

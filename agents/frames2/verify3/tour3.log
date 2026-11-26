@@ -1,0 +1,31 @@
+{
+ "items": 164,
+ "picked": 142,
+ "uniquePicked": 42,
+ "allStops": 2218,
+ "routeStops": 656,
+ "errs": [],
+ "kinds": {
+  "line": 86,
+  "segment": 72,
+  "file": 6
+ },
+ "sample": [
+  "{//ToDo : Check This [26/4/05] | first seen in dc4ever, file last changed 2005-06-14 (approx.); held by 608 frames in 9 lanes (nullDC, nulldc-360, nullDCe, nullDCe-PSP, nullDC4Wii, reicast, flycast, nulldc3, minicast) | now: nullDCe, file last changed 2008-201",
+  "{//ToDo : Check This [26/4/05] | first seen in dc4ever, file last changed 2005-06-14 (approx.); held by 608 frames in 9 lanes (nullDC, nulldc-360, nullDCe, nullDCe-PSP, nullDC4Wii, reicast, flycast, nulldc3, minicast) | now: nulldc-360, file last changed 2022-",
+  "{//ToDo : Check This [26/4/05] | first seen in dc4ever, file last changed 2005-06-14 (approx.); held by 608 frames in 9 lanes (nullDC, nulldc-360, nullDCe, nullDCe-PSP, nullDC4Wii, reicast, flycast, nulldc3, minicast) | now: nulldc3, file last changed 2026-10-",
+  "{//ToDo : Check This [26/4/05] | first seen in dc4ever, file last changed 2005-06-14 (approx.); held by 608 frames in 9 lanes (nullDC, nulldc-360, nullDCe, nullDCe-PSP, nullDC4Wii, reicast, flycast, nulldc3, minicast) | now: minicast, file last changed 2025-01",
+  "//iNimp(\"mov.w R0,@(<disp>,GBR)\"); | first seen in dc4ever, file last changed 2005-06-25 (approx.); held by 124 frames in 5 lanes (nullDCe, nullDCe-PSP, nullDC4Wii, reicast, flycast) | now: nullDCe, file last changed 2008-2010 (dated 2009-10-16)",
+  "//iNimp(\"mov.w R0,@(<disp>,GBR)\"); | first seen in dc4ever, file last changed 2005-06-25 (approx.); held by 124 frames in 5 lanes (nullDCe, nullDCe-PSP, nullDC4Wii, reicast, flycast) | now: nullDCe-PSP, file last changed 2021-02-04",
+  "//iNimp(\"mov.w R0,@(<disp>,GBR)\"); | first seen in dc4ever, file last changed 2005-06-25 (approx.); held by 124 frames in 5 lanes (nullDCe, nullDCe-PSP, nullDC4Wii, reicast, flycast) | now: nullDC4Wii, file last changed 2026-01-21",
+  "//iNimp(\"mov.w R0,@(<disp>,GBR)\"); | first seen in dc4ever, file last changed 2005-06-25 (approx.); held by 124 frames in 5 lanes (nullDCe, nullDCe-PSP, nullDC4Wii, reicast, flycast) | now: nullDCe, file last changed 2008-2010 (dated 2009-10-16)",
+  "--x86 is such a fucked cpu arch-- | first seen in nullDC-pre2008, file last changed 2005-2008; held by 612 frames in 8 lanes (nullDC, nullDCe, nullDC4Wii, NotDC-PS3, nullDC4WiiU, reicast, flycast, nulldc3) | The x86 emitter's verdict on its target, from early ",
+  "--x86 is such a fucked cpu arch-- | first seen in nullDC-pre2008, file last changed 2005-2008; held by 612 frames in 8 lanes (nullDC, nullDCe, nullDC4Wii, NotDC-PS3, nullDC4WiiU, reicast, flycast, nulldc3) | The x86 emitter's verdict on its target, from early ",
+  "--x86 is such a fucked cpu arch-- | first seen in nullDC-pre2008, file last changed 2005-2008; held by 612 frames in 8 lanes (nullDC, nullDCe, nullDC4Wii, NotDC-PS3, nullDC4WiiU, reicast, flycast, nulldc3) | The x86 emitter's verdict on its target, from early ",
+  "--x86 is such a fucked cpu arch-- | first seen in nullDC-pre2008, file last changed 2005-2008; held by 612 frames in 8 lanes (nullDC, nullDCe, nullDC4Wii, NotDC-PS3, nullDC4WiiU, reicast, flycast, nulldc3) | The x86 emitter's verdict on its target, from early ",
+  "//how bout a decoded switch list ? could that _much_ faster ? | first seen in nullDC-pre2008, file last changed 2005-2008; held by 730 frames in 10 lanes (nullDC, nullDCe, nullDCe-PSP, nullDC4Wii, NotDC-PS3, nullDC4WiiU, reicast, flycast, nulldc3, minicast) | ",
+  "//how bout a decoded switch list ? could that _much_ faster ? | first seen in nullDC-pre2008, file last changed 2005-2008; held by 730 frames in 10 lanes (nullDC, nullDCe, nullDCe-PSP, nullDC4Wii, NotDC-PS3, nullDC4WiiU, reicast, flycast, nulldc3, minicast) | "
+ ],
+ "sec": 4
+}
+7.4s closed

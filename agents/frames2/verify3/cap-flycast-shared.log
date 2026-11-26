@@ -1,0 +1,56 @@
+{
+ "text": "//some other misc shit FAR away is here :p",
+ "k": 3,
+ "stop_file": {
+  "commit": "f5d29677b324",
+  "date": "2013-12-28",
+  "path": "core/hw/aica/aica.h",
+  "label": "2013-12-28"
+ },
+ "frame": {
+  "i": 434,
+  "lane": "flycast",
+  "k": 0,
+  "date": "2018-10-20",
+  "commit": "84ab237b09e3",
+  "kinds": [
+   "month"
+  ],
+  "key": true,
+  "chunk": 0,
+  "files": 314,
+  "lines": 102979,
+  "d": [
+   102978,
+   1,
+   0
+  ],
+  "by_lane": {
+   "dc4ever": 640,
+   "nullDC": 9814,
+   "nulldc-360": 11,
+   "nullDCe": 4318,
+   "reicast": 39152,
+   "flycast": 1,
+   "nullDC-pre2008": 17260
+  },
+  "by_year": {
+   "2004": 235,
+   "2005": 405,
+   "2008": 17260,
+   "2009": 4318,
+   "2010": 9777,
+   "2011": 29,
+   "2012": 15,
+   "2013": 20648,
+   "2014": 7199,
+   "2015": 6709,
+   "2016": 212,
+   "2017": 308,
+   "2018": 4081
+  }
+ },
+ "caption": "//some other misc shit FAR away is here :p\nfirst seen in nullDC, file last changed 2010-05-09; held by 1002 frames in 11 lanes (nullDC, nulldc-360, nullDCe-PSP, nullDC4Wii, NotDC-PS3, nullDC4WiiU, reicast, flycast, nulldc3, minicast, devtools)\nnullDC's AICA register map pads out to the far registers; the comment reached several lineages, even TS devtools\nnow: flycast, file last changed 2013-12-28"
+}
+shot ./agents/frames2/verify3/out/shots/cap-flycast-shared-gpu-1920x1080.png
+5.5s closed

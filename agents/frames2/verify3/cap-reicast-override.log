@@ -1,0 +1,58 @@
+{
+ "text": "//SHUT UP M$ COMPILER !@#!@$#",
+ "k": 3,
+ "stop_file": {
+  "commit": "1c16baeb0eae",
+  "date": "2013-12-19",
+  "path": "newdc/types.h",
+  "range": "2012-2013",
+  "label": "2012-2013 (dated 2013-12-19)"
+ },
+ "frame": {
+  "i": 351,
+  "lane": "reicast",
+  "k": 0,
+  "date": "2013-12-19",
+  "commit": "1c16baeb0eae",
+  "kinds": [
+   "import",
+   "big"
+  ],
+  "labels": [
+   "project import: the private newdc / nullDC-Android rewrite (2012-2013)",
+   "big commit: 72,923 counted lines changed"
+  ],
+  "date_range": "2012-2013",
+  "date_note": "project import of the private newdc / nullDC-Android rewrite of 2012-2013",
+  "key": true,
+  "chunk": 0,
+  "files": 200,
+  "lines": 72911,
+  "d": [
+   27431,
+   45480,
+   11429
+  ],
+  "by_lane": {
+   "dc4ever": 637,
+   "nullDC": 9304,
+   "nulldc-360": 18,
+   "nullDCe": 4195,
+   "reicast": 19623,
+   "nullDC-pre2008": 16765
+  },
+  "by_year": {
+   "2004": 249,
+   "2005": 388,
+   "2008": 16765,
+   "2009": 4195,
+   "2010": 9268,
+   "2011": 36,
+   "2012": 15,
+   "2013": 19626
+  }
+ },
+ "caption": "//SHUT UP M$ COMPILER !@#!@$#\nfirst seen in nullDC-pre2008, file last changed 2005-2008; held by 863 frames in 11 lanes (nullDC, nulldc-360, nullDCe, nullDCe-PSP, nullDC4Wii, NotDC-PS3, nullDC4WiiU, reicast, flycast, nulldc3, minicast)\nEarly nullDC plugin header vents at MSVC warnings; the outburst still ships in several lineages\nnow: reicast, file last changed 2012-2013 (dated 2013-12-19)"
+}
+shot ./agents/frames2/verify3/out/shots/cap-reicast-override-gpu-1920x1080.png
+5.7s closed

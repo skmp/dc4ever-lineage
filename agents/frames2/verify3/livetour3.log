@@ -1,0 +1,59 @@
+{
+ "on": false,
+ "captions": 10,
+ "seen": [
+  {
+   "t": 1,
+   "now": "now: dc4ever, file last changed 2005-09-15 (approx.)",
+   "head": "// asic9a /sh4 external holly normal [internal]"
+  },
+  {
+   "t": 19,
+   "now": "now: nulldc3, file last changed 2020-04-07",
+   "head": "// asic9a /sh4 external holly normal [internal]"
+  },
+  {
+   "t": 32,
+   "now": "now: flycast, file last changed 2026-07-04",
+   "head": "// asic9a /sh4 external holly normal [internal]"
+  },
+  {
+   "t": 45,
+   "now": "now: NotDC-PS3 0.8.3, file last changed 2026-10-13",
+   "head": "// asic9a /sh4 external holly normal [internal]"
+  },
+  {
+   "t": 61,
+   "now": "now: nullDC, file last changed 2010-05-09",
+   "head": "AICA register map, hopefully"
+  },
+  {
+   "t": 79,
+   "now": "now: reicast, file last changed 2020-02-04",
+   "head": "AICA register map, hopefully"
+  },
+  {
+   "t": 92,
+   "now": "now: flycast, file last changed 2024-02-03",
+   "head": "AICA register map, hopefully"
+  },
+  {
+   "t": 105,
+   "now": "now: nullDC4WiiU, file last changed 2026-03-02",
+   "head": "AICA register map, hopefully"
+  },
+  {
+   "t": 121,
+   "now": "now: nullDCe, file last changed 2008-2010 (dated 2009-10-16)",
+   "head": "//bit 0 ~ 27 : interrupt source 27:0. 0 = lowest level, 27 ="
+  },
+  {
+   "t": 139,
+   "now": "now: nullDC, file last changed 2010-12-12",
+   "head": "//bit 0 ~ 27 : interrupt source 27:0. 0 = lowest level, 27 ="
+  }
+ ],
+ "errs": []
+}
+shot ./agents/frames2/verify3/out/shots/livetour-gpu-1920x1080.png
+139.2s closed

@@ -1,0 +1,49 @@
+{
+ "text": "the SH4 dynarec (rec_v1 driver, nullDC 2006)",
+ "k": 9,
+ "stop_file": {
+  "commit": "1568526c66a5",
+  "date": "2010-12-12",
+  "path": "nulldc/nullDC/dc/sh4/rec_v1/driver.cpp",
+  "label": "2010-12-12"
+ },
+ "frame": {
+  "i": 598,
+  "lane": "nullDC",
+  "k": 132,
+  "date": "2023-07-10",
+  "commit": "1611c3cf0aa2",
+  "kinds": [
+   "month",
+   "commit"
+  ],
+  "key": false,
+  "chunk": 5,
+  "files": 333,
+  "lines": 107503,
+  "d": [
+   107502,
+   1,
+   1
+  ],
+  "by_lane": {
+   "dc4ever": 1203,
+   "nullDC": 47307,
+   "nulldc-360": 1,
+   "nullDC-pre2008": 27293
+  },
+  "by_year": {
+   "2004": 451,
+   "2005": 752,
+   "2008": 27293,
+   "2010": 45922,
+   "2011": 323,
+   "2012": 22,
+   "2013": 1039,
+   "2023": 2
+  }
+ },
+ "caption": "the SH4 dynarec (rec_v1 driver, nullDC 2006)\n251 frames in 2 lanes (nullDC, nulldc-360), first: file last changed 2010-05-09\nnow: nullDC, file last changed 2010-12-12"
+}
+shot ./agents/frames2/verify3/out/shots/cap-file-item-gpu-1920x1080.png
+5.5s closed
