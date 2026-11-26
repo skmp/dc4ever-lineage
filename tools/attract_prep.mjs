@@ -8,7 +8,8 @@
 // origin_file for "first seen in" (the file at the origin frame), stop_files[k] for stops[k] ("now: ..."). A last change
 // at a commit with a date override (frames.json date_range: nullDCe 39c0550, reicast 1c16baeb0, in any repo holding it)
 // takes the override date and range; dc4ever dates stay approx (file mtimes); the virtual nullDC-pre2008 origin is 2005-2008.
-//   node tools/attract_prep.mjs        (about 10 s; reads data/ and repos/, uses viewer/src/core.js)
+//   node tools/attract_prep.mjs        (about 10 s; reads data/ and repos/, uses viewer/src/core.js; then refreshes the file
+//   sizes in data/frames.json: tools/frames_manifest.py --sizes)
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs'; import zlib from 'node:zlib'; import path from 'node:path'; import { fileURLToPath } from 'node:url';
 import * as core from '../viewer/src/core.js';
@@ -168,4 +169,6 @@ const noOrigin = out.items.filter(i => i.kind !== 'file' && !i.origin_file);
 if (noOrigin.length) console.warn(`${noOrigin.length} items: the origin frame holds no file with the line (origin_file null)`);
 console.log(`file last-change dates: ${gitN} git queries`);
 fs.writeFileSync(D('attract.json'), JSON.stringify(out));
+// frames.json lists every data file with its size (the load progress): refresh it, attract.json just changed
+execFileSync('python3', [path.join(ROOT, 'tools/frames_manifest.py'), '--sizes'], { stdio: 'inherit' });
 console.log(out.items.map(i => `${i.kind} ${i.frames} frames, ${i.lanes.length} lanes, ${i.stops.length} stops: ${i.text || i.title}`).join('\n'));

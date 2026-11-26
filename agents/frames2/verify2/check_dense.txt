@@ -1,0 +1,12 @@
+nullDC4Wii: frames 135 kinds {'import': 1, 'big': 40, 'tag': 86, 'month': 8, 'fork': 2}; big commits 17, not frames 0
+   multi-commit steps with churn >= 2T: [(16358, 3, '1c8d8fd0f', '32e5684f5', 1977)] 1
+   worst steps (churn/T, churn, commits, from, to): [(8.275031743381948, 16358, 3, '1c8d8fd0f', '32e5684f5'), (5.51, 8265, 1, 'dc32a12f4', '82ce64b4e'), (3.5873333333333335, 5381, 1, '940f04dfd', '223fa44ec'), (2.9202934827662315, 5425, 1, '0f064f7b2', 'cec40dd8f'), (2.3762861342479176, 3783, 1, '1ac7a1827', 'cfecbfbcc')]
+   churn after the last frame: 0
+reicast: frames 140 kinds {'import': 1, 'big': 58, 'month': 57, 'tag': 25, 'fork': 3}; big commits 24, not frames 0
+   multi-commit steps with churn >= 2T: [] 0
+   worst steps (churn/T, churn, commits, from, to): [(65.389322024767, 254883, 1, '40971b6e8', '3bc91425e'), (65.25012274289456, 143532, 1, '8f694405f', 'f5d29677b'), (17.15826693389386, 52651, 1, '69ab16ad9', '2cf59b42b'), (6.685641998734978, 20083, 1, 'edaec54f9', '03170fc0e'), (6.6065677621781544, 19919, 1, '9beb87ef6', '405fffeda')]
+   churn after the last frame: 0
+flycast: frames 148 kinds {'month': 86, 'big': 51, 'tag': 13}; big commits 26, not frames 0
+   multi-commit steps with churn >= 2T: [(20055, 2, 'aa36a65d1', 'f23a3d375', 3882), (22374, 5, 'a51f310e9', 'f7abe3bb3', 4973), (12526, 10, '0243f81c2', '8edd8fc44', 6176)] 3
+   worst steps (churn/T, churn, commits, from, to): [(16.374246293365438, 50592, 1, '84ab237b0', 'cf1a924f5'), (11.51824092520393, 60534, 1, 'bf87f7ba8', '8740141a9'), (10.274977764601246, 41589, 1, '8f86be37f', '4973c5a27'), (6.7387216163028425, 37016, 1, 'b92b7a3ec', 'ee806bc03'), (5.166430950669666, 20055, 2, 'aa36a65d1', 'f23a3d375')]
+   churn after the last frame: 0

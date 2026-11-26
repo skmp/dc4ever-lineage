@@ -1,0 +1,6 @@
+{
+ "caption": "GD-ROM command 0x70: a guess in the comments\n3 lines, first seen in nullDC-pre2008, file last changed 2005-2008; held by 820 frames in 9 lanes (nullDC, nulldc-360, nullDCe, nullDCe-PSP, nullDC4Wii, NotDC-PS3, nullDC4WiiU, reicast, flycast)\nGD-ROM cmd 0x70: 'some kind of reset/unlock ??' A pre-2008 guess still in nullDC, reicast and flycast\nnow: nullDCe, file last changed 2008-2010 (dated 2009-10-16)",
+ "title": "GD-ROM command 0x70: a guess in the comments"
+}
+shot agents/frames2/verify2/out/shots/cap-segment-gpu-1920x1080.png
+6.3s closed

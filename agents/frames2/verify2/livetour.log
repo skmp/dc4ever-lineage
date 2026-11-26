@@ -1,0 +1,12 @@
+{
+ "on": true,
+ "seen": [
+  "now: nullDCe, file last changed 2008-2010 (dated 2009-10-16) :: const char* maple_sega_controller_name = \"Dreamcast Controll",
+  "now: minicast, file last changed 2025-01-20 :: const char* maple_sega_controller_name = \"Dreamcast Controll",
+  "now: flycast, file last changed 2026-10-12 :: const char* maple_sega_controller_name = \"Dreamcast Controll",
+  "now: nullDC4WiiU, file last changed 2026-11-07 :: const char* maple_sega_controller_name = \"Dreamcast Controll"
+ ],
+ "errs": []
+}
+shot agents/frames2/verify2/out/shots/livetour-gpu-1920x1080.png
+57.9s closed

@@ -1,0 +1,41 @@
+{
+ "n": 164,
+ "picked": 142,
+ "errs": [],
+ "caps": [
+  "{//ToDo : Check This [26/4/05]\nfirst seen in dc4ever, file last changed 2005-06-14 (approx.); held by 608 frames in 9 lanes (nullDC, nulldc-360, nullDCe, nullDCe-PSP, nullDC4Wii, reicast, flycast, nulldc3, minicast)\nnow: minicast, file last changed 2025-01-20 | a dc4ever 2005 to-do, still in nullDC 3 (2026)",
+  "if (stricmp( &file[len-4],\".gdi\")==0)\nfirst seen in nulldc-360, file last changed 2011-10-15; held by 458 frames in 6 lanes (nulldc-360, nullDCe-PSP, reicast, flycast, nulldc3, minicast)\nnow: minicast, file last changed 2025-01-20",
+  "//0x0-0xD : 7 times the normal memmap mirrors :)\nfirst seen in nullDC-pre2008, file last changed 2005-2008; held by 604 frames in 9 lanes (nullDC, nulldc-360, nullDCe, nullDCe-PSP, nullDC4Wii, reicast, flycast, nulldc3, minicast)\nThe SH4 address space mirrors the same memory map 7 times, set up in a loop since early nullDC\nnow: minicast, file last changed 2025-01-20",
+  "//DRV -> preserved -> wtf is it anyway ?\nfirst seen in nullDC-pre2008, file last changed 2005-2008; held by 692 frames in 9 lanes (nullDC, nulldc-360, nullDCe, nullDCe-PSP, nullDC4Wii, NotDC-PS3, nullDC4WiiU, reicast, flycast)\nGD-ROM ATA soft reset: the DRV bit is preserved, and nobody knows what it does. Same line in several lineages\nnow: NotDC-PS3, file last changed 2026-09-19",
+  "//since i got no internet , and im bored , im starting to work on some aica hle code :)\nfirst seen in nullDC-pre2008, file last changed 2005-2008; held by 563 frames in 7 lanes (nullDC, nulldc-360, nullDCe, nullDCe-PSP, nullDC4Wii, NotDC-PS3, nullDC4WiiU)\nNo internet and bored, so AICA HLE work began. This line lived on in several lineages, NotDC-PS3 among them\nnow: NotDC-PS3 0.8.3, file last changed 2026-09-19",
+  "// im too tired to debug and find the actualy relation but it is\nfirst seen in nullDC-pre2008, file last changed 2005-2008; held by 563 frames in 7 lanes (nullDC, nulldc-360, nullDCe, nullDCe-PSP, nullDC4Wii, NotDC-PS3, nullDC4WiiU)\nAICA hack found in Roadsters (also Toy cmd): 'too tired to debug'. 2005-2008 code, kept in several lineages\nnow: NotDC-PS3 0.8.3, file last changed 2026-09-19",
+  "// *cough* ignore it :p\nfirst seen in reicast, file last changed 2015-08-05; held by 250 frames in 4 lanes (reicast, flycast, nulldc3, minicast)\nAn unsupported Object List Set (NAOMI Virtual On) gets skipped with a cough, shared by four lineages\nnow: minicast, file last changed 2025-01-20",
+  "unique: only ever in minicast\n// This file is a major hack to get decoupled mtta done fast\nfirst seen in minicast, file last changed 2026-07-15; held by 26 frames\nminicast's honest header in lxdream's TA core: 'a major hack to get decoupled mtta done fast'\nnow: minicast, file last changed 2026-07-15",
+  "The AICA memory map in four lines\n4 lines, first seen in nullDC, file last changed 2010-09-06; held by 903 frames in 10 lanes (nullDC, nulldc-360, nullDCe-PSP, nullDC4Wii, NotDC-PS3, nullDC4WiiU, reicast, flycast, nulldc3, minicast)\nThe ARM7's view of AICA: sound RAM, then channel, common and DSP regs. Shared by several lineages\nnow: nullDC4WiiU, file last changed 2026-03-02",
+  "SH4 carry ops on ARM64\n22 lines, first seen in reicast, file last changed 2012-2013 (dated 2013-12-19); held by 196 frames in 4 lanes (reicast, flycast, nulldc3, minicast)\nreicast's 2013 ARM64 dynarec maps SH4 addc/subc/rotcr onto ARM flags, kept by flycast, nulldc3 and minicast\nnow: minicast, file last changed 2025-01-20",
+  "Naomi JVS I/O board replies\n17 lines, first seen in reicast, file last changed 2019-03-27; held by 339 frames in 4 lanes (reicast, flycast, nulldc3, minicast)\nNaomi JVS I/O board: reports command format 1.1, JAMMA video 2.0, communication 1.0\nnow: minicast DreamSTer r6b, file last changed 2026-10-24",
+  "GD-ROM subcode Q, mostly guessed\n22 lines, first seen in nullDC-pre2008, file last changed 2005-2008; held by 182 frames in 4 lanes (nullDCe-PSP, reicast, nulldc3, minicast)\nFaked CDDA subchannel Q: \"Track number .. dunno whats it :P gotta parse toc xD ;p\". Since dc4ever 2004\nnow: minicast, file last changed 2025-01-20",
+  "Optimizer: disabled to be on the safe side\n23 lines, first seen in nullDCe, file last changed 2008-2010 (dated 2009-10-16); held by 150 frames in 3 lanes (reicast, nulldc3, minicast)\nA SHIL block optimizer that starts with return; and leaves the whole pass below commented out\nnow: minicast DreamSTer r6b, file last changed 2026-10-24",
+  "unique: only ever in polly2\nUseAlpha=0 and the black BIOS background\n7 lines, first seen in polly2, file last changed 2026-07-14; held by 60 frames\nIn polly2's shader RTL, UseAlpha=0 forces alpha to 255; without it the BIOS background blends to black\nnow: polly2, file last changed 2026-07-29",
+  "unique: only ever in HarissaDC\nHarissaDC writes its own flash\n19 lines, first seen in HarissaDC, file last changed 2026-11-03; held by 5 frames\nNo Sega BIOS: the HLE BIOS formats the flash, writes '00000Dreamcast' and counts the clock from 1950\nnow: HarissaDC v0.2.2, file last changed 2026-11-06"
+ ],
+ "pick": {
+  "line": 86,
+  "hit": 0,
+  "miss": [
+   "{//ToDo : Check This [26/4/05]",
+   "//and here are the new ones :D",
+   "//Time to emulate that stuff correctly ;)",
+   "// asic9a /sh4 external holly normal [internal]",
+   "//quite a bit padding here :)",
+   "//bit 0 ~ 27 : interrupt source 27:0. 0 = lowest l",
+   "//convert our nice toc struct to dc's native one :",
+   "printf(\"-config : invalid parameter %s, format is ",
+   "const char* maple_sega_controller_name = \"Dreamcas",
+   "//Called when a block check failed, and the block "
+  ]
+ },
+ "stops": 656,
+ "heap": 149.85818195343018
+}
+366.3s closed

@@ -138,6 +138,14 @@ for a, b in zip(knots[1:], knots[2:]):
     (m0, x0), (m1, x1) = kk[-1], a
     if abs((x1 - x0) / (m1 - m0) - (b[1] - x1) / (b[0] - m1)) > 1e-6 * MONTH: kk.append(a)
 kk.append(knots[-1]); knots = kk
+# knots are written (and walls placed) with x rounded to whole units; a knot less than a unit after the previous one would
+# round onto it (a zero-width step: two months at one x), so it goes one unit further
+kk = []
+for m, xx in knots:
+    xx = float(round(xx))
+    if kk and xx <= kk[-1][1]: xx = kk[-1][1] + 1
+    kk.append((m, xx))
+knots = kk
 def x_of(d):
     return interp(knots, mnum(d) if isinstance(d, str) else d)
 gaps = [(g0, g1, (x_of(g0) + x_of(g1)) / 2) for g0, g1 in gaps0]

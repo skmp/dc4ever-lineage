@@ -1,0 +1,91 @@
+trace (events > 20 ms: count, total ms, max ms):
+   29323 ThreadControllerImpl::RunTask 30 / 1215 / 66
+   29323 v8.callFunction 27 / 1124 / 66
+   29323 ThreadPool_RunTask 11 / 668 / 113
+   29215 ThreadPool_RunTask 5 / 176 / 42
+   29252 ThreadControllerImpl::RunTask 6 / 159 / 35
+   29252 Scheduler::RunTask 6 / 158 / 35
+   29252 GpuChannel::ExecuteDeferredRequest 6 / 158 / 35
+   29252 WebGL 6 / 158 / 35
+   29252 CommandBuffer::Flush 6 / 158 / 35
+   29252 CommandBufferStub::OnAsyncFlush 6 / 158 / 35
+   29252 CommandBufferService:PutChanged 6 / 158 / 35
+{
+ "speed": 16798,
+ "x0": 1124618,
+ "x1": 1376584,
+ "wallsInRange": 646,
+ "frame": {
+  "n": 880,
+  "p50": 16.7,
+  "p95": 18.6,
+  "p99": 37.2,
+  "max": 69.4
+ },
+ "cpu": {
+  "n": 880,
+  "p50": 1.5,
+  "p95": 3,
+  "p99": 3.8,
+  "max": 6.3
+ },
+ "heapMax": 442,
+ "baked": 1102,
+ "uploads": 588,
+ "up": {
+  "n": 950,
+  "ms": 386.7999986410141,
+  "max": 52.10000002384186
+ },
+ "AL": {
+  "r": 450,
+  "n": 652,
+  "mb": 1343,
+  "lines": 56976894,
+  "bigF": [
+   [
+    67,
+    3,
+    "lo:1",
+    11993,
+    0,
+    165
+   ],
+   [
+    50,
+    2,
+    "hi:6",
+    13321,
+    0,
+    180
+   ],
+   [
+    50,
+    2,
+    "hi:6,hi:6,hi:6,hi:6,far:0",
+    313893,
+    0,
+    183
+   ],
+   [
+    50,
+    2,
+    "",
+    0,
+    1155,
+    186
+   ],
+   [
+    50,
+    2,
+    "",
+    0,
+    185375,
+    217
+   ]
+  ]
+ },
+ "gpuMB": 737,
+ "worst": []
+}
+17.9s closed

@@ -1,0 +1,25 @@
+knots 592 month strictly increasing True x non-decreasing True flat (zero-width) segments 2
+walls 1472 lanes bad 0 min gap 500 walls outside own day 0 worst 0
+  dc4ever          walls  102 min gap 500
+  nullDC           walls  133 min gap 500
+  nulldc-360       walls  119 min gap 500
+  HarissaDC        walls    5 min gap 500
+  nullDCe          walls    7 min gap 500
+  nullDCe-PSP      walls   13 min gap 500
+  nullDC4Wii       walls  135 min gap 500
+  NotDC-PS3        walls  102 min gap 500
+  nullDC4WiiU      walls   57 min gap 500
+  reicast          walls  140 min gap 500
+  flycast          walls  148 min gap 500
+  nulldc3          walls  105 min gap 500
+  minicast         walls   35 min gap 500
+  polly2           walls  183 min gap 500
+  polly2-r8        walls   10 min gap 500
+  devtools         walls   50 min gap 500
+  dreamcast-tests  walls  103 min gap 500
+  shrike4          walls   10 min gap 500
+  caique           walls   11 min gap 500
+  wren7            walls    4 min gap 1509
+x shared by >1 wall (any lane): 79
+extent 1032 1376584
+stretched knot segments 432 max factor 1357.1

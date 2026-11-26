@@ -1,0 +1,149 @@
+ok  first  file    reicast         frame 49046aecd 2020-02-25 | libswirl/rend/soft/refsw.cpp | git 49046aecd 2020-02-25 (author 2020-02-25) -> exp "2020-02-25" | data "2020-02-25" | non-first-parent log: c116dfffe 2020-02-25
+ok  first  file    nullDC          frame 1fe9c6dff 2010-05-09 | nulldc/nullDC/dc/sh4/rec_v1/driver.cpp | git 1fe9c6dff 2010-05-09 (author 2010-05-09) -> exp "2010-05-09" | data "2010-05-09"
+ok  first  file    nullDCe         frame 39c055006 2009-10-16 | plugs/drkPvr/Renderer_if.cpp | git 39c055006 2017-11-20 (author 2017-11-20) -> exp "2008-2010 (dated 2009-10-16)" | data "2008-2010 (dated 2009-10-16)"
+ok  first  file    reicast         frame 1c16baeb0 2013-12-19 | newdc/hw/pvr/spg.cpp | git 1c16baeb0 2013-12-19 (author 2013-12-19) -> exp "2012-2013 (dated 2013-12-19)" | data "2012-2013 (dated 2013-12-19)"
+ok  origin line    NotDC-PS3       frame a5d7deaec 2026-09-23 | plugs/nullAICA/sgc_if.cpp | git a5d7deaec 2026-09-23 (author 2026-09-23) -> exp "2026-09-23" | data "2026-09-23"
+ok  origin line    NotDC-PS3       frame 5a32b94be 2026-09-19 | dc/gdrom/gdromv3.cpp | git 5a32b94be 2026-09-19 (author 2026-09-19) -> exp "2026-09-19" | data "2026-09-19"
+ok  origin line    dc4ever         frame 7a6683f40 2004-11-03 | DC/SH4.7091/backup.cs | git 7a6683f40 2004-11-03 (author 2004-11-03) -> exp "2004-11-03 (approx.)" | data "2004-11-03 (approx.)"
+ok  origin line    dc4ever         frame 7057e6262 2005-06-14 | DC/SH4.7091/disasm.cs | git 7057e6262 2005-06-14 (author 2005-06-14) -> exp "2005-06-14 (approx.)" | data "2005-06-14 (approx.)"
+ok  origin line    flycast         frame 62a1e2967 2020-12-29 | core/hw/modem/picoppp.cpp | git 62a1e2967 2020-12-29 (author 2020-12-29) -> exp "2020-12-29" | data "2020-12-29"
+ok  origin line    flycast         frame c146a92f8 2024-02-03 | core/rend/dx9/d3d_shaders.cpp | git c146a92f8 2024-02-03 (author 2024-02-03) -> exp "2024-02-03" | data "2024-02-03" | non-first-parent log: e714e9451 2024-01-31
+ok  origin line    minicast        frame 437d558b2 2026-07-15 | libswirl/gpl/lxdream/tacore-mtta-decoupled.cpp | git 437d558b2 2026-07-15 (author 2026-07-15) -> exp "2026-07-15" | data "2026-07-15" | non-first-parent log: c68bdf2ef 2026-07-15
+ok  origin line    minicast        frame 585205bc5 2026-07-17 | setup_hdmi/main.cpp | git 585205bc5 2026-07-17 (author 2026-07-17) -> exp "2026-07-17" | data "2026-07-17" | non-first-parent log: 369f3e00b 2026-07-16
+ok virtual origin
+ok virtual origin
+ok  origin line    nullDCe         frame 39c055006 2009-10-16 | dc/sh4/rec_v2/decoder.cpp | git 39c055006 2017-11-20 (author 2017-11-20) -> exp "2008-2010 (dated 2009-10-16)" | data "2008-2010 (dated 2009-10-16)"
+ok  origin line    nullDCe         frame 39c055006 2009-10-16 | dc/maple/maple_devs.cpp | git 39c055006 2017-11-20 (author 2017-11-20) -> exp "2008-2010 (dated 2009-10-16)" | data "2008-2010 (dated 2009-10-16)"
+ok  origin line    nulldc-360      frame 03302923d 2011-10-15 | plugins/ImgReader/gdi.cpp | git 03302923d 2011-10-15 (author 2011-10-15) -> exp "2011-10-15" | data "2011-10-15"
+ok  origin line    nulldc-360      frame 03302923d 2011-10-15 | plugins/ImgReader/ImgReader.cpp | git 03302923d 2011-10-15 (author 2011-10-15) -> exp "2011-10-15" | data "2011-10-15"
+ok  origin line    polly2          frame 4c11a003d 2026-07-11 | rtl/tsp/peel_core.sv | git 4c11a003d 2026-07-11 (author 2026-07-05) -> exp "2026-07-11" | data "2026-07-11"
+ok  origin line    polly2          frame 564b53383 2026-07-28 | polly2-core/rtl/tsp/tex/tex_cache_4p_1c.sv | git 564b53383 2026-07-28 (author 2026-07-28) -> exp "2026-07-28" | data "2026-07-28" | non-first-parent log: 6a1552a19 2026-07-28
+ok  origin line    reicast         frame 239e17822 2018-09-03 | core/hw/pvr/ta_ctx.cpp | git 71d7f9085 2018-07-19 (author 2018-07-19) -> exp "2018-07-19" | data "2018-07-19"
+ok  origin line    reicast         frame 4e5edefa9 2013-12-23 | newdc/imgread/common.h | git 4e5edefa9 2013-12-23 (author 2013-12-23) -> exp "2013-12-23" | data "2013-12-23" | non-first-parent log: 867f6601c 2013-12-23
+ok  origin line    reicast         frame 1c16baeb0 2013-12-19 | newdc/hw/sh4/dyna/shil_canonical.h | git 1c16baeb0 2013-12-19 (author 2013-12-19) -> exp "2012-2013 (dated 2013-12-19)" | data "2012-2013 (dated 2013-12-19)"
+ok  origin line    reicast         frame 1c16baeb0 2013-12-19 | newdc/imgread/cdi.cpp | git 1c16baeb0 2013-12-19 (author 2013-12-19) -> exp "2012-2013 (dated 2013-12-19)" | data "2012-2013 (dated 2013-12-19)"
+ok  origin segment HarissaDC       frame 37fa91cbb 2026-11-03 | src/bios/hle_bios.cpp | git 37fa91cbb 2026-11-03 (author 2026-11-03) -> exp "2026-11-03" | data "2026-11-03"
+ok  origin segment HarissaDC       frame 37fa91cbb 2026-11-03 | src/bios/hle_bios.cpp | git 37fa91cbb 2026-11-03 (author 2026-11-03) -> exp "2026-11-03" | data "2026-11-03"
+ok  origin segment NotDC-PS3       frame 5a32b94be 2026-09-19 | dc/sh4/sh4_registers.cpp | git 5a32b94be 2026-09-19 (author 2026-09-19) -> exp "2026-09-19" | data "2026-09-19"
+ok  origin segment NotDC-PS3       frame a5d7deaec 2026-09-23 | ps3/ps3_rend.cpp | git a5d7deaec 2026-09-23 (author 2026-09-23) -> exp "2026-09-23" | data "2026-09-23"
+ok  origin segment dc4ever         frame 128a1910e 2004-10-17 | DC/PowerVR2DC/powervr.cs | git 128a1910e 2004-10-17 (author 2004-10-17) -> exp "2004-10-17 (approx.)" | data "2004-10-17 (approx.)"
+BAD origin segment dc4ever         frame dc12419a4 2004-10-12 | DC/SH4.7091/sh4imp.cs | git dc12419a4 2004-10-12 (author 2004-10-12) -> exp "2004-10-12 (approx.)" | data "2004-10-12 (approx.)" | text NOT in file
+ok  origin segment flycast         frame 8eac84482 2019-09-30 | core/cheats.cpp | git 920bb44c3 2019-09-27 (author 2019-09-27) -> exp "2019-09-27" | data "2019-09-27"
+ok  origin segment flycast         frame d732140bf 2022-04-16 | core/hw/pvr/elan.cpp | git d732140bf 2022-04-16 (author 2022-04-16) -> exp "2022-04-16" | data "2022-04-16" | non-first-parent log: 94c20ba29 2022-04-02
+ok  origin segment minicast        frame 918f74282 2026-07-13 | libswirl/hw/pvr/ta_ring.h | git 918f74282 2026-07-13 (author 2026-07-13) -> exp "2026-07-13" | data "2026-07-13" | non-first-parent log: 83c2fb058 2026-07-13
+ok  origin segment minicast        frame 918f74282 2026-07-13 | libswirl/hw/pvr/ta.cpp | git 918f74282 2026-07-13 (author 2026-07-13) -> exp "2026-07-13" | data "2026-07-13" | non-first-parent log: 83c2fb058 2026-07-13
+ok  origin segment nullDC          frame 398dab4cb 2010-05-09 | nulldc/plugins/nullAICA/dsp.cpp | git 398dab4cb 2010-05-09 (author 2010-05-09) -> exp "2010-05-09" | data "2010-05-09"
+ok virtual origin
+ok  origin segment nullDC4Wii      frame ef0d3f9f7 2026-10-31 | dc/pvr/vram_track.h | git 45cbfff64 2026-10-28 (author 2026-10-28) -> exp "2026-10-28" | data "2026-10-28"
+ok  origin segment nullDC4WiiU     frame 75bc844cc 2026-11-07 | wiiu/audio_wiiu.cpp | git 75bc844cc 2026-11-07 (author 2026-11-07) -> exp "2026-11-07" | data "2026-11-07"
+ok  origin segment nullDC4WiiU     frame 75bc844cc 2026-11-07 | dc/maple/maple_devs.cpp | git 75bc844cc 2026-11-07 (author 2026-11-07) -> exp "2026-11-07" | data "2026-11-07"
+BAD origin segment nullDCe         frame 39c055006 2009-10-16 | psp/dc/sh4/rec_v2/psp_driver.cpp | git 39c055006 2017-11-20 (author 2017-11-20) -> exp "2008-2010 (dated 2009-10-16)" | data "2008-2010 (dated 2009-10-16)" | text NOT in file
+ok  origin segment nullDCe         frame 39c055006 2009-10-16 | dc/sh4/rec_v2/decoder.cpp | git 39c055006 2017-11-20 (author 2017-11-20) -> exp "2008-2010 (dated 2009-10-16)" | data "2008-2010 (dated 2009-10-16)"
+ok  origin segment nullDCe-PSP     frame d04a8e2fa 2021-02-04 | plugs/drkPvr/nullRend.cpp | git d04a8e2fa 2021-02-04 (author 2021-02-04) -> exp "2021-02-04" | data "2021-02-04"
+ok  origin segment nulldc-360      frame 567c2abe1 2011-11-20 | nullDC/emitter/3DMath.h | git 567c2abe1 2011-11-20 (author 2011-11-20) -> exp "2011-11-20" | data "2011-11-20"
+ok  origin segment nulldc-360      frame 03302923d 2011-10-15 | plugins/drkPvr/drkPvr.cpp | git 03302923d 2011-10-15 (author 2011-10-15) -> exp "2011-10-15" | data "2011-10-15"
+ok  origin segment nulldc3         frame 4c6a519b3 2024-12-08 | libswirl/hw/sh4/dyna/decoder.cpp | git 4c6a519b3 2024-12-08 (author 2024-12-08) -> exp "2024-12-08" | data "2024-12-08" | non-first-parent log: 6571c5ebb 2024-12-08
+ok  origin segment nulldc3         frame 0a789c8dd 2025-05-27 | libswirl/rend/refsw2/refsw_tile.cpp | git 0a789c8dd 2025-05-27 (author 2025-05-27) -> exp "2025-05-27" | data "2025-05-27"
+BAD origin segment polly2          frame 436372f4b 2026-07-17 | polly2-de10nano/rtl/spg.sv | git 436372f4b 2026-07-17 (author 2026-07-17) -> exp "2026-07-17" | data "2026-07-17" | text NOT in file | non-first-parent log: 55675af12 2026-07-17
+ok  origin segment polly2          frame e84bfc261 2026-07-14 | rtl/tsp/tsp_shade_v2_pp.sv | git e84bfc261 2026-07-14 (author 2026-07-14) -> exp "2026-07-14" | data "2026-07-14" | non-first-parent log: 956f3fd0e 2026-07-14
+ok  origin segment reicast         frame a6b773a23 2019-05-17 | core/hw/sh4/dyna/ngen.h | git 83a6c0ee7 2019-05-15 (author 2019-05-15) -> exp "2019-05-15" | data "2019-05-15" | non-first-parent log: 65e221879 2019-05-13
+ok  origin segment reicast         frame 2cf59b42b 2019-03-27 | core/hw/maple/maple_devs.cpp | git 2cf59b42b 2019-03-27 (author 2019-03-27) -> exp "2019-03-27" | data "2019-03-27" | non-first-parent log: 56be9f462 2019-02-22
+BAD origin segment reicast         frame 1c16baeb0 2013-12-19 | newdc/rec-ARM/arm_dyna.cpp | git 1c16baeb0 2013-12-19 (author 2013-12-19) -> exp "2012-2013 (dated 2013-12-19)" | data "2012-2013 (dated 2013-12-19)" | text NOT in file
+ok  stop   file    NotDC-PS3       frame 5d81924ec 2026-11-01 | dc/sh4/rec_v2/driver.cpp | git a69dfa0c0 2026-10-24 (author 2026-10-24) -> exp "2026-10-24" | data "2026-10-24"
+ok  stop   file    NotDC-PS3       frame 5a32b94be 2026-09-19 | dc/sh4/rec_v2/driver.cpp | git 5a32b94be 2026-09-19 (author 2026-09-19) -> exp "2026-09-19" | data "2026-09-19"
+ok  stop   file    flycast         frame 105342d53 2026-11-22 | core/hw/pvr/Renderer_if.cpp | git 11ba75f84 2026-10-27 (author 2026-10-27) -> exp "2026-10-27" | data "2026-10-27"
+ok  stop   file    flycast         frame 105342d53 2026-11-22 | core/hw/sh4/interpr/sh4_opcodes.cpp | git a06791780 2024-12-29 (author 2024-12-29) -> exp "2024-12-29" | data "2024-12-29" | non-first-parent log: 7c1c5817d 2024-11-09
+ok  stop   file    minicast        frame 580d7b86a 2025-01-20 | libswirl/hw/sh4/interpr/sh4_opcodes.cpp | git 580d7b86a 2025-01-20 (author 2025-01-20) -> exp "2025-01-20" | data "2025-01-20"
+ok  stop   file    minicast        frame 580d7b86a 2025-01-20 | libswirl/hw/pvr/Renderer_if.cpp | git 580d7b86a 2025-01-20 (author 2025-01-20) -> exp "2025-01-20" | data "2025-01-20"
+ok  stop   file    nullDC          frame c563e075c 2011-09-14 | nulldc/nullDC/dc/sh4/rec_v1/driver.cpp | git 1568526c6 2010-12-12 (author 2010-12-12) -> exp "2010-12-12" | data "2010-12-12"
+ok  stop   file    nullDC          frame 1611c3cf0 2023-07-10 | nulldc/plugins/drkPvr/Renderer_if.cpp | git fd70a76a4 2010-05-10 (author 2010-05-10) -> exp "2010-05-10" | data "2010-05-10"
+ok  stop   file    nullDC4Wii      frame 5f324d8aa 2026-11-19 | plugs/drkPvr/Renderer_if.cpp | git 7b93b6c19 2026-09-18 (author 2026-09-18) -> exp "2026-09-18" | data "2026-09-18"
+ok  stop   file    nullDC4Wii      frame 5f324d8aa 2026-11-19 | dc/sh4/rec_v2/driver.cpp | git 8f0f1a4cf 2026-09-20 (author 2026-09-20) -> exp "2026-09-20" | data "2026-09-20"
+ok  stop   file    nullDC4WiiU     frame c934dc334 2026-11-22 | plugs/drkPvr/Renderer_if.cpp | git 7b93b6c19 2026-09-18 (author 2026-09-18) -> exp "2026-09-18" | data "2026-09-18" | in shared history
+ok  stop   file    nullDC4WiiU     frame c934dc334 2026-11-22 | dc/sh4/rec_v2/driver.cpp | git d5a08c13d 2026-11-19 (author 2026-11-17) -> exp "2026-11-19" | data "2026-11-19"
+ok  stop   file    nullDCe         frame 39c055006 2009-10-16 | dc/sh4/rec_v2/driver.cpp | git 39c055006 2017-11-20 (author 2017-11-20) -> exp "2008-2010 (dated 2009-10-16)" | data "2008-2010 (dated 2009-10-16)"
+ok  stop   file    nullDCe         frame c3e0c9bf0 2024-09-27 | plugs/drkPvr/Renderer_if.cpp | git 39c055006 2017-11-20 (author 2017-11-20) -> exp "2008-2010 (dated 2009-10-16)" | data "2008-2010 (dated 2009-10-16)"
+ok  stop   file    nullDCe-PSP     frame d6f177467 2021-10-17 | plugs/drkPvr/Renderer_if.cpp | git d04a8e2fa 2021-02-04 (author 2021-02-04) -> exp "2021-02-04" | data "2021-02-04"
+ok  stop   file    nullDCe-PSP     frame e13f07c78 2021-02-04 | dc/sh4/rec_v2/driver.cpp | git e13f07c78 2021-02-04 (author 2021-02-04) -> exp "2021-02-04" | data "2021-02-04"
+ok  stop   file    nulldc-360      frame 0647b4392 2012-08-23 | nullDC/dc/sh4/rec_v1/driver.cpp | git ab83a08f9 2012-02-25 (author 2012-02-25) -> exp "2012-02-25" | data "2012-02-25"
+ok  stop   file    nulldc-360      frame 01c0ddef4 2011-11-13 | nullDC/dc/sh4/rec_v1/driver.cpp | git 8a627e5ef 2011-11-09 (author 2011-11-09) -> exp "2011-11-09" | data "2011-11-09"
+ok  stop   file    nulldc3         frame d5d4eae1f 2024-07-10 | libswirl/rend/soft/refsw.cpp | git 038f7ef37 2023-07-07 (author 2023-07-07) -> exp "2023-07-07" | data "2023-07-07"
+ok  stop   file    nulldc3         frame f2300244a 2023-07-07 | libswirl/rend/soft/refsw.cpp | git 37dba034a 2020-03-21 (author 2020-03-21) -> exp "2020-03-21" | data "2020-03-21" | in shared history | non-first-parent log: d29d568d1 2020-03-21
+ok  stop   file    reicast         frame 239e17822 2018-09-03 | core/hw/sh4/interpr/sh4_opcodes.cpp | git 2fb992768 2018-08-17 (author 2018-08-17) -> exp "2018-08-17" | data "2018-08-17"
+ok  stop   file    reicast         frame a6b773a23 2019-05-17 | core/hw/sh4/interpr/sh4_opcodes.cpp | git 2cf59b42b 2019-03-27 (author 2019-03-27) -> exp "2019-03-27" | data "2019-03-27" | non-first-parent log: 8564f497d 2019-03-20
+ok  stop   file    reicast         frame 1c16baeb0 2013-12-19 | newdc/hw/pvr/Renderer_if.cpp | git 1c16baeb0 2013-12-19 (author 2013-12-19) -> exp "2012-2013 (dated 2013-12-19)" | data "2012-2013 (dated 2013-12-19)"
+ok  stop   file    reicast         frame 1c16baeb0 2013-12-19 | newdc/hw/pvr/spg.cpp | git 1c16baeb0 2013-12-19 (author 2013-12-19) -> exp "2012-2013 (dated 2013-12-19)" | data "2012-2013 (dated 2013-12-19)"
+ok  stop   line    NotDC-PS3       frame 5d81924ec 2026-11-01 | plugs/EmptyAICA/aica_hle.cpp | git 5a32b94be 2026-09-19 (author 2026-09-19) -> exp "2026-09-19" | data "2026-09-19"
+ok  stop   line    NotDC-PS3       frame e355cc57d 2026-10-18 | ps3/ps3_rend.cpp | git e355cc57d 2026-10-18 (author 2026-10-18) -> exp "2026-10-18" | data "2026-10-18"
+ok  stop   line    dc4ever         frame 36942ff38 2005-09-15 | DC/Bios/bios.cs | git b1a91dc04 2005-06-25 (author 2005-06-25) -> exp "2005-06-25 (approx.)" | data "2005-06-25 (approx.)"
+ok  stop   line    dc4ever         frame 405dd41af 2005-06-24 | 256b.s | git 2e3cd1650 2004-04-20 (author 2004-04-20) -> exp "2004-04-20 (approx.)" | data "2004-04-20 (approx.)"
+ok  stop   line    devtools        frame 42231c6fb 2026-10-24 | experiments/aica_dsp_playground/dsp/dsp.h | git 475d5431f 2025-10-05 (author 2025-10-05) -> exp "2025-10-05" | data "2025-10-05" | non-first-parent log: 11ee117ec 2025-10-05
+ok  stop   line    devtools        frame 475d5431f 2025-10-05 | experiments/aica_dsp_playground/dsp/dsp.h | git 475d5431f 2025-10-05 (author 2025-10-05) -> exp "2025-10-05" | data "2025-10-05" | non-first-parent log: 11ee117ec 2025-10-05
+ok  stop   line    flycast         frame 84ab237b0 2018-10-20 | core/hw/pvr/ta_vtx.cpp | git 1546e4fa8 2018-08-31 (author 2018-08-31) -> exp "2018-08-31" | data "2018-08-31" | in shared history
+ok  stop   line    flycast         frame 105342d53 2026-11-22 | core/hw/maple/maple_devs.cpp | git 658abb386 2026-10-12 (author 2026-10-12) -> exp "2026-10-12" | data "2026-10-12"
+ok  stop   line    minicast        frame 3333e0837 2026-07-18 | setup_hdmi/main.cpp | git 585205bc5 2026-07-17 (author 2026-07-17) -> exp "2026-07-17" | data "2026-07-17" | non-first-parent log: 369f3e00b 2026-07-16
+ok  stop   line    minicast        frame 9185ab882 2026-10-24 | libswirl/hw/sh4/sh4_interrupts.cpp | git 580d7b86a 2025-01-20 (author 2025-01-20) -> exp "2025-01-20" | data "2025-01-20"
+ok  stop   line    nullDC          frame 1611c3cf0 2023-07-10 | nulldc/plugins/nullDC_GUI/emuWinUI.cpp | git c96673e15 2013-01-27 (author 2013-01-27) -> exp "2013-01-27" | data "2013-01-27"
+ok  stop   line    nullDC          frame 1fe9c6dff 2010-05-09 | nulldc/nullDC/dc/sh4/sh4_fpu.cpp | git 1fe9c6dff 2010-05-09 (author 2010-05-09) -> exp "2010-05-09" | data "2010-05-09"
+ok  stop   line    nullDC4Wii      frame e812c5828 2026-01-21 | dc/mem/sh4_mem.cpp | git e812c5828 2026-01-21 (author 2026-01-21) -> exp "2026-01-21" | data "2026-01-21"
+ok  stop   line    nullDC4Wii      frame 1ac7a1827 2026-03-15 | plugs/nullAICA/sgc_if.cpp | git dc32a12f4 2026-03-02 (author 2026-03-02) -> exp "2026-03-02" | data "2026-03-02"
+ok  stop   line    nullDC4WiiU     frame 75bc844cc 2026-11-07 | plugs/ImgReader/common.cpp | git 0c586a33a 2026-10-19 (author 2026-10-19) -> exp "2026-10-19" | data "2026-10-19" | in shared history
+ok  stop   line    nullDC4WiiU     frame c934dc334 2026-11-22 | dc/sh4/intc.cpp | git 362f8d1dc 2026-11-21 (author 2026-11-20) -> exp "2026-11-21" | data "2026-11-21"
+ok  stop   line    nullDCe         frame c3e0c9bf0 2024-09-27 | dc/sh4/sh4_opcode_list.cpp | git 510657b25 2024-09-27 (author 2024-09-27) -> exp "2024-09-27" | data "2024-09-27"
+ok  stop   line    nullDCe         frame c3e0c9bf0 2024-09-27 | psp/dc/sh4/rec_v2/psp_driver.cpp | git 510657b25 2024-09-27 (author 2024-09-27) -> exp "2024-09-27" | data "2024-09-27"
+ok  stop   line    nullDCe         frame 39c055006 2009-10-16 | emitter/emitter/x86_op_encoder.h | git 39c055006 2017-11-20 (author 2017-11-20) -> exp "2008-2010 (dated 2009-10-16)" | data "2008-2010 (dated 2009-10-16)"
+ok  stop   line    nullDCe         frame 39c055006 2009-10-16 | dc/sh4/sh4_registers.cpp | git 39c055006 2017-11-20 (author 2017-11-20) -> exp "2008-2010 (dated 2009-10-16)" | data "2008-2010 (dated 2009-10-16)"
+ok  stop   line    nullDCe-PSP     frame d6f177467 2021-10-17 | dc/sh4/dmac.cpp | git 7fe5a441d 2021-08-19 (author 2021-08-19) -> exp "2021-08-19" | data "2021-08-19"
+ok  stop   line    nullDCe-PSP     frame d6f177467 2021-10-17 | plugins/plugin_header.h | git d04a8e2fa 2021-02-04 (author 2021-02-04) -> exp "2021-02-04" | data "2021-02-04"
+ok  stop   line    nulldc-360      frame 03302923d 2011-10-15 | nullDC/dc/sh4/bsc.cpp | git 03302923d 2011-10-15 (author 2011-10-15) -> exp "2011-10-15" | data "2011-10-15"
+ok  stop   line    nulldc-360      frame 85be5cdad 2011-12-05 | plugins/ImgReader/ImgReader.cpp | git 0b0711480 2011-11-19 (author 2011-11-19) -> exp "2011-11-19" | data "2011-11-19"
+ok  stop   line    nulldc3         frame 4f3efe15f 2026-11-20 | libswirl/hw/sh4/sh4_mmr.h | git 11a02e571 2020-02-04 (author 2020-02-04) -> exp "2020-02-04" | data "2020-02-04" | in shared history | non-first-parent log: 8f909a14c 2020-02-04
+ok  stop   line    nulldc3         frame 34a62ea8a 2026-10-04 | libswirl/jit/backend/x86/rec_x86_il.inl | git 34390bfce 2020-02-12 (author 2020-02-12) -> exp "2020-02-12" | data "2020-02-12" | in shared history | non-first-parent log: a424ce35c 2020-02-11
+ok  stop   line    polly2          frame 1a2e0b0de 2026-07-11 | rtl/tsp/peel_core.sv | git 1a2e0b0de 2026-07-11 (author 2026-07-05) -> exp "2026-07-11" | data "2026-07-11"
+ok  stop   line    polly2          frame 564b53383 2026-07-28 | polly2-core/rtl/tsp/tex/tex_cache_4p_1c.sv | git 564b53383 2026-07-28 (author 2026-07-28) -> exp "2026-07-28" | data "2026-07-28" | non-first-parent log: 6a1552a19 2026-07-28
+ok  stop   line    reicast         frame 6cdb605dd 2023-07-10 | libswirl/jit/backend/x86/rec_x86_il.inl | git 34390bfce 2020-02-12 (author 2020-02-12) -> exp "2020-02-12" | data "2020-02-12" | non-first-parent log: a424ce35c 2020-02-11
+ok  stop   line    reicast         frame 6cdb605dd 2023-07-10 | libswirl/hw/gdrom/gdrom_if.h | git 11a02e571 2020-02-04 (author 2020-02-04) -> exp "2020-02-04" | data "2020-02-04" | non-first-parent log: 8f909a14c 2020-02-04
+ok  stop   line    reicast         frame 1c16baeb0 2013-12-19 | newdc/hw/sh4/interpr/sh4_opcodes.cpp | git 1c16baeb0 2013-12-19 (author 2013-12-19) -> exp "2012-2013 (dated 2013-12-19)" | data "2012-2013 (dated 2013-12-19)"
+ok  stop   line    reicast         frame 1c16baeb0 2013-12-19 | newdc/hw/sh4/dyna/decoder.cpp | git 1c16baeb0 2013-12-19 (author 2013-12-19) -> exp "2012-2013 (dated 2013-12-19)" | data "2012-2013 (dated 2013-12-19)"
+ok  stop   segment HarissaDC       frame 462ddbb56 2026-11-03 | src/bios/hle_bios.cpp | git 37fa91cbb 2026-11-03 (author 2026-11-03) -> exp "2026-11-03" | data "2026-11-03"
+ok  stop   segment HarissaDC       frame bf379efaf 2026-11-05 | src/bios/hle_bios.cpp | git 37fa91cbb 2026-11-03 (author 2026-11-03) -> exp "2026-11-03" | data "2026-11-03"
+ok  stop   segment NotDC-PS3       frame 5d81924ec 2026-11-01 | plugs/nullAICA/mem.cpp | git 5a32b94be 2026-09-19 (author 2026-09-19) -> exp "2026-09-19" | data "2026-09-19"
+ok  stop   segment NotDC-PS3       frame 5d81924ec 2026-11-01 | plugs/vbaARM/arm_aica.h | git 5a32b94be 2026-09-19 (author 2026-09-19) -> exp "2026-09-19" | data "2026-09-19"
+ok  stop   segment dc4ever         frame 315134e53 2005-03-27 | DC/PowerVR2DC/powervr.cs | git 315134e53 2005-03-27 (author 2005-03-27) -> exp "2005-03-27 (approx.)" | data "2005-03-27 (approx.)"
+ok  stop   segment dc4ever         frame 36942ff38 2005-09-15 | DC/SH4.7091/cachedInt.cs | git b6507f2d5 2004-04-15 (author 2004-04-15) -> exp "2004-04-15 (approx.)" | data "2004-04-15 (approx.)"
+ok  stop   segment flycast         frame 84ab237b0 2018-10-20 | core/hw/naomi/naomi.cpp | git a29fbc62c 2018-03-09 (author 2018-03-09) -> exp "2018-03-09" | data "2018-03-09" | in shared history | non-first-parent log: 5c343a219 2018-03-05
+ok  stop   segment flycast         frame 84ab237b0 2018-10-20 | core/arm_emitter/E_DataOp.h | git 71d7f9085 2018-07-19 (author 2018-07-19) -> exp "2018-07-19" | data "2018-07-19" | in shared history | non-first-parent log: 5525d5dde 2018-07-09
+ok  stop   segment minicast        frame 580d7b86a 2025-01-20 | libswirl/hw/naomi/naomi.cpp | git 580d7b86a 2025-01-20 (author 2025-01-20) -> exp "2025-01-20" | data "2025-01-20"
+ok  stop   segment minicast        frame 934b374fa 2026-08-01 | libswirl/hw/pvr/ta_ring.h | git 4dc1ea2f4 2026-07-30 (author 2026-07-30) -> exp "2026-07-30" | data "2026-07-30" | non-first-parent log: c4e2c10a5 2026-07-22
+ok  stop   segment nullDC          frame 18f58525c 2010-05-09 | emitter/x86_matcher.h | git 18f58525c 2010-05-09 (author 2010-05-09) -> exp "2010-05-09" | data "2010-05-09"
+ok  stop   segment nullDC          frame 1611c3cf0 2023-07-10 | nulldc/nullDC/dc/gdrom/gdromv3.cpp | git c96673e15 2013-01-27 (author 2013-01-27) -> exp "2013-01-27" | data "2013-01-27"
+ok  stop   segment nullDC4Wii      frame 5f324d8aa 2026-11-19 | plugs/drkPvr/ta.h | git e5aa31447 2026-10-19 (author 2026-10-19) -> exp "2026-10-19" | data "2026-10-19"
+ok  stop   segment nullDC4Wii      frame c9b6ad964 2026-02-26 | dc/mem/sh4_mem.cpp | git d468510d7 2026-02-15 (author 2026-02-15) -> exp "2026-02-15" | data "2026-02-15"
+ok  stop   segment nullDC4WiiU     frame 03ab75bd3 2026-11-07 | dc/maple/maple_devs.cpp | git 75bc844cc 2026-11-07 (author 2026-11-07) -> exp "2026-11-07" | data "2026-11-07"
+ok  stop   segment nullDC4WiiU     frame c934dc334 2026-11-22 | dc/gdrom/gdromv3.cpp | git 362f8d1dc 2026-11-21 (author 2026-11-20) -> exp "2026-11-21" | data "2026-11-21"
+ok  stop   segment nullDCe         frame c3e0c9bf0 2024-09-27 | dc/gdrom/gdromv3.cpp | git 510657b25 2024-09-27 (author 2024-09-27) -> exp "2024-09-27" | data "2024-09-27"
+ok  stop   segment nullDCe         frame c3e0c9bf0 2024-09-27 | psp/dc/sh4/rec_v2/psp_driver.cpp | git 510657b25 2024-09-27 (author 2024-09-27) -> exp "2024-09-27" | data "2024-09-27"
+ok  stop   segment nullDCe         frame c3e0c9bf0 2024-09-27 | plugs/drkPvr/tex_decode.cpp | git 39c055006 2017-11-20 (author 2017-11-20) -> exp "2008-2010 (dated 2009-10-16)" | data "2008-2010 (dated 2009-10-16)"
+ok  stop   segment nullDCe         frame c3e0c9bf0 2024-09-27 | plugs/EmptyAICA/aica_hax.cpp | git 39c055006 2017-11-20 (author 2017-11-20) -> exp "2008-2010 (dated 2009-10-16)" | data "2008-2010 (dated 2009-10-16)"
+ok  stop   segment nullDCe-PSP     frame d6f177467 2021-10-17 | plugs/drkPvr/ta.h | git 36b350ade 2021-06-26 (author 2021-06-26) -> exp "2021-06-26" | data "2021-06-26"
+ok  stop   segment nullDCe-PSP     frame d6f177467 2021-10-17 | dc/gdrom/gdromv3.cpp | git 36b350ade 2021-06-26 (author 2021-06-26) -> exp "2021-06-26" | data "2021-06-26"
+ok  stop   segment nulldc-360      frame 03302923d 2011-10-15 | plugins/drkPvr/TexCache.cpp | git 03302923d 2011-10-15 (author 2011-10-15) -> exp "2011-10-15" | data "2011-10-15"
+ok  stop   segment nulldc-360      frame bd0bfaeef 2022-02-11 | plugins/EmptyAICA/aica_hax.cpp | git 03302923d 2011-10-15 (author 2011-10-15) -> exp "2011-10-15" | data "2011-10-15"
+ok  stop   segment nulldc3         frame 4f3efe15f 2026-11-20 | libswirl/hw/sh4/dyna/shil_canonical.h | git 165775e5e 2026-10-16 (author 2026-10-16) -> exp "2026-10-16" | data "2026-10-16" | non-first-parent log: da873ac02 2026-10-08
+ok  stop   segment nulldc3         frame f2300244a 2023-07-07 | libswirl/hw/sh4/dyna/decoder.cpp | git 37dba034a 2020-03-21 (author 2020-03-21) -> exp "2020-03-21" | data "2020-03-21" | in shared history | non-first-parent log: 3d223011f 2020-03-21
+ok  stop   segment polly2          frame 267ee1f29 2026-07-29 | polly2-core/rtl/tsp/tsp_shade_v2_pp.sv | git 2cbde481c 2026-07-25 (author 2026-07-25) -> exp "2026-07-25" | data "2026-07-25" | non-first-parent log: 1de26454c 2026-07-25
+ok  stop   segment polly2          frame 3d6d50731 2026-07-27 | polly2-core/rtl/tsp/tsp_shade_v2_pp.sv | git 2cbde481c 2026-07-25 (author 2026-07-25) -> exp "2026-07-25" | data "2026-07-25" | non-first-parent log: 1de26454c 2026-07-25
+ok  stop   segment reicast         frame 6cdb605dd 2023-07-10 | libswirl/hw/gdrom/gdromv3.h | git 67019c608 2020-02-11 (author 2020-02-11) -> exp "2020-02-11" | data "2020-02-11" | non-first-parent log: 26999da3c 2020-02-11
+ok  stop   segment reicast         frame 6cdb605dd 2023-07-10 | libswirl/hw/sh4/interpr/sh4_opcodes.cpp | git 37dba034a 2020-03-21 (author 2020-03-21) -> exp "2020-03-21" | data "2020-03-21" | non-first-parent log: 1e16de52c 2020-03-21
+ok  stop   segment reicast         frame 1c16baeb0 2013-12-19 | newdc/hw/aica/dsp.cpp | git 1c16baeb0 2013-12-19 (author 2013-12-19) -> exp "2012-2013 (dated 2013-12-19)" | data "2012-2013 (dated 2013-12-19)"
+ok  stop   segment reicast         frame 1c16baeb0 2013-12-19 | newdc/hw/pvr/pvr_mem.cpp | git 1c16baeb0 2013-12-19 (author 2013-12-19) -> exp "2012-2013 (dated 2013-12-19)" | data "2012-2013 (dated 2013-12-19)"
+ok  stop   segment flycast         frame 84ab237b0 2018-10-20 | core/hw/naomi/naomi.cpp | git a29fbc62c 2018-03-09 (author 2018-03-09) -> exp "2018-03-09" | data "2018-03-09" | in shared history | non-first-parent log: 5c343a219 2018-03-05
+ok  stop   file    flycast         frame 84ab237b0 2018-10-20 | core/hw/pvr/spg.cpp | git 3cac9134c 2018-07-06 (author 2018-07-06) -> exp "2018-07-06" | data "2018-07-06" | in shared history
+ok  stop   line    flycast         frame 84ab237b0 2018-10-20 | core/cfg/cl.cpp | git 3c4913a35 2018-07-03 (author 2018-07-03) -> exp "2018-07-03" | data "2018-07-03" | in shared history | non-first-parent log: 2e8a87cbd 2018-06-21
+ok  stop   line    nulldc3         frame 4f3efe15f 2026-11-20 | libswirl/hw/pvr/pvr_yuv.cpp | git 11a02e571 2020-02-04 (author 2020-02-04) -> exp "2020-02-04" | data "2020-02-04" | in shared history | non-first-parent log: 8f909a14c 2020-02-04
+ok  stop   segment nulldc3         frame d5d4eae1f 2024-07-10 | libswirl/hw/sh4/dyna/ngen.h | git 11a02e571 2020-02-04 (author 2020-02-04) -> exp "2020-02-04" | data "2020-02-04" | in shared history | non-first-parent log: 8f909a14c 2020-02-04
+ok  stop   segment nulldc3         frame d5d4eae1f 2024-07-10 | libswirl/jit/backend/cpp/rec_cpp.cpp | git 31a0b734f 2020-02-07 (author 2020-02-07) -> exp "2020-02-07" | data "2020-02-07" | in shared history | non-first-parent log: 65a3ae0b3 2020-02-06
+ok  stop   line    nullDC4WiiU     frame 75bc844cc 2026-11-07 | plugs/EmptyAICA/aica_hle.cpp | git 735913509 2026-06-09 (author 2026-06-09) -> exp "2026-06-09" | data "2026-06-09" | in shared history
+ok  stop   segment nullDC4WiiU     frame 75bc844cc 2026-11-07 | dc/gdrom/gdromv3.cpp | git a0de52c9f 2026-10-19 (author 2026-10-19) -> exp "2026-10-19" | data "2026-10-19" | in shared history
+ok  stop   line    nullDC4WiiU     frame 75bc844cc 2026-11-07 | dc/maple/maple_if.cpp | git c3c3f004e 2026-09-20 (author 2026-09-20) -> exp "2026-09-20" | data "2026-09-20" | in shared history
+{'ok': 141, 'nonfp-differs': 39, 'virtual-ok': 3, 'BAD': 4} sampled 148

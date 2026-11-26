@@ -1,0 +1,19 @@
+{
+ "size": [
+  1920,
+  1080
+ ],
+ "views": {
+  "read": {
+   "file": "agents/frames2/fix2/shots/read-gpu-1920x1080.png",
+   "ready_ms": 403,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)"
+  },
+  "rec": {
+   "file": "agents/frames2/fix2/shots/rec-gpu-1920x1080.png",
+   "ready_ms": 409,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)"
+  }
+ },
+ "logs": []
+}

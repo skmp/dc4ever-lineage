@@ -1,0 +1,121 @@
+{
+ "errs": [],
+ "walls": 1472,
+ "NF": 1473,
+ "minGap": 500,
+ "clockBad": 0,
+ "dayOff": 0,
+ "ruler": {
+  "years": 18,
+  "months": 18,
+  "gaps": [
+   "2005-10..2008-12",
+   "2009-01..2009-10",
+   "2013-04..2013-12",
+   "2017-07..2018-03"
+  ]
+ },
+ "rel": [
+  {
+   "tag": "r1",
+   "date": "2026-07-17",
+   "dreamster": "d87e716",
+   "polly2": "be391db",
+   "minicast": "697f565",
+   "frames": [
+    1002,
+    1005
+   ]
+  },
+  {
+   "tag": "r2",
+   "date": "2026-07-17",
+   "dreamster": "fa11f4b",
+   "polly2": "7a70d24",
+   "minicast": "6fcc0e1",
+   "frames": [
+    1003,
+    1006
+   ]
+  },
+  {
+   "tag": "r2b",
+   "date": "2026-07-17",
+   "dreamster": "8a6e2c3",
+   "polly2": "635ec79",
+   "minicast": "6fcc0e1",
+   "frames": [
+    1003,
+    1007
+   ]
+  }
+ ],
+ "relN": 8,
+ "relBad": 0,
+ "marksSample": [
+  {
+   "frame": 103,
+   "lane": 4,
+   "kinds": [
+    "commit",
+    "fork"
+   ],
+   "tags": [],
+   "labels": [
+    "reicast import base"
+   ],
+   "release": false
+  },
+  {
+   "frame": 107,
+   "lane": 1,
+   "kinds": [
+    "commit",
+    "import"
+   ],
+   "tags": [],
+   "labels": [
+    "first complete public tree (Google Code svn, 2010-05)"
+   ],
+   "release": false
+  }
+ ],
+ "badTitles": 0,
+ "titleSamples": [
+  "dc4ever (C#) | 2004-04-09 (approx.) | 1 files, 22 lines",
+  "dreamcast-tests | 2026-11-18 | 181 files, 28,820 lines",
+  "reicast | 2016-05-22 | 309 files, 100,202 lines"
+ ],
+ "bigN": 149,
+ "bigSample": [
+  {
+   "d": "2013-12-19",
+   "note": "project import of the private newdc / nullDC-Android rewrite of 2012-2013",
+   "kinds": [
+    "import",
+    "big"
+   ]
+  },
+  {
+   "d": "2013-12-23",
+   "kinds": [
+    "big"
+   ]
+  }
+ ],
+ "search": {
+  "keys": [
+   "type",
+   "req",
+   "hits",
+   "text",
+   "ms",
+   "partial"
+  ],
+  "n": 2,
+  "s": "{\"type\":\"search\",\"req\":1,\"hits\":[14758,208489],\"text\":[\"\\t\\t//this is kinda wrong .. but meh\",\"\\t\\t\\t//this is kinda wrong .. but meh\"],\"ms\":23.799999952316284,\"partial\":false}"
+ },
+ "xMin": 1032,
+ "xMax": 1376584
+}
+2.3s closed

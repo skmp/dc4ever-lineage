@@ -119,7 +119,12 @@ new ones :D", spg.cpp's "Time to emulate that stuff correctly ;)"), the computed
 distinctive lines (comments and strings held by the most frames across the most lanes, licence boilerplate and
 register tables excluded, one per file), and famous files (SH4 dynarecs, interpreter, spg.cpp, PowerVR renderer
 interface, refsw). Each item visits the frames that hold it, forward and back in time and across lanes at fork points,
-with smooth camera moves to reading range and a caption: the line, where it first appeared, how far it spread.
+with smooth camera moves to reading range and a caption: the line, where it first appeared, how far it spread. The
+caption's dates are the last change of the file holding the line at that frame ("first seen in <lane>, file last changed
+<date>", "now: <lane>, file last changed <date>"), not the frame's date: the last commit touching the file's path at or
+before the frame's commit (first parent, committer date), precomputed into `data/attract.json`. A file whose last change is
+an import with a date override (nullDCe 39c0550, reicast 1c16baeb0) shows the override's range, dc4ever dates are
+approximate (file mtimes), and the virtual nullDC-pre2008 origin reads 2005-2008.
 
 ## Score
 

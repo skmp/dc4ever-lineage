@@ -1,0 +1,23 @@
+{
+ "h0": 217,
+ "heap": 64,
+ "B": {
+  "meta.slot": 1.6,
+  "meta.paths": 15.6,
+  "meta.n": 1.6,
+  "meta.dom": 0.8,
+  "meta.st": 0.4,
+  "meta.ident": 1.6,
+  "loaded": 75,
+  "w.inst": 40.3,
+  "w.colStart": 0,
+  "w.fileStart": 0.1,
+  "w.fileSlot": 0.1,
+  "w.fileIdent": 0.1,
+  "w.fst": 0,
+  "w.fdom": 0,
+  "w.paths": 0.1
+ },
+ "walls": 75
+}
+6.6s closed

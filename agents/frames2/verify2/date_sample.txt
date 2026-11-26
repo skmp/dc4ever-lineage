@@ -1,0 +1,1 @@
+stops ok 60 bad 0; differ from frame date 30/60

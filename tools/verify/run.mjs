@@ -46,7 +46,7 @@ async function launch() {
   delete env.WAYLAND_DISPLAY;
   const flags = [...(xv ? ['--ozone-platform=x11', '--window-position=0,0', '--kiosk'] : ['--headless=new']), `--user-data-dir=${udd}`, '--remote-debugging-port=0', `--window-size=${VW},${VH}`, '--no-first-run', '--no-default-browser-check',
     '--ignore-gpu-blocklist', '--enable-gpu', ...(soft ? ['--use-angle=vulkan'] : ['--use-gl=angle', '--use-angle=gl']), ...(cmd === 'bench' ? ['--disable-gpu-vsync', '--disable-frame-rate-limit'] : []),
-    '--enable-precise-memory-info', '--disable-background-timer-throttling', '--disable-renderer-backgrounding', '--disable-backgrounding-occluded-windows', 'about:blank'];
+    '--enable-precise-memory-info', ...(process.env.CHROME_FLAGS ? process.env.CHROME_FLAGS.split(' ') : []), '--disable-background-timer-throttling', '--disable-renderer-backgrounding', '--disable-backgrounding-occluded-windows', 'about:blank'];
   const proc = spawn(CHROME, flags, { env, stdio: ['ignore', 'ignore', 'pipe'] });
   let errBuf = '';
   const wsUrl = await new Promise((res, rej) => {
@@ -129,7 +129,11 @@ try {
     await open(b, '?shots=1' + (process.env.EXTRA || ''));
     await b.evalJS('window.viewer.whenReady({timeout: 90000})');
     const body = fs.readFileSync(opt('js'), 'utf8');
+    if (opt('trace', false)) await b.send('Tracing.start', { categories: 'toplevel,gpu,gpu.angle,viz,cc,v8,blink.user_timing', transferMode: 'ReportEvents' });
     const r = await b.evalJS(`(async () => { const V = window.viewer; ${body} })()`, 600000);
+    if (opt('trace', false)) { const done = new Promise(r => b.trace.done = r); await b.send('Tracing.end'); await done;   // events > 20 ms: count, total, max
+      const agg = {}; for (const e of b.trace.ev) if (e.ph === 'X' && e.dur > 20000) { const k = e.pid + ' ' + e.name; agg[k] = agg[k] || [0, 0, 0]; agg[k][0]++; agg[k][1] += e.dur / 1000; agg[k][2] = Math.max(agg[k][2], e.dur / 1000); }
+      console.log('trace (events > 20 ms: count, total ms, max ms):'); for (const [k, v] of Object.entries(agg).sort((a, b) => b[1][1] - a[1][1]).slice(0, 30)) console.log('  ', k, v.map(x => Math.round(x)).join(' / ')); }
     console.log(JSON.stringify(r, null, 1));
     if (opt('shot', false)) { const shot = await b.send('Page.captureScreenshot', { format: 'png' });
       const f = path.join(OUT, 'shots', `${opt('shot')}-${tag}-${VW}x${VH}.png`); fs.writeFileSync(f, Buffer.from(shot.data, 'base64')); console.log('shot', f); }

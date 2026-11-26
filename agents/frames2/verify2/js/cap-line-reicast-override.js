@@ -1,0 +1,1 @@
+const it = V.attract.items[0]; await V.attract.showItem(it, 3); await new Promise(r => setTimeout(r, 1500)); return { caption: document.getElementById('caption').innerText, title: (it.text||it.title).slice(0,60) };
