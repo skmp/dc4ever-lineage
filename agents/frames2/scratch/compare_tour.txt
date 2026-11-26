@@ -1,0 +1,5 @@
+picked old/new 142 142 missing [('line', '', "Maple DMA: 'kinda wrong .. but meh'. Held in 278 snapshots, from nullDCe to flycast")] new [('line', '', "Maple DMA: 'kinda wrong .. but meh'. Held in 571 snapshots, from nullDCe to flycast")]
+  lanes Early nullDC wonders if a decoded switch list would be much  ['flycast', 'nulldc3'] []
+old Counter({'shared': 100, 'unique': 42})
+new Counter({'shared': 100, 'unique': 42})
+{'lanes changed': 1}

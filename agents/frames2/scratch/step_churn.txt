@@ -1,0 +1,8 @@
+before
+nullDC4Wii: 98 frames, steps max 19,818, > 1500: 27, > 5000: 5, > 20000: 0; multi-commit steps: max 19,818, > 5000: 5, > 20000: 0
+reicast: 84 frames, steps max 256,998, > 1500: 29, > 5000: 18, > 20000: 8; multi-commit steps: max 256,998, > 5000: 18, > 20000: 8
+flycast: 100 frames, steps max 96,582, > 1500: 55, > 5000: 38, > 20000: 15; multi-commit steps: max 96,582, > 5000: 36, > 20000: 14
+after
+nullDC4Wii: 134 frames, steps max 16,358, > 1500: 40, > 5000: 6, > 20000: 0; multi-commit steps: max 16,358, > 5000: 3, > 20000: 0
+reicast: 141 frames, steps max 257,127, > 1500: 59, > 5000: 20, > 20000: 5; multi-commit steps: max 10,293, > 5000: 3, > 20000: 0
+flycast: 151 frames, steps max 60,550, > 1500: 81, > 5000: 47, > 20000: 13; multi-commit steps: max 59,953, > 5000: 24, > 20000: 4

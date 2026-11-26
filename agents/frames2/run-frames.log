@@ -1,0 +1,204 @@
+make: Entering directory '<repo>/tools/provenance'
+g++ -O2 -march=native -std=c++20 -fopenmp -o frames frames.cpp -lz
+python3 <repo>/tools/frames.py
+nullDC4WiiU: shared history with nullDC4Wii ends at 1459ccb12 2026-10-25
+flycast: shared history with reicast ends at 239e17822 2018-09-03
+nulldc3: shared history with reicast ends at 95b673698 2021-12-22
+HarissaDC        chain     7 months    2 candidates    7 frames    5 fork - 0.1s
+nullDCe          chain     8 months    3 candidates    8 frames    7 fork - 0.1s
+nullDCe-PSP      chain    23 months    6 candidates   23 frames   13 fork - 0.3s
+dc4ever          chain   138 months   15 candidates  138 frames  102 fork - 0.9s
+nullDC4Wii: 17 big commits, 11 accumulated-churn frames (threshold max(1500, 3% of lines))
+reicast: 25 big commits, 17 accumulated-churn frames (threshold max(1500, 3% of lines))
+minicast         chain    34 months    4 candidates   36 frames   35 fork - 0.8s
+nullDC4WiiU      chain    79 months    1 candidates   79 frames   57 fork 1459ccb12 1.6s
+nulldc-360       chain   122 months    9 candidates  122 frames  119 fork - 2.0s
+polly2-r8        chain    16 months    1 candidates   16 frames   10 fork - 0.2s
+devtools         chain    56 months    5 candidates   56 frames   50 fork - 0.4s
+NotDC-PS3        chain   106 months    3 candidates  106 frames  102 fork - 2.7s
+shrike4          chain    12 months    2 candidates   12 frames   10 fork - 0.4s
+nullDC           chain   148 months   20 candidates  148 frames  133 fork - 2.9s
+wren7            chain     4 months    2 candidates    4 frames    4 fork - 0.1s
+caique           chain    13 months    2 candidates   13 frames   11 fork - 0.4s
+nullDC4Wii       chain   994 months   11 candidates  140 frames  134 fork - 3.4s
+nulldc3          chain   109 months   14 candidates  109 frames  105 fork 95b673698 4.0s
+polly2           chain   189 months    4 candidates  195 frames  183 fork - 2.5s
+reicast          chain   875 months   63 candidates  148 frames  141 fork - 5.0s
+dreamcast-tests  chain   124 months    1 candidates  124 frames  103 fork - 3.0s
+flycast: 28 big commits, 9 accumulated-churn frames (threshold max(1500, 3% of lines))
+flycast          chain  2035 months   92 candidates  164 frames  151 fork 239e17822 12.4s
+frames per lane: {'dc4ever': 102, 'nullDC': 133, 'nulldc-360': 119, 'HarissaDC': 5, 'nullDCe': 7, 'nullDCe-PSP': 13, 'nullDC4Wii': 134, 'NotDC-PS3': 102, 'nullDC4WiiU': 57, 'reicast': 141, 'flycast': 151, 'nulldc3': 105, 'minicast': 35, 'polly2': 183, 'polly2-r8': 10, 'devtools': 50, 'dreamcast-tests': 103, 'shrike4': 10, 'caique': 11, 'wren7': 4} total 1475
+OMP_NUM_THREADS=16 ./frames <repo>/agents/frames/work <repo>/repos <repo>/data
+20 lanes, 1476 frames, 23167 blobs read in 0.7s
+  lane dc4ever          frames 102 anc dc4ever<=-1 desc 1 lanes
+  lane nullDC           frames 133 anc nullDC<=-1 desc 9 lanes
+  lane nulldc-360       frames 119 anc nulldc-360<=-1 nullDC<=223 desc 2 lanes
+  lane HarissaDC        frames   5 anc HarissaDC<=-1 desc 1 lanes
+  lane nullDCe          frames   7 anc nullDCe<=-1 desc 11 lanes
+  lane nullDCe-PSP      frames  13 anc nullDCe-PSP<=-1 nullDCe<=103 desc 1 lanes
+  lane nullDC4Wii       frames 134 anc nullDC4Wii<=-1 nullDCe<=633 desc 3 lanes
+  lane NotDC-PS3        frames 102 anc NotDC-PS3<=-1 nullDC4Wii<=1099 nullDCe<=633 desc 1 lanes
+  lane nullDC4WiiU      frames  57 anc nullDC4WiiU<=-1 nullDC4Wii<=1250 nullDCe<=633 desc 1 lanes
+  lane reicast          frames 141 anc reicast<=-1 nullDC<=223 nullDCe<=103 desc 7 lanes
+  lane flycast          frames 151 anc flycast<=-1 reicast<=444 nullDC<=223 nullDCe<=103 desc 2 lanes
+  lane nulldc3          frames 105 anc nulldc3<=-1 reicast<=563 nullDC<=223 nullDCe<=103 desc 3 lanes
+  lane minicast         frames  35 anc minicast<=-1 nulldc3<=629 reicast<=563 nullDC<=223 nullDCe<=103 desc 1 lanes
+  lane polly2           frames 183 anc polly2<=-1 desc 1 lanes
+  lane polly2-r8        frames  10 anc polly2-r8<=-1 desc 1 lanes
+  lane devtools         frames  50 anc devtools<=-1 desc 1 lanes
+  lane dreamcast-tests  frames 103 anc dreamcast-tests<=-1 desc 1 lanes
+  lane shrike4          frames  10 anc shrike4<=-1 desc 1 lanes
+  lane caique           frames  11 anc caique<=-1 desc 2 lanes
+  lane wren7            frames   4 anc wren7<=-1 desc 1 lanes
+raw lines 902753, norm lines 815187 (2.4s)
+    0 2004-04-09 dc4ever          k0      1 files      22 lines +22     -0      KEY 0.00s
+    1 2004-04-15 dc4ever          k1      2 files     195 lines +173    -0      KEY 0.00s
+    5 2004-05-21 dc4ever          k5      6 files     533 lines +57     -0      KEY 0.00s
+    9 2004-10-11 dc4ever          k9     10 files    2699 lines +2094   -0      KEY 0.00s
+   17 2004-10-17 dc4ever          k17    18 files    7188 lines +1489   -0      KEY 0.00s
+   42 2005-03-26 dc4ever          k42    18 files    7613 lines +25     -9      KEY 0.00s
+   65 2005-06-16 dc4ever          k65    26 files   17481 lines +1312   -1464   KEY 0.06s
+   90 2005-06-25 dc4ever          k90    29 files   20767 lines +12     -12     KEY 0.00s
+  103 2009-10-16 nullDCe          k0    236 files   62897 lines +62897  -0      KEY 0.01s
+  104 2010-05-09 nullDC           k0    133 files   38757 lines +38757  -0      KEY 0.01s
+  115 2010-05-13 nullDC           k11   295 files   94254 lines +4531   -7      KEY 0.01s
+  140 2010-07-23 nullDC           k36   297 files   97753 lines +143    -49     KEY 0.01s
+  165 2010-10-20 nullDC           k61   312 files  101845 lines +2      -2      KEY 0.01s
+  190 2010-12-09 nullDC           k86   317 files  102497 lines +32     -11     KEY 0.01s
+  215 2010-12-29 nullDC           k111  322 files  104341 lines +398    -374    KEY 0.01s
+  224 2011-10-15 nulldc-360       k0    195 files   53378 lines +4846   -4265   KEY 0.03s
+  249 2011-11-17 nulldc-360       k25   233 files   68487 lines +55     -64     KEY 0.01s
+  274 2011-11-26 nulldc-360       k50   236 files   69130 lines +83     -18     KEY 0.01s
+  301 2012-08-19 nulldc-360       k75   251 files   73737 lines +4044   -40     KEY 0.01s
+  326 2012-09-04 nulldc-360       k100  249 files   73148 lines +361    -324    KEY 0.01s
+  351 2013-12-19 reicast          k0    200 files   72911 lines +45480  -11429  KEY 0.07s
+  376 2014-04-25 reicast          k25   258 files   88470 lines +1078   -104    KEY 0.01s
+  401 2015-08-14 reicast          k50   296 files   97736 lines +57     -3522   KEY 0.01s
+  426 2018-08-05 reicast          k75   312 files  100613 lines +1763   -1753   KEY 0.01s
+  434 2018-10-20 flycast          k0    314 files  102979 lines +1      -0      KEY 0.02s
+  456 2019-07-25 reicast          k100  379 files  128966 lines +13     -21     KEY 0.01s
+  490 2020-02-02 reicast          k125  407 files  129928 lines +91     -43     KEY 0.01s
+  495 2020-02-29 flycast          k14   436 files  162476 lines +1128   -1886   KEY 0.02s
+  527 2021-02-04 nullDCe-PSP      k0     99 files   27743 lines +5852   -1030   KEY 0.04s
+  534 2021-03-02 flycast          k39   447 files  167347 lines +6225   -3338   KEY 0.03s
+  545 2021-06-26 nullDCe-PSP      k5    193 files   65905 lines +18408  -3352   KEY 0.05s
+  566 2021-12-24 flycast          k61   500 files  245132 lines +56785  -56882  KEY 0.10s
+  593 2023-02-15 flycast          k86   532 files  182921 lines +295    -183    KEY 0.04s
+  601 2023-07-07 nulldc3          k0    452 files  145509 lines +41     -1      KEY 0.14s
+  626 2024-05-23 flycast          k111  566 files  197781 lines +9289   -5926   KEY 0.04s
+  649 2025-01-20 minicast         k0    273 files   94780 lines +224    -126    KEY 0.03s
+  672 2025-01-23 nulldc3          k25   462 files  149126 lines +1      -0      KEY 0.01s
+  703 2025-05-25 nulldc3          k50   464 files  151279 lines +25     -1      KEY 0.01s
+  717 2025-10-05 devtools         k0     34 files    8456 lines +8456   -0      KEY 0.03s
+  742 2025-10-08 devtools         k25    44 files   10595 lines +2      -1      KEY 0.00s
+  765 2025-11-23 devtools         k45    80 files   21795 lines +2336   -11     KEY 0.00s
+  767 2026-01-07 flycast          k136  621 files  211965 lines +23     -20     KEY 0.02s
+  768 2026-01-21 nullDC4Wii       k0    238 files   64790 lines +0      -0      KEY 0.01s
+  791 2026-02-18 nullDC4Wii       k20   170 files   42605 lines +1083   -1101   KEY 0.02s
+  818 2026-04-04 nullDC4Wii       k45   199 files   54933 lines +304    -75     KEY 0.01s
+  851 2026-06-27 nullDC4Wii       k70   205 files   61000 lines +538    -236    KEY 0.01s
+  856 2026-07-01 polly2           k0     27 files    3971 lines +3971   -0      KEY 0.01s
+  866 2026-07-02 polly2           k10    73 files    9362 lines +862    -49     KEY 0.00s
+  891 2026-07-02 polly2           k35    93 files   14231 lines +18     -9      KEY 0.00s
+  917 2026-07-03 polly2           k60   108 files   18559 lines +27     -16     KEY 0.00s
+  951 2026-07-11 polly2           k85   131 files   23679 lines +152    -145    KEY 0.00s
+  976 2026-07-11 polly2           k110  177 files   30215 lines +317    -0      KEY 0.00s
+  1023 2026-07-18 polly2           k135  158 files   25052 lines +29     -1062   KEY 0.00s
+  1028 2026-07-21 nullDC4Wii       k95   229 files   74830 lines +1266   -54     KEY 0.01s
+  1058 2026-07-30 minicast         k25   310 files  107802 lines +15     -3      KEY 0.01s
+  1062 2026-07-30 polly2           k160  183 files   30754 lines +0      -0      KEY 0.00s
+  1102 2026-09-19 NotDC-PS3        k0    266 files  100497 lines +8447   -1016   KEY 0.02s
+  1103 2026-09-20 nullDC4Wii       k120  243 files   96469 lines +2149   -136    KEY 0.01s
+  1125 2026-09-23 shrike4          k0     20 files    4913 lines +4913   -0      KEY 0.00s
+  1126 2026-09-23 caique           k0     76 files    7185 lines +7185   -0      KEY 0.00s
+  1131 2026-09-23 caique           k5    150 files   18394 lines +1670   -116    KEY 0.00s
+  1133 2026-09-23 wren7            k0      9 files    1895 lines +1895   -0      KEY 0.00s
+  1137 2026-09-24 wren7            k2     41 files    5461 lines +2403   -273    KEY 0.01s
+  1138 2026-09-27 shrike4          k1     68 files   18594 lines +14349  -668    KEY 0.02s
+  1146 2026-10-03 NotDC-PS3        k25   296 files  113433 lines +2405   -148    KEY 0.01s
+  1161 2026-10-05 shrike4          k4    409 files  106481 lines +87798  -0      KEY 0.03s
+  1178 2026-10-08 NotDC-PS3        k50   475 files  110693 lines +839    -118    KEY 0.01s
+  1204 2026-10-15 NotDC-PS3        k75   629 files  151808 lines +4      -4      KEY 0.01s
+  1212 2026-10-16 devtools         k46   198 files   64122 lines +46492  -4165   KEY 0.05s
+  1253 2026-10-25 nulldc3          k75   563 files  233307 lines +18     -0      KEY 0.02s
+  1254 2026-10-29 NotDC-PS3        k100  361 files  108023 lines +123    -9      KEY 0.01s
+  1263 2026-11-03 HarissaDC        k0    121 files   30585 lines +30585  -0      KEY 0.04s
+  1268 2026-11-07 nullDC4WiiU      k0    280 files  108045 lines +8494   -57     KEY 0.03s
+  1288 2026-11-17 dreamcast-tests  k0    152 files   20263 lines +20263  -0      KEY 0.01s
+  1313 2026-11-17 dreamcast-tests  k25   165 files   24194 lines +417    -16     KEY 0.00s
+  1347 2026-11-18 dreamcast-tests  k50   181 files   28820 lines +41     -3      KEY 0.00s
+  1372 2026-11-18 dreamcast-tests  k75   220 files   35027 lines +72     -0      KEY 0.00s
+  1390 2026-11-19 nullDC4WiiU      k25   279 files  107830 lines +38     -1      KEY 0.01s
+  1433 2026-11-20 nulldc3          k100  584 files  243868 lines +473    -236    KEY 0.02s
+  1438 2026-11-20 polly2-r8        k0     10 files    1877 lines +1877   -0      KEY 0.03s
+  1439 2026-11-20 polly2-r8        k1     55 files    6417 lines +4540   -0      KEY 0.00s
+  1443 2026-11-20 polly2-r8        k5    123 files   18360 lines +2893   -21     KEY 0.00s
+  1448 2026-11-20 dreamcast-tests  k100  329 files   47749 lines +1224   -0      KEY 0.00s
+  1466 2026-11-21 nullDC4WiiU      k50   293 files  111387 lines +24     -24     KEY 0.01s
+pass done (19.1s), identities 5803, idorg 1119655
+done in 21.0s: 84 chunks
+python3 <repo>/tools/frames_manifest.py
+frames.json: 1476 frames, 20 lanes; data total 33372742 bytes in 190 files
+python3 <repo>/tools/viewer_prep.py
+time axis: walls x 1032 .. 1378165 (344.3 months of x), 593 knots, 18 stretched months (max x22.0)
+layout: 20 lanes, 8013 slots, 1486 columns, 1475 walls, X extent 1378165, Z extent 233208, 37 edges, 168 marks; 36 bookmarks; 7.3s
+  dc4ever          z0=      0 cols=  20 slots=   29 frames=102
+  nullDC           z0=   4560 cols=  69 slots=  342 frames=133
+  nulldc-360       z0=  15392 cols=  57 slots=  298 frames=119
+  HarissaDC        z0=  24688 cols=  25 slots=  133 frames=5
+  nullDCe          z0=  29888 cols=  54 slots=  240 frames=7
+  nullDCe-PSP      z0=  38800 cols=  49 slots=  199 frames=13
+  nullDC4Wii       z0=  47072 cols= 104 slots=  428 frames=134
+  NotDC-PS3        z0=  62384 cols= 142 slots=  743 frames=102
+  nullDC4WiiU      z0=  82560 cols=  72 slots=  296 frames=57
+  reicast          z0=  93776 cols= 125 slots=  578 frames=141
+  flycast          z0= 111776 cols= 234 slots=  863 frames=151
+  nulldc3          z0= 143728 cols= 178 slots=  699 frames=105
+  minicast         z0= 171512 cols=  70 slots=  312 frames=35
+  polly2           z0= 182472 cols=  35 slots=  289 frames=183
+  polly2-r8        z0= 188952 cols=  17 slots=  162 frames=10
+  devtools         z0= 193128 cols=  49 slots=  218 frames=50
+  dreamcast-tests  z0= 201400 cols=  50 slots=  423 frames=103
+  shrike4          z0= 209800 cols= 108 slots= 1482 frames=10
+  caique           z0= 225624 cols=  21 slots=  232 frames=11
+  wren7            z0= 230312 cols=   7 slots=   47 frames=4
+  edge concept dc4ever -> nullDC: partial derivation (C# to C++): 1,203 lines of nullDC 2023-07 first seen in dc4ever (1.6 %)
+  edge import nullDC trunk c563e07 -> nulldc-360: imported snapshot: 42,697 lines of nulldc-360 2022-02 first seen in nullDC (71.0 %)
+  edge concept nullDC4Wii -> HarissaDC: studied (CREDITS.md), no shared code: 60 lines of HarissaDC 2026-11 first seen in nullDC4Wii (0.2 %)
+  edge concept nulldc-360 -> HarissaDC: studied (CREDITS.md), no shared code: 16 lines of HarissaDC 2026-11 first seen in nulldc-360 (0.1 %)
+  edge concept flycast -> HarissaDC: studied (CREDITS.md), no shared code: 16 lines of HarissaDC 2026-11 first seen in flycast (0.1 %)
+  edge concept dc4ever -> nullDCe: 446 lines of nullDCe 2024-09 first seen in dc4ever (1.0 %)
+  edge import nullDCe 39c0550 -> nullDCe-PSP: PSP tree restored to build (2021): 29,235 lines of nullDCe-PSP 2021-10 first seen in nullDCe (60.9 %)
+  edge copy reicast -> nullDCe-PSP: FSCA table, disc image readers, scheduler, PSP register allocator: 6,402 lines of nullDCe-PSP 2021-10 first seen in reicast
+  edge copy flycast -> nullDCe-PSP: SHIL / SSA passes, GD-ROM fixes: 611 lines of nullDCe-PSP 2021-10 first seen in flycast
+  edge copy nullDC -> nullDCe-PSP: vbaARM ARM7 (arm-new.h verbatim), nullAICA: 8,007 lines of nullDCe-PSP 2021-10 first seen in nullDC
+  edge copy nulldc-360 -> nullDCe-PSP: nullAICA / sound output lines: 91 lines of nullDCe-PSP 2021-10 first seen in nulldc-360
+  edge import nullDCe bad8d6a -> nullDC4Wii: imported verbatim: 23,075 lines of nullDC4Wii 2026-11 first seen in nullDCe (29.1 %)
+  edge import nullDC4Wii ~9659506 -> NotDC-PS3: imported snapshot: 21,400 lines of NotDC-PS3 2026-11 first seen in nullDC4Wii (26.1 %)
+  edge copy caique-rtl 5aa2376 -> NotDC-PS3 plugs/caiqueAICA (ported model): 652 lines of NotDC-PS3 2026-11 first seen in caique
+  edge git-fork nullDC4Wii 1459ccb -> nullDC4WiiU: git fork (native Wii U port): 52,064 lines of nullDC4WiiU 2026-11 first seen in nullDC4Wii (61.0 %)
+  edge import nullDC c563e07 -> reicast project import 1c16baeb (2012-2013 newdc rewrite): 30,504 lines of reicast 2023-07 first seen in nullDC (30.3 %)
+  edge import nullDCe -> reicast project import 1c16baeb: 22,889 lines of reicast 2023-07 first seen in nullDCe (22.8 %)
+  edge concept dc4ever -> reicast: 648 lines of reicast 2023-07 first seen in dc4ever (0.6 %)
+  edge git-fork reicast -> flycast: git fork (last shared commit 2018-09-03): 26,014 lines of flycast 2026-11 first seen in reicast (16.2 %)
+  edge git-merge flycast merged reicast until 2019-05-17 (a6b773a23): 26,014 lines of flycast 2026-11 first seen in reicast (16.2 %)
+  edge git-fork reicast 95b673698 (2021-12-22) -> nullDC 3: git ancestry: 53,547 lines of nulldc3 2026-11 first seen in reicast (31.9 %)
+  edge import nullDC 3 fpgadc commits (d5d4eae1, 2024-07) -> minicast: imported snapshot: 82 lines of minicast 2026-10 first seen in nulldc3 (0.1 %)
+  edge concept nullDC 3 dumps + refsw-offline -> polly2-rtl: concept / dump format: 0 lines of polly2 2026-10 first seen in nulldc3 (0.0 %)
+  edge copy refsw3 refcore -> polly2-rtl r8 tb/ (ref_copies*.h): 1,321 lines of polly2-r8 2026-11 first seen in nulldc3
+  edge concept polly2-rtl main -> r8/develop: same repo, unrelated history (no merge-base): 159 lines of polly2-r8 2026-11 first seen in polly2 (0.6 %)
+  edge concept nullDC 3 -> dreamcast-devtools (TS): 51 lines of devtools 2026-10 first seen in nulldc3 (0.1 %)
+  edge copy nullDC 2010 DSP -> devtools aica_dsp_playground: 227 lines of devtools 2026-10 first seen in nullDC
+  edge copy reicast DSP -> devtools aica_dsp_playground: 196 lines of devtools 2026-10 first seen in reicast
+  edge concept nullDC 3 refsw -> dreamcast-tests: 1,039 lines of dreamcast-tests 2026-11 first seen in nulldc3 (2.1 %)
+  edge concept polly2-rtl -> dreamcast-tests: 91 lines of dreamcast-tests 2026-11 first seen in polly2 (0.2 %)
+  edge concept shrike4-rtl -> dreamcast-tests: 35 lines of dreamcast-tests 2026-11 first seen in shrike4 (0.1 %)
+  edge concept caique-rtl -> dreamcast-tests: 28 lines of dreamcast-tests 2026-11 first seen in caique (0.1 %)
+  edge concept nullDC 3 -> shrike4-rtl (SH4): new code: 0 lines of shrike4 2026-10 first seen in nulldc3 (0.0 %)
+  edge concept nullDC 3 -> caique-rtl (AICA): new code: 1 lines of caique 2026-11 first seen in nulldc3 (0.0 %)
+  edge concept shrike4-rtl -> caique-rtl: 243 lines of caique 2026-11 first seen in shrike4 (0.8 %)
+  edge concept caique-rtl -> wren7-rtl (ARM7): 99 lines of wren7 2026-11 first seen in caique (1.6 %)
+  edge concept nullDC 3 -> wren7-rtl (ARM7): new code: 3 lines of wren7 2026-11 first seen in nulldc3 (0.0 %)
+python3 <repo>/tools/frames_manifest.py --sizes
+data total 33372742 bytes in 190 files (+ frames.json 714330 )
+make: Leaving directory '<repo>/tools/provenance'

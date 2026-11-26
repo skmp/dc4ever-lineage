@@ -1,0 +1,54 @@
+{
+ "size": [
+  1920,
+  1080
+ ],
+ "views": {
+  "far": {
+   "file": "agents/frames2/std/shots/far-gpu-1920x1080.png",
+   "ready_ms": 317,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)"
+  },
+  "read": {
+   "file": "agents/frames2/std/shots/read-gpu-1920x1080.png",
+   "ready_ms": 201,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)"
+  },
+  "read-mid": {
+   "file": "agents/frames2/std/shots/read-mid-gpu-1920x1080.png",
+   "ready_ms": 100,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)"
+  },
+  "read-far": {
+   "file": "agents/frames2/std/shots/read-far-gpu-1920x1080.png",
+   "ready_ms": 100,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)"
+  },
+  "morph": {
+   "file": "agents/frames2/std/shots/morph-gpu-1920x1080.png",
+   "ready_ms": 411,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)"
+  },
+  "attract": {
+   "file": "agents/frames2/std/shots/attract-gpu-1920x1080.png",
+   "ready_ms": 2415,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)"
+  },
+  "now": {
+   "file": "agents/frames2/std/shots/now-gpu-1920x1080.png",
+   "ready_ms": 100,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)"
+  },
+  "fork": {
+   "file": "agents/frames2/std/shots/fork-gpu-1920x1080.png",
+   "ready_ms": 100,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)"
+  },
+  "fpgadc": {
+   "file": "agents/frames2/std/shots/fpgadc-gpu-1920x1080.png",
+   "ready_ms": 100,
+   "renderer": "ANGLE (Microsoft Corporation, D3D12 (AMD Radeon(TM) 8060S Graphics), OpenGL 4.6)"
+  }
+ },
+ "logs": []
+}

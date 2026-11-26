@@ -1,0 +1,1143 @@
+{'stops': 2218, 'differs': 1315, 'override': 215, 'approx': 52}
+
+## line: {//ToDo : Check This [26/4/05]
+  first seen in dc4ever: old 2005-06-14 -> new 2005-06-14 (approx.) (DC/SH4.7091/disasm.cs @ 7057e6262d37)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/sh4/sh4_cpu.cpp @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/sh4/sh4_cpu.cpp @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/dc/sh4/sh4_cpu.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/sh4/interpr/sh4_opcodes.cpp @ 1c16baeb0eae)
+
+## line: //and here are the new ones :D
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/sh4/sh4_opcode_list.cpp @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/sh4/sh4_opcode_list.cpp @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/dc/sh4/sh4_opcode_list.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/sh4/sh4_opcode_list.cpp @ 1c16baeb0eae)
+
+## line: //Time to emulate that stuff correctly ;)
+  first seen in nullDC: old 2010-05-09 -> new 2010-05-09 (nulldc/plugins/drkPvr/SPG.cpp @ 398dab4cbef4)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/drkPvr/SPG.cpp @ 398dab4cbef4)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (plugins/drkPvr/SPG.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/pvr/spg.cpp @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-07-06 (core/hw/pvr/spg.cpp @ 3cac9134ce18)
+
+## line: // asic9a /sh4 external holly normal [internal]
+  first seen in dc4ever: old 2005-06-24 -> new 2005-06-24 (approx.) (DC/SH4.7091/intexc.cs @ 155210197313)
+  now: dc4ever frame 08daa798e 2005-09-15 -> file last changed 2005-09-15 (approx.) (DC/SH4.7091/intexc.cs @ 08daa798e762)
+  now: dc4ever frame 36942ff38 2005-09-15 -> file last changed 2005-09-15 (approx.) (DC/SH4.7091/intexc.cs @ 08daa798e762)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (plugins/plugin_header.h @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/plugins/plugin_header.h @ 1fe9c6dffd7b)
+
+## line: //quite a bit padding here :)
+  first seen in nullDC: old 2010-05-09 -> new 2010-05-09 (nulldc/plugins/nullAICA/aica.h @ 398dab4cbef4)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/nullAICA/aica.h @ 398dab4cbef4)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (plugins/vbaARM/aica.h @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/aica/aica.h @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2013-12-28 (core/hw/aica/aica.h @ f5d29677b324)
+
+## line: //bit 0 ~ 27 : interrupt source 27:0. 0 = lowest level, 27 = highest level.
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/sh4/intc.cpp @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/sh4/intc.cpp @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/dc/sh4/intc.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/sh4/sh4_interrupts.cpp @ 1c16baeb0eae)
+
+## line: //convert our nice toc struct to dc's native one :)
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (plugs/ImgReader/common.cpp @ 39c055006291)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/ImgReader/common.cpp @ 398dab4cbef4)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (plugins/ImgReader/common.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/imgread/common.cpp @ 1c16baeb0eae)
+
+## line: printf("-config : invalid parameter %s, format is section:key=value\n",arg[1]);
+  first seen in nullDCe: old 2009-10-16 -> new 2008-2010 (dated 2009-10-16) (cl/cl.cpp @ 39c055006291)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (cl/cl.cpp @ 39c055006291)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/cl/cl.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/cfg/cl.cpp @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-07-03 (core/cfg/cl.cpp @ 3c4913a35a49)
+
+## line: const char* maple_sega_controller_name = "Dreamcast Controller";
+  first seen in nullDCe: old 2009-10-16 -> new 2008-2010 (dated 2009-10-16) (dc/maple/maple_devs.cpp @ 39c055006291)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/maple/maple_devs.cpp @ 39c055006291)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/maple/maple_devs.cpp @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-08-13 (core/hw/maple/maple_devs.cpp @ 90b1595101e2)
+  now: nullDCe-PSP frame e13f07c78 2021-02-04 -> file last changed 2021-02-04 (dc/maple/maple_devs.cpp @ e13f07c78a41)
+
+## line: //Called when a block check failed, and the block needs to be invalidated
+  first seen in nullDCe: old 2009-10-16 -> new 2008-2010 (dated 2009-10-16) (dc/sh4/rec_v2/ngen.h @ 39c055006291)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/sh4/rec_v2/ngen.h @ 39c055006291)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/sh4/dyna/ngen.h @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-07-06 (core/hw/sh4/dyna/ngen.h @ 0df91770d2b7)
+  now: nullDCe-PSP frame e13f07c78 2021-02-04 -> file last changed 2021-02-04 (dc/sh4/rec_v2/ngen.h @ e13f07c78a41)
+
+## line: //no operation xD XD .. i just love this opcode ..
+  first seen in dc4ever: old 2005-06-14 -> new 2005-06-14 (approx.) (DC/SH4.7091/disasm.cs @ 7057e6262d37)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/sh4/sh4_cpu_logic.h @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/sh4/sh4_cpu_logic.h @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/dc/sh4/sh4_cpu_logic.h @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/sh4/interpr/sh4_opcodes.cpp @ 1c16baeb0eae)
+
+## line: if (stricmp( &file[len-4],".gdi")==0)
+  first seen in nulldc-360: old 2011-10-15 -> new 2011-10-15 (plugins/ImgReader/gdi.cpp @ 03302923daf3)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (plugins/ImgReader/gdi.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/imgread/gdi.cpp @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-07-03 (core/imgread/gdi.cpp @ 3c4913a35a49)
+  now: nulldc-360 frame f9d1610f3 2021-05-28 -> file last changed 2012-09-09 (plugins/ImgReader/gdi.cpp @ 82e620d7d478)
+
+## line: //shop_setpeq //set if any pair of bytes is equal
+  first seen in reicast: old 2013-12-19 -> new 2012-2013 (dated 2013-12-19) (newdc/hw/sh4/dyna/shil_canonical.h @ 1c16baeb0eae)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/sh4/dyna/shil_canonical.h @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-07-13 (core/hw/sh4/dyna/shil_canonical.h @ f13b366e8d57)
+  now: nullDCe-PSP frame 36b350ade 2021-06-26 -> file last changed 2021-06-26 (dc/sh4/rec_v2/shil_canonical.h @ 36b350ade6db)
+  now: nullDCe-PSP frame d6f177467 2021-10-17 -> file last changed 2021-08-19 (dc/sh4/rec_v2/shil_canonical.h @ 7fe5a441d1db)
+
+## line: //this isn't always true for gdroms, depends on area look @ the get-toc code
+  first seen in reicast: old 2013-12-23 -> new 2013-12-23 (newdc/imgread/common.h @ 4e5edefa9688)
+  now: reicast frame 4e5edefa9 2013-12-23 -> file last changed 2013-12-23 (newdc/imgread/common.h @ 4e5edefa9688)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-07-12 (core/imgread/common.h @ e18eaf666d96)
+  now: nullDCe-PSP frame 36b350ade 2021-06-26 -> file last changed 2021-06-26 (plugs/ImgReader/imgread.h @ 36b350ade6db)
+  now: nullDCe-PSP frame d6f177467 2021-10-17 -> file last changed 2021-06-26 (plugs/ImgReader/imgread.h @ 36b350ade6db)
+
+## line: printf("Size: %-6ld  ",track.length);
+  first seen in reicast: old 2013-12-19 -> new 2012-2013 (dated 2013-12-19) (newdc/imgread/cdi.cpp @ 1c16baeb0eae)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/imgread/cdi.cpp @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2015-01-24 (core/imgread/cdi.cpp @ ab0e67edc7af)
+  now: nullDCe-PSP frame 36b350ade 2021-06-26 -> file last changed 2021-06-26 (plugs/ImgReader/cdi.cpp @ 36b350ade6db)
+  now: nullDCe-PSP frame d6f177467 2021-10-17 -> file last changed 2021-08-19 (plugs/ImgReader/cdi.cpp @ 7fe5a441d1db)
+
+## line: //iNimp("mov.w R0,@(<disp>,GBR)");
+  first seen in dc4ever: old 2005-06-25 -> new 2005-06-25 (approx.) (DC/SH4.7091/sh4imp.cs @ a06cfd49f84d)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/sh4/sh4_cpu_movs.h @ 39c055006291)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/sh4/interpr/sh4_opcodes.cpp @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-08-17 (core/hw/sh4/interpr/sh4_opcodes.cpp @ 2fb992768884)
+  now: reicast frame 69ab16ad9 2019-03-25 -> file last changed 2015-09-29 (core/hw/sh4/interpr/sh4_opcodes.cpp @ 915d6b26d67e)
+
+## line: //SHUT UP M$ COMPILER !@#!@$#
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (types.h @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/plugins/plugin_header.h @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/plugins/plugin_header.h @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/types.h @ 1c16baeb0eae)
+
+## line: //DC : 16 mb ram, 8 mb vram, 2 mb aram, 2 mb bios, 128k flash
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (plugins/plugin_types.h @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/plugins/plugin_types.h @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/plugins/plugin_types.h @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/types.h @ 1c16baeb0eae)
+
+## line: //some other misc shit FAR away is here :p
+  first seen in nullDC: old 2010-05-09 -> new 2010-05-09 (nulldc/plugins/nullAICA/aica.h @ 398dab4cbef4)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/nullAICA/aica.h @ 398dab4cbef4)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (plugins/vbaARM/aica.h @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/aica/aica.h @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2013-12-28 (core/hw/aica/aica.h @ f5d29677b324)
+
+## line: //phew .. that was lota asm code ;) lets go back to C :D
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/mem/_vmem.cpp @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/mem/_vmem.cpp @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/dc/mem/_vmem.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/mem/_vmem.cpp @ 1c16baeb0eae)
+
+## line: memcpy(&p_area_text[4],"For JAPAN,TAIWAN,PHILIPINES.",28);
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (plugs/ImgReader/common.cpp @ 39c055006291)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/ImgReader/common.cpp @ 398dab4cbef4)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (plugins/ImgReader/common.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/imgread/common.cpp @ 1c16baeb0eae)
+
+## line: //make x86 and sh4 float status registers match ;)
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/sh4/sh4_registers.cpp @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/sh4/sh4_registers.cpp @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/dc/sh4/sh4_registers.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/sh4/sh4_core_regs.cpp @ 1c16baeb0eae)
+
+## line: //0x0-0xD : 7 times the normal memmap mirrors :)
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/mem/sh4_mem.cpp @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/mem/sh4_mem.cpp @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/dc/mem/sh4_mem.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/sh4/sh4_mem.cpp @ 1c16baeb0eae)
+
+## line: //ddt/etc are just hacked for wince to work
+  first seen in nullDCe: old 2009-10-16 -> new 2008-2010 (dated 2009-10-16) (dc/maple/maple_if.cpp @ 39c055006291)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/maple/maple_if.cpp @ 39c055006291)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/maple/maple_if.cpp @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2013-12-28 (core/hw/maple/maple_if.cpp @ f5d29677b324)
+  now: nullDCe-PSP frame e13f07c78 2021-02-04 -> file last changed 2021-02-04 (dc/maple/maple_if.cpp @ e13f07c78a41)
+
+## line: //gah , ccn emulation
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/sh4/ccn.cpp @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/sh4/ccn.cpp @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/dc/sh4/ccn.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/sh4/modules/ccn.cpp @ 1c16baeb0eae)
+
+## line: //16 bits -> misstype on manual ? RTSCR vs RTCSR...
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/sh4/bsc.cpp @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/sh4/bsc.cpp @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/dc/sh4/bsc.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/sh4/sh4_mmr.h @ 1c16baeb0eae)
+
+## line: //cosine(x) = sine(pi/2 + x).
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/sh4/sh4_fpu.cpp @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/sh4/sh4_fpu.cpp @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/dc/sh4/sh4_fpu.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/sh4/interpr/sh4_fpu.cpp @ 1c16baeb0eae)
+
+## line: const char* maple_sega_dreameye_name_1 = "Dreamcast Camera Flash  Devic";
+  first seen in nullDCe: old 2009-10-16 -> new 2008-2010 (dated 2009-10-16) (dc/maple/maple_devs.cpp @ 39c055006291)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/maple/maple_devs.cpp @ 39c055006291)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/maple/maple_devs.cpp @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-08-13 (core/hw/maple/maple_devs.cpp @ 90b1595101e2)
+  now: nullDCe-PSP frame e13f07c78 2021-02-04 -> file last changed 2021-02-04 (dc/maple/maple_devs.cpp @ e13f07c78a41)
+
+## line: //wtf ? not inited
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/pvr/pvr_if.cpp @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/pvr/pvr_if.cpp @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/dc/pvr/pvr_if.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/pvr/pvr_mem.cpp @ 1c16baeb0eae)
+
+## line: //missing quite a few ehh ?
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (plugins/plugin_header.h @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/plugins/plugin_header.h @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/plugins/plugin_header.h @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/types.h @ 1c16baeb0eae)
+
+## line: --x86 is such a fucked cpu arch--
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (emitter/emitter/x86_op_encoder.h @ 39c055006291)
+  now: nullDC frame 18f58525c 2010-05-09 -> file last changed 2010-05-09 (emitter/x86_op_encoder.h @ 18f58525cc22)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/emitter/x86_op_encoder.h @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2015-05-18 (core/emitter/x86_op_encoder.h @ a9fc0f5aa804)
+
+## line: //54 mhz pixel clock :)
+  first seen in nullDC: old 2010-05-09 -> new 2010-05-09 (nulldc/plugins/drkPvr/SPG.cpp @ 398dab4cbef4)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/drkPvr/SPG.cpp @ 398dab4cbef4)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (plugins/drkPvr/SPG.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/pvr/spg.cpp @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-07-06 (core/hw/pvr/spg.cpp @ 3cac9134ce18)
+
+## line: // *FIXME* CHECK FOR DMA, Diff Settings !?!@$#!@%
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/gdrom/gdromv3.cpp @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/gdrom/gdromv3.cpp @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/dc/gdrom/gdromv3.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/gdrom/gdromv3.cpp @ 1c16baeb0eae)
+
+## line: //DRV -> preserved -> wtf is it anyway ?
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/gdrom/gdromv3.cpp @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/gdrom/gdromv3.cpp @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/dc/gdrom/gdromv3.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/gdrom/gdromv3.cpp @ 1c16baeb0eae)
+
+## line: //DIV32U was perfectly matched :)
+  first seen in nullDC: old 2010-05-09 -> new 2010-05-09 (nulldc/nullDC/dc/sh4/rec_v1/sh4_cpu_shil.cpp @ 1fe9c6dffd7b)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/sh4/rec_v1/sh4_cpu_shil.cpp @ 1fe9c6dffd7b)
+  now: nulldc-360 frame a5c3eac47 2011-10-15 -> file last changed 2011-10-15 (nullDC/dc/sh4/rec_v1/sh4_cpu_shil.cpp @ a5c3eac47b2c)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/sh4/dyna/decoder.cpp @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-07-10 (core/hw/sh4/dyna/decoder.cpp @ 648988e622e8)
+
+## line: //remove the full underflows (possible because we only check every 448 cycles)
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/sh4/tmu.cpp @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/sh4/tmu.cpp @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/dc/sh4/tmu.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/sh4/modules/tmu.cpp @ 1c16baeb0eae)
+
+## line: //if not Interrupted , we must rexecute the sleep
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/sh4/sh4_cpu_branch.h @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/sh4/sh4_cpu_branch.h @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/dc/sh4/sh4_cpu_branch.h @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/sh4/interpr/sh4_opcodes.cpp @ 1c16baeb0eae)
+
+## line: //upper 32mb mirror lower 32 mb
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/mem/sh4_mem.cpp @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/mem/sh4_mem.cpp @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/dc/mem/sh4_mem.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/sh4/sh4_mem.cpp @ 1c16baeb0eae)
+
+## line: //What should i do to emulate 'nothing' ?
+  first seen in nullDC: old 2010-05-09 -> new 2010-05-09 (nulldc/nullDC/naomi/naomi.cpp @ 1fe9c6dffd7b)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/naomi/naomi.cpp @ 1fe9c6dffd7b)
+  now: nulldc-360 frame a5c3eac47 2011-10-15 -> file last changed 2011-10-15 (nullDC/naomi/naomi.cpp @ a5c3eac47b2c)
+  now: reicast frame 417dfc5d8 2015-08-11 -> file last changed 2015-08-11 (core/hw/naomi/naomi.cpp @ 417dfc5d8f33)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-03-09 (core/hw/naomi/naomi.cpp @ a29fbc62c906)
+
+## line: //Logitech G series stuff end
+  first seen in nullDCe: old 2009-10-16 -> new 2008-2010 (dated 2009-10-16) (dc/maple/maple_devs.cpp @ 39c055006291)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/maple/maple_devs.cpp @ 39c055006291)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/maple/maple_devs.cpp @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-08-13 (core/hw/maple/maple_devs.cpp @ 90b1595101e2)
+  now: flycast frame 4973c5a27 2020-01-08 -> file last changed 2020-01-08 (core/hw/maple/maple_devs.cpp @ 4973c5a27da9)
+
+## line: emu:FullName    : str,returns the emulator's name + version string (ex."nullDC v
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (config/config.cpp @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/config/config.cpp @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/config/config.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/cfg/cfg.cpp @ 1c16baeb0eae)
+
+## line: //there is no break here by design
+  first seen in nullDCe: old 2009-10-16 -> new 2008-2010 (dated 2009-10-16) (dc/sh4/rec_v2/decoder.cpp @ 39c055006291)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/sh4/rec_v2/decoder.cpp @ 39c055006291)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/sh4/dyna/decoder.cpp @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-07-10 (core/hw/sh4/dyna/decoder.cpp @ 648988e622e8)
+  now: nullDCe-PSP frame e13f07c78 2021-02-04 -> file last changed 2021-02-04 (dc/sh4/rec_v2/decoder.cpp @ e13f07c78a41)
+
+## line: //bleh stupid windoze header
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (plugs/ImgReader/ImgReader.h @ 39c055006291)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/EmptyAICA/EmptyAICA.h @ 398dab4cbef4)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (plugins/EmptyAICA/EmptyAICA.h @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/pvr/drkPvr.h @ 1c16baeb0eae)
+
+## line: //there were at least 4 gdrom implementations, ZGDROM, HLE, gdromv1 (never worke
+  first seen in nullDC: old 2010-05-09 -> new 2010-05-09 (nulldc/nullDC/dc/gdrom/gdrom_if.h @ 1fe9c6dffd7b)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/gdrom/gdrom_if.h @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/dc/gdrom/gdrom_if.h @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/gdrom/gdrom_if.h @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2013-12-28 (core/hw/gdrom/gdrom_if.h @ f5d29677b324)
+
+## line: //since i got no internet , and im bored , im starting to work on some aica hle 
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (plugs/EmptyAICA/aica_hle.cpp @ 39c055006291)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/EmptyAICA/aica_hle.cpp @ 398dab4cbef4)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (plugins/EmptyAICA/aica_hle.cpp @ 03302923daf3)
+  now: nullDCe-PSP frame d04a8e2fa 2021-02-04 -> file last changed 2021-02-04 (plugs/EmptyAICA/aica_hle.cpp @ d04a8e2faa7e)
+
+## line: //how bout a decoded switch list ? could that _much_ faster ?
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/sh4/sh4_opcode_list.cpp @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/sh4/sh4_opcode_list.cpp @ 1fe9c6dffd7b)
+  now: nullDC frame 608af33bf 2010-09-29 -> file last changed 2010-09-06 (nulldc/nullDC/dc/sh4/sh4_opcode_list.cpp @ 97b08a37ec2f)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/sh4/sh4_opcode_list.cpp @ 1c16baeb0eae)
+
+## line: //SPG emulation; Scanline/Raster beam registers & interrupts
+  first seen in nullDC: old 2010-05-09 -> new 2010-05-09 (nulldc/plugins/drkPvr/SPG.cpp @ 398dab4cbef4)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/drkPvr/SPG.cpp @ 398dab4cbef4)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (plugins/drkPvr/SPG.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/pvr/spg.cpp @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-07-06 (core/hw/pvr/spg.cpp @ 3cac9134ce18)
+
+## line: //this is kinda wrong .. but meh
+  first seen in nullDCe: old 2009-10-16 -> new 2008-2010 (dated 2009-10-16) (dc/maple/maple_if.cpp @ 39c055006291)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/maple/maple_if.cpp @ 39c055006291)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/maple/maple_if.cpp @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2013-12-28 (core/hw/maple/maple_if.cpp @ f5d29677b324)
+  now: reicast frame 17582044b 2019-12-31 -> file last changed 2019-07-11 (libswirl/hw/maple/maple_if.cpp @ 3bc91425ea45)
+
+## line: //Value to be returned when the block manager failed to find a block,
+  first seen in nullDCe: old 2009-10-16 -> new 2008-2010 (dated 2009-10-16) (dc/sh4/rec_v2/ngen.h @ 39c055006291)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/sh4/rec_v2/ngen.h @ 39c055006291)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/sh4/dyna/ngen.h @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-07-06 (core/hw/sh4/dyna/ngen.h @ 0df91770d2b7)
+  now: reicast frame 40971b6e8 2019-07-11 -> file last changed 2019-06-19 (core/hw/sh4/dyna/ngen.h @ 0cdd7d8336ea)
+
+## line: // Command 71 seems to trigger some sort of authentication check(?).
+  first seen in nullDC: old 2010-06-20 -> new 2010-06-20 (nulldc/nullDC/dc/gdrom/gdromv3.cpp @ 7e9ab82a7746)
+  now: nullDC frame ec2151c15 2010-09-02 -> file last changed 2010-09-02 (nulldc/nullDC/dc/gdrom/gdromv3.cpp @ ec2151c15dee)
+  now: nullDC frame c563e075c 2011-09-14 -> file last changed 2010-12-13 (nulldc/nullDC/dc/gdrom/gdromv3.cpp @ 42bc8f4ded3e)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/dc/gdrom/gdromv3.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/gdrom/gdromv3.cpp @ 1c16baeb0eae)
+
+## line: //we want to make sure mix* is *At least* 23 bits wide here, so 64 bit mul !
+  first seen in nullDC: old 2010-05-09 -> new 2010-05-09 (nulldc/plugins/nullAICA/sgc_if.cpp @ 398dab4cbef4)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/nullAICA/sgc_if.cpp @ 398dab4cbef4)
+  now: nulldc-360 frame 123730831 2012-08-19 -> file last changed 2012-08-19 (plugins/nullAICA/sgc_if.cpp @ 1237308313a5)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/aica/sgc_if.cpp @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-08-13 (core/hw/aica/sgc_if.cpp @ 94c995510eb7)
+
+## line: //SQ fast remap , mainly hackish , assumes 1MB pages
+  first seen in reicast: old 2013-12-23 -> new 2013-12-23 (newdc/hw/sh4/modules/mmu.cpp @ 4e5edefa9688)
+  now: reicast frame 4e5edefa9 2013-12-23 -> file last changed 2013-12-23 (newdc/hw/sh4/modules/mmu.cpp @ 4e5edefa9688)
+  now: reicast frame 239e17822 2018-09-03 -> file last changed 2015-09-29 (core/hw/sh4/modules/mmu.cpp @ 915d6b26d67e)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2015-09-29 (core/hw/sh4/modules/mmu.cpp @ 915d6b26d67e)
+  now: reicast frame a6b773a23 2019-05-17 -> file last changed 2019-03-27 (core/hw/sh4/modules/mmu.cpp @ 2cf59b42bb9b)
+
+## line: //Naomi : 32 mb ram, 16 mb vram, 8 mb aram, 2 mb bios, ? flash
+  first seen in nullDC: old 2010-05-09 -> new 2010-05-09 (nulldc/nullDC/plugins/plugin_types.h @ 1fe9c6dffd7b)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/plugins/plugin_types.h @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/plugins/plugin_types.h @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/types.h @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-08-01 (core/types.h @ 31d8c1f091f5)
+
+## line: //transfer 22kb chunks (or less) [704 x 32] (22528)
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/sh4/dmac.cpp @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/sh4/dmac.cpp @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/dc/sh4/dmac.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/sh4/modules/dmac.cpp @ 1c16baeb0eae)
+
+## line: printf("OH CRAP %d\n",op->op);
+  first seen in nullDCe: old 2009-10-16 -> new 2008-2010 (dated 2009-10-16) (psp/dc/sh4/rec_v2/psp_driver.cpp @ 39c055006291)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (psp/dc/sh4/rec_v2/psp_driver.cpp @ 39c055006291)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/windows/win86_il.cpp @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-07-19 (core/rec-x86/rec_x86_il.cpp @ 71d7f908580e)
+  now: flycast frame aa36a65d1 2019-06-21 -> file last changed 2019-05-21 (core/rec-x86/rec_x86_il.cpp @ d38e094ba0ec)
+
+## line: // im too tired to debug and find the actualy relation but it is
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (plugs/EmptyAICA/aica_hax.cpp @ 39c055006291)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/EmptyAICA/aica_hax.cpp @ 398dab4cbef4)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (plugins/EmptyAICA/aica_hax.cpp @ 03302923daf3)
+  now: nullDCe-PSP frame d04a8e2fa 2021-02-04 -> file last changed 2021-02-04 (plugs/EmptyAICA/aica_hax.cpp @ d04a8e2faa7e)
+
+## line: //Yep , C++ IS lame & limited
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (plugs/drkPvr/ta.h @ 39c055006291)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/drkPvr/ta.h @ 398dab4cbef4)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (plugins/drkPvr/ta.h @ 03302923daf3)
+  now: nullDCe-PSP frame d04a8e2fa 2021-02-04 -> file last changed 2021-02-04 (plugs/drkPvr/ta.h @ d04a8e2faa7e)
+
+## line: //Yay for mono =P
+  first seen in nullDC: old 2010-05-09 -> new 2010-05-09 (nulldc/plugins/nullAICA/sgc_if.cpp @ 398dab4cbef4)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/nullAICA/sgc_if.cpp @ 398dab4cbef4)
+  now: nulldc-360 frame 123730831 2012-08-19 -> file last changed 2012-08-19 (plugins/nullAICA/sgc_if.cpp @ 1237308313a5)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/aica/sgc_if.cpp @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-08-13 (core/hw/aica/sgc_if.cpp @ 94c995510eb7)
+
+## line: //shouldn't really get here (?) -> works on dc :D need to handle lmmodes
+  first seen in reicast: old 2013-12-23 -> new 2013-12-23 (newdc/hw/pvr/pvr_mem.cpp @ 4e5edefa9688)
+  now: reicast frame 4e5edefa9 2013-12-23 -> file last changed 2013-12-23 (newdc/hw/pvr/pvr_mem.cpp @ 4e5edefa9688)
+  now: reicast frame 239e17822 2018-09-03 -> file last changed 2018-09-03 (core/hw/pvr/pvr_mem.cpp @ 395bfd5dbb6c)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-09-03 (core/hw/pvr/pvr_mem.cpp @ 395bfd5dbb6c)
+  now: reicast frame a6b773a23 2019-05-17 -> file last changed 2019-03-27 (core/hw/pvr/pvr_mem.cpp @ 2cf59b42bb9b)
+
+## line: //TODO : Check Me [26/4/05]  | Check DELAY SLOT [28/1/06]
+  first seen in reicast: old 2013-12-23 -> new 2013-12-23 (newdc/hw/sh4/interpr/sh4_opcodes.cpp @ 4e5edefa9688)
+  now: reicast frame 4e5edefa9 2013-12-23 -> file last changed 2013-12-23 (newdc/hw/sh4/interpr/sh4_opcodes.cpp @ 4e5edefa9688)
+  now: reicast frame 239e17822 2018-09-03 -> file last changed 2018-08-17 (core/hw/sh4/interpr/sh4_opcodes.cpp @ 2fb992768884)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-08-17 (core/hw/sh4/interpr/sh4_opcodes.cpp @ 2fb992768884)
+  now: reicast frame a6b773a23 2019-05-17 -> file last changed 2019-03-27 (core/hw/sh4/interpr/sh4_opcodes.cpp @ 2cf59b42bb9b)
+
+## line: //strip didnt finish at once.. continue it later :P
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (plugs/drkPvr/ta.h @ 39c055006291)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/drkPvr/ta.h @ 398dab4cbef4)
+  now: nullDC frame d9955520e 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/drkPvr/ta.h @ 398dab4cbef4)
+  now: nullDCe-PSP frame d04a8e2fa 2021-02-04 -> file last changed 2021-02-04 (plugs/drkPvr/ta.h @ d04a8e2faa7e)
+
+## line: //do NOT load hole file to memory before checking ... cna be deadly for .nrg/.is
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (plugs/ImgReader/mds_reader.cpp @ 39c055006291)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/ImgReader/mds_reader.cpp @ 398dab4cbef4)
+  now: nullDC frame 26ce3ea29 2010-09-09 -> file last changed 2010-05-09 (nulldc/plugins/ImgReader/mds_reader.cpp @ 398dab4cbef4)
+  now: nullDCe-PSP frame d04a8e2fa 2021-02-04 -> file last changed 2021-02-04 (plugs/ImgReader/mds_reader.cpp @ d04a8e2faa7e)
+
+## line: //TODO: Implement this (needed for SOTB)
+  first seen in nullDCe: old 2009-10-16 -> new 2008-2010 (dated 2009-10-16) (dc/sh4/sh4_registers.cpp @ 39c055006291)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/sh4/sh4_registers.cpp @ 39c055006291)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/sh4/sh4_core_regs.cpp @ 1c16baeb0eae)
+  now: reicast frame b12055f7c 2015-08-11 -> file last changed 2015-07-29 (core/hw/sh4/sh4_core_regs.cpp @ 75fd6986953c)
+  now: nullDCe-PSP frame e13f07c78 2021-02-04 -> file last changed 2021-02-04 (dc/sh4/sh4_registers.cpp @ e13f07c78a41)
+
+## line: //do the matrix mult !
+  first seen in nullDCe: old 2009-10-16 -> new 2008-2010 (dated 2009-10-16) (win-x86/dc/sh4/rec_v2/win86_driver.cpp @ 39c055006291)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (win-x86/dc/sh4/rec_v2/win86_driver.cpp @ 39c055006291)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/windows/win86_il.cpp @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-07-19 (core/rec-x86/rec_x86_il.cpp @ 71d7f908580e)
+  now: flycast frame 7697d37ec 2021-01-23 -> file last changed 2020-02-29 (core/rec-x86/rec_x86_il.cpp @ 93bedb91f1d9)
+
+## line: // FIXME if the discarded render is a RTT we'll have a texture missing. But wait
+  first seen in reicast: old 2018-09-03 -> new 2018-07-19 (core/hw/pvr/ta_ctx.cpp @ 71d7f908580e)
+  now: reicast frame 239e17822 2018-09-03 -> file last changed 2018-07-19 (core/hw/pvr/ta_ctx.cpp @ 71d7f908580e)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-07-19 (core/hw/pvr/ta_ctx.cpp @ 71d7f908580e)
+  now: reicast frame a6b773a23 2019-05-17 -> file last changed 2019-04-28 (core/hw/pvr/ta_ctx.cpp @ 1e04de06bcd0)
+  now: flycast frame f4aefe4fd 2020-03-25 -> file last changed 2019-09-25 (core/hw/pvr/ta_ctx.cpp @ bb89cb5c2233)
+
+## line: //This ram seems to be visible on the pci address space, however it is _not_ cot
+  first seen in nullDC: old 2010-05-09 -> new 2010-05-09 (nulldc/plugins/nullExtDev/bba.cpp @ 398dab4cbef4)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/nullExtDev/bba.cpp @ 398dab4cbef4)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (plugins/nullExtDev/bba.cpp @ 03302923daf3)
+  now: reicast frame b9b28b0d0 2020-04-07 -> file last changed 2020-04-07 (libswirl/hw/bba/bba.cpp @ b9b28b0d063d)
+  now: nulldc-360 frame bd0bfaeef 2022-02-11 -> file last changed 2011-10-15 (plugins/nullExtDev/bba.cpp @ 03302923daf3)
+
+## line: // *cough* ignore it :p
+  first seen in reicast: old 2015-08-11 -> new 2015-08-05 (core/hw/pvr/ta_vtx.cpp @ f2f9a041e182)
+  now: reicast frame 8a23dc4de 2015-08-11 -> file last changed 2015-08-05 (core/hw/pvr/ta_vtx.cpp @ f2f9a041e182)
+  now: reicast frame 239e17822 2018-09-03 -> file last changed 2018-08-31 (core/hw/pvr/ta_vtx.cpp @ 1546e4fa8aee)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-08-31 (core/hw/pvr/ta_vtx.cpp @ 1546e4fa8aee)
+  now: reicast frame a6b773a23 2019-05-17 -> file last changed 2019-03-27 (core/hw/pvr/ta_vtx.cpp @ 2cf59b42bb9b)
+
+## line: //Note : This is just to prove that Fast emulation is possible with
+  first seen in dc4ever: old 2004-11-03 -> new 2004-11-03 (approx.) (DC/SH4.7091/backup.cs @ 7a6683f402e6)
+  now: dc4ever frame 7a6683f40 2004-11-03 -> file last changed 2004-11-03 (approx.) (DC/SH4.7091/backup.cs @ 7a6683f402e6)
+  now: dc4ever frame a4f480393 2004-11-03 -> file last changed 2004-11-03 (approx.) (DC/Bios/bios.cs @ a4f480393af6)
+  now: dc4ever frame c4c7b7d75 2005-01-02 -> file last changed 2004-11-03 (approx.) (DC/Bios/bios.cs @ a4f480393af6)
+  now: dc4ever frame 133ccd863 2005-03-26 -> file last changed 2005-03-26 (approx.) (DC/Bios/bios.cs @ bbc1ff4c50f4)
+
+## line: ! "we still have 32 bytes left to fill and we are seriously running out of ideas
+  first seen in dc4ever: old 2004-04-20 -> new 2004-04-20 (approx.) (256b.s @ 2e3cd165037d)
+  now: dc4ever frame 2e3cd1650 2004-04-20 -> file last changed 2004-04-20 (approx.) (256b.s @ 2e3cd165037d)
+  now: dc4ever frame 247ccb502 2004-05-21 -> file last changed 2004-04-20 (approx.) (256b.s @ 2e3cd165037d)
+  now: dc4ever frame dc12419a4 2004-10-12 -> file last changed 2004-04-20 (approx.) (256b.s @ 2e3cd165037d)
+  now: dc4ever frame 1037857c3 2004-11-03 -> file last changed 2004-04-20 (approx.) (256b.s @ 2e3cd165037d)
+
+## line: swprintf(fpsStr,256,L"%s/%c - %4.2f%% - VPS: %4.2f(%s%s%4.2f) RPS: %4.2f Vert: %
+  first seen in nullDC: old 2010-05-09 -> new 2010-05-09 (nulldc/plugins/drkPvr/SPG.cpp @ 398dab4cbef4)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/drkPvr/SPG.cpp @ 398dab4cbef4)
+  now: nullDC frame 18f58525c 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/drkPvr/SPG.cpp @ 398dab4cbef4)
+  now: nullDC frame 761dc87db 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/drkPvr/SPG.cpp @ 398dab4cbef4)
+  now: nullDC frame d14d77cc1 2010-05-23 -> file last changed 2010-05-09 (nulldc/plugins/drkPvr/SPG.cpp @ 398dab4cbef4)
+
+## line: // Actually set that crap! D:
+  first seen in nullDC: old 2010-05-09 -> new 2010-05-09 (nulldc/plugins/XMaple/VIBRATIONFUNCTION.cpp @ 7828500e7172)
+  now: nullDC frame 7828500e7 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/XMaple/VIBRATIONFUNCTION.cpp @ 7828500e7172)
+  now: nullDC frame 5e15a59d4 2010-05-10 -> file last changed 2010-05-09 (nulldc/plugins/XMaple/VIBRATIONFUNCTION.cpp @ 7828500e7172)
+  now: nullDC frame 1b8fa7060 2010-05-27 -> file last changed 2010-05-09 (nulldc/plugins/XMaple/VIBRATIONFUNCTION.cpp @ 7828500e7172)
+  now: nullDC frame 3f8b4a5fc 2010-07-23 -> file last changed 2010-05-09 (nulldc/plugins/XMaple/VIBRATIONFUNCTION.cpp @ 7828500e7172)
+
+## line: strcatf(text,L" |- %d blocks staticaly linked , ratio %.2f%%\r\n",ndcpi.Dynarec.
+  first seen in nullDC: old 2010-05-09 -> new 2010-05-09 (nulldc/plugins/nullDC_GUI/emuWinUI.cpp @ 398dab4cbef4)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/nullDC_GUI/emuWinUI.cpp @ 398dab4cbef4)
+  now: nullDC frame 18f58525c 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/nullDC_GUI/emuWinUI.cpp @ 398dab4cbef4)
+  now: nullDC frame 761dc87db 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/nullDC_GUI/emuWinUI.cpp @ 398dab4cbef4)
+  now: nullDC frame d14d77cc1 2010-05-23 -> file last changed 2010-05-23 (nulldc/plugins/nullDC_GUI/emuWinUI.cpp @ d14d77cc1f08)
+
+## line: // Per-game hack for ChuChu Rocket's echoey 16-bit sounds; also mutes music/voic
+  first seen in NotDC-PS3: old 2026-09-23 -> new 2026-09-23 (plugs/nullAICA/sgc_if.cpp @ a5d7deaecb8c)
+  now: NotDC-PS3 frame a5d7deaec 2026-09-23 -> file last changed 2026-09-23 (plugs/nullAICA/sgc_if.cpp @ a5d7deaecb8c)
+  now: NotDC-PS3 frame 4685f3242 2026-09-23 -> file last changed 2026-09-23 (plugs/nullAICA/sgc_if.cpp @ a5d7deaecb8c)
+  now: NotDC-PS3 frame 1111e45b5 2026-10-03 -> file last changed 2026-09-23 (plugs/nullAICA/sgc_if.cpp @ a5d7deaecb8c)
+  now: NotDC-PS3 frame b912e5f89 2026-10-05 -> file last changed 2026-10-04 (plugs/nullAICA/sgc_if.cpp @ 2b6eea8191f3)
+
+## line: // Sega Dreamcast Controller. No error checking of any kind, but works just fine
+  first seen in NotDC-PS3: old 2026-09-19 -> new 2026-09-19 (dc/maple/maple_devs.cpp @ 5a32b94bee23)
+  now: NotDC-PS3 frame 5a32b94be 2026-09-19 -> file last changed 2026-09-19 (dc/maple/maple_devs.cpp @ 5a32b94bee23)
+  now: NotDC-PS3 frame 0678ea103 2026-09-20 -> file last changed 2026-09-19 (dc/maple/maple_devs.cpp @ 5a32b94bee23)
+  now: NotDC-PS3 frame dfcc5aab2 2026-09-21 -> file last changed 2026-09-19 (dc/maple/maple_devs.cpp @ 5a32b94bee23)
+  now: NotDC-PS3 frame 1111e45b5 2026-10-03 -> file last changed 2026-09-19 (dc/maple/maple_devs.cpp @ 5a32b94bee23)
+
+## line: // Sprite corners A,B,C arrive with UVs; D is sent without z or UV, so it comple
+  first seen in NotDC-PS3: old 2026-09-19 -> new 2026-09-19 (ps3/ps3_rend.cpp @ 5a32b94bee23)
+  now: NotDC-PS3 frame 5a32b94be 2026-09-19 -> file last changed 2026-09-19 (ps3/ps3_rend.cpp @ 5a32b94bee23)
+  now: NotDC-PS3 frame 0678ea103 2026-09-20 -> file last changed 2026-09-20 (ps3/ps3_rend.cpp @ 0678ea103094)
+  now: NotDC-PS3 frame dfcc5aab2 2026-09-21 -> file last changed 2026-09-21 (ps3/ps3_rend.cpp @ dfcc5aab2096)
+  now: NotDC-PS3 frame 1111e45b5 2026-10-03 -> file last changed 2026-10-03 (ps3/ps3_rend.cpp @ 1111e45b5c00)
+
+## line: // d3dx9_24.dll is found in the Feb 2005 (!) release of the DirectX SDK so I dou
+  first seen in flycast: old 2024-02-03 -> new 2024-02-03 (core/rend/dx9/d3d_shaders.cpp @ c146a92f83ae)
+  now: flycast frame c146a92f8 2024-02-03 -> file last changed 2024-02-03 (core/rend/dx9/d3d_shaders.cpp @ c146a92f83ae)
+  now: flycast frame 7029e1615 2024-02-09 -> file last changed 2024-02-03 (core/rend/dx9/d3d_shaders.cpp @ c146a92f83ae)
+  now: flycast frame 8e9659006 2024-04-26 -> file last changed 2024-02-03 (core/rend/dx9/d3d_shaders.cpp @ c146a92f83ae)
+  now: flycast frame 45bf218df 2024-07-29 -> file last changed 2024-02-03 (core/rend/dx9/d3d_shaders.cpp @ c146a92f83ae)
+
+## line: // This hack allows WebTV to connect although the correct fix would
+  first seen in flycast: old 2020-12-29 -> new 2020-12-29 (core/hw/modem/picoppp.cpp @ 62a1e296700a)
+  now: flycast frame 62a1e2967 2020-12-29 -> file last changed 2020-12-29 (core/hw/modem/picoppp.cpp @ 62a1e296700a)
+  now: flycast frame 889fc8256 2021-01-02 -> file last changed 2021-01-02 (core/network/picoppp.cpp @ 889fc8256d72)
+  now: flycast frame 0c8815549 2021-03-02 -> file last changed 2021-03-01 (core/network/picoppp.cpp @ c3a95594f909)
+  now: flycast frame 7555263e3 2021-12-17 -> file last changed 2021-09-13 (core/network/picoppp.cpp @ f7abe3bb3445)
+
+## line: // This file is a major hack to get decoupled mtta done fast
+  first seen in minicast: old 2026-07-15 -> new 2026-07-15 (libswirl/gpl/lxdream/tacore-mtta-decoupled.cpp @ 437d558b2afc)
+  now: minicast frame 437d558b2 2026-07-15 -> file last changed 2026-07-15 (libswirl/gpl/lxdream/tacore-mtta-decoupled.cpp @ 437d558b2afc)
+  now: minicast frame 57c8ce1a2 2026-07-16 -> file last changed 2026-07-15 (libswirl/gpl/lxdream/tacore-mtta-decoupled.cpp @ 437d558b2afc)
+  now: minicast frame e54845078 2026-07-17 -> file last changed 2026-07-15 (libswirl/gpl/lxdream/tacore-mtta-decoupled.cpp @ 437d558b2afc)
+  now: minicast frame 3cd006b91 2026-07-18 -> file last changed 2026-07-15 (libswirl/gpl/lxdream/tacore-mtta-decoupled.cpp @ 437d558b2afc)
+
+## line: // ============================ WHY THERE IS NO ALIAS LIVELOCK =================
+  first seen in polly2: old 2026-07-28 -> new 2026-07-28 (polly2-core/rtl/tsp/tex/tex_cache_4p_1c.sv @ 564b53383de0)
+  now: polly2 frame 564b53383 2026-07-28 -> file last changed 2026-07-28 (polly2-core/rtl/tsp/tex/tex_cache_4p_1c.sv @ 564b53383de0)
+  now: polly2 frame 67a459bb7 2026-07-29 -> file last changed 2026-07-28 (polly2-core/rtl/tsp/tex/tex_cache_4p_1c.sv @ 564b53383de0)
+  now: polly2 frame e971ba240 2026-07-29 -> file last changed 2026-07-28 (polly2-core/rtl/tsp/tex/tex_cache_4p_1c.sv @ 564b53383de0)
+  now: polly2 frame bec6ff4a7 2026-07-30 -> file last changed 2026-07-29 (polly2-core/rtl/tsp/tex/tex_cache_4p_1c.sv @ 2b0bc06c402c)
+
+## line: // WHY is raster IDLE? Partition RS_IDLE by top `st`. %% is of the IDLE total.
+  first seen in polly2: old 2026-07-11 -> new 2026-07-11 (rtl/tsp/peel_core.sv @ 4c11a003d090)
+  now: polly2 frame 4c11a003d 2026-07-11 -> file last changed 2026-07-11 (rtl/tsp/peel_core.sv @ 4c11a003d090)
+  now: polly2 frame 1a2e0b0de 2026-07-11 -> file last changed 2026-07-11 (rtl/tsp/peel_core.sv @ 1a2e0b0deaaf)
+  now: polly2 frame f011e87c0 2026-07-11 -> file last changed 2026-07-11 (rtl/tsp/peel_core.sv @ cac4356ea38c)
+  now: polly2 frame 27e240a9b 2026-07-11 -> file last changed 2026-07-11 (rtl/tsp/peel_core.sv @ fdb02b53ddaa)
+
+## line: // Rez reads the status after this vendor command to gate its streamer; a stale 
+  first seen in NotDC-PS3: old 2026-09-19 -> new 2026-09-19 (dc/gdrom/gdromv3.cpp @ 5a32b94bee23)
+  now: NotDC-PS3 frame 5a32b94be 2026-09-19 -> file last changed 2026-09-19 (dc/gdrom/gdromv3.cpp @ 5a32b94bee23)
+  now: NotDC-PS3 frame 0678ea103 2026-09-20 -> file last changed 2026-09-19 (dc/gdrom/gdromv3.cpp @ 5a32b94bee23)
+  now: NotDC-PS3 frame dfcc5aab2 2026-09-21 -> file last changed 2026-09-19 (dc/gdrom/gdromv3.cpp @ 5a32b94bee23)
+  now: NotDC-PS3 frame 1111e45b5 2026-10-03 -> file last changed 2026-09-23 (dc/gdrom/gdromv3.cpp @ a5d7deaecb8c)
+
+## line: printf("Configures the ADV7513 for 1920x1080 (VIC 16) RGB444 as produced by SPG.
+  first seen in minicast: old 2026-07-17 -> new 2026-07-17 (setup_hdmi/main.cpp @ 585205bc5aac)
+  now: minicast frame 585205bc5 2026-07-17 -> file last changed 2026-07-17 (setup_hdmi/main.cpp @ 585205bc5aac)
+  now: minicast frame e54845078 2026-07-17 -> file last changed 2026-07-17 (setup_hdmi/main.cpp @ 585205bc5aac)
+  now: minicast frame 697f56586 2026-07-17 -> file last changed 2026-07-16 (setup_hdmi/main.cpp @ 369f3e00ba40)
+  now: minicast frame 3a124dbbf 2026-07-18 -> file last changed 2026-07-17 (setup_hdmi/main.cpp @ 585205bc5aac)
+
+## line: // I'm not sure why that is. it's exhibited on PVR1 and PVR3 hardware too
+  first seen in flycast: old 2021-09-13 -> new 2021-09-13 (core/rend/gles/postprocess.cpp @ f7abe3bb3445)
+  now: flycast frame f7abe3bb3 2021-09-13 -> file last changed 2021-09-13 (core/rend/gles/postprocess.cpp @ f7abe3bb3445)
+  now: flycast frame 23d1f6b50 2021-09-30 -> file last changed 2021-09-13 (core/rend/gles/postprocess.cpp @ f7abe3bb3445)
+  now: flycast frame a52977d1c 2021-12-31 -> file last changed 2021-09-13 (core/rend/gles/postprocess.cpp @ f7abe3bb3445)
+  now: flycast frame 1858cf3b3 2022-09-24 -> file last changed 2022-04-12 (core/rend/gles/postprocess.cpp @ fd50529d864c)
+
+## line: //    strcpy(irsettings.DefaultImage,"sda:/dcisos/sonic/Sonic Adventure Internat
+  first seen in nulldc-360: old 2011-10-15 -> new 2011-10-15 (plugins/ImgReader/ImgReader.cpp @ 03302923daf3)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (plugins/ImgReader/ImgReader.cpp @ 03302923daf3)
+  now: nulldc-360 frame a5c3eac47 2011-10-15 -> file last changed 2011-10-15 (plugins/ImgReader/ImgReader.cpp @ 03302923daf3)
+  now: nulldc-360 frame 3688b01bc 2011-11-08 -> file last changed 2011-11-05 (plugins/ImgReader/ImgReader.cpp @ f401c9dcbe5c)
+  now: nulldc-360 frame 98d834d68 2011-11-19 -> file last changed 2011-11-17 (plugins/ImgReader/ImgReader.cpp @ 51109bb3cbf3)
+
+## line: //    verify(dsp.regs_init.MADRS); //THAT WAS not real, MEM_ADDR is the deal ;p
+  first seen in nullDC: old 2010-05-09 -> new 2010-05-09 (nulldc/plugins/nullAICA/dsp.cpp @ 398dab4cbef4)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/nullAICA/dsp.cpp @ 398dab4cbef4)
+  now: nullDC frame 761dc87db 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/nullAICA/dsp.cpp @ 398dab4cbef4)
+  now: nullDC frame c563e075c 2011-09-14 -> file last changed 2010-12-08 (nulldc/plugins/nullAICA/dsp.cpp @ b89960230007)
+  now: nulldc-360 frame 123730831 2012-08-19 -> file last changed 2012-08-19 (plugins/nullAICA/dsp.cpp @ 1237308313a5)
+
+## line: //hack Katana wait
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (plugs/EmptyAICA/aica_hax.cpp @ 39c055006291)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/EmptyAICA/aica_hax.cpp @ 398dab4cbef4)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (plugins/EmptyAICA/aica_hax.cpp @ 03302923daf3)
+  now: nullDCe-PSP frame d04a8e2fa 2021-02-04 -> file last changed 2021-02-04 (plugs/EmptyAICA/aica_hax.cpp @ d04a8e2faa7e)
+
+## segment: GD-ROM command 0x70: a guess in the comments
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/gdrom/gdromv3.cpp @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/gdrom/gdromv3.cpp @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/dc/gdrom/gdromv3.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/gdrom/gdromv3.cpp @ 1c16baeb0eae)
+
+## segment: SH4 carry into the T bit, from dc4ever
+  first seen in dc4ever: old 2005-06-16 -> new 2005-06-16 (approx.) (DC/SH4.7091/sh4imp.cs @ b6ce2405d7dc)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/sh4/sh4_cpu.cpp @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/sh4/sh4_cpu.cpp @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/dc/sh4/sh4_cpu.cpp @ 03302923daf3)
+  now: nulldc-360 frame 62d03c2a9 2012-09-08 -> file last changed 2012-09-01 (nullDC/dc/sh4/sh4_cpu.cpp @ 501c222883cf)
+
+## segment: The AICA memory map in four lines
+  first seen in nullDC: old 2010-09-06 -> new 2010-09-06 (nulldc/plugins/nullAICA/mem.cpp @ 97b08a37ec2f)
+  now: nullDC frame 97b08a37e 2010-09-06 -> file last changed 2010-09-06 (nulldc/plugins/nullAICA/mem.cpp @ 97b08a37ec2f)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (plugins/vbaARM/mem.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/aica/aica_mem.cpp @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2013-12-28 (core/hw/aica/aica_mem.cpp @ f5d29677b324)
+
+## segment: AICA channel register writes
+  first seen in nullDC: old 2010-05-09 -> new 2010-05-09 (nulldc/plugins/nullAICA/sgc_if.cpp @ 398dab4cbef4)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/nullAICA/sgc_if.cpp @ 398dab4cbef4)
+  now: nulldc-360 frame 123730831 2012-08-19 -> file last changed 2012-08-19 (plugins/nullAICA/sgc_if.cpp @ 1237308313a5)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/aica/sgc_if.cpp @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-08-13 (core/hw/aica/sgc_if.cpp @ 94c995510eb7)
+
+## segment: AICA interrupt bits, documented inline
+  first seen in nullDC: old 2010-05-09 -> new 2010-05-09 (nulldc/plugins/nullAICA/aica.h @ 398dab4cbef4)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/nullAICA/aica.h @ 398dab4cbef4)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (plugins/vbaARM/aica.h @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/aica/aica.h @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2013-12-28 (core/hw/aica/aica.h @ f5d29677b324)
+
+## segment: x86 emitter: 'we do need some more info on this :P'
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (emitter/emitter/x86_matcher.h @ 39c055006291)
+  now: nullDC frame 18f58525c 2010-05-09 -> file last changed 2010-05-09 (emitter/x86_matcher.h @ 18f58525cc22)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/emitter/x86_matcher.h @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2015-05-18 (core/emitter/x86_matcher.h @ a9fc0f5aa804)
+
+## segment: Dynarec decoder: FPU pairs, quads and the matrix
+  first seen in nullDCe: old 2009-10-16 -> new 2008-2010 (dated 2009-10-16) (dc/sh4/rec_v2/decoder.cpp @ 39c055006291)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/sh4/rec_v2/decoder.cpp @ 39c055006291)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/sh4/dyna/decoder.cpp @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-07-10 (core/hw/sh4/dyna/decoder.cpp @ 648988e622e8)
+  now: nullDCe-PSP frame e13f07c78 2021-02-04 -> file last changed 2021-02-04 (dc/sh4/rec_v2/decoder.cpp @ e13f07c78a41)
+
+## segment: FSCA and FIPR in the opcode list
+  first seen in dc4ever: old 2004-10-12 -> new 2004-10-12 (approx.) (DC/SH4.7091/sh4imp.cs @ dc12419a4721)
+  now: reicast frame 4e5edefa9 2013-12-23 -> file last changed 2013-12-23 (newdc/hw/sh4/interpr/sh4_opcodes.h @ 4e5edefa9688)
+  now: reicast frame 239e17822 2018-09-03 -> file last changed 2013-12-28 (core/hw/sh4/interpr/sh4_opcodes.h @ f5d29677b324)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2013-12-28 (core/hw/sh4/interpr/sh4_opcodes.h @ f5d29677b324)
+  now: reicast frame a6b773a23 2019-05-17 -> file last changed 2013-12-28 (core/hw/sh4/interpr/sh4_opcodes.h @ f5d29677b324)
+
+## segment: NAOMI ROM PIO offset
+  first seen in nullDC: old 2010-05-09 -> new 2010-05-09 (nulldc/nullDC/naomi/naomi.cpp @ 1fe9c6dffd7b)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/naomi/naomi.cpp @ 1fe9c6dffd7b)
+  now: nullDC frame 761dc87db 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/naomi/naomi.cpp @ 1fe9c6dffd7b)
+  now: nullDC frame c563e075c 2011-09-14 -> file last changed 2011-05-22 (nulldc/nullDC/naomi/naomi.cpp @ 6377ab02aad5)
+  now: nulldc-360 frame a5c3eac47 2011-10-15 -> file last changed 2011-10-15 (nullDC/naomi/naomi.cpp @ a5c3eac47b2c)
+
+## segment: The Dreamcast Area 0 memory map
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/mem/sh4_area0.cpp @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/mem/sh4_area0.cpp @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/dc/mem/sh4_area0.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/holly/sb_mem.cpp @ 1c16baeb0eae)
+
+## segment: The modem register that only works as u8
+  first seen in nullDC: old 2010-05-09 -> new 2010-05-09 (nulldc/plugins/nullExtDev/modem.cpp @ 398dab4cbef4)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/nullExtDev/modem.cpp @ 398dab4cbef4)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (plugins/nullExtDev/modem.cpp @ 03302923daf3)
+  now: reicast frame 2cf59b42b 2019-03-27 -> file last changed 2019-03-27 (core/hw/modem/modem_regs.h @ 2cf59b42bb9b)
+  now: flycast frame cf1a924f5 2019-04-15 -> file last changed 2019-04-15 (core/hw/modem/modem_regs.h @ cf1a924f53a3)
+
+## segment: GD-ROM: command finished !
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/gdrom/gdromv3.cpp @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/gdrom/gdromv3.cpp @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/dc/gdrom/gdromv3.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/gdrom/gdromv3.cpp @ 1c16baeb0eae)
+
+## segment: shil: one header, three jobs
+  first seen in nullDCe: old 2009-10-16 -> new 2008-2010 (dated 2009-10-16) (dc/sh4/rec_v2/shil_canonical.h @ 39c055006291)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/sh4/rec_v2/shil_canonical.h @ 39c055006291)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/sh4/dyna/shil_canonical.h @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-07-13 (core/hw/sh4/dyna/shil_canonical.h @ f13b366e8d57)
+  now: nullDCe-PSP frame e13f07c78 2021-02-04 -> file last changed 2021-02-04 (dc/sh4/rec_v2/shil_canonical.h @ e13f07c78a41)
+
+## segment: SH4 carry ops on ARM64
+  first seen in reicast: old 2013-12-19 -> new 2012-2013 (dated 2013-12-19) (newdc/rec-ARM/arm_dyna.cpp @ 1c16baeb0eae)
+  now: reicast frame 2cf59b42b 2019-03-27 -> file last changed 2019-03-27 (core/rec-ARM64/rec_arm64.cpp @ 2cf59b42bb9b)
+  now: flycast frame cf1a924f5 2019-04-15 -> file last changed 2019-04-15 (core/rec-ARM64/rec_arm64.cpp @ cf1a924f53a3)
+  now: reicast frame a6b773a23 2019-05-17 -> file last changed 2019-05-15 (core/rec-ARM64/rec_arm64.cpp @ 83a6c0ee7127)
+  now: flycast frame aa36a65d1 2019-06-21 -> file last changed 2019-05-22 (core/rec-ARM64/rec_arm64.cpp @ fb76efb08d88)
+
+## segment: AICA DSP memory: should be 0x15C8
+  first seen in nullDC: old 2010-05-09 -> new 2010-05-09 (nulldc/plugins/nullAICA/aica.h @ 398dab4cbef4)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/nullAICA/aica.h @ 398dab4cbef4)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (plugins/vbaARM/aica.h @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/aica/aica.h @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2013-12-28 (core/hw/aica/aica.h @ f5d29677b324)
+
+## segment: Unhandled gdrom state ...
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/gdrom/gdromv3.cpp @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/gdrom/gdromv3.cpp @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/dc/gdrom/gdromv3.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/gdrom/gdromv3.cpp @ 1c16baeb0eae)
+
+## segment: GD-ROM: the ATA packet command
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/gdrom/gdromv3.cpp @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/gdrom/gdromv3.cpp @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/dc/gdrom/gdromv3.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/gdrom/gdromv3.cpp @ 1c16baeb0eae)
+
+## segment: armwreck: the ARM code emitter
+  first seen in nullDCe: old 2009-10-16 -> new 2008-2010 (dated 2009-10-16) (rec-ARM/armwreck.h @ 39c055006291)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (rec-ARM/armwreck.h @ 39c055006291)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/arm_emitter/E_DataOp.h @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-07-19 (core/arm_emitter/E_DataOp.h @ 71d7f908580e)
+  now: flycast frame 92abf760d 2021-05-14 -> file last changed 2021-03-02 (core/arm_emitter/E_DataOp.h @ 0c8815549c3a)
+
+## segment: Recompiling the AICA sound DSP to x86
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/nullAICA/dsp.cpp @ 398dab4cbef4)
+  now: nullDC frame 761dc87db 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/nullAICA/dsp.cpp @ 398dab4cbef4)
+  now: nullDC frame c563e075c 2011-09-14 -> file last changed 2010-12-08 (nulldc/plugins/nullAICA/dsp.cpp @ b89960230007)
+  now: nulldc-360 frame 123730831 2012-08-19 -> file last changed 2012-08-19 (plugins/nullAICA/dsp.cpp @ 1237308313a5)
+
+## segment: Holly's interrupt map
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (plugins/plugin_header.h @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/plugins/plugin_header.h @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/plugins/plugin_header.h @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/types.h @ 1c16baeb0eae)
+
+## segment: A Rez hack that never worked
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (plugs/EmptyAICA/aica_hax.cpp @ 39c055006291)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/EmptyAICA/aica_hax.cpp @ 398dab4cbef4)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (plugins/EmptyAICA/aica_hax.cpp @ 03302923daf3)
+  now: nullDCe-PSP frame d04a8e2fa 2021-02-04 -> file last changed 2021-02-04 (plugs/EmptyAICA/aica_hax.cpp @ d04a8e2faa7e)
+
+## segment: TA polygon type 3, from 2004
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (plugs/drkPvr/ta_structs.h @ 39c055006291)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/drkPvr/ta_structs.h @ 398dab4cbef4)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (plugins/drkPvr/ta_structs.h @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/pvr/ta_structs.h @ 1c16baeb0eae)
+
+## segment: The GD-ROM state machine
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/gdrom/gdromv3.cpp @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/gdrom/gdromv3.cpp @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/dc/gdrom/gdromv3.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/gdrom/gdromv3.cpp @ 1c16baeb0eae)
+
+## segment: SH4 FPU ops on the ARM64 dynarec
+  first seen in nullDCe: old 2009-10-16 -> new 2008-2010 (dated 2009-10-16) (psp/dc/sh4/rec_v2/psp_driver.cpp @ 39c055006291)
+  now: reicast frame 2cf59b42b 2019-03-27 -> file last changed 2019-03-27 (core/rec-ARM64/rec_arm64.cpp @ 2cf59b42bb9b)
+  now: flycast frame cf1a924f5 2019-04-15 -> file last changed 2019-04-15 (core/rec-ARM64/rec_arm64.cpp @ cf1a924f53a3)
+  now: reicast frame a6b773a23 2019-05-17 -> file last changed 2019-05-15 (core/rec-ARM64/rec_arm64.cpp @ 83a6c0ee7127)
+  now: reicast frame 95b673698 2021-12-22 -> file last changed 2020-03-08 (libswirl/jit/backend/arm64/rec_arm64.cpp @ 6650ac80bb6c)
+
+## segment: Naomi JVS I/O board replies
+  first seen in reicast: old 2019-03-27 -> new 2019-03-27 (core/hw/maple/maple_devs.cpp @ 2cf59b42bb9b)
+  now: reicast frame 2cf59b42b 2019-03-27 -> file last changed 2019-03-27 (core/hw/maple/maple_devs.cpp @ 2cf59b42bb9b)
+  now: flycast frame cf1a924f5 2019-04-15 -> file last changed 2019-04-15 (core/hw/maple/maple_devs.cpp @ cf1a924f53a3)
+  now: reicast frame a6b773a23 2019-05-17 -> file last changed 2019-04-10 (core/hw/maple/maple_devs.cpp @ 8cdbb9c2fd32)
+  now: reicast frame 95b673698 2021-12-22 -> file last changed 2020-03-21 (libswirl/hw/maple/maple_devs.cpp @ 37dba034a9fd)
+
+## segment: Hack the KOS command queue
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (plugs/EmptyAICA/aica_hax.cpp @ 39c055006291)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/EmptyAICA/aica_hax.cpp @ 398dab4cbef4)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (plugins/EmptyAICA/aica_hax.cpp @ 03302923daf3)
+  now: nullDCe-PSP frame d04a8e2fa 2021-02-04 -> file last changed 2021-02-04 (plugs/EmptyAICA/aica_hax.cpp @ d04a8e2faa7e)
+
+## segment: AICA register map, hopefully
+  first seen in nullDC: old 2010-05-09 -> new 2010-05-09 (nulldc/plugins/nullAICA/aica.h @ 398dab4cbef4)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/nullAICA/aica.h @ 398dab4cbef4)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (plugins/vbaARM/aica.h @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/aica/aica.h @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2013-12-28 (core/hw/aica/aica.h @ f5d29677b324)
+
+## segment: MEM_ADDR is the deal
+  first seen in nullDC: old 2010-05-09 -> new 2010-05-09 (nulldc/plugins/nullAICA/dsp.cpp @ 398dab4cbef4)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/nullAICA/dsp.cpp @ 398dab4cbef4)
+  now: nullDC frame 761dc87db 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/nullAICA/dsp.cpp @ 398dab4cbef4)
+  now: nullDC frame c563e075c 2011-09-14 -> file last changed 2010-12-08 (nulldc/plugins/nullAICA/dsp.cpp @ b89960230007)
+  now: nulldc-360 frame 123730831 2012-08-19 -> file last changed 2012-08-19 (plugins/nullAICA/dsp.cpp @ 1237308313a5)
+
+## segment: TA list decoder: end of list
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (plugs/drkPvr/ta.h @ 39c055006291)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/drkPvr/ta.h @ 398dab4cbef4)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (plugins/drkPvr/ta.h @ 03302923daf3)
+  now: nulldc-360 frame a4194fd60 2012-08-26 -> file last changed 2011-10-15 (plugins/drkPvr/ta.h @ 03302923daf3)
+
+## segment: This is faster. Why?
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: reicast frame 417dfc5d8 2015-08-11 -> file last changed 2015-08-11 (core/rec-ARM/rec_arm.cpp @ 417dfc5d8f33)
+  now: reicast frame 239e17822 2018-09-03 -> file last changed 2018-08-01 (core/rec-ARM/rec_arm.cpp @ 9942bfc86efe)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-08-01 (core/rec-ARM/rec_arm.cpp @ 9942bfc86efe)
+  now: reicast frame a6b773a23 2019-05-17 -> file last changed 2019-03-30 (core/rec-ARM/rec_arm.cpp @ 26f02e22da37)
+
+## segment: Hoping the round mode is right
+  first seen in nullDCe: old 2009-10-16 -> new 2008-2010 (dated 2009-10-16) (psp/dc/sh4/rec_v2/psp_driver.cpp @ 39c055006291)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (psp/dc/sh4/rec_v2/psp_driver.cpp @ 39c055006291)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/windows/win86_il.cpp @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-07-19 (core/rec-x86/rec_x86_il.cpp @ 71d7f908580e)
+  now: flycast frame 7697d37ec 2021-01-23 -> file last changed 2020-02-29 (core/rec-x86/rec_x86_il.cpp @ 93bedb91f1d9)
+
+## segment: shll, to be checked since 2005
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/sh4/sh4_cpu.cpp @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/sh4/sh4_cpu.cpp @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/dc/sh4/sh4_cpu.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/sh4/interpr/sh4_opcodes.cpp @ 1c16baeb0eae)
+
+## segment: VMU media info
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/maple/maple_devs.cpp @ 39c055006291)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/maple/maple_devs.cpp @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-08-13 (core/hw/maple/maple_devs.cpp @ 90b1595101e2)
+  now: flycast frame aa36a65d1 2019-06-21 -> file last changed 2019-05-21 (core/hw/maple/maple_devs.cpp @ d38e094ba0ec)
+
+## segment: Two address spaces for the JIT
+  first seen in reicast: old 2019-05-17 -> new 2019-05-15 (core/hw/sh4/dyna/ngen.h @ 83a6c0ee7127)
+  now: reicast frame a6b773a23 2019-05-17 -> file last changed 2019-05-15 (core/hw/sh4/dyna/ngen.h @ 83a6c0ee7127)
+  now: flycast frame d38e094ba 2019-05-21 -> file last changed 2019-05-21 (core/hw/sh4/dyna/ngen.h @ d38e094ba0ec)
+  now: reicast frame 95b673698 2021-12-22 -> file last changed 2020-02-04 (libswirl/hw/sh4/dyna/ngen.h @ 11a02e571b37)
+  now: nulldc3 frame f2300244a 2023-07-07 -> file last changed 2020-02-04 (libswirl/hw/sh4/dyna/ngen.h @ 11a02e571b37)
+
+## segment: TA list types, worked out by hand
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (plugs/drkPvr/ta.h @ 39c055006291)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/drkPvr/ta.h @ 398dab4cbef4)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (plugins/drkPvr/ta.h @ 03302923daf3)
+  now: nullDCe-PSP frame d04a8e2fa 2021-02-04 -> file last changed 2021-02-04 (plugs/drkPvr/ta.h @ d04a8e2faa7e)
+
+## segment: GD-ROM subcode Q, mostly guessed
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: reicast frame d08cb584a 2020-01-13 -> file last changed 2020-01-13 (libswirl/hw/gdrom/gdromv3.cpp @ d08cb584a529)
+  now: nullDCe-PSP frame 36b350ade 2021-06-26 -> file last changed 2021-06-26 (dc/gdrom/gdromv3.cpp @ 36b350ade6db)
+  now: nullDCe-PSP frame d6f177467 2021-10-17 -> file last changed 2021-06-26 (dc/gdrom/gdromv3.cpp @ 36b350ade6db)
+  now: reicast frame 95b673698 2021-12-22 -> file last changed 2020-03-21 (libswirl/hw/gdrom/gdromv3.cpp @ 37dba034a9fd)
+
+## segment: SH4 address space in 17 lines
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/mem/sh4_mem.cpp @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/mem/sh4_mem.cpp @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/dc/mem/sh4_mem.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/sh4/sh4_mem.cpp @ 1c16baeb0eae)
+
+## segment: Where does the block go next?
+  first seen in nullDCe: old 2009-10-16 -> new 2008-2010 (dated 2009-10-16) (psp/dc/sh4/rec_v2/psp_driver.cpp @ 39c055006291)
+  now: reicast frame 75fd69869 2015-07-29 -> file last changed 2015-07-29 (core/rec-cpp/rec_cpp.cpp @ 75fd6986953c)
+  now: reicast frame 239e17822 2018-09-03 -> file last changed 2018-08-03 (core/rec-cpp/rec_cpp.cpp @ 2cc55dfce4f0)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-08-03 (core/rec-cpp/rec_cpp.cpp @ 2cc55dfce4f0)
+  now: reicast frame a6b773a23 2019-05-17 -> file last changed 2019-03-30 (core/rec-cpp/rec_cpp.cpp @ 26f02e22da37)
+
+## segment: Texture twiddling, bit by bit
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (plugs/drkPvr/tex_decode.cpp @ 39c055006291)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/drkPvr/TexCache.cpp @ 398dab4cbef4)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (plugins/drkPvr/TexCache.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/rend/TexCache.cpp @ 1c16baeb0eae)
+
+## segment: VRAM's 64-bit bus, explained
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/pvr/pvrLock.cpp @ 39c055006291)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/pvr/pvrLock.cpp @ 1fe9c6dffd7b)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/dc/pvr/pvrLock.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/pvr/pvr_mem.cpp @ 1c16baeb0eae)
+
+## segment: Reverse-engineering the NAOMI DIMM board
+  first seen in nullDC: old 2010-05-09 -> new 2010-05-09 (nulldc/nullDC/naomi/naomi.cpp @ 1fe9c6dffd7b)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/naomi/naomi.cpp @ 1fe9c6dffd7b)
+  now: nulldc-360 frame a5c3eac47 2011-10-15 -> file last changed 2011-10-15 (nullDC/naomi/naomi.cpp @ a5c3eac47b2c)
+  now: reicast frame 417dfc5d8 2015-08-11 -> file last changed 2015-08-11 (core/hw/naomi/naomi.cpp @ 417dfc5d8f33)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-03-09 (core/hw/naomi/naomi.cpp @ a29fbc62c906)
+
+## segment: Reset? *couh* right ...
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (plugs/drkPvr/ta.h @ 39c055006291)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/drkPvr/ta.h @ 398dab4cbef4)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (plugins/drkPvr/ta.h @ 03302923daf3)
+  now: nullDCe-PSP frame d04a8e2fa 2021-02-04 -> file last changed 2021-02-04 (plugs/drkPvr/ta.h @ d04a8e2faa7e)
+
+## segment: SHAD, the SH4 dynamic shift
+  first seen in nullDCe: old 2009-10-16 -> new 2008-2010 (dated 2009-10-16) (dc/sh4/rec_v2/shil_canonical.h @ 39c055006291)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/sh4/rec_v2/shil_canonical.h @ 39c055006291)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/sh4/dyna/shil_canonical.h @ 1c16baeb0eae)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-07-13 (core/hw/sh4/dyna/shil_canonical.h @ f13b366e8d57)
+  now: nullDCe-PSP frame e13f07c78 2021-02-04 -> file last changed 2021-02-04 (dc/sh4/rec_v2/shil_canonical.h @ e13f07c78a41)
+
+## segment: Area 3: main RAM and its mirrors
+  first seen in nullDC: old 2010-05-09 -> new 2010-05-09 (nulldc/nullDC/dc/mem/_vmem.cpp @ 1fe9c6dffd7b)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/mem/_vmem.cpp @ 1fe9c6dffd7b)
+  now: nullDC frame 761dc87db 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/mem/_vmem.cpp @ 1fe9c6dffd7b)
+  now: nullDC frame c563e075c 2011-09-14 -> file last changed 2010-12-12 (nulldc/nullDC/dc/mem/_vmem.cpp @ 1568526c66a5)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (nullDC/dc/mem/_vmem.cpp @ 03302923daf3)
+
+## segment: The PowerVR Texture Control Word
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/drkPvr/ta_structs.h @ 398dab4cbef4)
+  now: nullDC frame 18f58525c 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/drkPvr/ta_structs.h @ 398dab4cbef4)
+  now: nullDC frame 761dc87db 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/drkPvr/ta_structs.h @ 398dab4cbef4)
+  now: nullDC frame d14d77cc1 2010-05-23 -> file last changed 2010-05-09 (nulldc/plugins/drkPvr/ta_structs.h @ 398dab4cbef4)
+
+## segment: Background plane vertex math :p
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (plugs/drkPvr/gxRend.cpp @ 39c055006291)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/drkPvr/d3dRend.cpp @ 398dab4cbef4)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (plugins/drkPvr/xenosRend.cpp @ 03302923daf3)
+  now: nullDCe-PSP frame d04a8e2fa 2021-02-04 -> file last changed 2021-02-04 (plugs/drkPvr/gxRend.cpp @ d04a8e2faa7e)
+
+## segment: Optimizer: disabled to be on the safe side
+  first seen in nullDCe: old 2009-10-16 -> new 2008-2010 (dated 2009-10-16) (dc/sh4/rec_v2/shil.cpp @ 39c055006291)
+  now: reicast frame 12154b25e 2020-03-28 -> file last changed 2020-03-21 (libswirl/hw/sh4/dyna/shil.cpp @ 37dba034a9fd)
+  now: reicast frame 046d94d4b 2020-04-02 -> file last changed 2020-03-21 (libswirl/hw/sh4/dyna/shil.cpp @ 37dba034a9fd)
+  now: reicast frame 95b673698 2021-12-22 -> file last changed 2020-03-21 (libswirl/hw/sh4/dyna/shil.cpp @ 37dba034a9fd)
+  now: nulldc3 frame f2300244a 2023-07-07 -> file last changed 2020-03-21 (libswirl/hw/sh4/dyna/shil.cpp @ 37dba034a9fd)
+
+## segment: dc4ever's 2004 block builder, in C#
+  first seen in dc4ever: old 2004-04-15 -> new 2004-04-15 (approx.) (DC/SH4.7091/cachedInt.cs @ b6507f2d5229)
+  now: dc4ever frame b6507f2d5 2004-04-15 -> file last changed 2004-04-15 (approx.) (DC/SH4.7091/cachedInt.cs @ b6507f2d5229)
+  now: dc4ever frame 1b4ecc905 2004-04-19 -> file last changed 2004-04-15 (approx.) (DC/SH4.7091/cachedInt.cs @ b6507f2d5229)
+  now: dc4ever frame c45bedfe3 2004-10-11 -> file last changed 2004-04-15 (approx.) (DC/SH4.7091/cachedInt.cs @ b6507f2d5229)
+  now: dc4ever frame 13b629894 2004-11-03 -> file last changed 2004-04-15 (approx.) (DC/SH4.7091/cachedInt.cs @ b6507f2d5229)
+
+## segment: bubble-sorting the block cache
+  first seen in dc4ever: old 2004-04-15 -> new 2004-04-15 (approx.) (DC/SH4.7091/cachedInt.cs @ b6507f2d5229)
+  now: dc4ever frame b6507f2d5 2004-04-15 -> file last changed 2004-04-15 (approx.) (DC/SH4.7091/cachedInt.cs @ b6507f2d5229)
+  now: dc4ever frame 1b4ecc905 2004-04-19 -> file last changed 2004-04-15 (approx.) (DC/SH4.7091/cachedInt.cs @ b6507f2d5229)
+  now: dc4ever frame c45bedfe3 2004-10-11 -> file last changed 2004-04-15 (approx.) (DC/SH4.7091/cachedInt.cs @ b6507f2d5229)
+  now: dc4ever frame 13b629894 2004-11-03 -> file last changed 2004-04-15 (approx.) (DC/SH4.7091/cachedInt.cs @ b6507f2d5229)
+
+## segment: Round-to-nearest skips the boot animation
+  first seen in NotDC-PS3: old 2026-09-19 -> new 2026-09-19 (dc/sh4/sh4_registers.cpp @ 5a32b94bee23)
+  now: NotDC-PS3 frame 5a32b94be 2026-09-19 -> file last changed 2026-09-19 (dc/sh4/sh4_registers.cpp @ 5a32b94bee23)
+  now: NotDC-PS3 frame 0678ea103 2026-09-20 -> file last changed 2026-09-19 (dc/sh4/sh4_registers.cpp @ 5a32b94bee23)
+  now: NotDC-PS3 frame dfcc5aab2 2026-09-21 -> file last changed 2026-09-19 (dc/sh4/sh4_registers.cpp @ 5a32b94bee23)
+  now: NotDC-PS3 frame 1111e45b5 2026-10-03 -> file last changed 2026-09-19 (dc/sh4/sh4_registers.cpp @ 5a32b94bee23)
+
+## segment: a hand-encoded Xenon dot product
+  first seen in nulldc-360: old 2011-11-20 -> new 2011-11-20 (nullDC/emitter/3DMath.h @ 567c2abe1021)
+  now: nulldc-360 frame 567c2abe1 2011-11-20 -> file last changed 2011-11-20 (nullDC/emitter/3DMath.h @ 567c2abe1021)
+  now: nulldc-360 frame 5fb759b8a 2011-11-20 -> file last changed 2011-11-20 (nullDC/emitter/3DMath.h @ 567c2abe1021)
+  now: nulldc-360 frame ddf67f1e9 2011-11-24 -> file last changed 2011-11-20 (nullDC/emitter/3DMath.h @ 567c2abe1021)
+  now: nulldc-360 frame df4c91950 2011-12-04 -> file last changed 2011-11-25 (nullDC/emitter/3DMath.h @ d139e0f3f48d)
+
+## segment: Elan: NAOMI 2's T&L chip registers
+  first seen in flycast: old 2022-04-16 -> new 2022-04-16 (core/hw/pvr/elan.cpp @ d732140bf9f6)
+  now: flycast frame d732140bf 2022-04-16 -> file last changed 2022-04-16 (core/hw/pvr/elan.cpp @ d732140bf9f6)
+  now: flycast frame c348f4cca 2022-04-30 -> file last changed 2022-04-21 (core/hw/pvr/elan.cpp @ 3b81bbcae5c5)
+  now: flycast frame 1858cf3b3 2022-09-24 -> file last changed 2022-06-15 (core/hw/pvr/elan.cpp @ 5b3a4149873d)
+  now: flycast frame 9d6bfd478 2023-03-31 -> file last changed 2023-01-26 (core/hw/pvr/elan.cpp @ 80cf4406a7d0)
+
+## segment: the small-n-simple idle loop detector
+  first seen in nulldc3: old 2024-12-08 -> new 2024-12-08 (libswirl/hw/sh4/dyna/decoder.cpp @ 4c6a519b3d37)
+  now: nulldc3 frame 4c6a519b3 2024-12-08 -> file last changed 2024-12-08 (libswirl/hw/sh4/dyna/decoder.cpp @ 4c6a519b3d37)
+  now: nulldc3 frame 814f77f98 2024-12-11 -> file last changed 2024-12-08 (libswirl/hw/sh4/dyna/decoder.cpp @ 4c6a519b3d37)
+  now: nulldc3 frame d3a37b3e2 2025-01-23 -> file last changed 2024-12-08 (libswirl/hw/sh4/dyna/decoder.cpp @ 4c6a519b3d37)
+  now: nulldc3 frame 47a2e2c21 2025-01-27 -> file last changed 2024-12-08 (libswirl/hw/sh4/dyna/decoder.cpp @ 4c6a519b3d37)
+
+## segment: div0s: VERY NASTY
+  first seen in nulldc3: old 2024-12-08 -> new 2024-12-08 (libswirl/hw/sh4/dyna/decoder.cpp @ 4c6a519b3d37)
+  now: nulldc3 frame 4c6a519b3 2024-12-08 -> file last changed 2024-12-08 (libswirl/hw/sh4/dyna/decoder.cpp @ 4c6a519b3d37)
+  now: nulldc3 frame 814f77f98 2024-12-11 -> file last changed 2024-12-08 (libswirl/hw/sh4/dyna/decoder.cpp @ 4c6a519b3d37)
+  now: nulldc3 frame d3a37b3e2 2025-01-23 -> file last changed 2024-12-08 (libswirl/hw/sh4/dyna/decoder.cpp @ 4c6a519b3d37)
+  now: nulldc3 frame 47a2e2c21 2025-01-27 -> file last changed 2024-12-08 (libswirl/hw/sh4/dyna/decoder.cpp @ 4c6a519b3d37)
+
+## segment: punch-through's feedback channel
+  first seen in nulldc3: old 2025-05-27 -> new 2025-05-27 (libswirl/rend/refsw2/refsw_tile.cpp @ 0a789c8ddabe)
+  now: nulldc3 frame 0a789c8dd 2025-05-27 -> file last changed 2025-05-27 (libswirl/rend/refsw2/refsw_tile.cpp @ 0a789c8ddabe)
+  now: nulldc3 frame 242d5f3da 2025-05-27 -> file last changed 2025-05-27 (libswirl/rend/refsw2/refsw_tile.cpp @ 0a789c8ddabe)
+  now: nulldc3 frame 1e22c489e 2025-05-30 -> file last changed 2025-05-30 (libswirl/rend/refsw2/refsw_tile.cpp @ 2afb3b52ce42)
+  now: nulldc3 frame dec138bcf 2026-06-24 -> file last changed 2026-05-10 (libswirl/rend/refsw2/refsw_tile.cpp @ a1944d603f8b)
+
+## segment: The TA ring: one barrier per batch
+  first seen in minicast: old 2026-07-13 -> new 2026-07-13 (libswirl/hw/pvr/ta_ring.h @ 918f742820ba)
+  now: minicast frame 918f74282 2026-07-13 -> file last changed 2026-07-13 (libswirl/hw/pvr/ta_ring.h @ 918f742820ba)
+  now: minicast frame 437d558b2 2026-07-15 -> file last changed 2026-07-15 (libswirl/hw/pvr/ta_ring.h @ 437d558b2afc)
+  now: minicast frame 585205bc5 2026-07-17 -> file last changed 2026-07-15 (libswirl/hw/pvr/ta_ring.h @ 437d558b2afc)
+  now: minicast frame 6fcc0e1d3 2026-07-17 -> file last changed 2026-07-15 (libswirl/hw/pvr/ta_ring.h @ 437d558b2afc)
+
+## segment: Dreamcast memory map, FPGA edition
+  first seen in minicast: old 2026-07-13 -> new 2026-07-13 (libswirl/hw/mem/_vmem.cpp @ 918f742820ba)
+  now: minicast frame 918f74282 2026-07-13 -> file last changed 2026-07-13 (libswirl/hw/mem/_vmem.cpp @ 918f742820ba)
+  now: minicast frame 437d558b2 2026-07-15 -> file last changed 2026-07-13 (libswirl/hw/mem/_vmem.cpp @ 918f742820ba)
+  now: minicast frame 585205bc5 2026-07-17 -> file last changed 2026-07-17 (libswirl/hw/mem/_vmem.cpp @ 585205bc5aac)
+  now: minicast frame 6fcc0e1d3 2026-07-17 -> file last changed 2026-07-16 (libswirl/hw/mem/_vmem.cpp @ 9fec60e4f659)
+
+## segment: UseAlpha=0 and the black BIOS background
+  first seen in polly2: old 2026-07-14 -> new 2026-07-14 (rtl/tsp/tsp_shade_v2_pp.sv @ e84bfc2612e3)
+  now: polly2 frame e84bfc261 2026-07-14 -> file last changed 2026-07-14 (rtl/tsp/tsp_shade_v2_pp.sv @ e84bfc2612e3)
+  now: polly2 frame 4a77035a3 2026-07-14 -> file last changed 2026-07-14 (rtl/tsp/tsp_shade_v2_pp.sv @ e84bfc2612e3)
+  now: polly2 frame 7a70d2455 2026-07-17 -> file last changed 2026-07-17 (polly2-core/rtl/tsp/tsp_shade_v2_pp.sv @ 185788faffa2)
+  now: polly2 frame b27adc9f8 2026-07-25 -> file last changed 2026-07-17 (polly2-core/rtl/tsp/tsp_shade_v2_pp.sv @ 436372f4bc21)
+
+## segment: polly2's video out: 1080p at the DC's 59.94
+  first seen in polly2: old 2026-07-17 -> new 2026-07-17 (polly2-de10nano/rtl/spg.sv @ 436372f4bc21)
+  now: polly2 frame 5af63a060 2026-07-26 -> file last changed 2026-07-26 (polly2-de10nano/rtl/spg.sv @ 5af63a060eb1)
+  now: polly2 frame c6f7dbd2c 2026-07-27 -> file last changed 2026-07-27 (polly2-de10nano/rtl/spg.sv @ c6f7dbd2c636)
+  now: polly2 frame 88a0ded4d 2026-07-27 -> file last changed 2026-07-27 (polly2-de10nano/rtl/spg.sv @ c6f7dbd2c636)
+  now: polly2 frame 67a459bb7 2026-07-29 -> file last changed 2026-07-27 (polly2-de10nano/rtl/spg.sv @ c6f7dbd2c636)
+
+## segment: Serializing TA control events without a lock
+  first seen in minicast: old 2026-07-13 -> new 2026-07-13 (libswirl/hw/pvr/ta.cpp @ 918f742820ba)
+  now: minicast frame 918f74282 2026-07-13 -> file last changed 2026-07-13 (libswirl/hw/pvr/ta.cpp @ 918f742820ba)
+  now: minicast frame 437d558b2 2026-07-15 -> file last changed 2026-07-15 (libswirl/hw/pvr/ta.cpp @ 437d558b2afc)
+  now: minicast frame 585205bc5 2026-07-17 -> file last changed 2026-07-15 (libswirl/hw/pvr/ta.cpp @ 437d558b2afc)
+  now: minicast frame 6fcc0e1d3 2026-07-17 -> file last changed 2026-07-15 (libswirl/hw/pvr/ta.cpp @ 437d558b2afc)
+
+## segment: PowerVR VRAM's 64-bit interleave
+  first seen in dc4ever: old 2004-10-17 -> new 2004-10-17 (approx.) (DC/PowerVR2DC/powervr.cs @ 128a1910ed5c)
+  now: dc4ever frame 128a1910e 2004-10-17 -> file last changed 2004-10-17 (approx.) (DC/PowerVR2DC/powervr.cs @ 128a1910ed5c)
+  now: dc4ever frame 2b0d390db 2004-10-17 -> file last changed 2004-10-17 (approx.) (DC/PowerVR2DC/powervr.cs @ 128a1910ed5c)
+  now: dc4ever frame a4f480393 2004-11-03 -> file last changed 2004-10-18 (approx.) (DC/PowerVR2DC/powervr.cs @ b57997f73712)
+  now: dc4ever frame 3a4a873a0 2005-02-04 -> file last changed 2005-01-02 (approx.) (DC/PowerVR2DC/powervr.cs @ f40d3bc8124b)
+
+## segment: drkPvr's accuracy-vs-speed menus
+  first seen in nulldc-360: old 2011-10-15 -> new 2011-10-15 (plugins/drkPvr/drkPvr.cpp @ 03302923daf3)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (plugins/drkPvr/drkPvr.cpp @ 03302923daf3)
+  now: nulldc-360 frame a5c3eac47 2011-10-15 -> file last changed 2011-10-15 (plugins/drkPvr/drkPvr.cpp @ 03302923daf3)
+  now: nulldc-360 frame 3688b01bc 2011-11-08 -> file last changed 2011-11-04 (plugins/drkPvr/drkPvr.cpp @ 33c2ad49f4f0)
+  now: nulldc-360 frame 98d834d68 2011-11-19 -> file last changed 2011-11-04 (plugins/drkPvr/drkPvr.cpp @ 33c2ad49f4f0)
+
+## segment: Pushing the background plane back
+  first seen in NotDC-PS3: old 2026-09-23 -> new 2026-09-23 (ps3/ps3_rend.cpp @ a5d7deaecb8c)
+  now: NotDC-PS3 frame a5d7deaec 2026-09-23 -> file last changed 2026-09-23 (ps3/ps3_rend.cpp @ a5d7deaecb8c)
+  now: NotDC-PS3 frame 4685f3242 2026-09-23 -> file last changed 2026-09-23 (ps3/ps3_rend.cpp @ a5d7deaecb8c)
+  now: NotDC-PS3 frame 1111e45b5 2026-10-03 -> file last changed 2026-10-03 (ps3/ps3_rend.cpp @ 1111e45b5c00)
+  now: NotDC-PS3 frame b912e5f89 2026-10-05 -> file last changed 2026-10-04 (ps3/ps3_rend.cpp @ f602f365b787)
+
+## segment: Widescreen cheats: Code Veronica's black bars
+  first seen in flycast: old 2019-09-30 -> new 2019-09-27 (core/cheats.cpp @ 920bb44c309f)
+  now: flycast frame d732140bf 2022-04-16 -> file last changed 2022-04-16 (core/cheats.cpp @ d732140bf9f6)
+  now: flycast frame c348f4cca 2022-04-30 -> file last changed 2022-04-30 (core/cheats.cpp @ 0181685d2fdc)
+  now: flycast frame 1858cf3b3 2022-09-24 -> file last changed 2022-07-01 (core/cheats.cpp @ 19112aecb21c)
+  now: flycast frame 9d6bfd478 2023-03-31 -> file last changed 2023-02-15 (core/cheats.cpp @ a21b79cfbe97)
+
+## segment: An SH4 opcode with a 2005 ToDo
+  first seen in nullDC-pre2008: old 2005-2008 -> new 2005-2008 (None @ None)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/sh4/sh4_cpu.cpp @ 1fe9c6dffd7b)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/sh4/sh4_cpu.cpp @ 1fe9c6dffd7b)
+  now: nullDC frame 761dc87db 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/sh4/sh4_cpu.cpp @ 1fe9c6dffd7b)
+  now: nullDC frame 729adb6d4 2010-10-20 -> file last changed 2010-08-27 (nulldc/nullDC/dc/sh4/sh4_cpu.cpp @ 04181aa8e535)
+
+## segment: Why the VMU saves came out empty
+  first seen in nullDC4WiiU: old 2026-11-07 -> new 2026-11-07 (dc/maple/maple_devs.cpp @ 75bc844ccbdc)
+  now: nullDC4WiiU frame 75bc844cc 2026-11-07 -> file last changed 2026-11-07 (dc/maple/maple_devs.cpp @ 75bc844ccbdc)
+  now: nullDC4WiiU frame 03ab75bd3 2026-11-07 -> file last changed 2026-11-07 (dc/maple/maple_devs.cpp @ 75bc844ccbdc)
+  now: nullDC4WiiU frame 0d22bcc5d 2026-11-09 -> file last changed 2026-11-09 (dc/maple/maple_devs.cpp @ a96b805d6d4c)
+  now: nullDC4WiiU frame 0dc61a14b 2026-11-13 -> file last changed 2026-11-13 (dc/maple/maple_devs.cpp @ f14e2c729eb8)
+
+## segment: 64-bit reads: which word goes first
+  first seen in nullDC4WiiU: old 2026-11-07 -> new 2026-11-07 (dc/mem/_vmem.cpp @ 75bc844ccbdc)
+  now: nullDC4WiiU frame 75bc844cc 2026-11-07 -> file last changed 2026-11-07 (dc/mem/_vmem.cpp @ 75bc844ccbdc)
+  now: nullDC4WiiU frame 03ab75bd3 2026-11-07 -> file last changed 2026-11-07 (dc/mem/_vmem.cpp @ 75bc844ccbdc)
+  now: nullDC4WiiU frame 0d22bcc5d 2026-11-09 -> file last changed 2026-11-09 (dc/mem/_vmem.cpp @ a96b805d6d4c)
+  now: nullDC4WiiU frame 0dc61a14b 2026-11-13 -> file last changed 2026-11-11 (dc/mem/_vmem.cpp @ ccb79cfd06a9)
+
+## segment: Slower and lower instead of stuttering
+  first seen in nullDC4WiiU: old 2026-11-07 -> new 2026-11-07 (wiiu/audio_wiiu.cpp @ 75bc844ccbdc)
+  now: nullDC4WiiU frame 75bc844cc 2026-11-07 -> file last changed 2026-11-07 (wiiu/audio_wiiu.cpp @ 75bc844ccbdc)
+  now: nullDC4WiiU frame 03ab75bd3 2026-11-07 -> file last changed 2026-11-07 (wiiu/audio_wiiu.cpp @ 75bc844ccbdc)
+  now: nullDC4WiiU frame 0d22bcc5d 2026-11-09 -> file last changed 2026-11-09 (wiiu/audio_wiiu.cpp @ 1a6c261d9627)
+  now: nullDC4WiiU frame 0dc61a14b 2026-11-13 -> file last changed 2026-11-13 (wiiu/audio_wiiu.cpp @ f14e2c729eb8)
+
+## segment: HarissaDC writes its own flash
+  first seen in HarissaDC: old 2026-11-03 -> new 2026-11-03 (src/bios/hle_bios.cpp @ 37fa91cbbf1f)
+  now: HarissaDC frame 37fa91cbb 2026-11-03 -> file last changed 2026-11-03 (src/bios/hle_bios.cpp @ 37fa91cbbf1f)
+  now: HarissaDC frame 462ddbb56 2026-11-03 -> file last changed 2026-11-03 (src/bios/hle_bios.cpp @ 37fa91cbbf1f)
+  now: HarissaDC frame bf379efaf 2026-11-05 -> file last changed 2026-11-03 (src/bios/hle_bios.cpp @ 37fa91cbbf1f)
+  now: HarissaDC frame 790280a63 2026-11-06 -> file last changed 2026-11-06 (src/bios/hle_bios.cpp @ 790280a63635)
+
+## segment: Booting with no BIOS
+  first seen in HarissaDC: old 2026-11-03 -> new 2026-11-03 (src/bios/hle_bios.cpp @ 37fa91cbbf1f)
+  now: HarissaDC frame 37fa91cbb 2026-11-03 -> file last changed 2026-11-03 (src/bios/hle_bios.cpp @ 37fa91cbbf1f)
+  now: HarissaDC frame 462ddbb56 2026-11-03 -> file last changed 2026-11-03 (src/bios/hle_bios.cpp @ 37fa91cbbf1f)
+  now: HarissaDC frame bf379efaf 2026-11-05 -> file last changed 2026-11-03 (src/bios/hle_bios.cpp @ 37fa91cbbf1f)
+  now: HarissaDC frame 790280a63 2026-11-06 -> file last changed 2026-11-06 (src/bios/hle_bios.cpp @ 790280a63635)
+
+## segment: Sprite atlases and the 0xDEADBEEF sentinel
+  first seen in nullDC4Wii: old 2026-10-31 -> new 2026-10-28 (dc/pvr/vram_track.h @ 45cbfff649d6)
+  now: nullDC4Wii frame ef0d3f9f7 2026-10-31 -> file last changed 2026-10-28 (dc/pvr/vram_track.h @ 45cbfff649d6)
+  now: nullDC4Wii frame 75d4ab5ab 2026-11-07 -> file last changed 2026-10-28 (dc/pvr/vram_track.h @ 45cbfff649d6)
+  now: nullDC4Wii frame 55348a319 2026-11-10 -> file last changed 2026-10-28 (dc/pvr/vram_track.h @ 45cbfff649d6)
+  now: nullDC4Wii frame 54ab40fcf 2026-11-11 -> file last changed 2026-10-28 (dc/pvr/vram_track.h @ 45cbfff649d6)
+
+## segment: One VFPU instruction for the vertex transform
+  first seen in nullDCe-PSP: old 2021-02-04 -> new 2021-02-04 (plugs/drkPvr/nullRend.cpp @ d04a8e2faa7e)
+  now: nullDCe-PSP frame d04a8e2fa 2021-02-04 -> file last changed 2021-02-04 (plugs/drkPvr/nullRend.cpp @ d04a8e2faa7e)
+  now: nullDCe-PSP frame 4a855d3d2 2021-02-04 -> file last changed 2021-02-04 (plugs/drkPvr/nullRend.cpp @ d04a8e2faa7e)
+  now: nullDCe-PSP frame 95b5a2067 2021-02-04 -> file last changed 2021-02-04 (plugs/drkPvr/nullRend.cpp @ d04a8e2faa7e)
+  now: nullDCe-PSP frame 36b350ade 2021-06-26 -> file last changed 2021-06-26 (plugs/drkPvr/nullRend.cpp @ 36b350ade6db)
+
+## file: the SH4 dynarec (rec_v1 driver, nullDC 2006)
+  now: nullDC frame 1fe9c6dff 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/sh4/rec_v1/driver.cpp @ 1fe9c6dffd7b)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/sh4/rec_v1/driver.cpp @ 1fe9c6dffd7b)
+  now: nullDC frame 761dc87db 2010-05-09 -> file last changed 2010-05-09 (nulldc/nullDC/dc/sh4/rec_v1/driver.cpp @ 1fe9c6dffd7b)
+  now: nullDC frame 926ed2097 2010-10-10 -> file last changed 2010-06-20 (nulldc/nullDC/dc/sh4/rec_v1/driver.cpp @ 7e9ab82a7746)
+
+## file: the SH4 dynarec v2 (nullDCe rec_v2)
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (dc/sh4/rec_v2/driver.cpp @ 39c055006291)
+  now: nullDCe-PSP frame e13f07c78 2021-02-04 -> file last changed 2021-02-04 (dc/sh4/rec_v2/driver.cpp @ e13f07c78a41)
+  now: nullDCe-PSP frame d6f177467 2021-10-17 -> file last changed 2021-08-19 (dc/sh4/rec_v2/driver.cpp @ 7fe5a441d1db)
+  now: nullDCe frame c3e0c9bf0 2024-09-27 -> file last changed 2008-2010 (dated 2009-10-16) (dc/sh4/rec_v2/driver.cpp @ 39c055006291)
+
+## file: the SH4 interpreter opcodes
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/sh4/interpr/sh4_opcodes.cpp @ 1c16baeb0eae)
+  now: reicast frame 239e17822 2018-09-03 -> file last changed 2018-08-17 (core/hw/sh4/interpr/sh4_opcodes.cpp @ 2fb992768884)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-08-17 (core/hw/sh4/interpr/sh4_opcodes.cpp @ 2fb992768884)
+  now: reicast frame a6b773a23 2019-05-17 -> file last changed 2019-03-27 (core/hw/sh4/interpr/sh4_opcodes.cpp @ 2cf59b42bb9b)
+
+## file: spg.cpp: PowerVR video timing
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/pvr/spg.cpp @ 1c16baeb0eae)
+  now: reicast frame 239e17822 2018-09-03 -> file last changed 2018-07-06 (core/hw/pvr/spg.cpp @ 3cac9134ce18)
+  now: flycast frame 84ab237b0 2018-10-20 -> file last changed 2018-07-06 (core/hw/pvr/spg.cpp @ 3cac9134ce18)
+  now: reicast frame a6b773a23 2019-05-17 -> file last changed 2019-05-03 (core/hw/pvr/spg.cpp @ 397302b37989)
+
+## file: the PowerVR renderer interface
+  now: nullDCe frame 39c055006 2009-10-16 -> file last changed 2008-2010 (dated 2009-10-16) (plugs/drkPvr/Renderer_if.cpp @ 39c055006291)
+  now: nullDC frame 398dab4cb 2010-05-09 -> file last changed 2010-05-09 (nulldc/plugins/drkPvr/Renderer_if.cpp @ 398dab4cbef4)
+  now: nulldc-360 frame 03302923d 2011-10-15 -> file last changed 2011-10-15 (plugins/drkPvr/Renderer_if.cpp @ 03302923daf3)
+  now: reicast frame 1c16baeb0 2013-12-19 -> file last changed 2012-2013 (dated 2013-12-19) (newdc/hw/pvr/Renderer_if.cpp @ 1c16baeb0eae)
+
+## file: refsw: the reference PowerVR software renderer
+  now: reicast frame 49046aecd 2020-02-25 -> file last changed 2020-02-25 (libswirl/rend/soft/refsw.cpp @ 49046aecd9e8)
+  now: reicast frame 8d0f7fbc9 2020-02-29 -> file last changed 2020-02-25 (libswirl/rend/soft/refsw.cpp @ 49046aecd9e8)
+  now: reicast frame 95b673698 2021-12-22 -> file last changed 2020-03-21 (libswirl/rend/soft/refsw.cpp @ 37dba034a9fd)
+  now: nulldc3 frame f2300244a 2023-07-07 -> file last changed 2020-03-21 (libswirl/rend/soft/refsw.cpp @ 37dba034a9fd)
